@@ -146,38 +146,32 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="ipv6基础知识"><a class="markdownIt-Anchor" href="#ipv6基础知识">#</a> IPv6 基础知识</h1>
-<h2 id="ipv6概念"><a class="markdownIt-Anchor" href="#ipv6概念">#</a> IPv6 概念</h2>
-<ul>
-<li>
-<p>下一代互联网 NGI，目前是第六版。IPv6 分组有 1 个固定头部和 n 个扩展头部（任选）以及上层协议的负载组成</p>
-<p><img data-src="https://s3.ax1x.com/2021/02/25/yv7FjP.png" alt="ipv6"></p>
+    <h1 id="IPv6基础知识"><a href="#IPv6基础知识" class="headerlink" title="IPv6基础知识"></a>IPv6基础知识</h1><h2 id="IPv6概念"><a href="#IPv6概念" class="headerlink" title="IPv6概念"></a>IPv6概念</h2><ul>
+<li><p>下一代互联网NGI，目前是第六版。IPv6分组有1个固定头部和n个扩展头部（任选）以及上层协议的负载组成</p>
+<p>  <img data-src="https://s3.ax1x.com/2021/02/25/yv7FjP.png" alt="ipv6"></p>
 </li>
-<li>
-<p><strong>IPv6 优点</strong></p>
+<li><p><strong>IPv6优点</strong></p>
 <ul>
 <li>更快的传输速度，地址空间更大，层次结构，首部格式灵活</li>
 <li>更安全的传输方式</li>
 <li>即插即用，支持资源预分配</li>
 </ul>
 </li>
-<li>
-<p><strong>IPV6 各个字段的解释含义</strong>：</p>
+<li><p><strong>IPV6各个字段的解释含义</strong>：</p>
 <ul>
-<li>版本 0110，代表 IPV6</li>
-<li>通信类型：8 位，IP 分组优先级，同服务类型</li>
-<li>流标记：20 位，标记特殊处理的分组</li>
-<li>负载长度：16 位，除了固定，扩展和负载</li>
-<li>下一头部：8 位，指明下一头部的类型</li>
+<li>版本0110，代表IPV6</li>
+<li>通信类型：8位，IP分组优先级，同服务类型</li>
+<li>流标记：20位，标记特殊处理的分组</li>
+<li>负载长度：16位，除了固定，扩展和负载</li>
+<li>下一头部：8位，指明下一头部的类型</li>
 <li>跳数限制：检测路由循环</li>
-<li>源地址：128 位，发送端的地址</li>
-<li>目标地址：128 位，接收端的地址</li>
+<li>源地址：128位，发送端的地址</li>
+<li>目标地址：128位，接收端的地址</li>
 </ul>
 </li>
-<li>
-<p><strong>IPV6 扩展头部分组封装顺序</strong>：</p>
+<li><p><strong>IPV6扩展头部分组封装顺序</strong>：</p>
 <ol>
-<li>IPV6 头部</li>
+<li>IPV6头部</li>
 <li>逐跳选项头</li>
 <li>目标选项头（第一个目标节点要处理的信息）</li>
 <li>路由选择头</li>
@@ -185,246 +179,204 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <li>认证头</li>
 <li>封装安全负荷头</li>
 <li>目标选项头（最后的目标节点要处理的信息）</li>
-<li>上层协议头部</li>
+<li>上层协议头部 </li>
 </ol>
 </li>
-<li>
-<p><strong>IPV6 地址</strong> ：128 位，冒分十六进制。8000:0000:0000:0000:0123:4567:89AB:CDE F（8 段，每 4 位二进制，写成十六进制）</p>
+<li><p><strong>IPV6地址</strong> ：128位，冒分十六进制。8000:0000:0000:0000:0123:4567:89AB:CDE F（8段，每4位二进制，写成十六进制） </p>
 </li>
-<li>
-<p><strong>IPV6 地址简化书写</strong> ：①前面的 0 可以省，后面 的不可以省。②多个 0 可以用冒号，但只能一 次。③多个 0 可以压缩为一个 0。④IPV4 兼容写法::192.168.1.10</p>
+<li><p><strong>IPV6地址简化书写</strong> ：①前面的0可以省，后面 的不可以省。②多个0可以用冒号，但只能一 次。③多个0可以压缩为一个0。④IPV4兼容写法::192.168.1.10</p>
 </li>
-<li>
-<p><strong>IPV6 格式前缀</strong> ：12AB00000000CD3/60 简写 12AB::CD30:0:0:0:0/60、12AB:0:0:CD30::/60</p>
+<li><p><strong>IPV6格式前缀</strong> ：12AB00000000CD3/60简写 12AB::CD30:0:0:0:0/60、12AB:0:0:CD30::/60</p>
 </li>
-<li>
-<p><strong>IPV6 地址分类</strong> ：单播地址、任意播 地址、组 (多) 播地址。分配到接口，一个接口 可以被赋予任何类型的多个地址或地址范围。</p>
+<li><p><strong>IPV6地址分类</strong> ：单播地址、任意播 地址、组(多)播地址。分配到接口，一个接口 可以被赋予任何类型的多个地址或地址范围。</p>
 <ul>
-<li>
-<p>任意播：①不能作源，只能作目标。②不能给主机，只能给路由器。</p>
+<li><p>任意播：①不能作源，只能作目标。②不能给主机，只能给路由器。</p>
 </li>
-<li>
-<p>组 (多) 播：一组接口。没有广播，格式前缀 1111 1111。</p>
+<li><p>组(多)播：一组接口。没有广播，格式前缀 1111 1111。</p>
 </li>
-<li>
-<p>单播：①可聚合全球单播。②链路本地地址。③站点本地地址。④特殊单播地址。</p>
+<li><p>单播：①可聚合全球单播。②链路本地地址。③站点本地地址。④特殊单播地址。</p>
 </li>
 </ul>
 </li>
 </ul>
-<h2 id="ipv6地址分类"><a class="markdownIt-Anchor" href="#ipv6地址分类">#</a> IPv6 地址分类</h2>
-<ul>
-<li>
-<p>①可聚合全球单播（相当于公网 IP）：前缀  001。</p>
+<h2 id="IPv6地址分类"><a href="#IPv6地址分类" class="headerlink" title="IPv6地址分类"></a>IPv6地址分类</h2><ul>
+<li><p>①可聚合全球单播（相当于公网IP）：前缀&nbsp; 001。</p>
 </li>
-<li>
-<p>②链路本地地址（相当于自动专用 IP）：前缀  1111 1110 10。</p>
+<li><p>②链路本地地址（相当于自动专用IP）：前缀 &nbsp;1111 1110 10。</p>
 </li>
-<li>
-<p>③站点本地地址（相当于私有 IP）：前缀  1111 1110 11。</p>
+<li><p>③站点本地地址（相当于私有IP）：前缀&nbsp; 1111 1110 11。</p>
 </li>
-<li>
-<p>④特殊单播地址：不确定地址 0:0:0:0:0:0:0:0， 不分配，初始用，能作源地址，不能目的地址。回环地址 0:0:0:0:0:0:0:1，发给自己，可作源地址和目的地址。</p>
+<li><p>④特殊单播地址：不确定地址0:0:0:0:0:0:0:0， 不分配，初始用，能作源地址，不能目的地址。回环地址 0:0:0:0:0:0:0:1，发给自己，可作源地址和目的地址。</p>
 </li>
 </ul>
-<h2 id="ipv6地址配置"><a class="markdownIt-Anchor" href="#ipv6地址配置">#</a> IPv6 地址配置</h2>
-<ul>
-<li><strong>默认自动配置分两种</strong>：
-<ul>
-<li>全状态自动配置：动态主机配置协议 DHCP，实现了 IP 地址的自动配置</li>
+<h2 id="IPv6地址配置"><a href="#IPv6地址配置" class="headerlink" title="IPv6地址配置"></a>IPv6地址配置</h2><ul>
+<li><strong>默认自动配置分两种</strong>：<ul>
+<li>全状态自动配置：动态主机配置协议DHCP，实现了IP地址的自动配置</li>
 </ul>
 </li>
-<li><strong>无状态自动配置</strong>：
-<ul>
-<li>获得链路本地地址：链路本地地址前缀  <code>1111 1110 10</code>  后加网卡 MAC 地址，产生一个链路本地地址，并发出一个 ICMPv6 请求，确认唯一性</li>
-<li>获得可聚合全球单播地址：向本地链路中所有足部 ICMPv6 路由器请求，主机获得单播前缀 001 后加自己的接口 ID，自动配置单播地址</li>
+<li><strong>无状态自动配置</strong>：<ul>
+<li>获得链路本地地址：链路本地地址前缀 <code>1111 1110 10</code>后加网卡MAC地址，产生一个链路本地地址，并发出一个ICMPv6请求，确认唯一性</li>
+<li>获得可聚合全球单播地址：向本地链路中所有足部ICMPv6路由器请求，主机获得单播前缀001后加自己的接口ID，自动配置单播地址</li>
 </ul>
 </li>
 </ul>
-<h2 id="ipv6与ipv4区别"><a class="markdownIt-Anchor" href="#ipv6与ipv4区别">#</a> IPv6 与 IPv4 区别</h2>
+<h2 id="IPv6与IPv4区别"><a href="#IPv6与IPv4区别" class="headerlink" title="IPv6与IPv4区别"></a>IPv6与IPv4区别</h2><div class="table-container">
 <table>
 <thead>
 <tr>
-<th style="text-align:center">IPv4 地址</th>
-<th style="text-align:center">IPv6 地址</th>
+<th style="text-align:center">IPv4地址</th>
+<th style="text-align:center">IPv6地址</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:center">点分十进制表示</td>
-<td style="text-align:center">带冒号的十六进制表示，0 压缩</td>
+<td style="text-align:center">带冒号的十六进制表示，0压缩</td>
 </tr>
 <tr>
-<td style="text-align:center">分为 ABCDE 类</td>
+<td style="text-align:center">分为ABCDE类</td>
 <td style="text-align:center">不分类</td>
 </tr>
 <tr>
-<td style="text-align:center">组播地址 <code>224.0.0.0/4</code></td>
-<td style="text-align:center">组播地址 <code>FF00::/8</code></td>
+<td style="text-align:center">组播地址<code>224.0.0.0/4</code></td>
+<td style="text-align:center">组播地址<code>FF00::/8</code></td>
 </tr>
 <tr>
-<td style="text-align:center">广播地址（主机部分全为 1</td>
+<td style="text-align:center">广播地址（主机部分全为1</td>
 <td style="text-align:center">任意播（限于子网内部）</td>
 </tr>
 <tr>
-<td style="text-align:center">默认地址 <code>0.0.0.0</code></td>
-<td style="text-align:center">不确定地址  <code>::</code></td>
+<td style="text-align:center">默认地址<code>0.0.0.0</code></td>
+<td style="text-align:center">不确定地址 <code>::</code></td>
 </tr>
 <tr>
-<td style="text-align:center">回环地址 <code>127.0.0.1</code></td>
-<td style="text-align:center">回环地址 <code>::1</code></td>
+<td style="text-align:center">回环地址<code>127.0.0.1</code></td>
+<td style="text-align:center">回环地址<code>::1</code></td>
 </tr>
 <tr>
 <td style="text-align:center">公共地址</td>
-<td style="text-align:center">可聚合全球单播地址 <code>FP=001</code></td>
+<td style="text-align:center">可聚合全球单播地址<code>FP=001</code></td>
 </tr>
 <tr>
-<td style="text-align:center">私网地址  <code>10.0.0.0/8</code> 、 <code>172.16.0.0/12</code></td>
-<td style="text-align:center">站点本地地址 <code>FECO::/48</code></td>
+<td style="text-align:center">私网地址 <code>10.0.0.0/8</code>、<code>172.16.0.0/12</code></td>
+<td style="text-align:center">站点本地地址<code>FECO::/48</code></td>
 </tr>
 <tr>
-<td style="text-align:center">自动专用 IP 地址 <code>169.254.0.0/16</code></td>
-<td style="text-align:center">链路本地地址 <code>FE8O::/48</code></td>
+<td style="text-align:center">自动专用IP地址<code>169.254.0.0/16</code></td>
+<td style="text-align:center">链路本地地址<code>FE8O::/48</code></td>
 </tr>
 </tbody>
 </table>
-<h2 id="ipv6相比ipv4的改进"><a class="markdownIt-Anchor" href="#ipv6相比ipv4的改进">#</a> IPv6 相比 IPv4 的改进</h2>
-<ol>
-<li><strong>扩展寻址能力</strong>：扩展到 128 位，致辞多级地址层次，改进组播，增加任意播更实用</li>
-<li><strong>简化报头格式</strong>：IP 头部字段由 12 个减少为 8 个，中间路由器由 6 个减少为 4 个，提高效率</li>
+</div>
+<h2 id="IPv6相比IPv4的改进"><a href="#IPv6相比IPv4的改进" class="headerlink" title="IPv6相比IPv4的改进"></a>IPv6相比IPv4的改进</h2><ol>
+<li><strong>扩展寻址能力</strong>：扩展到128位，致辞多级地址层次，改进组播，增加任意播更实用</li>
+<li><strong>简化报头格式</strong>：IP头部字段由12个减少为8个，中间路由器由6个减少为4个，提高效率</li>
 <li><strong>改进路由选项</strong>：路由选项放在扩展头部，仅在需要时插上路由选项，更灵活流畅</li>
 <li><strong>提供流标记</strong>：对某些分组进行特别处理，可以提供特别的服务质量，更好的传送数据</li>
 </ol>
-<h1 id="移动ip"><a class="markdownIt-Anchor" href="#移动ip">#</a> 移动 IP</h1>
-<h2 id="概念"><a class="markdownIt-Anchor" href="#概念">#</a> 概念</h2>
-<ul>
-<li>
-<p>移动主机在移动的同时，能够在任何地方使用它的家乡地址进行联网</p>
-<p><img data-src="https://s3.ax1x.com/2021/02/25/yv7VHS.png" alt="ydip"></p>
+<h1 id="移动IP"><a href="#移动IP" class="headerlink" title="移动IP"></a>移动IP</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul>
+<li><p>移动主机在移动的同时，能够在任何地方使用它的家乡地址进行联网</p>
+<p>  <img data-src="https://s3.ax1x.com/2021/02/25/yv7VHS.png" alt="ydip"></p>
 </li>
-<li>
-<p>移动 IP 的原理：移动主机分配一个家乡地址作为永久标识。如果到外地赋予一个转交地址，家乡地址会获得外地的转交地址。</p>
+<li><p>移动IP的原理：移动主机分配一个家乡地址作为永久标识。如果到外地赋予一个转交地址，家乡地址会获得外地的转交地址。</p>
 </li>
 </ul>
-<h1 id="ipv6过渡技术"><a class="markdownIt-Anchor" href="#ipv6过渡技术">#</a> IPv6 过渡技术</h1>
-<h2 id="隧道技术"><a class="markdownIt-Anchor" href="#隧道技术">#</a> 隧道技术</h2>
-<ul>
-<li>用于解决 IPV6 网络节点之间通过 IPV4 网络进行通信的问题（时空隧道）</li>
-<li>优点：
-<ul>
+<h1 id="IPv6过渡技术"><a href="#IPv6过渡技术" class="headerlink" title="IPv6过渡技术"></a>IPv6过渡技术</h1><h2 id="隧道技术"><a href="#隧道技术" class="headerlink" title="隧道技术"></a>隧道技术</h2><ul>
+<li>用于解决IPV6网络节点之间通过IPV4网络进行通信的问题（时空隧道）</li>
+<li>优点：<ul>
 <li>充分利用现有网络投资，过渡初期实现方便</li>
 </ul>
 </li>
-<li>缺点：
-<ul>
+<li>缺点：<ul>
 <li>路由器隧道出入口负载重，实现复杂，不利于大规模应用</li>
 </ul>
 </li>
 </ul>
-<h2 id="协议翻译技术"><a class="markdownIt-Anchor" href="#协议翻译技术">#</a> 协议翻译技术</h2>
-<ul>
-<li>使得纯 IPV6 节点之间和纯 IPV4 节点之间可以通信（英汉互译）</li>
-<li>优点：
-<ul>
-<li>不需要升级改造，开启 NAT-PT 即可</li>
+<h2 id="协议翻译技术"><a href="#协议翻译技术" class="headerlink" title="协议翻译技术"></a>协议翻译技术</h2><ul>
+<li>使得纯IPV6节点之间和纯IPV4节点之间可以通信（英汉互译）</li>
+<li>优点：<ul>
+<li>不需要升级改造，开启NAT-PT即可</li>
 </ul>
 </li>
-<li>缺点：
-<ul>
+<li>缺点：<ul>
 <li>转换不能完全保持原有含义，缺乏安全性</li>
 </ul>
 </li>
-<li>技术：SIIT 翻译、NAT-PT 翻译、TRT 翻译</li>
-</ul>
-<h2 id="双协议技术"><a class="markdownIt-Anchor" href="#双协议技术">#</a> 双协议技术</h2>
-<ul>
-<li>使得 IPV4 与 IPV6 共存于同一设备和同一网络中（英汉双语）</li>
-<li>优点：
-<ul>
+<li>技术：SIIT翻译、NAT-PT翻译、TRT翻译<h2 id="双协议技术"><a href="#双协议技术" class="headerlink" title="双协议技术"></a>双协议技术</h2></li>
+<li>使得IPV4与IPV6共存于同一设备和同一网络中（英汉双语）</li>
+<li>优点：<ul>
 <li>网络规划相对简单，可以充分发挥安全性、路由约束和流支持</li>
 </ul>
 </li>
-<li>缺点：
-<ul>
+<li>缺点：<ul>
 <li>对设备要求较高，维护大量协议和数据，升级改造投资大、建设周期比较长</li>
 </ul>
 </li>
-<li>技术：BIS 双栈、BIA 双栈</li>
+<li>技术：BIS双栈、BIA双栈 </li>
 </ul>
-<h2 id="6to4隧道"><a class="markdownIt-Anchor" href="#6to4隧道">#</a> 6to4 隧道</h2>
+<h2 id="6to4隧道"><a href="#6to4隧道" class="headerlink" title="6to4隧道"></a>6to4隧道</h2><ul>
+<li>IPV6穿越PIV4.6to4地址：前缀为2002，如<code>192.0.2.42</code>对应于6to4地址为<code>2002:c000:022a::/48</code>，隧道两端的节点必须都支持IPV6和IPV4协议栈</li>
+</ul>
+<h2 id="6over4隧道"><a href="#6over4隧道" class="headerlink" title="6over4隧道"></a>6over4隧道</h2><ul>
+<li>IPV4自动生成IPV6地址，例如<code>192.0.2.142</code>对应的链路本地地址为<code>FE80::C000:028E/64</code>,这种方法就是无状态自动配置，依赖于IPV4组播，收到局限</li>
+</ul>
+<h2 id="ISATAP隧道"><a href="#ISATAP隧道" class="headerlink" title="ISATAP隧道"></a>ISATAP隧道</h2><ul>
+<li>站内自动隧道寻址协议，自动分配地址的技术，可以穿透NAT设备</li>
+</ul>
+<h1 id="IPV6路由协议"><a href="#IPV6路由协议" class="headerlink" title="IPV6路由协议"></a>IPV6路由协议</h1><ul>
+<li><strong>RIPng</strong>：RIPv2的扩展，UDP521端口</li>
+<li><strong>OSPFv3</strong>：OSPFv2的扩展</li>
+<li><strong>BGP4+</strong>：BGP4的扩展，用于支持IPV6</li>
+<li><strong>ICMPv6</strong>：ICMP的扩展，集成了ARP功能</li>
+<li><strong>IS-IS</strong>：中间系统到中间系统，IS-IS属于内部网关路由协议。使用SPT算法进行路由计算</li>
+</ul>
+<h1 id="练习例题"><a href="#练习例题" class="headerlink" title="练习例题"></a>练习例题</h1><ol>
+<li><p>IPV6地址可以表示成各种简写形式，以下地址，33AB:0000:0000:CD30:0000:0000:0000:0000/60简写形式，正确的是 []{.gap} {.quiz}</p>
 <ul>
-<li>IPV6 穿越 PIV4.6to4 地址：前缀为 2002，如 <code>192.0.2.42</code>  对应于 6to4 地址为 <code>2002:c000:022a::/48</code> ，隧道两端的节点必须都支持 IPV6 和 IPV4 协议栈</li>
+<li>33AB:0:0:CD30::/60 {.correct}</li>
+<li>33AB::CD3/60 {.options}</li>
+<li>33AB:0:0:CD3/60 {.options}</li>
+<li>33AB::CD30/60 {.options}<br>{.options}</li>
 </ul>
-<h2 id="6over4隧道"><a class="markdownIt-Anchor" href="#6over4隧道">#</a> 6over4 隧道</h2>
+</li>
+<li><p>在IPv6地址中，IPV6可聚合全球单播地址的格式前缀是 []{.gap} {.quiz}</p>
 <ul>
-<li>IPV4 自动生成 IPV6 地址，例如 <code>192.0.2.142</code>  对应的链路本地地址为 <code>FE80::C000:028E/64</code> , 这种方法就是无状态自动配置，依赖于 IPV4 组播，收到局限</li>
+<li>001 {.correct}</li>
+<li>100 {.options}</li>
+<li>11111111011 {.options}</li>
+<li>11111111 {.options}<br>{.options}</li>
 </ul>
-<h2 id="isatap隧道"><a class="markdownIt-Anchor" href="#isatap隧道">#</a> ISATAP 隧道</h2>
+</li>
+<li><p>所谓移动IP是指 []{.gap} {.quiz}</p>
 <ul>
-<li>站内自动隧道寻址协议，自动分配地址的技术，可以穿透 NAT 设备</li>
+<li>通过地址翻译技术改变主机的IP地址 {.options}</li>
+<li>一个主机IP地址可以转移给另一个手机  {.options}</li>
+<li>移动主机通过在无线通信网中漫游来保持网络连接 {.correct}</li>
+<li>移动主机在离开家乡网络的远程站点可以连接工作 {.options}<br>{.options}</li>
 </ul>
-<h1 id="ipv6路由协议"><a class="markdownIt-Anchor" href="#ipv6路由协议">#</a> IPV6 路由协议</h1>
+</li>
+<li><p>在IPV4和IPV6混合的网络中，协议翻译技术用于 []{.gap} {.quiz}</p>
 <ul>
-<li><strong>RIPng</strong>：RIPv2 的扩展，UDP521 端口</li>
-<li><strong>OSPFv3</strong>：OSPFv2 的扩展</li>
-<li><strong>BGP4+</strong>：BGP4 的扩展，用于支持 IPV6</li>
-<li><strong>ICMPv6</strong>：ICMP 的扩展，集成了 ARP 功能</li>
-<li><strong>IS-IS</strong>：中间系统到中间系统，IS-IS 属于内部网关路由协议。使用 SPT 算法进行路由计算</li>
-</ul>
-<h1 id="练习例题"><a class="markdownIt-Anchor" href="#练习例题">#</a> 练习例题</h1>
-<ol>
-<li class="quiz">
-<p>IPV6 地址可以表示成各种简写形式，以下地址，33AB:0000:0000:CD30:0000:0000:0000:0000/60 简写形式，正确的是 <span class="gap"></span></p>
-<ul class="options">
-<li class="correct">33AB:0:0:CD30::/60</li>
-<li class="options">33AB::CD3/60</li>
-<li class="options">33AB:0:0:CD3/60</li>
-<li class="options">33AB::CD30/60</li>
+<li>两个IPV6主机通过IPV4网络通信 {.options}</li>
+<li>两个IPV4主机提过IPV6网络通信 {.options}</li>
+<li>纯IPV4主机和纯IPV6主机之间的同学 {.correct}</li>
+<li>两个双协议栈主机之间的通信 {.options}<br>{.options}</li>
 </ul>
 </li>
-<li class="quiz">
-<p>在 IPv6 地址中，IPV6 可聚合全球单播地址的格式前缀是 <span class="gap"></span></p>
-<ul class="options">
-<li class="correct">001</li>
-<li class="options">100</li>
-<li class="options">11111111011</li>
-<li class="options">11111111</li>
+<li><p>实现移动IP的关键技术是 []{.gap} {.quiz}</p>
+<ul>
+<li>移动主机具有一个可以接入任何网络的通用IP地址 {.options}</li>
+<li>移动主机具有一个家乡网络地址并获取一个外地转交地址 {.correct}</li>
+<li>移动主机通过控制全网的管理中心申请网络接入服务 {.options}</li>
+<li>移动主机总是通过家乡网络地址采取接入服务 {.options}<br>{.options} </li>
 </ul>
 </li>
-<li class="quiz">
-<p>所谓移动 IP 是指 <span class="gap"></span></p>
-<ul class="options">
-<li class="options">通过地址翻译技术改变主机的 IP 地址</li>
-<li class="options">一个主机 IP 地址可以转移给另一个手机 </li>
-<li class="correct">移动主机通过在无线通信网中漫游来保持网络连接</li>
-<li class="options">移动主机在离开家乡网络的远程站点可以连接工作</li>
-</ul>
-</li>
-<li class="quiz">
-<p>在 IPV4 和 IPV6 混合的网络中，协议翻译技术用于 <span class="gap"></span></p>
-<ul class="options">
-<li class="options">两个 IPV6 主机通过 IPV4 网络通信</li>
-<li class="options">两个 IPV4 主机提过 IPV6 网络通信</li>
-<li class="correct">纯 IPV4 主机和纯 IPV6 主机之间的同学</li>
-<li class="options">两个双协议栈主机之间的通信</li>
-</ul>
-</li>
-<li class="quiz">
-<p>实现移动 IP 的关键技术是 <span class="gap"></span></p>
-<ul class="options">
-<li class="options">移动主机具有一个可以接入任何网络的通用 IP 地址</li>
-<li class="correct">移动主机具有一个家乡网络地址并获取一个外地转交地址</li>
-<li class="options">移动主机通过控制全网的管理中心申请网络接入服务</li>
-<li class="options">移动主机总是通过家乡网络地址采取接入服务</li>
-</ul>
-</li>
-<li class="quiz">
-<p>IPv6 单播地址的描述中，正确的是 <span class="gap"></span></p>
-<ul class="options">
-<li class="options">任何端口只能用于一个唯一的全局地址</li>
-<li class="options">站点本地地址的格式前缀为 FE00::/10</li>
-<li class="options">链路本地地址的额格式前缀为 FE00::/12</li>
-<li class="correct">全球单播地址的格式前缀为 2000::/3 </li>
+<li><p>IPv6单播地址的描述中，正确的是 []{.gap} {.quiz}</p>
+<ul>
+<li>任何端口只能用于一个唯一的全局地址 {.options} </li>
+<li>站点本地地址的格式前缀为FE00::/10 {.options} </li>
+<li>链路本地地址的额格式前缀为FE00::/12 {.options} </li>
+<li>全球单播地址的格式前缀为2000::/3  {.correct}<br>{.options} </li>
 </ul>
 </li>
 </ol>
@@ -517,7 +469,7 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ipv6基础知识"><span class="toc-number">1.</span> <span class="toc-text"> IPv6 基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ipv6概念"><span class="toc-number">1.1.</span> <span class="toc-text"> IPv6 概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ipv6地址分类"><span class="toc-number">1.2.</span> <span class="toc-text"> IPv6 地址分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ipv6地址配置"><span class="toc-number">1.3.</span> <span class="toc-text"> IPv6 地址配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ipv6与ipv4区别"><span class="toc-number">1.4.</span> <span class="toc-text"> IPv6 与 IPv4 区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ipv6相比ipv4的改进"><span class="toc-number">1.5.</span> <span class="toc-text"> IPv6 相比 IPv4 的改进</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#移动ip"><span class="toc-number">2.</span> <span class="toc-text"> 移动 IP</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#概念"><span class="toc-number">2.1.</span> <span class="toc-text"> 概念</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ipv6过渡技术"><span class="toc-number">3.</span> <span class="toc-text"> IPv6 过渡技术</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#隧道技术"><span class="toc-number">3.1.</span> <span class="toc-text"> 隧道技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#协议翻译技术"><span class="toc-number">3.2.</span> <span class="toc-text"> 协议翻译技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#双协议技术"><span class="toc-number">3.3.</span> <span class="toc-text"> 双协议技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6to4隧道"><span class="toc-number">3.4.</span> <span class="toc-text"> 6to4 隧道</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6over4隧道"><span class="toc-number">3.5.</span> <span class="toc-text"> 6over4 隧道</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#isatap隧道"><span class="toc-number">3.6.</span> <span class="toc-text"> ISATAP 隧道</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ipv6路由协议"><span class="toc-number">4.</span> <span class="toc-text"> IPV6 路由协议</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#练习例题"><span class="toc-number">5.</span> <span class="toc-text"> 练习例题</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#IPv6基础知识"><span class="toc-number">1.</span> <span class="toc-text">IPv6基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#IPv6概念"><span class="toc-number">1.1.</span> <span class="toc-text">IPv6概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IPv6地址分类"><span class="toc-number">1.2.</span> <span class="toc-text">IPv6地址分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IPv6地址配置"><span class="toc-number">1.3.</span> <span class="toc-text">IPv6地址配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IPv6与IPv4区别"><span class="toc-number">1.4.</span> <span class="toc-text">IPv6与IPv4区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IPv6相比IPv4的改进"><span class="toc-number">1.5.</span> <span class="toc-text">IPv6相比IPv4的改进</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#移动IP"><span class="toc-number">2.</span> <span class="toc-text">移动IP</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#概念"><span class="toc-number">2.1.</span> <span class="toc-text">概念</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#IPv6过渡技术"><span class="toc-number">3.</span> <span class="toc-text">IPv6过渡技术</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#隧道技术"><span class="toc-number">3.1.</span> <span class="toc-text">隧道技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#协议翻译技术"><span class="toc-number">3.2.</span> <span class="toc-text">协议翻译技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#双协议技术"><span class="toc-number">3.3.</span> <span class="toc-text">双协议技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6to4隧道"><span class="toc-number">3.4.</span> <span class="toc-text">6to4隧道</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6over4隧道"><span class="toc-number">3.5.</span> <span class="toc-text">6over4隧道</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ISATAP隧道"><span class="toc-number">3.6.</span> <span class="toc-text">ISATAP隧道</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#IPV6路由协议"><span class="toc-number">4.</span> <span class="toc-text">IPV6路由协议</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#练习例题"><span class="toc-number">5.</span> <span class="toc-text">练习例题</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -639,16 +591,6 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
-</div>
-
-    <span><a href="/my-blog/Linux/%E6%9B%B4%E6%8D%A2%E6%B8%85%E5%8D%8E%E6%BA%90/" title="更换清华源">更换清华源</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
@@ -669,20 +611,20 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+<a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/IP%E5%AD%90%E7%BD%91%E5%88%92%E5%88%86%E4%B8%93%E9%A2%98/" title="IP子网划分专题">IP子网划分专题</a></span>
+    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E8%AE%A1%E7%AE%97%E8%99%9A%E6%8B%9F%E5%8C%96/" title="计算虚拟化简介">计算虚拟化简介</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="分类于 算法与数据结构">算法与数据结构</a>
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/" title="算法入门教程">算法入门教程</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%884%EF%BC%89/" title="华为交换实验命令（4）">华为交换实验命令（4）</a></span>
   </li>
 
       
@@ -699,9 +641,20 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
 </div>
 
-    <span><a href="/my-blog/%E7%BD%91%E7%BB%9C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86DNS%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="配置与管理DNS服务器">配置与管理DNS服务器</a></span>
+    <span><a href="/my-blog/Java/Java%E5%9F%BA%E7%A1%80%E6%B7%B7%E5%90%88/" title="Java基础混合">Java基础混合</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+</div>
+
+    <span><a href="/my-blog/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AFHTML5+CSS3/" title="前端HTML5+CSS3">前端HTML5+CSS3</a></span>
   </li>
 
       
@@ -711,7 +664,7 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%8E%E5%BA%94%E7%94%A801/" title="网络安全与应用01">网络安全与应用01</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8001/" title="数据通信基础01">数据通信基础01</a></span>
   </li>
 
       
@@ -721,17 +674,17 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9102/" title="网络互联与互联网02">网络互联与互联网02</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/" title="计算机硬件基础(部分组成原理)">计算机硬件基础(部分组成原理)</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
+<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
 </div>
 
-    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/Fusion%20Compute%E5%AE%89%E8%A3%85/" title="Fusion Compute安装">Fusion Compute安装</a></span>
+    <span><a href="/my-blog/Linux/%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E4%B8%8E%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86/" title="文件权限与目录管理">文件权限与目录管理</a></span>
   </li>
 
   </ul>

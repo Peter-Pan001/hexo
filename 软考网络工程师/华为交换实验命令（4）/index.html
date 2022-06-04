@@ -146,89 +146,207 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="telent远程管理"><a class="markdownIt-Anchor" href="#telent远程管理">#</a> TELENT 远程管理</h1>
-<p><img data-src="https://z3.ax1x.com/2021/05/11/gdmHOK.png" alt="teltye"></p>
+    <h1 id="TELENT远程管理"><a href="#TELENT远程管理" class="headerlink" title="TELENT远程管理"></a>TELENT远程管理</h1><p><img data-src="https://z3.ax1x.com/2021/05/11/gdmHOK.png" alt="teltye"></p>
 <ul>
-<li><strong>R1</strong>
-<ul>
-<li>配置接口 IP 确保和 R2 处于同一网段<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre>&lt;Huawei>system<span class="token operator">-</span>view</pre></td></tr><tr><td data-num="2"></td><td><pre>Enter system view<span class="token punctuation">,</span> <span class="token keyword">return</span> user view with Ctrl<span class="token operator">+</span>Z<span class="token punctuation">.</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[Huawei]</span>sysname R1</pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token namespace">[R1]</span>interface GigabitEthernet 0<span class="token operator">/</span>0<span class="token operator">/</span>0 <span class="token operator">/</span><span class="token operator">/</span>进入 R1 GE0 接口</pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token namespace">[R1-GigabitEthernet0/0/0]</span>ip address 12<span class="token punctuation">.</span>1<span class="token punctuation">.</span>1<span class="token punctuation">.</span>1 24 <span class="token operator">/</span><span class="token operator">/</span>GE0 接口配置 IP</pre></td></tr><tr><td data-num="6"></td><td><pre>Apr 22 2018 14:46:49<span class="token operator">-</span>08:00 R1 <span class="token operator">%</span><span class="token operator">%</span>01IFNET<span class="token operator">/</span>4<span class="token operator">/</span>LINK_STATE<span class="token punctuation">(</span>l<span class="token punctuation">)</span><span class="token punctuation">[</span>0<span class="token punctuation">]</span>:The line protocol IP </pre></td></tr><tr><td data-num="7"></td><td><pre>on the interface GigabitEthernet0<span class="token operator">/</span>0<span class="token operator">/</span>0 has entered the UP state<span class="token punctuation">.</span></pre></td></tr></table></figure></li>
+<li><strong>R1</strong><ul>
+<li>配置接口 IP 确保和 R2 处于同一网段<pre><code class="lang-powershell">&lt;Huawei&gt;system-view
+Enter system view, return user view with Ctrl+Z.
+[Huawei]sysname R1
+[R1]interface GigabitEthernet 0/0/0 //进入 R1 GE0 接口
+[R1-GigabitEthernet0/0/0]ip address 12.1.1.1 24 //GE0 接口配置 IP
+Apr 22 2018 14:46:49-08:00 R1 %%01IFNET/4/LINK_STATE(l)[0]:The line protocol IP 
+on the interface GigabitEthernet0/0/0 has entered the UP state.
+</code></pre>
+</li>
 </ul>
 </li>
-<li><strong>R2</strong>
-<ol>
-<li>配置接口 IP 确保和 R1 处于同一网段</li>
+<li><strong>R2</strong><ol>
+<li>配置接口 IP 确保和 R1 处于同一网段<pre><code class="lang-powershell">&lt;Huawei&gt;system-view
+Enter system view, return user view with Ctrl+Z.
+[Huawei]sysname R2
+[R2]interface GigabitEthernet 0/0/0 //进入 R2 GE0 接口
+[R2-GigabitEthernet0/0/0]ip address 12.1.1.2 24 //GE0 接口配置 IP
+Apr 22 2018 14:54:19-08:00 R2 %%01IFNET/4/LINK_STATE(l)[0]:The line protocol IP 
+on the interface GigabitEthernet0/0/0 has entered the UP state.
+</code></pre>
+</li>
+<li>配置 telnet 远程登陆<pre><code class="lang-powershell">[R2]user-interface vty 0 4 //进入远程线路 vty 0 4
+[R2-ui-vty0-4]authentication-mode aaa //使用 aaa 认证模式
+[R2-ui-vty0-4]quit 
+[R2]aaa //进入 aaa 配置
+[R2-aaa]local-user user-r1 password cipher huawei123 //创建账号及对应密码
+[R2-aaa]local-user user-r1 privilege level 2 //给该账号分配 2 级权限
+[R2-aaa]local-user user-r1 service-type telnet //定义用户的服务类别（启动 telnet 服务）
+[R2-aaa]quit
+</code></pre>
+</li>
+<li>进入 R1 验证<pre><code class="lang-powershell">通过 telnet 登录 R2：
+&lt;R1&gt;telnet 12.1.1.2
+Username:user-r1
+Password:
+&lt;R2&gt;system-view 
+[R2]sysname R22
+[R22]
+（进入 R2，对 R2 的主机名做修改，telnet 远程管理实现）
+</code></pre>
+</li>
 </ol>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre>&lt;Huawei>system<span class="token operator">-</span>view</pre></td></tr><tr><td data-num="2"></td><td><pre>Enter system view<span class="token punctuation">,</span> <span class="token keyword">return</span> user view with Ctrl<span class="token operator">+</span>Z<span class="token punctuation">.</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[Huawei]</span>sysname R2</pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token namespace">[R2]</span>interface GigabitEthernet 0<span class="token operator">/</span>0<span class="token operator">/</span>0 <span class="token operator">/</span><span class="token operator">/</span>进入 R2 GE0 接口</pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token namespace">[R2-GigabitEthernet0/0/0]</span>ip address 12<span class="token punctuation">.</span>1<span class="token punctuation">.</span>1<span class="token punctuation">.</span>2 24 <span class="token operator">/</span><span class="token operator">/</span>GE0 接口配置 IP</pre></td></tr><tr><td data-num="6"></td><td><pre>Apr 22 2018 14:54:19<span class="token operator">-</span>08:00 R2 <span class="token operator">%</span><span class="token operator">%</span>01IFNET<span class="token operator">/</span>4<span class="token operator">/</span>LINK_STATE<span class="token punctuation">(</span>l<span class="token punctuation">)</span><span class="token punctuation">[</span>0<span class="token punctuation">]</span>:The line protocol IP </pre></td></tr><tr><td data-num="7"></td><td><pre>on the interface GigabitEthernet0<span class="token operator">/</span>0<span class="token operator">/</span>0 has entered the UP state<span class="token punctuation">.</span></pre></td></tr></table></figure><ol start="2">
-<li>配置 telnet 远程登陆</li>
-</ol>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token namespace">[R2]</span>user<span class="token operator">-</span>interface vty 0 4 <span class="token operator">/</span><span class="token operator">/</span>进入远程线路 vty 0 4</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token namespace">[R2-ui-vty0-4]</span>authentication<span class="token operator">-</span>mode aaa <span class="token operator">/</span><span class="token operator">/</span>使用 aaa 认证模式</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[R2-ui-vty0-4]</span>quit </pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token namespace">[R2]</span>aaa <span class="token operator">/</span><span class="token operator">/</span>进入 aaa 配置</pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token namespace">[R2-aaa]</span>local<span class="token operator">-</span>user user<span class="token operator">-</span>r1 password cipher huawei123 <span class="token operator">/</span><span class="token operator">/</span>创建账号及对应密码</pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token namespace">[R2-aaa]</span>local<span class="token operator">-</span>user user<span class="token operator">-</span>r1 privilege level 2 <span class="token operator">/</span><span class="token operator">/</span>给该账号分配 2 级权限</pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token namespace">[R2-aaa]</span>local<span class="token operator">-</span>user user<span class="token operator">-</span>r1 service<span class="token operator">-</span><span class="token function">type</span> telnet <span class="token operator">/</span><span class="token operator">/</span>定义用户的服务类别（启动 telnet 服务）</pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token namespace">[R2-aaa]</span>quit</pre></td></tr></table></figure><ol start="3">
-<li>进入 R1 验证</li>
-</ol>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre>通过 telnet 登录 R2：</pre></td></tr><tr><td data-num="2"></td><td><pre> &lt;R1>telnet 12<span class="token punctuation">.</span>1<span class="token punctuation">.</span>1<span class="token punctuation">.</span>2</pre></td></tr><tr><td data-num="3"></td><td><pre> Username:user<span class="token operator">-</span>r1</pre></td></tr><tr><td data-num="4"></td><td><pre> Password:</pre></td></tr><tr><td data-num="5"></td><td><pre> &lt;R2>system<span class="token operator">-</span>view </pre></td></tr><tr><td data-num="6"></td><td><pre> <span class="token namespace">[R2]</span>sysname R22</pre></td></tr><tr><td data-num="7"></td><td><pre> <span class="token namespace">[R22]</span></pre></td></tr><tr><td data-num="8"></td><td><pre> （进入 R2，对 R2 的主机名做修改，telnet 远程管理实现）</pre></td></tr></table></figure></li>
+</li>
 </ul>
 <hr>
-<h1 id="ssh远程管理"><a class="markdownIt-Anchor" href="#ssh远程管理">#</a> SSH 远程管理</h1>
-<p><img data-src="https://z3.ax1x.com/2021/05/11/gdmOTe.png" alt="sshtp"></p>
+<h1 id="SSH远程管理"><a href="#SSH远程管理" class="headerlink" title="SSH远程管理"></a>SSH远程管理</h1><p><img data-src="https://z3.ax1x.com/2021/05/11/gdmOTe.png" alt="sshtp"></p>
 <ul>
-<li>
-<p><strong>R1</strong></p>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre>配置接口 IP 确保和 R2 处于同一网段</pre></td></tr><tr><td data-num="2"></td><td><pre>&lt;Huawei>system<span class="token operator">-</span>view</pre></td></tr><tr><td data-num="3"></td><td><pre>Enter system view<span class="token punctuation">,</span> <span class="token keyword">return</span> user view with Ctrl<span class="token operator">+</span>Z<span class="token punctuation">.</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token namespace">[Huawei]</span>sysname R1</pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token namespace">[R1]</span>interface GigabitEthernet 0<span class="token operator">/</span>0<span class="token operator">/</span>0 <span class="token operator">/</span><span class="token operator">/</span>进入 R1 GE0 接口</pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token namespace">[R1-GigabitEthernet0/0/0]</span>ip address 12<span class="token punctuation">.</span>1<span class="token punctuation">.</span>1<span class="token punctuation">.</span>1 24 <span class="token operator">/</span><span class="token operator">/</span>GE0 接口配置 IP</pre></td></tr><tr><td data-num="7"></td><td><pre>Apr 22 2018 14:46:49<span class="token operator">-</span>08:00 R1 <span class="token operator">%</span><span class="token operator">%</span>01IFNET<span class="token operator">/</span>4<span class="token operator">/</span>LINK_STATE<span class="token punctuation">(</span>l<span class="token punctuation">)</span><span class="token punctuation">[</span>0<span class="token punctuation">]</span>:The line protocol IP </pre></td></tr><tr><td data-num="8"></td><td><pre>on the interface GigabitEthernet0<span class="token operator">/</span>0<span class="token operator">/</span>0 has entered the UP state<span class="token punctuation">.</span></pre></td></tr></table></figure></li>
-<li>
-<p><strong>R2</strong></p>
+<li><p><strong>R1</strong></p>
+<pre><code class="lang-powershell">  配置接口 IP 确保和 R2 处于同一网段
+  &lt;Huawei&gt;system-view
+  Enter system view, return user view with Ctrl+Z.
+  [Huawei]sysname R1
+  [R1]interface GigabitEthernet 0/0/0 //进入 R1 GE0 接口
+  [R1-GigabitEthernet0/0/0]ip address 12.1.1.1 24 //GE0 接口配置 IP
+  Apr 22 2018 14:46:49-08:00 R1 %%01IFNET/4/LINK_STATE(l)[0]:The line protocol IP 
+  on the interface GigabitEthernet0/0/0 has entered the UP state.
+</code></pre>
+</li>
+<li><p><strong>R2</strong></p>
 <ol>
-<li>配置接口 IP 确保和 R1 处于同一网段</li>
+<li>配置接口 IP 确保和 R1 处于同一网段<pre><code class="lang-powershell">&lt;Huawei&gt;system-view
+Enter system view, return user view with Ctrl+Z.
+[Huawei]sysname R2
+[R2]interface GigabitEthernet 0/0/0 //进入 R2 GE0 接口
+[R2-GigabitEthernet0/0/0]ip address 12.1.1.2 24 //GE0 接口配置 IP
+Apr 22 2018 14:54:19-08:00 R2 %%01IFNET/4/LINK_STATE(l)[0]:The line protocol IP 
+on the interface GigabitEthernet0/0/0 has entered the UP state.
+</code></pre>
+</li>
+<li><p>配置 ssh 远程登陆</p>
+<pre><code class="lang-powershell">[R2]stelnet server enable //开启 SSH 协议
+[R2]rsa local-key-pair create //创建加密报文的密钥对
+Input the bits in the modulus[default = 512]:1024 //密钥长度
+[R2]aaa //使用 aaa 认证模式
+[R2-aaa]local-user user-ssh password cipher huawei123 //创建账号及对应密码
+[R2-aaa]local-user user-ssh privilege level 2 //给该账号分配 2 级权限
+[R2-aaa]local-user user-ssh service-type ssh 创建 ssh 用户
+[R2-aaa]quit 
+[R2]user-interface vty 0 4 //进入 vty 线路
+[R2-ui-vty0-4]authentication-mode aaa 
+[R2-ui-vty0-4]protocol inbound ssh //开启 vty 线路的 ssh 访问功能
+[R2-ui-vty0-4]quit 
+[R2]ssh user user-ssh authentication-type all //定义 ssh 用户的认证模式
+</code></pre>
+</li>
+<li><p>进入 R1 验证</p>
+<pre><code class="lang-powershell">通过 ssh 登录 R2：
+[R1]ssh client first-time enable
+[R1]stelnet 12.1.1.2
+Please input the username:user-ssh
+Continue to access it? (y/n)[n]:y
+Save the server&#39;s public key? (y/n)[n]:y
+Enter password:
+&lt;R2&gt;
+（ssh 远程登录成功）
+</code></pre>
+</li>
 </ol>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre>&lt;Huawei>system<span class="token operator">-</span>view</pre></td></tr><tr><td data-num="2"></td><td><pre>Enter system view<span class="token punctuation">,</span> <span class="token keyword">return</span> user view with Ctrl<span class="token operator">+</span>Z<span class="token punctuation">.</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[Huawei]</span>sysname R2</pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token namespace">[R2]</span>interface GigabitEthernet 0<span class="token operator">/</span>0<span class="token operator">/</span>0 <span class="token operator">/</span><span class="token operator">/</span>进入 R2 GE0 接口</pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token namespace">[R2-GigabitEthernet0/0/0]</span>ip address 12<span class="token punctuation">.</span>1<span class="token punctuation">.</span>1<span class="token punctuation">.</span>2 24 <span class="token operator">/</span><span class="token operator">/</span>GE0 接口配置 IP</pre></td></tr><tr><td data-num="6"></td><td><pre>Apr 22 2018 14:54:19<span class="token operator">-</span>08:00 R2 <span class="token operator">%</span><span class="token operator">%</span>01IFNET<span class="token operator">/</span>4<span class="token operator">/</span>LINK_STATE<span class="token punctuation">(</span>l<span class="token punctuation">)</span><span class="token punctuation">[</span>0<span class="token punctuation">]</span>:The line protocol IP </pre></td></tr><tr><td data-num="7"></td><td><pre>on the interface GigabitEthernet0<span class="token operator">/</span>0<span class="token operator">/</span>0 has entered the UP state<span class="token punctuation">.</span></pre></td></tr></table></figure><ol start="2">
-<li>配置 ssh 远程登陆</li>
-</ol>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token namespace">[R2]</span>stelnet server enable <span class="token operator">/</span><span class="token operator">/</span>开启 SSH 协议</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token namespace">[R2]</span>rsa local<span class="token operator">-</span>key<span class="token operator">-</span>pair create <span class="token operator">/</span><span class="token operator">/</span>创建加密报文的密钥对</pre></td></tr><tr><td data-num="3"></td><td><pre>Input the bits in the modulus<span class="token namespace">[default = 512]</span>:1024 <span class="token operator">/</span><span class="token operator">/</span>密钥长度</pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token namespace">[R2]</span>aaa <span class="token operator">/</span><span class="token operator">/</span>使用 aaa 认证模式</pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token namespace">[R2-aaa]</span>local<span class="token operator">-</span>user user<span class="token operator">-</span>ssh password cipher huawei123 <span class="token operator">/</span><span class="token operator">/</span>创建账号及对应密码</pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token namespace">[R2-aaa]</span>local<span class="token operator">-</span>user user<span class="token operator">-</span>ssh privilege level 2 <span class="token operator">/</span><span class="token operator">/</span>给该账号分配 2 级权限</pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token namespace">[R2-aaa]</span>local<span class="token operator">-</span>user user<span class="token operator">-</span>ssh service<span class="token operator">-</span><span class="token function">type</span> ssh 创建 ssh 用户</pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token namespace">[R2-aaa]</span>quit </pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token namespace">[R2]</span>user<span class="token operator">-</span>interface vty 0 4 <span class="token operator">/</span><span class="token operator">/</span>进入 vty 线路</pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token namespace">[R2-ui-vty0-4]</span>authentication<span class="token operator">-</span>mode aaa </pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token namespace">[R2-ui-vty0-4]</span>protocol inbound ssh <span class="token operator">/</span><span class="token operator">/</span>开启 vty 线路的 ssh 访问功能</pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token namespace">[R2-ui-vty0-4]</span>quit </pre></td></tr><tr><td data-num="13"></td><td><pre><span class="token namespace">[R2]</span>ssh user user<span class="token operator">-</span>ssh authentication<span class="token operator">-</span><span class="token function">type</span> all <span class="token operator">/</span><span class="token operator">/</span>定义 ssh 用户的认证模式</pre></td></tr></table></figure><ol start="3">
-<li>进入 R1 验证</li>
-</ol>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre>通过 ssh 登录 R2：</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token namespace">[R1]</span>ssh client first<span class="token operator">-</span>time enable</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[R1]</span>stelnet 12<span class="token punctuation">.</span>1<span class="token punctuation">.</span>1<span class="token punctuation">.</span>2</pre></td></tr><tr><td data-num="4"></td><td><pre>Please input the username:user<span class="token operator">-</span>ssh</pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token keyword">Continue</span> to access it? <span class="token punctuation">(</span>y<span class="token operator">/</span>n<span class="token punctuation">)</span><span class="token namespace">[n]</span>:y</pre></td></tr><tr><td data-num="6"></td><td><pre>Save the server's public key? <span class="token punctuation">(</span>y<span class="token operator">/</span>n<span class="token punctuation">)</span><span class="token namespace">[n]</span>:y</pre></td></tr><tr><td data-num="7"></td><td><pre>Enter password:</pre></td></tr><tr><td data-num="8"></td><td><pre>&lt;R2></pre></td></tr><tr><td data-num="9"></td><td><pre>（ssh 远程登录成功）</pre></td></tr></table></figure></li>
+</li>
 </ul>
 <hr>
-<h1 id="接口隔离配置"><a class="markdownIt-Anchor" href="#接口隔离配置">#</a> 接口隔离配置</h1>
-<blockquote>
-<p>配置接口  <code>GE0/0/1</code>  和  <code>GE0/0/2</code>  的接口隔离功能，实现两个接口之间的二层数据隔离，三层数据互通</p>
+<h1 id="接口隔离配置"><a href="#接口隔离配置" class="headerlink" title="接口隔离配置"></a>接口隔离配置</h1><blockquote>
+<p>配置接口 <code>GE0/0/1</code> 和 <code>GE0/0/2</code> 的接口隔离功能，实现两个接口之间的二层数据隔离，三层数据互通</p>
 </blockquote>
 <p><img data-src="https://z3.ax1x.com/2021/05/11/gdmvYd.png" alt="jkgl"></p>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre>&lt;Switch1>system<span class="token operator">-</span>view</pre></td></tr><tr><td data-num="2"></td><td><pre>Enter system view<span class="token punctuation">,</span> <span class="token keyword">return</span> user view with Ctrl<span class="token operator">+</span>Z<span class="token punctuation">.</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[Switch1]</span>port<span class="token operator">-</span>isolate mode L2 <span class="token operator">/</span><span class="token operator">/</span>端口隔离模式选择 L2</pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token namespace">[Switch1]</span>interface GigabitEthernet 0<span class="token operator">/</span>0<span class="token operator">/</span>1 <span class="token operator">/</span><span class="token operator">/</span>进入 GE0 接口</pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token namespace">[Switch1-GigabitEthernet0/0/1]</span>port<span class="token operator">-</span>isolate enable <span class="token function">group</span> 1 <span class="token operator">/</span><span class="token operator">/</span>接口隔离选择默认组 1</pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token namespace">[Switch1-GigabitEthernet0/0/1]</span>quit</pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token namespace">[Switch1]</span>interface GigabitEthernet 0<span class="token operator">/</span>0<span class="token operator">/</span>2 <span class="token operator">/</span><span class="token operator">/</span>进入 GE2 接口</pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token namespace">[Switch1-GigabitEthernet0/0/2]</span>port<span class="token operator">-</span>isolate enable <span class="token function">group</span> 1 <span class="token operator">/</span><span class="token operator">/</span>接口隔离选择默认组 1</pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token namespace">[Switch1-GigabitEthernet0/0/2]</span>quit </pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token namespace">[Switch1]</span></pre></td></tr><tr><td data-num="11"></td><td><pre>端口隔离实验成功</pre></td></tr></table></figure><hr>
-<h1 id="接口速率设置"><a class="markdownIt-Anchor" href="#接口速率设置">#</a> 接口速率设置</h1>
-<blockquote>
+<pre><code class="lang-powershell">&lt;Switch1&gt;system-view
+Enter system view, return user view with Ctrl+Z.
+[Switch1]port-isolate mode L2 //端口隔离模式选择 L2
+[Switch1]interface GigabitEthernet 0/0/1 //进入 GE0 接口
+[Switch1-GigabitEthernet0/0/1]port-isolate enable group 1 //接口隔离选择默认组 1
+[Switch1-GigabitEthernet0/0/1]quit
+[Switch1]interface GigabitEthernet 0/0/2 //进入 GE2 接口
+[Switch1-GigabitEthernet0/0/2]port-isolate enable group 1 //接口隔离选择默认组 1
+[Switch1-GigabitEthernet0/0/2]quit 
+[Switch1]
+端口隔离实验成功
+</code></pre>
+<hr>
+<h1 id="接口速率设置"><a href="#接口速率设置" class="headerlink" title="接口速率设置"></a>接口速率设置</h1><blockquote>
 <p>配置以太网接口 GE0/0/1 在自协商模式下协商速率为 100Mb/s</p>
 </blockquote>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre>&lt;Switch1>system<span class="token operator">-</span>view</pre></td></tr><tr><td data-num="2"></td><td><pre>Enter system view<span class="token punctuation">,</span> <span class="token keyword">return</span> user view with Ctrl<span class="token operator">+</span>Z<span class="token punctuation">.</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[Switch1]</span>interface GigabitEthernet 0<span class="token operator">/</span>0<span class="token operator">/</span>1 <span class="token operator">/</span><span class="token operator">/</span>进入 GE1 端口</pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token namespace">[Switch1-GigabitEthernet0/0/1]</span>negotiation auto <span class="token operator">/</span><span class="token operator">/</span>自动协商</pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token namespace">[Switch1-GigabitEthernet0/0/1]</span>auto speed 100 <span class="token operator">/</span><span class="token operator">/</span>协商速率</pre></td></tr></table></figure><hr>
-<h1 id="接口模式设置"><a class="markdownIt-Anchor" href="#接口模式设置">#</a> 接口模式设置</h1>
-<blockquote>
+<pre><code class="lang-powershell">&lt;Switch1&gt;system-view
+Enter system view, return user view with Ctrl+Z.
+[Switch1]interface GigabitEthernet 0/0/1 //进入 GE1 端口
+[Switch1-GigabitEthernet0/0/1]negotiation auto //自动协商
+[Switch1-GigabitEthernet0/0/1]auto speed 100 //协商速率
+</code></pre>
+<hr>
+<h1 id="接口模式设置"><a href="#接口模式设置" class="headerlink" title="接口模式设置"></a>接口模式设置</h1><blockquote>
 <p>配置以太网接口 GE0/0/1 在自协商模式下双工模式为全双工模式</p>
 </blockquote>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre>&lt;Switch1>system<span class="token operator">-</span>view</pre></td></tr><tr><td data-num="2"></td><td><pre>Enter system view<span class="token punctuation">,</span> <span class="token keyword">return</span> user view with Ctrl<span class="token operator">+</span>Z<span class="token punctuation">.</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[Switch1]</span>interface GigabitEthernet 0<span class="token operator">/</span>0<span class="token operator">/</span>1 <span class="token operator">/</span><span class="token operator">/</span>进入 GE1 端口</pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token namespace">[Switch1-GigabitEthernet0/0/1]</span>negotiation auto <span class="token operator">/</span><span class="token operator">/</span>自动协商</pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token namespace">[Switch1-GigabitEthernet0/0/1]</span> auto duplex full <span class="token operator">/</span><span class="token operator">/</span>全双工模式</pre></td></tr></table></figure><hr>
-<h1 id="基于接口划分vlan"><a class="markdownIt-Anchor" href="#基于接口划分vlan">#</a> 基于接口划分 VLAN</h1>
-<p><img data-src="https://z3.ax1x.com/2021/05/11/gdmxfA.png" alt="hfvlan"></p>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token namespace">[SW1]</span>vlan 10</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token namespace">[SW1-vlan10]</span>quit</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[SW1]</span>vlan 20</pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token namespace">[SW1-vlan20]</span>quit <span class="token operator">/</span><span class="token operator">/</span>创建 vlan10、vlan20<span class="token punctuation">(</span>快速创建多个 vlan 使用 vlan batch 10 20 命令<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token namespace">[SW1]</span>display vlan summary <span class="token operator">/</span><span class="token operator">/</span>查看设备的 vlan 信息</pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token namespace">[SW1]</span>int Ethernet0<span class="token operator">/</span>0<span class="token operator">/</span>1 </pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token namespace">[SW1-Ethernet0/0/1]</span>port link<span class="token operator">-</span><span class="token function">type</span> access</pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token namespace">[SW1-Ethernet0/0/1]</span>port default vlan 10 <span class="token operator">/</span><span class="token operator">/</span>将接口 e0<span class="token operator">/</span>0<span class="token operator">/</span>1 划入对应的 vlan10</pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token namespace">[SW1-Ethernet0/0/1]</span>quit </pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token namespace">[SW1]</span>int e0<span class="token operator">/</span>0<span class="token operator">/</span>2</pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token namespace">[SW1-Ethernet0/0/2]</span>port default vlan 20 <span class="token operator">/</span><span class="token operator">/</span>将接口 e0<span class="token operator">/</span>0<span class="token operator">/</span>2 划入对应的 vlan20</pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token namespace">[SW1-Ethernet0/0/2]</span>quit</pre></td></tr><tr><td data-num="13"></td><td><pre><span class="token namespace">[SW1]</span>int Ethernet0<span class="token operator">/</span>0<span class="token operator">/</span>3 </pre></td></tr><tr><td data-num="14"></td><td><pre><span class="token namespace">[SW1-Ethernet0/0/3]</span>port link<span class="token operator">-</span><span class="token function">type</span> trunk</pre></td></tr><tr><td data-num="15"></td><td><pre><span class="token namespace">[SW1-Ethernet0/0/3]</span>port trunk allow<span class="token operator">-</span>pass vlan 30 <span class="token operator">/</span><span class="token operator">/</span>将接口 e0<span class="token operator">/</span>0<span class="token operator">/</span>3 划入对应的 vlan30</pre></td></tr><tr><td data-num="16"></td><td><pre><span class="token namespace">[SW1-Ethernet0/0/3]</span>quit</pre></td></tr><tr><td data-num="17"></td><td><pre><span class="token namespace">[SW1]</span>display port vlan active <span class="token operator">/</span><span class="token operator">/</span>查看接口对应的 vlan 信息</pre></td></tr><tr><td data-num="18"></td><td><pre><span class="token namespace">[SW1]</span>quit</pre></td></tr></table></figure><hr>
-<h1 id="基于mac地址划分vlan"><a class="markdownIt-Anchor" href="#基于mac地址划分vlan">#</a> 基于 MAC 地址划分 VLAN</h1>
-<p><img data-src="https://z3.ax1x.com/2021/05/11/gdn96P.png" alt="macvlan"></p>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre>&lt;Huawei>system<span class="token operator">-</span>view</pre></td></tr><tr><td data-num="2"></td><td><pre>Enter system view<span class="token punctuation">,</span> <span class="token keyword">return</span> user view with Ctrl<span class="token operator">+</span>Z<span class="token punctuation">.</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[Huawei]</span>sysname SwitchA</pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token namespace">[SwitchA]</span>vlan batch 2</pre></td></tr><tr><td data-num="5"></td><td><pre>Info: This operation may take a few seconds<span class="token punctuation">.</span> Please wait <span class="token keyword">for</span> a moment<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>done<span class="token punctuation">.</span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token namespace">[SwitchA]</span>interface gigabitethernet 0<span class="token operator">/</span>0<span class="token operator">/</span>1 <span class="token operator">/</span><span class="token operator">/</span>在接口视图配置上联接口</pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token namespace">[SwitchA-GigabitEthernet0/0/1]</span>port link<span class="token operator">-</span><span class="token function">type</span> hybrid <span class="token operator">/</span><span class="token operator">/</span>配置上联接口类型</pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token namespace">[SwitchA-GigabitEthernet0/0/1]</span>port hybrid tagged vlan 2 <span class="token operator">/</span><span class="token operator">/</span>通过 VLAN2</pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token namespace">[SwitchA-GigabitEthernet0/0/1]</span>quit</pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token namespace">[SwitchA]</span>interface gigabitethernet 0<span class="token operator">/</span>0<span class="token operator">/</span>2 <span class="token operator">/</span><span class="token operator">/</span>进入交换机接口视图</pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token namespace">[SwitchA-GigabitEthernet0/0/2]</span>port link<span class="token operator">-</span><span class="token function">type</span> hybrid <span class="token operator">/</span><span class="token operator">/</span>配置接口类型</pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token namespace">[SwitchA-GigabitEthernet0/0/2]</span>port hybrid untagged vlan 2 <span class="token operator">/</span><span class="token operator">/</span>将接口加入 VLAN2</pre></td></tr><tr><td data-num="13"></td><td><pre><span class="token namespace">[SwitchA-GigabitEthernet0/0/2]</span>quit</pre></td></tr><tr><td data-num="14"></td><td><pre><span class="token namespace">[SwitchA]</span>vlan 2 <span class="token operator">/</span><span class="token operator">/</span>进入 vlan2 配置</pre></td></tr><tr><td data-num="15"></td><td><pre><span class="token namespace">[SwitchA-vlan2]</span>mac<span class="token operator">-</span>vlan mac<span class="token operator">-</span>address 22<span class="token operator">-</span>22<span class="token operator">-</span>22<span class="token operator">-</span>22 <span class="token operator">/</span><span class="token operator">/</span>PC 的 MAC 地址与 VLAN2 关联</pre></td></tr><tr><td data-num="16"></td><td><pre><span class="token namespace">[SwitchA-vlan2]</span>quit</pre></td></tr><tr><td data-num="17"></td><td><pre><span class="token namespace">[SwitchA]</span>interface gigabitethernet 0<span class="token operator">/</span>0<span class="token operator">/</span>2 </pre></td></tr><tr><td data-num="18"></td><td><pre><span class="token namespace">[SwitchA-GigabitEthernet0/0/2]</span>mac<span class="token operator">-</span>vlan enable <span class="token operator">/</span><span class="token operator">/</span>基于 MAC 地址启用接口</pre></td></tr><tr><td data-num="19"></td><td><pre>Info: This operation may take a few seconds<span class="token punctuation">.</span> Please wait <span class="token keyword">for</span> a moment<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>done<span class="token punctuation">.</span></pre></td></tr><tr><td data-num="20"></td><td><pre><span class="token namespace">[SwitchA-GigabitEthernet0/0/2]</span>quit</pre></td></tr></table></figure><hr>
-<h1 id="配置gvrp协议"><a class="markdownIt-Anchor" href="#配置gvrp协议">#</a> 配置 GVRP 协议</h1>
-<ul>
-<li><strong>GARP</strong> ( <code>Generic Attribute Registration Protocol</code> ) 是通用属性注册协议的应用，提供 802.1Q 兼容的 VLAN 裁剪 VLAN pruning 功能和在 802.1Q 干线端口 trunk port 上建立动态 VLAN 的功能。</li>
+<pre><code class="lang-powershell">&lt;Switch1&gt;system-view
+Enter system view, return user view with Ctrl+Z.
+[Switch1]interface GigabitEthernet 0/0/1 //进入 GE1 端口
+[Switch1-GigabitEthernet0/0/1]negotiation auto //自动协商
+[Switch1-GigabitEthernet0/0/1] auto duplex full //全双工模式
+</code></pre>
+<hr>
+<h1 id="基于接口划分VLAN"><a href="#基于接口划分VLAN" class="headerlink" title="基于接口划分VLAN"></a>基于接口划分VLAN</h1><p><img data-src="https://z3.ax1x.com/2021/05/11/gdmxfA.png" alt="hfvlan"></p>
+<pre><code class="lang-powershell">[SW1]vlan 10
+[SW1-vlan10]quit
+[SW1]vlan 20
+[SW1-vlan20]quit //创建 vlan10、vlan20(快速创建多个 vlan 使用 vlan batch 10 20 命令)
+[SW1]display vlan summary //查看设备的 vlan 信息
+[SW1]int Ethernet0/0/1 
+[SW1-Ethernet0/0/1]port link-type access
+[SW1-Ethernet0/0/1]port default vlan 10 //将接口 e0/0/1 划入对应的 vlan10
+[SW1-Ethernet0/0/1]quit 
+[SW1]int e0/0/2
+[SW1-Ethernet0/0/2]port default vlan 20 //将接口 e0/0/2 划入对应的 vlan20
+[SW1-Ethernet0/0/2]quit
+[SW1]int Ethernet0/0/3 
+[SW1-Ethernet0/0/3]port link-type trunk
+[SW1-Ethernet0/0/3]port trunk allow-pass vlan 30 //将接口 e0/0/3 划入对应的 vlan30
+[SW1-Ethernet0/0/3]quit
+[SW1]display port vlan active //查看接口对应的 vlan 信息
+[SW1]quit
+</code></pre>
+<hr>
+<h1 id="基于MAC地址划分VLAN"><a href="#基于MAC地址划分VLAN" class="headerlink" title="基于MAC地址划分VLAN"></a>基于MAC地址划分VLAN</h1><p><img data-src="https://z3.ax1x.com/2021/05/11/gdn96P.png" alt="macvlan"></p>
+<pre><code class="lang-powershell">&lt;Huawei&gt;system-view
+Enter system view, return user view with Ctrl+Z.
+[Huawei]sysname SwitchA
+[SwitchA]vlan batch 2
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[SwitchA]interface gigabitethernet 0/0/1 //在接口视图配置上联接口
+[SwitchA-GigabitEthernet0/0/1]port link-type hybrid //配置上联接口类型
+[SwitchA-GigabitEthernet0/0/1]port hybrid tagged vlan 2 //通过 VLAN2
+[SwitchA-GigabitEthernet0/0/1]quit
+[SwitchA]interface gigabitethernet 0/0/2 //进入交换机接口视图
+[SwitchA-GigabitEthernet0/0/2]port link-type hybrid //配置接口类型
+[SwitchA-GigabitEthernet0/0/2]port hybrid untagged vlan 2 //将接口加入 VLAN2
+[SwitchA-GigabitEthernet0/0/2]quit
+[SwitchA]vlan 2 //进入 vlan2 配置
+[SwitchA-vlan2]mac-vlan mac-address 22-22-22-22 //PC 的 MAC 地址与 VLAN2 关联
+[SwitchA-vlan2]quit
+[SwitchA]interface gigabitethernet 0/0/2 
+[SwitchA-GigabitEthernet0/0/2]mac-vlan enable //基于 MAC 地址启用接口
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[SwitchA-GigabitEthernet0/0/2]quit
+</code></pre>
+<hr>
+<h1 id="配置GVRP协议"><a href="#配置GVRP协议" class="headerlink" title="配置GVRP协议"></a>配置GVRP协议</h1><ul>
+<li><strong>GARP</strong> (<code>Generic Attribute Registration Protocol</code>)是通用属性注册协议的应用，提供 802.1Q 兼容的VLAN 裁剪 VLAN pruning 功能和在 802.1Q 干线端口 trunk port 上建立动态 VLAN 的功能。</li>
 <li>GARP 作为一个属性注册协议的载体，可以用来传播属性，将 GARP 协议报文的内容映射成不同的属性即可支持不同上层协议应用。</li>
-<li>GVRP（ <code>GARP VLAN Registration Protocol</code> ）是 GARP 的一种应用，用于注册和注销 VLAN 属性。</li>
+<li>GVRP（<code>GARP VLAN Registration Protocol</code>）是 GARP 的一种应用，用于注册和注销 VLAN 属性。</li>
 <li>GARP 协议通过目的 MAC 地址区分不同的应用。在 IEEE Std 802.1Q 中将 01-80-C2-00-00-21 分配给 VLAN 应用，即 GVRP。</li>
 </ul>
-<h2 id="配置-gvrp-示例"><a class="markdownIt-Anchor" href="#配置-gvrp-示例">#</a> 配置 GVRP 示例</h2>
-<ol>
-<li>
-<p>组网需求</p>
+<h2 id="配置-GVRP-示例"><a href="#配置-GVRP-示例" class="headerlink" title="配置 GVRP 示例"></a>配置 GVRP 示例</h2><ol>
+<li><p>组网需求</p>
 <ul>
-<li>如图所示，公司 A、公司 A 的分公司以及公司 B 之间有较多的交换设备相连，需要通过 GVRP 功能，实现 VLAN 的动态注册。公司 A 的分公司与总部通过 SwitchA 和 SwitchB 互通；公司 B 通过 SwitchB 和 SwitchC 与公司 A 互通，但只允许公司 B 配置的 VLAN 通过。</li>
+<li>如图所示，公司 A、公司 A 的分公司以及公司 B 之间有较多的交换设备相连，需要通过 GVRP 功能，实现 VLAN 的动态注册。公司 A 的分公司与总部通过 SwitchA 和 SwitchB 互通；公司 B 通过 SwitchB和 SwitchC 与公司 A 互通，但只允许公司 B 配置的 VLAN 通过。</li>
 </ul>
 </li>
 </ol>
 <p><img data-src="https://z3.ax1x.com/2021/05/11/gdnVYj.png" alt="gvrptp"></p>
 <ol>
-<li>配置思路
-<ul>
+<li>配置思路<ul>
 <li>使能 GVRP 功能，实现 VLAN 的动态注册。</li>
 <li>公司 A 的所有交换机配置 GVRP 功能并配置接口注册模式为 Normal，以简化配置。</li>
 <li>公司 B 的所有交换机配置 GVRP 功能并将与公司 A 相连的接口的注册模式配置为 Fixed，以控制只允许公司 B 配置的 VLAN 通过。</li>
@@ -236,52 +354,113 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 </li>
 </ol>
 <blockquote>
-<p>说明：<br>
-使能 GVRP 之前，必须先设置 VCMP 的角色为 Transparent 或 Silent。</p>
+<p>说明：<br>使能 GVRP 之前，必须先设置 VCMP 的角色为 Transparent 或 Silent。</p>
 </blockquote>
-<ol start="3">
-<li>配置步骤
-<ul>
-<li><strong>配置交换机 SwitchA</strong></li>
-</ul>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre>/<span class="token operator">/</span>全局使能 GVRP 功能</pre></td></tr><tr><td data-num="2"></td><td><pre>&lt;Huawei></pre></td></tr><tr><td data-num="3"></td><td><pre>&lt;Huawei>system<span class="token operator">-</span>view</pre></td></tr><tr><td data-num="4"></td><td><pre>Enter system view<span class="token punctuation">,</span> <span class="token keyword">return</span> user view with Ctrl<span class="token operator">+</span>Z<span class="token punctuation">.</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token namespace">[Huawei]</span>sysname SwitchA</pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token namespace">[SwitchA]</span>vcmp role silent</pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token operator">/</span><span class="token operator">/</span>配置接口为 Trunk 类型，并允许所有 VLAN 通过</pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token namespace">[SwitchA]</span>interface gigabitethernet 0<span class="token operator">/</span>0<span class="token operator">/</span>1</pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token namespace">[SwitchA-GigabitEthernet0/0/1]</span>port link<span class="token operator">-</span><span class="token function">type</span> trunk</pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token namespace">[SwitchA-GigabitEthernet0/0/1]</span>port trunk allow<span class="token operator">-</span>pass vlan all</pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token namespace">[SwitchA-GigabitEthernet0/0/1]</span>quit</pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token namespace">[SwitchA]</span>interface gigabitethernet 0<span class="token operator">/</span>0<span class="token operator">/</span>2</pre></td></tr><tr><td data-num="13"></td><td><pre><span class="token namespace">[SwitchA-GigabitEthernet0/0/2]</span>port link<span class="token operator">-</span><span class="token function">type</span> trunk</pre></td></tr><tr><td data-num="14"></td><td><pre><span class="token namespace">[SwitchA-GigabitEthernet0/0/2]</span>port trunk allow<span class="token operator">-</span>pass vlan all</pre></td></tr><tr><td data-num="15"></td><td><pre><span class="token namespace">[SwitchA-GigabitEthernet0/0/2]</span>quit</pre></td></tr><tr><td data-num="16"></td><td><pre><span class="token operator">/</span><span class="token operator">/</span>使能接口的 GVRP 功能，并配置接口注册模式</pre></td></tr><tr><td data-num="17"></td><td><pre><span class="token namespace">[SwitchA]</span>interface gigabitethernet 0<span class="token operator">/</span>0<span class="token operator">/</span>1</pre></td></tr><tr><td data-num="18"></td><td><pre><span class="token namespace">[SwitchA-GigabitEthernet0/0/1]</span>gvrp</pre></td></tr><tr><td data-num="19"></td><td><pre><span class="token namespace">[SwitchA-GigabitEthernet0/0/1]</span>gvrp registration normal</pre></td></tr><tr><td data-num="20"></td><td><pre><span class="token namespace">[SwitchA-GigabitEthernet0/0/1]</span>quit</pre></td></tr><tr><td data-num="21"></td><td><pre><span class="token namespace">[SwitchA]</span>interface gigabitethernet 0<span class="token operator">/</span>0<span class="token operator">/</span>2</pre></td></tr><tr><td data-num="22"></td><td><pre><span class="token namespace">[SwitchA-GigabitEthernet0/0/2]</span>gvrp</pre></td></tr><tr><td data-num="23"></td><td><pre><span class="token namespace">[SwitchA-GigabitEthernet0/0/2]</span>gvrp registration normal</pre></td></tr><tr><td data-num="24"></td><td><pre><span class="token namespace">[SwitchA-GigabitEthernet0/0/2]</span>quit</pre></td></tr></table></figure><ul>
-<li><strong>配置交换机 SwitchB</strong></li>
-</ul>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre>/<span class="token operator">/</span>全局使能 GVRP 功能</pre></td></tr><tr><td data-num="2"></td><td><pre>&lt;Huawei></pre></td></tr><tr><td data-num="3"></td><td><pre>&lt;Huawei>system<span class="token operator">-</span>view</pre></td></tr><tr><td data-num="4"></td><td><pre>Enter system view<span class="token punctuation">,</span> <span class="token keyword">return</span> user view with Ctrl<span class="token operator">+</span>Z<span class="token punctuation">.</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token namespace">[Huawei]</span>sysname SwitchB</pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token namespace">[SwitchB]</span>vcmp role silent</pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token operator">/</span><span class="token operator">/</span>配置接口为 Trunk 类型，并允许所有 VLAN 通过</pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token namespace">[SwitchB]</span>interface gigabitethernet 0<span class="token operator">/</span>0<span class="token operator">/</span>1</pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token namespace">[SwitchB-GigabitEthernet0/0/1]</span>port link<span class="token operator">-</span><span class="token function">type</span> trunk</pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token namespace">[SwitchB-GigabitEthernet0/0/1]</span>port trunk allow<span class="token operator">-</span>pass vlan all</pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token namespace">[SwitchB-GigabitEthernet0/0/1]</span>quit</pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token namespace">[SwitchB]</span>interface gigabitethernet 0<span class="token operator">/</span>0<span class="token operator">/</span>2</pre></td></tr><tr><td data-num="13"></td><td><pre><span class="token namespace">[SwitchB-GigabitEthernet0/0/2]</span>port link<span class="token operator">-</span><span class="token function">type</span> trunk</pre></td></tr><tr><td data-num="14"></td><td><pre><span class="token namespace">[SwitchB-GigabitEthernet0/0/2]</span>port trunk allow<span class="token operator">-</span>pass vlan all</pre></td></tr><tr><td data-num="15"></td><td><pre><span class="token namespace">[SwitchB-GigabitEthernet0/0/2]</span>quit</pre></td></tr><tr><td data-num="16"></td><td><pre><span class="token operator">/</span><span class="token operator">/</span>使能接口的 GVRP 功能，并配置接口注册模式</pre></td></tr><tr><td data-num="17"></td><td><pre><span class="token namespace">[SwitchB]</span>interface gigabitethernet 0<span class="token operator">/</span>0<span class="token operator">/</span>1</pre></td></tr><tr><td data-num="18"></td><td><pre><span class="token namespace">[SwitchB-GigabitEthernet0/0/1]</span>gvrp</pre></td></tr><tr><td data-num="19"></td><td><pre><span class="token namespace">[SwitchB-GigabitEthernet0/0/1]</span>gvrp registration normal</pre></td></tr><tr><td data-num="20"></td><td><pre><span class="token namespace">[SwitchB-GigabitEthernet0/0/1]</span>quit</pre></td></tr><tr><td data-num="21"></td><td><pre><span class="token namespace">[SwitchB]</span>interface gigabitethernet 0<span class="token operator">/</span>0<span class="token operator">/</span>2</pre></td></tr><tr><td data-num="22"></td><td><pre><span class="token namespace">[SwitchB-GigabitEthernet0/0/2]</span>gvrp</pre></td></tr><tr><td data-num="23"></td><td><pre><span class="token namespace">[SwitchB-GigabitEthernet0/0/2]</span>gvrp registration normal</pre></td></tr><tr><td data-num="24"></td><td><pre><span class="token namespace">[SwitchB-GigabitEthernet0/0/2]</span>quit</pre></td></tr></table></figure><ul>
-<li><strong>配置交换机 SwitchC</strong></li>
-</ul>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre>/<span class="token operator">/</span>创建 VLAN101～VLAN200</pre></td></tr><tr><td data-num="2"></td><td><pre>&lt;HUAWEI>system<span class="token operator">-</span>view</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[HUAWEI]</span>sysname SwitchC</pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token namespace">[SwitchC]</span>vlan batch 101 to 200</pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token operator">/</span><span class="token operator">/</span>全局使能 GVRP 功能</pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token namespace">[SwitchC]</span>vcmp role silent</pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token namespace">[SwitchC]</span>gvrp</pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token operator">/</span><span class="token operator">/</span>配置接口为 Trunk 类型，并允许所有 VLAN 通过</pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token namespace">[SwitchC]</span>interface gigabitethernet 0<span class="token operator">/</span>0<span class="token operator">/</span>1</pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token namespace">[SwitchC-GigabitEthernet0/0/1]</span>port link<span class="token operator">-</span><span class="token function">type</span> trunk</pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token namespace">[SwitchC-GigabitEthernet0/0/1]</span>port trunk allow<span class="token operator">-</span>pass vlan all</pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token namespace">[SwitchC-GigabitEthernet0/0/1]</span>quit</pre></td></tr><tr><td data-num="13"></td><td><pre><span class="token namespace">[SwitchC]</span>interface gigabitethernet 0<span class="token operator">/</span>0<span class="token operator">/</span>2</pre></td></tr><tr><td data-num="14"></td><td><pre><span class="token namespace">[SwitchC-GigabitEthernet0/0/2]</span>port link<span class="token operator">-</span><span class="token function">type</span> trunk</pre></td></tr><tr><td data-num="15"></td><td><pre><span class="token namespace">[SwitchC-GigabitEthernet0/0/2]</span>port trunk allow<span class="token operator">-</span>pass vlan all</pre></td></tr><tr><td data-num="16"></td><td><pre><span class="token namespace">[SwitchC-GigabitEthernet0/0/2]</span>quit</pre></td></tr><tr><td data-num="17"></td><td><pre><span class="token operator">/</span><span class="token operator">/</span>使能接口的 GVRP 功能，并配置接口注册模式</pre></td></tr><tr><td data-num="18"></td><td><pre><span class="token namespace">[SwitchC]</span>interface gigabitethernet 0<span class="token operator">/</span>0<span class="token operator">/</span>1</pre></td></tr><tr><td data-num="19"></td><td><pre><span class="token namespace">[SwitchC-GigabitEthernet0/0/1]</span>gvrp</pre></td></tr><tr><td data-num="20"></td><td><pre><span class="token namespace">[SwitchC-GigabitEthernet0/0/1]</span>gvrp registration fixed</pre></td></tr><tr><td data-num="21"></td><td><pre><span class="token namespace">[SwitchC-GigabitEthernet0/0/1]</span>quit</pre></td></tr><tr><td data-num="22"></td><td><pre><span class="token namespace">[SwitchC]</span>interface gigabitethernet 0<span class="token operator">/</span>0<span class="token operator">/</span>2</pre></td></tr><tr><td data-num="23"></td><td><pre><span class="token namespace">[SwitchC-GigabitEthernet0/0/2]</span>gvrp</pre></td></tr><tr><td data-num="24"></td><td><pre><span class="token namespace">[SwitchC-GigabitEthernet0/0/2]</span>gvrp registration normal</pre></td></tr><tr><td data-num="25"></td><td><pre><span class="token namespace">[SwitchC-GigabitEthernet0/0/2]</span>quit</pre></td></tr></table></figure><ul>
-<li>验证配置结果
-<ul>
+<ol>
+<li>配置步骤<ul>
+<li><strong>配置交换机SwitchA</strong><pre><code class="lang-powershell">//全局使能 GVRP 功能
+&lt;Huawei&gt;
+&lt;Huawei&gt;system-view
+Enter system view, return user view with Ctrl+Z.
+[Huawei]sysname SwitchA
+[SwitchA]vcmp role silent
+//配置接口为 Trunk 类型，并允许所有 VLAN 通过
+[SwitchA]interface gigabitethernet 0/0/1
+[SwitchA-GigabitEthernet0/0/1]port link-type trunk
+[SwitchA-GigabitEthernet0/0/1]port trunk allow-pass vlan all
+[SwitchA-GigabitEthernet0/0/1]quit
+[SwitchA]interface gigabitethernet 0/0/2
+[SwitchA-GigabitEthernet0/0/2]port link-type trunk
+[SwitchA-GigabitEthernet0/0/2]port trunk allow-pass vlan all
+[SwitchA-GigabitEthernet0/0/2]quit
+//使能接口的 GVRP 功能，并配置接口注册模式
+[SwitchA]interface gigabitethernet 0/0/1
+[SwitchA-GigabitEthernet0/0/1]gvrp
+[SwitchA-GigabitEthernet0/0/1]gvrp registration normal
+[SwitchA-GigabitEthernet0/0/1]quit
+[SwitchA]interface gigabitethernet 0/0/2
+[SwitchA-GigabitEthernet0/0/2]gvrp
+[SwitchA-GigabitEthernet0/0/2]gvrp registration normal
+[SwitchA-GigabitEthernet0/0/2]quit
+</code></pre>
+</li>
+<li><strong>配置交换机SwitchB</strong><pre><code class="lang-powershell">//全局使能 GVRP 功能
+&lt;Huawei&gt;
+&lt;Huawei&gt;system-view
+Enter system view, return user view with Ctrl+Z.
+[Huawei]sysname SwitchB
+[SwitchB]vcmp role silent
+//配置接口为 Trunk 类型，并允许所有 VLAN 通过
+[SwitchB]interface gigabitethernet 0/0/1
+[SwitchB-GigabitEthernet0/0/1]port link-type trunk
+[SwitchB-GigabitEthernet0/0/1]port trunk allow-pass vlan all
+[SwitchB-GigabitEthernet0/0/1]quit
+[SwitchB]interface gigabitethernet 0/0/2
+[SwitchB-GigabitEthernet0/0/2]port link-type trunk
+[SwitchB-GigabitEthernet0/0/2]port trunk allow-pass vlan all
+[SwitchB-GigabitEthernet0/0/2]quit
+//使能接口的 GVRP 功能，并配置接口注册模式
+[SwitchB]interface gigabitethernet 0/0/1
+[SwitchB-GigabitEthernet0/0/1]gvrp
+[SwitchB-GigabitEthernet0/0/1]gvrp registration normal
+[SwitchB-GigabitEthernet0/0/1]quit
+[SwitchB]interface gigabitethernet 0/0/2
+[SwitchB-GigabitEthernet0/0/2]gvrp
+[SwitchB-GigabitEthernet0/0/2]gvrp registration normal
+[SwitchB-GigabitEthernet0/0/2]quit
+</code></pre>
+</li>
+<li><strong>配置交换机SwitchC</strong><pre><code class="lang-powershell">//创建 VLAN101～VLAN200
+&lt;HUAWEI&gt;system-view
+[HUAWEI]sysname SwitchC
+[SwitchC]vlan batch 101 to 200
+//全局使能 GVRP 功能
+[SwitchC]vcmp role silent
+[SwitchC]gvrp
+//配置接口为 Trunk 类型，并允许所有 VLAN 通过
+[SwitchC]interface gigabitethernet 0/0/1
+[SwitchC-GigabitEthernet0/0/1]port link-type trunk
+[SwitchC-GigabitEthernet0/0/1]port trunk allow-pass vlan all
+[SwitchC-GigabitEthernet0/0/1]quit
+[SwitchC]interface gigabitethernet 0/0/2
+[SwitchC-GigabitEthernet0/0/2]port link-type trunk
+[SwitchC-GigabitEthernet0/0/2]port trunk allow-pass vlan all
+[SwitchC-GigabitEthernet0/0/2]quit
+//使能接口的 GVRP 功能，并配置接口注册模式
+[SwitchC]interface gigabitethernet 0/0/1
+[SwitchC-GigabitEthernet0/0/1]gvrp
+[SwitchC-GigabitEthernet0/0/1]gvrp registration fixed
+[SwitchC-GigabitEthernet0/0/1]quit
+[SwitchC]interface gigabitethernet 0/0/2
+[SwitchC-GigabitEthernet0/0/2]gvrp
+[SwitchC-GigabitEthernet0/0/2]gvrp registration normal
+[SwitchC-GigabitEthernet0/0/2]quit
+</code></pre>
+</li>
+<li>验证配置结果<ul>
 <li>配置完成后，公司 A 的分公司用户可以与总部互通，公司 A 属于 VLAN101～VLAN200 的用户可以与公司 B 用户互通。</li>
-<li>在 SwitchA 上使用命令 display gvrp statistics，查看接口的 GVRP 统计信息，</li>
+<li>在 SwitchA 上使用命令 display gvrp statistics，查看接口的 GVRP 统计信息，<blockquote>
+<p>其中包括：<br>GVRP 状态、GVRP 注册失败次数、上一个 GVRP 数据单元源 MAC 地址和接口 GVRP 注册类型，<br>结果如下：</p>
+</blockquote>
+</li>
 </ul>
 </li>
 </ul>
 </li>
 </ol>
-<blockquote>
-<p>其中包括：<br>
-GVRP 状态、GVRP 注册失败次数、上一个 GVRP 数据单元源 MAC 地址和接口 GVRP 注册类型，<br>
-结果如下：</p>
-</blockquote>
 <p><img data-src="https://z3.ax1x.com/2021/05/11/gdnZfs.png" alt="gvrpres"></p>
 <blockquote>
-<p>switch B、C 和 switch A 类似</p>
+<p>switch B、C和switch A类似</p>
 </blockquote>
-<h1 id="配置-stp-协议"><a class="markdownIt-Anchor" href="#配置-stp-协议">#</a> 配置 STP 协议</h1>
-<ul>
+<h1 id="配置-STP-协议"><a href="#配置-STP-协议" class="headerlink" title="配置 STP 协议"></a>配置 STP 协议</h1><ul>
 <li>以太网交换网络中为了进行链路备份，提高网络可靠性，通常会使用冗余链路。但是使用冗余链路会在交换网络上产生环路，引发广播风暴以及 MAC 地址表不稳定等故障现象，从而导致用户通信质量较差，甚至通信中断。</li>
 <li>为解决交换网络中的环路问题，提出了生成树协议 STP（Spanning Tree Protocol）。运行 STP 协议的设备通过彼此交互信息发现网络中的环路，并有选择的对某个端口进行阻塞，最终将环形网络结构修剪成无环路的树形网络结构，从而防止报文在环形网络中不断循环，避免设备由于重复接收相同的报文造成处理能力下降。</li>
-<li>生成树协议也是随着网络的发展而不断更新的，从最初的 IEEE 802.1D 中定义的 STP 到 IEEE 802.1W 中定义的快速生成树协议 RSTP（Rapid Spanning Tree Protocol），再到最新的 IEEE 802.1S 中定义的多生成树协议 MSTP（Multiple Spanning Tree Protocol）。</li>
+<li>生成树协议也是随着网络的发展而不断更新的，从最初的 IEEE 802.1D 中定义的 STP 到 IEEE 802.1W中定义的快速生成树协议 RSTP（Rapid Spanning Tree Protocol），再到最新的 IEEE 802.1S 中定义的多生成树协议 MSTP（Multiple Spanning Tree Protocol）。</li>
 <li>生成树协议中，MSTP 兼容 RSTP、STP，RSTP 兼容 STP。三种生成树协议的比较如下图所示:</li>
 </ul>
 <p><img data-src="https://z3.ax1x.com/2021/05/11/gdnmpn.png" alt="stptb"></p>
-<h2 id="配置-stp-示例"><a class="markdownIt-Anchor" href="#配置-stp-示例">#</a> 配置 STP 示例</h2>
-<blockquote>
-<p>配之前注意事项<br>
-本举例适用于 S 系列交换机所有产品的所有版本。<br>
-与终端相连的端口不用参与 STP 计算，建议将其设置为边缘端口或去使能 STP。</p>
+<h2 id="配置-STP-示例"><a href="#配置-STP-示例" class="headerlink" title="配置 STP 示例"></a>配置 STP 示例</h2><blockquote>
+<p>配之前注意事项<br>本举例适用于 S 系列交换机所有产品的所有版本。<br>与终端相连的端口不用参与 STP 计算，建议将其设置为边缘端口或去使能 STP。</p>
 </blockquote>
 <ol>
 <li>组网需求</li>
@@ -291,11 +470,8 @@ GVRP 状态、GVRP 注册失败次数、上一个 GVRP 数据单元源 MAC 地�
 <li>当前网络中存在环路，SwitchA、SwitchB、SwitchC 和 SwitchD 都运行 STP，通过彼此交互信息发现网络中的环路，并有选择的对某个端口进行阻塞，最终将环形网络结构修剪成无环路的树形网络结构，从而防止报文在环形网络中不断循环，避免设备由于重复接收相同的报文造成处理能力下降。</li>
 </ul>
 <ol>
-<li>
-<p>配置思路</p>
-<ul>
-<li>在处于环形网络中的交换设备上配置 STP 基本功能，包括：
-<ul>
+<li>配置思路<ul>
+<li>在处于环形网络中的交换设备上配置 STP 基本功能，包括：<ul>
 <li>配置环网中的设备生成树协议工作在 STP 模式。</li>
 <li>配置根桥和备份根桥设备。</li>
 <li>配置端口的路径开销值，实现将该端口阻塞。</li>
@@ -304,68 +480,111 @@ GVRP 状态、GVRP 注册失败次数、上一个 GVRP 数据单元源 MAC 地�
 </li>
 </ul>
 </li>
-<li>
-<p>配置步骤</p>
+<li><p>配置步骤</p>
 <ul>
-<li>配置 STP 基本功能</li>
-</ul>
+<li><p>配置 STP 基本功能</p>
 <ol>
-<li>配置环网中的设备生成树协议工作在 STP 模式</li>
-</ol>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre>/<span class="token operator">/</span>配置交换设备 SwitchA 的 STP 工作模式。</pre></td></tr><tr><td data-num="2"></td><td><pre>&lt;HUAWEI>system<span class="token operator">-</span>view</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[HUAWEI]</span>sysname SwitchA</pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token namespace">[SwitchA]</span>stp mode stp</pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token operator">/</span><span class="token operator">/</span>配置交换设备 SwitchB 的 STP 工作模式。</pre></td></tr><tr><td data-num="6"></td><td><pre>&lt;HUAWEI>system<span class="token operator">-</span>view</pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token namespace">[HUAWEI]</span>sysname SwitchB</pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token namespace">[SwitchB]</span>stp mode stp</pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token operator">/</span><span class="token operator">/</span>配置交换设备 SwitchC 的 STP 工作模式。</pre></td></tr><tr><td data-num="10"></td><td><pre>&lt;HUAWEI>system<span class="token operator">-</span>view</pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token namespace">[HUAWEI]</span>sysname SwitchC</pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token namespace">[SwitchC]</span>stp mode stp</pre></td></tr><tr><td data-num="13"></td><td><pre><span class="token operator">/</span><span class="token operator">/</span>配置交换设备 SwitchD 的 STP 工作模式。</pre></td></tr><tr><td data-num="14"></td><td><pre>&lt;HUAWEI>system<span class="token operator">-</span>view</pre></td></tr><tr><td data-num="15"></td><td><pre><span class="token namespace">[HUAWEI]</span>sysname SwitchD</pre></td></tr><tr><td data-num="16"></td><td><pre><span class="token namespace">[SwitchD]</span>stp mode stp</pre></td></tr></table></figure><ol>
-<li>配置根桥和备份根桥设备</li>
-</ol>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre>/<span class="token operator">/</span>配置 SwitchA 为根桥。</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token namespace">[SwitchA]</span> stp root primary</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token operator">/</span><span class="token operator">/</span>配置 SwitchD 为备份根桥。</pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token namespace">[SwitchD]</span> stp root secondary</pre></td></tr></table></figure><ol>
+<li>配置环网中的设备生成树协议工作在 STP 模式<pre><code class="lang-powershell">//配置交换设备 SwitchA 的 STP 工作模式。
+&lt;HUAWEI&gt;system-view
+[HUAWEI]sysname SwitchA
+[SwitchA]stp mode stp
+//配置交换设备 SwitchB 的 STP 工作模式。
+&lt;HUAWEI&gt;system-view
+[HUAWEI]sysname SwitchB
+[SwitchB]stp mode stp
+//配置交换设备 SwitchC 的 STP 工作模式。
+&lt;HUAWEI&gt;system-view
+[HUAWEI]sysname SwitchC
+[SwitchC]stp mode stp
+//配置交换设备 SwitchD 的 STP 工作模式。
+&lt;HUAWEI&gt;system-view
+[HUAWEI]sysname SwitchD
+[SwitchD]stp mode stp
+</code></pre>
+</li>
+<li>配置根桥和备份根桥设备<pre><code class="lang-powershell">//配置 SwitchA 为根桥。
+[SwitchA] stp root primary
+//配置 SwitchD 为备份根桥。
+[SwitchD] stp root secondary
+</code></pre>
+</li>
 <li>配置端口的路径开销值，实现将该端口阻塞</li>
 </ol>
 <blockquote>
-<p>说明：<br>
-端口路径开销值取值范围由路径开销计算方法决定，这里选择使用华为计算方法为例，配置将被阻塞端口的路径开销值为 20000。<br>
-同一网络内所有交换设备的端口路径开销应使用相同的计算方法。</p>
+<p>说明：<br>端口路径开销值取值范围由路径开销计算方法决定，这里选择使用华为计算方法为例，配置将被阻塞端口的路径开销值为 20000。<br>同一网络内所有交换设备的端口路径开销应使用相同的计算方法。</p>
 </blockquote>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre>/<span class="token operator">/</span>配置 SwitchA 的端口路径开销计算方法为华为计算方法。</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token namespace">[SwitchA]</span>stp pathcost<span class="token operator">-</span>standard legacy</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token operator">/</span><span class="token operator">/</span>配置 SwitchB 的端口路径开销计算方法为华为计算方法。</pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token namespace">[SwitchB]</span>stp pathcost<span class="token operator">-</span>standard legacy</pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token operator">/</span><span class="token operator">/</span>配置 SwitchC 的端口路径开销计算方法为华为计算方法。</pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token namespace">[SwitchC]</span>stp pathcost<span class="token operator">-</span>standard legacy</pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token operator">/</span><span class="token operator">/</span>配置 SwitchC 端口 GigabitEthernet0<span class="token operator">/</span>0<span class="token operator">/</span>1 端口路径开销值为 20000。</pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token namespace">[SwitchC]</span>interface gigabitethernet 0<span class="token operator">/</span>0<span class="token operator">/</span>1</pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token namespace">[SwitchC-GigabitEthernet0/0/1]</span>stp cost 20000</pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token namespace">[SwitchC-GigabitEthernet0/0/1]</span>quit</pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token operator">/</span><span class="token operator">/</span>配置 SwitchD 的端口路径开销计算方法为华为计算方法。</pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token namespace">[SwitchD]</span>stp pathcost<span class="token operator">-</span>standard legacy</pre></td></tr></table></figure><ul>
-<li>使能 STP，实现破除环路
+<pre><code class="lang-powershell">//配置 SwitchA 的端口路径开销计算方法为华为计算方法。
+[SwitchA]stp pathcost-standard legacy
+//配置 SwitchB 的端口路径开销计算方法为华为计算方法。
+[SwitchB]stp pathcost-standard legacy
+//配置 SwitchC 的端口路径开销计算方法为华为计算方法。
+[SwitchC]stp pathcost-standard legacy
+//配置 SwitchC 端口 GigabitEthernet0/0/1 端口路径开销值为 20000。
+[SwitchC]interface gigabitethernet 0/0/1
+[SwitchC-GigabitEthernet0/0/1]stp cost 20000
+[SwitchC-GigabitEthernet0/0/1]quit
+//配置 SwitchD 的端口路径开销计算方法为华为计算方法。
+[SwitchD]stp pathcost-standard legacy
+</code></pre>
+</li>
+<li><p>使能 STP，实现破除环路</p>
 <ul>
-<li>将与 PC 机相连的端口设置为边缘端口并使能端口的 BPDU 报文过滤功能</li>
+<li>将与 PC 机相连的端口设置为边缘端口并使能端口的 BPDU 报文过滤功能<pre><code class="lang-powershell">//配置 SwitchB 端口 GigabitEthernet0/0/2 设置为边缘端口并使能端口的 BPDU 报文过滤功能。
+[SwitchB]interface gigabitethernet 0/0/2
+[SwitchB-GigabitEthernet0/0/2]stp edged-port enable
+[SwitchB-GigabitEthernet0/0/2]stp bpdu-filter enable
+[SwitchB-GigabitEthernet0/0/2]quit
+//配置 SwitchC 端口 GigabitEthernet0/0/2 设置为边缘端口并使能端口的 BPDU 报文过滤功能。
+[SwitchC]interface gigabitethernet 0/0/2
+[SwitchC-GigabitEthernet0/0/2]stp edged-port enable
+[SwitchC-GigabitEthernet0/0/2]stp bpdu-filter enable
+[SwitchC-GigabitEthernet0/0/2]quit
+</code></pre>
+</li>
+</ul>
+<ul>
+<li><strong>设备全局使能STP</strong><pre><code class="lang-powershell">//设备 SwitchA 全局使能 STP。
+[SwitchA]stp enable
+//设备 SwitchB 全局使能 STP。
+[SwitchB]stp enable
+//设备 SwitchC 全局使能 STP。
+[SwitchC]stp enable
+//设备 SwitchD 全局使能 STP。
+[SwitchD]stp enable
+</code></pre>
+</li>
 </ul>
 </li>
 </ul>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre>/<span class="token operator">/</span>配置 SwitchB 端口 GigabitEthernet0<span class="token operator">/</span>0<span class="token operator">/</span>2 设置为边缘端口并使能端口的 BPDU 报文过滤功能。</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token namespace">[SwitchB]</span>interface gigabitethernet 0<span class="token operator">/</span>0<span class="token operator">/</span>2</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[SwitchB-GigabitEthernet0/0/2]</span>stp edged<span class="token operator">-</span>port enable</pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token namespace">[SwitchB-GigabitEthernet0/0/2]</span>stp bpdu<span class="token operator">-</span><span class="token keyword">filter</span> enable</pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token namespace">[SwitchB-GigabitEthernet0/0/2]</span>quit</pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token operator">/</span><span class="token operator">/</span>配置 SwitchC 端口 GigabitEthernet0<span class="token operator">/</span>0<span class="token operator">/</span>2 设置为边缘端口并使能端口的 BPDU 报文过滤功能。</pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token namespace">[SwitchC]</span>interface gigabitethernet 0<span class="token operator">/</span>0<span class="token operator">/</span>2</pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token namespace">[SwitchC-GigabitEthernet0/0/2]</span>stp edged<span class="token operator">-</span>port enable</pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token namespace">[SwitchC-GigabitEthernet0/0/2]</span>stp bpdu<span class="token operator">-</span><span class="token keyword">filter</span> enable</pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token namespace">[SwitchC-GigabitEthernet0/0/2]</span>quit</pre></td></tr></table></figure><ul>
-<li><strong>设备全局使能 STP</strong></li>
-</ul>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre>/<span class="token operator">/</span>设备 SwitchA 全局使能 STP。</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token namespace">[SwitchA]</span>stp enable</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token operator">/</span><span class="token operator">/</span>设备 SwitchB 全局使能 STP。</pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token namespace">[SwitchB]</span>stp enable</pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token operator">/</span><span class="token operator">/</span>设备 SwitchC 全局使能 STP。</pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token namespace">[SwitchC]</span>stp enable</pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token operator">/</span><span class="token operator">/</span>设备 SwitchD 全局使能 STP。</pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token namespace">[SwitchD]</span>stp enable</pre></td></tr></table></figure></li>
-<li>
-<p>验证配置</p>
+</li>
+<li>验证配置<blockquote>
+<p>经过以上配置，在网络计算稳定后，执行以下操作，验证配置结果。<br>//在 SwitchA 上执行 <code>display stp brief</code>命令，查看端口状态和端口的保护类型，结果如下：</p>
+</blockquote>
 </li>
 </ol>
-<blockquote>
-<p>经过以上配置，在网络计算稳定后，执行以下操作，验证配置结果。<br>
-// 在 SwitchA 上执行  <code>display stp brief </code> 命令，查看端口状态和端口的保护类型，结果如下：</p>
-</blockquote>
 <p><img data-src="https://z3.ax1x.com/2021/05/11/gdnl0U.png" alt="stpres"></p>
 <ul>
-<li>将  <code>SwitchA</code>  配置为根桥后，与  <code>SwitchB</code> 、 <code>SwitchD</code>  相连的端口  <code>GigabitEthernet0/0/2</code>  和 <code>GigabitEthernet0/0/1</code>  在生成树计算中被选举为指定端口。</li>
+<li>将 <code>SwitchA</code> 配置为根桥后，与 <code>SwitchB</code>、<code>SwitchD</code> 相连的端口 <code>GigabitEthernet0/0/2</code> 和<code>GigabitEthernet0/0/1</code> 在生成树计算中被选举为指定端口。</li>
 </ul>
 <blockquote>
-<p>// 在 SwitchD 上执行 display stp brief 命令，查看端口状态和端口的保护类型，结果如下：</p>
+<p>//在 SwitchD 上执行 display stp brief 命令，查看端口状态和端口的保护类型，结果如下：</p>
 </blockquote>
 <p><img data-src="https://z3.ax1x.com/2021/05/11/gdn17F.png" alt="stpres2"></p>
 <ul>
-<li>将  <code>SwitchD</code>  配置为备根桥后，与  <code>SwitchA</code> 、 <code>SwitchC</code>  相连的端口  <code>GigabitEthernet0/0/1</code>  被选举为根端口、 <code>GigabitEthernet0/0/2</code>  在生成树计算中被选举为指定端口。</li>
-</ul>
-<blockquote>
-<p>// 在 SwitchB 上执行  <code>display stp interface gigabitethernet 0/0/1 brief</code>  命令，查看端口 GigabitEthernet0/0/1 状态，结果如下：</p>
+<li>将 <code>SwitchD</code> 配置为备根桥后，与 <code>SwitchA</code>、<code>SwitchC</code> 相连的端口 <code>GigabitEthernet0/0/1</code> 被选举为根端口、<code>GigabitEthernet0/0/2</code> 在生成树计算中被选举为指定端口。<blockquote>
+<p>//在 SwitchB 上执行 <code>display stp interface gigabitethernet 0/0/1 brief</code> 命令，查看端口GigabitEthernet0/0/1 状态，结果如下：</p>
 </blockquote>
+</li>
+</ul>
 <p><img data-src="https://z3.ax1x.com/2021/05/11/gdnJh9.png" alt="stps"></p>
 <ul>
-<li>端口 <code> GigabitEthernet0/0/1</code>  在生成树选举中成为指定端口，处于  <code>FORWARDING</code>  状态。</li>
-</ul>
-<blockquote>
-<p>// 在 SwitchC 上执行 display stp brief 命令，查看端口状态，结果如下：</p>
+<li>端口<code>GigabitEthernet0/0/1</code> 在生成树选举中成为指定端口，处于 <code>FORWARDING</code> 状态。<blockquote>
+<p>//在 SwitchC 上执行 display stp brief 命令，查看端口状态，结果如下：</p>
 </blockquote>
+</li>
+</ul>
 <p><img data-src="https://z3.ax1x.com/2021/05/11/gdntpR.png" alt="stpsa"></p>
-<p>端口 GigabitEthernet0/0/3 在生成树选举中成为根端口，处于 FORWARDING 状态。<br>
-端口 GigabitEthernet0/0/1 在生成树选举中成为 Alternate 端口，处于 DISCARDING 状态。</p>
+<p>端口 GigabitEthernet0/0/3 在生成树选举中成为根端口，处于 FORWARDING 状态。<br>端口 GigabitEthernet0/0/1 在生成树选举中成为 Alternate 端口，处于 DISCARDING 状态。</p>
 
       <div class="tags">
           <a href="/my-blog/tags/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" rel="tag"><i class="ic i-tag"></i> 软考网络工程师</a>
@@ -455,7 +674,7 @@ GVRP 状态、GVRP 注册失败次数、上一个 GVRP 数据单元源 MAC 地�
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#telent远程管理"><span class="toc-number">1.</span> <span class="toc-text"> TELENT 远程管理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ssh远程管理"><span class="toc-number">2.</span> <span class="toc-text"> SSH 远程管理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#接口隔离配置"><span class="toc-number">3.</span> <span class="toc-text"> 接口隔离配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#接口速率设置"><span class="toc-number">4.</span> <span class="toc-text"> 接口速率设置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#接口模式设置"><span class="toc-number">5.</span> <span class="toc-text"> 接口模式设置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基于接口划分vlan"><span class="toc-number">6.</span> <span class="toc-text"> 基于接口划分 VLAN</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基于mac地址划分vlan"><span class="toc-number">7.</span> <span class="toc-text"> 基于 MAC 地址划分 VLAN</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置gvrp协议"><span class="toc-number">8.</span> <span class="toc-text"> 配置 GVRP 协议</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#配置-gvrp-示例"><span class="toc-number">8.1.</span> <span class="toc-text"> 配置 GVRP 示例</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置-stp-协议"><span class="toc-number">9.</span> <span class="toc-text"> 配置 STP 协议</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#配置-stp-示例"><span class="toc-number">9.1.</span> <span class="toc-text"> 配置 STP 示例</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#TELENT远程管理"><span class="toc-number">1.</span> <span class="toc-text">TELENT远程管理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SSH远程管理"><span class="toc-number">2.</span> <span class="toc-text">SSH远程管理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#接口隔离配置"><span class="toc-number">3.</span> <span class="toc-text">接口隔离配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#接口速率设置"><span class="toc-number">4.</span> <span class="toc-text">接口速率设置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#接口模式设置"><span class="toc-number">5.</span> <span class="toc-text">接口模式设置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基于接口划分VLAN"><span class="toc-number">6.</span> <span class="toc-text">基于接口划分VLAN</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基于MAC地址划分VLAN"><span class="toc-number">7.</span> <span class="toc-text">基于MAC地址划分VLAN</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置GVRP协议"><span class="toc-number">8.</span> <span class="toc-text">配置GVRP协议</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#配置-GVRP-示例"><span class="toc-number">8.1.</span> <span class="toc-text">配置 GVRP 示例</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置-STP-协议"><span class="toc-number">9.</span> <span class="toc-text">配置 STP 协议</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#配置-STP-示例"><span class="toc-number">9.1.</span> <span class="toc-text">配置 STP 示例</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -577,10 +796,10 @@ GVRP 状态、GVRP 注册失败次数、上一个 GVRP 数据单元源 MAC 地�
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
 </div>
 
-    <span><a href="/my-blog/Linux/%E6%9B%B4%E6%8D%A2%E6%B8%85%E5%8D%8E%E6%BA%90/" title="更换清华源">更换清华源</a></span>
+    <span><a href="/my-blog/Java/Java%E8%AF%AD%E5%8F%A5/" title="Java语句">Java语句</a></span>
   </li>
 
       
@@ -590,27 +809,7 @@ GVRP 状态、GVRP 注册失败次数、上一个 GVRP 数据单元源 MAC 地�
 <a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
 </div>
 
-    <span><a href="/my-blog/Java/Java%E6%96%B9%E6%B3%95/" title="Java方法">Java方法</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/MySQL/" title="分类于 MySQL">MySQL</a>
-</div>
-
-    <span><a href="/my-blog/MySQL/%E5%85%B3%E4%BA%8EMySQL%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" title="关于MySQL的一些基本使用">关于MySQL的一些基本使用</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
-</div>
-
-    <span><a href="/my-blog/Linux/%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E4%B8%8E%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86/" title="文件权限与目录管理">文件权限与目录管理</a></span>
+    <span><a href="/my-blog/Java/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93/" title="多线程笔记总结">多线程笔记总结</a></span>
   </li>
 
       
@@ -620,7 +819,27 @@ GVRP 状态、GVRP 注册失败次数、上一个 GVRP 数据单元源 MAC 地�
 <a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
 </div>
 
-    <span><a href="/my-blog/Java/Java%E5%9F%BA%E7%A1%80%E6%B7%B7%E5%90%88/" title="Java基础混合">Java基础混合</a></span>
+    <span><a href="/my-blog/Java/Java%E7%9A%84%E4%B8%80%E4%BA%9B%E7%B1%BB/" title="Java的一些类">Java的一些类</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/" title="操作系统基础">操作系统基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+</div>
+
+    <span><a href="/my-blog/%E5%89%8D%E7%AB%AF/%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E5%89%8D%E7%AB%AF/" title="如何学习前端">如何学习前端</a></span>
   </li>
 
       
@@ -640,7 +859,7 @@ GVRP 状态、GVRP 注册失败次数、上一个 GVRP 数据单元源 MAC 地�
 <a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9102/" title="网络互联与互联网02">网络互联与互联网02</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E5%92%8C%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80/" title="系统开发和项目管理基础">系统开发和项目管理基础</a></span>
   </li>
 
       
@@ -650,27 +869,27 @@ GVRP 状态、GVRP 注册失败次数、上一个 GVRP 数据单元源 MAC 地�
 <a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8002/" title="数据通信基础02">数据通信基础02</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%883%EF%BC%89/" title="华为路由实验命令（3）">华为路由实验命令（3）</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/network/" title="分类于 网络">网络</a>
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/network/Servlet%E5%92%8CTomcat/" title="Servlet和Tomcat">Servlet和Tomcat</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B9%BF%E5%9F%9F%E9%80%9A%E4%BF%A1%E7%BD%91/" title="广域通信网">广域通信网</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="分类于 算法与数据结构">算法与数据结构</a>
+<a href="/my-blog/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" title="分类于 数据分析">数据分析</a>
 </div>
 
-    <span><a href="/my-blog/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/" title="算法入门教程">算法入门教程</a></span>
+    <span><a href="/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/CDC%E6%8A%80%E6%9C%AF/" title="CDC技术">CDC技术</a></span>
   </li>
 
   </ul>

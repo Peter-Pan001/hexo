@@ -146,345 +146,274 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="数据通信方式"><a class="markdownIt-Anchor" href="#数据通信方式">#</a> 数据通信方式</h1>
-<h2 id="通信方向"><a class="markdownIt-Anchor" href="#通信方向">#</a> 通信方向</h2>
-<ul>
-<li><strong>单工通信（电视）</strong>
-<ul>
+    <h1 id="数据通信方式"><a href="#数据通信方式" class="headerlink" title="数据通信方式"></a>数据通信方式</h1><h2 id="通信方向"><a href="#通信方向" class="headerlink" title="通信方向"></a>通信方向</h2><ul>
+<li><strong>单工通信（电视）</strong><ul>
 <li>数据只能从一个方向向另一个方向传输</li>
 </ul>
 </li>
-<li><strong>半双工通信（对讲机）</strong>
-<ul>
+<li><strong>半双工通信（对讲机）</strong><ul>
 <li>数据可以双向传输，但不可同步进行传输</li>
 </ul>
 </li>
-<li><strong>全双工（手机）</strong>
-<ul>
+<li><strong>全双工（手机）</strong><ul>
 <li>数据可双向传输，并且可以同步传输</li>
 </ul>
 </li>
 </ul>
-<h2 id="传输方式"><a class="markdownIt-Anchor" href="#传输方式">#</a> 传输方式</h2>
-<h3 id="按传输方式分"><a class="markdownIt-Anchor" href="#按传输方式分">#</a> 按传输方式分</h3>
-<ul>
-<li><strong>串行传输</strong>
-<ul>
-<li>串行传输是数据在传输中只有 1 个数据位在设备之间进行的传输，对任何一个由若干位二进制表示的字符，串行传输都是用一个传输信道，按位有序的对字符进行传输。<mark>串行传输的速度比并行传输的速度要慢得多，但费用低。并行传输适用距离短，而串行传输适用远距离传输。</mark></li>
+<h2 id="传输方式"><a href="#传输方式" class="headerlink" title="传输方式"></a>传输方式</h2><h3 id="按传输方式分"><a href="#按传输方式分" class="headerlink" title="按传输方式分"></a>按传输方式分</h3><ul>
+<li><strong>串行传输</strong><ul>
+<li>串行传输是数据在传输中只有1个数据位在设备之间进行的传输，对任何一个由若干位二进制表示的字符,串行传输都是用一个传输信道，按位有序的对字符进行传输。==串行传输的速度比并行传输的速度要慢得多，但费用低。并行传输适用距离短，而串行传输适用远距离传输。==</li>
 </ul>
 </li>
-<li><strong>并行传输</strong>
-<ul>
-<li>并行传输是在传输中有多个数据位同时在设备之间进行的传输。所有数据位能同时沿着各自的信道并排的传输并行传输时，一次可以传一个字符，收发双方不存在同步的问题。<mark>而且速度快、控制方式简单。但是并行传输需要多个物理通道。所以并行传输只适合于短距离、要求传输速度快的场合使用。</mark></li>
+<li><strong>并行传输</strong><ul>
+<li>并行传输是在传输中有多个数据位同时在设备之间进行的传输。所有数据位能同时沿着各自的信道并排的传输并行传输时，一次可以传一个字符，收发双方不存在同步的问题。==而且速度快、控制方式简单。但是并行传输需要多个物理通道。所以并行传输只适合于短距离、要求传输速度快的场合使用。==<h3 id="按同步方式分"><a href="#按同步方式分" class="headerlink" title="按同步方式分"></a>按同步方式分</h3></li>
 </ul>
 </li>
-</ul>
-<h3 id="按同步方式分"><a class="markdownIt-Anchor" href="#按同步方式分">#</a> 按同步方式分</h3>
-<ul>
-<li>
-<p><strong>异步传输</strong></p>
-<ul>
-<li>异步传输将比特分成小组进行传送，小组可以是 8 位的 1 个字符或更长。发送方可以在任何时刻发送这些比特组，而接收方从不知道它们会在什么时候到达。<mark>（适用于远距离，数据量小的场景）</mark></li>
+<li><strong>异步传输</strong><ul>
+<li>异步传输将比特分成小组进行传送，小组可以是8位的1个字符或更长。发送方可以在任何时刻发送这些比特组，而接收方从不知道它们会在什么时候到达。==（适用于远距离，数据量小的场景）==</li>
 </ul>
 </li>
-<li>
-<p><strong>同步传输</strong></p>
+<li><p><strong>同步传输</strong></p>
 <ul>
-<li>同步传输的比特分组要大得多。它不是独立地发送每个字符，每个字符都有自己的开始位和停止位，而是把它们组合起来一起发送。我们将这些组合称为数据帧，或简称为帧。<mark>（适用于近距离，数据量大的场景）</mark></li>
+<li>同步传输的比特分组要大得多。它不是独立地发送每个字符，每个字符都有自己的开始位和停止位，而是把它们组合起来一起发送。我们将这些组合称为数据帧，或简称为帧。==（适用于近距离，数据量大的场景）==</li>
 </ul>
 </li>
-<li>
-<p><strong>两者区别</strong></p>
+<li><p><strong>两者区别</strong></p>
 <ol>
-<li>
-<p>异步传输是面向字符的传输，而同步传输是面向比特的传输。</p>
+<li><p>异步传输是面向字符的传输，而同步传输是面向比特的传输。</p>
 </li>
-<li>
-<p>异步传输的单位是字符而同步传输的单位是桢。</p>
+<li><p>异步传输的单位是字符而同步传输的单位是桢。</p>
 </li>
-<li>
-<p>异步传输通过字符起止的开始和停止码抓住再同步的机会，而同步传输则是以数据中抽取同步信息。</p>
+<li><p>异步传输通过字符起止的开始和停止码抓住再同步的机会，而同步传输则是以数据中抽取同步信息。</p>
 </li>
-<li>
-<p>异步传输对时序的要求较低，同步传输往往通过特定的时钟线路协调时序。</p>
+<li><p>异步传输对时序的要求较低，同步传输往往通过特定的时钟线路协调时序。</p>
 </li>
-<li>
-<p>异步传输相对于同步传输效率较低。</p>
+<li><p>异步传输相对于同步传输效率较低。</p>
 </li>
 </ol>
-<p><img data-src="https://s3.ax1x.com/2021/02/19/yhwYm8.jpg" alt="sjcs"></p>
 </li>
 </ul>
-<h1 id="数据交换方式"><a class="markdownIt-Anchor" href="#数据交换方式">#</a> 数据交换方式</h1>
-<h2 id="电路交换"><a class="markdownIt-Anchor" href="#电路交换">#</a> 电路交换</h2>
-<ul>
-<li>通信双方通过建立一条物理链路，当双方需要通信时，全权占用该链路，直到通信结束，才释放链路，<mark>电话就是使用电路交换的方式</mark></li>
-<li><strong>优点：</strong>
-<ul>
+<p>  <img data-src="https://s3.ax1x.com/2021/02/19/yhwYm8.jpg" alt="sjcs"></p>
+<h1 id="数据交换方式"><a href="#数据交换方式" class="headerlink" title="数据交换方式"></a>数据交换方式</h1><h2 id="电路交换"><a href="#电路交换" class="headerlink" title="电路交换"></a>电路交换</h2><ul>
+<li>通信双方通过建立一条物理链路，当双方需要通信时，全权占用该链路，直到通信结束，才释放链路，==电话就是使用电路交换的方式==</li>
+<li><strong>优点：</strong><ul>
 <li>实时性强、适合传输大量数据、有序传输、无冲突</li>
 </ul>
 </li>
-<li><strong>缺点：</strong>
-<ul>
+<li><strong>缺点：</strong><ul>
 <li>高独占性、需要建立一条物理链路，利用率低，无差错控制能力</li>
 </ul>
 </li>
 </ul>
-<h2 id="报文交换"><a class="markdownIt-Anchor" href="#报文交换">#</a> 报文交换</h2>
-<ul>
-<li><strong>优点：</strong>
-<ul>
+<h2 id="报文交换"><a href="#报文交换" class="headerlink" title="报文交换"></a>报文交换</h2><ul>
+<li><strong>优点：</strong><ul>
 <li>不需要专用通道，线路利用率高，存储转发节点可校验纠错</li>
 </ul>
 </li>
-<li><strong>缺点：</strong>
-<ul>
+<li><strong>缺点：</strong><ul>
 <li>有通信延迟</li>
 </ul>
 </li>
 </ul>
-<h2 id="分组交换"><a class="markdownIt-Anchor" href="#分组交换">#</a> 分组交换</h2>
-<ul>
-<li><strong>优点：</strong>
-<ul>
+<h2 id="分组交换"><a href="#分组交换" class="headerlink" title="分组交换"></a>分组交换</h2><ul>
+<li><strong>优点：</strong><ul>
 <li>利用率更高，可选路径，数据率转换，支持优先级</li>
 </ul>
 </li>
-<li><strong>缺点：</strong>
-<ul>
+<li><strong>缺点：</strong><ul>
 <li>时延、开销大</li>
 </ul>
 </li>
 </ul>
-<h3 id="分组交换的三种方式"><a class="markdownIt-Anchor" href="#分组交换的三种方式">#</a> 分组交换的三种方式</h3>
-<ul>
-<li><strong>数据报</strong>
-<ul>
+<h3 id="分组交换的三种方式"><a href="#分组交换的三种方式" class="headerlink" title="分组交换的三种方式"></a>分组交换的三种方式</h3><ul>
+<li><strong>数据报</strong><ul>
 <li>无连接、无序的，单向传输</li>
 </ul>
 </li>
-<li><strong>虚电路</strong>
-<ul>
+<li><strong>虚电路</strong><ul>
 <li>交互式、逻辑连接、可靠性高</li>
 </ul>
 </li>
-<li><strong>信元交换</strong>
-<ul>
+<li><strong>信元交换</strong><ul>
 <li>升级版虚电路，固定分组长度</li>
 </ul>
 </li>
 </ul>
-<h2 id="分组数据报"><a class="markdownIt-Anchor" href="#分组数据报">#</a> 分组数据报</h2>
-<ul>
+<h2 id="分组数据报"><a href="#分组数据报" class="headerlink" title="分组数据报"></a>分组数据报</h2><ul>
 <li>是单线传输、无连接的</li>
 </ul>
-<h1 id="多路复用技术"><a class="markdownIt-Anchor" href="#多路复用技术">#</a> 多路复用技术</h1>
-<h2 id="频分复用fdm"><a class="markdownIt-Anchor" href="#频分复用fdm">#</a> 频分复用 FDM</h2>
-<ul>
-<li>
-<p>不同的频率，子信道隔离频带方串扰，如 CATV、WIFI</p>
+<h1 id="多路复用技术"><a href="#多路复用技术" class="headerlink" title="多路复用技术"></a>多路复用技术</h1><h2 id="频分复用FDM"><a href="#频分复用FDM" class="headerlink" title="频分复用FDM"></a>频分复用FDM</h2><ul>
+<li><p>不同的频率，子信道隔离频带方串扰，如CATV、WIFI</p>
 <p><img data-src="https://s3.ax1x.com/2021/02/19/yhwWtJ.png" alt="pffy"></p>
 </li>
 </ul>
-<h2 id="时分复用tdm"><a class="markdownIt-Anchor" href="#时分复用tdm">#</a> 时分复用 TDM</h2>
-<ul>
-<li>
-<p>不同的时间，轮流占用</p>
+<h2 id="时分复用TDM"><a href="#时分复用TDM" class="headerlink" title="时分复用TDM"></a>时分复用TDM</h2><ul>
+<li><p>不同的时间，轮流占用</p>
 <p><img data-src="https://s3.ax1x.com/2021/02/19/yhwLAe.png" alt="sffy"></p>
 </li>
 </ul>
-<h2 id="波分复用wdm"><a class="markdownIt-Anchor" href="#波分复用wdm">#</a> 波分复用 WDM</h2>
-<ul>
-<li>
-<p>不同的波长</p>
-<p><img data-src="https://s3.ax1x.com/2021/02/19/yhwXhd.jpg" alt="bffy"></p>
+<h2 id="波分复用WDM"><a href="#波分复用WDM" class="headerlink" title="波分复用WDM"></a>波分复用WDM</h2><ul>
+<li><p>不同的波长</p>
+<p> <img data-src="https://s3.ax1x.com/2021/02/19/yhwXhd.jpg" alt="bffy"></p>
 </li>
 </ul>
-<h1 id="数字传输标准"><a class="markdownIt-Anchor" href="#数字传输标准">#</a> 数字传输标准</h1>
-<h2 id="t1标准北美和日本使用"><a class="markdownIt-Anchor" href="#t1标准北美和日本使用">#</a> T1 标准（北美和日本使用）</h2>
-<ul>
-<li>T1 标准，即北美的 24 路 PCM 国际标准</li>
-<li>速率： <mark>1.544Mbps</mark></li>
-<li>次数：125us=8000 次</li>
-<li><mark>1.544Mbps=(24*(7+1)+1)*8000</mark>
-<ul>
-<li>其中，北美使用的 T1 系统共有 24 个话路，每个话路采样脉冲用 7bit 编码，然后再加上 1 位信令码元，因此一个话路占用 8bit。帧同步码是在 24 路的编码之后加上 1bit，这样每帧共有 193bit，因此 T1 一次群的数据率为 1.544Mbit/s。</li>
+<h1 id="数字传输标准"><a href="#数字传输标准" class="headerlink" title="数字传输标准"></a>数字传输标准</h1><h2 id="T1标准（北美和日本使用）"><a href="#T1标准（北美和日本使用）" class="headerlink" title="T1标准（北美和日本使用）"></a>T1标准（北美和日本使用）</h2><ul>
+<li>T1标准，即北美的24路PCM国际标准</li>
+<li>速率： ==1.544Mbps==</li>
+<li>次数：125us=8000次</li>
+<li>==1.544Mbps=(24<em>(7+1)+1)</em>8000==<ul>
+<li>其中，北美使用的T1系统共有24个话路，每个话路采样脉冲用7bit编码，然后再加上1位信令码元，因此一个话路占用8bit。帧同步码是在24路的编码之后加上1bit，这样每帧共有193bit，因此T1一次群的数据率为1.544Mbit/s。<h3 id="T2、T3、T4标准"><a href="#T2、T3、T4标准" class="headerlink" title="T2、T3、T4标准"></a>T2、T3、T4标准</h3></li>
 </ul>
 </li>
-</ul>
-<h3 id="t2-t3-t4标准"><a class="markdownIt-Anchor" href="#t2-t3-t4标准">#</a> T2、T3、T4 标准</h3>
-<ul>
 <li>T2=4T1</li>
 <li>T3=7T1</li>
 <li>T4=6T1</li>
-<li>巧记 T2、T3、T4： <strong>T476 = 踢屎去喽</strong></li>
+<li>巧记T2、T3、T4： <strong>T476=踢屎去喽</strong></li>
 </ul>
-<h2 id="e1标准中国和欧洲使用"><a class="markdownIt-Anchor" href="#e1标准中国和欧洲使用">#</a> E1 标准（中国和欧洲使用）</h2>
-<ul>
-<li>E1 标准，即欧洲 30 路 PCM 国家标准</li>
-<li>速率：<mark>2.048Mbps</mark></li>
-<li>次数：125us=8000 次</li>
-<li><mark>2.048Mbps=(32*(7+1))*8000</mark>
-<ul>
-<li>其中，E1 的一个时分复用帧（其长度 T=125us）共划 分为 32 相等的时隙，时隙的编号为 CH0<sub>CH31。其中时隙 CH0 用作帧同步用，时隙 CH16 用来传送信令，剩下 CH1</sub>CH15 和 CH17~CH31 共 30 个时隙用作 30 个话路。每个时隙传送 8bit，因此共用 256bit。</li>
-<li>每秒传送 8 个帧，因此 PCM 一次群 E1 的数据率就是 2.048Mbit/s。</li>
+<h2 id="E1标准（中国和欧洲使用）"><a href="#E1标准（中国和欧洲使用）" class="headerlink" title="E1标准（中国和欧洲使用）"></a>E1标准（中国和欧洲使用）</h2><ul>
+<li>E1标准，即欧洲30路PCM国家标准</li>
+<li>速率：==2.048Mbps==</li>
+<li>次数：125us=8000次</li>
+<li>==2.048Mbps=(32<em>(7+1))</em>8000==<ul>
+<li>其中，E1的一个时分复用帧（其长度T=125us）共划 分为32相等的时隙，时隙的编号为CH0~CH31。其中时隙CH0用作帧同步用，时隙CH16用来传送信令，剩下CH1~CH15和CH17~CH31 共30个时隙用作30个话路。每个时隙传送8bit，因此共用256bit。</li>
+<li>每秒传送8个帧，因此PCM一次群E1的数据率就是 2.048Mbit/s。</li>
 </ul>
 </li>
-<li>CH0 和 CH16 为控制信令，30 个话音数据</li>
+<li>CH0和CH16为控制信令，30个话音数据</li>
 </ul>
-<h3 id="e2-e3-e4标准"><a class="markdownIt-Anchor" href="#e2-e3-e4标准">#</a> E2、E3、E4 标准</h3>
-<ul>
+<h3 id="E2、E3、E4标准"><a href="#E2、E3、E4标准" class="headerlink" title="E2、E3、E4标准"></a>E2、E3、E4标准</h3><ul>
 <li>E2=4E1</li>
 <li>E3=4E2</li>
 <li>E4=4E3</li>
 <li>巧记： <strong>E444</strong></li>
 </ul>
-<h2 id="sonet标准美国和sdh标准国际用于光纤网络"><a class="markdownIt-Anchor" href="#sonet标准美国和sdh标准国际用于光纤网络">#</a> SONET 标准（美国）和 SDH 标准（国际）— 用于光纤网络</h2>
-<ul>
-<li>SONET 标准是同步光纤网</li>
-<li>在 SONET 中，OC-1 为 <strong>最小单位</strong> ， <strong>值为 51.84Mb/s</strong> ，OC-N 表示 N 倍的 OC-1</li>
+<h2 id="SONET标准（美国）和SDH标准（国际）—-用于光纤网络"><a href="#SONET标准（美国）和SDH标准（国际）—-用于光纤网络" class="headerlink" title="SONET标准（美国）和SDH标准（国际）—-用于光纤网络"></a>SONET标准（美国）和SDH标准（国际）—-用于光纤网络</h2><ul>
+<li>SONET标准是同步光纤网</li>
+<li>在SONET中，OC-1为 <strong>最小单位</strong> ， <strong>值为51.84Mb/s</strong> ，OC-N表示N倍的OC-1</li>
 <li><strong>OC-3=OC-1*3=155.520Mb/s</strong><font color=red>(重点！！！)</font></li>
 <li><strong>OC-1=57384Mb/s</strong><font color=red>(重点！！！)</font></li>
 </ul>
-<h1 id="数据检错纠错"><a class="markdownIt-Anchor" href="#数据检错纠错">#</a> 数据检错纠错</h1>
-<h2 id="检错码"><a class="markdownIt-Anchor" href="#检错码">#</a> 检错码</h2>
-<ul>
-<li><mark>奇偶校验</mark> 看 1 的个数是奇数还是偶数， <strong>只能检错不能纠错</strong> ，广泛应用与移动通信</li>
+<h1 id="数据检错纠错"><a href="#数据检错纠错" class="headerlink" title="数据检错纠错"></a>数据检错纠错</h1><h2 id="检错码"><a href="#检错码" class="headerlink" title="检错码"></a>检错码</h2><ul>
+<li>==奇偶校验== 看1的个数是奇数还是偶数， <strong>只能检错不能纠错</strong> ，广泛应用与移动通信</li>
 </ul>
-<h2 id="海明码"><a class="markdownIt-Anchor" href="#海明码">#</a> 海明码</h2>
-<ul>
-<li>在数据位 m 后面增加冗余检验位 k，组成信息 m+k，则满足 m+k <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo></mrow><annotation encoding="application/x-tex">\lt</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&lt;</span></span></span></span> <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">2^k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.849108em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span></span></span></span> -1 可纠正一位错误， <strong>即可检错也可纠错</strong></li>
-<li><strong>码距 d</strong>：两个码字之间不同的最小的位数（比特数）</li>
-<li>可以查出多少位错误： <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≤</mo></mrow><annotation encoding="application/x-tex">\leq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≤</span></span></span></span> d-1</li>
-<li>可以纠正多少位错误： <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo></mrow><annotation encoding="application/x-tex">\lt</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&lt;</span></span></span></span> d/2</li>
+<h2 id="海明码"><a href="#海明码" class="headerlink" title="海明码"></a>海明码</h2><ul>
+<li>在数据位m后面增加冗余检验位k，组成信息m+k，则满足m+k $\lt$ $2^k$ -1可纠正一位错误， <strong>即可检错也可纠错</strong></li>
+<li><strong>码距d</strong>：两个码字之间不同的最小的位数（比特数）</li>
+<li>可以查出多少位错误： $\leq$ d-1</li>
+<li>可以纠正多少位错误： $\lt$ d/2</li>
 </ul>
-<h2 id="crc码"><a class="markdownIt-Anchor" href="#crc码">#</a> CRC 码</h2>
-<ul>
-<li>
-<p>即冗余循环校验码，是一种循环码，通过循环移位，实现检错，硬件容易实现，广泛用于局域网， <strong>只能检错不能纠错</strong></p>
-</li>
-<li>
-<p>计算 CRC 校验码：多项式除法，不进位加法，如生产多项式 G (x)= <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">x^4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span></span></span></span> +x+1，信息码字为 10111，求 CRC 校验码。</p>
+<h2 id="CRC码"><a href="#CRC码" class="headerlink" title="CRC码"></a>CRC码</h2><ul>
+<li>即冗余循环校验码，是一种循环码，通过循环移位，实现检错，硬件容易实现，广泛用于局域网， <strong>只能检错不能纠错</strong></li>
+<li><p>计算CRC校验码：多项式除法，不进位加法，如生产多项式G(x)= $x^4$ +x+1，信息码字为10111，求CRC校验码。</p>
 <blockquote>
-<p>计算步骤： 把原式变形为： 1<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">x^4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span></span></span></span>+0<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">x^3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span>+0<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">x^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>+1<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>1</mn></msup></mrow><annotation encoding="application/x-tex">x^1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span>+1<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>0</mn></msup></mrow><annotation encoding="application/x-tex">x^0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span></span></span></span></span></span></span></span><br>
- 看每个指数的系数，把系数连起来作为除数 10011<br>
- 由于多项式中最高项系数为 4，则在信息码字后面加 4 个 0，即 101110000 为被除数<br>
-再进行模 2 计算，得到的余数即为 CRC 校验码 1100</p>
+<p>计算步骤： 把原式变形为： 1$x^4$+0$x^3$+0$x^2$+1$x^1$+1$x^0$<br>看每个指数的系数，把系数连起来作为除数10011<br>由于多项式中最高项系数为4，则在信息码字后面加4个0，即101110000为被除数<br>再进行模2计算，得到的余数即为CRC校验码1100</p>
 </blockquote>
 <p><img data-src="https://s3.ax1x.com/2021/02/19/yhwv9A.png" alt="crc"></p>
 </li>
 </ul>
-<h2 id="dhcp的功能"><a class="markdownIt-Anchor" href="#dhcp的功能">#</a> DHCP 的功能</h2>
-<ol>
-<li>保证任何 IP 地址在<mark>同一时刻只能由一台 DHCP 客户机所使用</mark>。</li>
-<li>DHCP 应当可以给用户分配永久固定的 IP 地址。</li>
-<li>DHCP 应当可以同用其他方法获得 IP 地址的主机共存（如手工配置 IP 地址的主机）</li>
-<li>DHCP 服务器应当向现有的 BOOTP 客户端提供服务。</li>
+<h2 id="DHCP的功能"><a href="#DHCP的功能" class="headerlink" title="DHCP的功能"></a>DHCP的功能</h2><ol>
+<li>保证任何IP地址在==同一时刻只能由一台DHCP客户机所使用==。</li>
+<li>DHCP应当可以给用户分配永久固定的IP地址。</li>
+<li>DHCP应当可以同用其他方法获得IP地址的主机共存（如手工配置IP地址的主机）</li>
+<li>DHCP服务器应当向现有的BOOTP客户端提供服务。</li>
 </ol>
-<h2 id="dhcp三种分配ip地址的机制"><a class="markdownIt-Anchor" href="#dhcp三种分配ip地址的机制">#</a> DHCP 三种分配 IP 地址的机制</h2>
-<ol>
-<li><mark>自动分配方式</mark> ( <code>AutomaticAllocation</code> ),DHCP 服务器为主机指定一个永久性的 IP 地址，一旦 DHCP 客户端第一次成功从 DHCP 服务器端租用到 IP 地址后，就可以永久性的使用该地址。</li>
-<li><mark>动态分配方式</mark> ( <code>DynamicAllocation</code> ),DHCP 服务器给主机指定一个具有时间限制的 IP 地址，时间到期或主机明确表示放弃该地址时，该地址可以被其他主机使用。</li>
-<li><mark>手工分配方式</mark> ( <code>ManualAllocation</code> ), 客户端的 IP 地址是由网络管理员指定的，DHCP 服务器只是将指定的 IP 地址告诉客户端主机。</li>
-</ol>
-<blockquote>
+<h2 id="DHCP三种分配IP地址的机制"><a href="#DHCP三种分配IP地址的机制" class="headerlink" title="DHCP三种分配IP地址的机制"></a>DHCP三种分配IP地址的机制</h2><ol>
+<li>==自动分配方式==(<code>AutomaticAllocation</code>),DHCP服务器为主机指定一个永久性的IP地址，一旦DHCP客户端第一次成功从DHCP服务器端租用到IP地址后，就可以永久性的使用该地址。</li>
+<li>==动态分配方式==(<code>DynamicAllocation</code>),DHCP服务器给主机指定一个具有时间限制的IP地址，时间到期或主机明确表示放弃该地址时，该地址可以被其他主机使用。</li>
+<li>==手工分配方式==(<code>ManualAllocation</code>),客户端的IP地址是由网络管理员指定的，DHCP服务器只是将指定的IP地址告诉客户端主机。<blockquote>
 <p>三种地址分配方式中，只有动态分配可以重复使用客户端不再需要的地址。</p>
 </blockquote>
-<h1 id="练习例题"><a class="markdownIt-Anchor" href="#练习例题">#</a> 练习例题</h1>
+</li>
+</ol>
+<h1 id="练习例题"><a href="#练习例题" class="headerlink" title="练习例题"></a>练习例题</h1><ol>
+<li><p>采用海明码进行差错校验，信息码字为1001011，为纠正一位错，则需要 []{.gap} 位冗余位。 {.quiz}</p>
+<ul>
+<li>2 {.options}</li>
+<li>3 {.options}</li>
+<li>4 {.correct}</li>
+<li>8 {.options}<br>{.options}<blockquote>
+<ul>
+<li>:x:</li>
+<li>:x:</li>
+<li>:heavy_check_mark: m=k=1&lt;2^k,m=7 ,k=4</li>
+<li>:x: </li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>按照美国制定的光纤通行标准SONET，OC-48的线路速率是 []{.gap} Mb/s。 {.quiz}</p>
+<ul>
+<li>51.84 {.options}</li>
+<li>622.05 {.options}</li>
+<li>2488.32 {.correct}</li>
+<li>9953.28 {.options}<br>{.options}<blockquote>
+<ul>
+<li>:x:</li>
+<li>:x:</li>
+<li>:heavy_check_mark: OC-3=155.520，OC-3的16倍约为2488</li>
+<li>:x:</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>E1载波把32个信道按 []{.gap} 方式复用在一条2.048Mb/s的高速信道上。 {.quiz}</p>
+<ul>
+<li>TDM {.correct}</li>
+<li>CDMA {.options}</li>
+<li>WDM {.options}</li>
+<li>FDM {.options}<br>{.options}<blockquote>
+<ul>
+<li>:heavy_check_mark: 8b*8000=64kb/s</li>
+<li>:x:</li>
+<li>:x:</li>
+<li>:x:</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>E1载波的数据速率是 [B]{.gap} Mb/s，T1载波的数据速率是 [A]{.gap} Mb/s。 {.quiz}</p>
+<ul>
+<li>1.544 {.correct}</li>
+<li>2.048 {.correct}</li>
+<li>6.312 {.options}</li>
+<li>8.448 {.options}<br>{.options}</li>
+</ul>
+</li>
+<li><p>E1信道的数据速率是2.048Mb/s，其中每个话音信道的数据速率是 []{.gap} Kb/s。 {.quiz}</p>
+<ul>
+<li>56 {.options}</li>
+<li>64 {.correct}</li>
+<li>128 {.options}</li>
+<li>2048 {.options}<br>{.options}<blockquote>
+<ul>
+<li>:x:</li>
+<li>:heavy_check_mark: 8/125us=64kbps 或者8*8000</li>
+<li>:x:</li>
+<li>:x:</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+</ol>
 <ol>
-<li class="quiz">
-<p>采用海明码进行差错校验，信息码字为 1001011，为纠正一位错，则需要 <span class="gap"></span> 位冗余位。</p>
-<ul class="options">
-<li class="options">2</li>
-<li class="options">3</li>
-<li class="correct">4</li>
-<li class="options">8</li>
-</ul>
-<blockquote>
+<li>E1线路是一种以时分多路复用技术为基础的传输技术，其有效数据率（扣除开销）约为 []{.gap} Mb/s。{.quiz}<ul>
+<li>1.34 {.options}</li>
+<li>1.544 {.options}</li>
+<li>1.92 {.correct}</li>
+<li>2.048 {.options}<br>{.options}<blockquote>
 <ul>
-<li>❌</li>
-<li>❌</li>
-<li>✔️ m=k=1&lt;2^k,m=7 ,k=4</li>
-<li>❌</li>
+<li>:x:</li>
+<li>:x:</li>
+<li>:heavy_check_mark: 2.048*（30/32）=1.92,其中E1线路的速率为2.048Mb/s</li>
+<li>:x:</li>
 </ul>
 </blockquote>
 </li>
-<li class="quiz">
-<p>按照美国制定的光纤通行标准 SONET，OC-48 的线路速率是 <span class="gap"></span> Mb/s。</p>
-<ul class="options">
-<li class="options">51.84</li>
-<li class="options">622.05</li>
-<li class="correct">2488.32</li>
-<li class="options">9953.28</li>
 </ul>
-<blockquote>
-<ul>
-<li>❌</li>
-<li>❌</li>
-<li>✔️ OC-3=155.520，OC-3 的 16 倍约为 2488</li>
-<li>❌</li>
-</ul>
-</blockquote>
-</li>
-<li class="quiz">
-<p>E1 载波把 32 个信道按 <span class="gap"></span> 方式复用在一条 2.048Mb/s 的高速信道上。</p>
-<ul class="options">
-<li class="correct">TDM</li>
-<li class="options">CDMA</li>
-<li class="options">WDM</li>
-<li class="options">FDM</li>
-</ul>
-<blockquote>
-<ul>
-<li>✔️ 8b*8000=64kb/s</li>
-<li>❌</li>
-<li>❌</li>
-<li>❌</li>
-</ul>
-</blockquote>
-</li>
-<li class="quiz">
-<p>E1 载波的数据速率是 <span class="gap">B</span> Mb/s，T1 载波的数据速率是 <span class="gap">A</span> Mb/s。</p>
-<ul class="options">
-<li class="correct">1.544</li>
-<li class="correct">2.048</li>
-<li class="options">6.312</li>
-<li class="options">8.448</li>
-</ul>
-</li>
-<li class="quiz">
-<p>E1 信道的数据速率是 2.048Mb/s，其中每个话音信道的数据速率是 <span class="gap"></span> Kb/s。</p>
-<ul class="options">
-<li class="options">56</li>
-<li class="correct">64</li>
-<li class="options">128</li>
-<li class="options">2048</li>
-</ul>
-<blockquote>
-<ul>
-<li>❌</li>
-<li>✔️ 8/125us=64kbps 或者 8*8000</li>
-<li>❌</li>
-<li>❌</li>
-</ul>
-</blockquote>
-</li>
-<li class="quiz">
-<p>E1 线路是一种以时分多路复用技术为基础的传输技术，其有效数据率（扣除开销）约为 <span class="gap"></span> Mb/s。</p>
-<ul class="options">
-<li class="options">1.34</li>
-<li class="options">1.544</li>
-<li class="correct">1.92</li>
-<li class="options">2.048</li>
-</ul>
-<blockquote>
-<ul>
-<li>❌</li>
-<li>❌</li>
-<li>✔️ 2.048*（30/32）=1.92, 其中 E1 线路的速率为 2.048Mb/s</li>
-<li>❌</li>
-</ul>
-</blockquote>
 </li>
 </ol>
 
@@ -576,7 +505,7 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#数据通信方式"><span class="toc-number">1.</span> <span class="toc-text"> 数据通信方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#通信方向"><span class="toc-number">1.1.</span> <span class="toc-text"> 通信方向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#传输方式"><span class="toc-number">1.2.</span> <span class="toc-text"> 传输方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#按传输方式分"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 按传输方式分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#按同步方式分"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 按同步方式分</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据交换方式"><span class="toc-number">2.</span> <span class="toc-text"> 数据交换方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#电路交换"><span class="toc-number">2.1.</span> <span class="toc-text"> 电路交换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#报文交换"><span class="toc-number">2.2.</span> <span class="toc-text"> 报文交换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分组交换"><span class="toc-number">2.3.</span> <span class="toc-text"> 分组交换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#分组交换的三种方式"><span class="toc-number">2.3.1.</span> <span class="toc-text"> 分组交换的三种方式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分组数据报"><span class="toc-number">2.4.</span> <span class="toc-text"> 分组数据报</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#多路复用技术"><span class="toc-number">3.</span> <span class="toc-text"> 多路复用技术</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#频分复用fdm"><span class="toc-number">3.1.</span> <span class="toc-text"> 频分复用 FDM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#时分复用tdm"><span class="toc-number">3.2.</span> <span class="toc-text"> 时分复用 TDM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#波分复用wdm"><span class="toc-number">3.3.</span> <span class="toc-text"> 波分复用 WDM</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数字传输标准"><span class="toc-number">4.</span> <span class="toc-text"> 数字传输标准</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#t1标准北美和日本使用"><span class="toc-number">4.1.</span> <span class="toc-text"> T1 标准（北美和日本使用）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#t2-t3-t4标准"><span class="toc-number">4.1.1.</span> <span class="toc-text"> T2、T3、T4 标准</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#e1标准中国和欧洲使用"><span class="toc-number">4.2.</span> <span class="toc-text"> E1 标准（中国和欧洲使用）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#e2-e3-e4标准"><span class="toc-number">4.2.1.</span> <span class="toc-text"> E2、E3、E4 标准</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sonet标准美国和sdh标准国际用于光纤网络"><span class="toc-number">4.3.</span> <span class="toc-text"> SONET 标准（美国）和 SDH 标准（国际）— 用于光纤网络</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据检错纠错"><span class="toc-number">5.</span> <span class="toc-text"> 数据检错纠错</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#检错码"><span class="toc-number">5.1.</span> <span class="toc-text"> 检错码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#海明码"><span class="toc-number">5.2.</span> <span class="toc-text"> 海明码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#crc码"><span class="toc-number">5.3.</span> <span class="toc-text"> CRC 码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dhcp的功能"><span class="toc-number">5.4.</span> <span class="toc-text"> DHCP 的功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dhcp三种分配ip地址的机制"><span class="toc-number">5.5.</span> <span class="toc-text"> DHCP 三种分配 IP 地址的机制</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#练习例题"><span class="toc-number">6.</span> <span class="toc-text"> 练习例题</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#数据通信方式"><span class="toc-number">1.</span> <span class="toc-text">数据通信方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#通信方向"><span class="toc-number">1.1.</span> <span class="toc-text">通信方向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#传输方式"><span class="toc-number">1.2.</span> <span class="toc-text">传输方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#按传输方式分"><span class="toc-number">1.2.1.</span> <span class="toc-text">按传输方式分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#按同步方式分"><span class="toc-number">1.2.2.</span> <span class="toc-text">按同步方式分</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据交换方式"><span class="toc-number">2.</span> <span class="toc-text">数据交换方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#电路交换"><span class="toc-number">2.1.</span> <span class="toc-text">电路交换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#报文交换"><span class="toc-number">2.2.</span> <span class="toc-text">报文交换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分组交换"><span class="toc-number">2.3.</span> <span class="toc-text">分组交换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#分组交换的三种方式"><span class="toc-number">2.3.1.</span> <span class="toc-text">分组交换的三种方式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分组数据报"><span class="toc-number">2.4.</span> <span class="toc-text">分组数据报</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#多路复用技术"><span class="toc-number">3.</span> <span class="toc-text">多路复用技术</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#频分复用FDM"><span class="toc-number">3.1.</span> <span class="toc-text">频分复用FDM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#时分复用TDM"><span class="toc-number">3.2.</span> <span class="toc-text">时分复用TDM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#波分复用WDM"><span class="toc-number">3.3.</span> <span class="toc-text">波分复用WDM</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数字传输标准"><span class="toc-number">4.</span> <span class="toc-text">数字传输标准</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#T1标准（北美和日本使用）"><span class="toc-number">4.1.</span> <span class="toc-text">T1标准（北美和日本使用）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#T2、T3、T4标准"><span class="toc-number">4.1.1.</span> <span class="toc-text">T2、T3、T4标准</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#E1标准（中国和欧洲使用）"><span class="toc-number">4.2.</span> <span class="toc-text">E1标准（中国和欧洲使用）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#E2、E3、E4标准"><span class="toc-number">4.2.1.</span> <span class="toc-text">E2、E3、E4标准</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SONET标准（美国）和SDH标准（国际）—-用于光纤网络"><span class="toc-number">4.3.</span> <span class="toc-text">SONET标准（美国）和SDH标准（国际）—-用于光纤网络</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据检错纠错"><span class="toc-number">5.</span> <span class="toc-text">数据检错纠错</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#检错码"><span class="toc-number">5.1.</span> <span class="toc-text">检错码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#海明码"><span class="toc-number">5.2.</span> <span class="toc-text">海明码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CRC码"><span class="toc-number">5.3.</span> <span class="toc-text">CRC码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DHCP的功能"><span class="toc-number">5.4.</span> <span class="toc-text">DHCP的功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DHCP三种分配IP地址的机制"><span class="toc-number">5.5.</span> <span class="toc-text">DHCP三种分配IP地址的机制</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#练习例题"><span class="toc-number">6.</span> <span class="toc-text">练习例题</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -698,50 +627,20 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
-</div>
-
-    <span><a href="/my-blog/%E5%89%8D%E7%AB%AF/String%E5%92%8CObject%E8%A7%A3%E8%AF%BB/" title="String和Object解读">String和Object解读</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
-</div>
-
-    <span><a href="/my-blog/Linux/%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E4%B8%8E%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86/" title="文件权限与目录管理">文件权限与目录管理</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9102/" title="网络互联与互联网02">网络互联与互联网02</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/Linux%E9%85%8D%E7%BD%AE/" title="Linux配置">Linux配置</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+<a href="/my-blog/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" title="分类于 数据分析">数据分析</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%9F%8E%E5%9F%9F%E7%BD%9101/" title="局域网与城域网01">局域网与城域网01</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/network/" title="分类于 网络">网络</a>
-</div>
-
-    <span><a href="/my-blog/network/Servlet%E5%92%8CTomcat/" title="Servlet和Tomcat">Servlet和Tomcat</a></span>
+    <span><a href="/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/CDC%E6%8A%80%E6%9C%AF/" title="CDC技术">CDC技术</a></span>
   </li>
 
       
@@ -758,40 +657,70 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
-</div>
-
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8F%E8%AE%AE%E5%90%8D%E7%A7%B0%E4%B8%8E%E7%AE%80%E4%BB%8B/" title="协议名称与简介">协议名称与简介</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
-</div>
-
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/IP%E5%AD%90%E7%BD%91%E5%88%92%E5%88%86%E4%B8%93%E9%A2%98/" title="IP子网划分专题">IP子网划分专题</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
-</div>
-
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/" title="操作系统基础">操作系统基础</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
 </div>
 
-    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/Fusion%20Compute%E7%AE%80%E4%BB%8B/" title="Fusion Compute简介">Fusion Compute简介</a></span>
+    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E4%BA%91%E8%AE%A1%E7%AE%97%E7%AE%80%E4%BB%8B/" title="云计算简介">云计算简介</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93/" title="多线程笔记总结">多线程笔记总结</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%9F%8E%E5%9F%9F%E7%BD%9102/" title="局域网与城域网02">局域网与城域网02</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+</div>
+
+    <span><a href="/my-blog/%E5%89%8D%E7%AB%AF/%E6%8E%A5%E7%BB%AD%E5%89%8D%E7%AB%AFH5+CSS3/" title="接续前端H5+CSS3">接续前端H5+CSS3</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/" title="类与对象">类与对象</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/" title="计算机硬件基础(部分组成原理)">计算机硬件基础(部分组成原理)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
+</div>
+
+    <span><a href="/my-blog/Linux/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E5%8F%8Ayum%E6%BA%90%E9%97%AE%E9%A2%98/" title="网络配置及yum源问题">网络配置及yum源问题</a></span>
   </li>
 
   </ul>

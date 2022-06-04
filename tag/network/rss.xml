@@ -8,17 +8,17 @@
         <pubDate>Sun, 25 Oct 2020 20:29:30 +0800</pubDate>
         <lastBuildDate>Sun, 25 Oct 2020 20:29:30 +0800</lastBuildDate>
         <category>Java</category>
-        <category>MySQL</category>
-        <category>Linux</category>
         <category>linux</category>
-        <category>云计算</category>
+        <category>Linux</category>
         <category>network</category>
-        <category>git、github</category>
+        <category>MySQL</category>
+        <category>云计算</category>
         <category>JavaScript</category>
+        <category>git、github</category>
+        <category>html</category>
         <category>css</category>
         <category>前端</category>
         <category>数据分析</category>
-        <category>html</category>
         <category>算法与数据结构</category>
         <category>软考网络工程师</category>
         <item>
@@ -27,108 +27,99 @@
             <link>https://peter-pan001.github.io/my-blog/network/Servlet%E5%92%8CTomcat/</link>
             <category>network</category>
             <pubDate>Sun, 25 Oct 2020 20:29:30 +0800</pubDate>
-            <description><![CDATA[ &lt;h2 id=&#34;第一章-何为tomcat&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第一章-何为tomcat&#34;&gt;#&lt;/a&gt; 第一章 何为 Tomcat？&lt;/h2&gt;
-&lt;h3 id=&#34;tomcat概述&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#tomcat概述&#34;&gt;#&lt;/a&gt; Tomcat 概述&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;简而言之，Tomcat 简单的说就是一个运行 JAVA 的网络服务器，&lt;strong&gt;底层是 Socket 的一个程序，它也是 JSP 和 Serlvet 的一个容器。&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;通过 Tomcat 可以使别人访问到自己的网页的一个程序&lt;/li&gt;
+            <description><![CDATA[ &lt;h2 id=&#34;第一章-何为Tomcat？&#34;&gt;&lt;a href=&#34;#第一章-何为Tomcat？&#34; class=&#34;headerlink&#34; title=&#34;第一章 何为Tomcat？&#34;&gt;&lt;/a&gt;第一章 何为Tomcat？&lt;/h2&gt;&lt;h3 id=&#34;Tomcat概述&#34;&gt;&lt;a href=&#34;#Tomcat概述&#34; class=&#34;headerlink&#34; title=&#34;Tomcat概述&#34;&gt;&lt;/a&gt;Tomcat概述&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;简而言之，Tomcat简单的说就是一个运行JAVA的网络服务器，&lt;strong&gt;底层是Socket的一个程序，它也是JSP和Serlvet的一个容器。&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;通过Tomcat可以使别人访问到自己的网页的一个程序&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;tomcat目录解读&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#tomcat目录解读&#34;&gt;#&lt;/a&gt; Tomcat 目录解读&lt;/h3&gt;
-&lt;!-- ![tomcat_dir.png](http://ww1.sinaimg.cn/large/007uxMgDgy1gizs61ddsfj30pk0bawfw.jpg) --&gt;
+&lt;h3 id=&#34;Tomcat目录解读&#34;&gt;&lt;a href=&#34;#Tomcat目录解读&#34; class=&#34;headerlink&#34; title=&#34;Tomcat目录解读&#34;&gt;&lt;/a&gt;Tomcat目录解读&lt;/h3&gt;&lt;!-- ![tomcat_dir.png](http://ww1.sinaimg.cn/large/007uxMgDgy1gizs61ddsfj30pk0bawfw.jpg) --&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://i.loli.net/2020/10/26/XARbpWP4JFDHvY8.jpg&#34; alt=&#34;tomcat_dir.png&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;各个文件的解读&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;bin&lt;/strong&gt;：启动和关闭 tomcat 的 bat 文件&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;conf&lt;/strong&gt;：配置文件
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;server.xml&lt;/strong&gt; 该文件用于配置 server 相关的信息，比如 tomcat 启动的端口号，配置主机 (Host)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;web.xml&lt;/strong&gt; 文件配置与 web 应用（web 应用相当于一个 web 站点）&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;tomcat-user.xml&lt;/strong&gt; 配置用户名密码和相关权限.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;bin&lt;/strong&gt;：启动和关闭tomcat的bat文件&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;conf&lt;/strong&gt;：配置文件&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;server.xml&lt;/strong&gt;该文件用于配置server相关的信息，比如tomcat启动的端口号，配置主机(Host)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;web.xml&lt;/strong&gt;文件配置与web应用（web应用相当于一个web站点）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;tomcat-user.xml&lt;/strong&gt;配置用户名密码和相关权限.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;lib&lt;/strong&gt;：该目录放置运行 tomcat 运行需要的 jar 包&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;lib&lt;/strong&gt;：该目录放置运行tomcat运行需要的jar包&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;logs&lt;/strong&gt;：存放日志，当我们需要查看日志的时候，可以查询信息&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;webapps&lt;/strong&gt;：放置我们的 web 应用&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;work 工作目录&lt;/strong&gt;：该目录用于存放 jsp 被访问后生成对应的 server 文件和.class 文件&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;webapps&lt;/strong&gt;：放置我们的web应用&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;work工作目录&lt;/strong&gt;：该目录用于存放jsp被访问后生成对应的server文件和.class文件 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;第二章-servlet&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第二章-servlet&#34;&gt;#&lt;/a&gt; 第二章 Servlet&lt;/h2&gt;
-&lt;h3 id=&#34;简述-java-servlet&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#简述-java-servlet&#34;&gt;#&lt;/a&gt; 简述 java servlet&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Servlet 本质上就是一个 java 接口，在该接口中包含五个方法，分别是：
+&lt;h2 id=&#34;第二章-Servlet&#34;&gt;&lt;a href=&#34;#第二章-Servlet&#34; class=&#34;headerlink&#34; title=&#34;第二章 Servlet&#34;&gt;&lt;/a&gt;第二章 Servlet&lt;/h2&gt;&lt;h3 id=&#34;简述-java-servlet&#34;&gt;&lt;a href=&#34;#简述-java-servlet&#34; class=&#34;headerlink&#34; title=&#34;简述 java servlet&#34;&gt;&lt;/a&gt;简述 java servlet&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Servlet本质上就是一个java接口，在该接口中包含五个方法，分别是：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;初始化&lt;/li&gt;
 &lt;li&gt;获取配置&lt;/li&gt;
 &lt;li&gt;服务&lt;/li&gt;
 &lt;li&gt;获取信息&lt;/li&gt;
-&lt;li&gt;销毁&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;销毁&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;lang-java&#34;&gt;public interface Servlet {
+
+public void init(ServletConfig config) throws ServletException;
+
+public ServletConfig getServletConfig();
+
+public void service(ServletRequest req, ServletResponse res)
+        throws ServletException, IOException;
+
+public String getServletInfo();
+
+public void destroy();
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;Servlet有什么作用&#34;&gt;&lt;a href=&#34;#Servlet有什么作用&#34; class=&#34;headerlink&#34; title=&#34;Servlet有什么作用&#34;&gt;&lt;/a&gt;Servlet有什么作用&lt;/h3&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption data-lang=&#34;java&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;interface&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Servlet&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;init&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;ServletConfig&lt;/span&gt; config&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;throws&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;ServletException&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;ServletConfig&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;getServletConfig&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;service&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;ServletRequest&lt;/span&gt; req&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;ServletResponse&lt;/span&gt; res&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          &lt;span class=&#34;token keyword&#34;&gt;throws&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;ServletException&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;IOException&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;getServletInfo&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;destroy&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;servlet有什么作用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#servlet有什么作用&#34;&gt;#&lt;/a&gt; Servlet 有什么作用&lt;/h3&gt;
-&lt;ul&gt;
+&lt;/li&gt;
 &lt;li&gt;在网上实现聊天、发帖等交互功能&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;浅谈http协议&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#浅谈http协议&#34;&gt;#&lt;/a&gt; 浅谈 HTTP 协议&lt;/h3&gt;
+&lt;h3 id=&#34;浅谈HTTP协议&#34;&gt;&lt;a href=&#34;#浅谈HTTP协议&#34; class=&#34;headerlink&#34; title=&#34;浅谈HTTP协议&#34;&gt;&lt;/a&gt;浅谈HTTP协议&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;何为HTTP协议&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;何为 HTTP 协议&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;超文本传输协议（HTTP，HyperText Transfer Protocol)&lt;/strong&gt; ~~~~ 是互联网上应用最为广泛的一种网络协议。所有的 WWW 文件都必须遵守这个标准。它是 TCP/IP 协议的一个应用层协议&lt;/li&gt;
-&lt;li&gt;简单来说，HTTP 协议就是客户端和服务器交互的一种通迅的格式。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;超文本传输协议（HTTP，HyperText Transfer Protocol)&lt;/strong&gt; ~~~~是互联网上应用最为广泛的一种网络协议。所有的WWW文件都必须遵守这个标准。它是TCP/IP协议的一个应用层协议&lt;/li&gt;
+&lt;li&gt;简单来说，HTTP协议就是客户端和服务器交互的一种通迅的格式。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;HTTP 请求&lt;/strong&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;HTTP请求&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;浏览器向服务器请求某个 web 资源时，称之为浏览器向服务器发送了一个 http 请求。&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;浏览器向服务器请求某个web资源时，称之为浏览器向服务器发送了一个http请求。&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;一个完整 http 请求应该包含三个部分：&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;一个完整http请求应该包含三个部分：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;请求行&lt;/strong&gt; ----- 描述客户端 client 的请求方式、请求资源名称以及 HTTP 版本号&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;多个消息头&lt;/strong&gt; ----- 描述客户端请求哪台主机、以及客户端的环境信息&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;请求行&lt;/strong&gt;——-描述客户端client的请求方式、请求资源名称以及HTTP版本号&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;多个消息头&lt;/strong&gt;——-描述客户端请求哪台主机、以及客户端的环境信息&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;一个空行&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;请求行&lt;/strong&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;请求行&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;请求行中的 GET 称之为请求方式&lt;/strong&gt;，请求方式有： &lt;code&gt;POST,GET,HEAD,OPTIONS,DELETE,TRACE,PUT&lt;/code&gt;&lt;/p&gt;
+&lt;li&gt;&lt;strong&gt;请求行中的GET称之为请求方式&lt;/strong&gt;,请求方式有：&lt;code&gt;POST,GET,HEAD,OPTIONS,DELETE,TRACE,PUT&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;常用的方法&lt;/strong&gt;：&lt;strong&gt;POST、GET&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;一般来说，当我们点击超链接，通过地址栏访问都是get请求方式。通过表单提交的数据一般是post方式。&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;常用的方法&lt;/strong&gt;：&lt;strong&gt;POST、GET&lt;/strong&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;可以简单理解GET方式用来查询数据,POST方式用来提交数据，get的提交速度比post快&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;一般来说，当我们点击超链接，通过地址栏访问都是 get 请求方式。通过表单提交的数据一般是 post 方式。&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;GET方式：在URL地址后附带的参数是有限制的，其数据容量通常不能超过1K&lt;/strong&gt;。&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;可以简单理解 GET 方式用来查询数据，POST 方式用来提交数据，get 的提交速度比 post 快&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;GET 方式：在 URL 地址后附带的参数是有限制的，其数据容量通常不能超过 1K&lt;/strong&gt;。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;POST 方式：可以在请求的实体内容中向服务器发送数据，传送的数据量无限制&lt;/strong&gt;。&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;POST方式：可以在请求的实体内容中向服务器发送数据，传送的数据量无限制&lt;/strong&gt;。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;HTTP 响应&lt;/strong&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;HTTP响应&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;一个 HTTP 响应代表着服务器向浏览器回送数据&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;一个HTTP响应代表着服务器向浏览器回送数据&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;一个完整的 HTTP 响应应该包含四个部分:&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;一个完整的HTTP响应应该包含四个部分:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;一个状态行&lt;/li&gt;
 &lt;li&gt;多个消息头&lt;/li&gt;
@@ -136,14 +127,12 @@
 &lt;li&gt;实体内容&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;状态行&lt;/strong&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;状态行&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;格式：HTTP 版本号　状态码　原因叙述&lt;/li&gt;
+&lt;li&gt;格式：HTTP版本号　状态码　原因叙述&lt;/li&gt;
 &lt;li&gt;状态行：HTTP/1.1 200 OK&lt;/li&gt;
-&lt;li&gt;状态码用于表示服务器对请求的处理结果，它是一个三位的十进制数。响应状态码分为 5 类&lt;/li&gt;
-&lt;/ul&gt;
-  &lt;!-- ![servletzt.png](http://ww1.sinaimg.cn/large/007uxMgDgy1gizs7b2xu7j30m806iwha.jpg) --&gt;
+&lt;li&gt;&lt;p&gt;状态码用于表示服务器对请求的处理结果，它是一个三位的十进制数。响应状态码分为5类&lt;/p&gt;
+&lt;!-- ![servletzt.png](http://ww1.sinaimg.cn/large/007uxMgDgy1gizs7b2xu7j30m806iwha.jpg) --&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://i.loli.net/2020/10/26/FoCInYbJ6SvKXmV.png&#34; alt=&#34;servletzt.png&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -151,50 +140,65 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;javaweb目录&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#javaweb目录&#34;&gt;#&lt;/a&gt; JavaWeb 目录&lt;/h3&gt;
-&lt;!-- ![webdir.png](http://ww1.sinaimg.cn/large/007uxMgDgy1gizs7w9yl1j30w00i0q3a.jpg) --&gt;
+&lt;h3 id=&#34;JavaWeb目录&#34;&gt;&lt;a href=&#34;#JavaWeb目录&#34; class=&#34;headerlink&#34; title=&#34;JavaWeb目录&#34;&gt;&lt;/a&gt;JavaWeb目录&lt;/h3&gt;&lt;!-- ![webdir.png](http://ww1.sinaimg.cn/large/007uxMgDgy1gizs7w9yl1j30w00i0q3a.jpg) --&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://i.loli.net/2020/10/26/IVYlJMZNU8shmjb.png&#34; alt=&#34;webdir.png&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;WEB-INF 目录下的资源是不能直接被浏览器访问的&lt;/li&gt;
-&lt;li&gt;web.xml 文件是 web 程序的主要配置文件&lt;/li&gt;
-&lt;li&gt;所有的 classes 文件都放在 classes 目录下&lt;/li&gt;
-&lt;li&gt;jar 文件放在 lib 目录下&lt;/li&gt;
+&lt;li&gt;WEB-INF目录下的资源是不能直接被浏览器访问的&lt;/li&gt;
+&lt;li&gt;web.xml文件是web程序的主要配置文件&lt;/li&gt;
+&lt;li&gt;所有的classes文件都放在classes目录下&lt;/li&gt;
+&lt;li&gt;jar文件放在lib目录下&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;servlet生命周期&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#servlet生命周期&#34;&gt;#&lt;/a&gt; Servlet 生命周期&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;加载 Servlet&lt;/strong&gt;。当 Tomcat 第一次访问 Servlet 的时候，&lt;strong&gt;Tomcat 会负责创建 Servlet 的实例&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;初始化&lt;/strong&gt;。当 Servlet 被实例化后，Tomcat 会调用 init () 方法初始化这个对象&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;处理服务&lt;/strong&gt;。当浏览器访问 Servlet 的时候，Servlet 会调用 service () 方法处理请求&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;销毁&lt;/strong&gt;。当 Tomcat 关闭时或者检测到 Servlet 要从 Tomcat 删除的时候会自动调用 destroy () 方法，让该实例释放掉所占的资源。一个 Servlet 如果长时间不被使用的话，也会被 Tomcat 自动销毁&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;卸载&lt;/strong&gt;。当 Servlet 调用完 destroy () 方法后，等待垃圾回收。如果有需要再次使用这个 Servlet，会重新调用 init () 方法进行初始化操作。&lt;/li&gt;
+&lt;h3 id=&#34;Servlet生命周期&#34;&gt;&lt;a href=&#34;#Servlet生命周期&#34; class=&#34;headerlink&#34; title=&#34;Servlet生命周期&#34;&gt;&lt;/a&gt;Servlet生命周期&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;加载Servlet&lt;/strong&gt;。当Tomcat第一次访问Servlet的时候，&lt;strong&gt;Tomcat会负责创建Servlet的实例&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;初始化&lt;/strong&gt;。当Servlet被实例化后，Tomcat会调用init()方法初始化这个对象&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;处理服务&lt;/strong&gt;。当浏览器访问Servlet的时候，Servlet 会调用service()方法处理请求&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;销毁&lt;/strong&gt;。当Tomcat关闭时或者检测到Servlet要从Tomcat删除的时候会自动调用destroy()方法，让该实例释放掉所占的资源。一个Servlet如果长时间不被使用的话，也会被Tomcat自动销毁&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;卸载&lt;/strong&gt;。当Servlet调用完destroy()方法后，等待垃圾回收。如果有需要再次使用这个Servlet，会重新调用init()方法进行初始化操作。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;总结：只要访问 Servlet，service () 就会被调用。init () 只有第一次访问 Servlet 的时候才会被调用。&lt;br&gt;
-destroy () 只有在 Tomcat 关闭的时候才会被调用。&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;总结：只要访问Servlet，service()就会被调用。init()只有第一次访问Servlet的时候才会被调用。&lt;br&gt;destroy()只有在Tomcat关闭的时候才会被调用。&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;编写一个简单的servlet请求&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#编写一个简单的servlet请求&#34;&gt;#&lt;/a&gt; 编写一个简单的 servlet 请求&lt;/h3&gt;
-&lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption data-lang=&#34;java&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token namespace&#34;&gt;javax&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;servlet&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;ServletException&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token namespace&#34;&gt;javax&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;servlet&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;annotation&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;WebServlet&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token namespace&#34;&gt;javax&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;servlet&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;http&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;HttpServlet&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token namespace&#34;&gt;javax&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;servlet&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;http&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;HttpServletRequest&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token namespace&#34;&gt;javax&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;servlet&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;http&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;HttpServletResponse&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token namespace&#34;&gt;java&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;io&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;IOException&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token namespace&#34;&gt;java&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;io&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;PrintWriter&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token annotation punctuation&#34;&gt;@WebServlet&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;name &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;Servlet&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Servlet&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;extends&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;HttpServlet&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;protected&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;doPost&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;HttpServletRequest&lt;/span&gt; request&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;HttpServletResponse&lt;/span&gt; response&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;throws&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;ServletException&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;IOException&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;protected&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;doGet&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;HttpServletRequest&lt;/span&gt; request&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;HttpServletResponse&lt;/span&gt; response&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;throws&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;ServletException&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;IOException&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;super&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;doPost&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;request&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;response&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        response&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;setContentType&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;text/html;charset=UTF-8&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token class-name&#34;&gt;PrintWriter&lt;/span&gt; out &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; response&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;getWriter&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        out&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;hello world,servlet&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        out&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;close&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;hr&gt;
-&lt;h3 id=&#34;servlet的调用图&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#servlet的调用图&#34;&gt;#&lt;/a&gt; Servlet 的调用图&lt;/h3&gt;
-&lt;!-- ![servlet01.png](http://ww1.sinaimg.cn/large/007uxMgDgy1gizs8khnchj313g0n0dkr.jpg) --&gt;
+&lt;h3 id=&#34;编写一个简单的servlet请求&#34;&gt;&lt;a href=&#34;#编写一个简单的servlet请求&#34; class=&#34;headerlink&#34; title=&#34;编写一个简单的servlet请求&#34;&gt;&lt;/a&gt;编写一个简单的servlet请求&lt;/h3&gt;&lt;pre&gt;&lt;code class=&#34;lang-java&#34;&gt;import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+@WebServlet(name = &amp;quot;Servlet&amp;quot;)
+public class Servlet extends HttpServlet {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        super.doPost(request,response);
+        response.setContentType(&amp;quot;text/html;charset=UTF-8&amp;quot;);
+        PrintWriter out = response.getWriter();
+        out.println(&amp;quot;hello world,servlet&amp;quot;);
+        out.close();
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;Servlet的调用图&#34;&gt;&lt;a href=&#34;#Servlet的调用图&#34; class=&#34;headerlink&#34; title=&#34;Servlet的调用图&#34;&gt;&lt;/a&gt;Servlet的调用图&lt;/h3&gt;&lt;!-- ![servlet01.png](http://ww1.sinaimg.cn/large/007uxMgDgy1gizs8khnchj313g0n0dkr.jpg) --&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://i.loli.net/2020/10/26/u4EhXdURHD7Kn2T.png&#34; alt=&#34;servlet01.png&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;servlet细节&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#servlet细节&#34;&gt;#&lt;/a&gt; Servlet 细节&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;一个已经注册的 Servlet 可以被多次映射&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;同一个 Servlet 可以被映射到多个 URL 中&lt;/li&gt;
+&lt;h3 id=&#34;Servlet细节&#34;&gt;&lt;a href=&#34;#Servlet细节&#34; class=&#34;headerlink&#34; title=&#34;Servlet细节&#34;&gt;&lt;/a&gt;Servlet细节&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;一个已经注册的Servlet可以被多次映射&lt;/strong&gt;&lt;ul&gt;
+&lt;li&gt;同一个Servlet可以被映射到多个URL中&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Servlet 映射的 URL 可以使用通配符&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;通配符的两种格式
-&lt;ul&gt;
-&lt;li&gt;*. 扩展名&lt;/li&gt;
-&lt;li&gt;正斜杠 / 开头并以 /* 结尾
-&lt;ul&gt;
-&lt;li&gt;其中 *. 扩展名的优先级最低&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Servlet映射的URL可以使用通配符&lt;/strong&gt;&lt;ul&gt;
+&lt;li&gt;通配符的两种格式&lt;ul&gt;
+&lt;li&gt;*.扩展名&lt;/li&gt;
+&lt;li&gt;正斜杠/开头并以/*结尾&lt;ul&gt;
+&lt;li&gt;其中*.扩展名的优先级最低&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -202,80 +206,75 @@ destroy () 只有在 Tomcat 关闭的时候才会被调用。&lt;/strong&gt;&lt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;servlet是单例的&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#servlet是单例的&#34;&gt;#&lt;/a&gt; Servlet 是单例的&lt;/h3&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;为什么servlet是单例的&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#为什么servlet是单例的&#34;&gt;#&lt;/a&gt; 为什么 Servlet 是单例的？&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;浏览器多次对 Servlet 的请求&lt;/strong&gt;，一般情况下，服务器只创建一个 Servlet 对象，也就是说，&lt;strong&gt;Servlet 对象一旦创建类&lt;/strong&gt;，&lt;strong&gt;就会驻留在内存中，后续的请求做服务，直到服务器关闭&lt;/strong&gt;&lt;/li&gt;
+&lt;h3 id=&#34;Servlet是单例的&#34;&gt;&lt;a href=&#34;#Servlet是单例的&#34; class=&#34;headerlink&#34; title=&#34;Servlet是单例的&#34;&gt;&lt;/a&gt;Servlet是单例的&lt;/h3&gt;&lt;hr&gt;
+&lt;h3 id=&#34;为什么Servlet是单例的？&#34;&gt;&lt;a href=&#34;#为什么Servlet是单例的？&#34; class=&#34;headerlink&#34; title=&#34;为什么Servlet是单例的？&#34;&gt;&lt;/a&gt;为什么Servlet是单例的？&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;浏览器多次对Servlet的请求&lt;/strong&gt;，一般情况下，服务器只创建一个Servlet对象，也就是说，&lt;strong&gt;Servlet对象一旦创建类&lt;/strong&gt;，&lt;strong&gt;就会驻留在内存中，后续的请求做服务，直到服务器关闭&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;每次访问请求对象和响应对象都是新的&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#每次访问请求对象和响应对象都是新的&#34;&gt;#&lt;/a&gt; 每次访问请求对象和响应对象都是新的&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;对于每次访问要求，&lt;strong&gt;Servlet 引擎都会&lt;/strong&gt;创建一个新的 HttpServletRequest 请求对象和一个新的 HttpServletResponse 响应对象&lt;/strong&gt;，然后将这两个对象&lt;strong&gt;作为参数传递给它调用的 Servlet 的 service () 方法，service 方法再跟进请求方式分别调用 doXxx 方法&lt;/strong&gt;&lt;/li&gt;
+&lt;h3 id=&#34;每次访问请求对象和响应对象都是新的&#34;&gt;&lt;a href=&#34;#每次访问请求对象和响应对象都是新的&#34; class=&#34;headerlink&#34; title=&#34;每次访问请求对象和响应对象都是新的&#34;&gt;&lt;/a&gt;每次访问请求对象和响应对象都是新的&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;对于每次访问要求，&lt;/strong&gt;Servlet引擎都会&lt;strong&gt;创建一个新的HttpServletRequest请求对象和一个新的HttpServletResponse响应对象&lt;/strong&gt;，然后将这两个对象&lt;strong&gt;作为参数传递给它调用的Servlet的service()方法，service方法再跟进请求方式分别调用doXxx方法&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;线程安全问题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#线程安全问题&#34;&gt;#&lt;/a&gt; 线程安全问题&lt;/h3&gt;
+&lt;h3 id=&#34;线程安全问题&#34;&gt;&lt;a href=&#34;#线程安全问题&#34; class=&#34;headerlink&#34; title=&#34;线程安全问题&#34;&gt;&lt;/a&gt;线程安全问题&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;当多个用户访问Servlet的时候，服务器会为每个用户创建一个线程，当多个用户并发Servlet共享资源的时候就会出现线程安全问题&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;当多个用户访问 Servlet 的时候，服务器会为每个用户创建一个线程，当多个用户并发 Servlet 共享资源的时候就会出现线程安全问题&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;如果一个变量需要多个用户分享，则应当在访问该变量的时候，加入同步机制：&lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption data-lang=&#34;java&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;synchronized&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;对象名&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
-&lt;li&gt;如果一个变量不需要共享，则直接在 &lt;code&gt;doGet()&lt;/code&gt;  或者 &lt;code&gt;doPost()&lt;/code&gt;  定义，这样不会存在线程安全问题&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;如果一个变量需要多个用户分享，则应当在访问该变量的时候，加入同步机制：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;lang-java&#34;&gt;synchronized(对象名){
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;如果一个变量不需要共享,则直接在&lt;code&gt;doGet()&lt;/code&gt;或者&lt;code&gt;doPost()&lt;/code&gt; 定义，这样不会存在线程安全问题&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;servletconfig对象&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#servletconfig对象&#34;&gt;#&lt;/a&gt; ServletConfig 对象&lt;/h3&gt;
-&lt;h4 id=&#34;何为servletconfig对象&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#何为servletconfig对象&#34;&gt;#&lt;/a&gt; 何为 ServletConfig 对象&lt;/h4&gt;
-&lt;hr&gt;
-&lt;blockquote&gt;
-&lt;p&gt;通过此对象可以读取 Web.xml 中配置的初始化参数&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;ul&gt;
-&lt;li&gt;作用：
-&lt;ul&gt;
+&lt;h3 id=&#34;ServletConfig对象&#34;&gt;&lt;a href=&#34;#ServletConfig对象&#34; class=&#34;headerlink&#34; title=&#34;ServletConfig对象&#34;&gt;&lt;/a&gt;ServletConfig对象&lt;/h3&gt;&lt;h4 id=&#34;何为ServletConfig对象&#34;&gt;&lt;a href=&#34;#何为ServletConfig对象&#34; class=&#34;headerlink&#34; title=&#34;何为ServletConfig对象&#34;&gt;&lt;/a&gt;何为ServletConfig对象&lt;/h4&gt;&lt;hr&gt;
+&lt;h2 id=&#34;gt-通过此对象可以读取Web-xml中配置的初始化参数&#34;&gt;&lt;a href=&#34;#gt-通过此对象可以读取Web-xml中配置的初始化参数&#34; class=&#34;headerlink&#34; title=&#34;&amp;gt; 通过此对象可以读取Web.xml中配置的初始化参数&#34;&gt;&lt;/a&gt;&amp;gt; 通过此对象可以读取Web.xml中配置的初始化参数&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;作用：&lt;ul&gt;
 &lt;li&gt;大大提高程序的灵活性&lt;/li&gt;
-&lt;li&gt;当需要修改时，只需更改配置文件 Web.xml 即可&lt;/li&gt;
+&lt;li&gt;当需要修改时，只需更改配置文件Web.xml即可&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;servletcontext对象&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#servletcontext对象&#34;&gt;#&lt;/a&gt; ServletContext 对象&lt;/h3&gt;
-&lt;h4 id=&#34;何为servletcontext对象&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#何为servletcontext对象&#34;&gt;#&lt;/a&gt; 何为 ServletContext 对象&lt;/h4&gt;
-&lt;hr&gt;
-&lt;blockquote&gt;
-&lt;p&gt;当 Tomcat 启动的时候，就会创建一个 ServletContext 对象，它代表着当前 Web 站点&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;ul&gt;
-&lt;li&gt;作用：
-&lt;ul&gt;
-&lt;li&gt;ServletContext 代表当前 Web 站点，那么&lt;strong&gt;所有 Servlet 都共享一个 ServletContext 对象&lt;/strong&gt;，因此&lt;strong&gt; Servlet 之间可以通过 ServletContext 实现通讯&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;ServletConfig 获取的是配置单个 Servlet 的参数信息，&lt;strong&gt;ServletContext 可以获取的是配置整个 Web 站点的参数信息&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;利用 ServletContext 读取 web 站点的资源文件&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;实现 Servlet 转发&lt;/strong&gt;&lt;/li&gt;
+&lt;h3 id=&#34;ServletContext对象&#34;&gt;&lt;a href=&#34;#ServletContext对象&#34; class=&#34;headerlink&#34; title=&#34;ServletContext对象&#34;&gt;&lt;/a&gt;ServletContext对象&lt;/h3&gt;&lt;h4 id=&#34;何为ServletContext对象&#34;&gt;&lt;a href=&#34;#何为ServletContext对象&#34; class=&#34;headerlink&#34; title=&#34;何为ServletContext对象&#34;&gt;&lt;/a&gt;何为ServletContext对象&lt;/h4&gt;&lt;hr&gt;
+&lt;h2 id=&#34;gt-当Tomcat启动的时候，就会创建一个ServletContext对象，它代表着当前Web站点&#34;&gt;&lt;a href=&#34;#gt-当Tomcat启动的时候，就会创建一个ServletContext对象，它代表着当前Web站点&#34; class=&#34;headerlink&#34; title=&#34;&amp;gt; 当Tomcat启动的时候，就会创建一个ServletContext对象，它代表着当前Web站点&#34;&gt;&lt;/a&gt;&amp;gt; 当Tomcat启动的时候，就会创建一个ServletContext对象，它代表着当前Web站点&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;作用：&lt;ul&gt;
+&lt;li&gt;ServletContext代表当前Web站点，那么&lt;strong&gt;所有Servlet都共享一个ServletContext对象&lt;/strong&gt;，因此&lt;strong&gt;Servlet之间可以通过ServletContext实现通讯&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;ServletConfig获取的是配置单个Servlet的参数信息，&lt;strong&gt;ServletContext可以获取的是配置整个Web站点的参数信息&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;利用ServletContext读取web站点的资源文件&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;实现Servlet转发&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;第三章-request和response&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第三章-request和response&#34;&gt;#&lt;/a&gt; 第三章 request 和 response&lt;/h2&gt;
-&lt;h3 id=&#34;request-response对象&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#request-response对象&#34;&gt;#&lt;/a&gt; request、response 对象&lt;/h3&gt;
-&lt;hr&gt;
-&lt;blockquote&gt;
-&lt;p&gt; Tomcat 收到客户端的 HTTP 请求，会针对每一次请求，分别创建一个代表请求的 **request 对象和代表响应的 response 对象&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;ul&gt;
-&lt;li&gt;我们在获取浏览器传输过来的数据时，通过使用 request 对象即可&lt;/li&gt;
-&lt;li&gt;如果要向浏览器输出数据，则需要使用 response 对象&lt;/li&gt;
+&lt;h2 id=&#34;第三章-request和response&#34;&gt;&lt;a href=&#34;#第三章-request和response&#34; class=&#34;headerlink&#34; title=&#34;第三章 request和response&#34;&gt;&lt;/a&gt;第三章 request和response&lt;/h2&gt;&lt;h3 id=&#34;request、response对象&#34;&gt;&lt;a href=&#34;#request、response对象&#34; class=&#34;headerlink&#34; title=&#34;request、response对象&#34;&gt;&lt;/a&gt;request、response对象&lt;/h3&gt;&lt;hr&gt;
+&lt;h2 id=&#34;gt-nbsp-Tomcat收到客户端的HTTP请求，会针对每一次请求，分别创建一个代表请求的-request对象和代表响应的response对象&#34;&gt;&lt;a href=&#34;#gt-nbsp-Tomcat收到客户端的HTTP请求，会针对每一次请求，分别创建一个代表请求的-request对象和代表响应的response对象&#34; class=&#34;headerlink&#34; title=&#34;&amp;gt;&amp;nbsp;Tomcat收到客户端的HTTP请求，会针对每一次请求，分别创建一个代表请求的**request对象和代表响应的response对象&#34;&gt;&lt;/a&gt;&amp;gt;&amp;nbsp;Tomcat收到客户端的HTTP请求，会针对每一次请求，分别创建一个代表请求的**request对象和代表响应的response对象&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;我们在获取浏览器传输过来的数据时，通过使用request对象即可&lt;/li&gt;
+&lt;li&gt;如果要向浏览器输出数据，则需要使用response对象&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;什么是httpservletresponse对象&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#什么是httpservletresponse对象&#34;&gt;#&lt;/a&gt; 什么是 HttpServletResponse 对象？&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;HTTP 响应由&lt;strong&gt;状态行、实体内容、消息头和一个空行组成&lt;/strong&gt;。HttpServletResponse 对象就封装了 HTTP 响应的信息&lt;/li&gt;
+&lt;h3 id=&#34;什么是HttpServletResponse对象？&#34;&gt;&lt;a href=&#34;#什么是HttpServletResponse对象？&#34; class=&#34;headerlink&#34; title=&#34;什么是HttpServletResponse对象？&#34;&gt;&lt;/a&gt;什么是HttpServletResponse对象？&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;HTTP响应由&lt;strong&gt;状态行、实体内容、消息头和一个空行组成&lt;/strong&gt;。HttpServletResponse对象就封装了HTTP响应的信息&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;调用getoutputstream方法向浏览器输出数据&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#调用getoutputstream方法向浏览器输出数据&#34;&gt;#&lt;/a&gt; 调用 getOutputStream () 方法向浏览器输出数据&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;代码：&lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption data-lang=&#34;java&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;// 获取 ServletOutputStream 对象&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token class-name&#34;&gt;ServletOutputStream&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;ServletOutputStream&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; response。&lt;span class=&#34;token function&#34;&gt;getOutputStream&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token comment&#34;&gt;// 使用 meta 标签和 http 消息头，告诉浏览器回送数据的编码和格式&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  servletOutputStream&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;write&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;&amp;lt;meta http-equiv=&#39;content-type&#39; content=&#39;text/html;charset=UTF-8&#39;&gt;&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;getBytes&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  servletOutputStream&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;write&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;我是吴亦凡&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;getBytes&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;UTF-8&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;h4 id=&#34;调用getOutputStream-方法向浏览器输出数据&#34;&gt;&lt;a href=&#34;#调用getOutputStream-方法向浏览器输出数据&#34; class=&#34;headerlink&#34; title=&#34;调用getOutputStream()方法向浏览器输出数据&#34;&gt;&lt;/a&gt;调用getOutputStream()方法向浏览器输出数据&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;lang-java&#34;&gt;  //获取ServletOutputStream对象
+  ServletOutputStream ServletOutputStream= response。getOutputStream();
+
+  //使用meta标签和http消息头，告诉浏览器回送数据的编码和格式
+  servletOutputStream.write(&amp;quot;&amp;lt;meta http-equiv=&amp;#39;content-type&amp;#39; content=&amp;#39;text/html;charset=UTF-8&amp;#39;&amp;gt;&amp;quot;.getBytes());
+
+  servletOutputStream.write(&amp;quot;我是吴亦凡&amp;quot;.getBytes(&amp;quot;UTF-8&amp;quot;));
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;调用getwriter方法向浏览器输出数据&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#调用getwriter方法向浏览器输出数据&#34;&gt;#&lt;/a&gt; 调用 getWriter () 方法向浏览器输出数据&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;代码：&lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption data-lang=&#34;java&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;// 设置浏览器用 UTF-8 编码显示数据&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;response&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;setContentType&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;text/html;charset=UTF-8&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;// 获取到 printwriter 对象&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token class-name&#34;&gt;PrintWriter&lt;/span&gt; printwriter &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;response&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;getWriter&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;printWriter&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;write&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;完成finish&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;h4 id=&#34;调用getWriter-方法向浏览器输出数据&#34;&gt;&lt;a href=&#34;#调用getWriter-方法向浏览器输出数据&#34; class=&#34;headerlink&#34; title=&#34;调用getWriter()方法向浏览器输出数据&#34;&gt;&lt;/a&gt;调用getWriter()方法向浏览器输出数据&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;lang-java&#34;&gt;  //设置浏览器用UTF-8编码显示数据
+  response.setContentType(&amp;quot;text/html;charset=UTF-8&amp;quot;);
+
+  //获取到printwriter对象
+  PrintWriter printwriter =response.getWriter();
+  printWriter.write(&amp;quot;完成finish&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
  ]]></description>
         </item>

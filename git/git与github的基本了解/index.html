@@ -147,165 +147,107 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
     
 
      <!-- 图片文件在博客目录 -->
-<h2 id="git的基本概述"><a class="markdownIt-Anchor" href="#git的基本概述">#</a> git 的基本概述</h2>
-<h3 id="简介"><a class="markdownIt-Anchor" href="#简介">#</a> 简介</h3>
-<ul>
-<li>
-<p><strong>git（分布式版本控制系统）</strong></p>
+<h2 id="git的基本概述"><a href="#git的基本概述" class="headerlink" title="git的基本概述"></a>git的基本概述</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><ul>
+<li><p><strong>git（分布式版本控制系统）</strong></p>
 </li>
-<li>
-<p><strong>git</strong>  是目前世界上最先进的分布式版本控制系统（没有之一）！</p>
+<li><p><strong>git</strong> &nbsp;是目前世界上最先进的分布式版本控制系统（没有之一）！</p>
 </li>
-<li>
-<p><strong>Linus</strong>  花了两周时间自己用 C 写了一个分布式版本控制系统，这就是 Git！一个月之内，Linux 系统的源码已经由 Git 管理了！牛是怎么定义的呢？大家可以体会一下。</p>
+<li><p><strong>Linus</strong> &nbsp;花了两周时间自己用C写了一个分布式版本控制系统，这就是Git！一个月之内，Linux系统的源码已经由Git管理了！牛是怎么定义的呢？大家可以体会一下。</p>
 </li>
-<li>
-<p><strong>Git</strong>  迅速成为最流行的分布式版本控制系统，尤其是 2008 年，GitHub 网站上线了，它为开源项目免费提供 Git 存储，无数开源项目开始迁移至 GitHub，包括 jQuery，PHP，Ruby 等等。</p>
+<li><p><strong>Git</strong> &nbsp;迅速成为最流行的分布式版本控制系统，尤其是2008年，GitHub网站上线了，它为开源项目免费提供Git存储，无数开源项目开始迁移至GitHub，包括jQuery，PHP，Ruby等等。</p>
 </li>
-<li>
-<p>历史就是这么偶然，如果不是当年 BitMover 公司威胁 Linux 社区，可能现在我们就没有免费而超级好用的 Git 了。</p>
+<li><p>历史就是这么偶然，如果不是当年BitMover公司威胁Linux社区，可能现在我们就没有免费而超级好用的Git了。</p>
 </li>
 </ul>
-<h3 id="集中式和分布式"><a class="markdownIt-Anchor" href="#集中式和分布式">#</a> 集中式和分布式</h3>
-<ul>
-<li>
-<p>Linux 旗下的 CVS 和 SVN 都是集中式的版本控制系统，但 git 是分布式的版本控制系统</p>
+<h3 id="集中式和分布式"><a href="#集中式和分布式" class="headerlink" title="集中式和分布式"></a>集中式和分布式</h3><ul>
+<li><p>Linux旗下的CVS和SVN都是集中式的版本控制系统，但git是分布式的版本控制系统</p>
 </li>
-<li>
-<p><strong>何为集中式版本控制系统？</strong></p>
+<li><p><strong>何为集中式版本控制系统？</strong></p>
 <ul>
-<li>版本库是集中存放在中央服务器的，而干活的时候，用的都是自己的电脑，所以要先从中央服务器取得最新的版本，然后开始干活，干完活了，再把自己的活推送给中央服务器。中央服务器就好比是一个图书馆，你要改一本书，必须先从图书馆借出来，然后回到家自己改，改完了，再放回图书馆。</li>
-</ul>
- <!-- ![image-20200619205612791.png](http://ww1.sinaimg.cn/large/007uxMgDgy1gizt4sfy8aj30lq0gk77a.jpg) -->
+<li><p>版本库是集中存放在中央服务器的，而干活的时候，用的都是自己的电脑，所以要先从中央服务器取得最新的版本，然后开始干活，干完活了，再把自己的活推送给中央服务器。中央服务器就好比是一个图书馆，你要改一本书，必须先从图书馆借出来，然后回到家自己改，改完了，再放回图书馆。</p>
+<!-- ![image-20200619205612791.png](http://ww1.sinaimg.cn/large/007uxMgDgy1gizt4sfy8aj30lq0gk77a.jpg) -->
 <p><img data-src="https://i.loli.net/2020/10/26/ZE9hXMW3YsPwJdL.jpg" alt="gitfunbu.jpg"></p>
 </li>
 </ul>
-<h3 id="何为分布式版本控制系统"><a class="markdownIt-Anchor" href="#何为分布式版本控制系统">#</a> 何为分布式版本控制系统？</h3>
+<h3 id="何为分布式版本控制系统？"><a href="#何为分布式版本控制系统？" class="headerlink" title="何为分布式版本控制系统？"></a>何为分布式版本控制系统？</h3></li>
+</ul>
 <ul>
-<li>分布式版本控制系统根本没有 “中央服务器”，每个人的电脑上都是一个完整的版本库，这样，你工作的时候，就不需要联网了，因为版本库就在你自己的电脑上。既然每个人电脑上都有一个完整的版本库，那多个人如何协作呢？比方说你在自己电脑上改了文件 A，你的同事也在他的电脑上改了文件 A，这时，你们俩之间只需把各自的修改推送给对方，就可以互相看到对方的修改了。</li>
+<li>分布式版本控制系统根本没有“中央服务器”，每个人的电脑上都是一个完整的版本库，这样，你工作的时候，就不需要联网了，因为版本库就在你自己的电脑上。既然每个人电脑上都有一个完整的版本库，那多个人如何协作呢？比方说你在自己电脑上改了文件A，你的同事也在他的电脑上改了文件A，这时，你们俩之间只需把各自的修改推送给对方，就可以互相看到对方的修改了。</li>
 </ul>
 <!-- ![image-20200619210019521.png](http://ww1.sinaimg.cn/large/007uxMgDgy1gizt5wmg7wj30m60gfdj7.jpg) -->
 <p><img data-src="https://i.loli.net/2020/10/26/CRZxh47WeIM9byv.jpg" alt="gitfenbu2.jpg"></p>
 <ul>
-<li>
-<p>集中式 VS 分布式</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">集中式（SVN）</th>
-<th style="text-align:center">分布式（Git）</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">是否有中央服务器</td>
-<td style="text-align:center">有。开发人员需要从中央服务器获得最新版本的项目然后在本地开发，开发完推送给中央服务器。因此脱离服务器开发者是几乎无法工作的</td>
-<td style="text-align:center">没有中央服务器，开发人员本地都有 Local Repository</td>
-</tr>
-<tr>
-<td style="text-align:center">网络依赖</td>
-<td style="text-align:center">必须要联网才能工作，而且对网络的依赖性较强，如果推送的文件比较大而且网络状况欠佳，则提交文件的速度会受到很大的限制</td>
-<td style="text-align:center">分布式在没有网络的情况下也可以执行 <code>commit</code> 、查看版本提交记录、以及分支操作，在有网络的情况下执行 <code>push</code>  到  <code>Remote Repository</code> 。</td>
-</tr>
-<tr>
-<td style="text-align:center">文件存储格式</td>
-<td style="text-align:center">按照原始文件存储，体积较大</td>
-<td style="text-align:center">按照元数据方式存储，体积很小</td>
-</tr>
-<tr>
-<td style="text-align:center">是否有版本号</td>
-<td style="text-align:center">有</td>
-<td style="text-align:center">没有</td>
-</tr>
-<tr>
-<td style="text-align:center">分支操作的影响</td>
-<td style="text-align:center">创建新的分支则所有的人都会拥有和你一样的分支</td>
-<td style="text-align:center">分支操作不会影响其他开发人员</td>
-</tr>
-<tr>
-<td style="text-align:center">提交</td>
-<td style="text-align:center">提交的文件会直接记录到中央版本库</td>
-<td style="text-align:center">提交是本地操作，需要执行 push 操作才会到主要版本库</td>
-</tr>
-</tbody>
-</table>
+<li><p>集中式VS分布式</p>
+<p> |                  |                        集中式（SVN）                         |                        分布式（Git）                         |<br> | :———————: | :—————————————————————————————: | :—————————————————————————————: |<br> | 是否有中央服务器 | 有。开发人员需要从中央服务器获得最新版本的项目然后在本地开发，开发完推送给中央服务器。因此脱离服务器开发者是几乎无法工作的 |      没有中央服务器，开发人员本地都有 Local Repository       |<br> |     网络依赖     | 必须要联网才能工作，而且对网络的依赖性较强，如果推送的文件比较大而且网络状况欠佳，则提交文件的速度会受到很大的限制 | 分布式在没有网络的情况下也可以执行<code>commit</code>、查看版本提交记录、以及分支操作，在有网络的情况下执行<code>push</code> 到 <code>Remote Repository</code>。 |<br> |   文件存储格式   |                  按照原始文件存储，体积较大                  |                 按照元数据方式存储，体积很小                 |<br> |   是否有版本号   |                              有                              |                             没有                             |<br> |  分支操作的影响  |         创建新的分支则所有的人都会拥有和你一样的分支         |   分支操作不会影响其他开发人员    |<br> |       提交       |   提交的文件会直接记录到中央版本库   |       提交是本地操作，需要执行push操作才会到主要版本库       |</p>
 </li>
 </ul>
-<h2 id="git的三种数据状态"><a class="markdownIt-Anchor" href="#git的三种数据状态">#</a> git 的三种数据状态</h2>
-<hr>
-<h3 id="暂存态"><a class="markdownIt-Anchor" href="#暂存态">#</a> 暂存态</h3>
-<ul>
-<li>git 传输文件实际上是进行数据的传输，每个用户机都存在一个数据的暂存区（temp），当用户机没有网络时，可以在本地把要上传到本地数据库的文件数据先放到暂存区（temp），待网络通畅时 git 会自动提交数据到指定的本地数据库（仓库）。此状态为 ---- 已暂存（staged）状态</li>
+<h2 id="git的三种数据状态"><a href="#git的三种数据状态" class="headerlink" title="git的三种数据状态"></a>git的三种数据状态</h2><hr>
+<h3 id="暂存态"><a href="#暂存态" class="headerlink" title="暂存态"></a>暂存态</h3><ul>
+<li>git传输文件实际上是进行数据的传输，每个用户机都存在一个数据的暂存区（temp），当用户机没有网络时，可以在本地把要上传到本地数据库的文件数据先放到暂存区（temp），待网络通畅时git会自动提交数据到指定的本地数据库（仓库）。此状态为——已暂存（staged）状态</li>
 </ul>
-<h3 id="提交态"><a class="markdownIt-Anchor" href="#提交态">#</a> 提交态</h3>
-<ul>
-<li>当文件安全的保存到本地数据库时，此状态为 ---- 已提交（commit）状态</li>
+<h3 id="提交态"><a href="#提交态" class="headerlink" title="提交态"></a>提交态</h3><ul>
+<li>当文件安全的保存到本地数据库时，此状态为——已提交（commit）状态</li>
 </ul>
-<h3 id="修改态"><a class="markdownIt-Anchor" href="#修改态">#</a> 修改态</h3>
-<ul>
-<li>若文件只是进行更改内容，但尚未保存到数据库中，那么此状态就为 ---- 已修改（modify）状态</li>
+<h3 id="修改态"><a href="#修改态" class="headerlink" title="修改态"></a>修改态</h3><ul>
+<li>若文件只是进行更改内容，但尚未保存到数据库中，那么此状态就为——已修改（modify）状态</li>
 </ul>
-<h2 id="git的工作原理"><a class="markdownIt-Anchor" href="#git的工作原理">#</a> git 的工作原理</h2>
-<hr>
-<h3 id="核心"><a class="markdownIt-Anchor" href="#核心">#</a> 核心</h3>
-<ul>
-<li><strong>git</strong>  的工作原理不同于集中式版本控制系统（CVCS），git 赋予每个用户机上一个本地数据库，此数据库可同步到服务器的数据库中，当用户对文件做每一次的修改时，会把该文件的所有版本文件保存到本地数据库（即克隆文件），这样做的好处是，当没有网络时，也可以对文件的版本进行控制，而且要修改时，把修改后的文件进行标记，待网络通畅后会把被标记的文件提交到数据库中，供其他开发者使用。</li>
+<h2 id="git的工作原理"><a href="#git的工作原理" class="headerlink" title="git的工作原理"></a>git的工作原理</h2><hr>
+<h3 id="核心"><a href="#核心" class="headerlink" title="核心"></a>核心</h3><ul>
+<li><strong>git</strong> &nbsp;的工作原理不同于集中式版本控制系统（CVCS），git赋予每个用户机上一个本地数据库，此数据库可同步到服务器的数据库中，当用户对文件做每一次的修改时，会把该文件的所有版本文件保存到本地数据库（即克隆文件），这样做的好处是，当没有网络时，也可以对文件的版本进行控制，而且要修改时，把修改后的文件进行标记，待网络通畅后会把被标记的文件提交到数据库中，供其他开发者使用。</li>
 </ul>
-<h2 id="获取git仓库"><a class="markdownIt-Anchor" href="#获取git仓库">#</a> 获取 Git 仓库</h2>
-<h3 id="获取方式"><a class="markdownIt-Anchor" href="#获取方式">#</a> 获取方式</h3>
-<ol>
+<h2 id="获取Git仓库"><a href="#获取Git仓库" class="headerlink" title="获取Git仓库"></a>获取Git仓库</h2><h3 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h3><ol>
 <li>将尚未进行版本控制的本地目录转换为 Git 仓库</li>
 <li>从其它服务器 <strong>克隆</strong> 一个已存在的 Git 仓库</li>
 </ol>
-<h3 id="在已存在的目录中初始化仓库"><a class="markdownIt-Anchor" href="#在已存在的目录中初始化仓库">#</a> 在已存在的目录中初始化仓库</h3>
-<ul>
-<li>
-<p>第一步：打开 <code>git bash</code></p>
+<h3 id="在已存在的目录中初始化仓库"><a href="#在已存在的目录中初始化仓库" class="headerlink" title="在已存在的目录中初始化仓库"></a>在已存在的目录中初始化仓库</h3><ul>
+<li><p>第一步：打开<code>git bash</code></p>
 </li>
-<li>
-<p>第二步：输入进入目录的命令</p>
-<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token variable">$cd</span> /f/gitproject</pre></td></tr></table></figure></li>
-<li>
-<p>第三步：初始化仓库</p>
-<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token variable">$git</span> init</pre></td></tr></table></figure></li>
+<li><p>第二步：输入进入目录的命令</p>
+<pre><code class="lang-bash"> $cd /f/gitproject
+</code></pre>
+</li>
+<li><p>第三步：初始化仓库</p>
+<pre><code class="lang-bash"> $git init
+</code></pre>
+</li>
 </ul>
-<p>此步骤会在已创建的目录下生成一个.git 的子目录（该目录为隐藏文件）</p>
-<h3 id="添加文件"><a class="markdownIt-Anchor" href="#添加文件">#</a> 添加文件</h3>
-<h4 id="创建文件"><a class="markdownIt-Anchor" href="#创建文件">#</a> 创建文件</h4>
-<ul>
-<li>
-<p>方法一：在创建的 <code>gitproject</code>  目录下直接右键创建一个文件（例如：helloworld.java）</p>
+<p>此步骤会在已创建的目录下生成一个.git的子目录（该目录为隐藏文件）</p>
+<h3 id="添加文件"><a href="#添加文件" class="headerlink" title="添加文件"></a>添加文件</h3><h4 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h4><ul>
+<li><p>方法一：在创建的<code>gitproject</code>目录下直接右键创建一个文件（例如：helloworld.java）</p>
 </li>
-<li>
-<p>方法二：在创建的 <code>gitproject</code>  目录下右键 <code>git bash here</code>  ，使用命令创建</p>
-<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token variable">$touch</span> helloworld.java  //创建文件</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token variable">$git</span> status //查看文件状态</pre></td></tr></table></figure></li>
-<li>
-<p>方法三：直接打开 <code>git bash</code>  ，用 Linux 命令切换到 <code>gitproject</code>  目录下，输入方法二的命令即可！</p>
-<h4 id="把文件放入暂存区"><a class="markdownIt-Anchor" href="#把文件放入暂存区">#</a> 把文件放入暂存区</h4>
+<li><p>方法二：在创建的<code>gitproject</code>目录下右键<code>git bash here</code> ，使用命令创建</p>
+<pre><code class="lang-bash"> $touch helloworld.java  //创建文件
+ $git status //查看文件状态
+</code></pre>
 </li>
-<li>
-<p>通过 Linux 命令</p>
-<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token variable">$git</span> <span class="token function">add</span> helloworld.java</pre></td></tr></table></figure></li>
-<li>
-<p>此时再输入 git status 查看状态</p>
-<h4 id="把文件提交到仓库"><a class="markdownIt-Anchor" href="#把文件提交到仓库">#</a> 把文件提交到仓库</h4>
-<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token variable">$git</span> commit -m<span class="token string">"new file helloworld.java"</span></pre></td></tr></table></figure><p>(-m 为 message)</p>
-<h4 id="查看是否已提交"><a class="markdownIt-Anchor" href="#查看是否已提交">#</a> 查看是否已提交</h4>
-<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token variable">$git</span> status</pre></td></tr></table></figure><p>如出现下图所示则提交成功</p>
+<li><p>方法三：直接打开<code>git bash</code> ，用Linux命令切换到<code>gitproject</code>目录下，输入方法二的命令即可！</p>
+<h4 id="把文件放入暂存区"><a href="#把文件放入暂存区" class="headerlink" title="把文件放入暂存区"></a>把文件放入暂存区</h4></li>
+<li><p>通过Linux命令</p>
+<pre><code class="lang-bash"> $git add helloworld.java
+</code></pre>
+</li>
+<li><p>此时再输入 git status 查看状态</p>
+<h4 id="把文件提交到仓库"><a href="#把文件提交到仓库" class="headerlink" title="把文件提交到仓库"></a>把文件提交到仓库</h4><pre><code class="lang-bash"> $git commit -m&quot;new file helloworld.java&quot;
+</code></pre>
+<p> (-m为message)</p>
+<h4 id="查看是否已提交"><a href="#查看是否已提交" class="headerlink" title="查看是否已提交"></a>查看是否已提交</h4><pre><code class="lang-bash"> $git status
+</code></pre>
+<p> 如出现下图所示则提交成功</p>
  <!-- ![image-20200620142410488.png](http://ww1.sinaimg.cn/large/007uxMgDgy1giztadgl3fj30dq08lwew.jpg) -->
-<p><img data-src="https://i.loli.net/2020/10/26/Vhz9NZ3Tpyo8Onj.jpg" alt="gitcmd.jpg"></p>
+<p> <img data-src="https://i.loli.net/2020/10/26/Vhz9NZ3Tpyo8Onj.jpg" alt="gitcmd.jpg"></p>
 </li>
 </ul>
-<h3 id="克隆仓库"><a class="markdownIt-Anchor" href="#克隆仓库">#</a> 克隆仓库</h3>
-<ul>
+<h3 id="克隆仓库"><a href="#克隆仓库" class="headerlink" title="克隆仓库"></a>克隆仓库</h3><ul>
 <li>命令</li>
 </ul>
-<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token variable">$git</span> clone <span class="token operator">&lt;</span>url<span class="token operator">></span></pre></td></tr></table></figure><h3 id="查看当前文件状态"><a class="markdownIt-Anchor" href="#查看当前文件状态">#</a> 查看当前文件状态</h3>
-<ul>
-<li>命令</li>
+<pre><code class="lang-bash">$git clone &lt;url&gt;
+</code></pre>
+<h3 id="查看当前文件状态"><a href="#查看当前文件状态" class="headerlink" title="查看当前文件状态"></a>查看当前文件状态</h3><ul>
+<li>命令<pre><code class="lang-bash">$git status
+</code></pre>
+</li>
 </ul>
-<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token variable">$git</span> status</pre></td></tr></table></figure>
+
       <div class="tags">
           <a href="/my-blog/tags/git%E3%80%81github/" rel="tag"><i class="ic i-tag"></i> git、github</a>
       </div>
@@ -394,7 +336,7 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git的基本概述"><span class="toc-number">1.</span> <span class="toc-text"> git 的基本概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#简介"><span class="toc-number">1.1.</span> <span class="toc-text"> 简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#集中式和分布式"><span class="toc-number">1.2.</span> <span class="toc-text"> 集中式和分布式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#何为分布式版本控制系统"><span class="toc-number">1.3.</span> <span class="toc-text"> 何为分布式版本控制系统？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git的三种数据状态"><span class="toc-number">2.</span> <span class="toc-text"> git 的三种数据状态</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#暂存态"><span class="toc-number">2.1.</span> <span class="toc-text"> 暂存态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#提交态"><span class="toc-number">2.2.</span> <span class="toc-text"> 提交态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改态"><span class="toc-number">2.3.</span> <span class="toc-text"> 修改态</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git的工作原理"><span class="toc-number">3.</span> <span class="toc-text"> git 的工作原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#核心"><span class="toc-number">3.1.</span> <span class="toc-text"> 核心</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#获取git仓库"><span class="toc-number">4.</span> <span class="toc-text"> 获取 Git 仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#获取方式"><span class="toc-number">4.1.</span> <span class="toc-text"> 获取方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在已存在的目录中初始化仓库"><span class="toc-number">4.2.</span> <span class="toc-text"> 在已存在的目录中初始化仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加文件"><span class="toc-number">4.3.</span> <span class="toc-text"> 添加文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#创建文件"><span class="toc-number">4.3.1.</span> <span class="toc-text"> 创建文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#把文件放入暂存区"><span class="toc-number">4.3.2.</span> <span class="toc-text"> 把文件放入暂存区</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#把文件提交到仓库"><span class="toc-number">4.3.3.</span> <span class="toc-text"> 把文件提交到仓库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#查看是否已提交"><span class="toc-number">4.3.4.</span> <span class="toc-text"> 查看是否已提交</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#克隆仓库"><span class="toc-number">4.4.</span> <span class="toc-text"> 克隆仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看当前文件状态"><span class="toc-number">4.5.</span> <span class="toc-text"> 查看当前文件状态</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git的基本概述"><span class="toc-number">1.</span> <span class="toc-text">git的基本概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#简介"><span class="toc-number">1.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#集中式和分布式"><span class="toc-number">1.2.</span> <span class="toc-text">集中式和分布式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#何为分布式版本控制系统？"><span class="toc-number">1.3.</span> <span class="toc-text">何为分布式版本控制系统？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git的三种数据状态"><span class="toc-number">2.</span> <span class="toc-text">git的三种数据状态</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#暂存态"><span class="toc-number">2.1.</span> <span class="toc-text">暂存态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#提交态"><span class="toc-number">2.2.</span> <span class="toc-text">提交态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改态"><span class="toc-number">2.3.</span> <span class="toc-text">修改态</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git的工作原理"><span class="toc-number">3.</span> <span class="toc-text">git的工作原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#核心"><span class="toc-number">3.1.</span> <span class="toc-text">核心</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#获取Git仓库"><span class="toc-number">4.</span> <span class="toc-text">获取Git仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#获取方式"><span class="toc-number">4.1.</span> <span class="toc-text">获取方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在已存在的目录中初始化仓库"><span class="toc-number">4.2.</span> <span class="toc-text">在已存在的目录中初始化仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加文件"><span class="toc-number">4.3.</span> <span class="toc-text">添加文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#创建文件"><span class="toc-number">4.3.1.</span> <span class="toc-text">创建文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#把文件放入暂存区"><span class="toc-number">4.3.2.</span> <span class="toc-text">把文件放入暂存区</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#把文件提交到仓库"><span class="toc-number">4.3.3.</span> <span class="toc-text">把文件提交到仓库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#查看是否已提交"><span class="toc-number">4.3.4.</span> <span class="toc-text">查看是否已提交</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#克隆仓库"><span class="toc-number">4.4.</span> <span class="toc-text">克隆仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看当前文件状态"><span class="toc-number">4.5.</span> <span class="toc-text">查看当前文件状态</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -519,27 +461,7 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
 </div>
 
-    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E7%BD%91%E7%BB%9C%E8%99%9A%E6%8B%9F%E5%8C%96/" title="网络虚拟化">网络虚拟化</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
-</div>
-
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9102/" title="网络互联与互联网02">网络互联与互联网02</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
-</div>
-
-    <span><a href="/my-blog/Linux/%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/" title="目录与文件管理">目录与文件管理</a></span>
+    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E8%AE%A1%E7%AE%97%E8%99%9A%E6%8B%9F%E5%8C%96/" title="计算虚拟化简介">计算虚拟化简介</a></span>
   </li>
 
       
@@ -559,47 +481,67 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%883%EF%BC%89/" title="华为路由实验命令（3）">华为路由实验命令（3）</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%9F%8E%E5%9F%9F%E7%BD%9101/" title="局域网与城域网01">局域网与城域网01</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/Fusion%20Compute%E5%AE%89%E8%A3%85/" title="Fusion Compute安装">Fusion Compute安装</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/" title="计算机硬件基础(部分组成原理)">计算机硬件基础(部分组成原理)</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/MySQL/" title="分类于 MySQL">MySQL</a>
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/MySQL/%E5%85%B3%E4%BA%8EMySQL%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" title="关于MySQL的一些基本使用">关于MySQL的一些基本使用</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E8%A7%84%E5%88%92%E4%B8%8E%E8%AE%BE%E8%AE%A1/" title="网络规划与设计">网络规划与设计</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="分类于 算法与数据结构">算法与数据结构</a>
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/" title="算法入门教程">算法入门教程</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8001/" title="数据通信基础01">数据通信基础01</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/Java/JavaSE%E5%B0%8F%E7%BB%93/" title="JavaSE小结">JavaSE小结</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%97%A0%E7%BA%BF%E9%80%9A%E4%BF%A1%E7%BD%91/" title="无线通信网">无线通信网</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%882%EF%BC%89/" title="华为路由交换实验命令（2）">华为路由交换实验命令（2）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/IP%E5%AD%90%E7%BD%91%E5%88%92%E5%88%86%E4%B8%93%E9%A2%98/" title="IP子网划分专题">IP子网划分专题</a></span>
   </li>
 
       

@@ -146,150 +146,125 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <div class="body md" itemprop="articleBody">
     
 
-    <h2 id="linux-bridge"><a class="markdownIt-Anchor" href="#linux-bridge">#</a> Linux Bridge</h2>
-<ul>
+    <h2 id="Linux-Bridge"><a href="#Linux-Bridge" class="headerlink" title="Linux Bridge"></a>Linux Bridge</h2><ul>
 <li>Linux Bridge（网桥）是工作于二层的虚拟网络设备，功能类似于物理的交换机。</li>
-<li>Bridge 可以绑定其他 Linux 网络设备作为从设备，并将这些设备虚拟化为端口，当一个从设备被绑定到 Bridge 上时，就相当于真实网络中的交换机端口插入了一个连接有终端的网线，br0 会根据 MAC 地址与端口的映射关系进行转发。</li>
+<li>Bridge可以绑定其他Linux网络设备作为从设备，并将这些设备虚拟化为端口，当一个从设备被绑定到Bridge上时，就相当于真实网络中的交换机端口插入了一个连接有终端的网线，br0会根据MAC地址与端口的映射关系进行转发。</li>
 </ul>
 <p><img data-src="https://s4.ax1x.com/2022/01/26/7qTS0g.png" alt="lbridge"></p>
-<h2 id="ovs-开源虚拟以太网交换机"><a class="markdownIt-Anchor" href="#ovs-开源虚拟以太网交换机">#</a> OVS 开源虚拟以太网交换机</h2>
-<blockquote>
-<p>OVS 能够支持多种标准的管理接口和协议，还可以支持跨多个物理服务器的分布式环境。OVS 提供了对 OpenFlow 协议的支持，并且能够与众多开源的虚拟化平台相整合。主要有两个作用：传递虚拟机 VM 之间的流量，以及实现 VM 和外界网络的通信。</p>
+<h2 id="OVS-开源虚拟以太网交换机"><a href="#OVS-开源虚拟以太网交换机" class="headerlink" title="OVS 开源虚拟以太网交换机"></a>OVS 开源虚拟以太网交换机</h2><blockquote>
+<p>OVS能够支持多种标准的管理接口和协议，还可以支持跨多个物理服务器的分布式环境。OVS提供了对OpenFlow协议的支持，并且能够与众多开源的虚拟化平台相整合。主要有两个作用：传递虚拟机VM之间的流量，以及实现VM和外界网络的通信。</p>
 </blockquote>
 <p><img data-src="https://s4.ax1x.com/2022/01/26/7qTenU.png" alt="ovs"></p>
 <ul>
-<li>OVS 提供了对 OpenFlow 协议的支持，并且能够与众多开源的虚拟化平台相整合。</li>
-<li>OpenFlow 交换机将原来完全由交换机 / 路由器控制的报文转发过程转化为由 OpenFlow 交换机（OpenFlow Switch）和控制服务器（Controller）来共同完成，从而实现了数据转发和路由控制的分离。控制器可以通过事先规定好的接口操作来控制 OpenFlow 交换机中的流表，从而达到控制数据转发的目的。</li>
-<li>OpenFlow 网络由 OpenFlow 交换机、FlowVisor 和 Controller 三部分组成。OpenFlow 交换机进行数据层的转发；FlowVisor 对网络进行虚拟化；Controller 对网络进行集中控制，实现控制层的功能。<br>
-OpenFlow 交换机由流表、安全通道和 OpenFlow 协议三部分组成。</li>
+<li>OVS提供了对OpenFlow协议的支持，并且能够与众多开源的虚拟化平台相整合。</li>
+<li>OpenFlow交换机将原来完全由交换机/路由器控制的报文转发过程转化为由OpenFlow交换机（OpenFlow Switch）和控制服务器（Controller）来共同完成，从而实现了数据转发和路由控制的分离。控制器可以通过事先规定好的接口操作来控制OpenFlow交换机中的流表，从而达到控制数据转发的目的。</li>
+<li>OpenFlow网络由OpenFlow交换机、FlowVisor和Controller三部分组成。OpenFlow交换机进行数据层的转发；FlowVisor对网络进行虚拟化；Controller对网络进行集中控制，实现控制层的功能。<br>OpenFlow交换机由流表、安全通道和OpenFlow协议三部分组成。</li>
 </ul>
-<h2 id="dvs-分布式虚拟交换机"><a class="markdownIt-Anchor" href="#dvs-分布式虚拟交换机">#</a> DVS 分布式虚拟交换机</h2>
-<blockquote>
+<h2 id="DVS-分布式虚拟交换机"><a href="#DVS-分布式虚拟交换机" class="headerlink" title="DVS 分布式虚拟交换机"></a>DVS 分布式虚拟交换机</h2><blockquote>
 <p>每台主机都连接到分布式交换机中。分布式交换机的一端是与虚拟机相连的虚拟端口，另一端是与虚拟机所在主机上的物理以太网适配器相连的上行链路。通过它可以连接主机和虚拟机，实现系统网络互通。另外，分布式交换机在所有关联主机之间作为单个虚拟交换机使用。此功能可使虚拟机在跨主机进行迁移时确保其网络配置保持一致。</p>
 </blockquote>
 <p><img data-src="https://s4.ax1x.com/2022/01/26/7qTKAJ.png" alt="DVS"></p>
-<h2 id="evs-弹性虚拟交换"><a class="markdownIt-Anchor" href="#evs-弹性虚拟交换">#</a> EVS 弹性虚拟交换</h2>
-<ul>
-<li>Elastic Virtual Switch（EVS）是基于 OVS 转发技术，提升了其 IO 性能的一种弹性化虚拟交换。仍然符合 openflow 协议标准。</li>
-<li>其中 IO 性能提升使用了 Intel DPDK 技术，通过用户态进程接管网卡数据收发，采用 “IO 独占核” 技术，即每个端口分配一个核专门用于数据收发，这种轮询式的处理方式比中断式的处理更高效，因而 IO 性能方面有显著提升。</li>
-<li>EVS 关键技术：
-<ul>
-<li>物理网卡访问：DPDK 高速数据通道</li>
+<h2 id="EVS-弹性虚拟交换"><a href="#EVS-弹性虚拟交换" class="headerlink" title="EVS 弹性虚拟交换"></a>EVS 弹性虚拟交换</h2><ul>
+<li>Elastic Virtual Switch（EVS）是基于OVS转发技术，提升了其IO性能的一种弹性化虚拟交换。仍然符合openflow协议标准。</li>
+<li>其中IO性能提升使用了Intel DPDK技术，通过用户态进程接管网卡数据收发，采用“IO独占核”技术，即每个端口分配一个核专门用于数据收发，这种轮询式的处理方式比中断式的处理更高效，因而IO性能方面有显著提升。</li>
+<li>EVS关键技术：<ul>
+<li>物理网卡访问：DPDK高速数据通道</li>
 <li>报文处理：使用大页内存</li>
 </ul>
 </li>
-<li>交换业务处理
-<ul>
+<li>交换业务处理<ul>
 <li>轮询转发，减少调度开销</li>
 <li>多核（线程）并行处理</li>
-<li>Openflow 流表转发优化</li>
+<li>Openflow流表转发优化</li>
 </ul>
 </li>
-<li>前后端：vhost-user 技术</li>
+<li>前后端：vhost-user技术</li>
 </ul>
 <p><img data-src="https://s4.ax1x.com/2022/01/26/7qTMN9.png" alt="EVS"></p>
 <ul>
-<li>在 Host 上运行用户态 EVS，借助于 DPDK 的网卡管理 API 和大页内存，来提升物理网卡收发包性能和处理能力。</li>
-<li>基于 vhost-user 技术，vhost 在用户态直接和 EVS 交互，通过地址偏移获取 DPDK 大页地址，性能提升 30%-40%。</li>
+<li>在Host上运行用户态EVS，借助于DPDK的网卡管理API和大页内存，来提升物理网卡收发包性能和处理能力。 </li>
+<li>基于vhost-user技术，vhost在用户态直接和EVS交互，通过地址偏移获取DPDK大页地址，性能提升30%-40%。</li>
 <li>利用批处理和轮询机制提升报文处理能力。</li>
 </ul>
-<h2 id="华为分布式交换方案"><a class="markdownIt-Anchor" href="#华为分布式交换方案">#</a> 华为分布式交换方案</h2>
-<p><img data-src="https://s4.ax1x.com/2022/01/26/7qT31x.png" alt="fbsjhfa"></p>
+<h2 id="华为分布式交换方案"><a href="#华为分布式交换方案" class="headerlink" title="华为分布式交换方案"></a>华为分布式交换方案</h2><p><img data-src="https://s4.ax1x.com/2022/01/26/7qT31x.png" alt="fbsjhfa"></p>
 <ul>
-<li>集中管理：统一 Portal 和集中的管理，简化用户的管理和配置；</li>
-<li>开源 Open vSwitch：集成开源 Open vSwitch，充分利用和集成了开源社区虚拟交换的能力；</li>
+<li>集中管理：统一Portal和集中的管理，简化用户的管理和配置；</li>
+<li>开源Open vSwitch：集成开源Open vSwitch，充分利用和集成了开源社区虚拟交换的能力；</li>
 <li>提供丰富虚拟交换的二层特性，包括交换、QoS、安全隔离等。</li>
 </ul>
-<h3 id="fusioncompute分布式交换机"><a class="markdownIt-Anchor" href="#fusioncompute分布式交换机">#</a> FusionCompute 分布式交换机</h3>
-<p><img data-src="https://s4.ax1x.com/2022/01/26/7qTNHe.png" alt="fbjhj"></p>
+<h3 id="FusionCompute分布式交换机"><a href="#FusionCompute分布式交换机" class="headerlink" title="FusionCompute分布式交换机"></a>FusionCompute分布式交换机</h3><p><img data-src="https://s4.ax1x.com/2022/01/26/7qTNHe.png" alt="fbjhj"></p>
 <ul>
-<li>分布式交换机模型基本特征：
-<ul>
-<li>虚拟化管理员可以配置多个分布式交换机， <mark>每个分布式交换机可以覆盖集群中的多个 CNA 节点</mark></li>
-<li>每个分布式交换机具有多个分布式的虚拟端口 VSP，每个 VSP 具有各自的属性 (速率)，为了管理方便采用 Port Group 组管理相同属性的一组端口，相同端口组的 VLAN 相同；</li>
-<li>虚拟化管理员或业务系统（例如 VDI/IDC）, 可选择管理 / 存储 / 业务使用的不同物理接口；每个分布式交换机可以配置一个 UpLink 端口或者一个 Uplink 端口聚合组，用于 VM 对外的通信。 <mark>Uplink 端口聚合组可以包含多个物理端口，端口聚合组可以配置负载均衡策略</mark></li>
-<li>每个 VM 可以具有多个 vNIC 接口，vNIC 可以和交换机的 VSP 一一对接；</li>
+<li>分布式交换机模型基本特征：<ul>
+<li>虚拟化管理员可以配置多个分布式交换机， ==每个分布式交换机可以覆盖集群中的多个CNA节点==</li>
+<li>每个分布式交换机具有多个分布式的虚拟端口VSP，每个VSP具有各自的属性(速率)，为了管理方便采用Port Group组管理相同属性的一组端口，相同端口组的VLAN相同；</li>
+<li>虚拟化管理员或业务系统（例如VDI/IDC）,可选择管理/存储/业务使用的不同物理接口；每个分布式交换机可以配置一个UpLink端口或者一个Uplink端口聚合组，用于VM对外的通信。 ==Uplink端口聚合组可以包含多个物理端口，端口聚合组可以配置负载均衡策略==</li>
+<li>每个VM可以具有多个vNIC接口，vNIC可以和交换机的VSP一一对接；</li>
 </ul>
 </li>
 </ul>
-<h3 id="虚拟交换模型"><a class="markdownIt-Anchor" href="#虚拟交换模型">#</a> 虚拟交换模型</h3>
-<p><img data-src="https://s4.ax1x.com/2022/01/26/7qTdNd.png" alt="xnjhmx"></p>
+<h3 id="虚拟交换模型"><a href="#虚拟交换模型" class="headerlink" title="虚拟交换模型"></a>虚拟交换模型</h3><p><img data-src="https://s4.ax1x.com/2022/01/26/7qTdNd.png" alt="xnjhmx"></p>
 <ul>
-<li>虚拟化管理员可通过定义端口组 属性（安全 / QoS）简化对虚拟机端口属性的设置；设置端口组属性，不影响虚拟机正常工作；</li>
-<li>端口组：端口组是网络属性相同的一组端口的属性集合。管理员可以通过配置端口组属性（带宽 QOS、2 层安全属性、VLAN 等）简化对虚拟机端口属性的设置。设置端口组属性，不影响虚拟机正常工作；</li>
+<li>虚拟化管理员可通过定义端口组 属性（安全/QoS）简化对虚拟机端口属性的设置；设置端口组属性，不影响虚拟机正常工作；</li>
+<li>端口组：端口组是网络属性相同的一组端口的属性集合。管理员可以通过配置端口组属性（带宽QOS、2层安全属性、VLAN等）简化对虚拟机端口属性的设置。设置端口组属性，不影响虚拟机正常工作；</li>
 <li>上行链路：分布式交换机关联的服务器物理网口；管理员可以查询上行链路的名称、速率、模式、状态等信息；</li>
 <li>上行链路聚合：分布式交换机关联的服务器绑定网口，绑定网口可以包含多个物理网口，这些物理网口可以配置主备或负载均衡策略。</li>
 </ul>
-<h2 id="华为虚拟交换模式"><a class="markdownIt-Anchor" href="#华为虚拟交换模式">#</a> 华为虚拟交换模式</h2>
-<p><img data-src="https://s4.ax1x.com/2022/01/26/7qTD3t.png" alt="xnjhms"></p>
+<h2 id="华为虚拟交换模式"><a href="#华为虚拟交换模式" class="headerlink" title="华为虚拟交换模式"></a>华为虚拟交换模式</h2><p><img data-src="https://s4.ax1x.com/2022/01/26/7qTD3t.png" alt="xnjhms"></p>
 <ul>
-<li>普通交换：普通模式下，虚拟机有前后端两个虚拟网卡设备，其中，前端网卡连接在虚拟交换机的虚端口上。虚拟机网络数据包 <mark>通过环形缓冲区和事件通道在前后端网卡之间传输</mark> ，并最终通过后端网卡连接的虚拟交换机实现转发</li>
-<li>SR-IOV：简单说来，支持 SR-IOV 的物理网卡可以虚拟出多个网卡以供虚拟机使用，<mark>对于虚拟机来说就像是有一块单独的物理网卡一样</mark> ，相比软件虚拟化提升了网络 I/O 的性能，相对于硬件直通 (PCI Passthrough) 又减少了硬件网卡数量上的需求</li>
-<li>用户态交换：通过使用 DPDK（Data Plane Development Kit，数据平面开发套件，DPDK 是一系列库和驱动的集合）技术，用来在 x86 平台进行快速的数据包处理。它通过环境抽象层旁路内核协议栈、轮询模式的报文无中断收发、优化内存 / 缓冲区 / 队列管理、基于网卡多队列和流识别的负载均衡等多项技术， <mark>实现了在 x86 处理器架构下的高性能报文转发能力，提高虚拟机网络性能</mark></li>
+<li>普通交换：普通模式下，虚拟机有前后端两个虚拟网卡设备，其中，前端网卡连接在虚拟交换机的虚端口上。虚拟机网络数据包 ==通过环形缓冲区和事件通道在前后端网卡之间传输== ，并最终通过后端网卡连接的虚拟交换机实现转发</li>
+<li>SR-IOV：简单说来，支持SR-IOV的物理网卡可以虚拟出多个网卡以供虚拟机使用，==对于虚拟机来说就像是有一块单独的物理网卡一样== ，相比软件虚拟化提升了网络I/O的性能，相对于硬件直通(PCI Passthrough)又减少了硬件网卡数量上的需求</li>
+<li>用户态交换：通过使用DPDK（Data Plane Development Kit，数据平面开发套件，DPDK是一系列库和驱动的集合）技术，用来在x86平台进行快速的数据包处理。它通过环境抽象层旁路内核协议栈、轮询模式的报文无中断收发、优化内存/缓冲区/队列管理、基于网卡多队列和流识别的负载均衡等多项技术， ==实现了在x86处理器架构下的高性能报文转发能力，提高虚拟机网络性能==</li>
 </ul>
-<h2 id="网络安全策略"><a class="markdownIt-Anchor" href="#网络安全策略">#</a> 网络安全策略</h2>
-<h3 id="二层网络安全策略"><a class="markdownIt-Anchor" href="#二层网络安全策略">#</a> 二层网络安全策略</h3>
-<blockquote>
-<p>防止 IP 地址和 MAC 仿冒（IP 和 MAC 绑定）：防止虚拟机用户通过修改虚拟网卡的 IP、MAC 地址发起 IP、MAC 仿冒攻击，增强用户虚拟机的网络安全。通过生成 IP-MAC 的绑定关系，基于 IP 源侧防护 (IP Source Guard) 与动态 ARP 检测（DAI）对非绑定关系的报文进行过滤。<br>
-防止 DHCP Server 仿冒 (DHCP Server 隔离)：禁止用户虚拟机启动 DHCP Server 服务，防止用户无意识或恶意启动 DHCP Server 服务，影响正常的虚拟机 IP 地址分配过程。</p>
+<h2 id="网络安全策略"><a href="#网络安全策略" class="headerlink" title="网络安全策略"></a>网络安全策略</h2><h3 id="二层网络安全策略"><a href="#二层网络安全策略" class="headerlink" title="二层网络安全策略"></a>二层网络安全策略</h3><blockquote>
+<p>防止IP地址和MAC仿冒（IP和MAC绑定）：防止虚拟机用户通过修改虚拟网卡的IP、MAC地址发起IP、MAC仿冒攻击，增强用户虚拟机的网络安全。通过生成IP-MAC的绑定关系，基于IP源侧防护(IP Source Guard)与动态ARP检测（DAI）对非绑定关系的报文进行过滤。<br>防止DHCP Server仿冒(DHCP Server隔离)：禁止用户虚拟机启动DHCP Server服务，防止用户无意识或恶意启动DHCP Server服务，影响正常的虚拟机IP地址分配过程。</p>
 </blockquote>
-<h3 id="广播报文抑制"><a class="markdownIt-Anchor" href="#广播报文抑制">#</a> 广播报文抑制</h3>
-<blockquote>
+<h3 id="广播报文抑制"><a href="#广播报文抑制" class="headerlink" title="广播报文抑制"></a>广播报文抑制</h3><blockquote>
 <p>虚拟交换机提供虚拟机虚端口发送方向的广播报文抑制开关，以及抑制阈值设置功能。可以通过开启虚拟机网卡所在端口组的广播包抑制开关设置阈值，减少过量广播报文对二层网络带宽的消耗。</p>
 </blockquote>
-<h3 id="安全组"><a class="markdownIt-Anchor" href="#安全组">#</a> 安全组</h3>
-<blockquote>
+<h3 id="安全组"><a href="#安全组" class="headerlink" title="安全组"></a>安全组</h3><blockquote>
 <p>用户根据虚拟机安全需求创建安全组，每个安全组可以设定一组访问规则。当虚拟机加入安全组后，即受到该访问规则组的保护。用户通过在创建虚拟机时选定要加入的安全组来对自身的虚拟机进行安全隔离和访问控制。</p>
 </blockquote>
-<h2 id="trunk口"><a class="markdownIt-Anchor" href="#trunk口">#</a> Trunk 口</h2>
-<blockquote>
-<p>虚拟机网卡通过虚端口接入虚拟交换机进行网络数据包的收发。<br>
-虚拟交换机虚端口支持配置为 Trunk 类型，并允许设置 Trunk 的 VLAN ID 范围，之后虚端口便具备了同时收发携带不同 VLAN 标签的网络数据包的功能，从而满足了虚拟网卡支持 Trunk 类型端口的需求。</p>
+<h2 id="Trunk口"><a href="#Trunk口" class="headerlink" title="Trunk口"></a>Trunk口</h2><blockquote>
+<p>虚拟机网卡通过虚端口接入虚拟交换机进行网络数据包的收发。<br>虚拟交换机虚端口支持配置为Trunk类型，并允许设置Trunk的VLAN ID范围，之后虚端口便具备了同时收发携带不同VLAN标签的网络数据包的功能，从而满足了虚拟网卡支持Trunk类型端口的需求。</p>
 </blockquote>
 <p><img data-src="https://s4.ax1x.com/2022/01/26/7qTsjf.png" alt="trunkk"></p>
 <ul>
-<li>普通类型的虚端口只能属于一个 VLAN，中继类型的虚端口可以允许多个 VLAN 接收和发送报文。普通虚拟机选择普通类型的端口，虚拟机的网卡启用 VLAN 设备的情况下选择中继类型的端口，否则虚拟机的网络可能不通。</li>
-<li>端口组配置为中继的方式后，可以在 linux 虚拟机内创建多个 VLAN 设备，这些 VLAN 设备通过 1 个虚拟网卡即可以收发携带不同 VLAN 标签的网络数据包。使虚拟机不用创建多个虚拟网卡，即可收发携带不同 VLAN 标签的网络数据包。</li>
+<li>普通类型的虚端口只能属于一个VLAN，中继类型的虚端口可以允许多个VLAN接收和发送报文。普通虚拟机选择普通类型的端口，虚拟机的网卡启用VLAN设备的情况下选择中继类型的端口，否则虚拟机的网络可能不通。</li>
+<li>端口组配置为中继的方式后，可以在linux虚拟机内创建多个VLAN设备，这些VLAN设备通过1个虚拟网卡即可以收发携带不同VLAN标签的网络数据包。使虚拟机不用创建多个虚拟网卡，即可收发携带不同VLAN标签的网络数据包。</li>
 </ul>
-<h2 id="网口绑定"><a class="markdownIt-Anchor" href="#网口绑定">#</a> 网口绑定</h2>
-<p><img data-src="https://s4.ax1x.com/2022/01/26/7qT6u8.png" alt="wkbd"></p>
+<h2 id="网口绑定"><a href="#网口绑定" class="headerlink" title="网口绑定"></a>网口绑定</h2><p><img data-src="https://s4.ax1x.com/2022/01/26/7qT6u8.png" alt="wkbd"></p>
 <ul>
-<li>对于普通网卡，绑定模式可以选择以下几种：
-<ul>
+<li>对于普通网卡，绑定模式可以选择以下几种：<ul>
 <li>主备</li>
 <li>轮询</li>
-<li>基于源目的 IP 和端口负荷分担</li>
-<li>基于源目的 MAC 的负荷分担</li>
-<li>基于源目的 MAC 的 LACP</li>
-<li>基于源目的 IP 的 LACP</li>
+<li>基于源目的IP和端口负荷分担</li>
+<li>基于源目的MAC的负荷分担</li>
+<li>基于源目的MAC的LACP</li>
+<li>基于源目的IP的LACP</li>
 </ul>
 </li>
-<li>对于支持 DPDK 驱动的物理网卡，绑定模式可以选择以下几种：
+<li>对于支持DPDK驱动的物理网卡，绑定模式可以选择以下几种：<ul>
+<li>DPDK驱动的主备模式</li>
+<li>DPDK驱动的基于源目的MAC的LACP模式</li>
+<li>DPDK驱动的基于源目的IP和端口的LACP模式</li>
+</ul>
+</li>
+</ul>
+<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><ol>
+<li><p>在FusionCompute分布式交换机里，虚拟机与外部网络通信依靠的是什么端口？[]{.gap} 。 {.quiz}</p>
 <ul>
-<li>DPDK 驱动的主备模式</li>
-<li>DPDK 驱动的基于源目的 MAC 的 LACP 模式</li>
-<li>DPDK 驱动的基于源目的 IP 和端口的 LACP 模式</li>
+<li>Mgnt {.options}</li>
+<li>存储接口 {.options}</li>
+<li>上行链路 {.correct}</li>
+<li>端口组 {.options}<br>{.options}     </li>
 </ul>
 </li>
-</ul>
-<h2 id="question"><a class="markdownIt-Anchor" href="#question">#</a> Question</h2>
-<ol>
-<li class="quiz">
-<p>在 FusionCompute 分布式交换机里，虚拟机与外部网络通信依靠的是什么端口？<span class="gap"></span> 。</p>
-<ul class="options">
-<li class="options">Mgnt</li>
-<li class="options">存储接口</li>
-<li class="correct">上行链路</li>
-<li class="options">端口组</li>
-</ul>
-</li>
-<li class="quiz">
-<p>FusionCompute 分布式交换机支持哪几种类型？（多选）<span class="gap"></span> 。</p>
-<ul class="options">
-<li class="correct">普通模式</li>
-<li class="correct">SR-IOV 直通模式</li>
-<li class="correct">用户态交换模式</li>
-<li class="options">标准模式</li>
+<li><p>FusionCompute分布式交换机支持哪几种类型？（多选）[]{.gap} 。 {.quiz}</p>
+<ul>
+<li>普通模式 {.correct}</li>
+<li>SR-IOV直通模式 {.correct}</li>
+<li>用户态交换模式 {.correct}</li>
+<li>标准模式 {.options}<br>{.options}</li>
 </ul>
 </li>
 </ol>
@@ -382,7 +357,7 @@ OpenFlow 交换机由流表、安全通道和 OpenFlow 协议三部分组成。<
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#linux-bridge"><span class="toc-number">1.</span> <span class="toc-text"> Linux Bridge</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ovs-开源虚拟以太网交换机"><span class="toc-number">2.</span> <span class="toc-text"> OVS 开源虚拟以太网交换机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dvs-分布式虚拟交换机"><span class="toc-number">3.</span> <span class="toc-text"> DVS 分布式虚拟交换机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#evs-弹性虚拟交换"><span class="toc-number">4.</span> <span class="toc-text"> EVS 弹性虚拟交换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#华为分布式交换方案"><span class="toc-number">5.</span> <span class="toc-text"> 华为分布式交换方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#fusioncompute分布式交换机"><span class="toc-number">5.1.</span> <span class="toc-text"> FusionCompute 分布式交换机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#虚拟交换模型"><span class="toc-number">5.2.</span> <span class="toc-text"> 虚拟交换模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#华为虚拟交换模式"><span class="toc-number">6.</span> <span class="toc-text"> 华为虚拟交换模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网络安全策略"><span class="toc-number">7.</span> <span class="toc-text"> 网络安全策略</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#二层网络安全策略"><span class="toc-number">7.1.</span> <span class="toc-text"> 二层网络安全策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#广播报文抑制"><span class="toc-number">7.2.</span> <span class="toc-text"> 广播报文抑制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安全组"><span class="toc-number">7.3.</span> <span class="toc-text"> 安全组</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#trunk口"><span class="toc-number">8.</span> <span class="toc-text"> Trunk 口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网口绑定"><span class="toc-number">9.</span> <span class="toc-text"> 网口绑定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#question"><span class="toc-number">10.</span> <span class="toc-text"> Question</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux-Bridge"><span class="toc-number">1.</span> <span class="toc-text">Linux Bridge</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OVS-开源虚拟以太网交换机"><span class="toc-number">2.</span> <span class="toc-text">OVS 开源虚拟以太网交换机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DVS-分布式虚拟交换机"><span class="toc-number">3.</span> <span class="toc-text">DVS 分布式虚拟交换机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EVS-弹性虚拟交换"><span class="toc-number">4.</span> <span class="toc-text">EVS 弹性虚拟交换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#华为分布式交换方案"><span class="toc-number">5.</span> <span class="toc-text">华为分布式交换方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#FusionCompute分布式交换机"><span class="toc-number">5.1.</span> <span class="toc-text">FusionCompute分布式交换机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#虚拟交换模型"><span class="toc-number">5.2.</span> <span class="toc-text">虚拟交换模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#华为虚拟交换模式"><span class="toc-number">6.</span> <span class="toc-text">华为虚拟交换模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网络安全策略"><span class="toc-number">7.</span> <span class="toc-text">网络安全策略</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#二层网络安全策略"><span class="toc-number">7.1.</span> <span class="toc-text">二层网络安全策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#广播报文抑制"><span class="toc-number">7.2.</span> <span class="toc-text">广播报文抑制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安全组"><span class="toc-number">7.3.</span> <span class="toc-text">安全组</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Trunk口"><span class="toc-number">8.</span> <span class="toc-text">Trunk口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网口绑定"><span class="toc-number">9.</span> <span class="toc-text">网口绑定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Question"><span class="toc-number">10.</span> <span class="toc-text">Question</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -504,10 +479,80 @@ OpenFlow 交换机由流表、安全通道和 OpenFlow 协议三部分组成。<
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E5%89%8D%E7%AB%AF/%E6%8E%A5%E7%BB%AD%E5%89%8D%E7%AB%AFH5+CSS3/" title="接续前端H5+CSS3">接续前端H5+CSS3</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8002/" title="数据通信基础02">数据通信基础02</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%97%A0%E7%BA%BF%E9%80%9A%E4%BF%A1%E7%BD%91/" title="无线通信网">无线通信网</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%884%EF%BC%89/" title="华为交换实验命令（4）">华为交换实验命令（4）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
+</div>
+
+    <span><a href="/my-blog/Linux/%E6%9B%B4%E6%8D%A2%E6%B8%85%E5%8D%8E%E6%BA%90/" title="更换清华源">更换清华源</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="分类于 算法与数据结构">算法与数据结构</a>
+</div>
+
+    <span><a href="/my-blog/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E7%BB%AA%E8%AE%BA/" title="数据结构之绪论">数据结构之绪论</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/" title="类与对象">类与对象</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="分类于 算法与数据结构">算法与数据结构</a>
+</div>
+
+    <span><a href="/my-blog/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/" title="算法入门教程">算法入门教程</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/IP%E5%AD%90%E7%BD%91%E5%88%92%E5%88%86%E4%B8%93%E9%A2%98/" title="IP子网划分专题">IP子网划分专题</a></span>
   </li>
 
       
@@ -524,79 +569,10 @@ OpenFlow 交换机由流表、安全通道和 OpenFlow 协议三部分组成。<
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
+<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
 </div>
 
-    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E5%AD%98%E5%82%A8%E8%99%9A%E6%8B%9F%E5%8C%96/" title="存储虚拟化">存储虚拟化</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
-</div>
-
-    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E4%BA%91%E8%AE%A1%E7%AE%97%E7%AE%80%E4%BB%8B/" title="云计算简介">云计算简介</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/my-blog/%E7%BD%91%E7%BB%9C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86DNS%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="配置与管理DNS服务器">配置与管理DNS服务器</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
-</div>
-
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8002/" title="数据通信基础02">数据通信基础02</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
-</div>
-
-    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E7%BD%91%E7%BB%9C%E8%99%9A%E6%8B%9F%E5%8C%96/" title="网络虚拟化">网络虚拟化</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/MySQL/" title="分类于 MySQL">MySQL</a>
-</div>
-
-    <span><a href="/my-blog/MySQL/%E5%85%B3%E4%BA%8EMySQL%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" title="关于MySQL的一些基本使用">关于MySQL的一些基本使用</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
-</div>
-
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%882%EF%BC%89/" title="华为路由交换实验命令（2）">华为路由交换实验命令（2）</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
-</div>
-
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%97%A0%E7%BA%BF%E9%80%9A%E4%BF%A1%E7%BD%91/" title="无线通信网">无线通信网</a></span>
+    <span><a href="/my-blog/Linux/%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/" title="目录与文件管理">目录与文件管理</a></span>
   </li>
 
   </ul>

@@ -146,109 +146,98 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <div class="body md" itemprop="articleBody">
     
 
-    <h2 id="关于继承"><a class="markdownIt-Anchor" href="#关于继承">#</a> 关于继承</h2>
-<h3 id="概念"><a class="markdownIt-Anchor" href="#概念">#</a> 概念</h3>
-<ul>
-<li>继承是类与类的一种关系，是一种 “is a” 的关系</li>
+    <h2 id="关于继承"><a href="#关于继承" class="headerlink" title="关于继承"></a>关于继承</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul>
+<li>继承是类与类的一种关系，是一种“is a”的关系</li>
 <li>继承可以使得子类具有父类别的各种属性和方法，而<strong>不需要再次编写相同的代码</strong>。在令子类别继承父类别的同时，可以重新定义某些属性，并重写某些方法，即覆盖父类别的原有属性和方法，使其获得与父类别不同的功能。</li>
 </ul>
-<h3 id="继承的特性"><a class="markdownIt-Anchor" href="#继承的特性">#</a> 继承的特性</h3>
-<ul>
-<li>Java 只有单继承，即只有一个父类</li>
-<li>没有调用 <code>extend</code> ，则父类为 <code>java.lang</code></li>
-<li>使用 <code>instance of</code>  判断对象类型</li>
+<h3 id="继承的特性"><a href="#继承的特性" class="headerlink" title="继承的特性"></a>继承的特性</h3><ul>
+<li>Java只有单继承，即只有一个父类</li>
+<li>没有调用<code>extend</code>，则父类为<code>java.lang</code></li>
+<li>使用<code>instance of</code>判断对象类型</li>
 </ul>
-<h3 id="超类-子类"><a class="markdownIt-Anchor" href="#超类-子类">#</a> 超类、子类</h3>
-<ul>
-<li>对于 java 中继承的某些知识，在这里需要给读者插补一点类的基本知识，让文章更具有可读性</li>
+<h3 id="超类、子类"><a href="#超类、子类" class="headerlink" title="超类、子类"></a>超类、子类</h3><ul>
+<li>对于java中继承的某些知识，在这里需要给读者插补一点类的基本知识，让文章更具有可读性</li>
 </ul>
-<h4 id="超类"><a class="markdownIt-Anchor" href="#超类">#</a> 超类</h4>
-<ul>
-<li>超类，也称父类，Java 只允许一个 class 继承自一个类，因此，一个类有且仅有一个父类。只有 <code>Object</code>  类特殊，它没有父类，所有它是所有类的父类。</li>
+<h4 id="超类"><a href="#超类" class="headerlink" title="超类"></a>超类</h4><ul>
+<li>超类，也称父类，Java只允许一个class继承自一个类，因此，一个类有且仅有一个父类。只有<code>Object</code>类特殊，它没有父类，所有它是所有类的父类。</li>
 </ul>
-<h4 id="子类"><a class="markdownIt-Anchor" href="#子类">#</a> 子类</h4>
-<ul>
+<h4 id="子类"><a href="#子类" class="headerlink" title="子类"></a>子类</h4><ul>
 <li>子类就是继承父类的所有方法，在此基础上在实现子类自己的一些方法</li>
 </ul>
-<h3 id="继承的优点"><a class="markdownIt-Anchor" href="#继承的优点">#</a> 继承的优点</h3>
-<ol>
+<h3 id="继承的优点"><a href="#继承的优点" class="headerlink" title="继承的优点"></a>继承的优点</h3><ol>
 <li>子类拥有父类的属性和方法</li>
 <li>实现代码复用</li>
 </ol>
-<h3 id="使用语法"><a class="markdownIt-Anchor" href="#使用语法">#</a> 使用语法</h3>
-<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token class-name">Class</span> <span class="token class-name">Student</span> <span class="token keyword">extends</span> <span class="token class-name">Person</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token punctuation">&#125;</span><span class="token comment">//student 就是子类，Person 就是父类</span></pre></td></tr></table></figure><h3 id="继承的初始化顺序"><a class="markdownIt-Anchor" href="#继承的初始化顺序">#</a> 继承的初始化顺序</h3>
-<ul>
+<h3 id="使用语法"><a href="#使用语法" class="headerlink" title="使用语法"></a>使用语法</h3><pre><code class="lang-java">Class Student extends Person{
+
+}//student就是子类，Person就是父类
+</code></pre>
+<h3 id="继承的初始化顺序"><a href="#继承的初始化顺序" class="headerlink" title="继承的初始化顺序"></a>继承的初始化顺序</h3><ul>
 <li>初始化父类在初始化子类</li>
 <li>先执行初始化对象中的属性，再执行构造方法中的初始化</li>
 <li><img data-src="https://i.loli.net/2020/10/22/DFxfgikLnOCmu2E.png" alt="initialstep.png"></li>
 </ul>
-<h2 id="方法的重写override"><a class="markdownIt-Anchor" href="#方法的重写override">#</a> 方法的重写 (override)</h2>
-<h3 id="概念-2"><a class="markdownIt-Anchor" href="#概念-2">#</a> 概念</h3>
-<ul>
+<h2 id="方法的重写-override"><a href="#方法的重写-override" class="headerlink" title="方法的重写(override)"></a>方法的重写(override)</h2><h3 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h3><ul>
 <li>如果子类对继承父类的方法不满意，是可以重写父类继承的方法的，当调用方法时会优先调用子类的方法</li>
-<li>使用规则：
-<ul>
-<li><code>@override</code>  的注释下的方法即为重写的方法，其本质是覆盖父类的方法</li>
+<li>使用规则：<ul>
+<li><code>@override</code>的注释下的方法即为重写的方法，其本质是覆盖父类的方法</li>
 </ul>
 </li>
 </ul>
-<h3 id="语法规则"><a class="markdownIt-Anchor" href="#语法规则">#</a> 语法规则</h3>
-<ul>
+<h3 id="语法规则"><a href="#语法规则" class="headerlink" title="语法规则"></a>语法规则</h3><ul>
 <li><strong>返回值类型、方法名、参数类型与个数这三者必须与父类继承的方法相同，这样才叫做方法的重写</strong></li>
 <li><strong>子类访问权限大于父类访问权限</strong></li>
 </ul>
-<h2 id="final关键字"><a class="markdownIt-Anchor" href="#final关键字">#</a> final 关键字</h2>
-<ul>
-<li><code>final</code> , 即 “最终的”</li>
-<li><code>final</code>  可以修饰类、方法、属性和变量
-<ul>
-<li><code>final</code>  修饰类，则该类<strong>不允许被继承</strong></li>
-<li><code>final</code>  修饰方法，则该方法<strong>不允许被覆盖（重写）</strong></li>
-<li><code>final</code>  修饰属性，则该类的属性不会进行隐式的初始化（类的初始化属性必须有值）或在构造方法中赋值</li>
-<li><code>final</code>  修饰变量，则该变量的值<strong>只能赋一次值</strong>，即为常量</li>
+<h2 id="final关键字"><a href="#final关键字" class="headerlink" title="final关键字"></a>final关键字</h2><ul>
+<li><code>final</code>,即“最终的”</li>
+<li><code>final</code>可以修饰类、方法、属性和变量<ul>
+<li><code>final</code>修饰类，则该类<strong>不允许被继承</strong></li>
+<li><code>final</code>修饰方法，则该方法<strong>不允许被覆盖（重写）</strong></li>
+<li><code>final</code>修饰属性，则该类的属性不会进行隐式的初始化（类的初始化属性必须有值）或在构造方法中赋值</li>
+<li><code>final</code>修饰变量，则该变量的值<strong>只能赋一次值</strong>，即为常量</li>
 </ul>
 </li>
 </ul>
-<h2 id="super关键字"><a class="markdownIt-Anchor" href="#super关键字">#</a> Super 关键字</h2>
-<h3 id="概念-3"><a class="markdownIt-Anchor" href="#概念-3">#</a> 概念</h3>
-<ul>
-<li><code>super</code>  关键字是指示编译器调用超类方法的特殊关键字</li>
-<li>直接父类对象的引用，通过 <code>super</code>  来访问父类中被子类覆盖的方法或属性</li>
+<h2 id="Super关键字"><a href="#Super关键字" class="headerlink" title="Super关键字"></a>Super关键字</h2><h3 id="概念-2"><a href="#概念-2" class="headerlink" title="概念"></a>概念</h3><ul>
+<li><code>super</code>关键字是指示编译器调用超类方法的特殊关键字</li>
+<li>直接父类对象的引用，通过<code>super</code>来访问父类中被子类覆盖的方法或属性</li>
 <li>在对象内部使用，可以代表父类对象</li>
 </ul>
-<h3 id="使用语法-2"><a class="markdownIt-Anchor" href="#使用语法-2">#</a> 使用语法</h3>
+<h3 id="使用语法-1"><a href="#使用语法-1" class="headerlink" title="使用语法"></a>使用语法</h3><ul>
+<li>对父类属性的访问<pre><code class="lang-java">super.age;//age是父类的一个属性
+</code></pre>
+</li>
+<li>对父类方法的访问<pre><code class="lang-java">super.eat();
+</code></pre>
+</li>
+<li>调用父类<code>toString</code>方法<pre><code class="lang-java">super.toString();//默认父类为object类
+//输出格式为：全路径@全限定名Hashcode
+</code></pre>
+</li>
+<li><strong>特殊使用法！！！</strong><pre><code class="lang-java">super(变量1，变量2)
+</code></pre>
 <ul>
-<li>对父类属性的访问<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">super</span><span class="token punctuation">.</span>age<span class="token punctuation">;</span><span class="token comment">//age 是父类的一个属性</span></pre></td></tr></table></figure></li>
-<li>对父类方法的访问<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure></li>
-<li>调用父类 <code>toString</code>  方法<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 默认父类为 object 类</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token comment">// 输出格式为：全路径 @全限定名 Hashcode</span></pre></td></tr></table></figure></li>
-<li><strong>特殊使用法！！！</strong><figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">super</span><span class="token punctuation">(</span>变量<span class="token number">1</span>，变量<span class="token number">2</span><span class="token punctuation">)</span></pre></td></tr></table></figure><ul>
-<li>这样使用会使父类的私有域进行初始化，也称调用超类的构造器</li>
+<li>这样使用会使父类的私有域进行初始化，也称调用超类的构造器  </li>
 </ul>
 </li>
 </ul>
-<h3 id="super应用"><a class="markdownIt-Anchor" href="#super应用">#</a> super 应用</h3>
-<ul>
+<h3 id="super应用"><a href="#super应用" class="headerlink" title="super应用"></a>super应用</h3><ul>
 <li>子类在构造过程中必须调用其父类的构造方法</li>
 <li>如果子类的构造方法中没有显示调用父类的构造方法，则系统默认调用父类无参的构造方法</li>
 <li>如果显示的调用构造方法，必须在子类的构造方法的<strong>第一行</strong></li>
 <li>如果子类构造方法中既没有显式调用父类的构造方法，二父类又没有无参的构造方法，则编译出错</li>
 </ul>
-<h2 id="object类"><a class="markdownIt-Anchor" href="#object类">#</a> Object 类</h2>
-<h3 id="概念-4"><a class="markdownIt-Anchor" href="#概念-4">#</a> 概念</h3>
-<ul>
-<li><code>Object</code>  类是所有类的父类，如果一个类没有使用 <code>extends</code>  关键字来明确标识继承另一个类，那么这个类默认继承 <code>object</code>  类</li>
+<h2 id="Object类"><a href="#Object类" class="headerlink" title="Object类"></a>Object类</h2><h3 id="概念-3"><a href="#概念-3" class="headerlink" title="概念"></a>概念</h3><ul>
+<li><code>Object</code>类是所有类的父类，如果一个类没有使用<code>extends</code>关键字来明确标识继承另一个类，那么这个类默认继承<code>object</code>类</li>
 </ul>
-<h2 id="方法"><a class="markdownIt-Anchor" href="#方法">#</a> 方法</h2>
-<ol>
-<li><code>toString()</code>  方法
-<ul>
-<li>在 <code>Object</code>  类中定义 <code>toString()</code>  方法的时候放的对象时哈希码（即对象地址字符串）</li>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ol>
+<li><code>toString()</code>方法<ul>
+<li>在<code>Object</code>类中定义<code>toString()</code>方法的时候放的对象时哈希码（即对象地址字符串）</li>
 </ul>
 </li>
-<li><code>equals()</code>  方法
-<ul>
+<li><code>equals()</code>方法<ul>
 <li>比较的是对象的引用是否执行同一块内存地址</li>
-<li>一般情况下比较两个对象时比较它的值是否一致，所有要进行重写 <code>@Override</code></li>
+<li>一般情况下比较两个对象时比较它的值是否一致，所有要进行重写<code>@Override</code> </li>
 </ul>
 </li>
 </ol>
@@ -309,20 +298,20 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
     <div class="item left">
       
 
-  <a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;s4.ax1x.com&#x2F;2022&#x2F;01&#x2F;09&#x2F;7Fya5t.jpg" title="Java网络编程">
+  <a href="/my-blog/Java/Java%E7%9A%84Stream%E6%B5%81/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;s4.ax1x.com&#x2F;2022&#x2F;01&#x2F;09&#x2F;7Fya5t.jpg" title="Java的Stream流">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> Java</span>
-  <h3>Java网络编程</h3>
+  <h3>Java的Stream流</h3>
   </a>
 
     </div>
     <div class="item right">
       
 
-  <a href="/my-blog/Java/Java%E6%95%B0%E7%BB%84/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;s4.ax1x.com&#x2F;2022&#x2F;01&#x2F;09&#x2F;7Fya5t.jpg" title="Java数组">
+  <a href="/my-blog/Java/Java%E6%96%B9%E6%B3%95/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;s4.ax1x.com&#x2F;2022&#x2F;01&#x2F;09&#x2F;7Fya5t.jpg" title="Java方法">
   <span class="type">下一篇</span>
   <span class="category"><i class="ic i-flag"></i> Java</span>
-  <h3>Java数组</h3>
+  <h3>Java方法</h3>
   </a>
 
     </div>
@@ -341,11 +330,11 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于继承"><span class="toc-number">1.</span> <span class="toc-text"> 关于继承</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概念"><span class="toc-number">1.1.</span> <span class="toc-text"> 概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#继承的特性"><span class="toc-number">1.2.</span> <span class="toc-text"> 继承的特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#超类-子类"><span class="toc-number">1.3.</span> <span class="toc-text"> 超类、子类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#超类"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 超类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#子类"><span class="toc-number">1.3.2.</span> <span class="toc-text"> 子类</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#继承的优点"><span class="toc-number">1.4.</span> <span class="toc-text"> 继承的优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用语法"><span class="toc-number">1.5.</span> <span class="toc-text"> 使用语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#继承的初始化顺序"><span class="toc-number">1.6.</span> <span class="toc-text"> 继承的初始化顺序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法的重写override"><span class="toc-number">2.</span> <span class="toc-text"> 方法的重写 (override)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概念-2"><span class="toc-number">2.1.</span> <span class="toc-text"> 概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#语法规则"><span class="toc-number">2.2.</span> <span class="toc-text"> 语法规则</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#final关键字"><span class="toc-number">3.</span> <span class="toc-text"> final 关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#super关键字"><span class="toc-number">4.</span> <span class="toc-text"> Super 关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概念-3"><span class="toc-number">4.1.</span> <span class="toc-text"> 概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用语法-2"><span class="toc-number">4.2.</span> <span class="toc-text"> 使用语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#super应用"><span class="toc-number">4.3.</span> <span class="toc-text"> super 应用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#object类"><span class="toc-number">5.</span> <span class="toc-text"> Object 类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概念-4"><span class="toc-number">5.1.</span> <span class="toc-text"> 概念</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法"><span class="toc-number">6.</span> <span class="toc-text"> 方法</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于继承"><span class="toc-number">1.</span> <span class="toc-text">关于继承</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概念"><span class="toc-number">1.1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#继承的特性"><span class="toc-number">1.2.</span> <span class="toc-text">继承的特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#超类、子类"><span class="toc-number">1.3.</span> <span class="toc-text">超类、子类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#超类"><span class="toc-number">1.3.1.</span> <span class="toc-text">超类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#子类"><span class="toc-number">1.3.2.</span> <span class="toc-text">子类</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#继承的优点"><span class="toc-number">1.4.</span> <span class="toc-text">继承的优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用语法"><span class="toc-number">1.5.</span> <span class="toc-text">使用语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#继承的初始化顺序"><span class="toc-number">1.6.</span> <span class="toc-text">继承的初始化顺序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法的重写-override"><span class="toc-number">2.</span> <span class="toc-text">方法的重写(override)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概念-1"><span class="toc-number">2.1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#语法规则"><span class="toc-number">2.2.</span> <span class="toc-text">语法规则</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#final关键字"><span class="toc-number">3.</span> <span class="toc-text">final关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Super关键字"><span class="toc-number">4.</span> <span class="toc-text">Super关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概念-2"><span class="toc-number">4.1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用语法-1"><span class="toc-number">4.2.</span> <span class="toc-text">使用语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#super应用"><span class="toc-number">4.3.</span> <span class="toc-text">super应用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object类"><span class="toc-number">5.</span> <span class="toc-text">Object类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概念-3"><span class="toc-number">5.1.</span> <span class="toc-text">概念</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法"><span class="toc-number">6.</span> <span class="toc-text">方法</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li><a href="/my-blog/Java/Java%E5%B0%81%E8%A3%85/" rel="bookmark" title="Java封装">Java封装</a></li><li><a href="/my-blog/Java/Java%E5%A4%9A%E6%80%81/" rel="bookmark" title="Java多态">Java多态</a></li><li><a href="/my-blog/Java/Java%E6%96%B9%E6%B3%95/" rel="bookmark" title="Java方法">Java方法</a></li><li><a href="/my-blog/Java/Java%E7%9A%84Stream%E6%B5%81/" rel="bookmark" title="Java的Stream流">Java的Stream流</a></li><li><a href="/my-blog/Java/Java%E6%95%B0%E7%BB%84/" rel="bookmark" title="Java数组">Java数组</a></li><li class="active"><a href="/my-blog/Java/Java%E7%BB%A7%E6%89%BF/" rel="bookmark" title="Java继承">Java继承</a></li><li><a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" rel="bookmark" title="Java网络编程">Java网络编程</a></li><li><a href="/my-blog/Java/Java%E7%9A%84%E4%B8%80%E4%BA%9B%E7%B1%BB/" rel="bookmark" title="Java的一些类">Java的一些类</a></li><li><a href="/my-blog/Java/Java%E8%AF%AD%E5%8F%A5/" rel="bookmark" title="Java语句">Java语句</a></li><li><a href="/my-blog/Java/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/" rel="bookmark" title="类与对象">类与对象</a></li><li><a href="/my-blog/Java/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93/" rel="bookmark" title="多线程笔记总结">多线程笔记总结</a></li><li><a href="/my-blog/Java/JavaSE%E5%B0%8F%E7%BB%93/" rel="bookmark" title="JavaSE小结">JavaSE小结</a></li><li><a href="/my-blog/Java/Java%E5%9F%BA%E7%A1%80%E6%B7%B7%E5%90%88/" rel="bookmark" title="Java基础混合">Java基础混合</a></li><li><a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8BOV/" rel="bookmark" title="Java网络编程OV">Java网络编程OV</a></li>
+          <li><a href="/my-blog/Java/Java%E5%A4%9A%E6%80%81/" rel="bookmark" title="Java多态">Java多态</a></li><li><a href="/my-blog/Java/Java%E6%95%B0%E7%BB%84/" rel="bookmark" title="Java数组">Java数组</a></li><li><a href="/my-blog/Java/Java%E5%B0%81%E8%A3%85/" rel="bookmark" title="Java封装">Java封装</a></li><li><a href="/my-blog/Java/Java%E6%96%B9%E6%B3%95/" rel="bookmark" title="Java方法">Java方法</a></li><li class="active"><a href="/my-blog/Java/Java%E7%BB%A7%E6%89%BF/" rel="bookmark" title="Java继承">Java继承</a></li><li><a href="/my-blog/Java/Java%E7%9A%84Stream%E6%B5%81/" rel="bookmark" title="Java的Stream流">Java的Stream流</a></li><li><a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" rel="bookmark" title="Java网络编程">Java网络编程</a></li><li><a href="/my-blog/Java/Java%E7%9A%84%E4%B8%80%E4%BA%9B%E7%B1%BB/" rel="bookmark" title="Java的一些类">Java的一些类</a></li><li><a href="/my-blog/Java/Java%E8%AF%AD%E5%8F%A5/" rel="bookmark" title="Java语句">Java语句</a></li><li><a href="/my-blog/Java/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/" rel="bookmark" title="类与对象">类与对象</a></li><li><a href="/my-blog/Java/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93/" rel="bookmark" title="多线程笔记总结">多线程笔记总结</a></li><li><a href="/my-blog/Java/JavaSE%E5%B0%8F%E7%BB%93/" rel="bookmark" title="JavaSE小结">JavaSE小结</a></li><li><a href="/my-blog/Java/Java%E5%9F%BA%E7%A1%80%E6%B7%B7%E5%90%88/" rel="bookmark" title="Java基础混合">Java基础混合</a></li><li><a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8BOV/" rel="bookmark" title="Java网络编程OV">Java网络编程OV</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -436,12 +425,12 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+        <a href="/my-blog/Java/Java%E7%9A%84Stream%E6%B5%81/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/my-blog/Java/Java%E6%95%B0%E7%BB%84/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+        <a href="/my-blog/Java/Java%E6%96%B9%E6%B3%95/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -463,70 +452,10 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
-</div>
-
-    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/Fusion%20Compute%E7%AE%80%E4%BB%8B/" title="Fusion Compute简介">Fusion Compute简介</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
-</div>
-
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A801/" title="网络应用服务器01">网络应用服务器01</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/MySQL/" title="分类于 MySQL">MySQL</a>
-</div>
-
-    <span><a href="/my-blog/MySQL/%E5%85%B3%E4%BA%8EMySQL%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" title="关于MySQL的一些基本使用">关于MySQL的一些基本使用</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
-</div>
-
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/" title="操作系统基础">操作系统基础</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
 </div>
 
-    <span><a href="/my-blog/Linux/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E5%8F%8Ayum%E6%BA%90%E9%97%AE%E9%A2%98/" title="网络配置及yum源问题">网络配置及yum源问题</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
-</div>
-
-    <span><a href="/my-blog/%E5%89%8D%E7%AB%AF/%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E5%89%8D%E7%AB%AF/" title="如何学习前端">如何学习前端</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
-</div>
-
-    <span><a href="/my-blog/Linux/%E6%9B%B4%E6%8D%A2%E6%B8%85%E5%8D%8E%E6%BA%90/" title="更换清华源">更换清华源</a></span>
+    <span><a href="/my-blog/Linux/LINUX%E5%AD%A6%E6%A0%A1%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="LINUX课程笔记">LINUX课程笔记</a></span>
   </li>
 
       
@@ -536,7 +465,7 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
 </div>
 
-    <span><a href="/my-blog/Java/Java%E5%A4%9A%E6%80%81/" title="Java多态">Java多态</a></span>
+    <span><a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8BOV/" title="Java网络编程OV">Java网络编程OV</a></span>
   </li>
 
       
@@ -546,7 +475,7 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E5%92%8C%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80/" title="系统开发和项目管理基础">系统开发和项目管理基础</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B9%BF%E5%9F%9F%E9%80%9A%E4%BF%A1%E7%BD%91/" title="广域通信网">广域通信网</a></span>
   </li>
 
       
@@ -557,6 +486,66 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 </div>
 
     <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E8%A7%84%E5%88%92%E4%B8%8E%E8%AE%BE%E8%AE%A1/" title="网络规划与设计">网络规划与设计</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/Java%E5%B0%81%E8%A3%85/" title="Java封装">Java封装</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%97%A0%E7%BA%BF%E9%80%9A%E4%BF%A1%E7%BD%91/" title="无线通信网">无线通信网</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/MySQL/" title="分类于 MySQL">MySQL</a>
+</div>
+
+    <span><a href="/my-blog/MySQL/MySQL%E8%BF%9B%E9%98%B6/" title="MySQL进阶">MySQL进阶</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
+</div>
+
+    <span><a href="/my-blog/Linux/%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/" title="目录与文件管理">目录与文件管理</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
+</div>
+
+    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E4%BA%91%E8%AE%A1%E7%AE%97%E7%AE%80%E4%BB%8B/" title="云计算简介">云计算简介</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%9F%8E%E5%9F%9F%E7%BD%9102/" title="局域网与城域网02">局域网与城域网02</a></span>
   </li>
 
   </ul>

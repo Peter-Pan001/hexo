@@ -146,13 +146,11 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="路由器基础"><a class="markdownIt-Anchor" href="#路由器基础">#</a> 路由器基础</h1>
-<ul>
-<li>路由器 (Router) 是一种典型的<mark>网络层设备</mark> ，在 OSI 参考模型中被称为中介系统，用于完成网络层中继或第三层中继的任务。路由器<mark>负责在两个局域网的网络层间接传输数据分组，并确定网络上数据传送的最佳路径</mark>。</li>
+    <h1 id="路由器基础"><a href="#路由器基础" class="headerlink" title="路由器基础"></a>路由器基础</h1><ul>
+<li>路由器(Router)是一种典型的==网络层设备== ，在 OSI 参考模型中被称为中介系统，用于完成网络层中继或第三层中继的任务。路由器==负责在两个局域网的网络层间接传输数据分组，并确定网络上数据传送的最佳路径==。</li>
 <li>异种网络互联与多个子网互联都应采用路由器来完成。</li>
-<li>路由器的<mark>主要工作就是为经过的每个数据包寻找一条最佳的传输路径，并将该数据有效地传送到目的站点</mark>。由此可见，选择最佳路径的策略（路由算法）是路由器的关键所在。为了完成这项工作，在路由器中保存着各种传输路径的相关数据一路由表 (RoutingTable) 供路由选择时使用。路由表中保存着子网的标志信息、下一跳地址和将数据转发出去的接口等信息。</li>
-<li><strong>路由表分为静态路由表和动态路由表</strong>
-<ul>
+<li>路由器的==主要工作就是为经过的每个数据包寻找一条最佳的传输路径，并将该数据有效地传送到目的站点==。由此可见，选择最佳路径的策略（路由算法）是路由器的关键所在。为了完成这项工作，在路由器中保存着各种传输路径的相关数据一路由表(RoutingTable)供路由选择时使用。路由表中保存着子网的标志信息、下一跳地址和将数据转发出去的接口等信息。</li>
+<li><strong>路由表分为静态路由表和动态路由表</strong><ul>
 <li>静态路由：手工指定（默认路由、静态路由）</li>
 <li>动态路由：</li>
 <li>距离矢量（Distance-Vector）路由协议：RIP（Routing information Protocol）</li>
@@ -161,121 +159,198 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 </ul>
 </li>
 </ul>
-<h1 id="路由器简介和分类路由器router"><a class="markdownIt-Anchor" href="#路由器简介和分类路由器router">#</a> 路由器简介和分类：路由器（Router）</h1>
-<ul>
-<li>
-<p>用来连接不同的局域网，路由器可以学习和传播各种路由信息，并根据这些路由信息将网络中的分组转发到正确的网络中。路由器工作在第 3 层网络层，<mark>具有局域网和广域网两种接口</mark>。</p>
+<h1 id="路由器简介和分类：路由器（Router）"><a href="#路由器简介和分类：路由器（Router）" class="headerlink" title="路由器简介和分类：路由器（Router）"></a>路由器简介和分类：路由器（Router）</h1><ul>
+<li><p>用来连接不同的局域网，路由器可以学习和传播各种路由信息，并根据这些路由信息将网络中的分组转发到正确的网络中。路由器工作在第3层网络层，==具有局域网和广域网两种接口==。</p>
 </li>
-<li>
-<p><strong>根据功能、性能、应用分为：</strong></p>
+<li><p><strong>根据功能、性能、应用分为：</strong></p>
 <ol>
-<li>骨干路由器：主干网络互连，模块化、热备份、双电源等冗余技术。如国家级、省级骨干网互连。如 NE40E 以上系列。</li>
-<li>企业级路由器：用于一个企业出入口，提供多种功能，完成企业组网。可实现数据、语音、视频等应用。如 AR3600 系列。</li>
-<li>接入级路由器：边缘路由器，小型企业，或者部门组网。如 AR2200 系列。</li>
+<li>骨干路由器：主干网络互连，模块化、热备份、双电源等冗余技术。如国家级、省级骨干网互连。如NE40E以上系列。</li>
+<li>企业级路由器：用于一个企业出入口，提供多种功能，完成企业组网。可实现数据、语音、视频等应用。如AR3600系列。</li>
+<li>接入级路由器：边缘路由器，小型企业，或者部门组网。如AR2200系列。</li>
 </ol>
 </li>
 </ul>
-<h1 id="路由器上的一些常见端口"><a class="markdownIt-Anchor" href="#路由器上的一些常见端口">#</a> 路由器上的一些常见端口</h1>
-<ol>
-<li><code>Serial</code>  端口：高速同步串口，与广域网连接，可连接 DDN、帧中继、X.25、PSTN 等网络。</li>
-<li><code>Console</code>  端口：初次配置控制台端口，利用终端仿真程序，如超级终端、 <code>SecureCRT</code>  对路由器进行本地配置。</li>
-<li><code>RJ-45</code>  端口：以太网口，通过双绞线连接局域网，有的标识 ETH，有的标识为 <code>10/100 b TX</code> 。</li>
-<li><code>AUX</code>  端口：远程配置路由器，连接 <code>Modem</code></li>
+<h1 id="路由器上的一些常见端口"><a href="#路由器上的一些常见端口" class="headerlink" title="路由器上的一些常见端口"></a>路由器上的一些常见端口</h1><ol>
+<li><code>Serial</code>端口：高速同步串口，与广域网连接，可连接DDN、帧中继、X.25、PSTN等网络。</li>
+<li><code>Console</code>端口：初次配置控制台端口，利用终端仿真程序，如超级终端、<code>SecureCRT</code>对路由器进行本地配置。</li>
+<li><code>RJ-45</code>端口：以太网口，通过双绞线连接局域网，有的标识ETH，有的标识为<code>10/100 b TX</code>。</li>
+<li><code>AUX</code>端口：远程配置路由器，连接<code>Modem</code></li>
 </ol>
-<h1 id="交换路由的操作系统vrp"><a class="markdownIt-Anchor" href="#交换路由的操作系统vrp">#</a> 交换路由的操作系统 VRP：</h1>
-<ul>
-<li>是华为公司为其网络设备开发的操作维护系统。用户通过运行命令行 CLI，对网络设备进行功能设置</li>
+<h1 id="交换路由的操作系统VRP："><a href="#交换路由的操作系统VRP：" class="headerlink" title="交换路由的操作系统VRP："></a>交换路由的操作系统VRP：</h1><ul>
+<li>是华为公司为其网络设备开发的操作维护系统。用户通过运行命令行CLI，对网络设备进行功能设置</li>
 </ul>
-<h1 id="访问交换机和路由器的几种方法"><a class="markdownIt-Anchor" href="#访问交换机和路由器的几种方法">#</a> 访问交换机和路由器的几种方法：</h1>
-<ol>
-<li><code>Console</code>  口，初次配置</li>
-<li><code>AUX</code>  口远程拨号</li>
-<li><code>Telnet</code>  带外远程</li>
-<li>Web 浏览器输入 IP</li>
-<li>网管软件</li>
-</ol>
+<h1 id="访问交换机和路由器的几种方法："><a href="#访问交换机和路由器的几种方法：" class="headerlink" title="访问交换机和路由器的几种方法："></a>访问交换机和路由器的几种方法：</h1><ol>
+<li><code>Console</code>口，初次配置</li>
+<li><code>AUX</code>口远程拨号</li>
+<li><code>Telnet</code>带外远程</li>
+<li>Web浏览器输入IP</li>
+<li><p>网管软件</p>
 <p><img data-src="https://z3.ax1x.com/2021/05/09/gYT8yj.png" alt="webjhj"></p>
-<h1 id="交换和路由中的广播域和冲突域"><a class="markdownIt-Anchor" href="#交换和路由中的广播域和冲突域">#</a> 交换和路由中的广播域和冲突域：</h1>
-<ol>
-<li><strong>冲突域</strong> ： 在同一个冲突域中的每一个节点都能收到所有被发送的帧。简单的说就是同一时间内只能有一台设备发送信息的范围。 <mark>交换机能分隔冲突域 。一个端口一个冲突域</mark></li>
-<li><strong>广播域</strong> ：网络中能接收任一设备发出的广播帧的所有设备的集合。简单的说如果站点发出一个广播信号，所有能接收收到这个信号的设备范围称为一个广播域。 <mark>路由器能分隔广播域。一个端口一个广播域</mark></li>
+</li>
 </ol>
-<h1 id="路由器基本配置实验"><a class="markdownIt-Anchor" href="#路由器基本配置实验">#</a> 路由器基本配置实验</h1>
-<h2 id="设置系统的日期-时间和时区"><a class="markdownIt-Anchor" href="#设置系统的日期-时间和时区">#</a> 设置系统的日期、时间和时区</h2>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre>&lt;Huawei>clock time zone BJ add 08：00：00</pre></td></tr><tr><td data-num="2"></td><td><pre>&lt;Huawei>clock datetime 20：10：00 2015<span class="token operator">-</span>03<span class="token operator">-</span>26</pre></td></tr></table></figure><h2 id="设置设备名称和管理ip地址"><a class="markdownIt-Anchor" href="#设置设备名称和管理ip地址">#</a> 设置设备名称和管理 IP 地址</h2>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre>&lt;Huawe1>system<span class="token operator">-</span>view</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token namespace">[Huawei]</span>sysname Server</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[Server]</span>interface gigabitethernet0<span class="token operator">/</span>0<span class="token operator">/</span>0</pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token namespace">[Server-GigabitEthernet0/0/0]</span>ip address 10<span class="token punctuation">.</span>137<span class="token punctuation">.</span>217<span class="token punctuation">.</span>177 24</pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token namespace">[Server-GigabitEthernet0/0/0]</span>quit</pre></td></tr></table></figure><h1 id="路由相关实验"><a class="markdownIt-Anchor" href="#路由相关实验">#</a> 路由相关实验</h1>
-<h2 id="静态路由配置"><a class="markdownIt-Anchor" href="#静态路由配置">#</a> 静态路由配置</h2>
-<p><img data-src="https://z3.ax1x.com/2021/05/09/gYTBpF.png" alt="s"></p>
+<h1 id="交换和路由中的广播域和冲突域："><a href="#交换和路由中的广播域和冲突域：" class="headerlink" title="交换和路由中的广播域和冲突域："></a>交换和路由中的广播域和冲突域：</h1><ol>
+<li><strong>冲突域</strong> ： 在同一个冲突域中的每一个节点都能收到所有被发送的帧。简单的说就是同一时间内只能有一台设备发送信息的范围。 ==交换机能分隔冲突域 。一个端口一个冲突域==</li>
+<li><strong>广播域</strong> ：网络中能接收任一设备发出的广播帧的所有设备的集合。简单的说如果站点发出一个广播信号，所有能接收收到这个信号的设备范围称为一个广播域。 ==路由器能分隔广播域。一个端口一个广播域==</li>
+</ol>
+<h1 id="路由器基本配置实验"><a href="#路由器基本配置实验" class="headerlink" title="路由器基本配置实验"></a>路由器基本配置实验</h1><h2 id="设置系统的日期、时间和时区"><a href="#设置系统的日期、时间和时区" class="headerlink" title="设置系统的日期、时间和时区"></a>设置系统的日期、时间和时区</h2><pre><code class="lang-powershell">&lt;Huawei&gt;clock time zone BJ add 08：00：00
+&lt;Huawei&gt;clock datetime 20：10：00 2015-03-26
+</code></pre>
+<h2 id="设置设备名称和管理IP地址"><a href="#设置设备名称和管理IP地址" class="headerlink" title="设置设备名称和管理IP地址"></a>设置设备名称和管理IP地址</h2><pre><code class="lang-powershell">&lt;Huawe1&gt;system-view
+[Huawei]sysname Server
+[Server]interface gigabitethernet0/0/0
+[Server-GigabitEthernet0/0/0]ip address 10.137.217.177 24
+[Server-GigabitEthernet0/0/0]quit
+</code></pre>
+<h1 id="路由相关实验"><a href="#路由相关实验" class="headerlink" title="路由相关实验"></a>路由相关实验</h1><h2 id="静态路由配置"><a href="#静态路由配置" class="headerlink" title="静态路由配置"></a>静态路由配置</h2><p><img data-src="https://z3.ax1x.com/2021/05/09/gYTBpF.png" alt="s"></p>
 <ol>
 <li>配置各路由的接口 IP</li>
 </ol>
 <ul>
 <li><strong>R1</strong></li>
 </ul>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre>&lt;Huawei>sys</pre></td></tr><tr><td data-num="2"></td><td><pre>&lt;Huawei>system<span class="token operator">-</span>view</pre></td></tr><tr><td data-num="3"></td><td><pre>Enter system view<span class="token punctuation">,</span> <span class="token keyword">return</span> user view with Ctrl<span class="token operator">+</span>Z<span class="token punctuation">.</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token namespace">[Huawei]</span>un in en</pre></td></tr><tr><td data-num="5"></td><td><pre>Info: Information center is disabled<span class="token punctuation">.</span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token namespace">[Huawei]</span>sysname R1</pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token namespace">[R1]</span>interface GigabitEthernet 0<span class="token operator">/</span>0<span class="token operator">/</span>1</pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token namespace">[R1-GigabitEthernet0/0/1]</span>ip address 10<span class="token punctuation">.</span>1<span class="token punctuation">.</span>1<span class="token punctuation">.</span>1 24 <span class="token operator">/</span><span class="token operator">/</span>配置接口 IP</pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token namespace">[R1-GigabitEthernet0/0/1]</span>quit</pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token namespace">[R1]</span>interface GigabitEthernet 0<span class="token operator">/</span>0<span class="token operator">/</span>2</pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token namespace">[R1-GigabitEthernet0/0/2]</span>ip address 10<span class="token punctuation">.</span>1<span class="token punctuation">.</span>4<span class="token punctuation">.</span>1 24 <span class="token operator">/</span><span class="token operator">/</span>配置接口 IP</pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token namespace">[R1-GigabitEthernet0/0/2]</span>quit</pre></td></tr></table></figure><ul>
+<pre><code class="lang-powershell">&lt;Huawei&gt;sys
+&lt;Huawei&gt;system-view
+Enter system view, return user view with Ctrl+Z.
+[Huawei]un in en
+Info: Information center is disabled.
+[Huawei]sysname R1
+[R1]interface GigabitEthernet 0/0/1
+[R1-GigabitEthernet0/0/1]ip address 10.1.1.1 24 //配置接口 IP
+[R1-GigabitEthernet0/0/1]quit
+[R1]interface GigabitEthernet 0/0/2
+[R1-GigabitEthernet0/0/2]ip address 10.1.4.1 24 //配置接口 IP
+[R1-GigabitEthernet0/0/2]quit
+</code></pre>
+<ul>
 <li><strong>R2</strong></li>
 </ul>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre>&lt;Huawei>system<span class="token operator">-</span>view </pre></td></tr><tr><td data-num="2"></td><td><pre>Enter system view<span class="token punctuation">,</span> <span class="token keyword">return</span> user view with Ctrl<span class="token operator">+</span>Z<span class="token punctuation">.</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[Huawei]</span>un in en</pre></td></tr><tr><td data-num="4"></td><td><pre>Info: Information center is disabled<span class="token punctuation">.</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token namespace">[Huawei]</span>sysname R2</pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token namespace">[R2]</span>interface GigabitEthernet 0<span class="token operator">/</span>0<span class="token operator">/</span>1</pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token namespace">[R2-GigabitEthernet0/0/1]</span>ip address 10<span class="token punctuation">.</span>1<span class="token punctuation">.</span>2<span class="token punctuation">.</span>1 24 <span class="token operator">/</span><span class="token operator">/</span>配置接口 IP </pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token namespace">[R2-GigabitEthernet0/0/1]</span>interface GigabitEthernet 0<span class="token operator">/</span>0<span class="token operator">/</span>2</pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token namespace">[R2-GigabitEthernet0/0/2]</span>ip address 10<span class="token punctuation">.</span>1<span class="token punctuation">.</span>4<span class="token punctuation">.</span>2 24 <span class="token operator">/</span><span class="token operator">/</span>配置接口 IP</pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token namespace">[R2]</span>interface GigabitEthernet 0<span class="token operator">/</span>0<span class="token operator">/</span>0</pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token namespace">[R2-GigabitEthernet0/0/0]</span>ip address 10<span class="token punctuation">.</span>1<span class="token punctuation">.</span>5<span class="token punctuation">.</span>1 24 <span class="token operator">/</span><span class="token operator">/</span>配置接口 IP</pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token namespace">[R2-GigabitEthernet0/0/0]</span>quit</pre></td></tr></table></figure><ul>
+<pre><code class="lang-powershell">&lt;Huawei&gt;system-view 
+Enter system view, return user view with Ctrl+Z.
+[Huawei]un in en
+Info: Information center is disabled.
+[Huawei]sysname R2
+[R2]interface GigabitEthernet 0/0/1
+[R2-GigabitEthernet0/0/1]ip address 10.1.2.1 24 //配置接口 IP 
+[R2-GigabitEthernet0/0/1]interface GigabitEthernet 0/0/2
+[R2-GigabitEthernet0/0/2]ip address 10.1.4.2 24 //配置接口 IP
+[R2]interface GigabitEthernet 0/0/0
+[R2-GigabitEthernet0/0/0]ip address 10.1.5.1 24 //配置接口 IP
+[R2-GigabitEthernet0/0/0]quit
+</code></pre>
+<ul>
 <li><strong>R3</strong></li>
 </ul>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre>&lt;Huawei>system<span class="token operator">-</span>view </pre></td></tr><tr><td data-num="2"></td><td><pre>Enter system view<span class="token punctuation">,</span> <span class="token keyword">return</span> user view with Ctrl<span class="token operator">+</span>Z<span class="token punctuation">.</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[Huawei]</span>sysn</pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token namespace">[R3]</span>UN IN EN</pre></td></tr><tr><td data-num="5"></td><td><pre>Info: Information center is disabled<span class="token punctuation">.</span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token namespace">[Huawei]</span>sysname R3</pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token namespace">[R3]</span>interface GigabitEthernet 0<span class="token operator">/</span>0<span class="token operator">/</span>2</pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token namespace">[R3-GigabitEthernet0/0/2]</span>ip address 10<span class="token punctuation">.</span>1<span class="token punctuation">.</span>5<span class="token punctuation">.</span>2 24 <span class="token operator">/</span><span class="token operator">/</span>配置接口 IP</pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token namespace">[R3-GigabitEthernet0/0/2]</span>quit</pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token namespace">[R3]</span>interface GigabitEthernet 0<span class="token operator">/</span>0<span class="token operator">/</span>1</pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token namespace">[R3-GigabitEthernet0/0/1]</span>ip address 10<span class="token punctuation">.</span>1<span class="token punctuation">.</span>3<span class="token punctuation">.</span>1 24 <span class="token operator">/</span><span class="token operator">/</span>配置接口 IP</pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token namespace">[R3-GigabitEthernet0/0/1]</span>quit</pre></td></tr></table></figure><ol start="2">
+<pre><code class="lang-powershell">&lt;Huawei&gt;system-view 
+Enter system view, return user view with Ctrl+Z.
+[Huawei]sysn
+[R3]UN IN EN
+Info: Information center is disabled.
+[Huawei]sysname R3
+[R3]interface GigabitEthernet 0/0/2
+[R3-GigabitEthernet0/0/2]ip address 10.1.5.2 24 //配置接口 IP
+[R3-GigabitEthernet0/0/2]quit
+[R3]interface GigabitEthernet 0/0/1
+[R3-GigabitEthernet0/0/1]ip address 10.1.3.1 24 //配置接口 IP
+[R3-GigabitEthernet0/0/1]quit
+</code></pre>
+<ol>
 <li>配置各路由器的静态 IP</li>
 </ol>
 <ul>
 <li><strong>R1</strong></li>
 </ul>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token namespace">[R1]</span>ip route<span class="token operator">-</span>static 10<span class="token punctuation">.</span>1<span class="token punctuation">.</span>2<span class="token punctuation">.</span>0 255<span class="token punctuation">.</span>255<span class="token punctuation">.</span>255<span class="token punctuation">.</span>0 10<span class="token punctuation">.</span>1<span class="token punctuation">.</span>4<span class="token punctuation">.</span>2 <span class="token operator">/</span><span class="token operator">/</span>R1 到 PC2 的静态路由</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token namespace">[R1]</span>ip route<span class="token operator">-</span>static 10<span class="token punctuation">.</span>1<span class="token punctuation">.</span>3<span class="token punctuation">.</span>0 255<span class="token punctuation">.</span>255<span class="token punctuation">.</span>255<span class="token punctuation">.</span>0 10<span class="token punctuation">.</span>1<span class="token punctuation">.</span>4<span class="token punctuation">.</span>2 <span class="token operator">/</span><span class="token operator">/</span>R1 到 PC3 的静态路由</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[R1]</span>ip route<span class="token operator">-</span>static 10<span class="token punctuation">.</span>1<span class="token punctuation">.</span>5<span class="token punctuation">.</span>0 255<span class="token punctuation">.</span>255<span class="token punctuation">.</span>255<span class="token punctuation">.</span>0 10<span class="token punctuation">.</span>1<span class="token punctuation">.</span>4<span class="token punctuation">.</span>2 <span class="token operator">/</span><span class="token operator">/</span>R1 到 R3 的静态路由</pre></td></tr></table></figure><ul>
+<pre><code class="lang-powershell">[R1]ip route-static 10.1.2.0 255.255.255.0 10.1.4.2 //R1 到 PC2 的静态路由
+[R1]ip route-static 10.1.3.0 255.255.255.0 10.1.4.2 //R1 到 PC3 的静态路由
+[R1]ip route-static 10.1.5.0 255.255.255.0 10.1.4.2 //R1 到 R3 的静态路由
+</code></pre>
+<ul>
 <li><strong>R2</strong></li>
 </ul>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token namespace">[R2]</span>ip route<span class="token operator">-</span>static 10<span class="token punctuation">.</span>1<span class="token punctuation">.</span>1<span class="token punctuation">.</span>0 255<span class="token punctuation">.</span>255<span class="token punctuation">.</span>255<span class="token punctuation">.</span>0 10<span class="token punctuation">.</span>1<span class="token punctuation">.</span>4<span class="token punctuation">.</span>1 <span class="token operator">/</span><span class="token operator">/</span>R2 到 PC1 的静态路由</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token namespace">[R2]</span>ip route<span class="token operator">-</span>static 10<span class="token punctuation">.</span>1<span class="token punctuation">.</span>3<span class="token punctuation">.</span>0 255<span class="token punctuation">.</span>255<span class="token punctuation">.</span>255<span class="token punctuation">.</span>0 10<span class="token punctuation">.</span>1<span class="token punctuation">.</span>5<span class="token punctuation">.</span>2 <span class="token operator">/</span><span class="token operator">/</span>R2 到 PC3 的静态路由</pre></td></tr></table></figure><ul>
+<pre><code class="lang-powershell">[R2]ip route-static 10.1.1.0 255.255.255.0 10.1.4.1 //R2 到 PC1 的静态路由
+[R2]ip route-static 10.1.3.0 255.255.255.0 10.1.5.2 //R2 到 PC3 的静态路由
+</code></pre>
+<ul>
 <li><strong>R3</strong></li>
 </ul>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token namespace">[R3]</span>ip route<span class="token operator">-</span>static 10<span class="token punctuation">.</span>1<span class="token punctuation">.</span>1<span class="token punctuation">.</span>0 255<span class="token punctuation">.</span>255<span class="token punctuation">.</span>255<span class="token punctuation">.</span>0 10<span class="token punctuation">.</span>1<span class="token punctuation">.</span>5<span class="token punctuation">.</span>1 <span class="token operator">/</span><span class="token operator">/</span>R3 到 PC1 的静态路由</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token namespace">[R3]</span>ip route<span class="token operator">-</span>static 10<span class="token punctuation">.</span>1<span class="token punctuation">.</span>2<span class="token punctuation">.</span>0 255<span class="token punctuation">.</span>255<span class="token punctuation">.</span>255<span class="token punctuation">.</span>0 10<span class="token punctuation">.</span>1<span class="token punctuation">.</span>5<span class="token punctuation">.</span>1 <span class="token operator">/</span><span class="token operator">/</span>R3 到 PC2 的静态路由</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[R3]</span>ip route<span class="token operator">-</span>static 10<span class="token punctuation">.</span>1<span class="token punctuation">.</span>4<span class="token punctuation">.</span>0 255<span class="token punctuation">.</span>255<span class="token punctuation">.</span>255<span class="token punctuation">.</span>0 10<span class="token punctuation">.</span>1<span class="token punctuation">.</span>5<span class="token punctuation">.</span>1 <span class="token operator">/</span><span class="token operator">/</span>R3 到 R1 的静态路由</pre></td></tr></table></figure><ol start="3">
-<li>在各个路由器上执行  <code>display ip routing-table</code>  查看路由表</li>
+<pre><code class="lang-powershell">[R3]ip route-static 10.1.1.0 255.255.255.0 10.1.5.1 //R3 到 PC1 的静态路由
+[R3]ip route-static 10.1.2.0 255.255.255.0 10.1.5.1 //R3 到 PC2 的静态路由
+[R3]ip route-static 10.1.4.0 255.255.255.0 10.1.5.1 //R3 到 R1 的静态路由
+</code></pre>
+<ol>
+<li>在各个路由器上执行 <code>display ip routing-table</code> 查看路由表</li>
 </ol>
 <p><img data-src="https://z3.ax1x.com/2021/05/09/gYTr6J.png" alt="iprou"></p>
 <ol>
-<li>在 PC 机上互相  <code>ping</code> ，可以通信</li>
+<li>在PC机上互相 <code>ping</code>，可以通信</li>
 </ol>
 <hr>
-<h2 id="静态路由-ipv6-配置"><a class="markdownIt-Anchor" href="#静态路由-ipv6-配置">#</a> 静态路由 IPv6 配置</h2>
-<p><img data-src="https://z3.ax1x.com/2021/05/09/gYTc01.png" alt="jtlyv6"></p>
+<h2 id="静态路由-IPv6-配置"><a href="#静态路由-IPv6-配置" class="headerlink" title="静态路由 IPv6 配置"></a>静态路由 IPv6 配置</h2><p><img data-src="https://z3.ax1x.com/2021/05/09/gYTc01.png" alt="jtlyv6"></p>
 <ol>
 <li>配置各路由的接口 IP（类似 IPv4 配置，IPv6 功能默认关闭，使用时需开启全局使能 IPv6）</li>
 </ol>
 <ul>
 <li><strong>R1</strong></li>
 </ul>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre>&lt;Huawei>system<span class="token operator">-</span>view </pre></td></tr><tr><td data-num="2"></td><td><pre>Enter system view<span class="token punctuation">,</span> <span class="token keyword">return</span> user view with Ctrl<span class="token operator">+</span>Z<span class="token punctuation">.</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[Huawei]</span>un info en</pre></td></tr><tr><td data-num="4"></td><td><pre>Info: Information center is disabled<span class="token punctuation">.</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token namespace">[Huawei]</span>sysname R1</pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token namespace">[R1]</span>ipv6 <span class="token operator">/</span><span class="token operator">/</span>全局使能 IPV6（启用路由器 IPv6 报文转发能力）</pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token namespace">[R1]</span>interface GigabitEthernet 0<span class="token operator">/</span>0<span class="token operator">/</span>0 <span class="token operator">/</span><span class="token operator">/</span>进入对应接口</pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token namespace">[R1-GigabitEthernet0/0/0]</span>ipv6 enable <span class="token operator">/</span><span class="token operator">/</span>接口开启 IPv6 功能</pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token namespace">[R1-GigabitEthernet0/0/0]</span>ipv6 address 1::1 64 <span class="token operator">/</span><span class="token operator">/</span>接口配置对应的 IPv6 地址</pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token namespace">[R1-GigabitEthernet0/0/0]</span>quit</pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token namespace">[R1]</span>interface GigabitEthernet 0<span class="token operator">/</span>0<span class="token operator">/</span>2 <span class="token operator">/</span><span class="token operator">/</span>进入对应接口</pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token namespace">[R1-GigabitEthernet0/0/2]</span>ipv6 enable <span class="token operator">/</span><span class="token operator">/</span>接口开启 IPv6 功能</pre></td></tr><tr><td data-num="13"></td><td><pre><span class="token namespace">[R1-GigabitEthernet0/0/2]</span>ipv6 address 3::1 64 <span class="token operator">/</span><span class="token operator">/</span>接口配置对应的 IPv6 地址</pre></td></tr><tr><td data-num="14"></td><td><pre><span class="token namespace">[R1-GigabitEthernet0/0/2]</span>quit</pre></td></tr></table></figure><ul>
+<pre><code class="lang-powershell">&lt;Huawei&gt;system-view 
+Enter system view, return user view with Ctrl+Z.
+[Huawei]un info en
+Info: Information center is disabled.
+[Huawei]sysname R1
+[R1]ipv6 //全局使能 IPV6（启用路由器 IPv6 报文转发能力）
+[R1]interface GigabitEthernet 0/0/0 //进入对应接口
+[R1-GigabitEthernet0/0/0]ipv6 enable //接口开启 IPv6 功能
+[R1-GigabitEthernet0/0/0]ipv6 address 1::1 64 //接口配置对应的 IPv6 地址
+[R1-GigabitEthernet0/0/0]quit
+[R1]interface GigabitEthernet 0/0/2 //进入对应接口
+[R1-GigabitEthernet0/0/2]ipv6 enable //接口开启 IPv6 功能
+[R1-GigabitEthernet0/0/2]ipv6 address 3::1 64 //接口配置对应的 IPv6 地址
+[R1-GigabitEthernet0/0/2]quit
+</code></pre>
+<ul>
 <li><strong>R2</strong></li>
 </ul>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre>&lt;Huawei>system<span class="token operator">-</span>view </pre></td></tr><tr><td data-num="2"></td><td><pre>Enter system view<span class="token punctuation">,</span> <span class="token keyword">return</span> user view with Ctrl<span class="token operator">+</span>Z<span class="token punctuation">.</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[Huawei]</span>sysn R2</pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token namespace">[R2]</span>ipv6</pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token namespace">[R2]</span>interface GigabitEthernet 0<span class="token operator">/</span>0<span class="token operator">/</span>2</pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token namespace">[R2-GigabitEthernet0/0/2]</span>ipv6 enable </pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token namespace">[R2-GigabitEthernet0/0/2]</span>ipv6 address 3::2 64</pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token namespace">[R2-GigabitEthernet0/0/2]</span>quit</pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token namespace">[R2]</span>interface GigabitEthernet 0<span class="token operator">/</span>0<span class="token operator">/</span>0</pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token namespace">[R2-GigabitEthernet0/0/0]</span>ipv6 enable </pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token namespace">[R2-GigabitEthernet0/0/0]</span>ipv6 address 2::1 64</pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token namespace">[R2-GigabitEthernet0/0/0]</span>quit</pre></td></tr></table></figure><blockquote>
+<pre><code class="lang-powershell">&lt;Huawei&gt;system-view 
+Enter system view, return user view with Ctrl+Z.
+[Huawei]sysn R2
+[R2]ipv6
+[R2]interface GigabitEthernet 0/0/2
+[R2-GigabitEthernet0/0/2]ipv6 enable 
+[R2-GigabitEthernet0/0/2]ipv6 address 3::2 64
+[R2-GigabitEthernet0/0/2]quit
+[R2]interface GigabitEthernet 0/0/0
+[R2-GigabitEthernet0/0/0]ipv6 enable 
+[R2-GigabitEthernet0/0/0]ipv6 address 2::1 64
+[R2-GigabitEthernet0/0/0]quit
+</code></pre>
+<blockquote>
 <p>R2 接口设置步骤同 R1</p>
 </blockquote>
-<ol start="2">
+<ol>
 <li>配置到各路由器的静态路由</li>
 </ol>
 <ul>
 <li><strong>R1</strong></li>
 </ul>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token namespace">[R1]</span>ipv6 route<span class="token operator">-</span>static 2:: 64 3::2 <span class="token operator">/</span><span class="token operator">/</span>R1 到 PC2 的静态 IPv6 路由</pre></td></tr></table></figure><ul>
+<pre><code class="lang-powershell">[R1]ipv6 route-static 2:: 64 3::2 //R1 到 PC2 的静态 IPv6 路由
+</code></pre>
+<ul>
 <li><strong>R2</strong></li>
 </ul>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token namespace">[R2]</span>ipv6 route<span class="token operator">-</span>static 1:: 64 3::1 <span class="token operator">/</span><span class="token operator">/</span>R2 到 PC1 的静态 IPv6 路由</pre></td></tr></table></figure><ol start="3">
+<pre><code class="lang-powershell">[R2]ipv6 route-static 1:: 64 3::1 //R2 到 PC1 的静态 IPv6 路由
+</code></pre>
+<ol>
 <li>检查配置结果</li>
 </ol>
 <ul>
-<li>使用  <code>display ipv6 routing-table</code>  命令查看路由器的 IP 路由表</li>
-<li>使用  <code>Ping ipv6</code>  命令验证连通性，要求从 PC1 可以 <code>ping</code>  通 PC2</li>
+<li>使用 <code>display ipv6 routing-table</code> 命令查看路由器的 IP 路由表</li>
+<li>使用 <code>Ping ipv6</code> 命令验证连通性，要求从 PC1 可以<code>ping</code> 通 PC2</li>
 </ul>
-<h2 id="rip路由配置"><a class="markdownIt-Anchor" href="#rip路由配置">#</a> RIP 路由配置</h2>
-<ul>
-<li>距离矢量路由协议（D-V）RIPv2 支持 CIDR/VLSM
-<ul>
-<li>使用 == 组播地址（224.0.0.x）== 发送路由信息</li>
-<li>适用于<mark>小型网络（最大跳 15）</mark></li>
-<li><mark>30s 广播一次路由信息</mark></li>
-<li><mark>工作于网络层</mark></li>
+<h2 id="RIP路由配置"><a href="#RIP路由配置" class="headerlink" title="RIP路由配置"></a>RIP路由配置</h2><ul>
+<li>距离矢量路由协议（D-V）RIPv2 支持 CIDR/VLSM<ul>
+<li>使用==组播地址（224.0.0.x）==发送路由信息</li>
+<li>适用于==小型网络（最大跳 15）==</li>
+<li>==30s 广播一次路由信息==</li>
+<li>==工作于网络层==</li>
 <li>优先级（AD）默认 100</li>
 </ul>
 </li>
@@ -285,59 +360,117 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <li>配置各路由器的接口 IP</li>
 </ol>
 <ul>
-<li><strong>配置 R1</strong></li>
+<li><strong>配置R1</strong></li>
 </ul>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre>&lt;Huawei>system<span class="token operator">-</span>view </pre></td></tr><tr><td data-num="2"></td><td><pre>Enter system view<span class="token punctuation">,</span> <span class="token keyword">return</span> user view with Ctrl<span class="token operator">+</span>Z<span class="token punctuation">.</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[Huawei]</span>un in en</pre></td></tr><tr><td data-num="4"></td><td><pre>Info: Information center is disabled<span class="token punctuation">.</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token namespace">[Huawei]</span>sysn R1</pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token namespace">[R1]</span>int gig 0<span class="token operator">/</span>0<span class="token operator">/</span>1</pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token namespace">[R1-GigabitEthernet0/0/1]</span>ip address 192<span class="token punctuation">.</span>168<span class="token punctuation">.</span>1<span class="token punctuation">.</span>1 24</pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token namespace">[R1-GigabitEthernet0/0/1]</span></pre></td></tr></table></figure><ul>
-<li><strong>配置 R2</strong></li>
+<pre><code class="lang-powershell">&lt;Huawei&gt;system-view 
+Enter system view, return user view with Ctrl+Z.
+[Huawei]un in en
+Info: Information center is disabled.
+[Huawei]sysn R1
+[R1]int gig 0/0/1
+[R1-GigabitEthernet0/0/1]ip address 192.168.1.1 24
+[R1-GigabitEthernet0/0/1]
+</code></pre>
+<ul>
+<li><strong>配置R2</strong></li>
 </ul>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre>&lt;Huawei>system<span class="token operator">-</span>view </pre></td></tr><tr><td data-num="2"></td><td><pre>Enter system view<span class="token punctuation">,</span> <span class="token keyword">return</span> user view with Ctrl<span class="token operator">+</span>Z<span class="token punctuation">.</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[Huawei]</span>Un in en</pre></td></tr><tr><td data-num="4"></td><td><pre>Info: Information center is disabled<span class="token punctuation">.</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token namespace">[Huawei]</span>sysn R2</pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token namespace">[R2]</span>int gig 0<span class="token operator">/</span>0<span class="token operator">/</span>2</pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token namespace">[R2-GigabitEthernet0/0/2]</span>ip add 192<span class="token punctuation">.</span>168<span class="token punctuation">.</span>1<span class="token punctuation">.</span>2 24</pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token namespace">[R2-GigabitEthernet0/0/2]</span>int gig 0<span class="token operator">/</span>0<span class="token operator">/</span>1</pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token namespace">[R2-GigabitEthernet0/0/1]</span>ip add 10<span class="token punctuation">.</span>1<span class="token punctuation">.</span>1<span class="token punctuation">.</span>1 24</pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token namespace">[R2-GigabitEthernet0/0/1]</span>quit</pre></td></tr></table></figure><ul>
-<li><strong>配置 R3</strong></li>
+<pre><code class="lang-powershell">&lt;Huawei&gt;system-view 
+Enter system view, return user view with Ctrl+Z.
+[Huawei]Un in en
+Info: Information center is disabled.
+[Huawei]sysn R2
+[R2]int gig 0/0/2
+[R2-GigabitEthernet0/0/2]ip add 192.168.1.2 24
+[R2-GigabitEthernet0/0/2]int gig 0/0/1
+[R2-GigabitEthernet0/0/1]ip add 10.1.1.1 24
+[R2-GigabitEthernet0/0/1]quit
+</code></pre>
+<ul>
+<li><strong>配置R3</strong></li>
 </ul>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre>&lt;Huawei>system<span class="token operator">-</span>view </pre></td></tr><tr><td data-num="2"></td><td><pre>Enter system view<span class="token punctuation">,</span> <span class="token keyword">return</span> user view with Ctrl<span class="token operator">+</span>Z<span class="token punctuation">.</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[Huawei]</span>Un in en</pre></td></tr><tr><td data-num="4"></td><td><pre>Info: Information center is disabled<span class="token punctuation">.</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token namespace">[Huawei]</span>sysn R3</pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token namespace">[R3]</span>int gig 0<span class="token operator">/</span>0<span class="token operator">/</span>2</pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token namespace">[R3-GigabitEthernet0/0/2]</span>ip add 10<span class="token punctuation">.</span>1<span class="token punctuation">.</span>1<span class="token punctuation">.</span>2 24</pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token namespace">[R3-GigabitEthernet0/0/2]</span>int gig 0<span class="token operator">/</span>0<span class="token operator">/</span>1</pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token namespace">[R3-GigabitEthernet0/0/1]</span>ip add 172<span class="token punctuation">.</span>16<span class="token punctuation">.</span>1<span class="token punctuation">.</span>1 24</pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token namespace">[R3-GigabitEthernet0/0/1]</span>quit</pre></td></tr></table></figure><ul>
-<li><strong>配置 R4</strong></li>
+<pre><code class="lang-powershell">&lt;Huawei&gt;system-view 
+Enter system view, return user view with Ctrl+Z.
+[Huawei]Un in en
+Info: Information center is disabled.
+[Huawei]sysn R3
+[R3]int gig 0/0/2
+[R3-GigabitEthernet0/0/2]ip add 10.1.1.2 24
+[R3-GigabitEthernet0/0/2]int gig 0/0/1
+[R3-GigabitEthernet0/0/1]ip add 172.16.1.1 24
+[R3-GigabitEthernet0/0/1]quit
+</code></pre>
+<ul>
+<li><strong>配置R4</strong></li>
 </ul>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre>&lt;Huawei>system<span class="token operator">-</span>view </pre></td></tr><tr><td data-num="2"></td><td><pre>Enter system view<span class="token punctuation">,</span> <span class="token keyword">return</span> user view with Ctrl<span class="token operator">+</span>Z<span class="token punctuation">.</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[Huawei]</span>Un in en</pre></td></tr><tr><td data-num="4"></td><td><pre>Info: Information center is disabled<span class="token punctuation">.</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token namespace">[Huawei]</span>sysn R4</pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token namespace">[R4]</span>int gig 0<span class="token operator">/</span>0<span class="token operator">/</span>2</pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token namespace">[R4-GigabitEthernet0/0/2]</span>ip add 172<span class="token punctuation">.</span>16<span class="token punctuation">.</span>1<span class="token punctuation">.</span>2 24</pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token namespace">[R4-GigabitEthernet0/0/2]</span>quit</pre></td></tr></table></figure><ol start="2">
+<pre><code class="lang-powershell">&lt;Huawei&gt;system-view 
+Enter system view, return user view with Ctrl+Z.
+[Huawei]Un in en
+Info: Information center is disabled.
+[Huawei]sysn R4
+[R4]int gig 0/0/2
+[R4-GigabitEthernet0/0/2]ip add 172.16.1.2 24
+[R4-GigabitEthernet0/0/2]quit
+</code></pre>
+<ol>
 <li>配置各个路由器的 RIP 功能</li>
 </ol>
 <ul>
-<li><strong>配置 R1</strong></li>
+<li><strong>配置R1</strong></li>
 </ul>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token namespace">[R1]</span>rip <span class="token operator">/</span><span class="token operator">/</span>进入 RIP 配置</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token namespace">[R1-rip-1]</span>network 192<span class="token punctuation">.</span>168<span class="token punctuation">.</span>1<span class="token punctuation">.</span>0 <span class="token operator">/</span><span class="token operator">/</span>宣告网络</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[R1-rip-1]</span>quit</pre></td></tr></table></figure><ul>
-<li><strong>配置 R2</strong></li>
+<pre><code class="lang-powershell">[R1]rip //进入 RIP 配置
+[R1-rip-1]network 192.168.1.0 //宣告网络
+[R1-rip-1]quit
+</code></pre>
+<ul>
+<li><strong>配置R2</strong></li>
 </ul>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token namespace">[R2]</span>rip</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token namespace">[R2-rip-1]</span>network 192<span class="token punctuation">.</span>168<span class="token punctuation">.</span>1<span class="token punctuation">.</span>0</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[R2-rip-1]</span>network 10<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0</pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token namespace">[R2-rip-1]</span>quit</pre></td></tr></table></figure><ul>
-<li><strong>配置 R3</strong></li>
+<pre><code class="lang-powershell">[R2]rip
+[R2-rip-1]network 192.168.1.0
+[R2-rip-1]network 10.0.0.0
+[R2-rip-1]quit
+</code></pre>
+<ul>
+<li><strong>配置R3</strong></li>
 </ul>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token namespace">[R3]</span>rip</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token namespace">[R3-rip-1]</span>network 10<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[R3-rip-1]</span>network 172<span class="token punctuation">.</span>16<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0</pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token namespace">[R3-rip-1]</span>quit</pre></td></tr></table></figure><ul>
-<li><strong>配置 R4</strong></li>
+<pre><code class="lang-powershell">[R3]rip
+[R3-rip-1]network 10.0.0.0
+[R3-rip-1]network 172.16.0.0
+[R3-rip-1]quit
+</code></pre>
+<ul>
+<li><strong>配置R4</strong></li>
 </ul>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token namespace">[R4]</span>rip</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token namespace">[R4-rip-1]</span>network 172<span class="token punctuation">.</span>16<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[R4-rip-1]</span>quit</pre></td></tr></table></figure><ol start="3">
+<pre><code class="lang-powershell">[R4]rip
+[R4-rip-1]network 172.16.0.0
+[R4-rip-1]quit
+</code></pre>
+<ol>
 <li>查看各路由器上 RIP 信息</li>
 </ol>
 <ul>
-<li>使用  <code>display rip 1 route</code></li>
+<li>使用 <code>display rip 1 route</code></li>
 </ul>
 <p><img data-src="https://z3.ax1x.com/2021/05/09/gYT51e.png" alt="rips"></p>
 <ol>
-<li>将 RIP 路由协议升级为 RIPv2 版本</li>
-</ol>
-<blockquote>
-<p>分别在路由器 R1、R2、R3、R4 配置 RIP-2, 在路由器 R1 上配置如下，其他路由器上配置方法相同。</p>
+<li>将 RIP 路由协议升级为 RIPv2 版本<blockquote>
+<p>分别在路由器 R1、R2、R3、R4 配置 RIP-2,在路由器 R1 上配置如下，其他路由器上配置方法相同。</p>
 </blockquote>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token namespace">[R1/R2/R3/R4]</span>rip <span class="token operator">/</span><span class="token operator">/</span>进入 rip 配置</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token namespace">[R1/R2/R3/R4-rip-1]</span>version 2 <span class="token operator">/</span><span class="token operator">/</span>设置 RIPv2 版本</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[R1/R2/R3/R4-rip-1]</span>quit</pre></td></tr></table></figure><ul>
-<li>使用  <code>display rip 1 route</code>  查看版本变更效果</li>
+</li>
+</ol>
+<pre><code class="lang-powershell">[R1/R2/R3/R4]rip //进入 rip 配置
+[R1/R2/R3/R4-rip-1]version 2 //设置 RIPv2 版本
+[R1/R2/R3/R4-rip-1]quit
+</code></pre>
+<ul>
+<li>使用 <code>display rip 1 route</code> 查看版本变更效果</li>
 </ul>
-<h2 id="ospf路由配置"><a class="markdownIt-Anchor" href="#ospf路由配置">#</a> OSPF 路由配置</h2>
-<ul>
-<li>OSPF( <code>Open Shortest Path First</code>  开放式最短路径优先）
-<ul>
-<li>自治系统（AS）：
-<ul>
+<h2 id="OSPF路由配置"><a href="#OSPF路由配置" class="headerlink" title="OSPF路由配置"></a>OSPF路由配置</h2><ul>
+<li>OSPF(<code>Open Shortest Path First</code> 开放式最短路径优先）<ul>
+<li>自治系统（AS）：<ul>
 <li>自治系统包括一个单独管理实体下所控制的一组路由器（OSPF 是内部网关路由协议，工作于自治系统内部）</li>
 </ul>
 </li>
-<li>链路状态（LS）：
-<ul>
+<li>链路状态（LS）：<ul>
 <li>指路由器接口的状态（如 Up 、Down 、IP 地址、网络类型、链路开销以及路由器和它邻接路由器间的关系）</li>
 </ul>
 </li>
@@ -346,27 +479,22 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 </ul>
 <hr>
 <ul>
-<li>链路状态信息通过链路状态通告 (Link State Advertisement, LSA) 扩散到网络上的每台路由器，每台路由器根据 LSA 信息建立一个于千网络的拓扑数据库（邻居表）
-<ul>
-<li>最短路径优先算法 (SPF)= 迪克斯加算法 (Dijkstra)
-<ul>
+<li>链路状态信息通过链路状态通告(Link State Advertisement, LSA) 扩散到网络上的每台路由器，每台路由器根据 LSA 信息建立一个于千网络的拓扑数据库（邻居表）<ul>
+<li>最短路径优先算法(SPF)=迪克斯加算法(Dijkstra)<ul>
 <li>利用从 LSA 通告得来的信息计算到达每一个目标网络的最短路径，以自身为根生成一棵树，包含了到达每个目的网络的完整路径</li>
 </ul>
 </li>
-<li>路由器标识
-<ul>
+<li>路由器标识<ul>
 <li>OSPF 的路由标识是一个 32 位的数字，它在自治系统中被用来唯一地识别路由器。默认使用最高回环地址（loopback），若回环地址没有被配置，则使用物理接口上最高的 IP 地址作为路由器标识</li>
 </ul>
 </li>
-<li>邻居和邻接
-<ul>
+<li>邻居和邻接<ul>
 <li>OSPF 在相邻路由器间建立邻接关系，使它们交换路由信息。</li>
 <li>邻居是指共享同一网络的路由器，并使用 Hello 包来建立和维护邻居路由器间的邻接关系。</li>
 </ul>
 </li>
-<li>区域
-<ul>
-<li>在 OSPF 网络中使用区域 (Area) 为自治系统分段。</li>
+<li>区域<ul>
+<li>在 OSPF 网络中使用区域(Area)为自治系统分段。</li>
 <li>OSPF 是一种层次化的路由选择协议，区域 0 是一个 OSPF 网络中必须具有的区域，也称为主干区域，其他所有区域要求通过区域 0 互连到一起。</li>
 </ul>
 </li>
@@ -375,8 +503,7 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 </ul>
 <hr>
 <ul>
-<li>简化原理：
-<ul>
+<li>简化原理：<ul>
 <li>发送 Hello 报文建立邻间关系（邻居表）→形成链路状态数据库（拓扑表）→SPF（Dijkstra）算法形成路由表（路由表）</li>
 </ul>
 </li>
@@ -387,47 +514,74 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <li>配置各路由器的区域</li>
 </ol>
 <ul>
-<li>
-<p><strong>区域 0</strong></p>
+<li><p><strong>区域0</strong></p>
 <ol>
-<li>配置 R1</li>
+<li><p>配置 R1</p>
+<pre><code class="lang-powershell">[R1]ospf //进入 ospf 配置
+[R1-ospf-1]area 0 //进入区域 0
+[R1-ospf-1-area-0.0.0.0]network 192.168.1.0 0.0.0.255 //宣告网络（通配符掩码）
+</code></pre>
+</li>
+<li><p>配置 R2</p>
+<pre><code class="lang-powershell">[R2]ospf
+[R2-ospf-1]area 0
+[R2-ospf-1-area-0.0.0.0]network 192.168.1.0 0.0.0.255
+</code></pre>
+</li>
 </ol>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token namespace">[R1]</span>ospf <span class="token operator">/</span><span class="token operator">/</span>进入 ospf 配置</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token namespace">[R1-ospf-1]</span>area 0 <span class="token operator">/</span><span class="token operator">/</span>进入区域 0</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[R1-ospf-1-area-0.0.0.0]</span>network 192<span class="token punctuation">.</span>168<span class="token punctuation">.</span>1<span class="token punctuation">.</span>0 0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>255 <span class="token operator">/</span><span class="token operator">/</span>宣告网络（通配符掩码）</pre></td></tr></table></figure><ol start="2">
-<li>配置 R2</li>
-</ol>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token namespace">[R2]</span>ospf</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token namespace">[R2-ospf-1]</span>area 0</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[R2-ospf-1-area-0.0.0.0]</span>network 192<span class="token punctuation">.</span>168<span class="token punctuation">.</span>1<span class="token punctuation">.</span>0 0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>255</pre></td></tr></table></figure></li>
-<li>
-<p><strong>区域 1</strong></p>
+</li>
+<li><p><strong>区域1</strong></p>
 <ol>
-<li>配置 R1</li>
+<li><p>配置 R1</p>
+<pre><code class="lang-powershell">[R1]ospf //进入 ospf 配置
+[R1-ospf-1]area 1 //进入区域 1
+[R1-ospf-1-area-0.0.0.1]network 192.168.2.0 0.0.0.255 //宣告网络（通配符掩码）
+</code></pre>
+</li>
+<li><p>配置 R3</p>
+<pre><code class="lang-powershell">[R3]ospf
+[R3-ospf-1]area 1
+[R3-ospf-1-area-0.0.0.1]network 192.168.2.0 0.0.0.255
+[R3-ospf-1-area-0.0.0.1]network 192.168.3.0 0.0.0.255
+</code></pre>
+</li>
+<li>配置 R5<pre><code class="lang-powershell">[R5]ospf
+[R5-ospf-1]area 1
+[R5-ospf-1-area-0.0.0.1]network 192.168.3.0 0.0.0.255
+</code></pre>
+</li>
 </ol>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token namespace">[R1]</span>ospf <span class="token operator">/</span><span class="token operator">/</span>进入 ospf 配置</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token namespace">[R1-ospf-1]</span>area 1 <span class="token operator">/</span><span class="token operator">/</span>进入区域 1</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[R1-ospf-1-area-0.0.0.1]</span>network 192<span class="token punctuation">.</span>168<span class="token punctuation">.</span>2<span class="token punctuation">.</span>0 0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>255 <span class="token operator">/</span><span class="token operator">/</span>宣告网络（通配符掩码）</pre></td></tr></table></figure><ol start="2">
-<li>配置 R3</li>
-</ol>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token namespace">[R3]</span>ospf</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token namespace">[R3-ospf-1]</span>area 1</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[R3-ospf-1-area-0.0.0.1]</span>network 192<span class="token punctuation">.</span>168<span class="token punctuation">.</span>2<span class="token punctuation">.</span>0 0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>255</pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token namespace">[R3-ospf-1-area-0.0.0.1]</span>network 192<span class="token punctuation">.</span>168<span class="token punctuation">.</span>3<span class="token punctuation">.</span>0 0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>255</pre></td></tr></table></figure><ol start="3">
-<li>配置 R5</li>
-</ol>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token namespace">[R5]</span>ospf</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token namespace">[R5-ospf-1]</span>area 1</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[R5-ospf-1-area-0.0.0.1]</span>network 192<span class="token punctuation">.</span>168<span class="token punctuation">.</span>3<span class="token punctuation">.</span>0 0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>255</pre></td></tr></table></figure></li>
-<li>
-<p><strong>区域 2</strong></p>
+</li>
+<li><p><strong>区域2</strong></p>
 <ol>
-<li>配置 R2</li>
+<li><p>配置 R2</p>
+<pre><code class="lang-powershell">[R2-ospf-1]ospf //进入 ospf 配置
+[R2-ospf-1]area 2 //进入区域 2
+[R2-ospf-1-area-0.0.0.2]network 192.168.4.0 0.0.0.255 //宣告网络（通配符掩码）
+</code></pre>
+</li>
+<li><p>配置 R4</p>
+<pre><code class="lang-powershell">[R4]ospf
+[R4-ospf-1]area 2
+[R4-ospf-1-area-0.0.0.2]network 192.168.4.0 0.0.0.255
+[R4-ospf-1-area-0.0.0.2]network 192.168.5.0 0.0.0.255
+</code></pre>
+</li>
+<li>配置 R6<pre><code class="lang-powershell">[R6]ospf
+[R6-ospf-1]area 2
+[R6-ospf-1-area-0.0.0.2]network 192.168.5.0 0.0.0.255
+</code></pre>
+</li>
 </ol>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token namespace">[R2-ospf-1]</span>ospf <span class="token operator">/</span><span class="token operator">/</span>进入 ospf 配置</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token namespace">[R2-ospf-1]</span>area 2 <span class="token operator">/</span><span class="token operator">/</span>进入区域 2</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[R2-ospf-1-area-0.0.0.2]</span>network 192<span class="token punctuation">.</span>168<span class="token punctuation">.</span>4<span class="token punctuation">.</span>0 0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>255 <span class="token operator">/</span><span class="token operator">/</span>宣告网络（通配符掩码）</pre></td></tr></table></figure><ol start="2">
-<li>配置 R4</li>
-</ol>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token namespace">[R4]</span>ospf</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token namespace">[R4-ospf-1]</span>area 2</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[R4-ospf-1-area-0.0.0.2]</span>network 192<span class="token punctuation">.</span>168<span class="token punctuation">.</span>4<span class="token punctuation">.</span>0 0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>255</pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token namespace">[R4-ospf-1-area-0.0.0.2]</span>network 192<span class="token punctuation">.</span>168<span class="token punctuation">.</span>5<span class="token punctuation">.</span>0 0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>255</pre></td></tr></table></figure><ol start="3">
-<li>配置 R6</li>
-</ol>
-<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token namespace">[R6]</span>ospf</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token namespace">[R6-ospf-1]</span>area 2</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[R6-ospf-1-area-0.0.0.2]</span>network 192<span class="token punctuation">.</span>168<span class="token punctuation">.</span>5<span class="token punctuation">.</span>0 0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>255</pre></td></tr></table></figure></li>
+</li>
 </ul>
 <hr>
-<ol start="3">
-<li>查看各路由器的路由表 ( <code>dis ip routing-table/dis ospf peer</code> )</li>
+<ol>
+<li>查看各路由器的路由表(<code>dis ip routing-table/dis ospf peer</code>)</li>
 </ol>
 <p><img data-src="https://z3.ax1x.com/2021/05/09/gYTb7t.png" alt="ospfse"></p>
-<ol start="4">
-<li>使用  <code>dis ospf routing</code>  查看 <code> R1 R3 R5 R6</code></li>
+<ol>
+<li>使用 <code>dis ospf routing</code> 查看<code>R1 R3 R5 R6</code></li>
 </ol>
 <p><img data-src="https://z3.ax1x.com/2021/05/09/gYTXh8.png" alt="ospfeqw"></p>
 
@@ -519,7 +673,7 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#路由器基础"><span class="toc-number">1.</span> <span class="toc-text"> 路由器基础</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#路由器简介和分类路由器router"><span class="toc-number">2.</span> <span class="toc-text"> 路由器简介和分类：路由器（Router）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#路由器上的一些常见端口"><span class="toc-number">3.</span> <span class="toc-text"> 路由器上的一些常见端口</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#交换路由的操作系统vrp"><span class="toc-number">4.</span> <span class="toc-text"> 交换路由的操作系统 VRP：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#访问交换机和路由器的几种方法"><span class="toc-number">5.</span> <span class="toc-text"> 访问交换机和路由器的几种方法：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#交换和路由中的广播域和冲突域"><span class="toc-number">6.</span> <span class="toc-text"> 交换和路由中的广播域和冲突域：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#路由器基本配置实验"><span class="toc-number">7.</span> <span class="toc-text"> 路由器基本配置实验</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#设置系统的日期-时间和时区"><span class="toc-number">7.1.</span> <span class="toc-text"> 设置系统的日期、时间和时区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置设备名称和管理ip地址"><span class="toc-number">7.2.</span> <span class="toc-text"> 设置设备名称和管理 IP 地址</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#路由相关实验"><span class="toc-number">8.</span> <span class="toc-text"> 路由相关实验</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#静态路由配置"><span class="toc-number">8.1.</span> <span class="toc-text"> 静态路由配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#静态路由-ipv6-配置"><span class="toc-number">8.2.</span> <span class="toc-text"> 静态路由 IPv6 配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rip路由配置"><span class="toc-number">8.3.</span> <span class="toc-text"> RIP 路由配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ospf路由配置"><span class="toc-number">8.4.</span> <span class="toc-text"> OSPF 路由配置</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#路由器基础"><span class="toc-number">1.</span> <span class="toc-text">路由器基础</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#路由器简介和分类：路由器（Router）"><span class="toc-number">2.</span> <span class="toc-text">路由器简介和分类：路由器（Router）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#路由器上的一些常见端口"><span class="toc-number">3.</span> <span class="toc-text">路由器上的一些常见端口</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#交换路由的操作系统VRP："><span class="toc-number">4.</span> <span class="toc-text">交换路由的操作系统VRP：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#访问交换机和路由器的几种方法："><span class="toc-number">5.</span> <span class="toc-text">访问交换机和路由器的几种方法：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#交换和路由中的广播域和冲突域："><span class="toc-number">6.</span> <span class="toc-text">交换和路由中的广播域和冲突域：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#路由器基本配置实验"><span class="toc-number">7.</span> <span class="toc-text">路由器基本配置实验</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#设置系统的日期、时间和时区"><span class="toc-number">7.1.</span> <span class="toc-text">设置系统的日期、时间和时区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置设备名称和管理IP地址"><span class="toc-number">7.2.</span> <span class="toc-text">设置设备名称和管理IP地址</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#路由相关实验"><span class="toc-number">8.</span> <span class="toc-text">路由相关实验</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#静态路由配置"><span class="toc-number">8.1.</span> <span class="toc-text">静态路由配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#静态路由-IPv6-配置"><span class="toc-number">8.2.</span> <span class="toc-text">静态路由 IPv6 配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RIP路由配置"><span class="toc-number">8.3.</span> <span class="toc-text">RIP路由配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OSPF路由配置"><span class="toc-number">8.4.</span> <span class="toc-text">OSPF路由配置</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -641,66 +795,6 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
-</div>
-
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8001/" title="数据通信基础01">数据通信基础01</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
-</div>
-
-    <span><a href="/my-blog/Linux/%E6%9B%B4%E6%8D%A2%E6%B8%85%E5%8D%8E%E6%BA%90/" title="更换清华源">更换清华源</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/network/" title="分类于 网络">网络</a>
-</div>
-
-    <span><a href="/my-blog/network/Servlet%E5%92%8CTomcat/" title="Servlet和Tomcat">Servlet和Tomcat</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
-</div>
-
-    <span><a href="/my-blog/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AFHTML5+CSS3/" title="前端HTML5+CSS3">前端HTML5+CSS3</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
-</div>
-
-    <span><a href="/my-blog/Java/Java%E5%9F%BA%E7%A1%80%E6%B7%B7%E5%90%88/" title="Java基础混合">Java基础混合</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
-</div>
-
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%8E%E5%BA%94%E7%94%A801/" title="网络安全与应用01">网络安全与应用01</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/my-blog/categories/git/" title="分类于 git">git</a>
 </div>
 
@@ -714,7 +808,7 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%97%A0%E7%BA%BF%E9%80%9A%E4%BF%A1%E7%BD%91/" title="无线通信网">无线通信网</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E4%B8%8B%E4%B8%80%E4%BB%A3%E4%BA%92%E8%81%94%E7%BD%91/" title="下一代互联网">下一代互联网</a></span>
   </li>
 
       
@@ -724,17 +818,77 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%884%EF%BC%89/" title="华为交换实验命令（4）">华为交换实验命令（4）</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B9%BF%E5%9F%9F%E9%80%9A%E4%BF%A1%E7%BD%91/" title="广域通信网">广域通信网</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="分类于 算法与数据结构">算法与数据结构</a>
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/" title="算法入门教程">算法入门教程</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E6%A6%82%E8%AE%BA/" title="计算机基础概论">计算机基础概论</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
+</div>
+
+    <span><a href="/my-blog/Linux/Linux%E5%BC%80%E7%AF%87/" title="Linux开篇">Linux开篇</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%9F%8E%E5%9F%9F%E7%BD%9101/" title="局域网与城域网01">局域网与城域网01</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
+</div>
+
+    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E4%BA%91%E8%AE%A1%E7%AE%97%E7%AE%80%E4%BB%8B/" title="云计算简介">云计算简介</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
+</div>
+
+    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E5%AD%98%E5%82%A8%E8%99%9A%E6%8B%9F%E5%8C%96/" title="存储虚拟化">存储虚拟化</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8002/" title="数据通信基础02">数据通信基础02</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%9F%8E%E5%9F%9F%E7%BD%9102/" title="局域网与城域网02">局域网与城域网02</a></span>
   </li>
 
   </ul>

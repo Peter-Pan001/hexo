@@ -146,46 +146,40 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <div class="body md" itemprop="articleBody">
     
 
-    <h2 id="什么是fusion-compute"><a class="markdownIt-Anchor" href="#什么是fusion-compute">#</a> 什么是 Fusion Compute？</h2>
-<ul>
-<li>Fusion Compute 是云操作系统软件，主要负责硬件资源的虚拟化，以及对虚拟资源、业务资源、用户资源的集中管理。它 <mark>采用虚拟计算、虚拟存储、虚拟网络等技术</mark> ，完成计算资源、存储资源、网络资源的虚拟化。同时通过统一的接口， <mark>对这些虚拟资源进行集中调度和管理，从而降低业务的运行成本</mark> ，保证系统的安全性和可靠性，协助运营商和企业构筑安全、绿色、节能的云数据中心能力。</li>
+    <h2 id="什么是Fusion-Compute？"><a href="#什么是Fusion-Compute？" class="headerlink" title="什么是Fusion Compute？"></a>什么是Fusion Compute？</h2><ul>
+<li>Fusion Compute是云操作系统软件，主要负责硬件资源的虚拟化，以及对虚拟资源、业务资源、用户资源的集中管理。它 ==采用虚拟计算、虚拟存储、虚拟网络等技术== ，完成计算资源、存储资源、网络资源的虚拟化。同时通过统一的接口， ==对这些虚拟资源进行集中调度和管理，从而降低业务的运行成本== ，保证系统的安全性和可靠性，协助运营商和企业构筑安全、绿色、节能的云数据中心能力。</li>
 </ul>
-<h2 id="组件之cna与vrm"><a class="markdownIt-Anchor" href="#组件之cna与vrm">#</a> 组件之 CNA 与 VRM</h2>
-<ul>
-<li>CNA：计算节点代理，能够实现硬件设备资源的池化。包括 UVP 和 VNA
-<ul>
+<h2 id="组件之CNA与VRM"><a href="#组件之CNA与VRM" class="headerlink" title="组件之CNA与VRM"></a>组件之CNA与VRM</h2><ul>
+<li>CNA：计算节点代理，能够实现硬件设备资源的池化。包括UVP和VNA<ul>
 <li>UVP：统一的虚拟化平台，实现硬件资源的池化。</li>
-<li>VNA：虚拟节点代理，能够实现 CNA 与 VRM 进行通信。（相当于一个中转站）</li>
+<li>VNA：虚拟节点代理，能够实现CNA与VRM进行通信。（相当于一个中转站）</li>
 </ul>
 </li>
-<li>VRM：虚拟集群管理模块。能够提供给管理员一个 Web Portal 界面，以及实现对整个系统资源管理、配置、日志、告警等等维护管理的功能。</li>
+<li>VRM：虚拟集群管理模块。能够提供给管理员一个Web Portal界面，以及实现对整个系统资源管理、配置、日志、告警等等维护管理的功能。</li>
 </ul>
 <p><img data-src="https://s4.ax1x.com/2022/01/22/7f40ZF.png" alt="fcjiagou"></p>
 <p><img data-src="https://s4.ax1x.com/2022/01/22/7f4Ba4.png" alt="fczuoyong"></p>
 <blockquote>
-<p>CNA 可以看做是一个主机（或是虚拟机），他负责调配本节点上的所有硬件资源，而 VRM 是一个统一管理所有主机的一个中间组件，当 VRM 宕机时，CNA 不会受到影响，因为 VRM 起到的仅是管理主机的功能（VRM 类似于一个虚拟化中心）</p>
+<p>CNA可以看做是一个主机（或是虚拟机），他负责调配本节点上的所有硬件资源，而VRM是一个统一管理所有主机的一个中间组件，当VRM宕机时，CNA不会受到影响，因为VRM起到的仅是管理主机的功能（VRM类似于一个虚拟化中心）</p>
 </blockquote>
-<h2 id="练习"><a class="markdownIt-Anchor" href="#练习">#</a> 练习</h2>
-<ol>
-<li class="quiz">
-<p>在计算虚拟化中，为虚拟机分配 CPU 和内存的是<span class="gap"></span> 。</p>
-<ul class="options">
-<li class="options">Guest OS </li>
-<li class="correct">VMM</li>
-<li class="correct">Hypervisor</li>
-<li class="options">Host OS </li>
-</ul>
-<blockquote>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><ol>
+<li><p>在计算虚拟化中，为虚拟机分配CPU和内存的是[]{.gap} 。 {.quiz}</p>
 <ul>
-<li>VMM 和 HYpervisor 其实是同一种组件的不同说法</li>
+<li>Guest OS  {.options}</li>
+<li>VMM {.correct}</li>
+<li>Hypervisor {.correct}</li>
+<li>Host OS  {.options}<br>{.options}<blockquote>
+<ul>
+<li>VMM和HYpervisor其实是同一种组件的不同说法</li>
 </ul>
 </blockquote>
 </li>
-<li class="quiz">
-<p>开源的虚拟化技术都为 I 型虚拟化，闭源的虚拟化技术都为 II 型虚拟化<span class="gap"></span> 。</p>
-<ul class="options">
-<li class="options">TRUE </li>
-<li class="correct">FALSE</li>
+</ul>
+</li>
+<li><p>开源的虚拟化技术都为I型虚拟化，闭源的虚拟化技术都为II型虚拟化[]{.gap} 。 {.quiz}</p>
+<ul>
+<li>TRUE  {.options}</li>
+<li>FALSE {.correct}<br>{.options}</li>
 </ul>
 </li>
 </ol>
@@ -278,7 +272,7 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是fusion-compute"><span class="toc-number">1.</span> <span class="toc-text"> 什么是 Fusion Compute？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#组件之cna与vrm"><span class="toc-number">2.</span> <span class="toc-text"> 组件之 CNA 与 VRM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#练习"><span class="toc-number">3.</span> <span class="toc-text"> 练习</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是Fusion-Compute？"><span class="toc-number">1.</span> <span class="toc-text">什么是Fusion Compute？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#组件之CNA与VRM"><span class="toc-number">2.</span> <span class="toc-text">组件之CNA与VRM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#练习"><span class="toc-number">3.</span> <span class="toc-text">练习</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -403,37 +397,7 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%884%EF%BC%89/" title="华为交换实验命令（4）">华为交换实验命令（4）</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="分类于 算法与数据结构">算法与数据结构</a>
-</div>
-
-    <span><a href="/my-blog/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E7%BB%AA%E8%AE%BA/" title="数据结构之绪论">数据结构之绪论</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
-</div>
-
-    <span><a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8BOV/" title="Java网络编程OV">Java网络编程OV</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/git/" title="分类于 git">git</a>
-</div>
-
-    <span><a href="/my-blog/git/git%E4%B8%8Egithub%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BA%86%E8%A7%A3/" title="git与github的基本了解">git与github的基本了解</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%9F%8E%E5%9F%9F%E7%BD%9101/" title="局域网与城域网01">局域网与城域网01</a></span>
   </li>
 
       
@@ -443,17 +407,17 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E6%A6%82%E8%AE%BA/" title="计算机基础概论">计算机基础概论</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9103/" title="网络互联与互联网03">网络互联与互联网03</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
 </div>
 
-    <span><a href="/my-blog/%E5%89%8D%E7%AB%AF/String%E5%92%8CObject%E8%A7%A3%E8%AF%BB/" title="String和Object解读">String和Object解读</a></span>
+    <span><a href="/my-blog/Java/Java%E7%9A%84Stream%E6%B5%81/" title="Java的Stream流">Java的Stream流</a></span>
   </li>
 
       
@@ -463,27 +427,17 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
 </div>
 
-    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E7%BD%91%E7%BB%9C%E8%99%9A%E6%8B%9F%E5%8C%96/" title="网络虚拟化">网络虚拟化</a></span>
+    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/Fusion%20Compute%E5%AE%89%E8%A3%85/" title="Fusion Compute安装">Fusion Compute安装</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
+<a href="/my-blog/categories/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
 </div>
 
-    <span><a href="/my-blog/Linux/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E5%8F%8Ayum%E6%BA%90%E9%97%AE%E9%A2%98/" title="网络配置及yum源问题">网络配置及yum源问题</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
-</div>
-
-    <span><a href="/my-blog/Java/Java%E5%9F%BA%E7%A1%80%E6%B7%B7%E5%90%88/" title="Java基础混合">Java基础混合</a></span>
+    <span><a href="/my-blog/%E5%89%8D%E7%AB%AF/%E6%8E%A5%E7%BB%AD%E5%89%8D%E7%AB%AFH5+CSS3/" title="接续前端H5+CSS3">接续前端H5+CSS3</a></span>
   </li>
 
       
@@ -493,7 +447,47 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9101/" title="网络互联与互联网01">网络互联与互联网01</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%9F%8E%E5%9F%9F%E7%BD%9102/" title="局域网与城域网02">局域网与城域网02</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/" title="计算机硬件基础(部分组成原理)">计算机硬件基础(部分组成原理)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
+</div>
+
+    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/FusionSphere%E6%9E%B6%E6%9E%84/" title="FusionSphere架构">FusionSphere架构</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8002/" title="数据通信基础02">数据通信基础02</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/Linux%E9%85%8D%E7%BD%AE/" title="Linux配置">Linux配置</a></span>
   </li>
 
   </ul>

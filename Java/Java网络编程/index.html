@@ -146,69 +146,53 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <div class="body md" itemprop="articleBody">
     
 
-    <h2 id="1-概述"><a class="markdownIt-Anchor" href="#1-概述">#</a> 1、概述</h2>
-<hr>
+    <h2 id="1、概述"><a href="#1、概述" class="headerlink" title="1、概述"></a>1、概述</h2><hr>
 <ul>
-<li>计算机之间通过传输介质、通信设施和网络通信协议互联，实现资源共享和数据传输。而我们的网络编程就是 ** 使用程序使互联网的两个（或多个）计算机之间进行数据传输。** 当然 java 语言，为了实现两个计算机之间的数据传输，提供了一系列的接口，使得开发人员可以方便的实现。</li>
+<li>计算机之间通过传输介质、通信设施和网络通信协议互联，实现资源共享和数据传输。而我们的网络编程就是<strong>使用程序使互联网的两个（或多个）计算机之间进行数据传输。</strong>当然java语言，为了实现两个计算机之间的数据传输，提供了一系列的接口，使得开发人员可以方便的实现。</li>
 </ul>
-<h2 id="2-osi与tcpip模型"><a class="markdownIt-Anchor" href="#2-osi与tcpip模型">#</a> 2、OSI 与 TCP/IP 模型</h2>
-<hr>
-<h3 id="模型对比"><a class="markdownIt-Anchor" href="#模型对比">#</a> 模型对比</h3>
-<p><img data-src="http://ww1.sinaimg.cn/large/007uxMgDgy1gizstyuicoj30m80h0gne.jpg" alt="image-20200623105550900.png"></p>
+<h2 id="2、OSI与TCP-IP模型"><a href="#2、OSI与TCP-IP模型" class="headerlink" title="2、OSI与TCP/IP模型"></a>2、OSI与TCP/IP模型</h2><hr>
+<h3 id="模型对比"><a href="#模型对比" class="headerlink" title="模型对比"></a>模型对比</h3><p><img data-src="http://ww1.sinaimg.cn/large/007uxMgDgy1gizstyuicoj30m80h0gne.jpg" alt="image-20200623105550900.png"></p>
 <ul>
-<li>TCP/IP 支持跨层封装 ；但 OSI 不支持</li>
-<li>TCP/IP 仅仅支持 IP 网络协议 ；OSI 支持多种网络层协议</li>
-<li>TCP 是面向连接的可靠的传输协议</li>
-<li>UDP 是非面向连接的不可靠的传输协议</li>
+<li>TCP/IP支持跨层封装 ；但OSI不支持</li>
+<li>TCP/IP仅仅支持IP网络协议 ；OSI支持多种网络层协议</li>
+<li>TCP是面向连接的可靠的传输协议</li>
+<li>UDP是非面向连接的不可靠的传输协议</li>
 </ul>
-<h3 id="tcpip模型中的协议剖析"><a class="markdownIt-Anchor" href="#tcpip模型中的协议剖析">#</a> TCP/IP 模型中的协议剖析</h3>
-<p><img data-src="http://ww1.sinaimg.cn/large/007uxMgDgy1gizsusacczj30ta0gbtab.jpg" alt="image-20200623110038567.png"></p>
+<h3 id="TCP-IP模型中的协议剖析"><a href="#TCP-IP模型中的协议剖析" class="headerlink" title="TCP/IP模型中的协议剖析"></a>TCP/IP模型中的协议剖析</h3><p><img data-src="http://ww1.sinaimg.cn/large/007uxMgDgy1gizsusacczj30ta0gbtab.jpg" alt="image-20200623110038567.png"></p>
 <ul>
-<li>
-<p><strong>该模型中几个主要的协议术语及其作用</strong></p>
+<li><p><strong>该模型中几个主要的协议术语及其作用</strong></p>
 <ul>
-<li>
-<p><strong>TCP（传输控制协议）</strong>：通过使用一个校验码检验数据是否发生错误，在接收和转发中都使用计算校验和，并同时对数据进行加密</p>
+<li><p><strong>TCP（传输控制协议）</strong>：通过使用一个校验码检验数据是否发生错误，在接收和转发中都使用计算校验和，并同时对数据进行加密</p>
 </li>
-<li>
-<p><strong>UDP（用户数据报协议）</strong>：UDP 使用底层的互联网协议来传送报文，同 IP 一样提供不可靠的无连接数据包传输服务。它不提供报文到达确认、排序、及流量控制等功能</p>
+<li><p><strong>UDP（用户数据报协议）</strong>：UDP使用底层的互联网协议来传送报文，同IP一样提供不可靠的无连接数据包传输服务。它不提供报文到达确认、排序、及流量控制等功能</p>
 </li>
-<li>
-<p><strong>FTP（文件传输协议）</strong>：让用户连接上一个远程计算机（这些计算机上运行着 FTP 服务器程序）察看远程计算机有哪些文件，然后把文件从远程计算机上拷到本地计算机，或把本地计算机的文件送到远程计算机去。</p>
+<li><p><strong>FTP（文件传输协议）</strong>：让用户连接上一个远程计算机（这些计算机上运行着FTP服务器程序）察看远程计算机有哪些文件，然后把文件从远程计算机上拷到本地计算机，或把本地计算机的文件送到远程计算机去。</p>
 </li>
-<li>
-<p><strong>SMTP（邮件消息传输协议）</strong>：SMTP 是一种提供可靠且有效电子邮件传输的协议。它是建立在 FTP 文件传输服务上的一种邮件服务，主要用于传输系统之间的邮件信息并提供来信有关的通知。</p>
-</li>
-</ul>
+<li><p><strong>SMTP（邮件消息传输协议）</strong>：SMTP是一种提供可靠且有效电子邮件传输的协议。它是建立在FTP文件传输服务上的一种邮件服务，主要用于传输系统之间的邮件信息并提供来信有关的通知。</p>
 <blockquote>
-<p>SMTP 重要的特性之一是它能跨越网络传输邮件，也即 “SMTP 邮件中继”。使用 SMTP，可实现相同网络上处理机之间的邮件传输，也可以通过中继器或网关实现某处理机与其它网络之间的邮件传输。具有域名服务系统 (DNS) 功能的邮件交换服务器还可以用来识别出传输邮件的下一跳 IP 地址。</p>
+<p> SMTP重要的特性之一是它能跨越网络传输邮件，也即“SMTP邮件中继”。使用SMTP，可实现相同网络上处理机之间的邮件传输，也可以通过中继器或网关实现某处理机与其它网络之间的邮件传输。具有域名服务系统(DNS)功能的邮件交换服务器还可以用来识别出传输邮件的下一跳IP地址。</p>
 </blockquote>
 </li>
 </ul>
-<h2 id="3-ip"><a class="markdownIt-Anchor" href="#3-ip">#</a> 3、IP</h2>
-<hr>
+</li>
+</ul>
+<h2 id="3、IP"><a href="#3、IP" class="headerlink" title="3、IP"></a>3、IP</h2><hr>
 <ul>
 <li><strong>IP（网际协议）</strong> ：提高网络可扩展性，为主机提供一种无连接的数据传输服务</li>
 <li>唯一定位一台网络上的计算机</li>
-<li><code>127.0.0.1</code>  为本机地址 <code>localhost</code></li>
+<li><code>127.0.0.1</code>为本机地址<code>localhost</code></li>
 </ul>
-<h2 id="4-端口port"><a class="markdownIt-Anchor" href="#4-端口port">#</a> 4、端口（port）</h2>
-<hr>
+<h2 id="4、端口（port）"><a href="#4、端口（port）" class="headerlink" title="4、端口（port）"></a>4、端口（port）</h2><hr>
 <ul>
-<li>
-<p>端口表示计算机的一个程序的进程</p>
+<li><p>端口表示计算机的一个程序的进程</p>
 <ul>
-<li>
-<p>不同的进程有不同的端口号，并且端口号不能重复（单个协议下）</p>
+<li><p>不同的进程有不同的端口号，并且端口号不能重复（单个协议下）</p>
 </li>
-<li>
-<p>端口号范围限制为 0 ~ 65535</p>
+<li><p>端口号范围限制为 0 ~ 65535</p>
 </li>
-<li>
-<p>端口分类</p>
+<li><p>端口分类</p>
 <ul>
-<li>
-<p>公有端口 0 ~ 1023</p>
+<li><p>公有端口 0 ~ 1023</p>
 <ul>
 <li>HTTP ：80</li>
 <li>HTTPS ：443</li>
@@ -216,98 +200,314 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <li>Telnet ：23</li>
 </ul>
 </li>
-<li>
-<p>程序注册端口： 1024 ~ 49151 分配用户或程序</p>
+<li><p>程序注册端口： 1024 ~ 49151 分配用户或程序</p>
 <ul>
 <li>Tomcat ：8080</li>
 <li>MySQL ：3306</li>
 <li>Oracle ：1521</li>
 </ul>
 </li>
-<li>
-<p>动态私有 49152 ~ 65535</p>
-<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">netstat</span> -ano <span class="token comment">#查看所有端口</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token function">netstat</span> -ano<span class="token operator">|</span>findstr <span class="token string">"8080"</span> <span class="token comment"># 查看指定端口</span></pre></td></tr><tr><td data-num="3"></td><td><pre>tasklist<span class="token operator">|</span>findstr <span class="token string">"8696"</span> <span class="token comment"># 查看指定端口的进程</span></pre></td></tr><tr><td data-num="4"></td><td><pre>ctrl + <span class="token builtin class-name">shift</span> +ESC <span class="token comment"># 调用任务管理器</span></pre></td></tr></table></figure></li>
-</ul>
+<li><p>动态私有 49152 ~ 65535</p>
+<pre><code class="lang-bash"> netstat -ano #查看所有端口
+ netstat -ano|findstr &quot;8080&quot; # 查看指定端口
+ tasklist|findstr &quot;8696&quot; # 查看指定端口的进程
+ ctrl + shift +ESC # 调用任务管理器
+</code></pre>
 </li>
 </ul>
 </li>
 </ul>
-<h2 id="5-tcp实现聊天"><a class="markdownIt-Anchor" href="#5-tcp实现聊天">#</a> 5、TCP 实现聊天</h2>
-<hr>
+</li>
+</ul>
+<h2 id="5、TCP实现聊天"><a href="#5、TCP实现聊天" class="headerlink" title="5、TCP实现聊天"></a>5、TCP实现聊天</h2><hr>
 <ul>
-<li>
-<p><strong>客户端（Client）</strong></p>
+<li><p><strong>客户端（Client）</strong></p>
 <ol>
-<li>
-<p>获取服务端的地址与端口号</p>
+<li><p>获取服务端的地址与端口号</p>
 </li>
-<li>
-<p>连接服务器端口，建立 socket 连接</p>
+<li><p>连接服务器端口，建立socket连接</p>
 </li>
-<li>
-<p>发送信息（IO 流）</p>
+<li><p>发送信息（IO流）</p>
 </li>
-<li>
-<p>关闭资源</p>
-<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token class-name">Socket</span> socket <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token class-name">OutputStream</span> os <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>        <span class="token keyword">try</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>            <span class="token comment">// 首先要知道服务端的地址和端口号</span></pre></td></tr><tr><td data-num="6"></td><td><pre>            <span class="token class-name">InetAddress</span> serverIp <span class="token operator">=</span> <span class="token class-name">InetAddress</span><span class="token punctuation">.</span><span class="token function">getByName</span><span class="token punctuation">(</span><span class="token string">"127.0.0.1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>            <span class="token keyword">int</span> port <span class="token operator">=</span> <span class="token number">9999</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre></pre></td></tr><tr><td data-num="9"></td><td><pre>            <span class="token comment">// 建立 socket 连接</span></pre></td></tr><tr><td data-num="10"></td><td><pre>            socket <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Socket</span><span class="token punctuation">(</span>serverIp<span class="token punctuation">,</span><span class="token number">9999</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="11"></td><td><pre></pre></td></tr><tr><td data-num="12"></td><td><pre>            <span class="token comment">// 发送信息</span></pre></td></tr><tr><td data-num="13"></td><td><pre>            os <span class="token operator">=</span> socket<span class="token punctuation">.</span><span class="token function">getOutputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="14"></td><td><pre>            os<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"我们已经成为好友，可以开始聊天"</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="15"></td><td><pre>        <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="16"></td><td><pre>            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="17"></td><td><pre>        <span class="token punctuation">&#125;</span><span class="token keyword">finally</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="18"></td><td><pre>            <span class="token keyword">if</span> <span class="token punctuation">(</span>os <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="19"></td><td><pre>                <span class="token keyword">try</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="20"></td><td><pre>                    os<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="21"></td><td><pre>                <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="22"></td><td><pre>                    e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="23"></td><td><pre>                <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="24"></td><td><pre>            <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="25"></td><td><pre>            <span class="token keyword">if</span> <span class="token punctuation">(</span>socket <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="26"></td><td><pre>                <span class="token keyword">try</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="27"></td><td><pre>                    socket<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="28"></td><td><pre>                <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="29"></td><td><pre>                    e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="30"></td><td><pre>                <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="31"></td><td><pre>            <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="32"></td><td><pre></pre></td></tr><tr><td data-num="33"></td><td><pre>        <span class="token punctuation">&#125;</span></pre></td></tr></table></figure></li>
+<li><p>关闭资源</p>
+<pre><code class="lang-java">Socket socket = null;
+OutputStream os = null;
+        try {
+
+            //首先要知道服务端的地址和端口号
+            InetAddress serverIp = InetAddress.getByName(&quot;127.0.0.1&quot;);
+            int port = 9999;
+
+            //建立socket连接
+            socket = new Socket(serverIp,9999);
+
+            //发送信息
+            os = socket.getOutputStream();
+            os.write(&quot;我们已经成为好友，可以开始聊天&quot;.getBytes());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            if (os != null){
+                try {
+                    os.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (socket != null){
+                try {
+                    socket.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        }
+</code></pre>
+</li>
 </ol>
 </li>
-<li>
-<p><strong>服务端（Server）</strong></p>
+</ul>
+<ul>
+<li><p><strong>服务端（Server）</strong></p>
 <ol>
-<li>
-<p>建立 socket 服务器端口</p>
+<li><p>建立socket服务器端口</p>
 </li>
-<li>
-<p>调用端口的 accept 方法，等待用户端连接</p>
+<li><p>调用端口的accept方法,等待用户端连接</p>
 </li>
-<li>
-<p>读取用户信息（IO 流）的 inputStream</p>
+<li><p>读取用户信息（IO流）的inputStream</p>
 </li>
-<li>
-<p>建立管道流，把数据从字节流转换为字符流</p>
+<li><p>建立管道流，把数据从字节流转换为字符流</p>
 </li>
-<li>
-<p>关闭资源</p>
-<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token class-name">ServerSocket</span> serverSocket <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>     <span class="token class-name">Socket</span> socket <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>      <span class="token class-name">InputStream</span> is <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>        <span class="token class-name">ByteArrayOutputStream</span> baos <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>        <span class="token keyword">try</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>            <span class="token comment">// 给一个服务端的地址</span></pre></td></tr><tr><td data-num="7"></td><td><pre>             serverSocket <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ServerSocket</span><span class="token punctuation">(</span><span class="token number">9999</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>            <span class="token comment">// 等待客户端接入</span></pre></td></tr><tr><td data-num="9"></td><td><pre>             socket <span class="token operator">=</span> serverSocket<span class="token punctuation">.</span><span class="token function">accept</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>            <span class="token comment">// 读取客户端信息</span></pre></td></tr><tr><td data-num="11"></td><td><pre>             is <span class="token operator">=</span> socket<span class="token punctuation">.</span><span class="token function">getInputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="12"></td><td><pre></pre></td></tr><tr><td data-num="13"></td><td><pre>            <span class="token comment">// 管道流</span></pre></td></tr><tr><td data-num="14"></td><td><pre>             baos <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ByteArrayOutputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="15"></td><td><pre>            <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> buffer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token number">1024</span><span class="token punctuation">]</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="16"></td><td><pre>            <span class="token keyword">int</span> len<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="17"></td><td><pre>            <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>len<span class="token operator">=</span>is<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>buffer<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="18"></td><td><pre>                baos<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>buffer<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>len<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="19"></td><td><pre>            <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="20"></td><td><pre>            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>baos<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="21"></td><td><pre>        <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="22"></td><td><pre>            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="23"></td><td><pre>        <span class="token punctuation">&#125;</span><span class="token keyword">finally</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="24"></td><td><pre>            <span class="token comment">// 关闭资源</span></pre></td></tr><tr><td data-num="25"></td><td><pre>            <span class="token keyword">if</span><span class="token punctuation">(</span>baos <span class="token operator">!=</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="26"></td><td><pre>                <span class="token keyword">try</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="27"></td><td><pre>                    baos<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="28"></td><td><pre>                <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="29"></td><td><pre>                    e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="30"></td><td><pre>                <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="31"></td><td><pre>            <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="32"></td><td><pre>            <span class="token keyword">if</span> <span class="token punctuation">(</span>is <span class="token operator">!=</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="33"></td><td><pre>                <span class="token keyword">try</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="34"></td><td><pre>                    is<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="35"></td><td><pre>                <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="36"></td><td><pre>                    e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="37"></td><td><pre>                <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="38"></td><td><pre>            <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="39"></td><td><pre>            <span class="token keyword">if</span> <span class="token punctuation">(</span>socket <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="40"></td><td><pre>                <span class="token keyword">try</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="41"></td><td><pre>                    socket<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="42"></td><td><pre>                <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="43"></td><td><pre>                    e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="44"></td><td><pre>                <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="45"></td><td><pre>            <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="46"></td><td><pre>            <span class="token keyword">if</span> <span class="token punctuation">(</span>serverSocket <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="47"></td><td><pre>                <span class="token keyword">try</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="48"></td><td><pre>                    serverSocket<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="49"></td><td><pre>                <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="50"></td><td><pre>                    e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="51"></td><td><pre>                <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="52"></td><td><pre>            <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="53"></td><td><pre>        <span class="token punctuation">&#125;</span></pre></td></tr></table></figure></li>
+<li><p>关闭资源</p>
+<pre><code class="lang-java">    ServerSocket serverSocket = null;
+     Socket socket = null;
+      InputStream is = null;
+        ByteArrayOutputStream baos = null;
+        try {
+            //给一个服务端的地址
+             serverSocket = new ServerSocket(9999);
+            //等待客户端接入
+             socket = serverSocket.accept();
+            //读取客户端信息
+             is = socket.getInputStream();
+
+            //管道流
+             baos = new ByteArrayOutputStream();
+            byte[] buffer = new byte[1024];
+            int len;
+            while ((len=is.read(buffer))!= -1){
+                baos.write(buffer,0,len);
+            }
+            System.out.println(baos.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            //关闭资源
+            if(baos !=null){
+                try {
+                    baos.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (is !=null){
+                try {
+                    is.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (socket != null){
+                try {
+                    socket.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (serverSocket != null){
+                try {
+                    serverSocket.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+</code></pre>
+</li>
 </ol>
 </li>
 </ul>
-<h2 id="6-tcp实现文件上传"><a class="markdownIt-Anchor" href="#6-tcp实现文件上传">#</a> 6、TCP 实现文件上传</h2>
-<hr>
+<h2 id="6、TCP实现文件上传"><a href="#6、TCP实现文件上传" class="headerlink" title="6、TCP实现文件上传"></a>6、TCP实现文件上传</h2><hr>
 <ul>
-<li>
-<p><strong>服务端（Server）</strong></p>
-<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>        <span class="token comment">// 创建服务</span></pre></td></tr><tr><td data-num="3"></td><td><pre>        <span class="token class-name">ServerSocket</span> serverSocket <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ServerSocket</span><span class="token punctuation">(</span><span class="token number">9000</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>        <span class="token comment">// 监听客户端连接</span></pre></td></tr><tr><td data-num="5"></td><td><pre>        <span class="token class-name">Socket</span> socket <span class="token operator">=</span> serverSocket<span class="token punctuation">.</span><span class="token function">accept</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>        <span class="token comment">// 获取输入流</span></pre></td></tr><tr><td data-num="7"></td><td><pre>        <span class="token class-name">InputStream</span> is <span class="token operator">=</span> socket<span class="token punctuation">.</span><span class="token function">getInputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>    	<span class="token comment">// 此处写文件路径最好使用绝对路径，否则会报错</span></pre></td></tr><tr><td data-num="9"></td><td><pre>        <span class="token class-name">File</span> file <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"G://IDEA_Project/FIST/src/receive.jpg"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>        <span class="token comment">// 文件输出</span></pre></td></tr><tr><td data-num="11"></td><td><pre>        <span class="token class-name">FileOutputStream</span> fos <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileOutputStream</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="12"></td><td><pre>        <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> buffer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token number">1024</span><span class="token punctuation">]</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="13"></td><td><pre>        <span class="token keyword">int</span> len<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="14"></td><td><pre>        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>len <span class="token operator">=</span> is<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>buffer<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">!=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="15"></td><td><pre>            fos<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>buffer<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>len<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="16"></td><td><pre>        <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="17"></td><td><pre></pre></td></tr><tr><td data-num="18"></td><td><pre>        <span class="token comment">// 通知客户端接收完毕</span></pre></td></tr><tr><td data-num="19"></td><td><pre>        <span class="token class-name">OutputStream</span> os <span class="token operator">=</span> socket<span class="token punctuation">.</span><span class="token function">getOutputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="20"></td><td><pre>        os<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"服务端接收完毕，你可以断开连接"</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="21"></td><td><pre></pre></td></tr><tr><td data-num="22"></td><td><pre>        <span class="token comment">// 关闭资源 (后创建先关闭原则)</span></pre></td></tr><tr><td data-num="23"></td><td><pre>        fos<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="24"></td><td><pre>        is<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="25"></td><td><pre>        socket<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="26"></td><td><pre>        serverSocket<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="27"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr></table></figure><ul>
-<li>
-<p><strong>客户端（client）</strong></p>
-<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>        <span class="token comment">// 创建一个 socket 连接</span></pre></td></tr><tr><td data-num="3"></td><td><pre>        <span class="token class-name">Socket</span> socket <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Socket</span><span class="token punctuation">(</span><span class="token class-name">InetAddress</span><span class="token punctuation">.</span><span class="token function">getByName</span><span class="token punctuation">(</span><span class="token string">"127.0.0.1"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">9000</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>        <span class="token comment">// 建立一个输出流</span></pre></td></tr><tr><td data-num="5"></td><td><pre>        <span class="token class-name">OutputStream</span> os <span class="token operator">=</span> socket<span class="token punctuation">.</span><span class="token function">getOutputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>		<span class="token comment">// 此处写文件路径最好使用绝对路径，否则会报错</span></pre></td></tr><tr><td data-num="7"></td><td><pre>        <span class="token class-name">File</span> file <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"G://IDEA_Project/FIST/src/lld.jpg"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>        <span class="token comment">// 读取文件</span></pre></td></tr><tr><td data-num="9"></td><td><pre>        <span class="token class-name">FileInputStream</span> fis <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>        <span class="token comment">// 写入文件</span></pre></td></tr><tr><td data-num="11"></td><td><pre>        <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> buffer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token number">1024</span><span class="token punctuation">]</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="12"></td><td><pre>        <span class="token keyword">int</span> len<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="13"></td><td><pre>        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>len<span class="token operator">=</span> fis<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>buffer<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">!=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="14"></td><td><pre>            os<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>buffer<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>len<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="15"></td><td><pre>        <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="16"></td><td><pre>        <span class="token comment">// 通知服务器，我已经结束啦</span></pre></td></tr><tr><td data-num="17"></td><td><pre>        socket<span class="token punctuation">.</span><span class="token function">shutdownOutput</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="18"></td><td><pre></pre></td></tr><tr><td data-num="19"></td><td><pre>        <span class="token comment">// 确认服务端接收完毕，才断开连接</span></pre></td></tr><tr><td data-num="20"></td><td><pre>        <span class="token class-name">InputStream</span> is <span class="token operator">=</span> socket<span class="token punctuation">.</span><span class="token function">getInputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="21"></td><td><pre></pre></td></tr><tr><td data-num="22"></td><td><pre>        <span class="token class-name">ByteArrayOutputStream</span> baos <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ByteArrayOutputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="23"></td><td><pre></pre></td></tr><tr><td data-num="24"></td><td><pre>        <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> buffer2 <span class="token operator">=</span><span class="token keyword">new</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token number">1024</span><span class="token punctuation">]</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="25"></td><td><pre>        <span class="token keyword">int</span> len2<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="26"></td><td><pre>        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>len2 <span class="token operator">=</span> is<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>buffer2<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="27"></td><td><pre>            baos<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>buffer2<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>len2<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="28"></td><td><pre>        <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="29"></td><td><pre>        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>baos<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="30"></td><td><pre>        <span class="token comment">// 关闭资源 (后创建先关闭原则)</span></pre></td></tr><tr><td data-num="31"></td><td><pre>        baos<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="32"></td><td><pre>        is<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="33"></td><td><pre>        fis<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="34"></td><td><pre>        os<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="35"></td><td><pre>        socket<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="36"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr></table></figure></li>
-</ul>
+<li><p><strong>服务端（Server）</strong></p>
+<pre><code class="lang-java"> public static void main(String[] args) throws Exception {
+         //创建服务
+         ServerSocket serverSocket = new ServerSocket(9000);
+         //监听客户端连接
+         Socket socket = serverSocket.accept();
+         //获取输入流
+         InputStream is = socket.getInputStream();
+         //此处写文件路径最好使用绝对路径，否则会报错
+         File file = new File(&quot;G://IDEA_Project/FIST/src/receive.jpg&quot;);
+         //文件输出
+         FileOutputStream fos = new FileOutputStream(file);
+         byte[] buffer = new byte[1024];
+         int len;
+         while ((len = is.read(buffer))!=-1){
+             fos.write(buffer,0,len);
+         }
+
+         //通知客户端接收完毕
+         OutputStream os = socket.getOutputStream();
+         os.write(&quot;服务端接收完毕，你可以断开连接&quot;.getBytes());
+
+         //关闭资源 (后创建先关闭原则)
+         fos.close();
+         is.close();
+         socket.close();
+         serverSocket.close();
+     }
+</code></pre>
 </li>
 </ul>
-<h2 id="7-udp实现消息的发送"><a class="markdownIt-Anchor" href="#7-udp实现消息的发送">#</a> 7、UDP 实现消息的发送</h2>
-<hr>
 <ul>
-<li>
-<p><strong>客户端</strong></p>
-<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>        <span class="token comment">// 建立一个 socket</span></pre></td></tr><tr><td data-num="3"></td><td><pre>        <span class="token class-name">DatagramSocket</span> socket <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DatagramSocket</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>        <span class="token comment">// 建立数据包</span></pre></td></tr><tr><td data-num="5"></td><td><pre>        <span class="token class-name">String</span> msg <span class="token operator">=</span> <span class="token string">"Hello,Server!"</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>        <span class="token comment">// 发送目的地</span></pre></td></tr><tr><td data-num="7"></td><td><pre>        <span class="token class-name">InetAddress</span> localhost <span class="token operator">=</span> <span class="token class-name">InetAddress</span><span class="token punctuation">.</span><span class="token function">getByName</span><span class="token punctuation">(</span><span class="token string">"localhost"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>        <span class="token keyword">int</span> port <span class="token operator">=</span><span class="token number">9090</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>        <span class="token comment">// 数据，数据长度的起始，目的地信息</span></pre></td></tr><tr><td data-num="10"></td><td><pre>        <span class="token class-name">DatagramPacket</span> packet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DatagramPacket</span><span class="token punctuation">(</span>msg<span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> msg<span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>length<span class="token punctuation">,</span> localhost<span class="token punctuation">,</span> port<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>        <span class="token comment">// 发送包</span></pre></td></tr><tr><td data-num="12"></td><td><pre>        socket<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>packet<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="13"></td><td><pre>        <span class="token comment">// 关闭流</span></pre></td></tr><tr><td data-num="14"></td><td><pre>        socket<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="15"></td><td><pre></pre></td></tr><tr><td data-num="16"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr></table></figure></li>
-<li>
-<p><strong>服务端</strong></p>
-<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>        <span class="token comment">// 开放端口</span></pre></td></tr><tr><td data-num="3"></td><td><pre>        <span class="token class-name">DatagramSocket</span> socket <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DatagramSocket</span><span class="token punctuation">(</span><span class="token number">9090</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>        <span class="token comment">// 接收数据包</span></pre></td></tr><tr><td data-num="5"></td><td><pre>        <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> buffer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token number">1024</span><span class="token punctuation">]</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>        <span class="token class-name">DatagramPacket</span> packet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DatagramPacket</span><span class="token punctuation">(</span>buffer<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> buffer<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>        <span class="token comment">// 接收包</span></pre></td></tr><tr><td data-num="8"></td><td><pre>        socket<span class="token punctuation">.</span><span class="token function">receive</span><span class="token punctuation">(</span>packet<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>		<span class="token comment">// 打印输出目的端地址及数据内容</span></pre></td></tr><tr><td data-num="10"></td><td><pre>        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>packet<span class="token punctuation">.</span><span class="token function">getAddress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getHostName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>packet<span class="token punctuation">.</span><span class="token function">getData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> packet<span class="token punctuation">.</span><span class="token function">getLength</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="12"></td><td><pre>        <span class="token comment">// 关闭流</span></pre></td></tr><tr><td data-num="13"></td><td><pre>        socket<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="14"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr></table></figure></li>
+<li><p><strong>客户端（client）</strong></p>
+<pre><code class="lang-java"> public static void main(String[] args) throws Exception {
+         //创建一个socket连接
+         Socket socket = new Socket(InetAddress.getByName(&quot;127.0.0.1&quot;), 9000);
+         //建立一个输出流
+         OutputStream os = socket.getOutputStream();
+         //此处写文件路径最好使用绝对路径，否则会报错
+         File file = new File(&quot;G://IDEA_Project/FIST/src/lld.jpg&quot;);
+         //读取文件
+         FileInputStream fis = new FileInputStream(file);
+         //写入文件
+         byte[] buffer = new byte[1024];
+         int len;
+         while ((len= fis.read(buffer)) !=-1){
+             os.write(buffer,0,len);
+         }
+         //通知服务器，我已经结束啦
+         socket.shutdownOutput();
+
+         //确认服务端接收完毕，才断开连接
+         InputStream is = socket.getInputStream();
+
+         ByteArrayOutputStream baos = new ByteArrayOutputStream();
+
+         byte[] buffer2 =new byte[1024];
+         int len2;
+         while ((len2 = is.read(buffer2)) != -1){
+             baos.write(buffer2,0,len2);
+         }
+         System.out.println(baos.toString());
+         //关闭资源 (后创建先关闭原则)
+         baos.close();
+         is.close();
+         fis.close();
+         os.close();
+         socket.close();
+     }
+</code></pre>
+</li>
 </ul>
-<h2 id="8-udp实现循环发送"><a class="markdownIt-Anchor" href="#8-udp实现循环发送">#</a> 8、UDP 实现循环发送</h2>
-<hr>
+<h2 id="7、UDP实现消息的发送"><a href="#7、UDP实现消息的发送" class="headerlink" title="7、UDP实现消息的发送"></a>7、UDP实现消息的发送</h2><hr>
 <ul>
-<li>
-<p><strong>Sender 端</strong></p>
-<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>        <span class="token comment">// 建立端口</span></pre></td></tr><tr><td data-num="3"></td><td><pre>        <span class="token class-name">DatagramSocket</span> socket <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DatagramSocket</span><span class="token punctuation">(</span><span class="token number">8888</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>        <span class="token comment">// 数据，通过控制台输入数据</span></pre></td></tr><tr><td data-num="6"></td><td><pre>        <span class="token class-name">BufferedReader</span> reader <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BufferedReader</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">InputStreamReader</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre></pre></td></tr><tr><td data-num="8"></td><td><pre></pre></td></tr><tr><td data-num="9"></td><td><pre>        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>            <span class="token class-name">String</span> data <span class="token operator">=</span>  reader<span class="token punctuation">.</span><span class="token function">readLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>            <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> datas <span class="token operator">=</span> data<span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="12"></td><td><pre></pre></td></tr><tr><td data-num="13"></td><td><pre>            <span class="token class-name">DatagramPacket</span> packet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DatagramPacket</span><span class="token punctuation">(</span>datas<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>datas<span class="token punctuation">.</span>length<span class="token punctuation">,</span><span class="token keyword">new</span> <span class="token class-name">InetSocketAddress</span><span class="token punctuation">(</span><span class="token string">"localhost"</span><span class="token punctuation">,</span><span class="token number">6666</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="14"></td><td><pre></pre></td></tr><tr><td data-num="15"></td><td><pre>            socket<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>packet<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="16"></td><td><pre></pre></td></tr><tr><td data-num="17"></td><td><pre>            <span class="token keyword">if</span> <span class="token punctuation">(</span>data<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">"bye"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="18"></td><td><pre>                <span class="token keyword">break</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="19"></td><td><pre>            <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="20"></td><td><pre>        <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="21"></td><td><pre></pre></td></tr><tr><td data-num="22"></td><td><pre>        socket<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="23"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr></table></figure></li>
-<li>
-<p><strong>Receive 端</strong></p>
-<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>        <span class="token class-name">DatagramSocket</span> socket <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DatagramSocket</span><span class="token punctuation">(</span><span class="token number">6666</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>            <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> container <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token number">1024</span><span class="token punctuation">]</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>            <span class="token class-name">DatagramPacket</span> packet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DatagramPacket</span><span class="token punctuation">(</span>container<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> container<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>            <span class="token comment">// 阻塞式接收</span></pre></td></tr><tr><td data-num="8"></td><td><pre>            socket<span class="token punctuation">.</span><span class="token function">receive</span><span class="token punctuation">(</span>packet<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="9"></td><td><pre></pre></td></tr><tr><td data-num="10"></td><td><pre>            <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> data <span class="token operator">=</span> packet<span class="token punctuation">.</span><span class="token function">getData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>            <span class="token class-name">String</span> receiveData <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> data<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="12"></td><td><pre>            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>receiveData<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="13"></td><td><pre>		</pre></td></tr><tr><td data-num="14"></td><td><pre>            <span class="token keyword">if</span> <span class="token punctuation">(</span>receiveData<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">"bye"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="15"></td><td><pre>                <span class="token keyword">break</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="16"></td><td><pre>            <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="17"></td><td><pre></pre></td></tr><tr><td data-num="18"></td><td><pre>        <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="19"></td><td><pre>		<span class="token comment">// 关闭流</span></pre></td></tr><tr><td data-num="20"></td><td><pre>        socket<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="21"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr></table></figure></li>
+<li><p><strong>客户端</strong></p>
+<pre><code class="lang-java"> public static void main(String[] args) throws Exception {
+         //建立一个socket
+         DatagramSocket socket = new DatagramSocket();
+         //建立数据包
+         String msg = &quot;Hello,Server!&quot;;
+         //发送目的地
+         InetAddress localhost = InetAddress.getByName(&quot;localhost&quot;);
+         int port =9090;
+         //数据，数据长度的起始，目的地信息
+         DatagramPacket packet = new DatagramPacket(msg.getBytes(), 0, msg.getBytes().length, localhost, port);
+         //发送包
+         socket.send(packet);
+         //关闭流
+         socket.close();
+
+     }
+</code></pre>
+</li>
 </ul>
 <ul>
-<li>实际示例：
+<li><p><strong>服务端</strong></p>
+<pre><code class="lang-java"> public static void main(String[] args) throws Exception {
+         //开放端口
+         DatagramSocket socket = new DatagramSocket(9090);
+         //接收数据包
+         byte[] buffer = new byte[1024];
+         DatagramPacket packet = new DatagramPacket(buffer, 0, buffer.length);
+         //接收包
+         socket.receive(packet);
+         //打印输出目的端地址及数据内容
+         System.out.println(packet.getAddress().getHostName());
+         System.out.println(new String(packet.getData(), 0, packet.getLength()));
+         //关闭流
+         socket.close();
+     }
+</code></pre>
+</li>
+</ul>
+<h2 id="8、UDP实现循环发送"><a href="#8、UDP实现循环发送" class="headerlink" title="8、UDP实现循环发送"></a>8、UDP实现循环发送</h2><hr>
 <ul>
+<li><p><strong>Sender端</strong></p>
+<p> ```java<br>  public static void main(String[] args) throws Exception {</p>
+<pre><code>     //建立端口
+     DatagramSocket socket = new DatagramSocket(8888);
+
+     //数据,通过控制台输入数据
+     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+</code></pre></li>
+</ul>
+<pre><code>       while (true){
+           String data =  reader.readLine();
+           byte[] datas = data.getBytes();
+
+           DatagramPacket packet = new DatagramPacket(datas,0,datas.length,new InetSocketAddress(&quot;localhost&quot;,6666));
+
+           socket.send(packet);
+
+           if (data.equals(&quot;bye&quot;)){
+               break;
+           }
+       }
+
+       socket.close();
+   }
+</code></pre><pre><code>
+
+
++ **Receive端**
+
+   ```java
+   public static void main(String[] args) throws Exception {
+           DatagramSocket socket = new DatagramSocket(6666);
+           while (true){
+
+               byte[] container = new byte[1024];
+               DatagramPacket packet = new DatagramPacket(container, 0, container.length);
+               //阻塞式接收
+               socket.receive(packet);
+
+               byte[] data = packet.getData();
+               String receiveData = new String(data, 0, data.length);
+               System.out.println(receiveData);
+
+               if (receiveData.equals(&quot;bye&quot;)){
+                   break;
+               }
+
+           }
+           //关闭流
+           socket.close();
+       }
+</code></pre><ul>
+<li>实际示例：<ul>
 <li>在线咨询：通信双方既是发送方，也是接收方</li>
 </ul>
 </li>
@@ -371,10 +571,10 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
     <div class="item right">
       
 
-  <a href="/my-blog/Java/Java%E7%BB%A7%E6%89%BF/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;s4.ax1x.com&#x2F;2022&#x2F;01&#x2F;09&#x2F;7Fya5t.jpg" title="Java继承">
+  <a href="/my-blog/Java/Java%E7%9A%84Stream%E6%B5%81/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;s4.ax1x.com&#x2F;2022&#x2F;01&#x2F;09&#x2F;7Fya5t.jpg" title="Java的Stream流">
   <span class="type">下一篇</span>
   <span class="category"><i class="ic i-flag"></i> Java</span>
-  <h3>Java继承</h3>
+  <h3>Java的Stream流</h3>
   </a>
 
     </div>
@@ -393,11 +593,11 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-概述"><span class="toc-number">1.</span> <span class="toc-text"> 1、概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-osi与tcpip模型"><span class="toc-number">2.</span> <span class="toc-text"> 2、OSI 与 TCP&#x2F;IP 模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#模型对比"><span class="toc-number">2.1.</span> <span class="toc-text"> 模型对比</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tcpip模型中的协议剖析"><span class="toc-number">2.2.</span> <span class="toc-text"> TCP&#x2F;IP 模型中的协议剖析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-ip"><span class="toc-number">3.</span> <span class="toc-text"> 3、IP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-端口port"><span class="toc-number">4.</span> <span class="toc-text"> 4、端口（port）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-tcp实现聊天"><span class="toc-number">5.</span> <span class="toc-text"> 5、TCP 实现聊天</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-tcp实现文件上传"><span class="toc-number">6.</span> <span class="toc-text"> 6、TCP 实现文件上传</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-udp实现消息的发送"><span class="toc-number">7.</span> <span class="toc-text"> 7、UDP 实现消息的发送</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-udp实现循环发送"><span class="toc-number">8.</span> <span class="toc-text"> 8、UDP 实现循环发送</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、概述"><span class="toc-number">1.</span> <span class="toc-text">1、概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、OSI与TCP-IP模型"><span class="toc-number">2.</span> <span class="toc-text">2、OSI与TCP&#x2F;IP模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#模型对比"><span class="toc-number">2.1.</span> <span class="toc-text">模型对比</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP-IP模型中的协议剖析"><span class="toc-number">2.2.</span> <span class="toc-text">TCP&#x2F;IP模型中的协议剖析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、IP"><span class="toc-number">3.</span> <span class="toc-text">3、IP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、端口（port）"><span class="toc-number">4.</span> <span class="toc-text">4、端口（port）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5、TCP实现聊天"><span class="toc-number">5.</span> <span class="toc-text">5、TCP实现聊天</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6、TCP实现文件上传"><span class="toc-number">6.</span> <span class="toc-text">6、TCP实现文件上传</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7、UDP实现消息的发送"><span class="toc-number">7.</span> <span class="toc-text">7、UDP实现消息的发送</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8、UDP实现循环发送"><span class="toc-number">8.</span> <span class="toc-text">8、UDP实现循环发送</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li><a href="/my-blog/Java/Java%E5%B0%81%E8%A3%85/" rel="bookmark" title="Java封装">Java封装</a></li><li><a href="/my-blog/Java/Java%E5%A4%9A%E6%80%81/" rel="bookmark" title="Java多态">Java多态</a></li><li><a href="/my-blog/Java/Java%E6%96%B9%E6%B3%95/" rel="bookmark" title="Java方法">Java方法</a></li><li><a href="/my-blog/Java/Java%E7%9A%84Stream%E6%B5%81/" rel="bookmark" title="Java的Stream流">Java的Stream流</a></li><li><a href="/my-blog/Java/Java%E6%95%B0%E7%BB%84/" rel="bookmark" title="Java数组">Java数组</a></li><li><a href="/my-blog/Java/Java%E7%BB%A7%E6%89%BF/" rel="bookmark" title="Java继承">Java继承</a></li><li class="active"><a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" rel="bookmark" title="Java网络编程">Java网络编程</a></li><li><a href="/my-blog/Java/Java%E7%9A%84%E4%B8%80%E4%BA%9B%E7%B1%BB/" rel="bookmark" title="Java的一些类">Java的一些类</a></li><li><a href="/my-blog/Java/Java%E8%AF%AD%E5%8F%A5/" rel="bookmark" title="Java语句">Java语句</a></li><li><a href="/my-blog/Java/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/" rel="bookmark" title="类与对象">类与对象</a></li><li><a href="/my-blog/Java/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93/" rel="bookmark" title="多线程笔记总结">多线程笔记总结</a></li><li><a href="/my-blog/Java/JavaSE%E5%B0%8F%E7%BB%93/" rel="bookmark" title="JavaSE小结">JavaSE小结</a></li><li><a href="/my-blog/Java/Java%E5%9F%BA%E7%A1%80%E6%B7%B7%E5%90%88/" rel="bookmark" title="Java基础混合">Java基础混合</a></li><li><a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8BOV/" rel="bookmark" title="Java网络编程OV">Java网络编程OV</a></li>
+          <li><a href="/my-blog/Java/Java%E5%A4%9A%E6%80%81/" rel="bookmark" title="Java多态">Java多态</a></li><li><a href="/my-blog/Java/Java%E6%95%B0%E7%BB%84/" rel="bookmark" title="Java数组">Java数组</a></li><li><a href="/my-blog/Java/Java%E5%B0%81%E8%A3%85/" rel="bookmark" title="Java封装">Java封装</a></li><li><a href="/my-blog/Java/Java%E6%96%B9%E6%B3%95/" rel="bookmark" title="Java方法">Java方法</a></li><li><a href="/my-blog/Java/Java%E7%BB%A7%E6%89%BF/" rel="bookmark" title="Java继承">Java继承</a></li><li><a href="/my-blog/Java/Java%E7%9A%84Stream%E6%B5%81/" rel="bookmark" title="Java的Stream流">Java的Stream流</a></li><li class="active"><a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" rel="bookmark" title="Java网络编程">Java网络编程</a></li><li><a href="/my-blog/Java/Java%E7%9A%84%E4%B8%80%E4%BA%9B%E7%B1%BB/" rel="bookmark" title="Java的一些类">Java的一些类</a></li><li><a href="/my-blog/Java/Java%E8%AF%AD%E5%8F%A5/" rel="bookmark" title="Java语句">Java语句</a></li><li><a href="/my-blog/Java/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/" rel="bookmark" title="类与对象">类与对象</a></li><li><a href="/my-blog/Java/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93/" rel="bookmark" title="多线程笔记总结">多线程笔记总结</a></li><li><a href="/my-blog/Java/JavaSE%E5%B0%8F%E7%BB%93/" rel="bookmark" title="JavaSE小结">JavaSE小结</a></li><li><a href="/my-blog/Java/Java%E5%9F%BA%E7%A1%80%E6%B7%B7%E5%90%88/" rel="bookmark" title="Java基础混合">Java基础混合</a></li><li><a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8BOV/" rel="bookmark" title="Java网络编程OV">Java网络编程OV</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -513,10 +713,19 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/network/" title="分类于 网络">网络</a>
 </div>
 
-    <span><a href="/my-blog/network/Servlet%E5%92%8CTomcat/" title="Servlet和Tomcat">Servlet和Tomcat</a></span>
+    <span><a href="/my-blog/%E7%BD%91%E7%BB%9C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86DNS%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="配置与管理DNS服务器">配置与管理DNS服务器</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
+</div>
+
+    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E4%BA%91%E8%AE%A1%E7%AE%97%E7%AE%80%E4%BB%8B/" title="云计算简介">云计算简介</a></span>
   </li>
 
       
@@ -526,7 +735,17 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%90%84%E9%87%8D%E7%82%B9%E5%8D%8F%E8%AE%AE%E5%8F%8A%E5%B8%A7%E6%A0%BC%E5%BC%8F%E8%AF%A6%E8%A7%A3/" title="各重点协议及帧格式详解">各重点协议及帧格式详解</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/Linux%E9%85%8D%E7%BD%AE/" title="Linux配置">Linux配置</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
+</div>
+
+    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E5%AD%98%E5%82%A8%E8%99%9A%E6%8B%9F%E5%8C%96/" title="存储虚拟化">存储虚拟化</a></span>
   </li>
 
       
@@ -536,7 +755,47 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
 </div>
 
-    <span><a href="/my-blog/Java/JavaSE%E5%B0%8F%E7%BB%93/" title="JavaSE小结">JavaSE小结</a></span>
+    <span><a href="/my-blog/Java/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93/" title="多线程笔记总结">多线程笔记总结</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/" title="操作系统基础">操作系统基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8F%E8%AE%AE%E5%90%8D%E7%A7%B0%E4%B8%8E%E7%AE%80%E4%BB%8B/" title="协议名称与简介">协议名称与简介</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/Java%E7%BB%A7%E6%89%BF/" title="Java继承">Java继承</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/Java%E6%96%B9%E6%B3%95/" title="Java方法">Java方法</a></span>
   </li>
 
       
@@ -547,66 +806,6 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 </div>
 
     <span><a href="/my-blog/Java/Java%E7%9A%84Stream%E6%B5%81/" title="Java的Stream流">Java的Stream流</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
-</div>
-
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8001/" title="数据通信基础01">数据通信基础01</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/MySQL/" title="分类于 MySQL">MySQL</a>
-</div>
-
-    <span><a href="/my-blog/MySQL/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80/" title="MySQL数据库">MySQL数据库</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
-</div>
-
-    <span><a href="/my-blog/Java/Java%E5%9F%BA%E7%A1%80%E6%B7%B7%E5%90%88/" title="Java基础混合">Java基础混合</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
-</div>
-
-    <span><a href="/my-blog/Linux/%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/" title="目录与文件管理">目录与文件管理</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
-</div>
-
-    <span><a href="/my-blog/Java/Java%E8%AF%AD%E5%8F%A5/" title="Java语句">Java语句</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
-</div>
-
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E8%A7%84%E5%88%92%E4%B8%8E%E8%AE%BE%E8%AE%A1/" title="网络规划与设计">网络规划与设计</a></span>
   </li>
 
   </ul>

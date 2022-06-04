@@ -146,157 +146,150 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <div class="body md" itemprop="articleBody">
     
 
-    <h2 id="事务transaction"><a class="markdownIt-Anchor" href="#事务transaction">#</a> 事务 (transaction)</h2>
-<h3 id="何为事务"><a class="markdownIt-Anchor" href="#何为事务">#</a> 何为事务？</h3>
-<ul>
-<li>一般是指要做的或所做的事情。在计算机术语中是指访问并可能更新数据库中各种数据项的一个程序执行单元 (unit)。在计算机术语中，事务通常就是指数据库事务。</li>
+    <h2 id="事务-transaction"><a href="#事务-transaction" class="headerlink" title="事务(transaction)"></a>事务(transaction)</h2><h3 id="何为事务？"><a href="#何为事务？" class="headerlink" title="何为事务？"></a>何为事务？</h3><ul>
+<li>一般是指要做的或所做的事情。在计算机术语中是指访问并可能更新数据库中各种数据项的一个程序执行单元(unit)。在计算机术语中，事务通常就是指数据库事务。</li>
 </ul>
-<h3 id="事务在数据库的作用"><a class="markdownIt-Anchor" href="#事务在数据库的作用">#</a> 事务在数据库的作用</h3>
-<ul>
-<li>一个数据库事务通常包含对数据库进行读或写的一个操作序列。它的存在包含有以下两个目的：
-<ul>
-<li><mark>1、为数据库操作提供了一个从失败中恢复到正常状态的方法，同时提供了数据库即使在异常状态下仍能保持一致性的方法。</mark></li>
-<li><mark>2、当多个应用程序在并发访问数据库时，可以在这些应用程序之间提供一个隔离方法，以防止彼此的操作互相干扰。</mark></li>
+<h3 id="事务在数据库的作用"><a href="#事务在数据库的作用" class="headerlink" title="事务在数据库的作用"></a>事务在数据库的作用</h3><ul>
+<li>一个数据库事务通常包含对数据库进行读或写的一个操作序列。它的存在包含有以下两个目的：<ul>
+<li>==1、为数据库操作提供了一个从失败中恢复到正常状态的方法，同时提供了数据库即使在异常状态下仍能保持一致性的方法。==</li>
+<li>==2、当多个应用程序在并发访问数据库时，可以在这些应用程序之间提供一个隔离方法，以防止彼此的操作互相干扰。==</li>
 </ul>
 </li>
 </ul>
-<h3 id="事务的四大原则"><a class="markdownIt-Anchor" href="#事务的四大原则">#</a> 事务的四大原则</h3>
-<h4 id="原子性atomicity"><a class="markdownIt-Anchor" href="#原子性atomicity">#</a> 原子性 (Atomicity)</h4>
-<ul>
-<li>原子性保证将每个事务视为一个单独的 “单元”，它<mark>要么完全成功，要么完全失败</mark>：如果构成事务的任何语句未能完成，则整个事务都会失败，并且数据库将保持不变。</li>
-<li>例如：用户 A 给用户 B 进行银行转账，数据库要确保这一事务的两个操作都成功：这两个操作即 A 成功转账给 B，B 成功收到 A 的转账。两个操作缺少一个就失败，这两个操作可看成一个事务。</li>
+<h3 id="事务的四大原则"><a href="#事务的四大原则" class="headerlink" title="事务的四大原则"></a>事务的四大原则</h3><h4 id="原子性-Atomicity"><a href="#原子性-Atomicity" class="headerlink" title="原子性(Atomicity)"></a>原子性(Atomicity)</h4><ul>
+<li>原子性保证将每个事务视为一个单独的“单元”，它==要么完全成功，要么完全失败==：如果构成事务的任何语句未能完成，则整个事务都会失败，并且数据库将保持不变。</li>
+<li>例如：用户A给用户B进行银行转账，数据库要确保这一事务的两个操作都成功：这两个操作即A成功转账给B，B成功收到A的转账。两个操作缺少一个就失败，这两个操作可看成一个事务。</li>
 </ul>
-<h4 id="一致性consistency"><a class="markdownIt-Anchor" href="#一致性consistency">#</a> 一致性 (Consistency)</h4>
-<ul>
+<h4 id="一致性-Consistency"><a href="#一致性-Consistency" class="headerlink" title="一致性(Consistency)"></a>一致性(Consistency)</h4><ul>
 <li>事务应确保数据库的状态从一个一致状态转变为另一个一致状态。一致状态的含义是数据库中的数据应满足完整性约束。</li>
-<li>例如：用户 A 给用户 B 转账前与转账后，双方的总资产保持不变，即转账事务前后的一致性。</li>
+<li>例如：用户A给用户B转账前与转账后，双方的总资产保持不变，即转账事务前后的一致性。</li>
 </ul>
-<h4 id="隔离性isolation"><a class="markdownIt-Anchor" href="#隔离性isolation">#</a> 隔离性 (Isolation)</h4>
-<ul>
+<h4 id="隔离性-Isolation"><a href="#隔离性-Isolation" class="headerlink" title="隔离性(Isolation)"></a>隔离性(Isolation)</h4><ul>
 <li>多个事务并发时，一个事务不会影响到另一个事务。</li>
-<li>例如：用户 B 同时受到用户 A 与 C 的银行转账，此时当两个转账操作结束后，B 的总金额为其原金额加上 A 与 C 转给其的金额总数。即 A 转账 B 和 C 转账 B 两个事务相互隔离，当 A、C 没有确认提交之前，两者转账的钱具有隔离性。</li>
+<li>例如：用户B同时受到用户A与C的银行转账，此时当两个转账操作结束后，B的总金额为其原金额加上A与C转给其的金额总数。即A转账B和C转账B两个事务相互隔离，当A、C没有确认提交之前，两者转账的钱具有隔离性。</li>
 </ul>
-<h4 id="持久性durability"><a class="markdownIt-Anchor" href="#持久性durability">#</a> 持久性 (Durability)</h4>
-<ul>
+<h4 id="持久性-Durability"><a href="#持久性-Durability" class="headerlink" title="持久性(Durability)"></a>持久性(Durability)</h4><ul>
 <li>一个事务一旦提交，他对数据库的修改应该永久保存在数据库中。</li>
-<li>例如：当 A 把钱转账到 B 账户上时，双方的账户金额在数据库中就会永久保存。</li>
+<li>例如：当A把钱转账到B账户上时，双方的账户金额在数据库中就会永久保存。</li>
 </ul>
-<h3 id="隔离的一些问题"><a class="markdownIt-Anchor" href="#隔离的一些问题">#</a> 隔离的一些问题</h3>
-<h4 id="脏读"><a class="markdownIt-Anchor" href="#脏读">#</a> 脏读</h4>
-<ul>
+<h3 id="隔离的一些问题"><a href="#隔离的一些问题" class="headerlink" title="隔离的一些问题"></a>隔离的一些问题</h3><h4 id="脏读"><a href="#脏读" class="headerlink" title="脏读"></a>脏读</h4><ul>
 <li><strong>指一个事务读取了另一个事务未提交的数据</strong></li>
 </ul>
-<h4 id="不可重复读"><a class="markdownIt-Anchor" href="#不可重复读">#</a> 不可重复读</h4>
-<ul>
+<h4 id="不可重复读"><a href="#不可重复读" class="headerlink" title="不可重复读"></a>不可重复读</h4><ul>
 <li><strong>在一个事务内读取表中的某一行数据，多次读取结果不同（不一定是错误，只是场合不对）</strong></li>
 </ul>
-<h4 id="幻读"><a class="markdownIt-Anchor" href="#幻读">#</a> 幻读</h4>
-<ul>
+<h4 id="幻读"><a href="#幻读" class="headerlink" title="幻读"></a>幻读</h4><ul>
 <li><strong>指在一个事务内读到了别的事务插入的数据，导致前后读取不一致</strong></li>
 </ul>
-<h3 id="事务的使用"><a class="markdownIt-Anchor" href="#事务的使用">#</a> 事务的使用</h3>
-<figure class="highlight sql"><figcaption data-lang="SQL"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment">-- 在默认状态下 MySQL 是开启事务自动提交的</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">SET</span> autocommit <span class="token operator">=</span> <span class="token number">0</span> <span class="token comment">-- 关闭</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token keyword">SET</span> autocommit <span class="token operator">=</span> <span class="token number">1</span> <span class="token comment">-- 开启</span></pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token comment">-- 手动处理事务</span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token keyword">SET</span> autocommit <span class="token operator">=</span> <span class="token number">0</span> <span class="token comment">-- 关闭自动提交</span></pre></td></tr><tr><td data-num="7"></td><td><pre></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token comment">-- 事务开启</span></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token keyword">START</span> <span class="token keyword">TRANSACTION</span> <span class="token comment">-- 标记一个事务的开始，从这里为一个事务内的 SQL</span></pre></td></tr><tr><td data-num="10"></td><td><pre></pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token keyword">INSERT</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span></pre></td></tr><tr><td data-num="12"></td><td><pre></pre></td></tr><tr><td data-num="13"></td><td><pre><span class="token comment">-- 提交：持久化，即成功</span></pre></td></tr><tr><td data-num="14"></td><td><pre><span class="token keyword">COMMIT</span></pre></td></tr><tr><td data-num="15"></td><td><pre></pre></td></tr><tr><td data-num="16"></td><td><pre><span class="token comment">-- 回滚：回到原来的样子，即失败</span></pre></td></tr><tr><td data-num="17"></td><td><pre><span class="token keyword">ROLLBACK</span></pre></td></tr><tr><td data-num="18"></td><td><pre></pre></td></tr><tr><td data-num="19"></td><td><pre><span class="token comment">-- 事务结束</span></pre></td></tr><tr><td data-num="20"></td><td><pre><span class="token keyword">SET</span> autocommit <span class="token operator">=</span> <span class="token number">1</span> <span class="token comment">-- 开启</span></pre></td></tr></table></figure><h2 id="索引index"><a class="markdownIt-Anchor" href="#索引index">#</a> 索引 (Index)</h2>
-<h3 id="何为索引"><a class="markdownIt-Anchor" href="#何为索引">#</a> 何为索引？</h3>
-<ul>
+<h3 id="事务的使用"><a href="#事务的使用" class="headerlink" title="事务的使用"></a>事务的使用</h3><pre><code class="lang-sql">-- 在默认状态下MySQL是开启事务自动提交的
+SET autocommit = 0 --关闭
+SET autocommit = 1 --开启
+
+-- 手动处理事务
+SET autocommit = 0 --关闭自动提交
+
+-- 事务开启
+START TRANSACTION --标记一个事务的开始，从这里为一个事务内的SQL
+
+INSERT .....
+
+-- 提交：持久化,即成功
+COMMIT
+
+-- 回滚：回到原来的样子,即失败
+ROLLBACK
+
+--事务结束
+SET autocommit = 1 --开启
+</code></pre>
+<h2 id="索引-Index"><a href="#索引-Index" class="headerlink" title="索引(Index)"></a>索引(Index)</h2><h3 id="何为索引？"><a href="#何为索引？" class="headerlink" title="何为索引？"></a>何为索引？</h3><ul>
 <li><strong>索引是存储引擎用于快速找到记录的一种数据结构.</strong></li>
-<li>最常见的例子为<mark>书本的目录</mark>，我们在一本很厚的书中，需要通过目录找到需要的知识，可以快速精确定位到第几页中，不必一页一页的查找，提高查询效率</li>
+<li>最常见的例子为==书本的目录==，我们在一本很厚的书中，需要通过目录找到需要的知识，可以快速精确定位到第几页中，不必一页一页的查找，提高查询效率</li>
 </ul>
-<h3 id="索引分类"><a class="markdownIt-Anchor" href="#索引分类">#</a> 索引分类</h3>
-<ul>
-<li><strong>主键索引</strong>
-<ul>
-<li>PRIMARY KEY, 主键不可重复，一个表只有一列可作为主键</li>
+<h3 id="索引分类"><a href="#索引分类" class="headerlink" title="索引分类"></a>索引分类</h3><ul>
+<li><strong>主键索引</strong><ul>
+<li>PRIMARY KEY,主键不可重复，一个表只有一列可作为主键</li>
 </ul>
 </li>
-<li><strong>唯一索引</strong>
-<ul>
+<li><strong>唯一索引</strong><ul>
 <li>UNIQUE KEY，唯一索引的使用可以重复，但不可出现相同字段的唯一索引</li>
 </ul>
 </li>
-<li><strong>常规索引</strong>
-<ul>
+<li><strong>常规索引</strong><ul>
 <li>INDEX/KEY</li>
 </ul>
 </li>
-<li><strong>全文索引</strong>
-<ul>
-<li>FULLTEXT，只有在 <code>MyISAM</code>  数据库引擎下才有，可快速定位数据</li>
+<li><strong>全文索引</strong><ul>
+<li>FULLTEXT，只有在<code>MyISAM</code>数据库引擎下才有，可快速定位数据</li>
 </ul>
 </li>
 </ul>
-<h3 id="基本语法"><a class="markdownIt-Anchor" href="#基本语法">#</a> 基本语法</h3>
-<figure class="highlight sql"><figcaption data-lang="SQL"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment">-- 索引的使用</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token comment">-- 1. 再创建表的时候给字段增加索引</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token comment">-- 2. 创建完毕后，增加索引</span></pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token comment">-- 显示索引的索引信息</span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token keyword">SHOW</span> <span class="token keyword">INDEX</span> <span class="token keyword">FROM</span> student</pre></td></tr><tr><td data-num="7"></td><td><pre></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token comment">-- 增加一个全文索引</span></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> school<span class="token punctuation">.</span>student <span class="token keyword">ADD</span> FULLTEXT <span class="token keyword">INDEX</span> <span class="token punctuation">`</span>studentName<span class="token punctuation">`</span> <span class="token punctuation">(</span><span class="token punctuation">`</span>studentName<span class="token punctuation">`</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="10"></td><td><pre></pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token comment">-- EXPLAIN 分析 sql 执行情况</span></pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token keyword">EXPLAIN</span> <span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> student<span class="token punctuation">;</span> <span class="token comment">-- 非全文索引</span></pre></td></tr></table></figure><h3 id="索引原则"><a class="markdownIt-Anchor" href="#索引原则">#</a> 索引原则</h3>
-<ul>
+<h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><pre><code class="lang-sql">-- 索引的使用
+-- 1.再创建表的时候给字段增加索引
+-- 2.创建完毕后，增加索引
+
+-- 显示索引的索引信息
+SHOW INDEX FROM student
+
+-- 增加一个全文索引
+ALTER TABLE school.student ADD FULLTEXT INDEX `studentName` (`studentName`);
+
+-- EXPLAIN 分析sql执行情况
+EXPLAIN SELECT * FROM student; --非全文索引
+</code></pre>
+<h3 id="索引原则"><a href="#索引原则" class="headerlink" title="索引原则"></a>索引原则</h3><ul>
 <li><strong>索引并不是越多越好</strong></li>
 <li><strong>不要对进程变得数据加索引</strong></li>
 <li><strong>小数据量的表不需要加索引</strong></li>
 <li><strong>素养一把加在常用来查询的字段上</strong></li>
 </ul>
-<h3 id="索引背后的数据结构"><a class="markdownIt-Anchor" href="#索引背后的数据结构">#</a> 索引背后的数据结构</h3>
-<blockquote>
+<h3 id="索引背后的数据结构"><a href="#索引背后的数据结构" class="headerlink" title="索引背后的数据结构"></a>索引背后的数据结构</h3><blockquote>
 <p>参考文档：<span class="exturl" data-url="aHR0cDovL2Jsb2cuY29kaW5nbGFicy5vcmcvYXJ0aWNsZXMvdGhlb3J5LW9mLW15c3FsLWluZGV4Lmh0bWw=">http://blog.codinglabs.org/articles/theory-of-mysql-index.html</span></p>
 </blockquote>
-<h2 id="权限管理与备份"><a class="markdownIt-Anchor" href="#权限管理与备份">#</a> 权限管理与备份</h2>
-<h3 id="权限管理的作用"><a class="markdownIt-Anchor" href="#权限管理的作用">#</a> 权限管理的作用</h3>
-<ol>
+<h2 id="权限管理与备份"><a href="#权限管理与备份" class="headerlink" title="权限管理与备份"></a>权限管理与备份</h2><h3 id="权限管理的作用"><a href="#权限管理的作用" class="headerlink" title="权限管理的作用"></a>权限管理的作用</h3><ol>
 <li>可以限制用户访问哪些库、哪些表</li>
-<li>可以限制用户对哪些表执行 SELECT、CREATE、DELETE、DELETE、ALTER 等操作</li>
-<li>可以限制用户登录的 IP 或域名</li>
+<li>可以限制用户对哪些表执行SELECT、CREATE、DELETE、DELETE、ALTER等操作</li>
+<li>可以限制用户登录的IP或域名</li>
 <li>可以限制用户自己的权限是否可以授权给别的用户</li>
 </ol>
-<h3 id="mysql连接权限"><a class="markdownIt-Anchor" href="#mysql连接权限">#</a> MYSQL 连接权限</h3>
-<ul>
-<li><strong>主要依据：</strong>
-<ul>
+<h3 id="MYSQL连接权限"><a href="#MYSQL连接权限" class="headerlink" title="MYSQL连接权限"></a>MYSQL连接权限</h3><ul>
+<li><strong>主要依据：</strong><ul>
 <li>你从哪里来？ host</li>
 <li>你是谁？ user</li>
 <li>你的密码是多少？ password</li>
 </ul>
 </li>
-<li>通过用户提供的这三个信息，存储 MySQL 库中的 user 表中</li>
+<li>通过用户提供的这三个信息，存储MySQL库中的user表中</li>
 </ul>
-<h3 id="mysql执行权限的检查顺序"><a class="markdownIt-Anchor" href="#mysql执行权限的检查顺序">#</a> MySQL 执行权限的检查顺序</h3>
-<p><img data-src="https://s3.ax1x.com/2021/01/20/sR4ytA.png" alt="quanxian"></p>
-<h3 id="用户管理"><a class="markdownIt-Anchor" href="#用户管理">#</a> 用户管理</h3>
-<h4 id="创建用户"><a class="markdownIt-Anchor" href="#创建用户">#</a> 创建用户</h4>
+<h3 id="MySQL执行权限的检查顺序"><a href="#MySQL执行权限的检查顺序" class="headerlink" title="MySQL执行权限的检查顺序"></a>MySQL执行权限的检查顺序</h3><p><img data-src="https://s3.ax1x.com/2021/01/20/sR4ytA.png" alt="quanxian"></p>
+<h3 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h3><h4 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h4><ul>
+<li><p><strong>有两种方式创建MySQL授权用户</strong></p>
 <ul>
-<li>
-<p><strong>有两种方式创建 MySQL 授权用户</strong></p>
-<ul>
-<li>
-<p><mark>方法一、通过 insert 语句直接操作 MySQL 系统权限表</mark></p>
+<li><p>==方法一、通过insert语句直接操作MySQL系统权限表==</p>
 </li>
-<li>
-<p><mark>方法二、执行 create user/grant 命令（推荐）</mark></p>
+<li><p>==方法二、执行create user/grant命令（推荐）==</p>
 </li>
 </ul>
 </li>
 </ul>
-<h4 id="创建语法"><a class="markdownIt-Anchor" href="#创建语法">#</a> 创建语法</h4>
-<figure class="highlight sql"><figcaption data-lang="SQL"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">create</span> <span class="token keyword">user</span> <span class="token punctuation">[</span>用户名<span class="token punctuation">]</span>@<span class="token punctuation">[</span>访问地址<span class="token punctuation">]</span> identified <span class="token keyword">by</span> <span class="token punctuation">[</span>密码<span class="token punctuation">]</span></pre></td></tr></table></figure><h4 id="授权语法"><a class="markdownIt-Anchor" href="#授权语法">#</a> 授权语法</h4>
-<figure class="highlight sql"><figcaption data-lang="SQL"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">grant</span> <span class="token punctuation">[</span>权限<span class="token number">1</span><span class="token punctuation">,</span>权限<span class="token number">2</span><span class="token punctuation">,</span>权限<span class="token number">3</span><span class="token punctuation">]</span> <span class="token keyword">on</span> <span class="token operator">*</span><span class="token punctuation">.</span><span class="token operator">*</span> <span class="token keyword">to</span> <span class="token keyword">user</span><span class="token variable">@'host'</span> identified <span class="token keyword">by</span> <span class="token string">'password'</span></pre></td></tr></table></figure><blockquote>
+<h4 id="创建语法"><a href="#创建语法" class="headerlink" title="创建语法"></a>创建语法</h4><pre><code class="lang-sql">create user [用户名]@[访问地址] identified by [密码]
+</code></pre>
+<h4 id="授权语法"><a href="#授权语法" class="headerlink" title="授权语法"></a>授权语法</h4><pre><code class="lang-sql">grant [权限1,权限2,权限3] on *.* to user@&#39;host&#39; identified by &#39;password&#39;
+</code></pre>
+<blockquote>
 <p>详细资料参考：<span class="exturl" data-url="aHR0cHM6Ly9jbG91ZC50ZW5jZW50LmNvbS9kZXZlbG9wZXIvYXJ0aWNsZS8xNjU2MDA4">https://cloud.tencent.com/developer/article/1656008</span></p>
 </blockquote>
-<h2 id="数据库规范"><a class="markdownIt-Anchor" href="#数据库规范">#</a> 数据库规范</h2>
-<h3 id="三大范式"><a class="markdownIt-Anchor" href="#三大范式">#</a> 三大范式</h3>
-<h4 id="第一范式1nf"><a class="markdownIt-Anchor" href="#第一范式1nf">#</a> 第一范式 (1NF)</h4>
-<ul>
-<li>原子性，保证每一列不再可分</li>
-</ul>
-<h4 id="第二范式2nf"><a class="markdownIt-Anchor" href="#第二范式2nf">#</a> 第二范式 (2NF)</h4>
-<ul>
-<li>必要前提：<mark>满足第一范式</mark></li>
+<h2 id="数据库规范"><a href="#数据库规范" class="headerlink" title="数据库规范"></a>数据库规范</h2><h3 id="三大范式"><a href="#三大范式" class="headerlink" title="三大范式"></a>三大范式</h3><h4 id="第一范式-1NF"><a href="#第一范式-1NF" class="headerlink" title="第一范式(1NF)"></a>第一范式(1NF)</h4><ul>
+<li>原子性，保证每一列不再可分<h4 id="第二范式-2NF"><a href="#第二范式-2NF" class="headerlink" title="第二范式(2NF)"></a>第二范式(2NF)</h4></li>
+<li>必要前提：==满足第一范式==</li>
 <li>每张表只描述一件事情</li>
 </ul>
-<h4 id="第三范式3nf"><a class="markdownIt-Anchor" href="#第三范式3nf">#</a> 第三范式 (3NF)</h4>
-<ul>
-<li>必要前提： <mark>满足第一、第二范式</mark></li>
-<li>第三范式需要确保数据表中的每一列数据和主键直接相关，而<mark>不能间接相关</mark></li>
+<h4 id="第三范式-3NF"><a href="#第三范式-3NF" class="headerlink" title="第三范式(3NF)"></a>第三范式(3NF)</h4><ul>
+<li>必要前提： ==满足第一、第二范式==</li>
+<li>第三范式需要确保数据表中的每一列数据和主键直接相关，而==不能间接相关==</li>
 </ul>
-<h3 id="规范与性能的问题"><a class="markdownIt-Anchor" href="#规范与性能的问题">#</a> 规范与性能的问题</h3>
-<ul>
-<li><strong>关联查询的表不可超过三张</strong>
-<ul>
+<h3 id="规范与性能的问题"><a href="#规范与性能的问题" class="headerlink" title="规范与性能的问题"></a>规范与性能的问题</h3><ul>
+<li><strong>关联查询的表不可超过三张</strong><ul>
 <li>考虑商业化的需求和目标</li>
 <li>适当考虑规范性</li>
 <li>故意给某些表增加一些冗余的字段</li>
@@ -304,53 +297,78 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 </ul>
 </li>
 </ul>
-<h2 id="jdbc-重点"><a class="markdownIt-Anchor" href="#jdbc-重点">#</a> JDBC (重点)</h2>
-<h3 id="数据库驱动"><a class="markdownIt-Anchor" href="#数据库驱动">#</a> 数据库驱动</h3>
-<ul>
-<li>图解：<br>
-<img data-src="https://s3.ax1x.com/2021/01/20/sf8EGt.png" alt="qudong"></li>
+<h2 id="JDBC-重点"><a href="#JDBC-重点" class="headerlink" title="JDBC (重点)"></a>JDBC (重点)</h2><h3 id="数据库驱动"><a href="#数据库驱动" class="headerlink" title="数据库驱动"></a>数据库驱动</h3><ul>
+<li>图解：<br><img data-src="https://s3.ax1x.com/2021/01/20/sf8EGt.png" alt="qudong"></li>
 </ul>
-<h3 id="java数据库连接jdbc"><a class="markdownIt-Anchor" href="#java数据库连接jdbc">#</a> Java 数据库连接（JDBC）</h3>
-<ul>
-<li>Java 数据库连接（JDBC）是 Java 编程语言的应用程序编程接口（API），它定义了客户端如何访问数据库。<mark>它是用于 Java 数据库连接的基于 Java 的数据访问技术</mark>。它是 Oracle Corporation 的 Java Standard Edition 平台的一部分。它提供了查询和更新数据库中数据的方法，并且面向关系数据库。</li>
+<h3 id="Java数据库连接（JDBC）"><a href="#Java数据库连接（JDBC）" class="headerlink" title="Java数据库连接（JDBC）"></a>Java数据库连接（JDBC）</h3><ul>
+<li>Java数据库连接（JDBC）是Java编程语言的应用程序编程接口（API），它定义了客户端如何访问数据库。==它是用于Java数据库连接的基于Java的数据访问技术==。它是Oracle Corporation的Java Standard Edition平台的一部分。它提供了查询和更新数据库中数据的方法，并且面向关系数据库。</li>
 </ul>
-<h3 id="编程步骤"><a class="markdownIt-Anchor" href="#编程步骤">#</a> 编程步骤</h3>
-<ol>
-<li><strong>加载驱动程序</strong></li>
+<h3 id="编程步骤"><a href="#编程步骤" class="headerlink" title="编程步骤"></a>编程步骤</h3><ol>
+<li><strong>加载驱动程序</strong><pre><code class="lang-java">Class.forName(driverClass)
+//加载MySql驱动
+Class.forName(&quot;com.mysql.jdbc.Driver&quot;)
+//加载Oracle驱动
+Class.forName(&quot;oracle.jdbc.driver.OracleDriver&quot;)
+</code></pre>
+</li>
+<li><p><strong>获得数据库连接</strong></p>
+<pre><code class="lang-java">DriverManager.getConnection(&quot;jdbc:mysql://127.0.0.1:3306/abc&quot;, &quot;root&quot;, &quot;root&quot;);
+</code></pre>
+</li>
+<li><p><strong>创建Statement\PreparedStatement对象：</strong></p>
+<pre><code class="lang-java">conn.createStatement();
+conn.prepareStatement(sql);
+</code></pre>
+</li>
 </ol>
-<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token class-name">Class</span><span class="token punctuation">.</span><span class="token function">forName</span><span class="token punctuation">(</span>driverClass<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token comment">// 加载 MySql 驱动</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token class-name">Class</span><span class="token punctuation">.</span><span class="token function">forName</span><span class="token punctuation">(</span><span class="token string">"com.mysql.jdbc.Driver"</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token comment">// 加载 Oracle 驱动</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token class-name">Class</span><span class="token punctuation">.</span><span class="token function">forName</span><span class="token punctuation">(</span><span class="token string">"oracle.jdbc.driver.OracleDriver"</span><span class="token punctuation">)</span></pre></td></tr></table></figure><ol start="2">
-<li><strong>获得数据库连接</strong></li>
-</ol>
-<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token class-name">DriverManager</span><span class="token punctuation">.</span><span class="token function">getConnection</span><span class="token punctuation">(</span><span class="token string">"jdbc:mysql://127.0.0.1:3306/abc"</span><span class="token punctuation">,</span> <span class="token string">"root"</span><span class="token punctuation">,</span> <span class="token string">"root"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><ol start="3">
-<li><strong>创建 Statement\PreparedStatement 对象：</strong></li>
-</ol>
-<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre>conn<span class="token punctuation">.</span><span class="token function">createStatement</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>conn<span class="token punctuation">.</span><span class="token function">prepareStatement</span><span class="token punctuation">(</span>sql<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><ul>
-<li><strong>总结：</strong>
 <ul>
+<li><strong>总结：</strong><ul>
 <li>加载驱动</li>
-<li>连接数据库 <code>DriverManager</code></li>
-<li>获得执行 sql 对象  <code>statement</code></li>
+<li>连接数据库<code>DriverManager</code></li>
+<li>获得执行sql对象 <code>statement</code></li>
 <li>获得返回的结果集</li>
 <li>释放连接</li>
 </ul>
 </li>
 </ul>
-<h3 id="主要java代码"><a class="markdownIt-Anchor" href="#主要java代码">#</a> 主要 java 代码</h3>
-<h4 id="drivermanager"><a class="markdownIt-Anchor" href="#drivermanager">#</a> DriverManager</h4>
-<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment">//DriverManager.registerDriver(new com.mysql.jdbc.Driver());</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token class-name">Class</span><span class="token punctuation">.</span><span class="token function">forName</span><span class="token punctuation">(</span><span class="token string">"com.mysql.jdbc.Driver"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token class-name">Connection</span> connection <span class="token operator">=</span> <span class="token class-name">DriverManager</span><span class="token punctuation">.</span><span class="token function">getConnection</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span>username<span class="token punctuation">,</span>password<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token comment">//connection 代表数据库</span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token comment">// 数据库设置自动提交</span></pre></td></tr><tr><td data-num="7"></td><td><pre>connection<span class="token punctuation">.</span><span class="token function">setAutoCommit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token comment">// 事务提交</span></pre></td></tr><tr><td data-num="9"></td><td><pre>connection<span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token comment">// 事务回滚</span></pre></td></tr><tr><td data-num="11"></td><td><pre>connection<span class="token punctuation">.</span><span class="token function">rollback</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><h4 id="url"><a class="markdownIt-Anchor" href="#url">#</a> URL</h4>
-<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token class-name">String</span> url <span class="token operator">=</span> <span class="token string">"jdbc:mysql://localhost:3306/jdbcstudy......"</span><span class="token comment">// 按照实际的数据库 url 填写</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token comment">// 3306 为 mysql 数据库的端口号</span></pre></td></tr></table></figure><h4 id="statement执行sql的对象-preparestatement执行sql的对象"><a class="markdownIt-Anchor" href="#statement执行sql的对象-preparestatement执行sql的对象">#</a> statement 执行 SQL 的对象 PrepareStatement 执行 SQL 的对象</h4>
-<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token class-name">String</span> sql <span class="token operator">=</span> <span class="token string">"SELECT * FROM users"</span><span class="token punctuation">;</span> <span class="token comment">// 编写 SQL</span></pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre>statement<span class="token punctuation">.</span><span class="token function">executeQuery</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 查询潮州返回的结果集 ResultSet</span></pre></td></tr><tr><td data-num="4"></td><td><pre>statement<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 执行任何 SQL</span></pre></td></tr><tr><td data-num="5"></td><td><pre>statement<span class="token punctuation">.</span><span class="token function">executeUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 为增删改使用</span></pre></td></tr></table></figure><h4 id="resultset-查询的结果集封装了所有查询结果"><a class="markdownIt-Anchor" href="#resultset-查询的结果集封装了所有查询结果">#</a> ResultSet 查询的结果集，封装了所有查询结果</h4>
-<ul>
-<li>
-<p>获得指定的数据类型</p>
-<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre>resultSet<span class="token punctuation">.</span><span class="token function">getObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 在不知道列类型的情况下使用</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token comment">// 以下为指导列类型使用</span></pre></td></tr><tr><td data-num="3"></td><td><pre>resultSet<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>resultSet<span class="token punctuation">.</span><span class="token function">getInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>resultSet<span class="token punctuation">.</span><span class="token function">getDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure></li>
-<li>
-<p>遍历</p>
-<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre>resultSet<span class="token punctuation">.</span><span class="token function">beforeFirst</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 移到最前面</span></pre></td></tr><tr><td data-num="2"></td><td><pre>resultSet<span class="token punctuation">.</span><span class="token function">afterLast</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 移到最后面</span></pre></td></tr><tr><td data-num="3"></td><td><pre>resultSet<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 移到下一个数据</span></pre></td></tr><tr><td data-num="4"></td><td><pre>resultSet<span class="token punctuation">.</span><span class="token function">previous</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 移到前一行</span></pre></td></tr><tr><td data-num="5"></td><td><pre>resultSet<span class="token punctuation">.</span><span class="token function">absoulute</span><span class="token punctuation">(</span>row<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 移动到指定行</span></pre></td></tr></table></figure></li>
+<h3 id="主要java代码"><a href="#主要java代码" class="headerlink" title="主要java代码"></a>主要java代码</h3><h4 id="DriverManager"><a href="#DriverManager" class="headerlink" title="DriverManager"></a>DriverManager</h4><pre><code class="lang-java">//DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+Class.forName(&quot;com.mysql.jdbc.Driver&quot;);
+Connection connection = DriverManager.getConnection(url,username,password);
+
+// connection 代表数据库
+// 数据库设置自动提交
+connection.setAutoCommit();
+// 事务提交
+connection.commit();
+//事务回滚
+connection.rollback();
+</code></pre>
+<h4 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h4><pre><code class="lang-java">String url = &quot;jdbc:mysql://localhost:3306/jdbcstudy......&quot;//按照实际的数据库url填写
+// 3306为mysql数据库的端口号
+</code></pre>
+<h4 id="statement执行SQL的对象-PrepareStatement执行SQL的对象"><a href="#statement执行SQL的对象-PrepareStatement执行SQL的对象" class="headerlink" title="statement执行SQL的对象 PrepareStatement执行SQL的对象"></a>statement执行SQL的对象 PrepareStatement执行SQL的对象</h4><pre><code class="lang-java">String sql = &quot;SELECT * FROM users&quot;; //编写SQL
+
+statement.executeQuery();//查询潮州返回的结果集ResultSet
+statement.execute(); //执行任何SQL
+statement.executeUpdate(); //为增删改使用
+</code></pre>
+<h4 id="ResultSet-查询的结果集，封装了所有查询结果"><a href="#ResultSet-查询的结果集，封装了所有查询结果" class="headerlink" title="ResultSet 查询的结果集，封装了所有查询结果"></a>ResultSet 查询的结果集，封装了所有查询结果</h4><ul>
+<li><p>获得指定的数据类型</p>
+<pre><code class="lang-java">resultSet.getObject(); //在不知道列类型的情况下使用
+//以下为指导列类型使用
+resultSet.getString();
+resultSet.getInt();
+resultSet.getDate();
+</code></pre>
+</li>
+<li><p>遍历<br>```java<br>resultSet.beforeFirst(); //移到最前面<br>resultSet.afterLast(); //移到最后面<br>resultSet.next(); //移到下一个数据<br>resultSet.previous(); //移到前一行<br>resultSet.absoulute(row); //移动到指定行</p>
+</li>
 </ul>
-<h4 id="释放资源"><a class="markdownIt-Anchor" href="#释放资源">#</a> 释放资源</h4>
-<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre>resultSet<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>statement<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>connection<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><h3 id="statement对象"><a class="markdownIt-Anchor" href="#statement对象">#</a> statement 对象</h3>
-<blockquote>
+<h4 id="释放资源"><a href="#释放资源" class="headerlink" title="释放资源"></a>释放资源</h4><pre><code class="lang-java">resultSet.close();
+statement.close();
+connection.close();
+</code></pre>
+<h3 id="statement对象"><a href="#statement对象" class="headerlink" title="statement对象"></a>statement对象</h3><blockquote>
 <p>参考资料：<span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vRWFzb25KaW0vcC82OTk0MDE0Lmh0bWw=">https://www.cnblogs.com/EasonJim/p/6994014.html</span></p>
 </blockquote>
 
@@ -442,7 +460,7 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#事务transaction"><span class="toc-number">1.</span> <span class="toc-text"> 事务 (transaction)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#何为事务"><span class="toc-number">1.1.</span> <span class="toc-text"> 何为事务？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事务在数据库的作用"><span class="toc-number">1.2.</span> <span class="toc-text"> 事务在数据库的作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事务的四大原则"><span class="toc-number">1.3.</span> <span class="toc-text"> 事务的四大原则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#原子性atomicity"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 原子性 (Atomicity)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#一致性consistency"><span class="toc-number">1.3.2.</span> <span class="toc-text"> 一致性 (Consistency)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#隔离性isolation"><span class="toc-number">1.3.3.</span> <span class="toc-text"> 隔离性 (Isolation)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#持久性durability"><span class="toc-number">1.3.4.</span> <span class="toc-text"> 持久性 (Durability)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#隔离的一些问题"><span class="toc-number">1.4.</span> <span class="toc-text"> 隔离的一些问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#脏读"><span class="toc-number">1.4.1.</span> <span class="toc-text"> 脏读</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#不可重复读"><span class="toc-number">1.4.2.</span> <span class="toc-text"> 不可重复读</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#幻读"><span class="toc-number">1.4.3.</span> <span class="toc-text"> 幻读</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事务的使用"><span class="toc-number">1.5.</span> <span class="toc-text"> 事务的使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#索引index"><span class="toc-number">2.</span> <span class="toc-text"> 索引 (Index)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#何为索引"><span class="toc-number">2.1.</span> <span class="toc-text"> 何为索引？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#索引分类"><span class="toc-number">2.2.</span> <span class="toc-text"> 索引分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本语法"><span class="toc-number">2.3.</span> <span class="toc-text"> 基本语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#索引原则"><span class="toc-number">2.4.</span> <span class="toc-text"> 索引原则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#索引背后的数据结构"><span class="toc-number">2.5.</span> <span class="toc-text"> 索引背后的数据结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#权限管理与备份"><span class="toc-number">3.</span> <span class="toc-text"> 权限管理与备份</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#权限管理的作用"><span class="toc-number">3.1.</span> <span class="toc-text"> 权限管理的作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mysql连接权限"><span class="toc-number">3.2.</span> <span class="toc-text"> MYSQL 连接权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mysql执行权限的检查顺序"><span class="toc-number">3.3.</span> <span class="toc-text"> MySQL 执行权限的检查顺序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用户管理"><span class="toc-number">3.4.</span> <span class="toc-text"> 用户管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#创建用户"><span class="toc-number">3.4.1.</span> <span class="toc-text"> 创建用户</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建语法"><span class="toc-number">3.4.2.</span> <span class="toc-text"> 创建语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#授权语法"><span class="toc-number">3.4.3.</span> <span class="toc-text"> 授权语法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库规范"><span class="toc-number">4.</span> <span class="toc-text"> 数据库规范</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#三大范式"><span class="toc-number">4.1.</span> <span class="toc-text"> 三大范式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#第一范式1nf"><span class="toc-number">4.1.1.</span> <span class="toc-text"> 第一范式 (1NF)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第二范式2nf"><span class="toc-number">4.1.2.</span> <span class="toc-text"> 第二范式 (2NF)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第三范式3nf"><span class="toc-number">4.1.3.</span> <span class="toc-text"> 第三范式 (3NF)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#规范与性能的问题"><span class="toc-number">4.2.</span> <span class="toc-text"> 规范与性能的问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jdbc-重点"><span class="toc-number">5.</span> <span class="toc-text"> JDBC (重点)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据库驱动"><span class="toc-number">5.1.</span> <span class="toc-text"> 数据库驱动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#java数据库连接jdbc"><span class="toc-number">5.2.</span> <span class="toc-text"> Java 数据库连接（JDBC）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编程步骤"><span class="toc-number">5.3.</span> <span class="toc-text"> 编程步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主要java代码"><span class="toc-number">5.4.</span> <span class="toc-text"> 主要 java 代码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#drivermanager"><span class="toc-number">5.4.1.</span> <span class="toc-text"> DriverManager</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#url"><span class="toc-number">5.4.2.</span> <span class="toc-text"> URL</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#statement执行sql的对象-preparestatement执行sql的对象"><span class="toc-number">5.4.3.</span> <span class="toc-text"> statement 执行 SQL 的对象 PrepareStatement 执行 SQL 的对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#resultset-查询的结果集封装了所有查询结果"><span class="toc-number">5.4.4.</span> <span class="toc-text"> ResultSet 查询的结果集，封装了所有查询结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#释放资源"><span class="toc-number">5.4.5.</span> <span class="toc-text"> 释放资源</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#statement对象"><span class="toc-number">5.5.</span> <span class="toc-text"> statement 对象</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#事务-transaction"><span class="toc-number">1.</span> <span class="toc-text">事务(transaction)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#何为事务？"><span class="toc-number">1.1.</span> <span class="toc-text">何为事务？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事务在数据库的作用"><span class="toc-number">1.2.</span> <span class="toc-text">事务在数据库的作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事务的四大原则"><span class="toc-number">1.3.</span> <span class="toc-text">事务的四大原则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#原子性-Atomicity"><span class="toc-number">1.3.1.</span> <span class="toc-text">原子性(Atomicity)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#一致性-Consistency"><span class="toc-number">1.3.2.</span> <span class="toc-text">一致性(Consistency)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#隔离性-Isolation"><span class="toc-number">1.3.3.</span> <span class="toc-text">隔离性(Isolation)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#持久性-Durability"><span class="toc-number">1.3.4.</span> <span class="toc-text">持久性(Durability)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#隔离的一些问题"><span class="toc-number">1.4.</span> <span class="toc-text">隔离的一些问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#脏读"><span class="toc-number">1.4.1.</span> <span class="toc-text">脏读</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#不可重复读"><span class="toc-number">1.4.2.</span> <span class="toc-text">不可重复读</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#幻读"><span class="toc-number">1.4.3.</span> <span class="toc-text">幻读</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事务的使用"><span class="toc-number">1.5.</span> <span class="toc-text">事务的使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#索引-Index"><span class="toc-number">2.</span> <span class="toc-text">索引(Index)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#何为索引？"><span class="toc-number">2.1.</span> <span class="toc-text">何为索引？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#索引分类"><span class="toc-number">2.2.</span> <span class="toc-text">索引分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本语法"><span class="toc-number">2.3.</span> <span class="toc-text">基本语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#索引原则"><span class="toc-number">2.4.</span> <span class="toc-text">索引原则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#索引背后的数据结构"><span class="toc-number">2.5.</span> <span class="toc-text">索引背后的数据结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#权限管理与备份"><span class="toc-number">3.</span> <span class="toc-text">权限管理与备份</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#权限管理的作用"><span class="toc-number">3.1.</span> <span class="toc-text">权限管理的作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MYSQL连接权限"><span class="toc-number">3.2.</span> <span class="toc-text">MYSQL连接权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MySQL执行权限的检查顺序"><span class="toc-number">3.3.</span> <span class="toc-text">MySQL执行权限的检查顺序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用户管理"><span class="toc-number">3.4.</span> <span class="toc-text">用户管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#创建用户"><span class="toc-number">3.4.1.</span> <span class="toc-text">创建用户</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建语法"><span class="toc-number">3.4.2.</span> <span class="toc-text">创建语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#授权语法"><span class="toc-number">3.4.3.</span> <span class="toc-text">授权语法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库规范"><span class="toc-number">4.</span> <span class="toc-text">数据库规范</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#三大范式"><span class="toc-number">4.1.</span> <span class="toc-text">三大范式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#第一范式-1NF"><span class="toc-number">4.1.1.</span> <span class="toc-text">第一范式(1NF)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第二范式-2NF"><span class="toc-number">4.1.2.</span> <span class="toc-text">第二范式(2NF)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第三范式-3NF"><span class="toc-number">4.1.3.</span> <span class="toc-text">第三范式(3NF)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#规范与性能的问题"><span class="toc-number">4.2.</span> <span class="toc-text">规范与性能的问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JDBC-重点"><span class="toc-number">5.</span> <span class="toc-text">JDBC (重点)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据库驱动"><span class="toc-number">5.1.</span> <span class="toc-text">数据库驱动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java数据库连接（JDBC）"><span class="toc-number">5.2.</span> <span class="toc-text">Java数据库连接（JDBC）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编程步骤"><span class="toc-number">5.3.</span> <span class="toc-text">编程步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主要java代码"><span class="toc-number">5.4.</span> <span class="toc-text">主要java代码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#DriverManager"><span class="toc-number">5.4.1.</span> <span class="toc-text">DriverManager</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#URL"><span class="toc-number">5.4.2.</span> <span class="toc-text">URL</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#statement执行SQL的对象-PrepareStatement执行SQL的对象"><span class="toc-number">5.4.3.</span> <span class="toc-text">statement执行SQL的对象 PrepareStatement执行SQL的对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ResultSet-查询的结果集，封装了所有查询结果"><span class="toc-number">5.4.4.</span> <span class="toc-text">ResultSet 查询的结果集，封装了所有查询结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#释放资源"><span class="toc-number">5.4.5.</span> <span class="toc-text">释放资源</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#statement对象"><span class="toc-number">5.5.</span> <span class="toc-text">statement对象</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -564,10 +582,20 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/MySQL/" title="分类于 MySQL">MySQL</a>
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/MySQL/MySQL%E8%BF%9B%E9%98%B6/" title="MySQL进阶">MySQL进阶</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E6%A6%82%E8%AE%BA/" title="计算机基础概论">计算机基础概论</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%97%A0%E7%BA%BF%E9%80%9A%E4%BF%A1%E7%BD%91/" title="无线通信网">无线通信网</a></span>
   </li>
 
       
@@ -584,10 +612,10 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+<a href="/my-blog/categories/MySQL/" title="分类于 MySQL">MySQL</a>
 </div>
 
-    <span><a href="/my-blog/Java/Java%E8%AF%AD%E5%8F%A5/" title="Java语句">Java语句</a></span>
+    <span><a href="/my-blog/MySQL/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80/" title="MySQL数据库">MySQL数据库</a></span>
   </li>
 
       
@@ -597,57 +625,27 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
 </div>
 
-    <span><a href="/my-blog/Java/Java%E5%9F%BA%E7%A1%80%E6%B7%B7%E5%90%88/" title="Java基础混合">Java基础混合</a></span>
+    <span><a href="/my-blog/Java/Java%E6%96%B9%E6%B3%95/" title="Java方法">Java方法</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+<a href="/my-blog/categories/MySQL/" title="分类于 MySQL">MySQL</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%882%EF%BC%89/" title="华为路由交换实验命令（2）">华为路由交换实验命令（2）</a></span>
+    <span><a href="/my-blog/MySQL/MySQL%E8%BF%9B%E9%98%B6/" title="MySQL进阶">MySQL进阶</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+<a href="/my-blog/categories/network/" title="分类于 网络">网络</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%8E%E5%BA%94%E7%94%A801/" title="网络安全与应用01">网络安全与应用01</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
-</div>
-
-    <span><a href="/my-blog/%E5%89%8D%E7%AB%AF/%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E5%89%8D%E7%AB%AF/" title="如何学习前端">如何学习前端</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
-</div>
-
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%883%EF%BC%89/" title="华为路由实验命令（3）">华为路由实验命令（3）</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
-</div>
-
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/Linux%E9%85%8D%E7%BD%AE/" title="Linux配置">Linux配置</a></span>
+    <span><a href="/my-blog/network/Servlet%E5%92%8CTomcat/" title="Servlet和Tomcat">Servlet和Tomcat</a></span>
   </li>
 
       
@@ -657,7 +655,27 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
 </div>
 
-    <span><a href="/my-blog/Java/Java%E7%9A%84Stream%E6%B5%81/" title="Java的Stream流">Java的Stream流</a></span>
+    <span><a href="/my-blog/Java/Java%E5%A4%9A%E6%80%81/" title="Java多态">Java多态</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="分类于 算法与数据结构">算法与数据结构</a>
+</div>
+
+    <span><a href="/my-blog/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/" title="算法入门教程">算法入门教程</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E4%B8%8B%E4%B8%80%E4%BB%A3%E4%BA%92%E8%81%94%E7%BD%91/" title="下一代互联网">下一代互联网</a></span>
   </li>
 
   </ul>

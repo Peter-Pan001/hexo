@@ -146,23 +146,20 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="局域网互联"><a class="markdownIt-Anchor" href="#局域网互联">#</a> 局域网互联</h1>
-<h2 id="局域网互联设备"><a class="markdownIt-Anchor" href="#局域网互联设备">#</a> 局域网互联设备</h2>
-<ul>
+    <h1 id="局域网互联"><a href="#局域网互联" class="headerlink" title="局域网互联"></a>局域网互联</h1><h2 id="局域网互联设备"><a href="#局域网互联设备" class="headerlink" title="局域网互联设备"></a>局域网互联设备</h2><ul>
 <li>两层网桥（生成树、源路由）、三层交换机、路由器。</li>
-<li>网桥要求 3 层以上的协议相同，1、2 层协议不同可互联</li>
-</ul>
+<li><p>网桥要求3层以上的协议相同，1、2层协议不同可互联</p>
 <p><img data-src="https://s3.ax1x.com/2021/02/21/yTfAlq.jpg" alt="jywwq"></p>
-<h1 id="生成树网桥"><a class="markdownIt-Anchor" href="#生成树网桥">#</a> 生成树网桥</h1>
-<ul>
-<li>又叫透明网桥，IEEE802.1d, 生成树算法</li>
-<li>基本思想是在网桥之间传递 BPDU，比较参数，根据 STP 打开好端口，阻塞差的端口，沿着好的端口建立路径， <strong>边走边拐弯</strong>，应用于以太网</li>
+</li>
+</ul>
+<h1 id="生成树网桥"><a href="#生成树网桥" class="headerlink" title="生成树网桥"></a>生成树网桥</h1><ul>
+<li>又叫透明网桥，IEEE802.1d,生成树算法</li>
+<li>基本思想是在网桥之间传递BPDU，比较参数，根据STP打开好端口，阻塞差的端口，沿着好的端口建立路径， <strong>边走边拐弯</strong>，应用于以太网</li>
 </ul>
 <blockquote>
 <p>生成树协议与算法参考文档：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzYyNzAyMi9hcnRpY2xlL2RldGFpbHMvMTA1NzMwNjE2">https://blog.csdn.net/weixin_43627022/article/details/105730616</span></p>
 </blockquote>
-<h3 id="生成树网桥步骤"><a class="markdownIt-Anchor" href="#生成树网桥步骤">#</a> 生成树网桥步骤</h3>
-<ol>
+<h3 id="生成树网桥步骤"><a href="#生成树网桥步骤" class="headerlink" title="生成树网桥步骤"></a>生成树网桥步骤</h3><ol>
 <li>确定根桥</li>
 <li>确定根端口</li>
 <li>确定指定桥</li>
@@ -170,56 +167,47 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <li>阻塞剩余端口</li>
 <li>形成无环网络</li>
 </ol>
-<h3 id="生成树网桥计算数据"><a class="markdownIt-Anchor" href="#生成树网桥计算数据">#</a> 生成树网桥计算数据</h3>
-<ol>
-<li><strong>确定根桥 ID</strong>
-<ul>
-<li>优先级 + MAC 地址，都选最小</li>
-<li>优先级 0-65535，默认 32768（±4096）</li>
+<h3 id="生成树网桥计算数据"><a href="#生成树网桥计算数据" class="headerlink" title="生成树网桥计算数据"></a>生成树网桥计算数据</h3><ol>
+<li><strong>确定根桥ID</strong><ul>
+<li>优先级+MAC地址，都选最小</li>
+<li>优先级0-65535，默认32768（±4096）</li>
 </ul>
 </li>
-<li><strong>确定根端口</strong>
-<ul>
-<li>优先级 + 编号，都选最小的</li>
-<li>优先级 0-255，默认 128</li>
+<li><strong>确定根端口</strong><ul>
+<li>优先级+编号，都选最小的</li>
+<li>优先级0-255，默认128</li>
 </ul>
 </li>
-<li><strong>三小原则</strong>
-<ul>
+<li><strong>三小原则</strong><ul>
 <li>优先级</li>
-<li>MAC 地址</li>
-<li>通路费用</li>
+<li>MAC地址</li>
+<li>通路费用 </li>
 </ul>
 </li>
 </ol>
-<h3 id="生成树端口的四种状态"><a class="markdownIt-Anchor" href="#生成树端口的四种状态">#</a> 生成树端口的四种状态</h3>
-<ul>
-<li><strong>Blocking（阻塞）</strong>
-<ul>
-<li>接收 BPDU（网桥协议数据单元），不学习 MAC 地址，不转发数据帧。20s</li>
+<h3 id="生成树端口的四种状态"><a href="#生成树端口的四种状态" class="headerlink" title="生成树端口的四种状态"></a>生成树端口的四种状态</h3><ul>
+<li><strong>Blocking（阻塞）</strong><ul>
+<li>接收BPDU（网桥协议数据单元），不学习MAC地址，不转发数据帧。20s</li>
 </ul>
 </li>
-<li><strong>Listening（侦听）</strong>
-<ul>
-<li>接收 BPDU，不学习 MAC 地址，不转发数据帧，但交换机向其他交换机通告该端口，参与选举根端口或指定端口</li>
+<li><strong>Listening（侦听）</strong><ul>
+<li>接收BPDU，不学习MAC地址，不转发数据帧，但交换机向其他交换机通告该端口，参与选举根端口或指定端口</li>
 </ul>
 </li>
-<li><strong>Learning（学习）</strong>
-<ul>
-<li>接收 BPDU，学习 MAC 地址，不转发数据帧</li>
+<li><strong>Learning（学习）</strong><ul>
+<li>接收BPDU，学习MAC地址，不转发数据帧</li>
 </ul>
 </li>
-<li><strong>Forwarding（转发）</strong>
-<ul>
+<li><strong>Forwarding（转发）</strong><ul>
 <li>正常转发数据帧</li>
 </ul>
 </li>
-<li><strong>总结：</strong></li>
-</ul>
-<blockquote>
-<p>阻塞 ————&gt;20 秒 ————&gt; 侦听 ————&gt;15 秒 ————&gt; 学习 ————&gt;15 秒 ————&gt; 转发</p>
+<li><strong>总结：</strong><blockquote>
+<p>阻塞————&gt;20秒————&gt;侦听————&gt;15秒————&gt;学习————&gt;15秒————&gt;转发</p>
 </blockquote>
-<h3 id="生成树种类和标准"><a class="markdownIt-Anchor" href="#生成树种类和标准">#</a> 生成树种类和标准</h3>
+</li>
+</ul>
+<h3 id="生成树种类和标准"><a href="#生成树种类和标准" class="headerlink" title="生成树种类和标准"></a>生成树种类和标准</h3><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -251,112 +239,98 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 </tr>
 </tbody>
 </table>
+</div>
 <ul>
-<li>巧记： <mark>多块生（人）口，是 s 我 w 弟 d 兄 x</mark></li>
+<li>巧记： ==多块生（人）口，是s我w弟d兄x==</li>
 </ul>
-<h1 id="源路由网桥"><a class="markdownIt-Anchor" href="#源路由网桥">#</a> 源路由网桥</h1>
-<ul>
+<h1 id="源路由网桥"><a href="#源路由网桥" class="headerlink" title="源路由网桥"></a>源路由网桥</h1><ul>
 <li>IEEE802.5，基本思想是发送探测帧到目的节点，返回路径以后沿着路径再传送，发送帧在这条路径上就传送，不在则发送广播，查询路径，选择最优路径再发送。 <strong>选好路再走</strong></li>
 </ul>
-<h1 id="城域网简介"><a class="markdownIt-Anchor" href="#城域网简介">#</a> 城域网简介</h1>
-<h2 id="什么是城域网"><a class="markdownIt-Anchor" href="#什么是城域网">#</a> 什么是城域网？</h2>
-<ul>
+<h1 id="城域网简介"><a href="#城域网简介" class="headerlink" title="城域网简介"></a>城域网简介</h1><h2 id="什么是城域网？"><a href="#什么是城域网？" class="headerlink" title="什么是城域网？"></a>什么是城域网？</h2><ul>
 <li>城域网比局域网传输距离远，能覆盖整个城市。能够提供分组传输的数据、语音和视频等多媒体业务。更大的传输容量，更高的传输效率</li>
-<li><strong>城域以太网</strong>
-<ul>
+<li><strong>城域以太网</strong><ul>
 <li>以太网专用线</li>
 <li>以太网虚拟专线</li>
 <li>以太局域网服务</li>
 </ul>
 </li>
-<li><strong>无线城域网标准</strong>
-<ul>
-<li>WIMAX (802.16d 固定、802.16e 移动)</li>
+<li><strong>无线城域网标准</strong><ul>
+<li>WIMAX(802.16d固定、802.16e移动)</li>
 <li>WIMAXII(802.16m 4G)</li>
 </ul>
 </li>
 </ul>
-<h2 id="q-in-q"><a class="markdownIt-Anchor" href="#q-in-q">#</a> Q-in-Q</h2>
-<ul>
+<h2 id="Q-in-Q"><a href="#Q-in-Q" class="headerlink" title="Q-in-Q"></a>Q-in-Q</h2><ul>
 <li><strong>运营商网桥协议（PBP）IEEE802.1ad</strong></li>
 </ul>
-<h2 id="mac-in-mac"><a class="markdownIt-Anchor" href="#mac-in-mac">#</a> MAC-in-MAC</h2>
-<ul>
+<h2 id="MAC-in-MAC"><a href="#MAC-in-MAC" class="headerlink" title="MAC-in-MAC"></a>MAC-in-MAC</h2><ul>
 <li><strong>运营商主干网桥（PBB）IEEE802.1ah</strong></li>
 </ul>
-<h1 id="练习例题"><a class="markdownIt-Anchor" href="#练习例题">#</a> 练习例题</h1>
-<ol>
-<li class="quiz">
-<p>生成树协议 STP 使用<span class="gap"></span>两个参数来选举根网桥。</p>
-<ul class="options">
-<li class="options">网桥优先级和 IP 地址</li>
-<li class="options">链路速率和 IP 地址</li>
-<li class="options">链路速率和 MAC 地址</li>
-<li class="correct">网桥优先级和 MAC 地址 </li>
-</ul>
-<blockquote>
+<h1 id="练习例题"><a href="#练习例题" class="headerlink" title="练习例题"></a>练习例题</h1><ol>
+<li><p>生成树协议STP使用[]{.gap}两个参数来选举根网桥。 {.quiz}</p>
 <ul>
-<li>网桥优先级就是桥 ID</li>
+<li>网桥优先级和IP地址 {.options}</li>
+<li>链路速率和IP地址 {.options}</li>
+<li>链路速率和MAC地址 {.options}</li>
+<li>网桥优先级和MAC地址  {.correct}<br>{.options}<blockquote>
+<ul>
+<li>网桥优先级就是桥ID</li>
 </ul>
 </blockquote>
 </li>
-<li class="quiz">
-<p>动态分配 VLAN 的方法不包括  <span class="gap"></span> 。</p>
-<ul class="options">
-<li class="options">网络层协议</li>
-<li class="options">网络层地址</li>
-<li class="correct">交换机端口</li>
-<li class="options">MAC 地址</li>
 </ul>
 </li>
-<li class="quiz">
-<p>在下面的标准中，定义快速生成树协议的是<span class="gap"></span></p>
-<ul class="options">
-<li class="options">802.1d</li>
-<li class="correct">802.1w</li>
-<li class="options">802.1s</li>
-<li class="options">802.1x</li>
-</ul>
-</li>
-<li class="quiz">
-<p>在下面的标准中，支持端口认证的协议是<span class="gap"></span></p>
-<ul class="options">
-<li class="options">802.1d</li>
-<li class="options">802.1w</li>
-<li class="options">802.1s</li>
-<li class="correct">802.1x</li>
-</ul>
-</li>
-<li class="quiz">
-<p>在生成树协议（STP）IEEE802.1d, 根据 <span class="gap"></span> 来选中根交换机。</p>
-<ul class="options">
-<li class="options">最小的 MAC 地址</li>
-<li class="options">最大的 MAC 地址</li>
-<li class="correct">最小的交换机 ID</li>
-<li class="options">最大的交换机 ID</li>
-</ul>
-</li>
-<li class="quiz">
-<p>在当千兆以太网使用 UTP 作为传输介质时，限制单根的长度不超过 100m，其原因为 <span class="gap"></span></p>
-<ul class="options">
-<li class="options">信号衰减严重</li>
-<li class="options">编码方式限制</li>
-<li class="options">与百兆以太网兼容</li>
-<li class="correct">采用 CSMA/CD</li>
-</ul>
-<blockquote>
+<li><p>动态分配VLAN的方法不包括  []{.gap} 。 {.quiz}</p>
 <ul>
-<li>超过 100m 检测不到信号，而不是信号衰减</li>
+<li>网络层协议 {.options}</li>
+<li>网络层地址 {.options}</li>
+<li>交换机端口 {.correct}</li>
+<li>MAC地址 {.options}<br>{.options}</li>
+</ul>
+</li>
+<li><p>在下面的标准中，定义快速生成树协议的是[]{.gap} {.quiz}</p>
+<ul>
+<li>802.1d {.options}</li>
+<li>802.1w {.correct}</li>
+<li>802.1s {.options}</li>
+<li>802.1x {.options}<br>{.options}</li>
+</ul>
+</li>
+<li><p>在下面的标准中，支持端口认证的协议是[]{.gap} {.quiz}</p>
+<ul>
+<li>802.1d {.options}</li>
+<li>802.1w {.options}</li>
+<li>802.1s {.options}</li>
+<li>802.1x {.correct}<br>{.options}</li>
+</ul>
+</li>
+<li><p>在生成树协议（STP）IEEE802.1d,根据 []{.gap} 来选中根交换机。 {.quiz}</p>
+<ul>
+<li>最小的MAC地址 {.options}</li>
+<li>最大的MAC地址 {.options}</li>
+<li>最小的交换机ID {.correct}</li>
+<li>最大的交换机ID {.options}<br>{.options}</li>
+</ul>
+</li>
+<li><p>在当千兆以太网使用UTP作为传输介质时，限制单根的长度不超过100m，其原因为 []{.gap} {.quiz}</p>
+<ul>
+<li>信号衰减严重 {.options}</li>
+<li>编码方式限制 {.options}</li>
+<li>与百兆以太网兼容 {.options}</li>
+<li>采用CSMA/CD {.correct}<br>{.options}<blockquote>
+<ul>
+<li>超过100m检测不到信号，而不是信号衰减</li>
 </ul>
 </blockquote>
 </li>
-<li class="quiz">
-<p>IEEE802.1q 协议的作用是 <span class="gap"></span></p>
-<ul class="options">
-<li class="options">生成树协议</li>
-<li class="options">以太网流量控制</li>
-<li class="correct">生成 VLAN 标记</li>
-<li class="options">基于端口的认证</li>
+</ul>
+</li>
+<li><p>IEEE802.1q协议的作用是 []{.gap} {.quiz}</p>
+<ul>
+<li>生成树协议 {.options}</li>
+<li>以太网流量控制 {.options}</li>
+<li>生成VLAN标记 {.correct}</li>
+<li>基于端口的认证 {.options}<br>{.options}</li>
 </ul>
 </li>
 </ol>
@@ -449,7 +423,7 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#局域网互联"><span class="toc-number">1.</span> <span class="toc-text"> 局域网互联</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#局域网互联设备"><span class="toc-number">1.1.</span> <span class="toc-text"> 局域网互联设备</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#生成树网桥"><span class="toc-number">2.</span> <span class="toc-text"> 生成树网桥</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#生成树网桥步骤"><span class="toc-number">2.0.1.</span> <span class="toc-text"> 生成树网桥步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#生成树网桥计算数据"><span class="toc-number">2.0.2.</span> <span class="toc-text"> 生成树网桥计算数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#生成树端口的四种状态"><span class="toc-number">2.0.3.</span> <span class="toc-text"> 生成树端口的四种状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#生成树种类和标准"><span class="toc-number">2.0.4.</span> <span class="toc-text"> 生成树种类和标准</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#源路由网桥"><span class="toc-number">3.</span> <span class="toc-text"> 源路由网桥</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#城域网简介"><span class="toc-number">4.</span> <span class="toc-text"> 城域网简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是城域网"><span class="toc-number">4.1.</span> <span class="toc-text"> 什么是城域网？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#q-in-q"><span class="toc-number">4.2.</span> <span class="toc-text"> Q-in-Q</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mac-in-mac"><span class="toc-number">4.3.</span> <span class="toc-text"> MAC-in-MAC</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#练习例题"><span class="toc-number">5.</span> <span class="toc-text"> 练习例题</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#局域网互联"><span class="toc-number">1.</span> <span class="toc-text">局域网互联</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#局域网互联设备"><span class="toc-number">1.1.</span> <span class="toc-text">局域网互联设备</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#生成树网桥"><span class="toc-number">2.</span> <span class="toc-text">生成树网桥</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#生成树网桥步骤"><span class="toc-number">2.0.1.</span> <span class="toc-text">生成树网桥步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#生成树网桥计算数据"><span class="toc-number">2.0.2.</span> <span class="toc-text">生成树网桥计算数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#生成树端口的四种状态"><span class="toc-number">2.0.3.</span> <span class="toc-text">生成树端口的四种状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#生成树种类和标准"><span class="toc-number">2.0.4.</span> <span class="toc-text">生成树种类和标准</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#源路由网桥"><span class="toc-number">3.</span> <span class="toc-text">源路由网桥</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#城域网简介"><span class="toc-number">4.</span> <span class="toc-text">城域网简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是城域网？"><span class="toc-number">4.1.</span> <span class="toc-text">什么是城域网？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Q-in-Q"><span class="toc-number">4.2.</span> <span class="toc-text">Q-in-Q</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MAC-in-MAC"><span class="toc-number">4.3.</span> <span class="toc-text">MAC-in-MAC</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#练习例题"><span class="toc-number">5.</span> <span class="toc-text">练习例题</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -571,10 +545,10 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9101/" title="网络互联与互联网01">网络互联与互联网01</a></span>
+    <span><a href="/my-blog/Linux/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E5%8F%8Ayum%E6%BA%90%E9%97%AE%E9%A2%98/" title="网络配置及yum源问题">网络配置及yum源问题</a></span>
   </li>
 
       
@@ -584,7 +558,7 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%882%EF%BC%89/" title="华为路由交换实验命令（2）">华为路由交换实验命令（2）</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%9F%8E%E5%9F%9F%E7%BD%9102/" title="局域网与城域网02">局域网与城域网02</a></span>
   </li>
 
       
@@ -594,7 +568,7 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
 </div>
 
-    <span><a href="/my-blog/Java/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/" title="类与对象">类与对象</a></span>
+    <span><a href="/my-blog/Java/Java%E7%9A%84%E4%B8%80%E4%BA%9B%E7%B1%BB/" title="Java的一些类">Java的一些类</a></span>
   </li>
 
       
@@ -604,17 +578,17 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9104/" title="网络互联与互联网04">网络互联与互联网04</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%883%EF%BC%89/" title="华为路由实验命令（3）">华为路由实验命令（3）</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+<a href="/my-blog/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="分类于 算法与数据结构">算法与数据结构</a>
 </div>
 
-    <span><a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" title="Java网络编程">Java网络编程</a></span>
+    <span><a href="/my-blog/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E7%BB%AA%E8%AE%BA/" title="数据结构之绪论">数据结构之绪论</a></span>
   </li>
 
       
@@ -624,17 +598,7 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A802/" title="网络应用服务器02">网络应用服务器02</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
-</div>
-
-    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/FusionSphere%E6%9E%B6%E6%9E%84/" title="FusionSphere架构">FusionSphere架构</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E8%A7%84%E5%88%92%E4%B8%8E%E8%AE%BE%E8%AE%A1/" title="网络规划与设计">网络规划与设计</a></span>
   </li>
 
       
@@ -644,7 +608,17 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
 </div>
 
-    <span><a href="/my-blog/Java/Java%E6%95%B0%E7%BB%84/" title="Java数组">Java数组</a></span>
+    <span><a href="/my-blog/Java/Java%E7%BB%A7%E6%89%BF/" title="Java继承">Java继承</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/MySQL/" title="分类于 MySQL">MySQL</a>
+</div>
+
+    <span><a href="/my-blog/MySQL/MySQL%E8%BF%9B%E9%98%B6/" title="MySQL进阶">MySQL进阶</a></span>
   </li>
 
       
@@ -661,10 +635,10 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+<a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
 </div>
 
-    <span><a href="/my-blog/Java/Java%E5%A4%9A%E6%80%81/" title="Java多态">Java多态</a></span>
+    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/Fusion%20Compute%E5%AE%89%E8%A3%85/" title="Fusion Compute安装">Fusion Compute安装</a></span>
   </li>
 
   </ul>
