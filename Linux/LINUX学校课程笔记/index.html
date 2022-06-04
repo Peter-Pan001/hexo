@@ -146,168 +146,198 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="Linux课程"><a href="#Linux课程" class="headerlink" title="Linux课程"></a>Linux课程</h1><blockquote>
-<p>本篇文章基于《linux就该这么学》编写，仅包含学校课程学习内容，并未包括该书本的完整知识!</p>
+    <h1 id="linux课程"><a class="markdownIt-Anchor" href="#linux课程">#</a> Linux 课程</h1>
+<blockquote>
+<p>本篇文章基于《linux 就该这么学》编写，仅包含学校课程学习内容，并未包括该书本的完整知识！</p>
 </blockquote>
-<h2 id="重置ROOT管理员密码"><a href="#重置ROOT管理员密码" class="headerlink" title="重置ROOT管理员密码"></a>重置ROOT管理员密码</h2><ol>
-<li>重启 Linux 系统主机并出现引导界面时，按下键盘上的<code>e 键</code>进入内核编辑界面，如图所示</li>
+<h2 id="重置root管理员密码"><a class="markdownIt-Anchor" href="#重置root管理员密码">#</a> 重置 ROOT 管理员密码</h2>
+<ol>
+<li>重启 Linux 系统主机并出现引导界面时，按下键盘上的 <code> e 键</code> 进入内核编辑界面，如图所示</li>
 </ol>
 <p><img data-src="https://s4.ax1x.com/2022/01/09/7FJ3wD.png" alt="yindao"></p>
-<ol>
-<li>在 linux16 参数这行的最后面追加<code>rd.break</code>参数，然后按下 <code>Ctrl + X</code> 组合键来运行修改过的内核程序,如图所示</li>
+<ol start="2">
+<li>在 linux16 参数这行的最后面追加 <code>rd.break</code>  参数，然后按下  <code>Ctrl + X</code>  组合键来运行修改过的内核程序，如图所示</li>
 </ol>
 <p><img data-src="https://s4.ax1x.com/2022/01/09/7FJwOf.png" alt="neihe"></p>
-<ol>
+<ol start="3">
 <li>大约 30 秒过后，进入到系统的紧急求援模式</li>
 </ol>
 <p><img data-src="https://s4.ax1x.com/2022/01/09/7FJ6Yj.png" alt="jjqy"></p>
+<ol start="4">
+<li>依次输入以下命令，等待系统重启操作完毕，然后就可以使用新密码 linuxprobe 来登录 Linux 系统了</li>
+</ol>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">mount</span> -o remount,rw /sysroot </pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token function">chroot</span> /sysroot </pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token function">passwd</span> </pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token function">touch</span> /.autorelabel </pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token builtin class-name">exit</span> </pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token function">reboot</span></pre></td></tr></table></figure><h2 id="查看帮助命令"><a class="markdownIt-Anchor" href="#查看帮助命令">#</a> 查看帮助命令</h2>
 <ol>
-<li>依次输入以下命令，等待系统重启操作完毕，然后就可以使用新密码 linuxprobe 来登录Linux系统了</li>
+<li>长格式</li>
 </ol>
-<pre><code class="lang-bash">mount -o remount,rw /sysroot 
-chroot /sysroot 
-passwd 
-touch /.autorelabel 
-exit 
-reboot
+<pre><code class="language-s">man --help
 </code></pre>
-<h2 id="查看帮助命令"><a href="#查看帮助命令" class="headerlink" title="查看帮助命令"></a>查看帮助命令</h2><ol>
-<li>长格式<pre><code class="lang-s">man --help
-</code></pre>
-</li>
-<li>短格式<pre><code class="lang-s">man -h
-</code></pre>
-</li>
+<ol start="2">
+<li>短格式</li>
 </ol>
-<h2 id="常用的系统工作命令"><a href="#常用的系统工作命令" class="headerlink" title="常用的系统工作命令"></a>常用的系统工作命令</h2><h3 id="echo"><a href="#echo" class="headerlink" title="echo"></a>echo</h3><ul>
-<li><code>echo</code> 命令用于在终端输出字符串或变量提取后的值，格式为<code>echo [字符串 | $变量]</code></li>
-<li>例如我们使用$变量的方式提取变量 SHELL 的值，并将其输出到屏幕上：<pre><code class="lang-s">[root@linuxprobe ~]# echo $SHELL 
+<pre><code class="language-s">man -h
+</code></pre>
+<h2 id="常用的系统工作命令"><a class="markdownIt-Anchor" href="#常用的系统工作命令">#</a> 常用的系统工作命令</h2>
+<h3 id="echo"><a class="markdownIt-Anchor" href="#echo">#</a> echo</h3>
+<ul>
+<li><code>echo</code>  命令用于在终端输出字符串或变量提取后的值，格式为 <code>echo [字符串 | $变量]</code></li>
+<li>例如我们使用 $ 变量的方式提取变量 SHELL 的值，并将其输出到屏幕上：</li>
+</ul>
+<pre><code class="language-s">[root@linuxprobe ~]# echo $SHELL 
 /bin/bash
 </code></pre>
-</li>
-<li>或者直接在 <code>echo</code> 后面加上要在命令行显示的字符信息:</li>
+<ul>
+<li>或者直接在  <code>echo</code>  后面加上要在命令行显示的字符信息:</li>
 </ul>
-<pre><code class="lang-s"># echo welcome
+<pre><code class="language-s"># echo welcome
 welcome
 </code></pre>
-<h3 id="date"><a href="#date" class="headerlink" title="date"></a>date</h3><ul>
-<li><code>date</code> 命令用于显示及设置系统的时间或日期，格式为 <code>date [选项] [+指定的格式]</code></li>
+<h3 id="date"><a class="markdownIt-Anchor" href="#date">#</a> date</h3>
+<ul>
+<li><code>date</code>  命令用于显示及设置系统的时间或日期，格式为  <code>date [选项] [+指定的格式]</code></li>
 </ul>
 <ol>
 <li>按照默认格式查看当前系统时间的 date 命令</li>
 </ol>
-<pre><code class="lang-s">[root@linuxprobe ~]# date 
+<pre><code class="language-s">[root@linuxprobe ~]# date 
 Mon Aug 24 16:11:23 CST 2017
 </code></pre>
-<ol>
-<li>按照“年-月-日 小时:分钟:秒”的格式查看当前系统时间的 <code>date</code> 命令</li>
+<ol start="2">
+<li>按照 “年 - 月 - 日 小时：分钟：秒” 的格式查看当前系统时间的  <code>date</code>  命令</li>
 </ol>
-<pre><code class="lang-s">[root@linuxprobe ~]# date &quot;+%Y-%m-%d %H:%M:%S&quot; 
+<pre><code class="language-s">[root@linuxprobe ~]# date &quot;+%Y-%m-%d %H:%M:%S&quot; 
 2017-08-24 16:29:12
 </code></pre>
-<h3 id="reboot"><a href="#reboot" class="headerlink" title="reboot"></a>reboot</h3><ul>
-<li><code>reboot</code> 命令用于重启系统,默认只能使用 root 管理员来重启<pre><code class="lang-s">[root@linuxprobe ~]# reboot
-</code></pre>
-<h3 id="poweroff"><a href="#poweroff" class="headerlink" title="poweroff"></a>poweroff</h3></li>
-<li><code>poweroff</code> 命令用于关闭系统,此默认只有 root 管理员才可以关闭电脑<pre><code class="lang-s">[root@linuxprobe ~]# poweroff
-</code></pre>
-<h3 id="wget"><a href="#wget" class="headerlink" title="wget"></a>wget</h3></li>
-<li><p><code>wget</code> 命令用于在终端中下载网络文件，格式为 <code>wget [参数] 下载地址</code> </p>
-</li>
-<li><p><strong>命令参数</strong></p>
+<h3 id="reboot"><a class="markdownIt-Anchor" href="#reboot">#</a> reboot</h3>
 <ul>
-<li><code>wget -b</code> 后台下载模式</li>
-<li><code>wget -P</code> 下载到指定目录</li>
-<li><code>wget -t</code> 最大尝试次数</li>
-<li><code>wget -c</code> 断点续传</li>
-<li><code>wget -p</code> 下载页面内所有资源，包括图片、视频等</li>
-<li><code>wget -r</code> 递归下载</li>
+<li><code>reboot</code>  命令用于重启系统，默认只能使用 root 管理员来重启</li>
+</ul>
+<pre><code class="language-s">[root@linuxprobe ~]# reboot
+</code></pre>
+<h3 id="poweroff"><a class="markdownIt-Anchor" href="#poweroff">#</a> poweroff</h3>
+<ul>
+<li><code>poweroff</code>  命令用于关闭系统，此默认只有 root 管理员才可以关闭电脑</li>
+</ul>
+<pre><code class="language-s">[root@linuxprobe ~]# poweroff 
+</code></pre>
+<h3 id="wget"><a class="markdownIt-Anchor" href="#wget">#</a> wget</h3>
+<ul>
+<li>
+<p><code>wget</code>  命令用于在终端中下载网络文件，格式为  <code>wget [参数] 下载地址</code></p>
+</li>
+<li>
+<p><strong>命令参数</strong></p>
+<ul>
+<li><code>wget -b</code>  后台下载模式</li>
+<li><code>wget -P</code>  下载到指定目录</li>
+<li><code>wget -t</code>  最大尝试次数</li>
+<li><code>wget -c</code>  断点续传</li>
+<li><code>wget -p</code>  下载页面内所有资源，包括图片、视频等</li>
+<li><code>wget -r</code>  递归下载</li>
 </ul>
 </li>
 </ul>
-<h3 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h3><ul>
-<li><code>ps</code>命令用于查看系统中的进程状态，格式为<code>ps [参数]</code>(process status)</li>
-<li><strong>命令参数</strong><ul>
-<li><code>wget -a</code> 显示所有进程（包括其他用户的进程）</li>
-<li><code>wget -u</code> 用户以及其他详细信息</li>
-<li><code>wget -x</code> 显示没有控制终端的进程</li>
+<h3 id="ps"><a class="markdownIt-Anchor" href="#ps">#</a> ps</h3>
+<ul>
+<li><code>ps</code>  命令用于查看系统中的进程状态，格式为 <code>ps [参数]</code> (process status)</li>
+<li><strong>命令参数</strong>
+<ul>
+<li><code>wget -a</code>  显示所有进程（包括其他用户的进程）</li>
+<li><code>wget -u</code>  用户以及其他详细信息</li>
+<li><code>wget -x</code>  显示没有控制终端的进程</li>
 </ul>
 </li>
 </ul>
-<h3 id="top"><a href="#top" class="headerlink" title="top"></a>top</h3><ul>
-<li><code>top</code> 命令用于动态地监视进程活动与系统负载等信息，其格式为 <code>top</code></li>
+<h3 id="top"><a class="markdownIt-Anchor" href="#top">#</a> top</h3>
+<ul>
+<li><code>top</code>  命令用于动态地监视进程活动与系统负载等信息，其格式为  <code>top</code></li>
 </ul>
-<h3 id="pidof"><a href="#pidof" class="headerlink" title="pidof"></a>pidof</h3><ul>
-<li><code>pidof</code> 命令用于查询某个指定服务进程的 PID 值，格式为 <code>pidof [参数] [服务名称]</code></li>
+<h3 id="pidof"><a class="markdownIt-Anchor" href="#pidof">#</a> pidof</h3>
+<ul>
+<li><code>pidof</code>  命令用于查询某个指定服务进程的 PID 值，格式为  <code>pidof [参数] [服务名称]</code></li>
 </ul>
-<pre><code class="lang-s">[root@linuxprobe ~]# pidof sshd 
+<pre><code class="language-s">[root@linuxprobe ~]# pidof sshd 
 2156
 </code></pre>
-<h3 id="kill"><a href="#kill" class="headerlink" title="kill"></a>kill</h3><ul>
-<li><code>kill</code>命令用于终止某个指定 PID 的服务进程，格式为<code>kill [参数] [进程 PID]</code></li>
+<h3 id="kill"><a class="markdownIt-Anchor" href="#kill">#</a> kill</h3>
+<ul>
+<li><code>kill</code>  命令用于终止某个指定 PID 的服务进程，格式为 <code>kill [参数] [进程 PID]</code></li>
 </ul>
-<h3 id="killall"><a href="#killall" class="headerlink" title="killall"></a>killall</h3><ul>
-<li><code>killall</code> 命令用于终止某个指定名称的服务所对应的全部进程，格式为：<code>killall [参数] [进程名称]</code></li>
+<h3 id="killall"><a class="markdownIt-Anchor" href="#killall">#</a> killall</h3>
+<ul>
+<li><code>killall</code>  命令用于终止某个指定名称的服务所对应的全部进程，格式为： <code>killall [参数] [进程名称]</code></li>
 </ul>
 <hr>
-<h2 id="系统状态检测命令"><a href="#系统状态检测命令" class="headerlink" title="系统状态检测命令"></a>系统状态检测命令</h2><h3 id="ifconfig"><a href="#ifconfig" class="headerlink" title="ifconfig"></a>ifconfig</h3><ul>
-<li><code>ifconfig</code> 命令用于获取网卡配置与网络状态等信息，格式为 <code>ifconfig [网络设备] [参数]</code></li>
-<li>使用 <code>ifconfig</code> 命令来查看本机当前的网卡配置与网络状态等信息时，其实主要查看的就是网卡名称、inet 参数后面的 IP 地址、ether 参数后面的网卡物理地址（又称为 MAC 地址），以及 RX、TX 的接收数据包与发送数据包的个数及累计流量</li>
+<h2 id="系统状态检测命令"><a class="markdownIt-Anchor" href="#系统状态检测命令">#</a> 系统状态检测命令</h2>
+<h3 id="ifconfig"><a class="markdownIt-Anchor" href="#ifconfig">#</a> ifconfig</h3>
+<ul>
+<li><code>ifconfig</code>  命令用于获取网卡配置与网络状态等信息，格式为  <code>ifconfig [网络设备] [参数]</code></li>
+<li>使用  <code>ifconfig</code>  命令来查看本机当前的网卡配置与网络状态等信息时，其实主要查看的就是网卡名称、inet 参数后面的 IP 地址、ether 参数后面的网卡物理地址（又称为 MAC 地址），以及 RX、TX 的接收数据包与发送数据包的个数及累计流量</li>
 </ul>
-<h3 id="uname"><a href="#uname" class="headerlink" title="uname"></a>uname</h3><ul>
-<li><code>uname</code> 命令用于查看系统内核与系统版本等信息，格式为<code>uname [-a]</code></li>
-<li>在使用 <code>uname</code> 命令时，一般会固定搭配上<code>-a</code> 参数来完整地查看当前系统的内核名称、主机名、内核发行版本、节点名、系统时间、硬件名称、硬件平台、处理器类型以及操作系统名称等信息<pre><code class="lang-s">[root@linuxprobe ~]# uname -a 
+<h3 id="uname"><a class="markdownIt-Anchor" href="#uname">#</a> uname</h3>
+<ul>
+<li><code>uname</code>  命令用于查看系统内核与系统版本等信息，格式为 <code>uname [-a]</code></li>
+<li>在使用  <code>uname</code>  命令时，一般会固定搭配上 <code>-a</code>  参数来完整地查看当前系统的内核名称、主机名、内核发行版本、节点名、系统时间、硬件名称、硬件平台、处理器类型以及操作系统名称等信息</li>
+</ul>
+<pre><code class="language-s">[root@linuxprobe ~]# uname -a 
 Linux linuxprobe.com 3.10.0-123.el7.x86_64 #1 SMP Mon May 5 11:16:57 EDT 2017 
-x86_64 x86_64 x86_64 GNU/Linux
+x86_64 x86_64 x86_64 GNU/Linux 
 </code></pre>
-</li>
+<h3 id="uptime"><a class="markdownIt-Anchor" href="#uptime">#</a> uptime</h3>
+<ul>
+<li><code>uptime</code>  用于查看系统的负载信息，格式为  <code>uptime</code></li>
 </ul>
-<h3 id="uptime"><a href="#uptime" class="headerlink" title="uptime"></a>uptime</h3><ul>
-<li><code>uptime</code> 用于查看系统的负载信息，格式为 <code>uptime</code></li>
-</ul>
-<pre><code class="lang-s">[root@linuxprobe ~]# uptime 
+<pre><code class="language-s">[root@linuxprobe ~]# uptime 
 22:49:55 up 10 min, 2 users, load average: 0.01, 0.19, 0.18
 </code></pre>
-<h3 id="free"><a href="#free" class="headerlink" title="free"></a>free</h3><ul>
-<li><code>free</code> 用于显示当前系统中内存的使用量信息，格式为<code>free [-h]</code><pre><code class="lang-s">[root@linuxprobe ~]# free -h
+<h3 id="free"><a class="markdownIt-Anchor" href="#free">#</a> free</h3>
+<ul>
+<li><code>free</code>  用于显示当前系统中内存的使用量信息，格式为 <code>free [-h]</code></li>
+</ul>
+<pre><code class="language-s">[root@linuxprobe ~]# free -h 
 </code></pre>
-</li>
+<h3 id="who"><a class="markdownIt-Anchor" href="#who">#</a> who</h3>
+<ul>
+<li><code>who</code>  用于查看当前登入主机的用户终端信息，格式为 <code>who [参数]</code></li>
 </ul>
-<h3 id="who"><a href="#who" class="headerlink" title="who"></a>who</h3><ul>
-<li><code>who</code> 用于查看当前登入主机的用户终端信息，格式为<code>who [参数]</code></li>
+<h3 id="last"><a class="markdownIt-Anchor" href="#last">#</a> last</h3>
+<ul>
+<li><code>last</code>  命令用于查看所有系统的登录记录，格式为 <code>last [参数]</code></li>
 </ul>
-<h3 id="last"><a href="#last" class="headerlink" title="last"></a>last</h3><ul>
-<li><code>last</code> 命令用于查看所有系统的登录记录，格式为<code>last [参数]</code></li>
+<h3 id="history"><a class="markdownIt-Anchor" href="#history">#</a> history</h3>
+<ul>
+<li><code>history</code>  命令用于显示历史执行过的命令，格式为 <code>history [-c]</code></li>
 </ul>
-<h3 id="history"><a href="#history" class="headerlink" title="history"></a>history</h3><ul>
-<li><code>history</code> 命令用于显示历史执行过的命令，格式为<code>history [-c]</code></li>
+<h2 id="工作目录切换命令"><a class="markdownIt-Anchor" href="#工作目录切换命令">#</a> 工作目录切换命令</h2>
+<h3 id="pwd"><a class="markdownIt-Anchor" href="#pwd">#</a> pwd</h3>
+<ul>
+<li><code>pwd</code>  命令用于显示用户当前所处的目录。如果用户不知道自己当前所处的目录，就必须使用它。例如：</li>
 </ul>
-<h2 id="工作目录切换命令"><a href="#工作目录切换命令" class="headerlink" title="工作目录切换命令"></a>工作目录切换命令</h2><h3 id="pwd"><a href="#pwd" class="headerlink" title="pwd"></a>pwd</h3><ul>
-<li><code>pwd</code> 命令用于显示用户当前所处的目录。如果用户不知道自己当前所处的目录，就必须使用它。例如：</li>
-</ul>
-<pre><code class="lang-s">[webber@localhost ~]$ pwd
+<pre><code class="language-s">[webber@localhost ~]$ pwd
 /home/webber                  //webber用户当前所在的目录
 [webber@localhost ~]$ su -        //从Webber用户切换到root用户
 </code></pre>
-<h3 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h3><ul>
-<li><code>cd</code> 命令用于切换工作路径，格式为<code>cd [目录名称]</code></li>
-<li>除了常见的切换目录方式，还可以使用<code>cd -</code>命令返回到上一次所处的目录，使用<code>cd..</code>命令进入上级目录，以及使用<code>cd ~</code>命令切换到当前用户的家目录，亦或使用<code>cd ~username</code>切换到其他用户的家目录</li>
+<h3 id="cd"><a class="markdownIt-Anchor" href="#cd">#</a> cd</h3>
+<ul>
+<li><code>cd</code>  命令用于切换工作路径，格式为 <code>cd [目录名称]</code></li>
+<li>除了常见的切换目录方式，还可以使用 <code>cd -</code>  命令返回到上一次所处的目录，使用 <code>cd..</code>  命令进入上级目录，以及使用 <code>cd ~</code>  命令切换到当前用户的家目录，亦或使用 <code>cd ~username</code>  切换到其他用户的家目录</li>
 </ul>
 <ol>
 <li>返回到上一次的目录</li>
 </ol>
-<pre><code class="lang-s">[root@linuxprobe bin]# cd - 
+<pre><code class="language-s">[root@linuxprobe bin]# cd - 
 /etc 
-[root@linuxprobe etc]#
+[root@linuxprobe etc]# 
 </code></pre>
-<ol>
+<ol start="2">
 <li>快速切换到用户的家目录</li>
 </ol>
-<pre><code class="lang-s">[root@linuxprobe etc]# cd ~ 
-[root@linuxprobe ~]#
+<pre><code class="language-s">[root@linuxprobe etc]# cd ~ 
+[root@linuxprobe ~]# 
 </code></pre>
-<h3 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h3><ul>
-<li><code>ls</code> 命令用于显示目录中的文件信息，格式为<code>ls [选项] [文件]</code></li>
+<h3 id="ls"><a class="markdownIt-Anchor" href="#ls">#</a> ls</h3>
+<ul>
+<li><code>ls</code>  命令用于显示目录中的文件信息，格式为 <code>ls [选项] [文件] </code></li>
 </ul>
 
       <div class="tags">
@@ -398,7 +428,7 @@ x86_64 x86_64 x86_64 GNU/Linux
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux课程"><span class="toc-number">1.</span> <span class="toc-text">Linux课程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#重置ROOT管理员密码"><span class="toc-number">1.1.</span> <span class="toc-text">重置ROOT管理员密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看帮助命令"><span class="toc-number">1.2.</span> <span class="toc-text">查看帮助命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用的系统工作命令"><span class="toc-number">1.3.</span> <span class="toc-text">常用的系统工作命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#echo"><span class="toc-number">1.3.1.</span> <span class="toc-text">echo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#date"><span class="toc-number">1.3.2.</span> <span class="toc-text">date</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reboot"><span class="toc-number">1.3.3.</span> <span class="toc-text">reboot</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#poweroff"><span class="toc-number">1.3.4.</span> <span class="toc-text">poweroff</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wget"><span class="toc-number">1.3.5.</span> <span class="toc-text">wget</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ps"><span class="toc-number">1.3.6.</span> <span class="toc-text">ps</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#top"><span class="toc-number">1.3.7.</span> <span class="toc-text">top</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pidof"><span class="toc-number">1.3.8.</span> <span class="toc-text">pidof</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#kill"><span class="toc-number">1.3.9.</span> <span class="toc-text">kill</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#killall"><span class="toc-number">1.3.10.</span> <span class="toc-text">killall</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统状态检测命令"><span class="toc-number">1.4.</span> <span class="toc-text">系统状态检测命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ifconfig"><span class="toc-number">1.4.1.</span> <span class="toc-text">ifconfig</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#uname"><span class="toc-number">1.4.2.</span> <span class="toc-text">uname</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#uptime"><span class="toc-number">1.4.3.</span> <span class="toc-text">uptime</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#free"><span class="toc-number">1.4.4.</span> <span class="toc-text">free</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#who"><span class="toc-number">1.4.5.</span> <span class="toc-text">who</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#last"><span class="toc-number">1.4.6.</span> <span class="toc-text">last</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#history"><span class="toc-number">1.4.7.</span> <span class="toc-text">history</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#工作目录切换命令"><span class="toc-number">1.5.</span> <span class="toc-text">工作目录切换命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#pwd"><span class="toc-number">1.5.1.</span> <span class="toc-text">pwd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cd"><span class="toc-number">1.5.2.</span> <span class="toc-text">cd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ls"><span class="toc-number">1.5.3.</span> <span class="toc-text">ls</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#linux课程"><span class="toc-number">1.</span> <span class="toc-text"> Linux 课程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#重置root管理员密码"><span class="toc-number">1.1.</span> <span class="toc-text"> 重置 ROOT 管理员密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看帮助命令"><span class="toc-number">1.2.</span> <span class="toc-text"> 查看帮助命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用的系统工作命令"><span class="toc-number">1.3.</span> <span class="toc-text"> 常用的系统工作命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#echo"><span class="toc-number">1.3.1.</span> <span class="toc-text"> echo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#date"><span class="toc-number">1.3.2.</span> <span class="toc-text"> date</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reboot"><span class="toc-number">1.3.3.</span> <span class="toc-text"> reboot</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#poweroff"><span class="toc-number">1.3.4.</span> <span class="toc-text"> poweroff</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wget"><span class="toc-number">1.3.5.</span> <span class="toc-text"> wget</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ps"><span class="toc-number">1.3.6.</span> <span class="toc-text"> ps</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#top"><span class="toc-number">1.3.7.</span> <span class="toc-text"> top</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pidof"><span class="toc-number">1.3.8.</span> <span class="toc-text"> pidof</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#kill"><span class="toc-number">1.3.9.</span> <span class="toc-text"> kill</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#killall"><span class="toc-number">1.3.10.</span> <span class="toc-text"> killall</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统状态检测命令"><span class="toc-number">1.4.</span> <span class="toc-text"> 系统状态检测命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ifconfig"><span class="toc-number">1.4.1.</span> <span class="toc-text"> ifconfig</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#uname"><span class="toc-number">1.4.2.</span> <span class="toc-text"> uname</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#uptime"><span class="toc-number">1.4.3.</span> <span class="toc-text"> uptime</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#free"><span class="toc-number">1.4.4.</span> <span class="toc-text"> free</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#who"><span class="toc-number">1.4.5.</span> <span class="toc-text"> who</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#last"><span class="toc-number">1.4.6.</span> <span class="toc-text"> last</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#history"><span class="toc-number">1.4.7.</span> <span class="toc-text"> history</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#工作目录切换命令"><span class="toc-number">1.5.</span> <span class="toc-text"> 工作目录切换命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#pwd"><span class="toc-number">1.5.1.</span> <span class="toc-text"> pwd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cd"><span class="toc-number">1.5.2.</span> <span class="toc-text"> cd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ls"><span class="toc-number">1.5.3.</span> <span class="toc-text"> ls</span></a></li></ol></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -523,17 +553,7 @@ x86_64 x86_64 x86_64 GNU/Linux
 <a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F/" title="常用公式">常用公式</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
-</div>
-
-    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E7%BD%91%E7%BB%9C%E8%99%9A%E6%8B%9F%E5%8C%96/" title="网络虚拟化">网络虚拟化</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A801/" title="网络应用服务器01">网络应用服务器01</a></span>
   </li>
 
       
@@ -543,7 +563,17 @@ x86_64 x86_64 x86_64 GNU/Linux
 <a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9104/" title="网络互联与互联网04">网络互联与互联网04</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/" title="操作系统基础">操作系统基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/" title="计算机硬件基础(部分组成原理)">计算机硬件基础(部分组成原理)</a></span>
   </li>
 
       
@@ -560,20 +590,30 @@ x86_64 x86_64 x86_64 GNU/Linux
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%881%EF%BC%89/" title="华为路由交换实验命令（1）">华为路由交换实验命令（1）</a></span>
+    <span><a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8BOV/" title="Java网络编程OV">Java网络编程OV</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E8%AE%A1%E7%AE%97%E8%99%9A%E6%8B%9F%E5%8C%96/" title="计算虚拟化简介">计算虚拟化简介</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E4%B8%8B%E4%B8%80%E4%BB%A3%E4%BA%92%E8%81%94%E7%BD%91/" title="下一代互联网">下一代互联网</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E5%92%8C%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80/" title="系统开发和项目管理基础">系统开发和项目管理基础</a></span>
   </li>
 
       
@@ -590,10 +630,10 @@ x86_64 x86_64 x86_64 GNU/Linux
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+<a href="/my-blog/categories/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B9%BF%E5%9F%9F%E9%80%9A%E4%BF%A1%E7%BD%91/" title="广域通信网">广域通信网</a></span>
+    <span><a href="/my-blog/%E5%89%8D%E7%AB%AF/%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E5%89%8D%E7%AB%AF/" title="如何学习前端">如何学习前端</a></span>
   </li>
 
       
@@ -603,17 +643,7 @@ x86_64 x86_64 x86_64 GNU/Linux
 <a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%9F%8E%E5%9F%9F%E7%BD%9101/" title="局域网与城域网01">局域网与城域网01</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
-</div>
-
-    <span><a href="/my-blog/Java/Java%E5%A4%9A%E6%80%81/" title="Java多态">Java多态</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A802/" title="网络应用服务器02">网络应用服务器02</a></span>
   </li>
 
   </ul>

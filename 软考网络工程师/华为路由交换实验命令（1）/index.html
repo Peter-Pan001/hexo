@@ -146,206 +146,120 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="交换机基本配置命令"><a href="#交换机基本配置命令" class="headerlink" title="交换机基本配置命令"></a>交换机基本配置命令</h1><h2 id="一、模式命令："><a href="#一、模式命令：" class="headerlink" title="一、模式命令："></a>一、模式命令：</h2><ol>
-<li>用户模式：<code>Switch&gt;</code></li>
-<li>特权模式：<code>Switch&gt;enable</code><br><code>Switch#</code></li>
-<li>全局配置模式：<code>Switch# config terminal</code><br><code>Switch（config）#</code></li>
-<li>接口配置模式：<code>Switch（config）#interface fastethernet0/1</code><br><code>Switch（config-if）#</code></li>
-<li>Line模式：<code>Switch（config）#line console 0</code><br><code>Switch（config-line）#</code></li>
-</ol>
-<h2 id="二、特权模式下的命令："><a href="#二、特权模式下的命令：" class="headerlink" title="二、特权模式下的命令："></a>二、特权模式下的命令：</h2><ol>
-<li>查看交换机MAC地址：<code>Switch#show mac-address-table</code></li>
-<li>Cisco发现协议（CDP）：<pre><code class="lang-powershell"> Switch#show cdp
- Switch#show cdp interface fastethernet0/1
- Switch#show cdp neighbors
- Switch#show cdp neighbors detail
- Switch#show cdp entry
-</code></pre>
-</li>
-<li>保存交换机配置：<br><code>Switch#copy running-config startup-config或者Switch#write</code></li>
-<li>恢复交换机出厂值：<pre><code class="lang-powershell"> Switch#erase startup-config
- Switch#reload
-</code></pre>
-<h2 id="三、全局配置模式下的命令："><a href="#三、全局配置模式下的命令：" class="headerlink" title="三、全局配置模式下的命令："></a>三、全局配置模式下的命令：</h2></li>
-<li>配置主机名：<code>Switch（config）#hostname Sw1</code><br><code>Sw1（config）#</code></li>
-<li>设置登陆台密码：<code>Switch（config）#line console 0</code></li>
-</ol>
-<pre><code class="lang-powershell">Switch（config-line）#password 密码
-Switch（config-line）#login
-</code></pre>
+    <h1 id="交换机基本配置命令"><a class="markdownIt-Anchor" href="#交换机基本配置命令">#</a> 交换机基本配置命令</h1>
+<h2 id="一-模式命令"><a class="markdownIt-Anchor" href="#一-模式命令">#</a> 一、模式命令：</h2>
 <ol>
-<li>使能口令：<code>Switch（config）#enable Password 密码</code></li>
-<li>加密保存的使能口令：<code>Switch（config）#enable secret 密码</code></li>
-<li>配置IP地址：<pre><code class="lang-powershell">Switch（config）#interface vlan 1
-Switch（config-if）#ip address IP地址 网关
-Switch（config-if）#no shutdown
-</code></pre>
-</li>
-<li>配置交换机网关：<code>Switch（config）#ip default-gateway 网关</code></li>
+<li>用户模式： <code>Switch&gt;</code></li>
+<li>特权模式： <code>Switch&gt;enable</code> <br>
+ <code>Switch#</code></li>
+<li>全局配置模式： <code>Switch# config terminal</code> <br>
+ <code>Switch（config）# </code></li>
+<li>接口配置模式： <code>Switch（config）#interface fastethernet0/1</code> <br>
+ <code>Switch（config-if）#</code></li>
+<li>Line 模式： <code>Switch（config）#line console 0</code> <br>
+ <code>Switch（config-line）#</code></li>
 </ol>
-<h2 id="四、VLAN配置命令："><a href="#四、VLAN配置命令：" class="headerlink" title="四、VLAN配置命令："></a>四、VLAN配置命令：</h2><ol>
-<li>创建vlan命令：<ul>
-<li>全局配置模式下：<pre><code class="lang-powershell">Switch（config）#vlan 2
-Switch（config）#name v2
-Switch（config）#mtu 数值
-Switch（config）#end
-</code></pre>
-</li>
-<li>Vlan数据库下：<pre><code class="lang-powershell">Switch#vlan database
-Switch#vlan 2 name v2
-Switch#vlan 2 mut 数值
-Switch#exit
-</code></pre>
-</li>
-</ul>
-</li>
-<li>删除vlan命令：<ul>
-<li>全局配置模式下：<pre><code class="lang-powershell">Switch（config）#no vlan 2
-Switch（config）#end
-</code></pre>
-</li>
-<li>Vlan数据库下：<pre><code class="lang-powershell">Switch#no vlan 2 name v2
-Switch#exit
-</code></pre>
-</li>
-</ul>
-</li>
-<li>在vlan中添加端口：<pre><code class="lang-powershell">Switch#config terminal
-Switch（config）#interface f0/1（端口）
-Switch（config-if）#Switchport mode access
-Switch（config-if）#switchport access vlan 2
-Switch（config-if）#end
-# 一次将多个端口添加到vlan中：
-Switch#config terminal
-Switch（config）#interface range f0/1 - 5（端口）
-Switch（config-if）#switchport access vlan 2
-Switch（config-if）#end
-注：switch#show vlan biref(查看vlan信息)
-</code></pre>
-</li>
-<li><p>配置vlan trunk：</p>
+<h2 id="二-特权模式下的命令"><a class="markdownIt-Anchor" href="#二-特权模式下的命令">#</a> 二、特权模式下的命令：</h2>
 <ol>
-<li>配置接口为trunk命令：<pre><code class="lang-powershell">Switch（config）# interface f0/1（端口）
-Switch（config-if）#Switchport mode trunk
-</code></pre>
-</li>
-<li>配置接口为动态协商模式的命令：<pre><code class="lang-powershell">Switch（config）# interface f0/1（端口）
-Switch（config-if）#switchport mode dynamic desirable/auto
-</code></pre>
-</li>
-<li>从trunk中删除vlan：<pre><code class="lang-powershell">Switch（config）# interface f0/1（端口）
-Switch（config-if）#Switchport trunk allowed vlan remove 2
-</code></pre>
-</li>
-<li>在trunk中添加vlan：<pre><code class="lang-powershell">Switch（config）# interface f0/1（端口）
-Switch（config-if）#Switchport trunk allowed vlan add 2
-</code></pre>
-</li>
+<li>查看交换机 MAC 地址： <code>Switch#show mac-address-table</code></li>
+<li>Cisco 发现协议（CDP）：</li>
 </ol>
-</li>
+<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">Switch</span><span class="token comment">#show cdp</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token keyword">Switch</span><span class="token comment">#show cdp interface fastethernet0/1</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token keyword">Switch</span><span class="token comment">#show cdp neighbors</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token keyword">Switch</span><span class="token comment">#show cdp neighbors detail</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token keyword">Switch</span><span class="token comment">#show cdp entry</span></pre></td></tr></table></figure><ol start="3">
+<li>保存交换机配置：<br>
+ <code>Switch#copy running-config startup-config或者Switch#write</code></li>
+<li>恢复交换机出厂值：</li>
+</ol>
+<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">Switch</span><span class="token comment">#erase startup-config</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token keyword">Switch</span><span class="token comment">#reload</span></pre></td></tr></table></figure><h2 id="三-全局配置模式下的命令"><a class="markdownIt-Anchor" href="#三-全局配置模式下的命令">#</a> 三、全局配置模式下的命令：</h2>
+<ol>
+<li>配置主机名： <code>Switch（config）#hostname Sw1</code> <br>
+ <code> Sw1（config）#</code></li>
+<li>设置登陆台密码： <code>Switch（config）#line console 0</code></li>
+</ol>
+<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">Switch</span>（config<span class="token operator">-</span>line）<span class="token comment">#password 密码</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">Switch</span>（config<span class="token operator">-</span>line）<span class="token comment">#login</span></pre></td></tr></table></figure><ol start="3">
+<li>使能口令： <code>Switch（config）#enable Password 密码</code></li>
+<li>加密保存的使能口令： <code>Switch（config）#enable secret 密码</code></li>
+<li>配置 IP 地址：</li>
+</ol>
+<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">Switch</span>（config）<span class="token comment">#interface vlan 1</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">Switch</span>（config<span class="token operator">-</span><span class="token keyword">if</span>）<span class="token comment">#ip address IP 地址 网关</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token keyword">Switch</span>（config<span class="token operator">-</span><span class="token keyword">if</span>）<span class="token comment">#no shutdown</span></pre></td></tr></table></figure><ol start="6">
+<li>配置交换机网关： <code>Switch（config）#ip default-gateway 网关</code></li>
+</ol>
+<h2 id="四-vlan配置命令"><a class="markdownIt-Anchor" href="#四-vlan配置命令">#</a> 四、VLAN 配置命令：</h2>
+<ol>
+<li>创建 vlan 命令：
+<ul>
+<li>全局配置模式下：</li>
+</ul>
+<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">Switch</span>（config）<span class="token comment">#vlan 2</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">Switch</span>（config）<span class="token comment">#name v2</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token keyword">Switch</span>（config）<span class="token comment">#mtu 数值</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token keyword">Switch</span>（config）<span class="token comment">#end</span></pre></td></tr></table></figure><ul>
+<li>Vlan 数据库下：</li>
+</ul>
+<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">Switch</span><span class="token comment">#vlan database</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">Switch</span><span class="token comment">#vlan 2 name v2</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token keyword">Switch</span><span class="token comment">#vlan 2 mut 数值</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token keyword">Switch</span><span class="token comment">#exit</span></pre></td></tr></table></figure></li>
+<li>删除 vlan 命令：
+<ul>
+<li>全局配置模式下：</li>
+</ul>
+<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">Switch</span>（config）<span class="token comment">#no vlan 2</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">Switch</span>（config）<span class="token comment">#end</span></pre></td></tr></table></figure><ul>
+<li>Vlan 数据库下：</li>
+</ul>
+<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">Switch</span><span class="token comment">#no vlan 2 name v2</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">Switch</span><span class="token comment">#exit</span></pre></td></tr></table></figure></li>
+<li>在 vlan 中添加端口：</li>
+</ol>
+<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">Switch</span><span class="token comment">#config terminal</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">Switch</span>（config）<span class="token comment">#interface f0/1（端口）</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token keyword">Switch</span>（config<span class="token operator">-</span><span class="token keyword">if</span>）<span class="token comment">#Switchport mode access</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token keyword">Switch</span>（config<span class="token operator">-</span><span class="token keyword">if</span>）<span class="token comment">#switchport access vlan 2</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token keyword">Switch</span>（config<span class="token operator">-</span><span class="token keyword">if</span>）<span class="token comment">#end</span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token comment"># 一次将多个端口添加到 vlan 中：</span></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token keyword">Switch</span><span class="token comment">#config terminal</span></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token keyword">Switch</span>（config）<span class="token comment">#interface range f0/1 - 5（端口）</span></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token keyword">Switch</span>（config<span class="token operator">-</span><span class="token keyword">if</span>）<span class="token comment">#switchport access vlan 2</span></pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token keyword">Switch</span>（config<span class="token operator">-</span><span class="token keyword">if</span>）<span class="token comment">#end</span></pre></td></tr><tr><td data-num="11"></td><td><pre>注：<span class="token keyword">switch</span><span class="token comment">#show vlan biref (查看 vlan 信息)</span></pre></td></tr></table></figure><ol start="4">
+<li>
+<p>配置 vlan trunk：</p>
+<ol>
+<li>配置接口为 trunk 命令：</li>
+</ol>
+<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">Switch</span>（config）<span class="token comment"># interface f0/1（端口）</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">Switch</span>（config<span class="token operator">-</span><span class="token keyword">if</span>）<span class="token comment">#Switchport mode trunk</span></pre></td></tr></table></figure><ol start="2">
+<li>配置接口为动态协商模式的命令：</li>
+</ol>
+<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">Switch</span>（config）<span class="token comment"># interface f0/1（端口）</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">Switch</span>（config<span class="token operator">-</span><span class="token keyword">if</span>）<span class="token comment">#switchport mode dynamic desirable/auto</span></pre></td></tr></table></figure><ol start="3">
+<li>从 trunk 中删除 vlan：</li>
+</ol>
+<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">Switch</span>（config）<span class="token comment"># interface f0/1（端口）</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">Switch</span>（config<span class="token operator">-</span><span class="token keyword">if</span>）<span class="token comment">#Switchport trunk allowed vlan remove 2</span></pre></td></tr></table></figure><ol start="4">
+<li>在 trunk 中添加 vlan：</li>
+</ol>
+<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">Switch</span>（config）<span class="token comment"># interface f0/1（端口）</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">Switch</span>（config<span class="token operator">-</span><span class="token keyword">if</span>）<span class="token comment">#Switchport trunk allowed vlan add 2</span></pre></td></tr></table></figure></li>
 </ol>
 <hr>
-<h1 id="配置系统基本信息命令"><a href="#配置系统基本信息命令" class="headerlink" title="配置系统基本信息命令"></a>配置系统基本信息命令</h1><h2 id="执行命令sysname-host-name，设置设备名称"><a href="#执行命令sysname-host-name，设置设备名称" class="headerlink" title="执行命令sysname host-name，设置设备名称"></a>执行命令sysname host-name，设置设备名称</h2><pre><code class="lang-powershell">&lt;HUAWEI&gt; system-view 
-[HUAWEI] sysname Switch 
-[Switch] undo sysname    //恢复主机名到缺省情况 
-[HUAWEI] quit
-</code></pre>
-<h2 id="执行命令clock-datetime设置当前时间和日期"><a href="#执行命令clock-datetime设置当前时间和日期" class="headerlink" title="执行命令clock datetime设置当前时间和日期"></a>执行命令clock datetime设置当前时间和日期</h2><pre><code class="lang-powershell">&lt;HUAWEI&gt; clock datetime 08:00:00 2018-12-01
-</code></pre>
-<h2 id="执行命令clock-timezone，配置设备所在地区及其对应的时区"><a href="#执行命令clock-timezone，配置设备所在地区及其对应的时区" class="headerlink" title="执行命令clock timezone，配置设备所在地区及其对应的时区"></a>执行命令clock timezone，配置设备所在地区及其对应的时区</h2><pre><code class="lang-powershell">&lt;HUAWEI&gt; system-view 
-[HUAWEI] clock timezone Beijing add 08:00:00
-</code></pre>
-<h2 id="执行命令display-clock，查看系统当前日期和时钟"><a href="#执行命令display-clock，查看系统当前日期和时钟" class="headerlink" title="执行命令display clock，查看系统当前日期和时钟"></a>执行命令display clock，查看系统当前日期和时钟</h2><pre><code class="lang-powershell">[HUAWEI] display clock 
-2018-12-01 08:02:30+08:00                                                        
-Saturday                                                        
-Time Zone(Beijing) : UTC+08:00
-</code></pre>
-<h2 id="执行命令ip-address，配置设备管理IP地址，执行命令ip-route-static，配置设备缺省网关"><a href="#执行命令ip-address，配置设备管理IP地址，执行命令ip-route-static，配置设备缺省网关" class="headerlink" title="执行命令ip address，配置设备管理IP地址，执行命令ip route-static，配置设备缺省网关"></a>执行命令ip address，配置设备管理IP地址，执行命令ip route-static，配置设备缺省网关</h2><ul>
-<li>对于有管理网口的设备，在管理网口下配置管理IP地址<pre><code class="lang-powershell">[HUAWEI] interface MEth 0/0/1
-[HUAWEI-MEth0/0/1] ip address 10.10.10.2 255.255.255.0    //设备管理IP
-[HUAWEI-MEth0/0/1] quit
-[HUAWEI] ip route-static 0.0.0.0 0 10.10.10.1    //设备缺省网关
-</code></pre>
-</li>
-<li>对于没有管理网口的设备，在Vlanif接口下配置管理IP地址</li>
+<h1 id="配置系统基本信息命令"><a class="markdownIt-Anchor" href="#配置系统基本信息命令">#</a> 配置系统基本信息命令</h1>
+<h2 id="执行命令sysname-host-name设置设备名称"><a class="markdownIt-Anchor" href="#执行命令sysname-host-name设置设备名称">#</a> 执行命令 sysname host-name，设置设备名称</h2>
+<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre>&lt;HUAWEI> system<span class="token operator">-</span>view </pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token namespace">[HUAWEI]</span> sysname <span class="token keyword">Switch</span> </pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[Switch]</span> undo sysname    <span class="token operator">/</span><span class="token operator">/</span>恢复主机名到缺省情况 </pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token namespace">[HUAWEI]</span> quit</pre></td></tr></table></figure><h2 id="执行命令clock-datetime设置当前时间和日期"><a class="markdownIt-Anchor" href="#执行命令clock-datetime设置当前时间和日期">#</a> 执行命令 clock datetime 设置当前时间和日期</h2>
+<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre>&lt;HUAWEI> clock datetime 08:00:00 2018<span class="token operator">-</span>12<span class="token operator">-</span>01</pre></td></tr></table></figure><h2 id="执行命令clock-timezone配置设备所在地区及其对应的时区"><a class="markdownIt-Anchor" href="#执行命令clock-timezone配置设备所在地区及其对应的时区">#</a> 执行命令 clock timezone，配置设备所在地区及其对应的时区</h2>
+<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre>&lt;HUAWEI> system<span class="token operator">-</span>view </pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token namespace">[HUAWEI]</span> clock timezone Beijing add 08:00:00</pre></td></tr></table></figure><h2 id="执行命令display-clock查看系统当前日期和时钟"><a class="markdownIt-Anchor" href="#执行命令display-clock查看系统当前日期和时钟">#</a> 执行命令 display clock，查看系统当前日期和时钟</h2>
+<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token namespace">[HUAWEI]</span> display clock </pre></td></tr><tr><td data-num="2"></td><td><pre>2018<span class="token operator">-</span>12<span class="token operator">-</span>01 08:02:30<span class="token operator">+</span>08:00                                                        </pre></td></tr><tr><td data-num="3"></td><td><pre>Saturday                                                        </pre></td></tr><tr><td data-num="4"></td><td><pre>Time Zone<span class="token punctuation">(</span>Beijing<span class="token punctuation">)</span> : UTC<span class="token operator">+</span>08:00</pre></td></tr></table></figure><h2 id="执行命令ip-address配置设备管理ip地址执行命令ip-route-static配置设备缺省网关"><a class="markdownIt-Anchor" href="#执行命令ip-address配置设备管理ip地址执行命令ip-route-static配置设备缺省网关">#</a> 执行命令 ip address，配置设备管理 IP 地址，执行命令 ip route-static，配置设备缺省网关</h2>
+<ul>
+<li>对于有管理网口的设备，在管理网口下配置管理 IP 地址</li>
 </ul>
-<pre><code class="lang-powershell">[HUAWEI] vlan 10 
-[HUAWEI-vlan10] quit
-[HUAWEI] interface Vlanif 10
-[HUAWEI-Vlanif10] ip address 10.10.10.2 255.255.255.0    //设备管理IP
-[HUAWEI-Vlanif10] quit
-[HUAWEI] ip route-static 0.0.0.0 0 10.10.10.1    //设备缺省网关
-</code></pre>
-<h2 id="执行命令display-ip-interface-brief，查看接口上IP地址的简要信息。执行命令display-ip-routing-table，查看IP路由信息"><a href="#执行命令display-ip-interface-brief，查看接口上IP地址的简要信息。执行命令display-ip-routing-table，查看IP路由信息" class="headerlink" title="执行命令display ip interface brief，查看接口上IP地址的简要信息。执行命令display ip routing-table，查看IP路由信息"></a>执行命令display ip interface brief，查看接口上IP地址的简要信息。执行命令display ip routing-table，查看IP路由信息</h2><pre><code class="lang-powershell">[HUAWEI] display ip interface brief 
-*down: administratively down                                                     
-^down: standby                                                                   
-(l): loopback                                                                    
-(s): spoofing                                                                    
-(E): E-Trunk down                                                                
-The number of interface that is UP in Physical is 2                              
-The number of interface that is DOWN in Physical is 1                            
-The number of interface that is UP in Protocol is 2                              
-The number of interface that is DOWN in Protocol is 1                            
-
-Interface                         IP Address/Mask      Physical   Protocol       
-NULL0                             unassigned           up         up(s)          
-Vlanif10                          10.10.10.2/24        up         up             
-
-[HUAWEI] display ip routing-table 
-Route Flags: R - relay, D - download to fib                                      
-------------------------------------------------------------------------------   
-Routing Tables: Public                                                           
-         Destinations : 5        Routes : 5                                      
-
-Destination/Mask    Proto   Pre  Cost      Flags NextHop         Interface       
-
-        0.0.0.0/0   Static  60   0          RD   10.10.10.1      Vlanif10      
-       10.0.0.0/8   Direct  0    0           D   10.0.0.1        InLoopBack0     
-       10.0.0.1/32  Direct  0    0           D   10.0.0.1        InLoopBack0     
-     10.10.10.0/24  Direct  0    0           D   10.10.10.2      Vlanif10      
-     10.10.10.2/32  Direct  0    0           D   10.0.0.1        Vlanif10
-</code></pre>
-<h2 id="执行命令ssh-user，配置SSH用户相关参数；执行命令local-user，配置本地用户相关参数，实现通过SSH协议登录设备。"><a href="#执行命令ssh-user，配置SSH用户相关参数；执行命令local-user，配置本地用户相关参数，实现通过SSH协议登录设备。" class="headerlink" title="执行命令ssh user，配置SSH用户相关参数；执行命令local-user，配置本地用户相关参数，实现通过SSH协议登录设备。"></a>执行命令ssh user，配置SSH用户相关参数；执行命令local-user，配置本地用户相关参数，实现通过SSH协议登录设备。</h2><pre><code class="lang-powershell">&lt;HUAWEI&gt; system-view 
-[HUAWEI] user-interface vty 0 4 
-[HUAWEI-ui-vty0-4] authentication-mode aaa    //配置VTY用户认证方式为AAA认证 
-[HUAWEI-ui-vty0-4] protocol inbound ssh    //VTY用户界面所支持的协议缺省为SSH协议。 
-[HUAWEI-ui-vty0-4] quit 
-[HUAWEI] aaa 
-[HUAWEI-aaa] local-user admin password irreversible-cipher admin@123    //创建与SSH用户同名的本地用户和对应的登录密码 
-[HUAWEI-aaa] local-user admin service-type ssh terminal    //配置本地用户的服务方式 
-[HUAWEI-aaa] local-user admin privilege level 15    //配置本地用户级别 
-[HUAWEI-aaa] quit 
-[HUAWEI] ssh user admin    //创建SSH用户 
-[HUAWEI] ssh user admin authentication-type password    //配置SSH用户的认证方式为password 
-[HUAWEI] ssh user admin service-type stelnet    //配置SSH用户的服务方式 
-[HUAWEI] stelnet server enable    //使能设备的STelnet服务器功能
-</code></pre>
-<blockquote>
-<p>注意：确保SSH用户名称与本地用户名称相同。<br>本页面只介绍了使用Password认证方式实现通过STelnet协议登录设备。更多配置Telnet或STelnet协议实现远程登录的详细操作参见配置通过Telnet登录设备或配置通过STelnet登录设备。</p>
+<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token namespace">[HUAWEI]</span> interface MEth 0<span class="token operator">/</span>0<span class="token operator">/</span>1</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token namespace">[HUAWEI-MEth0/0/1]</span> ip address 10<span class="token punctuation">.</span>10<span class="token punctuation">.</span>10<span class="token punctuation">.</span>2 255<span class="token punctuation">.</span>255<span class="token punctuation">.</span>255<span class="token punctuation">.</span>0    <span class="token operator">/</span><span class="token operator">/</span>设备管理IP</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[HUAWEI-MEth0/0/1]</span> quit</pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token namespace">[HUAWEI]</span> ip route<span class="token operator">-</span>static 0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0 0 10<span class="token punctuation">.</span>10<span class="token punctuation">.</span>10<span class="token punctuation">.</span>1    <span class="token operator">/</span><span class="token operator">/</span>设备缺省网关</pre></td></tr></table></figure><ul>
+<li>对于没有管理网口的设备，在 Vlanif 接口下配置管理 IP 地址</li>
+</ul>
+<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token namespace">[HUAWEI]</span> vlan 10 </pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token namespace">[HUAWEI-vlan10]</span> quit</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[HUAWEI]</span> interface Vlanif 10</pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token namespace">[HUAWEI-Vlanif10]</span> ip address 10<span class="token punctuation">.</span>10<span class="token punctuation">.</span>10<span class="token punctuation">.</span>2 255<span class="token punctuation">.</span>255<span class="token punctuation">.</span>255<span class="token punctuation">.</span>0    <span class="token operator">/</span><span class="token operator">/</span>设备管理IP</pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token namespace">[HUAWEI-Vlanif10]</span> quit</pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token namespace">[HUAWEI]</span> ip route<span class="token operator">-</span>static 0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0 0 10<span class="token punctuation">.</span>10<span class="token punctuation">.</span>10<span class="token punctuation">.</span>1    <span class="token operator">/</span><span class="token operator">/</span>设备缺省网关</pre></td></tr></table></figure><h2 id="执行命令display-ip-interface-brief查看接口上ip地址的简要信息-执行命令display-ip-routing-table查看ip路由信息"><a class="markdownIt-Anchor" href="#执行命令display-ip-interface-brief查看接口上ip地址的简要信息-执行命令display-ip-routing-table查看ip路由信息">#</a> 执行命令 display ip interface brief，查看接口上 IP 地址的简要信息。执行命令 display ip routing-table，查看 IP 路由信息</h2>
+<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token namespace">[HUAWEI]</span> display ip interface brief </pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token operator">*</span>down: administratively down                                                     </pre></td></tr><tr><td data-num="3"></td><td><pre>^down: standby                                                                   </pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token punctuation">(</span>l<span class="token punctuation">)</span>: loopback                                                                    </pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token punctuation">(</span>s<span class="token punctuation">)</span>: spoofing                                                                    </pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token punctuation">(</span>E<span class="token punctuation">)</span>: E<span class="token operator">-</span>Trunk down                                                                </pre></td></tr><tr><td data-num="7"></td><td><pre>The number of interface that is UP in Physical is 2                              </pre></td></tr><tr><td data-num="8"></td><td><pre>The number of interface that is DOWN in Physical is 1                            </pre></td></tr><tr><td data-num="9"></td><td><pre>The number of interface that is UP in Protocol is 2                              </pre></td></tr><tr><td data-num="10"></td><td><pre>The number of interface that is DOWN in Protocol is 1                            </pre></td></tr><tr><td data-num="11"></td><td><pre>                                                                                 </pre></td></tr><tr><td data-num="12"></td><td><pre>Interface                         IP Address<span class="token operator">/</span>Mask      Physical   Protocol       </pre></td></tr><tr><td data-num="13"></td><td><pre>NULL0                             unassigned           up         up<span class="token punctuation">(</span>s<span class="token punctuation">)</span>          </pre></td></tr><tr><td data-num="14"></td><td><pre>Vlanif10                          10<span class="token punctuation">.</span>10<span class="token punctuation">.</span>10<span class="token punctuation">.</span>2<span class="token operator">/</span>24        up         up             </pre></td></tr><tr><td data-num="15"></td><td><pre>                                                                                 </pre></td></tr><tr><td data-num="16"></td><td><pre><span class="token namespace">[HUAWEI]</span> display ip routing<span class="token operator">-</span>table </pre></td></tr><tr><td data-num="17"></td><td><pre>Route Flags: R <span class="token operator">-</span> relay<span class="token punctuation">,</span> D <span class="token operator">-</span> download to fib                                      </pre></td></tr><tr><td data-num="18"></td><td><pre><span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span>-<span class="token operator">--</span><span class="token operator">-</span>   </pre></td></tr><tr><td data-num="19"></td><td><pre>Routing Tables: Public                                                           </pre></td></tr><tr><td data-num="20"></td><td><pre>         Destinations : 5        Routes : 5                                      </pre></td></tr><tr><td data-num="21"></td><td><pre>                                                                                 </pre></td></tr><tr><td data-num="22"></td><td><pre>Destination<span class="token operator">/</span>Mask    Proto   Pre  Cost      Flags NextHop         Interface       </pre></td></tr><tr><td data-num="23"></td><td><pre>                                                                                 </pre></td></tr><tr><td data-num="24"></td><td><pre>        0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token operator">/</span>0   Static  60   0          <span class="token function">RD</span>   10<span class="token punctuation">.</span>10<span class="token punctuation">.</span>10<span class="token punctuation">.</span>1      Vlanif10      </pre></td></tr><tr><td data-num="25"></td><td><pre>       10<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token operator">/</span>8   Direct  0    0           D   10<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>1        InLoopBack0     </pre></td></tr><tr><td data-num="26"></td><td><pre>       10<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>1<span class="token operator">/</span>32  Direct  0    0           D   10<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>1        InLoopBack0     </pre></td></tr><tr><td data-num="27"></td><td><pre>     10<span class="token punctuation">.</span>10<span class="token punctuation">.</span>10<span class="token punctuation">.</span>0<span class="token operator">/</span>24  Direct  0    0           D   10<span class="token punctuation">.</span>10<span class="token punctuation">.</span>10<span class="token punctuation">.</span>2      Vlanif10      </pre></td></tr><tr><td data-num="28"></td><td><pre>     10<span class="token punctuation">.</span>10<span class="token punctuation">.</span>10<span class="token punctuation">.</span>2<span class="token operator">/</span>32  Direct  0    0           D   10<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>1        Vlanif10</pre></td></tr></table></figure><h2 id="执行命令ssh-user配置ssh用户相关参数执行命令local-user配置本地用户相关参数实现通过ssh协议登录设备"><a class="markdownIt-Anchor" href="#执行命令ssh-user配置ssh用户相关参数执行命令local-user配置本地用户相关参数实现通过ssh协议登录设备">#</a> 执行命令 ssh user，配置 SSH 用户相关参数；执行命令 local-user，配置本地用户相关参数，实现通过 SSH 协议登录设备。</h2>
+<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre>&lt;HUAWEI> system<span class="token operator">-</span>view </pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token namespace">[HUAWEI]</span> user<span class="token operator">-</span>interface vty 0 4 </pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[HUAWEI-ui-vty0-4]</span> authentication<span class="token operator">-</span>mode aaa    <span class="token operator">/</span><span class="token operator">/</span>配置VTY用户认证方式为AAA认证 </pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token namespace">[HUAWEI-ui-vty0-4]</span> protocol inbound ssh    <span class="token operator">/</span><span class="token operator">/</span>VTY用户界面所支持的协议缺省为SSH协议。 </pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token namespace">[HUAWEI-ui-vty0-4]</span> quit </pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token namespace">[HUAWEI]</span> aaa </pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token namespace">[HUAWEI-aaa]</span> local<span class="token operator">-</span>user admin password irreversible<span class="token operator">-</span>cipher admin@123    <span class="token operator">/</span><span class="token operator">/</span>创建与SSH用户同名的本地用户和对应的登录密码 </pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token namespace">[HUAWEI-aaa]</span> local<span class="token operator">-</span>user admin service<span class="token operator">-</span><span class="token function">type</span> ssh terminal    <span class="token operator">/</span><span class="token operator">/</span>配置本地用户的服务方式 </pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token namespace">[HUAWEI-aaa]</span> local<span class="token operator">-</span>user admin privilege level 15    <span class="token operator">/</span><span class="token operator">/</span>配置本地用户级别 </pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token namespace">[HUAWEI-aaa]</span> quit </pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token namespace">[HUAWEI]</span> ssh user admin    <span class="token operator">/</span><span class="token operator">/</span>创建SSH用户 </pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token namespace">[HUAWEI]</span> ssh user admin authentication<span class="token operator">-</span><span class="token function">type</span> password    <span class="token operator">/</span><span class="token operator">/</span>配置SSH用户的认证方式为password </pre></td></tr><tr><td data-num="13"></td><td><pre><span class="token namespace">[HUAWEI]</span> ssh user admin service<span class="token operator">-</span><span class="token function">type</span> stelnet    <span class="token operator">/</span><span class="token operator">/</span>配置SSH用户的服务方式 </pre></td></tr><tr><td data-num="14"></td><td><pre><span class="token namespace">[HUAWEI]</span> stelnet server enable    <span class="token operator">/</span><span class="token operator">/</span>使能设备的STelnet服务器功能</pre></td></tr></table></figure><blockquote>
+<p>注意：确保 SSH 用户名称与本地用户名称相同。<br>
+本页面只介绍了使用 Password 认证方式实现通过 STelnet 协议登录设备。更多配置 Telnet 或 STelnet 协议实现远程登录的详细操作参见配置通过 Telnet 登录设备或配置通过 STelnet 登录设备。</p>
 </blockquote>
-<h2 id="执行命令display-current-configuration，查看设备当前配置。"><a href="#执行命令display-current-configuration，查看设备当前配置。" class="headerlink" title="执行命令display current-configuration，查看设备当前配置。"></a>执行命令display current-configuration，查看设备当前配置。</h2><pre><code class="lang-powershell">&lt;HUAWEI&gt; system-view 
-[HUAWEI] display current-configuration | include ip 
- ip address 10.10.10.2 255.255.255.0                                            
-ip route-static 0.0.0.0 0.0.0.0 10.10.10.1
-</code></pre>
-<h2 id="查询系统信息的命令（常用！）"><a href="#查询系统信息的命令（常用！）" class="headerlink" title="查询系统信息的命令（常用！）"></a>查询系统信息的命令（常用！）</h2><ul>
-<li><code>display current-configuration</code>，查看系统配置。</li>
-<li><code>display interface brief</code>，查看接口摘要信息。</li>
-<li><code>display clock</code>，查看系统当前日期和时钟。</li>
-<li><code>display ip interface brief</code>，查看接口上IP地址的简要信息。</li>
-<li><code>display ip routing-table</code>，查看系统路由信息。</li>
-<li><code>display user-interface</code>，查看用户界面的物理属性和配置。</li>
-<li><code>display local-user</code>，查看本地用户列表。</li>
-<li><code>display ssh user-information</code>，在SSH服务器端查看SSH用户信息。</li>
-<li><code>display ssh server status</code>，查看SSH服务器的全局配置信息。</li>
-<li><code>display ssh server session</code>，查看与SSH客户端连接的会话信息。</li>
-<li><code>display mac-address</code>，查看交换机MAC、VLAN下的MAC绑定</li>
-<li><code>display interface vlanif1</code>，显示VLANIF1的MAC地址</li>
+<h2 id="执行命令display-current-configuration查看设备当前配置"><a class="markdownIt-Anchor" href="#执行命令display-current-configuration查看设备当前配置">#</a> 执行命令 display current-configuration，查看设备当前配置。</h2>
+<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre>&lt;HUAWEI> system<span class="token operator">-</span>view </pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token namespace">[HUAWEI]</span> display current<span class="token operator">-</span>configuration <span class="token punctuation">|</span> include ip </pre></td></tr><tr><td data-num="3"></td><td><pre> ip address 10<span class="token punctuation">.</span>10<span class="token punctuation">.</span>10<span class="token punctuation">.</span>2 255<span class="token punctuation">.</span>255<span class="token punctuation">.</span>255<span class="token punctuation">.</span>0                                            </pre></td></tr><tr><td data-num="4"></td><td><pre>ip route<span class="token operator">-</span>static 0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0 0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>0 10<span class="token punctuation">.</span>10<span class="token punctuation">.</span>10<span class="token punctuation">.</span>1</pre></td></tr></table></figure><h2 id="查询系统信息的命令常用"><a class="markdownIt-Anchor" href="#查询系统信息的命令常用">#</a> 查询系统信息的命令（常用！）</h2>
+<ul>
+<li><code>display current-configuration</code> ，查看系统配置。</li>
+<li><code>display interface brief</code> ，查看接口摘要信息。</li>
+<li><code>display clock</code> ，查看系统当前日期和时钟。</li>
+<li><code>display ip interface brief</code> ，查看接口上 IP 地址的简要信息。</li>
+<li><code>display ip routing-table</code> ，查看系统路由信息。</li>
+<li><code>display user-interface</code> ，查看用户界面的物理属性和配置。</li>
+<li><code>display local-user</code> ，查看本地用户列表。</li>
+<li><code>display ssh user-information</code> ，在 SSH 服务器端查看 SSH 用户信息。</li>
+<li><code>display ssh server status</code> ，查看 SSH 服务器的全局配置信息。</li>
+<li><code>display ssh server session</code> ，查看与 SSH 客户端连接的会话信息。</li>
+<li><code>display mac-address</code> ，查看交换机 MAC、VLAN 下的 MAC 绑定</li>
+<li><code>display interface vlanif1</code> ，显示 VLANIF1 的 MAC 地址</li>
 </ul>
 <blockquote>
-<p>参考文档：华为交换机命令总结<span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vaGZ0aWFuL3AvODg1ODM0My5odG1s">https://www.cnblogs.com/hftian/p/8858343.html</span></p>
+<p>参考文档：华为交换机命令总结 https://www.cnblogs.com/hftian/p/8858343.html</p>
 </blockquote>
-<h1 id="交换机分类"><a href="#交换机分类" class="headerlink" title="交换机分类"></a>交换机分类</h1><table>
+<h1 id="交换机分类"><a class="markdownIt-Anchor" href="#交换机分类">#</a> 交换机分类</h1>
+<table>
     <tr>
         <th>划分方式</th>
         <th>交换分类</th>
@@ -407,55 +321,28 @@ ip route-static 0.0.0.0 0.0.0.0 10.10.10.1
         <td>核心层</td>
         <td>高速转发、冗余、均衡</td>
     </tr>
-
 </table>
-
-<h1 id="典型的三层交换机、"><a href="#典型的三层交换机、" class="headerlink" title="典型的三层交换机、"></a>典型的三层交换机、</h1><ol>
-<li>接入层交换机，如S2700。</li>
-<li>汇聚层交换机，如S3700。</li>
-<li>核心层交换机，如S5700</li>
+<h1 id="典型的三层交换机"><a class="markdownIt-Anchor" href="#典型的三层交换机">#</a> 典型的三层交换机、</h1>
+<ol>
+<li>接入层交换机，如 S2700。</li>
+<li>汇聚层交换机，如 S3700。</li>
+<li>核心层交换机，如 S5700</li>
 </ol>
 <p><img data-src="https://z3.ax1x.com/2021/05/08/gJMPW6.png" alt="jhj"></p>
-<h1 id="交换机相关计算公式"><a href="#交换机相关计算公式" class="headerlink" title="交换机相关计算公式"></a>交换机相关计算公式</h1><ul>
-<li>包转发率：端口吞吐率，64字节数据包转发能力，单位 pps（包/秒）。计算公式如下：</li>
+<h1 id="交换机相关计算公式"><a class="markdownIt-Anchor" href="#交换机相关计算公式">#</a> 交换机相关计算公式</h1>
+<ul>
+<li>包转发率：端口吞吐率，64 字节数据包转发能力，单位 pps（包 / 秒）。计算公式如下：</li>
 </ul>
-<script type="math/tex; mode=display">包转发率=千兆端口数×1.488Mpps+百兆端口数×0.1488Mpps+其余端口×相应包转发pps</script><ul>
-<li>背板带宽：端口处理器和数据总线之间单位时间内传输的最大数据量。单位Gbps（吉比特/秒）。计算公式如下：</li>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>包转发率</mtext><mo>=</mo><mtext>千兆端口数</mtext><mo>×</mo><mn>1.488</mn><mi>M</mi><mi>p</mi><mi>p</mi><mi>s</mi><mo>+</mo><mtext>百兆端口数</mtext><mo>×</mo><mn>0.1488</mn><mi>M</mi><mi>p</mi><mi>p</mi><mi>s</mi><mo>+</mo><mtext>其余端口</mtext><mo>×</mo><mtext>相应包转发</mtext><mi>p</mi><mi>p</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">包转发率=千兆端口数×1.488Mpps+百兆端口数×0.1488Mpps+其余端口×相应包转发pps
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">包</span><span class="mord cjk_fallback">转</span><span class="mord cjk_fallback">发</span><span class="mord cjk_fallback">率</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord cjk_fallback">千</span><span class="mord cjk_fallback">兆</span><span class="mord cjk_fallback">端</span><span class="mord cjk_fallback">口</span><span class="mord cjk_fallback">数</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mord">.</span><span class="mord">4</span><span class="mord">8</span><span class="mord">8</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mord mathnormal">p</span><span class="mord mathnormal">p</span><span class="mord mathnormal">s</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord cjk_fallback">百</span><span class="mord cjk_fallback">兆</span><span class="mord cjk_fallback">端</span><span class="mord cjk_fallback">口</span><span class="mord cjk_fallback">数</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">1</span><span class="mord">4</span><span class="mord">8</span><span class="mord">8</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mord mathnormal">p</span><span class="mord mathnormal">p</span><span class="mord mathnormal">s</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord cjk_fallback">其</span><span class="mord cjk_fallback">余</span><span class="mord cjk_fallback">端</span><span class="mord cjk_fallback">口</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord cjk_fallback">相</span><span class="mord cjk_fallback">应</span><span class="mord cjk_fallback">包</span><span class="mord cjk_fallback">转</span><span class="mord cjk_fallback">发</span><span class="mord mathnormal">p</span><span class="mord mathnormal">p</span><span class="mord mathnormal">s</span></span></span></span></span></p>
+<ul>
+<li>背板带宽：端口处理器和数据总线之间单位时间内传输的最大数据量。单位 Gbps（吉比特 / 秒）。计算公式如下：</li>
 </ul>
-<script type="math/tex; mode=display">总带宽=端口数×端口速率×2（全双工）</script><h1 id="配置交换机的远程登录管理Telnet"><a href="#配置交换机的远程登录管理Telnet" class="headerlink" title="配置交换机的远程登录管理Telnet"></a>配置交换机的远程登录管理Telnet</h1><pre><code class="lang-powershell">[Swltchl]telnet server enable ## Telnet默认是关闭的，需要打开
-[Switch1]user-interface vty 0 4 ## 开启VTY线路模式
-[Switch1-ui-vtyO-4]protocol inbound telnet ## 配置telnet协议
-[Switch1-ui-vtyO-4]authentication-mode aaa ## 配置认证方式
-[Switch1-ui-vtyO-4]quit
-[Switch1]aaa  ## simple明文密码
-[Switch1-aaa]local-user admin password cipher Hello@123 ##配置用户名和密码，用户名不区分大小写，密码区分大小写
-[Switchi-aaa]local-useradmin privilege level 15 ## 将管理员的账号权限设置为巧
-[Swltchl-aaa]quit
-[Switchl]quit
-&lt;Switch1&gt;save ## 在用户视图下保存配置
-</code></pre>
-<h1 id="配置交换机端口隔离、速率、双工"><a href="#配置交换机端口隔离、速率、双工" class="headerlink" title="配置交换机端口隔离、速率、双工"></a>配置交换机端口隔离、速率、双工</h1><pre><code class="lang-powershell">## 配置接口GEI/0/1和GEI/0/2的端口隔离功能，实现两个接囗之间的二层数据隔离，三层数据互通
-&lt;Switchl&gt;system-view
-[Switch1]port-isolate mode
-[Switch1]Interface gigabitethernet 1/0/1
-[Switch1-GigabitEthemet1/0/1]port-isolate enable group 1
-[Switch1-GigabitEthernet1/0/1]quit
-[Switch1]Interface gigabitethernet1/0/2
-[Switch1-GigabitEthemet1/0/2]port-isolate enable group 1
-[SwitchI-GigabitEthernet1/0/2]quit
-
-
-## 配置以太网接口GEO/0/1在自协商模式下协商速率为100Mb/s
-&lt;Switchl&gt;system-view
-[Switch1]interface gigabitethernet 0/0/1
-[Switchl-GigabitEthernet0/0/1]negotiation auto
-[Switch1-GigabitEthemet0/0/1]auto speed 100
-#配置以太网电接口GEO/0／1在自协商模式下双工模式为全双工模式
-&lt;Switchl&gt;system-view
-[Switchl]interfaceygabitethernet0/0／1
-[Switch1-GigabitEthemet0/0/1]negotiation auto
-</code></pre>
-
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>总带宽</mtext><mo>=</mo><mtext>端口数</mtext><mo>×</mo><mtext>端口速率</mtext><mo>×</mo><mn>2</mn><mtext>（全双工）</mtext></mrow><annotation encoding="application/x-tex">总带宽=端口数×端口速率×2（全双工）
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">总</span><span class="mord cjk_fallback">带</span><span class="mord cjk_fallback">宽</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord cjk_fallback">端</span><span class="mord cjk_fallback">口</span><span class="mord cjk_fallback">数</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord cjk_fallback">端</span><span class="mord cjk_fallback">口</span><span class="mord cjk_fallback">速</span><span class="mord cjk_fallback">率</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord cjk_fallback">（</span><span class="mord cjk_fallback">全</span><span class="mord cjk_fallback">双</span><span class="mord cjk_fallback">工</span><span class="mord cjk_fallback">）</span></span></span></span></span></p>
+<h1 id="配置交换机的远程登录管理telnet"><a class="markdownIt-Anchor" href="#配置交换机的远程登录管理telnet">#</a> 配置交换机的远程登录管理 Telnet</h1>
+<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token namespace">[Swltchl]</span>telnet server enable <span class="token comment">## Telnet 默认是关闭的，需要打开</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token namespace">[Switch1]</span>user<span class="token operator">-</span>interface vty 0 4 <span class="token comment">## 开启 VTY 线路模式</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[Switch1-ui-vtyO-4]</span>protocol inbound telnet <span class="token comment">## 配置 telnet 协议</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token namespace">[Switch1-ui-vtyO-4]</span>authentication<span class="token operator">-</span>mode aaa <span class="token comment">## 配置认证方式</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token namespace">[Switch1-ui-vtyO-4]</span>quit</pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token namespace">[Switch1]</span>aaa  <span class="token comment">## simple 明文密码</span></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token namespace">[Switch1-aaa]</span>local<span class="token operator">-</span>user admin password cipher Hello@123 <span class="token comment">## 配置用户名和密码，用户名不区分大小写，密码区分大小写</span></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token namespace">[Switchi-aaa]</span>local<span class="token operator">-</span>useradmin privilege level 15 <span class="token comment">## 将管理员的账号权限设置为巧</span></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token namespace">[Swltchl-aaa]</span>quit</pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token namespace">[Switchl]</span>quit</pre></td></tr><tr><td data-num="11"></td><td><pre>&lt;Switch1>save <span class="token comment">## 在用户视图下保存配置</span></pre></td></tr></table></figure><h1 id="配置交换机端口隔离-速率-双工"><a class="markdownIt-Anchor" href="#配置交换机端口隔离-速率-双工">#</a> 配置交换机端口隔离、速率、双工</h1>
+<figure class="highlight powershell"><figcaption data-lang="PowerShell"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment">## 配置接口 GEI/0/1 和 GEI/0/2 的端口隔离功能，实现两个接囗之间的二层数据隔离，三层数据互通</span></pre></td></tr><tr><td data-num="2"></td><td><pre>&lt;Switchl>system<span class="token operator">-</span>view</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token namespace">[Switch1]</span>port<span class="token operator">-</span>isolate mode</pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token namespace">[Switch1]</span>Interface gigabitethernet 1<span class="token operator">/</span>0<span class="token operator">/</span>1</pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token namespace">[Switch1-GigabitEthemet1/0/1]</span>port<span class="token operator">-</span>isolate enable <span class="token function">group</span> 1</pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token namespace">[Switch1-GigabitEthernet1/0/1]</span>quit</pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token namespace">[Switch1]</span>Interface gigabitethernet1<span class="token operator">/</span>0<span class="token operator">/</span>2</pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token namespace">[Switch1-GigabitEthemet1/0/2]</span>port<span class="token operator">-</span>isolate enable <span class="token function">group</span> 1</pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token namespace">[SwitchI-GigabitEthernet1/0/2]</span>quit</pre></td></tr><tr><td data-num="10"></td><td><pre></pre></td></tr><tr><td data-num="11"></td><td><pre></pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token comment">## 配置以太网接口 GEO/0/1 在自协商模式下协商速率为 100Mb/s</span></pre></td></tr><tr><td data-num="13"></td><td><pre>&lt;Switchl>system<span class="token operator">-</span>view</pre></td></tr><tr><td data-num="14"></td><td><pre><span class="token namespace">[Switch1]</span>interface gigabitethernet 0<span class="token operator">/</span>0<span class="token operator">/</span>1</pre></td></tr><tr><td data-num="15"></td><td><pre><span class="token namespace">[Switchl-GigabitEthernet0/0/1]</span>negotiation auto</pre></td></tr><tr><td data-num="16"></td><td><pre><span class="token namespace">[Switch1-GigabitEthemet0/0/1]</span>auto speed 100</pre></td></tr><tr><td data-num="17"></td><td><pre><span class="token comment">#配置以太网电接口 GEO/0／1 在自协商模式下双工模式为全双工模式</span></pre></td></tr><tr><td data-num="18"></td><td><pre>&lt;Switchl>system<span class="token operator">-</span>view</pre></td></tr><tr><td data-num="19"></td><td><pre><span class="token namespace">[Switchl]</span>interfaceygabitethernet0<span class="token operator">/</span>0／1</pre></td></tr><tr><td data-num="20"></td><td><pre><span class="token namespace">[Switch1-GigabitEthemet0/0/1]</span>negotiation auto</pre></td></tr></table></figure>
       <div class="tags">
           <a href="/my-blog/tags/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" rel="tag"><i class="ic i-tag"></i> 软考网络工程师</a>
       </div>
@@ -544,7 +431,7 @@ ip route-static 0.0.0.0 0.0.0.0 10.10.10.1
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#交换机基本配置命令"><span class="toc-number">1.</span> <span class="toc-text">交换机基本配置命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、模式命令："><span class="toc-number">1.1.</span> <span class="toc-text">一、模式命令：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、特权模式下的命令："><span class="toc-number">1.2.</span> <span class="toc-text">二、特权模式下的命令：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、全局配置模式下的命令："><span class="toc-number">1.3.</span> <span class="toc-text">三、全局配置模式下的命令：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、VLAN配置命令："><span class="toc-number">1.4.</span> <span class="toc-text">四、VLAN配置命令：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置系统基本信息命令"><span class="toc-number">2.</span> <span class="toc-text">配置系统基本信息命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#执行命令sysname-host-name，设置设备名称"><span class="toc-number">2.1.</span> <span class="toc-text">执行命令sysname host-name，设置设备名称</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#执行命令clock-datetime设置当前时间和日期"><span class="toc-number">2.2.</span> <span class="toc-text">执行命令clock datetime设置当前时间和日期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#执行命令clock-timezone，配置设备所在地区及其对应的时区"><span class="toc-number">2.3.</span> <span class="toc-text">执行命令clock timezone，配置设备所在地区及其对应的时区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#执行命令display-clock，查看系统当前日期和时钟"><span class="toc-number">2.4.</span> <span class="toc-text">执行命令display clock，查看系统当前日期和时钟</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#执行命令ip-address，配置设备管理IP地址，执行命令ip-route-static，配置设备缺省网关"><span class="toc-number">2.5.</span> <span class="toc-text">执行命令ip address，配置设备管理IP地址，执行命令ip route-static，配置设备缺省网关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#执行命令display-ip-interface-brief，查看接口上IP地址的简要信息。执行命令display-ip-routing-table，查看IP路由信息"><span class="toc-number">2.6.</span> <span class="toc-text">执行命令display ip interface brief，查看接口上IP地址的简要信息。执行命令display ip routing-table，查看IP路由信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#执行命令ssh-user，配置SSH用户相关参数；执行命令local-user，配置本地用户相关参数，实现通过SSH协议登录设备。"><span class="toc-number">2.7.</span> <span class="toc-text">执行命令ssh user，配置SSH用户相关参数；执行命令local-user，配置本地用户相关参数，实现通过SSH协议登录设备。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#执行命令display-current-configuration，查看设备当前配置。"><span class="toc-number">2.8.</span> <span class="toc-text">执行命令display current-configuration，查看设备当前配置。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查询系统信息的命令（常用！）"><span class="toc-number">2.9.</span> <span class="toc-text">查询系统信息的命令（常用！）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#交换机分类"><span class="toc-number">3.</span> <span class="toc-text">交换机分类</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#典型的三层交换机、"><span class="toc-number">4.</span> <span class="toc-text">典型的三层交换机、</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#交换机相关计算公式"><span class="toc-number">5.</span> <span class="toc-text">交换机相关计算公式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置交换机的远程登录管理Telnet"><span class="toc-number">6.</span> <span class="toc-text">配置交换机的远程登录管理Telnet</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置交换机端口隔离、速率、双工"><span class="toc-number">7.</span> <span class="toc-text">配置交换机端口隔离、速率、双工</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#交换机基本配置命令"><span class="toc-number">1.</span> <span class="toc-text"> 交换机基本配置命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一-模式命令"><span class="toc-number">1.1.</span> <span class="toc-text"> 一、模式命令：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二-特权模式下的命令"><span class="toc-number">1.2.</span> <span class="toc-text"> 二、特权模式下的命令：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三-全局配置模式下的命令"><span class="toc-number">1.3.</span> <span class="toc-text"> 三、全局配置模式下的命令：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四-vlan配置命令"><span class="toc-number">1.4.</span> <span class="toc-text"> 四、VLAN 配置命令：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置系统基本信息命令"><span class="toc-number">2.</span> <span class="toc-text"> 配置系统基本信息命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#执行命令sysname-host-name设置设备名称"><span class="toc-number">2.1.</span> <span class="toc-text"> 执行命令 sysname host-name，设置设备名称</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#执行命令clock-datetime设置当前时间和日期"><span class="toc-number">2.2.</span> <span class="toc-text"> 执行命令 clock datetime 设置当前时间和日期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#执行命令clock-timezone配置设备所在地区及其对应的时区"><span class="toc-number">2.3.</span> <span class="toc-text"> 执行命令 clock timezone，配置设备所在地区及其对应的时区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#执行命令display-clock查看系统当前日期和时钟"><span class="toc-number">2.4.</span> <span class="toc-text"> 执行命令 display clock，查看系统当前日期和时钟</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#执行命令ip-address配置设备管理ip地址执行命令ip-route-static配置设备缺省网关"><span class="toc-number">2.5.</span> <span class="toc-text"> 执行命令 ip address，配置设备管理 IP 地址，执行命令 ip route-static，配置设备缺省网关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#执行命令display-ip-interface-brief查看接口上ip地址的简要信息-执行命令display-ip-routing-table查看ip路由信息"><span class="toc-number">2.6.</span> <span class="toc-text"> 执行命令 display ip interface brief，查看接口上 IP 地址的简要信息。执行命令 display ip routing-table，查看 IP 路由信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#执行命令ssh-user配置ssh用户相关参数执行命令local-user配置本地用户相关参数实现通过ssh协议登录设备"><span class="toc-number">2.7.</span> <span class="toc-text"> 执行命令 ssh user，配置 SSH 用户相关参数；执行命令 local-user，配置本地用户相关参数，实现通过 SSH 协议登录设备。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#执行命令display-current-configuration查看设备当前配置"><span class="toc-number">2.8.</span> <span class="toc-text"> 执行命令 display current-configuration，查看设备当前配置。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查询系统信息的命令常用"><span class="toc-number">2.9.</span> <span class="toc-text"> 查询系统信息的命令（常用！）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#交换机分类"><span class="toc-number">3.</span> <span class="toc-text"> 交换机分类</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#典型的三层交换机"><span class="toc-number">4.</span> <span class="toc-text"> 典型的三层交换机、</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#交换机相关计算公式"><span class="toc-number">5.</span> <span class="toc-text"> 交换机相关计算公式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置交换机的远程登录管理telnet"><span class="toc-number">6.</span> <span class="toc-text"> 配置交换机的远程登录管理 Telnet</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置交换机端口隔离-速率-双工"><span class="toc-number">7.</span> <span class="toc-text"> 配置交换机端口隔离、速率、双工</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -666,10 +553,20 @@ ip route-static 0.0.0.0 0.0.0.0 10.10.10.1
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/my-blog/categories/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+</div>
+
+    <span><a href="/my-blog/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AFHTML5+CSS3/" title="前端HTML5+CSS3">前端HTML5+CSS3</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/" title="计算机硬件基础(部分组成原理)">计算机硬件基础(部分组成原理)</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%9F%8E%E5%9F%9F%E7%BD%9101/" title="局域网与城域网01">局域网与城域网01</a></span>
   </li>
 
       
@@ -686,70 +583,10 @@ ip route-static 0.0.0.0 0.0.0.0 10.10.10.1
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/network/" title="分类于 网络">网络</a>
-</div>
-
-    <span><a href="/my-blog/network/Servlet%E5%92%8CTomcat/" title="Servlet和Tomcat">Servlet和Tomcat</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
-</div>
-
-    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/Fusion%20Compute%E5%AE%89%E8%A3%85/" title="Fusion Compute安装">Fusion Compute安装</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
 </div>
 
-    <span><a href="/my-blog/Linux/LINUX%E5%AD%A6%E6%A0%A1%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="LINUX课程笔记">LINUX课程笔记</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/MySQL/" title="分类于 MySQL">MySQL</a>
-</div>
-
-    <span><a href="/my-blog/MySQL/MySQL%E8%BF%9B%E9%98%B6/" title="MySQL进阶">MySQL进阶</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
-</div>
-
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E8%A7%84%E5%88%92%E4%B8%8E%E8%AE%BE%E8%AE%A1/" title="网络规划与设计">网络规划与设计</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
-</div>
-
-    <span><a href="/my-blog/Linux/%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E4%B8%8E%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86/" title="文件权限与目录管理">文件权限与目录管理</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="分类于 算法与数据结构">算法与数据结构</a>
-</div>
-
-    <span><a href="/my-blog/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E7%BB%AA%E8%AE%BA/" title="数据结构之绪论">数据结构之绪论</a></span>
+    <span><a href="/my-blog/Linux/Linux%E5%BC%80%E7%AF%87/" title="Linux开篇">Linux开篇</a></span>
   </li>
 
       
@@ -759,7 +596,57 @@ ip route-static 0.0.0.0 0.0.0.0 10.10.10.1
 <a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
 </div>
 
-    <span><a href="/my-blog/Java/Java%E7%9A%84Stream%E6%B5%81/" title="Java的Stream流">Java的Stream流</a></span>
+    <span><a href="/my-blog/Java/Java%E7%BB%A7%E6%89%BF/" title="Java继承">Java继承</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8002/" title="数据通信基础02">数据通信基础02</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/Java%E5%B0%81%E8%A3%85/" title="Java封装">Java封装</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/MySQL/" title="分类于 MySQL">MySQL</a>
+</div>
+
+    <span><a href="/my-blog/MySQL/%E5%85%B3%E4%BA%8EMySQL%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" title="关于MySQL的一些基本使用">关于MySQL的一些基本使用</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+</div>
+
+    <span><a href="/my-blog/%E5%89%8D%E7%AB%AF/%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E5%89%8D%E7%AB%AF/" title="如何学习前端">如何学习前端</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/Linux%E9%85%8D%E7%BD%AE/" title="Linux配置">Linux配置</a></span>
   </li>
 
   </ul>

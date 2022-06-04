@@ -91,12 +91,12 @@
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/008cglGdly1gk20kgaswgj30zk0k0ag3.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/008cglGdly1gjy10y42n5j32yo1o0qph.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/008cglGdly1gjy10kkwraj32yo1o048m.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/008cglGdly1gk2k9qup8tj32yo1o01f9.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/008cglGdly1gjy11gi2qcj32yo1o0x2m.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/008cglGdly1gk2k5s2bc5j31hc0zk152.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/008cglGdly1gk2k5wzc60j31hc0zk1io.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/nV6GCTmgyEWpIcU.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/008cglGdly1gk2k95mou8j32yo1o0e0x.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/008cglGdly1gjy0yxlsztj32yo1o0gvi.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/008cglGdly1gk2k5s2bc5j31hc0zk152.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/008cglGdly1gjy10kcw4bj32yo1o0qg4.jpg"></li>
         </ul>
       </div>
     </header>
@@ -137,15 +137,16 @@
 
     <h3><a href="/my-blog/Linux/%E6%9B%B4%E6%8D%A2%E6%B8%85%E5%8D%8E%E6%BA%90/" itemprop="url" title="更换清华源">更换清华源</a></h3>
     <div class="excerpt">
-        具体步骤
-rm -rf /etc/yum.repos.d/*，删除 /etc/yum.repos.d/的所有文件
-进入/etc/yum.repos.d：cd /etc/yum.repos.d/,使用ls查看该目录下所有文件，找到CentOS-Base.repo文件，没有则用touch创建文件
-进入CentOS-Base.repo：vi CentOS-Base.repo
+        # 具体步骤
+
+rm -rf /etc/yum.repos.d/* ，删除 /etc/yum.repos.d/ 的所有文件
+进入 /etc/yum.repos.d： cd /etc/yum.repos.d/ , 使用 ls 查看该目录下所有文件，找到 CentOS-Base.repo 文件，没有则用 touch 创建文件
+进入 CentOS-Base.repo： vi CentOS-Base.repo
 
 # CentOS-Base.repo
 #
 # The mirror system uses the connecting IP address of the client and the
-# update status of...
+#...
     </div>
     <div class="meta footer">
       <span>
@@ -174,25 +175,29 @@ rm -rf /etc/yum.repos.d/*，删除 /etc/yum.repos.d/的所有文件
 
     <h3><a href="/my-blog/Linux/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E5%8F%8Ayum%E6%BA%90%E9%97%AE%E9%A2%98/" itemprop="url" title="网络配置及yum源问题">网络配置及yum源问题</a></h3>
     <div class="excerpt">
-        centOS7最小化安装后的网络配置配置基本的网络信息
+        # centOS7 最小化安装后的网络配置
+# 配置基本的网络信息
+
 在安装程序的以太网配置中设置手动，添加如下信息
-ip地址
+
+ip 地址
 子网掩码
 网关
-DNS服务器
+DNS 服务器
 
-设置本地localhost地址
+设置本地 localhost 地址
 
-安装net-tools
-centOS 最小化安装默认没有yum 、ifconfig等常用命令，需要安装net-tools启用
+# 安装 net-tools
 
-首先输入id与pwd登录终端
+centOS 最小化安装默认没有 yum 、ifconfig 等常用命令，需要安装 net-tools 启用
+
+首先输入 id 与 pwd 登录终端
 终端输入以下命令：
+
 cd /etc/sysconfig/network-scripts
 vi ifcfg-ens33
 
-进入ifcfg配置文件后，将ONBOOT=no改为ONBOOT=yes，在把BOOTPROTO设为static
-重启网卡：service...
+进入 ifcfg 配置文件后，将 ONBOOT=no 改为 ONBOOT=yes ，在把...
     </div>
     <div class="meta footer">
       <span>
@@ -221,12 +226,28 @@ vi ifcfg-ens33
 
     <h3><a href="/my-blog/Linux/Linux%E5%BC%80%E7%AF%87/" itemprop="url" title="Linux开篇">Linux开篇</a></h3>
     <div class="excerpt">
-        Linux是什么？
-一套操作系统OS
+        # Linux 是什么？
+
+一套操作系统 OS
 处于计算机的核心与系统调用接口层
 
-谁发明的？
-Linus Torvalds（托瓦兹,...
+# 谁发明的？
+
+Linus Torvalds（托瓦兹，1969 年出生）
+
+# 当前 IT 的角色定位
+
+企业环境
+
+充当网络服务器，得益于 Linux 的稳定性，并且 Linux 与各大硬件厂商的深度合作如，Dell、HP、IBM 及 VMware 等
+关键服务的应用，如一些安全性可靠性高的操作，如充当金融账户接口任务
+高性能运算服务
+
+个人环境
+
+桌面电脑 Desktop。日常收发邮件，处理办公任务等
+移动端。如手机
+嵌入式系统。一些微计算机控制器，如路由器、robot...
     </div>
     <div class="meta footer">
       <span>
@@ -255,20 +276,21 @@ Linus Torvalds（托瓦兹,...
 
     <h3><a href="/my-blog/Linux/LINUX%E5%AD%A6%E6%A0%A1%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" itemprop="url" title="LINUX课程笔记">LINUX课程笔记</a></h3>
     <div class="excerpt">
-        Linux课程
-本篇文章基于《linux就该这么学》编写，仅包含学校课程学习内容，并未包括该书本的完整知识!
+        # Linux 课程
 
-重置ROOT管理员密码
-重启 Linux 系统主机并出现引导界面时，按下键盘上的e 键进入内核编辑界面，如图所示
+本篇文章基于《linux 就该这么学》编写，仅包含学校课程学习内容，并未包括该书本的完整知识！
 
-在 linux16 参数这行的最后面追加rd.break参数，然后按下 Ctrl + X 组合键来运行修改过的内核程序,如图所示
+# 重置 ROOT 管理员密码
+
+重启 Linux 系统主机并出现引导界面时，按下键盘上的 e 键 进入内核编辑界面，如图所示
+
+在 linux16 参数这行的最后面追加 rd.break 参数，然后按下 Ctrl + X 组合键来运行修改过的内核程序，如图所示
 
 大约 30 秒过后，进入到系统的紧急求援模式
 
-依次输入以下命令，等待系统重启操作完毕，然后就可以使用新密码 linuxprobe 来登录Linux系统了
+依次输入以下命令，等待系统重启操作完毕，然后就可以使用新密码 linuxprobe 来登录 Linux 系统了
 
-mount -o remount,rw /sysroot
-chroot...
+mount -o remount,rw...
     </div>
     <div class="meta footer">
       <span>
@@ -297,15 +319,11 @@ chroot...
 
     <h3><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%884%EF%BC%89/" itemprop="url" title="华为交换实验命令（4）">华为交换实验命令（4）</a></h3>
     <div class="excerpt">
-        TELENT远程管理
+        # TELENT 远程管理
 
 R1
-配置接口 IP 确保和 R2 处于同一网段&amp;lt;Huawei&amp;gt;system-view
-Enter system view, return user view with Ctrl+Z.
-[Huawei]sysname R1
-[R1]interface GigabitEthernet 0/0/0 //进入 R1 GE0 接口
-[R1-GigabitEthernet0/0/0]ip address 12.1.1.1 24 //GE0 接口配置 IP
-Apr 22 2018 14:46:49-08:00 R1...
+
+配置接口 IP 确保和 R2 处于同一网段&amp;lt;Huawei&gt;system-viewEnter system view, return user view with Ctrl+Z.[Huawei]sysname R1[R1]interface GigabitEthernet 0/0/0 //进入 R1 GE0 接口[R1-GigabitEthernet0/0/0]ip address 12.1.1.1 24 //GE0 接口配置 IPApr 22 2018 14:46:49-08:00 R1...
     </div>
     <div class="meta footer">
       <span>
@@ -334,12 +352,10 @@ Apr 22 2018 14:46:49-08:00 R1...
 
     <h3><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%883%EF%BC%89/" itemprop="url" title="华为路由实验命令（3）">华为路由实验命令（3）</a></h3>
     <div class="excerpt">
-        IS-IS 路由配置
-中间系统到中间系统 (Intermediate System to Intermediate System, IS-IS)属于内部网关协议(lnteriorGateway Protocol,IGP)，用于自治系统内部。
-为了支持大规模的路由网络，IS-IS 在自治系统内采用骨干区域与非骨干区域两级的分层结构。一般来说，将 Level-1 路由器部署在非骨干区域，Level-2 路由器和 Level-1-2 路由器部署在骨干区域。每一个非骨干区域都通过 Level-1-2 路由器与骨干区域相连。
-链路状态路由协议（L-S）
+        # IS-IS 路由配置
 
-Net-Entity：网络实体，运行 IS-IS...
+中间系统到中间系统 ( Intermediate System to Intermediate System , IS-IS ) 属于内部网关协议 ( lnteriorGateway Protocol , IGP )，用于自治系统内部。
+为了支持大规模的路由网络，IS-IS 在自治系统内采用骨干区域与非骨干区域两级的分层结构。一般来说，将 Level-1 路由器部署在非骨干区域，Level-2 路由器和 Level-1-2 路由器部署在骨干区域。每一个非骨干区域都通过 Level-1-2...
     </div>
     <div class="meta footer">
       <span>
@@ -368,8 +384,11 @@ Net-Entity：网络实体，运行 IS-IS...
 
     <h3><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%882%EF%BC%89/" itemprop="url" title="华为路由交换实验命令（2）">华为路由交换实验命令（2）</a></h3>
     <div class="excerpt">
-        路由器基础
-路由器(Router)是一种典型的==网络层设备== ，在 OSI...
+        # 路由器基础
+
+路由器 (Router) 是一种典型的网络层设备 ，在 OSI 参考模型中被称为中介系统，用于完成网络层中继或第三层中继的任务。路由器负责在两个局域网的网络层间接传输数据分组，并确定网络上数据传送的最佳路径。
+异种网络互联与多个子网互联都应采用路由器来完成。
+路由器的主要工作就是为经过的每个数据包寻找一条最佳的传输路径，并将该数据有效地传送到目的站点。由此可见，选择最佳路径的策略（路由算法）是路由器的关键所在。为了完成这项工作，在路由器中保存着各种传输路径的相关数据一路由表 (RoutingTable)...
     </div>
     <div class="meta footer">
       <span>
@@ -398,15 +417,22 @@ Net-Entity：网络实体，运行 IS-IS...
 
     <h3><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%881%EF%BC%89/" itemprop="url" title="华为路由交换实验命令（1）">华为路由交换实验命令（1）</a></h3>
     <div class="excerpt">
-        交换机基本配置命令一、模式命令：
-用户模式：Switch&amp;gt;
-特权模式：Switch&amp;gt;enableSwitch#
-全局配置模式：Switch# config terminalSwitch（config）#
-接口配置模式：Switch（config）#interface fastethernet0/1Switch（config-if）#
-Line模式：Switch（config）#line console 0Switch（config-line）#
+        # 交换机基本配置命令
+# 一、模式命令：
 
-二、特权模式下的命令：
-查看交换机MAC地址：Switch#show...
+用户模式： Switch&amp;gt;
+特权模式： Switch&amp;gt;enable
+Switch#
+全局配置模式： Switch# config terminal
+Switch（config）#
+接口配置模式： Switch（config）#interface fastethernet0/1
+Switch（config-if）#
+Line 模式： Switch（config）#line console 0
+Switch（config-line）#
+
+# 二、特权模式下的命令：
+
+查看交换机 MAC 地址： Switch#show...
     </div>
     <div class="meta footer">
       <span>
@@ -435,14 +461,15 @@ Line模式：Switch（config）#line console 0Switch（config-line）#
 
     <h3><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/Linux%E9%85%8D%E7%BD%AE/" itemprop="url" title="Linux配置">Linux配置</a></h3>
     <div class="excerpt">
-        LINUX网络配置网络配置文件
-在Linux中，TCP\IP网络是通过若干个文本文件进行配置的，系统在启动时通过读取一组有关网络配置的文件和脚本参数文件实现网络接口的初始化和控制；这些文件可以在系统运行时直接修改，更改后会立即生效。
+        # LINUX 网络配置
+# 网络配置文件
 
-/etc/sysconfig/network-script/ifcfg-enoxxx 文件。这是 个用来指定服务器上的网络配置信息的文件。其中常见的主要参数的含义说明如下: TYPE=Ethemet #网络接口类型
-BOOTPROTO=static #静态地址
-DEFROUTE=yes
-IPV4_FAILURE_FATAL=no
-IPV6INIT=yes...
+在 Linux 中，TCP\IP 网络是通过若干个文本文件进行配置的，系统在启动时通过读取一组有关网络配置的文件和脚本参数文件实现网络接口的初始化和控制；这些文件可以在系统运行时直接修改，更改后会立即生效。
+
+/etc/sysconfig/network-script/ifcfg-enoxxx 文件。这是 个用来指定服务器上的网络配置信息的文件。其中常见的主要参数的含义说明如下:
+
+TYPE=Ethemet #网络接口类型
+BOOTPROTO=static...
     </div>
     <div class="meta footer">
       <span>
@@ -471,19 +498,20 @@ IPV6INIT=yes...
 
     <h3><a href="/my-blog/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E7%BB%AA%E8%AE%BA/" itemprop="url" title="数据结构之绪论">数据结构之绪论</a></h3>
     <div class="excerpt">
-        数据结构之绪论
-数据结构——知识架构
-什么是数据？
-是信息的载体，是可以让计算机识别的并处理的符号集合，从底层来说就是一些二进制的0和1。
+        # 数据结构之绪论
 
-数据元素与数据项
+# 数据结构 —— 知识架构
+
+# 什么是数据？
+
+是信息的载体，是可以让计算机识别的并处理的符号集合，从底层来说就是一些二进制的 0 和 1。
+
+# 数据元素与数据项
+
 数据的基本单位就是数据元素，多个数据项构成一个数据元素，数据项是数据元素的最小表示单位
 但对于现实世界中，评判什么是数据元素与数据项，需要根据具体需求来定义。例如，对于一个学生管理系统，每一个学生的账号就是一个数据元素，而每个学生的性别、年龄、爱好等个人信息就是一个个的数据项，这些数据项构成了学生这个数据元素。
 
-数据结构与数据对象
-数据结构是相互具有一种或多种特定关系的数据元素的集合
-
-数据对象时具有==相同性质==的数据元素的集合，...
+#...
     </div>
     <div class="meta footer">
       <span>
@@ -631,6 +659,26 @@ IPV6INIT=yes...
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F/" title="常用公式">常用公式</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A802/" title="网络应用服务器02">网络应用服务器02</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
 </div>
 
@@ -641,70 +689,40 @@ IPV6INIT=yes...
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
-</div>
-
-    <span><a href="/my-blog/Java/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93/" title="多线程笔记总结">多线程笔记总结</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
-</div>
-
-    <span><a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8BOV/" title="Java网络编程OV">Java网络编程OV</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
-</div>
-
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E4%B8%8B%E4%B8%80%E4%BB%A3%E4%BA%92%E8%81%94%E7%BD%91/" title="下一代互联网">下一代互联网</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
-</div>
-
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E6%A6%82%E8%AE%BA/" title="计算机基础概论">计算机基础概论</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
-</div>
-
-    <span><a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" title="Java网络编程">Java网络编程</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
-</div>
-
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A801/" title="网络应用服务器01">网络应用服务器01</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
 </div>
 
-    <span><a href="/my-blog/Linux/%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E4%B8%8E%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86/" title="文件权限与目录管理">文件权限与目录管理</a></span>
+    <span><a href="/my-blog/Linux/Linux%E5%BC%80%E7%AF%87/" title="Linux开篇">Linux开篇</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/" title="计算机硬件基础(部分组成原理)">计算机硬件基础(部分组成原理)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%9F%8E%E5%9F%9F%E7%BD%9101/" title="局域网与城域网01">局域网与城域网01</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9102/" title="网络互联与互联网02">网络互联与互联网02</a></span>
   </li>
 
       
@@ -714,17 +732,27 @@ IPV6INIT=yes...
 <a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
 </div>
 
-    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E8%AE%A1%E7%AE%97%E8%99%9A%E6%8B%9F%E5%8C%96/" title="计算虚拟化简介">计算虚拟化简介</a></span>
+    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E7%BD%91%E7%BB%9C%E8%99%9A%E6%8B%9F%E5%8C%96/" title="网络虚拟化">网络虚拟化</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/Linux%E9%85%8D%E7%BD%AE/" title="Linux配置">Linux配置</a></span>
+    <span><a href="/my-blog/Java/JavaSE%E5%B0%8F%E7%BB%93/" title="JavaSE小结">JavaSE小结</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/Java%E7%9A%84Stream%E6%B5%81/" title="Java的Stream流">Java的Stream流</a></span>
   </li>
 
   </ul>

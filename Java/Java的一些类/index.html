@@ -146,146 +146,154 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <div class="body md" itemprop="articleBody">
     
 
-    <h2 id="Java的一些类"><a href="#Java的一些类" class="headerlink" title="Java的一些类"></a>Java的一些类</h2><h3 id="StringBuilder和StringBuffer的使用"><a href="#StringBuilder和StringBuffer的使用" class="headerlink" title="StringBuilder和StringBuffer的使用"></a>StringBuilder和StringBuffer的使用</h3><ul>
-<li><p>这两个方法的基本解释：</p>
+    <h2 id="java的一些类"><a class="markdownIt-Anchor" href="#java的一些类">#</a> Java 的一些类</h2>
+<h3 id="stringbuilder和stringbuffer的使用"><a class="markdownIt-Anchor" href="#stringbuilder和stringbuffer的使用">#</a> StringBuilder 和 StringBuffer 的使用</h3>
 <ul>
-<li><code>StringBuilder</code>:线程不安全，效率高</li>
-<li><code>StringBuffer</code>:线程安全，效率低</li>
+<li>
+<p>这两个方法的基本解释：</p>
+<ul>
+<li><code>StringBuilder</code> : 线程不安全，效率高</li>
+<li><code>StringBuffer</code> : 线程安全，效率低</li>
 </ul>
 </li>
-<li><p>实例：</p>
-<pre><code class="lang-java">StringBuilder s = new StringBuilder();//初始长度为16
-StringBuider s1 = new StringBuilder(32);//初始length=32 
-s.append();
-s.delete(int start,int end);
-</code></pre>
-<h3 id="StringBuilder类的常用方法"><a href="#StringBuilder类的常用方法" class="headerlink" title="StringBuilder类的常用方法"></a>StringBuilder类的常用方法</h3><p>| 类名 | 方法名  | 解释 |<br>|:——:|:———:|:——:|<br>|StringBuilder|append(参数)|追加内容到当前<code>StringBuilder</code>对象的末尾|<br>|StringBuilder|insert(位置，参数)|将内容插入到<code>StringBuilder</code>对象的指定位置|<br>|String|toString()|将<code>StringBuilder</code>对象转换为<code>String</code>对象|<br>|int | length()|获取字符串长度|</p>
-</li>
+<li>
+<p>实例：</p>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token class-name">StringBuilder</span> s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 初始长度为 16</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token class-name">StringBuider</span> s1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuilder</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 初始 length=32 </span></pre></td></tr><tr><td data-num="3"></td><td><pre>s<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>s<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token keyword">int</span> start<span class="token punctuation">,</span><span class="token keyword">int</span> end<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure></li>
 </ul>
-<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><h4 id="一、子串"><a href="#一、子串" class="headerlink" title="一、子串"></a>一、子串</h4><ul>
-<li>通过<code>String</code>类中的<code>substring</code>方法从一个字符串中提取一个子串</li>
-<li>例如：<pre><code class="lang-java">String s = &quot;Hello&quot;;
-String t = s.substring(0,3);//substring方法用来计算子串的长度，（0，3）表示要复制从0-3的字符，即H、e、l
-</code></pre>
-<h4 id="二、拼接"><a href="#二、拼接" class="headerlink" title="二、拼接"></a>二、拼接</h4></li>
-<li>通过使用<code>+</code>实现</li>
-<li>常用方法：<pre><code class="lang-java">  String player = &quot;vango&quot;;
-  String project = &quot;sunflower&quot;;
-  String message = player + project;
-</code></pre>
-</li>
+<h3 id="stringbuilder类的常用方法"><a class="markdownIt-Anchor" href="#stringbuilder类的常用方法">#</a> StringBuilder 类的常用方法</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">类名</th>
+<th style="text-align:center">方法名</th>
+<th style="text-align:center">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">StringBuilder</td>
+<td style="text-align:center">append (参数)</td>
+<td style="text-align:center">追加内容到当前 <code>StringBuilder</code>  对象的末尾</td>
+</tr>
+<tr>
+<td style="text-align:center">StringBuilder</td>
+<td style="text-align:center">insert (位置，参数)</td>
+<td style="text-align:center">将内容插入到 <code>StringBuilder</code>  对象的指定位置</td>
+</tr>
+<tr>
+<td style="text-align:center">String</td>
+<td style="text-align:center">toString()</td>
+<td style="text-align:center">将 <code>StringBuilder</code>  对象转换为 <code>String</code>  对象</td>
+</tr>
+<tr>
+<td style="text-align:center">int</td>
+<td style="text-align:center">length()</td>
+<td style="text-align:center">获取字符串长度</td>
+</tr>
+</tbody>
+</table>
+<h3 id="字符串"><a class="markdownIt-Anchor" href="#字符串">#</a> 字符串</h3>
+<h4 id="一-子串"><a class="markdownIt-Anchor" href="#一-子串">#</a> 一、子串</h4>
+<ul>
+<li>通过 <code>String</code>  类中的 <code>substring</code>  方法从一个字符串中提取一个子串</li>
+<li>例如：<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token class-name">String</span> s <span class="token operator">=</span> <span class="token string">"Hello"</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token class-name">String</span> t <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//substring 方法用来计算子串的长度，（0，3）表示要复制从 0-3 的字符，即 H、e、l</span></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="二-拼接"><a class="markdownIt-Anchor" href="#二-拼接">#</a> 二、拼接</h4>
+<ul>
+<li>通过使用 <code>+</code>  实现</li>
+<li>常用方法：<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token class-name">String</span> player <span class="token operator">=</span> <span class="token string">"vango"</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token class-name">String</span> project <span class="token operator">=</span> <span class="token string">"sunflower"</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token class-name">String</span> message <span class="token operator">=</span> player <span class="token operator">+</span> project<span class="token punctuation">;</span></pre></td></tr></table></figure></li>
 <li>字符串与一个非字符串的值进行拼接，后者变成字符串</li>
-<li>可以与输出语句一起使用：<ul>
+<li>可以与输出语句一起使用：
+<ul>
 <li><code>System.out.println(&quot;result:&quot;+answer);</code></li>
 </ul>
 </li>
-<li>多个字符串放在一起，使用<code>join</code>静态方法<pre><code class="lang-java">String all = String.join(&quot;/&quot;,&quot;S&quot;,&quot;M&quot;,&quot;L&quot;);
-//打印结果： all = “S/M/L”;
-</code></pre>
-</li>
+<li>多个字符串放在一起，使用 <code>join</code>  静态方法<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token class-name">String</span> all <span class="token operator">=</span> <span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">,</span><span class="token string">"S"</span><span class="token punctuation">,</span><span class="token string">"M"</span><span class="token punctuation">,</span><span class="token string">"L"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token comment">// 打印结果： all = “S/M/L”;</span></pre></td></tr></table></figure></li>
 </ul>
-<h4 id="三、不可变字符串"><a href="#三、不可变字符串" class="headerlink" title="三、不可变字符串"></a>三、不可变字符串</h4><ul>
-<li><code>String</code>类没有通过修改字符串的方法，修改方法为：提取加拼接<ul>
-<li>例如：<pre><code class="lang-java">String s = &quot;Hello&quot;;
-s = s.substring(0,3)+&quot;p!&quot;;
-//  此时 s= help!
-</code></pre>
-</li>
+<h4 id="三-不可变字符串"><a class="markdownIt-Anchor" href="#三-不可变字符串">#</a> 三、不可变字符串</h4>
+<ul>
+<li><code>String</code>  类没有通过修改字符串的方法，修改方法为：提取加拼接
+<ul>
+<li>例如：</li>
 </ul>
-</li>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token class-name">String</span> s <span class="token operator">=</span> <span class="token string">"Hello"</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>s <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"p!"</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token comment">//  此时 s= help!</span></pre></td></tr></table></figure></li>
 </ul>
-<h4 id="四、检查字符串是否相等"><a href="#四、检查字符串是否相等" class="headerlink" title="四、检查字符串是否相等"></a>四、检查字符串是否相等</h4><ul>
-<li>方法：<code>s.equals(t)</code><ul>
-<li>s和t都为字符串，该方法的逻辑是：若s=t ,则输出<code>true</code>，否则，输出<code>false</code></li>
-<li>s可为值，也可以为名称</li>
+<h4 id="四-检查字符串是否相等"><a class="markdownIt-Anchor" href="#四-检查字符串是否相等">#</a> 四、检查字符串是否相等</h4>
+<ul>
+<li>方法： <code>s.equals(t)</code>
+<ul>
+<li>s 和 t 都为字符串，该方法的逻辑是：若 s=t , 则输出 <code>true</code> ，否则，输出 <code>false</code></li>
+<li>s 可为值，也可以为名称</li>
 </ul>
 </li>
 </ul>
-<h4 id="五、空串和NUll串"><a href="#五、空串和NUll串" class="headerlink" title="五、空串和NUll串"></a>五、空串和NUll串</h4><ul>
-<li>空串就是长度为0的字符串,占用内存</li>
-<li>null是空引用，表示一个对象的值，没有分配内存，调用null的字符串的方法会抛出空指针异常。</li>
-<li><p>空串的表示:</p>
-<pre><code class="lang-java">if(str.length()== 0 ){
-
-} 
-//或者
-if(str.equals(&quot;&quot;)){
-
-}
-</code></pre>
-</li>
-<li><p>null串表示：</p>
-<pre><code class="lang-java">if(str == null){
-
-}
-</code></pre>
-</li>
-<li><p>既不是空串，也不是null：</p>
-<pre><code class="lang-java">if(str != null &amp;&amp;str.length()){
-
-}
-</code></pre>
-</li>
+<h4 id="五-空串和null串"><a class="markdownIt-Anchor" href="#五-空串和null串">#</a> 五、空串和 NUll 串</h4>
+<ul>
+<li>空串就是长度为 0 的字符串，占用内存</li>
+<li>null 是空引用，表示一个对象的值，没有分配内存，调用 null 的字符串的方法会抛出空指针异常。</li>
+<li>空串的表示:<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">if</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token punctuation">&#125;</span> </pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token comment">// 或者</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token keyword">if</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure></li>
+<li>null 串表示：<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">if</span><span class="token punctuation">(</span>str <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure></li>
+<li>既不是空串，也不是 null：<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">if</span><span class="token punctuation">(</span>str <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span>str<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure></li>
 </ul>
-<h4 id="六、注意的点"><a href="#六、注意的点" class="headerlink" title="六、注意的点"></a>六、注意的点</h4><ul>
-<li>字符串<code>str</code>中字符的索引从0开始，范围从0到<code>str.length()</code>-1</li>
-<li>使用<code>indexOf</code>进行字符或字符串查找时，如果匹配返回位置索引，如果没有匹配结果，返回-1</li>
-<li>使用<code>substring(beginIndex,endIndex)</code>进行字符串提取时，包括<code>beginIndex</code>位置的字符，不包括<code>endIndex</code>位置的字符</li>
+<h4 id="六-注意的点"><a class="markdownIt-Anchor" href="#六-注意的点">#</a> 六、注意的点</h4>
+<ul>
+<li>字符串 <code>str</code>  中字符的索引从 0 开始，范围从 0 到 <code>str.length()</code> -1</li>
+<li>使用 <code>indexOf</code>  进行字符或字符串查找时，如果匹配返回位置索引，如果没有匹配结果，返回 - 1</li>
+<li>使用 <code>substring(beginIndex,endIndex)</code>  进行字符串提取时，包括 <code>beginIndex</code>  位置的字符，不包括 <code>endIndex</code>  位置的字符</li>
 </ul>
-<h3 id="重写与重载（-Override和-Overload）"><a href="#重写与重载（-Override和-Overload）" class="headerlink" title="重写与重载（@Override和@Overload）"></a>重写与重载（@Override和@Overload）</h3><ul>
-<li>重写———存在于继承体系中，子类实现父类方法声明的一致相同方法<ul>
-<li>访问权限：子类方法<code>&gt;=</code>父类方法</li>
+<h3 id="重写与重载override和overload"><a class="markdownIt-Anchor" href="#重写与重载override和overload">#</a> 重写与重载（@Override 和 @Overload）</h3>
+<ul>
+<li>重写 ——— 存在于继承体系中，子类实现父类方法声明的一致相同方法
+<ul>
+<li>访问权限：子类方法 <code>&gt;=</code>  父类方法</li>
 <li>返回类型：之类方法的返回类型为父类方法返回类型或子类型</li>
 </ul>
 </li>
-<li>重载———存在于同一个类，方法存在且方法名相同，但参数类型、个数、顺序至少一个不同<ul>
-<li>只有返回值不同的,不叫重载!!!</li>
-</ul>
-</li>
-</ul>
-<h3 id="Java包装类（Wrapper-Class）"><a href="#Java包装类（Wrapper-Class）" class="headerlink" title="Java包装类（Wrapper Class）"></a>Java包装类（Wrapper Class）</h3><ul>
-<li><p>包装类就是讲基本类型数据转化为对象，即八种基本类型对应八种包装类<br><img data-src="https://i.loli.net/2020/10/22/RkB5PiTptcb4SWd.png" alt="wrapperclass.png"></p>
-</li>
-<li><p><strong>自动装箱与自动拆箱</strong></p>
+<li>重载 ——— 存在于同一个类，方法存在且方法名相同，但参数类型、个数、顺序至少一个不同
 <ul>
-<li><strong>自动装箱（auto-boxing）</strong><ul>
-<li>基本类型自动封装到它相同的包装类里<pre><code class="lang-java">Integer i = 100;
-//本质上，编译器编译时为我们提供了以下代码：
-Integer i = nwe Integer(100);
-</code></pre>
-</li>
-</ul>
-</li>
-<li><strong>自动拆箱（unboxing）</strong><ul>
-<li>包装类对象自动转换为基本类型<pre><code class="lang-java">int a = new Integer(100);
-//本质上：
-int a = new integer(100).intValue();
-</code></pre>
-</li>
-</ul>
-</li>
-<li>特别的：<br>```java<br>Integer d1 = -129;<br>Integer d2 = -129;<br>System.out.println(d1==d2);<br>//输出的是false，因为在[-128,127]之间的数，按照基本类型处理</li>
+<li>只有返回值不同的，不叫重载！！！</li>
 </ul>
 </li>
 </ul>
-<h3 id="Java中基本类型和字符串之间的转换"><a href="#Java中基本类型和字符串之间的转换" class="headerlink" title="Java中基本类型和字符串之间的转换"></a>Java中基本类型和字符串之间的转换</h3><ul>
-<li><p>基本类型转字符串</p>
+<h3 id="java包装类wrapper-class"><a class="markdownIt-Anchor" href="#java包装类wrapper-class">#</a> Java 包装类（Wrapper Class）</h3>
+<ul>
+<li>
+<p>包装类就是讲基本类型数据转化为对象，即八种基本类型对应八种包装类<br>
+<img data-src="https://i.loli.net/2020/10/22/RkB5PiTptcb4SWd.png" alt="wrapperclass.png"></p>
+</li>
+<li>
+<p><strong>自动装箱与自动拆箱</strong></p>
+<ul>
+<li><strong>自动装箱（auto-boxing）</strong>
+<ul>
+<li>基本类型自动封装到它相同的包装类里<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token class-name">Integer</span> i <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token comment">// 本质上，编译器编译时为我们提供了以下代码：</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token class-name">Integer</span> i <span class="token operator">=</span> nwe <span class="token class-name">Integer</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><strong>自动拆箱（unboxing）</strong>
+<ul>
+<li>包装类对象自动转换为基本类型<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Integer</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token comment">// 本质上：</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">integer</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">intValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>特别的：<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token class-name">Integer</span> d1 <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">129</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token class-name">Integer</span> d2 <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">129</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>d1<span class="token operator">==</span>d2<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token comment">// 输出的是 false，因为在 [-128,127] 之间的数，按照基本类型处理</span></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h3 id="java中基本类型和字符串之间的转换"><a class="markdownIt-Anchor" href="#java中基本类型和字符串之间的转换">#</a> Java 中基本类型和字符串之间的转换</h3>
+<ul>
+<li>
+<p>基本类型转字符串</p>
 <p><img data-src="https://i.loli.net/2020/10/22/uWZvGMkjOQDiBJa.png" alt="switch001.png"></p>
 </li>
-<li>实例：<pre><code class="lang-java">int c = 10;
-String str1 = Integer.toString(c);
-String str2 = String.valueOf(c);
-String str3 = c+ &quot; &quot;;
-</code></pre>
-</li>
-<li><p>字符串转基本类型</p>
+<li>
+<p>实例：</p>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">int</span> c <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token class-name">String</span> str1 <span class="token operator">=</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token class-name">String</span> str2 <span class="token operator">=</span> <span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token class-name">String</span> str3 <span class="token operator">=</span> c<span class="token operator">+</span> <span class="token string">" "</span><span class="token punctuation">;</span></pre></td></tr></table></figure></li>
+<li>
+<p>字符串转基本类型</p>
 <p><img data-src="https://i.loli.net/2020/10/22/BWrCxUR4ckYzKqi.png" alt="switch002.png"></p>
 </li>
-<li>实例：<pre><code class="lang-java">String str = &quot;8&quot;;
-int d = Integer.parseInt(str);
-int e = Integer.valueOf(str);
-</code></pre>
-</li>
+<li>
+<p>实例：</p>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token class-name">String</span> str <span class="token operator">=</span> <span class="token string">"8"</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">int</span> d <span class="token operator">=</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token keyword">int</span> e <span class="token operator">=</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure></li>
 </ul>
 
       <div class="tags">
@@ -376,11 +384,11 @@ int e = Integer.valueOf(str);
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Java的一些类"><span class="toc-number">1.</span> <span class="toc-text">Java的一些类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#StringBuilder和StringBuffer的使用"><span class="toc-number">1.1.</span> <span class="toc-text">StringBuilder和StringBuffer的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#StringBuilder类的常用方法"><span class="toc-number">1.2.</span> <span class="toc-text">StringBuilder类的常用方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串"><span class="toc-number">1.3.</span> <span class="toc-text">字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、子串"><span class="toc-number">1.3.1.</span> <span class="toc-text">一、子串</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、拼接"><span class="toc-number">1.3.2.</span> <span class="toc-text">二、拼接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三、不可变字符串"><span class="toc-number">1.3.3.</span> <span class="toc-text">三、不可变字符串</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#四、检查字符串是否相等"><span class="toc-number">1.3.4.</span> <span class="toc-text">四、检查字符串是否相等</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#五、空串和NUll串"><span class="toc-number">1.3.5.</span> <span class="toc-text">五、空串和NUll串</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#六、注意的点"><span class="toc-number">1.3.6.</span> <span class="toc-text">六、注意的点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重写与重载（-Override和-Overload）"><span class="toc-number">1.4.</span> <span class="toc-text">重写与重载（@Override和@Overload）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java包装类（Wrapper-Class）"><span class="toc-number">1.5.</span> <span class="toc-text">Java包装类（Wrapper Class）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java中基本类型和字符串之间的转换"><span class="toc-number">1.6.</span> <span class="toc-text">Java中基本类型和字符串之间的转换</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#java的一些类"><span class="toc-number">1.</span> <span class="toc-text"> Java 的一些类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#stringbuilder和stringbuffer的使用"><span class="toc-number">1.1.</span> <span class="toc-text"> StringBuilder 和 StringBuffer 的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#stringbuilder类的常用方法"><span class="toc-number">1.2.</span> <span class="toc-text"> StringBuilder 类的常用方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串"><span class="toc-number">1.3.</span> <span class="toc-text"> 字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一-子串"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 一、子串</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二-拼接"><span class="toc-number">1.3.2.</span> <span class="toc-text"> 二、拼接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三-不可变字符串"><span class="toc-number">1.3.3.</span> <span class="toc-text"> 三、不可变字符串</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#四-检查字符串是否相等"><span class="toc-number">1.3.4.</span> <span class="toc-text"> 四、检查字符串是否相等</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#五-空串和null串"><span class="toc-number">1.3.5.</span> <span class="toc-text"> 五、空串和 NUll 串</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#六-注意的点"><span class="toc-number">1.3.6.</span> <span class="toc-text"> 六、注意的点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重写与重载override和overload"><span class="toc-number">1.4.</span> <span class="toc-text"> 重写与重载（@Override 和 @Overload）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#java包装类wrapper-class"><span class="toc-number">1.5.</span> <span class="toc-text"> Java 包装类（Wrapper Class）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#java中基本类型和字符串之间的转换"><span class="toc-number">1.6.</span> <span class="toc-text"> Java 中基本类型和字符串之间的转换</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li><a href="/my-blog/Java/Java%E5%A4%9A%E6%80%81/" rel="bookmark" title="Java多态">Java多态</a></li><li><a href="/my-blog/Java/Java%E6%95%B0%E7%BB%84/" rel="bookmark" title="Java数组">Java数组</a></li><li><a href="/my-blog/Java/Java%E5%B0%81%E8%A3%85/" rel="bookmark" title="Java封装">Java封装</a></li><li><a href="/my-blog/Java/Java%E6%96%B9%E6%B3%95/" rel="bookmark" title="Java方法">Java方法</a></li><li><a href="/my-blog/Java/Java%E7%BB%A7%E6%89%BF/" rel="bookmark" title="Java继承">Java继承</a></li><li><a href="/my-blog/Java/Java%E7%9A%84Stream%E6%B5%81/" rel="bookmark" title="Java的Stream流">Java的Stream流</a></li><li><a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" rel="bookmark" title="Java网络编程">Java网络编程</a></li><li class="active"><a href="/my-blog/Java/Java%E7%9A%84%E4%B8%80%E4%BA%9B%E7%B1%BB/" rel="bookmark" title="Java的一些类">Java的一些类</a></li><li><a href="/my-blog/Java/Java%E8%AF%AD%E5%8F%A5/" rel="bookmark" title="Java语句">Java语句</a></li><li><a href="/my-blog/Java/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/" rel="bookmark" title="类与对象">类与对象</a></li><li><a href="/my-blog/Java/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93/" rel="bookmark" title="多线程笔记总结">多线程笔记总结</a></li><li><a href="/my-blog/Java/JavaSE%E5%B0%8F%E7%BB%93/" rel="bookmark" title="JavaSE小结">JavaSE小结</a></li><li><a href="/my-blog/Java/Java%E5%9F%BA%E7%A1%80%E6%B7%B7%E5%90%88/" rel="bookmark" title="Java基础混合">Java基础混合</a></li><li><a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8BOV/" rel="bookmark" title="Java网络编程OV">Java网络编程OV</a></li>
+          <li><a href="/my-blog/Java/Java%E5%A4%9A%E6%80%81/" rel="bookmark" title="Java多态">Java多态</a></li><li><a href="/my-blog/Java/Java%E5%B0%81%E8%A3%85/" rel="bookmark" title="Java封装">Java封装</a></li><li><a href="/my-blog/Java/Java%E7%BB%A7%E6%89%BF/" rel="bookmark" title="Java继承">Java继承</a></li><li><a href="/my-blog/Java/Java%E7%9A%84Stream%E6%B5%81/" rel="bookmark" title="Java的Stream流">Java的Stream流</a></li><li><a href="/my-blog/Java/Java%E6%95%B0%E7%BB%84/" rel="bookmark" title="Java数组">Java数组</a></li><li><a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" rel="bookmark" title="Java网络编程">Java网络编程</a></li><li><a href="/my-blog/Java/Java%E6%96%B9%E6%B3%95/" rel="bookmark" title="Java方法">Java方法</a></li><li class="active"><a href="/my-blog/Java/Java%E7%9A%84%E4%B8%80%E4%BA%9B%E7%B1%BB/" rel="bookmark" title="Java的一些类">Java的一些类</a></li><li><a href="/my-blog/Java/Java%E8%AF%AD%E5%8F%A5/" rel="bookmark" title="Java语句">Java语句</a></li><li><a href="/my-blog/Java/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/" rel="bookmark" title="类与对象">类与对象</a></li><li><a href="/my-blog/Java/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93/" rel="bookmark" title="多线程笔记总结">多线程笔记总结</a></li><li><a href="/my-blog/Java/JavaSE%E5%B0%8F%E7%BB%93/" rel="bookmark" title="JavaSE小结">JavaSE小结</a></li><li><a href="/my-blog/Java/Java%E5%9F%BA%E7%A1%80%E6%B7%B7%E5%90%88/" rel="bookmark" title="Java基础混合">Java基础混合</a></li><li><a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8BOV/" rel="bookmark" title="Java网络编程OV">Java网络编程OV</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -498,10 +506,30 @@ int e = Integer.valueOf(str);
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/my-blog/categories/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+</div>
+
+    <span><a href="/my-blog/%E5%89%8D%E7%AB%AF/String%E5%92%8CObject%E8%A7%A3%E8%AF%BB/" title="String和Object解读">String和Object解读</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/MySQL/" title="分类于 MySQL">MySQL</a>
+</div>
+
+    <span><a href="/my-blog/MySQL/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80/" title="MySQL数据库">MySQL数据库</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8001/" title="数据通信基础01">数据通信基础01</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E8%A7%84%E5%88%92%E4%B8%8E%E8%AE%BE%E8%AE%A1/" title="网络规划与设计">网络规划与设计</a></span>
   </li>
 
       
@@ -518,46 +546,6 @@ int e = Integer.valueOf(str);
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="分类于 算法与数据结构">算法与数据结构</a>
-</div>
-
-    <span><a href="/my-blog/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/" title="算法入门教程">算法入门教程</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
-</div>
-
-    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/FusionSphere%E6%9E%B6%E6%9E%84/" title="FusionSphere架构">FusionSphere架构</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
-</div>
-
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/IP%E5%AD%90%E7%BD%91%E5%88%92%E5%88%86%E4%B8%93%E9%A2%98/" title="IP子网划分专题">IP子网划分专题</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
-</div>
-
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%9F%8E%E5%9F%9F%E7%BD%9101/" title="局域网与城域网01">局域网与城域网01</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
@@ -568,30 +556,50 @@ int e = Integer.valueOf(str);
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
+</div>
+
+    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E7%BD%91%E7%BB%9C%E8%99%9A%E6%8B%9F%E5%8C%96/" title="网络虚拟化">网络虚拟化</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
+</div>
+
+    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E5%AD%98%E5%82%A8%E8%99%9A%E6%8B%9F%E5%8C%96/" title="存储虚拟化">存储虚拟化</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
 </div>
 
-    <span><a href="/my-blog/Java/Java%E5%9F%BA%E7%A1%80%E6%B7%B7%E5%90%88/" title="Java基础混合">Java基础混合</a></span>
+    <span><a href="/my-blog/Java/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93/" title="多线程笔记总结">多线程笔记总结</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
 </div>
 
-    <span><a href="/my-blog/%E5%89%8D%E7%AB%AF/%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E5%89%8D%E7%AB%AF/" title="如何学习前端">如何学习前端</a></span>
+    <span><a href="/my-blog/Java/Java%E6%96%B9%E6%B3%95/" title="Java方法">Java方法</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E8%A7%84%E5%88%92%E4%B8%8E%E8%AE%BE%E8%AE%A1/" title="网络规划与设计">网络规划与设计</a></span>
+    <span><a href="/my-blog/Java/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/" title="类与对象">类与对象</a></span>
   </li>
 
   </ul>

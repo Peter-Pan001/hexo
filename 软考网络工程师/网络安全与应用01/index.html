@@ -146,25 +146,29 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="网络安全基础"><a href="#网络安全基础" class="headerlink" title="网络安全基础"></a>网络安全基础</h1><h2 id="网络安全威胁和漏洞类型"><a href="#网络安全威胁和漏洞类型" class="headerlink" title="网络安全威胁和漏洞类型"></a>网络安全威胁和漏洞类型</h2><ul>
-<li>窃听&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;病毒（强盗行为）</li>
-<li>假冒（假的）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;木马（间谍行为）</li>
-<li><strong>重放</strong> （真的）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;诽谤</li>
-<li><strong>流量分析</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;非授权访问</li>
-<li>破坏完整&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;拒绝服务</li>
+    <h1 id="网络安全基础"><a class="markdownIt-Anchor" href="#网络安全基础">#</a> 网络安全基础</h1>
+<h2 id="网络安全威胁和漏洞类型"><a class="markdownIt-Anchor" href="#网络安全威胁和漏洞类型">#</a> 网络安全威胁和漏洞类型</h2>
+<ul>
+<li>窃听                    病毒（强盗行为）</li>
+<li>假冒（假的）      木马（间谍行为）</li>
+<li><strong>重放</strong> （真的）     诽谤</li>
+<li><strong>流量分析</strong>             非授权访问</li>
+<li>破坏完整              拒绝服务</li>
 </ul>
 <hr>
 <ul>
-<li>漏洞：==物理、软件、不兼容等==</li>
+<li>漏洞：<mark>物理、软件、不兼容等</mark></li>
 </ul>
-<h2 id="网络安全信息数据的五大特征"><a href="#网络安全信息数据的五大特征" class="headerlink" title="网络安全信息数据的五大特征"></a>网络安全信息数据的五大特征</h2><ul>
+<h2 id="网络安全信息数据的五大特征"><a class="markdownIt-Anchor" href="#网络安全信息数据的五大特征">#</a> 网络安全信息数据的五大特征</h2>
+<ul>
 <li><strong>完整性</strong> ：信息数据完整不破坏</li>
 <li><strong>保密性</strong> ：信息数据需授权不泄露</li>
 <li><strong>可用性</strong> ：信息数据攻击后迅速恢复可用</li>
 <li><strong>不可否任性</strong> ：信息数据参与者不可否认不可抵赖，身份真实有效</li>
 <li><strong>可控性</strong> ：信息数据可以管控传播范围</li>
 </ul>
-<h2 id="网络安全基本技术"><a href="#网络安全基本技术" class="headerlink" title="网络安全基本技术"></a>网络安全基本技术</h2><ul>
+<h2 id="网络安全基本技术"><a class="markdownIt-Anchor" href="#网络安全基本技术">#</a> 网络安全基本技术</h2>
+<ul>
 <li><strong>数据加密</strong> ：数据按照规则打乱，重新组合</li>
 <li><strong>数字签名</strong> ：证明发送者签发，具有不可抵赖、完整性</li>
 <li><strong>身份认证</strong> ：用户合法性，身份真实没假冒</li>
@@ -173,47 +177,67 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <li><strong>网络隔离</strong> ：内外网隔离分开使用</li>
 </ul>
 <hr>
-<h2 id="加密算法与信息摘要"><a href="#加密算法与信息摘要" class="headerlink" title="加密算法与信息摘要"></a>加密算法与信息摘要</h2><h3 id="密码体制分类"><a href="#密码体制分类" class="headerlink" title="密码体制分类"></a>密码体制分类</h3><p><strong>一个密码系统的组成包括以下五个部分：</strong></p>
+<h2 id="加密算法与信息摘要"><a class="markdownIt-Anchor" href="#加密算法与信息摘要">#</a> 加密算法与信息摘要</h2>
+<h3 id="密码体制分类"><a class="markdownIt-Anchor" href="#密码体制分类">#</a> 密码体制分类</h3>
+<p><strong>一个密码系统的组成包括以下五个部分：</strong></p>
 <ol>
-<li><strong>明文空间M</strong> (Message) ，它是全体明文的集合。</li>
-<li><strong>密文空间C</strong> (Ciphertext)，它是全体密文的集合。</li>
-<li><strong>密钥空间K</strong> (Key) ，它是全体密钥的集合。其中每一个密钥K均由加密密钥和解密密钥组成，即:<ol>
-<li><strong>加密算法E</strong> (Encryption)，它是一族由M到C的加密变换，对于每一个具体的，则E就确定出一个具体的加密函数，把M加密成密文C。</li>
-<li><strong>解密算法D</strong> (Decryption)，它是一族由C到M的解密变换，对于每一个确定的，则D就确定出一个具体的解密函数。</li>
+<li><strong>明文空间 M</strong> (Message) ，它是全体明文的集合。</li>
+<li><strong>密文空间 C</strong> (Ciphertext)，它是全体密文的集合。</li>
+<li><strong>密钥空间 K</strong> (Key) ，它是全体密钥的集合。其中每一个密钥 K 均由加密密钥和解密密钥组成，即:
+<ol>
+<li><strong>加密算法 E</strong> (Encryption)，它是一族由 M 到 C 的加密变换，对于每一个具体的，则 E 就确定出一个具体的加密函数，把 M 加密成密文 C。</li>
+<li><strong>解密算法 D</strong> (Decryption)，它是一族由 C 到 M 的解密变换，对于每一个确定的，则 D 就确定出一个具体的解密函数。</li>
 </ol>
 </li>
 </ol>
 <ul>
-<li><p><strong>加密过程</strong></p>
+<li>
+<p><strong>加密过程</strong></p>
 <ul>
-<li>将明文变换为密文所使用的的变换函数，其变换过程即为加密<script type="math/tex; mode=display">c=E(k_1,m)</script>(其中明文为m，加密算法E，加密密钥$k_1$，密文为c)</li>
+<li>将明文变换为密文所使用的的变换函数，其变换过程即为加密</li>
 </ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>c</mi><mo>=</mo><mi>E</mi><mo stretchy="false">(</mo><msub><mi>k</mi><mn>1</mn></msub><mo separator="true">,</mo><mi>m</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">c=E(k_1,m)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">c</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03148em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">m</span><span class="mclose">)</span></span></span></span></span></p>
+<p>(其中明文为 m，加密算法 E，加密密钥<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>k</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">k_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03148em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，密文为 c)</p>
 </li>
-<li><p><strong>解密过程</strong></p>
+<li>
+<p><strong>解密过程</strong></p>
 <ul>
-<li>将密文恢复为明文的变换函数，其变换过程称为解密<script type="math/tex; mode=display">m=D(k_2,c)</script>(其中密文c，解密算法D，解密密钥$k_2$,明文m)</li>
+<li>将密文恢复为明文的变换函数，其变换过程称为解密</li>
 </ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>m</mi><mo>=</mo><mi>D</mi><mo stretchy="false">(</mo><msub><mi>k</mi><mn>2</mn></msub><mo separator="true">,</mo><mi>c</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">m=D(k_2,c)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">m</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03148em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">c</span><span class="mclose">)</span></span></span></span></span></p>
+<p>(其中密文 c，解密算法 D，解密密钥<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>k</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">k_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03148em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>, 明文 m)</p>
 </li>
 </ul>
 <p><strong>根据密钥类型不同将密码体制分为两类：</strong></p>
 <ol>
-<li><strong>对称密钥</strong> ：<ul>
-<li>==加密、解密用的是同一个密钥==，一旦密钥持有方任何一方泄露密钥——加密的内容将不再安全。</li>
+<li><strong>对称密钥</strong> ：
+<ul>
+<li><mark>加密、解密用的是同一个密钥</mark>，一旦密钥持有方任何一方泄露密钥 —— 加密的内容将不再安全。</li>
 </ul>
 </li>
-<li><strong>不对称密钥</strong> <ul>
-<li>即==公钥加密==，==加密、解密用的是不同的密钥==，一个密钥“公开”，即公钥，另一个自己秘密持有，即私钥，加密方用公钥加密，只有用私钥才能解密——史称公钥加密体系：PKI。</li>
+<li><strong>不对称密钥</strong>
+<ul>
+<li>即<mark>公钥加密</mark>，<mark>加密、解密用的是不同的密钥</mark>，一个密钥 “公开”，即公钥，另一个自己秘密持有，即私钥，加密方用公钥加密，只有用私钥才能解密 —— 史称公钥加密体系：PKI。</li>
 </ul>
 </li>
 </ol>
-<h3 id="公钥加密体制"><a href="#公钥加密体制" class="headerlink" title="公钥加密体制"></a>公钥加密体制</h3><ul>
-<li>==非对称密码体制==也叫==公钥加密技术==，该技术就是针对私钥密码体制的缺陷被提出来的。在公钥加密系统中，加密和解密是相对独立的，加密和解密会使用两把不同的密钥，加密密钥(公开密钥)向公众公开，谁都可以使用，解密密钥(秘密密钥)只有解密人自己知道，非法使用者根据公开的加密密钥无法推算出解密密钥，顾其可称为公钥密码体制。</li>
-</ul>
-<h3 id="私钥加密体制"><a href="#私钥加密体制" class="headerlink" title="私钥加密体制"></a>私钥加密体制</h3><ul>
-<li>==对称密码体制==是一种传统密码体制，也称为==私钥密码体制==。在对称加密系统中，加密和解密采用相同的密钥。因为加解密密钥相同，需要通信的双方必须选择和保存他们共同的密钥，各方必须信任对方不会将密钥泄密出去，这样就可以实现数据的机密性和完整性。<h2 id="现代信息加密技术"><a href="#现代信息加密技术" class="headerlink" title="现代信息加密技术"></a>现代信息加密技术</h2></li>
-<li><p>分为 ==对称和非对称==</p>
+<h3 id="公钥加密体制"><a class="markdownIt-Anchor" href="#公钥加密体制">#</a> 公钥加密体制</h3>
 <ul>
-<li><strong>对称</strong><ul>
+<li><mark>非对称密码体制</mark>也叫<mark>公钥加密技术</mark>，该技术就是针对私钥密码体制的缺陷被提出来的。在公钥加密系统中，加密和解密是相对独立的，加密和解密会使用两把不同的密钥，加密密钥 (公开密钥) 向公众公开，谁都可以使用，解密密钥 (秘密密钥) 只有解密人自己知道，非法使用者根据公开的加密密钥无法推算出解密密钥，顾其可称为公钥密码体制。</li>
+</ul>
+<h3 id="私钥加密体制"><a class="markdownIt-Anchor" href="#私钥加密体制">#</a> 私钥加密体制</h3>
+<ul>
+<li><mark>对称密码体制</mark>是一种传统密码体制，也称为<mark>私钥密码体制</mark>。在对称加密系统中，加密和解密采用相同的密钥。因为加解密密钥相同，需要通信的双方必须选择和保存他们共同的密钥，各方必须信任对方不会将密钥泄密出去，这样就可以实现数据的机密性和完整性。</li>
+</ul>
+<h2 id="现代信息加密技术"><a class="markdownIt-Anchor" href="#现代信息加密技术">#</a> 现代信息加密技术</h2>
+<ul>
+<li>
+<p>分为 <mark>对称和非对称</mark></p>
+<ul>
+<li><strong>对称</strong>
+<ul>
 <li>DES</li>
 <li>3DES</li>
 <li>IDEA</li>
@@ -221,179 +245,222 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <li>RC4</li>
 </ul>
 </li>
-<li><strong>非对称</strong><ul>
-<li>RSA(基于大素数分解3人)</li>
-<li>ECC(椭圆曲线密码编码学)</li>
-<li>Elgamal(基于离散对数1人)</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>DES数据加密标准</p>
-</li>
-<li>3DES三重DES加密</li>
-<li>IDEA国际数据加密算法</li>
-<li>AES高级加密标准</li>
-<li>RC4流加密算法第四版</li>
-</ul>
-<h2 id="现代信息加密技术堆成密钥总结"><a href="#现代信息加密技术堆成密钥总结" class="headerlink" title="现代信息加密技术堆成密钥总结"></a>现代信息加密技术堆成密钥总结</h2><p>  <img data-src="https://s3.ax1x.com/2021/02/25/yv7K9s.png" alt="jmjs"></p>
-<h2 id="公钥加密RSA"><a href="#公钥加密RSA" class="headerlink" title="公钥加密RSA"></a>公钥加密RSA</h2><ul>
-<li><strong>加密体系</strong> ：<ul>
-<li>==公钥加密==</li>
-<li>==私钥解密==</li>
-</ul>
-</li>
-<li><p><strong>签名体系</strong> ：</p>
+<li><strong>非对称</strong>
 <ul>
-<li>==私钥加密==</li>
-<li>==公钥解密==</li>
+<li>RSA (基于大素数分解 3 人)</li>
+<li>ECC (椭圆曲线密码编码学)</li>
+<li>Elgamal (基于离散对数 1 人)</li>
 </ul>
 </li>
-<li><p><strong>算法步骤</strong> ：</p>
+</ul>
+</li>
+<li>
+<p>DES 数据加密标准</p>
+</li>
+<li>
+<p>3DES 三重 DES 加密</p>
+</li>
+<li>
+<p>IDEA 国际数据加密算法</p>
+</li>
+<li>
+<p>AES 高级加密标准</p>
+</li>
+<li>
+<p>RC4 流加密算法第四版</p>
+</li>
+</ul>
+<h2 id="现代信息加密技术堆成密钥总结"><a class="markdownIt-Anchor" href="#现代信息加密技术堆成密钥总结">#</a> 现代信息加密技术堆成密钥总结</h2>
+<p><img data-src="https://s3.ax1x.com/2021/02/25/yv7K9s.png" alt="jmjs"></p>
+<h2 id="公钥加密rsa"><a class="markdownIt-Anchor" href="#公钥加密rsa">#</a> 公钥加密 RSA</h2>
+<ul>
+<li>
+<p><strong>加密体系</strong> ：</p>
+<ul>
+<li><mark>公钥加密</mark></li>
+<li><mark>私钥解密</mark></li>
+</ul>
+</li>
+<li>
+<p><strong>签名体系</strong> ：</p>
+<ul>
+<li><mark>私钥加密</mark></li>
+<li><mark>公钥解密</mark></li>
+</ul>
+</li>
+<li>
+<p><strong>算法步骤</strong> ：</p>
 </li>
 </ul>
 <ol>
-<li>选两个大素数p和q （大于1的自然数，除了1和它本身没有能被其他自然数整除的数）</li>
-<li>令 $n=p*q$,$z=(p-1)(q-1)$</li>
-<li>满足公式 $e*d=1(mod z)$,e公钥，d私钥<ol>
-<li>mod为模运算（即取余数）</li>
+<li>选两个大素数 p 和 q （大于 1 的自然数，除了 1 和它本身没有能被其他自然数整除的数）</li>
+<li>令 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mi>p</mi><mo>∗</mo><mi>q</mi></mrow><annotation encoding="application/x-tex">n=p*q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.6597200000000001em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">p</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span></span></span></span>,<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>=</mo><mo stretchy="false">(</mo><mi>p</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mi>q</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">z=(p-1)(q-1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">p</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span></li>
+<li>满足公式 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>∗</mo><mi>d</mi><mo>=</mo><mn>1</mn><mo stretchy="false">(</mo><mi>m</mi><mi>o</mi><mi>d</mi><mi>z</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">e*d=1(mod z)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.46528em;vertical-align:0em;"></span><span class="mord mathnormal">e</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">d</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mopen">(</span><span class="mord mathnormal">m</span><span class="mord mathnormal">o</span><span class="mord mathnormal">d</span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mclose">)</span></span></span></span>,e 公钥，d 私钥
+<ol>
+<li>mod 为模运算（即取余数）</li>
 </ol>
 </li>
 </ol>
-<h1 id="数字签名技术"><a href="#数字签名技术" class="headerlink" title="数字签名技术"></a>数字签名技术</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul>
+<h1 id="数字签名技术"><a class="markdownIt-Anchor" href="#数字签名技术">#</a> 数字签名技术</h1>
+<h2 id="概念"><a class="markdownIt-Anchor" href="#概念">#</a> 概念</h2>
+<ul>
 <li>数字签名用于确认发送者身份和消息的完整性</li>
-<li>满足三个条件：<ul>
+<li>满足三个条件：
+<ul>
 <li>接受者能够核实发送者</li>
 <li>发送者事后不能抵赖</li>
 <li>接收者不能伪造签名</li>
 </ul>
 </li>
 </ul>
-<h1 id="密钥管理技术"><a href="#密钥管理技术" class="headerlink" title="密钥管理技术"></a>密钥管理技术</h1><h2 id="密钥管理体系"><a href="#密钥管理体系" class="headerlink" title="密钥管理体系"></a>密钥管理体系</h2><ul>
-<li><strong>KMI</strong> ：密钥管理基础结构，第三方KDC，秘密物理通道，适用于封闭的内网使用</li>
+<h1 id="密钥管理技术"><a class="markdownIt-Anchor" href="#密钥管理技术">#</a> 密钥管理技术</h1>
+<h2 id="密钥管理体系"><a class="markdownIt-Anchor" href="#密钥管理体系">#</a> 密钥管理体系</h2>
+<ul>
+<li><strong>KMI</strong> ：密钥管理基础结构，第三方 KDC，秘密物理通道，适用于封闭的内网使用</li>
 <li><strong>PKI</strong> ：公钥基础结构，不依赖秘密物理通道，适用于开放的外网</li>
 <li><strong>SPK</strong> ：适用于规模化专用网</li>
-<li><strong>记忆口诀</strong>： ==男人在外面PK(I)（拼搏，指外网使用）,女人在家里KM(I)（看门，指内网使用）==</li>
+<li><strong>记忆口诀</strong>： <mark>男人在外面 PK (I)（拼搏，指外网使用）, 女人在家里 KM (I)（看门，指内网使用）</mark></li>
 </ul>
-<h1 id="虚拟专用网VPN"><a href="#虚拟专用网VPN" class="headerlink" title="虚拟专用网VPN"></a>虚拟专用网VPN</h1><h2 id="VPN技术"><a href="#VPN技术" class="headerlink" title="VPN技术"></a>VPN技术</h2><ul>
+<h1 id="虚拟专用网vpn"><a class="markdownIt-Anchor" href="#虚拟专用网vpn">#</a> 虚拟专用网 VPN</h1>
+<h2 id="vpn技术"><a class="markdownIt-Anchor" href="#vpn技术">#</a> VPN 技术</h2>
+<ul>
 <li>建立在公网上</li>
 <li>虚拟性，没有专用物理连接</li>
 <li>利用隧道协议进行加密发送私人消息</li>
-<li>专用性，非VPN用户无法访问</li>
+<li>专用性，非 VPN 用户无法访问</li>
 <li>可在不安全的网络下发送安全可靠的信息</li>
 </ul>
-<h2 id="VPN四大关键技术"><a href="#VPN四大关键技术" class="headerlink" title="VPN四大关键技术"></a>VPN四大关键技术</h2><ul>
+<h2 id="vpn四大关键技术"><a class="markdownIt-Anchor" href="#vpn四大关键技术">#</a> VPN 四大关键技术</h2>
+<ul>
 <li>隧道技术</li>
 <li>加解密技术</li>
 <li>密钥管理技术</li>
 <li>身份认证技术</li>
 </ul>
-<h2 id="VPN三种应用解决方案"><a href="#VPN三种应用解决方案" class="headerlink" title="VPN三种应用解决方案"></a>VPN三种应用解决方案</h2><ul>
-<li><strong>内联网VPN</strong><ul>
-<li>企业内部用于连通综合和分布各个LAN局域网</li>
+<h2 id="vpn三种应用解决方案"><a class="markdownIt-Anchor" href="#vpn三种应用解决方案">#</a> VPN 三种应用解决方案</h2>
+<ul>
+<li><strong>内联网 VPN</strong>
+<ul>
+<li>企业内部用于连通综合和分布各个 LAN 局域网</li>
 </ul>
 </li>
-<li><strong>外联网VPN</strong><ul>
+<li><strong>外联网 VPN</strong>
+<ul>
 <li>企业外部用于实现企业与客户、银行、供应商互通</li>
 </ul>
 </li>
-<li><strong>远程接入</strong><ul>
+<li><strong>远程接入</strong>
+<ul>
 <li>解决远程用户出差访问企业内部网络</li>
 </ul>
 </li>
 </ul>
-<h2 id="VPN在七层协议中使用的技术"><a href="#VPN在七层协议中使用的技术" class="headerlink" title="VPN在七层协议中使用的技术"></a>VPN在七层协议中使用的技术</h2><p>   <img data-src="https://s3.ax1x.com/2021/02/25/yv7lj0.png" alt="vpnjs"></p>
-<h3 id="PPP、PPTP、P2TP技术对比"><a href="#PPP、PPTP、P2TP技术对比" class="headerlink" title="PPP、PPTP、P2TP技术对比"></a>PPP、PPTP、P2TP技术对比</h3><p>   <img data-src="https://s3.ax1x.com/2021/02/25/yv7YEF.png" alt="vpnhz"></p>
-<h3 id="PPTP与L2TP的比较"><a href="#PPTP与L2TP的比较" class="headerlink" title="PPTP与L2TP的比较"></a>PPTP与L2TP的比较</h3><ol>
-<li>PPTP要求IP网络下使用，L2TP适用于各种网络</li>
-<li>PPTP只能建立一条隧道，L2TP可以建立多条</li>
-<li>PPTP包头占用6字节，L2TP占用4字节</li>
-<li>PPTP不支持隧道验证，L2TP支持隧道验证</li>
+<h2 id="vpn在七层协议中使用的技术"><a class="markdownIt-Anchor" href="#vpn在七层协议中使用的技术">#</a> VPN 在七层协议中使用的技术</h2>
+<p><img data-src="https://s3.ax1x.com/2021/02/25/yv7lj0.png" alt="vpnjs"></p>
+<h3 id="ppp-pptp-p2tp技术对比"><a class="markdownIt-Anchor" href="#ppp-pptp-p2tp技术对比">#</a> PPP、PPTP、P2TP 技术对比</h3>
+<p><img data-src="https://s3.ax1x.com/2021/02/25/yv7YEF.png" alt="vpnhz"></p>
+<h3 id="pptp与l2tp的比较"><a class="markdownIt-Anchor" href="#pptp与l2tp的比较">#</a> PPTP 与 L2TP 的比较</h3>
+<ol>
+<li>PPTP 要求 IP 网络下使用，L2TP 适用于各种网络</li>
+<li>PPTP 只能建立一条隧道，L2TP 可以建立多条</li>
+<li>PPTP 包头占用 6 字节，L2TP 占用 4 字节</li>
+<li>PPTP 不支持隧道验证，L2TP 支持隧道验证</li>
 </ol>
-<h2 id="IPSec"><a href="#IPSec" class="headerlink" title="IPSec"></a>IPSec</h2><ul>
-<li>IP安全性，在IP层通过加密与数据源验证，来保证数据报传输安全</li>
+<h2 id="ipsec"><a class="markdownIt-Anchor" href="#ipsec">#</a> IPSec</h2>
+<ul>
+<li>IP 安全性，在 IP 层通过加密与数据源验证，来保证数据报传输安全</li>
 </ul>
 <ol>
-<li>认证头AH，用于数据完整和数据源认证，防止重放</li>
-<li>封装安全负荷ESP，提供数据保密、数据完整、辅助防重放</li>
-<li>密钥交换协议IKE，生成分发密钥</li>
+<li>认证头 AH，用于数据完整和数据源认证，防止重放</li>
+<li>封装安全负荷 ESP，提供数据保密、数据完整、辅助防重放</li>
+<li>密钥交换协议 IKE，生成分发密钥</li>
 </ol>
 <ul>
-<li><strong>IPSec两种模式</strong>：<ul>
-<li>==传输模式==</li>
-<li>==隧道模式==</li>
+<li><strong>IPSec 两种模式</strong>：
+<ul>
+<li><mark>传输模式</mark></li>
+<li><mark>隧道模式</mark></li>
 </ul>
 </li>
 </ul>
-<h2 id="SSL安全套接层"><a href="#SSL安全套接层" class="headerlink" title="SSL安全套接层"></a>SSL安全套接层</h2><ul>
-<li>和TLS（传输层安全标准）是双胞胎</li>
-<li>在传输层上4.5层套接安全协议</li>
-<li>SSL/TLS称为 <strong>HTTPS</strong></li>
+<h2 id="ssl安全套接层"><a class="markdownIt-Anchor" href="#ssl安全套接层">#</a> SSL 安全套接层</h2>
+<ul>
+<li>和 TLS（传输层安全标准）是双胞胎</li>
+<li>在传输层上 4.5 层套接安全协议</li>
+<li>SSL/TLS 称为 <strong>HTTPS</strong></li>
 <li>工作在传输层</li>
 <li>对传输层、应用层都可控制</li>
 </ul>
-<h2 id="SSL与IPSec的区别"><a href="#SSL与IPSec的区别" class="headerlink" title="SSL与IPSec的区别"></a>SSL与IPSec的区别</h2><ol>
-<li><strong>IPSec在网络层建立隧道，适用于固定的VPN</strong> 。SSL是通过应用层的Web连接建立的，适用于移动用户远程访问公司的VPN</li>
-<li>IPSec==工作在网络层，灵活性小==。SSL==工作在传输层，灵活性大==</li>
+<h2 id="ssl与ipsec的区别"><a class="markdownIt-Anchor" href="#ssl与ipsec的区别">#</a> SSL 与 IPSec 的区别</h2>
+<ol>
+<li><strong>IPSec 在网络层建立隧道，适用于固定的 VPN</strong> 。SSL 是通过应用层的 Web 连接建立的，适用于移动用户远程访问公司的 VPN</li>
+<li>IPSec<mark> 工作在网络层，灵活性小</mark>。SSL<mark> 工作在传输层，灵活性大</mark></li>
 </ol>
-<h1 id="练习例题"><a href="#练习例题" class="headerlink" title="练习例题"></a>练习例题</h1><ol>
-<li><p>高级加密标准AES支持的三种密钥长度不包括 []{.gap} {.quiz}</p>
-<ul>
-<li>56 {.correct} </li>
-<li>128 {.options}</li>
-<li>192 {.options}</li>
-<li>256 {.options}<br>{.options}</li>
+<h1 id="练习例题"><a class="markdownIt-Anchor" href="#练习例题">#</a> 练习例题</h1>
+<ol>
+<li class="quiz">
+<p>高级加密标准 AES 支持的三种密钥长度不包括 <span class="gap"></span></p>
+<ul class="options">
+<li class="correct">56</li>
+<li class="options">128</li>
+<li class="options">192</li>
+<li class="options">256</li>
 </ul>
 </li>
-<li><p>在报文摘要算法MD5中，首先要进行明文分组与填充，其中分组时明文报文摘要按照 []{.gap}  位进行分组。 {.quiz}</p>
-<ul>
-<li>128 {.options}</li>
-<li>256 {.options}</li>
-<li>512 {.correct}</li>
-<li>1024 {.options}<br>{.options}</li>
+<li class="quiz">
+<p>在报文摘要算法 MD5 中，首先要进行明文分组与填充，其中分组时明文报文摘要按照 <span class="gap"></span>  位进行分组。</p>
+<ul class="options">
+<li class="options">128</li>
+<li class="options">256</li>
+<li class="correct">512</li>
+<li class="options">1024</li>
 </ul>
 </li>
-<li><p>按RSA算法，若选两个奇数P=5，Q=3，公钥E=7，则私钥为 []{.gap} {.quiz}</p>
+<li class="quiz">
+<p>按 RSA 算法，若选两个奇数 P=5，Q=3，公钥 E=7，则私钥为 <span class="gap"></span></p>
+<ul class="options">
+<li class="options">6</li>
+<li class="options">7</li>
+<li class="options">8</li>
+<li class="correct">9</li>
+</ul>
+<blockquote>
 <ul>
-<li>6 {.options}</li>
-<li>7 {.options}</li>
-<li>8 {.options}</li>
-<li>9 {.correct}<br>{.options} <blockquote>
-<ul>
-<li>n=pq=15,  z=(p-1)(q-1)=8, 根据ed=1（mod z）</li>
-<li>即ed/z余数为1，则（7*d）/8…1，即9符合</li>
+<li>n=pq=15,  z=(p-1)(q-1)=8, 根据 ed=1（mod z）</li>
+<li>即 ed/z 余数为 1，则（7*d）/8…1，即 9 符合</li>
 </ul>
 </blockquote>
 </li>
+<li class="quiz">
+<p>甲和乙要进行通信，甲对发送的信息附加了数字签名，乙收到该消息后利用   <span class="gap"></span>  验证该消息的真实性</p>
+<ul class="options">
+<li class="correct">甲的公钥</li>
+<li class="options">甲的私钥</li>
+<li class="options">乙的公钥</li>
+<li class="options">乙的私钥</li>
 </ul>
-</li>
-<li><p>甲和乙要进行通信，甲对发送的信息附加了数字签名，乙收到该消息后利用   []{.gap}  验证该消息的真实性 {.quiz}</p>
-<ul>
-<li>甲的公钥 {.correct}</li>
-<li>甲的私钥 {.options} </li>
-<li>乙的公钥 {.options} </li>
-<li>乙的私钥 {.options}<br>{.options} <blockquote>
+<blockquote>
 <ul>
 <li>数字签名：公钥解密，私钥加密</li>
 </ul>
 </blockquote>
 </li>
+<li class="quiz">
+<p>某企业打算采用 IPSec 协议构建 VPN，由于企业申请的全球 IP 地址不够，企业内部网绝对使用本地 IP 地址，这是在内外网间的路由器上应采用  <span class="gap"></span></p>
+<ul class="options">
+<li class="correct">NAT 技术</li>
+<li class="options">加密技术</li>
+<li class="options">消息鉴别技术</li>
+<li class="options">数字签名技术</li>
 </ul>
 </li>
-<li><p>某企业打算采用IPSec协议构建VPN，由于企业申请的全球IP地址不够，企业内部网绝对使用本地IP地址，这是在内外网间的路由器上应采用  []{.gap} {.quiz}  </p>
-<ul>
-<li>NAT技术 {.correct}</li>
-<li>加密技术 {.options} </li>
-<li>消息鉴别技术 {.options} </li>
-<li>数字签名技术 {.options}<br>{.options} </li>
-</ul>
-</li>
-<li><p>（续第五题），IPSec协议应采用  []{.gap} {.quiz}  </p>
-<ul>
-<li>传输模式 {.options} </li>
-<li>隧道模式 {.correct}</li>
-<li>传输和隧道混合模式 {.options} </li>
-<li>传输和隧道嵌套模式 {.options}<br>{.options} </li>
+<li class="quiz">
+<p>（续第五题），IPSec 协议应采用  <span class="gap"></span></p>
+<ul class="options">
+<li class="options">传输模式</li>
+<li class="correct">隧道模式</li>
+<li class="options">传输和隧道混合模式</li>
+<li class="options">传输和隧道嵌套模式</li>
 </ul>
 </li>
 </ol>
@@ -486,7 +553,7 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#网络安全基础"><span class="toc-number">1.</span> <span class="toc-text">网络安全基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#网络安全威胁和漏洞类型"><span class="toc-number">1.1.</span> <span class="toc-text">网络安全威胁和漏洞类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网络安全信息数据的五大特征"><span class="toc-number">1.2.</span> <span class="toc-text">网络安全信息数据的五大特征</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网络安全基本技术"><span class="toc-number">1.3.</span> <span class="toc-text">网络安全基本技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#加密算法与信息摘要"><span class="toc-number">1.4.</span> <span class="toc-text">加密算法与信息摘要</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#密码体制分类"><span class="toc-number">1.4.1.</span> <span class="toc-text">密码体制分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#公钥加密体制"><span class="toc-number">1.4.2.</span> <span class="toc-text">公钥加密体制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#私钥加密体制"><span class="toc-number">1.4.3.</span> <span class="toc-text">私钥加密体制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#现代信息加密技术"><span class="toc-number">1.5.</span> <span class="toc-text">现代信息加密技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#现代信息加密技术堆成密钥总结"><span class="toc-number">1.6.</span> <span class="toc-text">现代信息加密技术堆成密钥总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#公钥加密RSA"><span class="toc-number">1.7.</span> <span class="toc-text">公钥加密RSA</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数字签名技术"><span class="toc-number">2.</span> <span class="toc-text">数字签名技术</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#概念"><span class="toc-number">2.1.</span> <span class="toc-text">概念</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#密钥管理技术"><span class="toc-number">3.</span> <span class="toc-text">密钥管理技术</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#密钥管理体系"><span class="toc-number">3.1.</span> <span class="toc-text">密钥管理体系</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#虚拟专用网VPN"><span class="toc-number">4.</span> <span class="toc-text">虚拟专用网VPN</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#VPN技术"><span class="toc-number">4.1.</span> <span class="toc-text">VPN技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VPN四大关键技术"><span class="toc-number">4.2.</span> <span class="toc-text">VPN四大关键技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VPN三种应用解决方案"><span class="toc-number">4.3.</span> <span class="toc-text">VPN三种应用解决方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VPN在七层协议中使用的技术"><span class="toc-number">4.4.</span> <span class="toc-text">VPN在七层协议中使用的技术</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#PPP、PPTP、P2TP技术对比"><span class="toc-number">4.4.1.</span> <span class="toc-text">PPP、PPTP、P2TP技术对比</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PPTP与L2TP的比较"><span class="toc-number">4.4.2.</span> <span class="toc-text">PPTP与L2TP的比较</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IPSec"><span class="toc-number">4.5.</span> <span class="toc-text">IPSec</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SSL安全套接层"><span class="toc-number">4.6.</span> <span class="toc-text">SSL安全套接层</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SSL与IPSec的区别"><span class="toc-number">4.7.</span> <span class="toc-text">SSL与IPSec的区别</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#练习例题"><span class="toc-number">5.</span> <span class="toc-text">练习例题</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#网络安全基础"><span class="toc-number">1.</span> <span class="toc-text"> 网络安全基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#网络安全威胁和漏洞类型"><span class="toc-number">1.1.</span> <span class="toc-text"> 网络安全威胁和漏洞类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网络安全信息数据的五大特征"><span class="toc-number">1.2.</span> <span class="toc-text"> 网络安全信息数据的五大特征</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网络安全基本技术"><span class="toc-number">1.3.</span> <span class="toc-text"> 网络安全基本技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#加密算法与信息摘要"><span class="toc-number">1.4.</span> <span class="toc-text"> 加密算法与信息摘要</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#密码体制分类"><span class="toc-number">1.4.1.</span> <span class="toc-text"> 密码体制分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#公钥加密体制"><span class="toc-number">1.4.2.</span> <span class="toc-text"> 公钥加密体制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#私钥加密体制"><span class="toc-number">1.4.3.</span> <span class="toc-text"> 私钥加密体制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#现代信息加密技术"><span class="toc-number">1.5.</span> <span class="toc-text"> 现代信息加密技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#现代信息加密技术堆成密钥总结"><span class="toc-number">1.6.</span> <span class="toc-text"> 现代信息加密技术堆成密钥总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#公钥加密rsa"><span class="toc-number">1.7.</span> <span class="toc-text"> 公钥加密 RSA</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数字签名技术"><span class="toc-number">2.</span> <span class="toc-text"> 数字签名技术</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#概念"><span class="toc-number">2.1.</span> <span class="toc-text"> 概念</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#密钥管理技术"><span class="toc-number">3.</span> <span class="toc-text"> 密钥管理技术</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#密钥管理体系"><span class="toc-number">3.1.</span> <span class="toc-text"> 密钥管理体系</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#虚拟专用网vpn"><span class="toc-number">4.</span> <span class="toc-text"> 虚拟专用网 VPN</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#vpn技术"><span class="toc-number">4.1.</span> <span class="toc-text"> VPN 技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vpn四大关键技术"><span class="toc-number">4.2.</span> <span class="toc-text"> VPN 四大关键技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vpn三种应用解决方案"><span class="toc-number">4.3.</span> <span class="toc-text"> VPN 三种应用解决方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vpn在七层协议中使用的技术"><span class="toc-number">4.4.</span> <span class="toc-text"> VPN 在七层协议中使用的技术</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ppp-pptp-p2tp技术对比"><span class="toc-number">4.4.1.</span> <span class="toc-text"> PPP、PPTP、P2TP 技术对比</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pptp与l2tp的比较"><span class="toc-number">4.4.2.</span> <span class="toc-text"> PPTP 与 L2TP 的比较</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ipsec"><span class="toc-number">4.5.</span> <span class="toc-text"> IPSec</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ssl安全套接层"><span class="toc-number">4.6.</span> <span class="toc-text"> SSL 安全套接层</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ssl与ipsec的区别"><span class="toc-number">4.7.</span> <span class="toc-text"> SSL 与 IPSec 的区别</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#练习例题"><span class="toc-number">5.</span> <span class="toc-text"> 练习例题</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -608,50 +675,10 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
-</div>
-
-    <span><a href="/my-blog/%E5%89%8D%E7%AB%AF/%E6%8E%A5%E7%BB%AD%E5%89%8D%E7%AB%AFH5+CSS3/" title="接续前端H5+CSS3">接续前端H5+CSS3</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
-</div>
-
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%90%84%E9%87%8D%E7%82%B9%E5%8D%8F%E8%AE%AE%E5%8F%8A%E5%B8%A7%E6%A0%BC%E5%BC%8F%E8%AF%A6%E8%A7%A3/" title="各重点协议及帧格式详解">各重点协议及帧格式详解</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
 </div>
 
-    <span><a href="/my-blog/Java/Java%E8%AF%AD%E5%8F%A5/" title="Java语句">Java语句</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
-</div>
-
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8001/" title="数据通信基础01">数据通信基础01</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/MySQL/" title="分类于 MySQL">MySQL</a>
-</div>
-
-    <span><a href="/my-blog/MySQL/MySQL%E8%BF%9B%E9%98%B6/" title="MySQL进阶">MySQL进阶</a></span>
+    <span><a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" title="Java网络编程">Java网络编程</a></span>
   </li>
 
       
@@ -668,30 +695,40 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
-</div>
-
-    <span><a href="/my-blog/Java/Java%E7%9A%84Stream%E6%B5%81/" title="Java的Stream流">Java的Stream流</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
-</div>
-
-    <span><a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" title="Java网络编程">Java网络编程</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
 </div>
 
-    <span><a href="/my-blog/Linux/Linux%E5%BC%80%E7%AF%87/" title="Linux开篇">Linux开篇</a></span>
+    <span><a href="/my-blog/Linux/%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E4%B8%8E%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86/" title="文件权限与目录管理">文件权限与目录管理</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/network/" title="分类于 网络">网络</a>
+</div>
+
+    <span><a href="/my-blog/network/Servlet%E5%92%8CTomcat/" title="Servlet和Tomcat">Servlet和Tomcat</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/Java%E6%96%B9%E6%B3%95/" title="Java方法">Java方法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/MySQL/" title="分类于 MySQL">MySQL</a>
+</div>
+
+    <span><a href="/my-blog/MySQL/MySQL%E8%BF%9B%E9%98%B6/" title="MySQL进阶">MySQL进阶</a></span>
   </li>
 
       
@@ -701,7 +738,37 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%884%EF%BC%89/" title="华为交换实验命令（4）">华为交换实验命令（4）</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%8E%E5%BA%94%E7%94%A802/" title="网络安全与应用02">网络安全与应用02</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/Java%E8%AF%AD%E5%8F%A5/" title="Java语句">Java语句</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93/" title="多线程笔记总结">多线程笔记总结</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="分类于 算法与数据结构">算法与数据结构</a>
+</div>
+
+    <span><a href="/my-blog/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E7%BB%AA%E8%AE%BA/" title="数据结构之绪论">数据结构之绪论</a></span>
   </li>
 
   </ul>

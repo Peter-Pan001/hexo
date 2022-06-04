@@ -146,58 +146,76 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="地址解析协议ARP"><a href="#地址解析协议ARP" class="headerlink" title="地址解析协议ARP"></a>地址解析协议ARP</h1><ul>
-<li><strong>地址解析协议ARP</strong>：IP查询MAC地址，询问/回答机制。ARP缓存表、ARP欺骗、ARP病毒、代理ARP、反向RARP<br><img data-src="https://s3.ax1x.com/2021/02/24/yOlvFS.png" alt="yOlvFS.png">(<span class="exturl" data-url="aHR0cHM6Ly9pbWd0dS5jb20vaS95T2x2RlM=">https://imgtu.com/i/yOlvFS</span>)<h2 id="ARP工作原理"><a href="#ARP工作原理" class="headerlink" title="ARP工作原理"></a>ARP工作原理</h2></li>
-<li>如果主机A向主机B发送数据，首先发送端主机（主机A）检查自己的ARP缓存列表中是否有接收端主机信息，这个列表的==生存周期为300s==，如没有则广播发送<code>ARP request</code>(内容包括主机A的地址、MAC地址),接收端主机（主机B）返回<code>ARP response</code>单播（内容包括主机B的IP地址、MAC地址、主机A的IP地址、MAC地址）并将发送端主机（主机A）的IP和MAC映射关系缓存，而发送端主机（主机A）收到<code>ARP response</code>后更新其ARP缓存表，并发送数据。</li>
+    <h1 id="地址解析协议arp"><a class="markdownIt-Anchor" href="#地址解析协议arp">#</a> 地址解析协议 ARP</h1>
+<ul>
+<li><strong>地址解析协议 ARP</strong>：IP 查询 MAC 地址，询问 / 回答机制。ARP 缓存表、ARP 欺骗、ARP 病毒、代理 ARP、反向 RARP<br>
+<img data-src="https://s3.ax1x.com/2021/02/24/yOlvFS.png" alt="yOlvFS.png">(<span class="exturl" data-url="aHR0cHM6Ly9pbWd0dS5jb20vaS95T2x2RlM=">https://imgtu.com/i/yOlvFS</span>)</li>
 </ul>
-<h2 id="ARP缓存表"><a href="#ARP缓存表" class="headerlink" title="ARP缓存表"></a>ARP缓存表</h2><ul>
-<li>每台主机或路由都维护一个ARP缓存，缓存中含有最近使<br>用过的|P地址与物理地址的映射列表。</li>
-<li>ARP缓存的使用过程<ul>
-<li>主机发送叩数据报需要获取目的主机的物理地址时，首先检查它的ARP缓存，如果ARP缓存中已经存在对应的映射表项，就可以直接从缓存中获取目的主机的物理地址</li>
-<li>只有当ARP缓存中不存在对应的映射表项时，才广播ARP请求。</li>
+<h2 id="arp工作原理"><a class="markdownIt-Anchor" href="#arp工作原理">#</a> ARP 工作原理</h2>
+<ul>
+<li>如果主机 A 向主机 B 发送数据，首先发送端主机（主机 A）检查自己的 ARP 缓存列表中是否有接收端主机信息，这个列表的<mark>生存周期为 300s</mark>，如没有则广播发送 <code>ARP request</code>  (内容包括主机 A 的地址、MAC 地址), 接收端主机（主机 B）返回 <code>ARP response</code>  单播（内容包括主机 B 的 IP 地址、MAC 地址、主机 A 的 IP 地址、MAC 地址）并将发送端主机（主机 A）的 IP 和 MAC 映射关系缓存，而发送端主机（主机 A）收到 <code>ARP response</code>  后更新其 ARP 缓存表，并发送数据。</li>
+</ul>
+<h2 id="arp缓存表"><a class="markdownIt-Anchor" href="#arp缓存表">#</a> ARP 缓存表</h2>
+<ul>
+<li>每台主机或路由都维护一个 ARP 缓存，缓存中含有最近使<br>
+用过的 | P 地址与物理地址的映射列表。</li>
+<li>ARP 缓存的使用过程
+<ul>
+<li>主机发送叩数据报需要获取目的主机的物理地址时，首先检查它的 ARP 缓存，如果 ARP 缓存中已经存在对应的映射表项，就可以直接从缓存中获取目的主机的物理地址</li>
+<li>只有当 ARP 缓存中不存在对应的映射表项时，才广播 ARP 请求。</li>
 </ul>
 </li>
-<li><strong>命令</strong>：<ul>
-<li>开始————&gt;运行————&gt;cmd</li>
-<li>输入 <code>arp -a</code>或<code>-s/-d</code>等————&gt;回车</li>
-<li><code>-a</code>是解析，<code>-s</code>是绑定，<code>-d</code>是删除</li>
+<li><strong>命令</strong>：
+<ul>
+<li>开始 ————&gt; 运行 ————&gt;cmd</li>
+<li>输入  <code>arp -a</code>  或 <code>-s/-d</code>  等 ————&gt; 回车</li>
+<li><code>-a</code>  是解析， <code>-s</code>  是绑定， <code>-d</code>  是删除</li>
 </ul>
 </li>
 </ul>
-<h2 id="代理ARP"><a href="#代理ARP" class="headerlink" title="代理ARP"></a>代理ARP</h2><ul>
-<li>有路由器充当第三方代理，进行ARP请求/回答</li>
-<li>ARP协议的一个变种</li>
-<li>代理ARP(ProxyARP）代表一组主机或一个子网实现ARP</li>
-<li><p>当运行代理P的路由器收到子网1中某一主机查找子网2（被代理子网）中某一主机的|P地址的ARP请求，该路由器代表子网2回送ARP应答。达到隐藏子网的目的。</p>
+<h2 id="代理arp"><a class="markdownIt-Anchor" href="#代理arp">#</a> 代理 ARP</h2>
+<ul>
+<li>有路由器充当第三方代理，进行 ARP 请求 / 回答</li>
+<li>ARP 协议的一个变种</li>
+<li>代理 ARP (ProxyARP）代表一组主机或一个子网实现 ARP</li>
+<li>当运行代理 P 的路由器收到子网 1 中某一主机查找子网 2（被代理子网）中某一主机的 | P 地址的 ARP 请求，该路由器代表子网 2 回送 ARP 应答。达到隐藏子网的目的。</li>
+</ul>
 <p><img data-src="https://s3.ax1x.com/2021/02/24/yO1Fe0.png" alt="dlarp"></p>
-</li>
+<h2 id="反向地址解析协议rarp"><a class="markdownIt-Anchor" href="#反向地址解析协议rarp">#</a> 反向地址解析协议 RARP</h2>
+<ul>
+<li>用 MAC 查找 IP，常用于无盘工作站，设备没有硬盘，无法记录 IP，刚启动时发送一个广播，用 MAC 去获取 IP。需要一台 RARP 服务器，记录 MAC 与 IP 的对应关系</li>
 </ul>
-<h2 id="反向地址解析协议RARP"><a href="#反向地址解析协议RARP" class="headerlink" title="反向地址解析协议RARP"></a>反向地址解析协议RARP</h2><ul>
-<li>用MAC查找IP，常用于无盘工作站，设备没有硬盘，无法记录IP，刚启动时发送一个广播，用MAC去获取IP。需要一台RARP服务器，记录MAC与IP的对应关系</li>
+<h2 id="arp欺骗与arp病毒"><a class="markdownIt-Anchor" href="#arp欺骗与arp病毒">#</a> ARP 欺骗与 ARP 病毒</h2>
+<ul>
+<li>假设向某一台主机发送伪装应答报文，使其发送的信息无法到达预期的主机或到达错误的主机，这就构成了一个 ARP 欺骗。例如，网管软件获取全网 MAC 地址。病毒伪装网关 MAC 收集信息</li>
 </ul>
-<h2 id="ARP欺骗与ARP病毒"><a href="#ARP欺骗与ARP病毒" class="headerlink" title="ARP欺骗与ARP病毒"></a>ARP欺骗与ARP病毒</h2><ul>
-<li>假设向某一台主机发送伪装应答报文，使其发送的信息无法到达预期的主机或到达错误的主机，这就构成了一个ARP欺骗。例如，网管软件获取全网MAC地址。病毒伪装网关MAC收集信息</li>
-</ul>
-<h1 id="内部路由协议RIP"><a href="#内部路由协议RIP" class="headerlink" title="内部路由协议RIP"></a>内部路由协议RIP</h1><ul>
+<h1 id="内部路由协议rip"><a class="markdownIt-Anchor" href="#内部路由协议rip">#</a> 内部路由协议 RIP</h1>
+<ul>
 <li><strong>网络层路由协议：选择转发数据路径</strong></li>
-<li>路由协议<ul>
+<li>路由协议
+<ul>
 <li>静态路由协议（手动设置）</li>
-<li>动态路由协议 (自动配置)<ul>
-<li>内部网关协议（RIP）<ul>
+<li>动态路由协议 (自动配置)
+<ul>
+<li>内部网关协议（RIP）
+<ul>
 <li>链路状态路由算法（OSPF）</li>
-<li>距离矢量路由算法<ul>
+<li>距离矢量路由算法
+<ul>
 <li>RIP</li>
 <li>RIPv2</li>
 <li>IGRP （国内几乎不用）</li>
 </ul>
 </li>
-<li>增强型路由算法<ul>
+<li>增强型路由算法
+<ul>
 <li>EIGRP （国内几乎不用）</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>外部网关协议（EGP）<ul>
+<li>外部网关协议（EGP）
+<ul>
 <li>EIG</li>
 <li>BGP</li>
 </ul>
@@ -207,27 +225,33 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 </ul>
 </li>
 </ul>
-<h2 id="路由信息协议RIP"><a href="#路由信息协议RIP" class="headerlink" title="路由信息协议RIP"></a>路由信息协议RIP</h2><ul>
-<li>距离矢量算法：<ul>
-<li>计算跳数，最大15跳，==16跳不可达==</li>
-<li>30s更新、180s不存在、240s删除<ul>
-<li>一个更新周期30s,==更新、不存在、删除——口诀“168”==</li>
+<h2 id="路由信息协议rip"><a class="markdownIt-Anchor" href="#路由信息协议rip">#</a> 路由信息协议 RIP</h2>
+<ul>
+<li>
+<p>距离矢量算法：</p>
+<ul>
+<li>计算跳数，最大 15 跳，<mark>16 跳不可达</mark></li>
+<li>30s 更新、180s 不存在、240s 删除
+<ul>
+<li>一个更新周期 30s,<mark> 更新、不存在、删除 —— 口诀 “168”</mark></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>支持等费用负载均衡和链路冗余，使用UDP的520端口<ul>
+<li>
+<p>支持等费用负载均衡和链路冗余，使用 UDP 的 520 端口</p>
+<ul>
 <li><strong>负载均衡</strong> ：类似于高速公路的分流措施，把数据看成车流，传输的数据要平均分配到每条路径中</li>
 <li><strong>链路冗余</strong>：有一个数据流，两个路径，数据只走一条路径，就产生链路冗余</li>
 <li>等费用，没条路径上的开销要相同，即设备和到达时间的开销</li>
 </ul>
+<p><img data-src="https://s3.ax1x.com/2021/02/24/yO1ZYF.png" alt="rip"></p>
 </li>
 </ul>
-<p>  <img data-src="https://s3.ax1x.com/2021/02/24/yO1ZYF.png" alt="rip"></p>
-<h3 id="RIP的两个版本"><a href="#RIP的两个版本" class="headerlink" title="RIP的两个版本"></a>RIP的两个版本</h3><ul>
-<li>RIP适用于小型网络</li>
+<h3 id="rip的两个版本"><a class="markdownIt-Anchor" href="#rip的两个版本">#</a> RIP 的两个版本</h3>
+<ul>
+<li>RIP 适用于小型网络</li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -242,41 +266,45 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 </tr>
 <tr>
 <td style="text-align:center">采用广播更新</td>
-<td style="text-align:center">采用组播224.0.0.9+广播</td>
+<td style="text-align:center">采用组播 224.0.0.9 + 广播</td>
 </tr>
 <tr>
-<td style="text-align:center">周期性更新30s</td>
+<td style="text-align:center">周期性更新 30s</td>
 <td style="text-align:center">采用触发更新</td>
 </tr>
 <tr>
-<td style="text-align:center">不支持VLSM、CIDR</td>
-<td style="text-align:center">支持VLSM、CIDR</td>
+<td style="text-align:center">不支持 VLSM、CIDR</td>
+<td style="text-align:center">支持 VLSM、CIDR</td>
 </tr>
 <tr>
 <td style="text-align:center">不提供认证</td>
-<td style="text-align:center">提供明文和MD5认证</td>
+<td style="text-align:center">提供明文和 MD5 认证</td>
 </tr>
 </tbody>
 </table>
-</div>
-<h3 id="RIP防止环路的方法"><a href="#RIP防止环路的方法" class="headerlink" title="RIP防止环路的方法"></a>RIP防止环路的方法</h3><ol>
-<li><strong>最大跳数</strong>：当一个路由条目发送出去会自加1跳，跳数最大为16跳，意味着不可达</li>
+<h3 id="rip防止环路的方法"><a class="markdownIt-Anchor" href="#rip防止环路的方法">#</a> RIP 防止环路的方法</h3>
+<ol>
+<li><strong>最大跳数</strong>：当一个路由条目发送出去会自加 1 跳，跳数最大为 16 跳，意味着不可达</li>
 <li><strong>水平分割</strong>：一条路由信息不回发送给信息的来源</li>
-<li><strong>反向毒化的水平分割</strong>：把从邻居学习到的路由信息设为16跳，再发送给那个邻居，更加安全</li>
+<li><strong>反向毒化的水平分割</strong>：把从邻居学习到的路由信息设为 16 跳，再发送给那个邻居，更加安全</li>
 <li><strong>抑制定时器</strong>和 <strong>触发更新</strong>也可以防止环路</li>
 </ol>
-<h1 id="内部路由协议OSPF"><a href="#内部路由协议OSPF" class="headerlink" title="内部路由协议OSPF"></a>内部路由协议OSPF</h1><h2 id="什么是OSPF？"><a href="#什么是OSPF？" class="headerlink" title="什么是OSPF？"></a>什么是OSPF？</h2><ul>
-<li><p><strong>开放最短路径优先协议OSPF</strong>，链路状态算法，包括：连通、距离、时延、带宽等状态。==Dijkstra的SPF算法==。触发更新、分层路由，==支持大型网络==</p>
+<h1 id="内部路由协议ospf"><a class="markdownIt-Anchor" href="#内部路由协议ospf">#</a> 内部路由协议 OSPF</h1>
+<h2 id="什么是ospf"><a class="markdownIt-Anchor" href="#什么是ospf">#</a> 什么是 OSPF？</h2>
+<ul>
+<li>
+<p><strong>开放最短路径优先协议 OSPF</strong>，链路状态算法，包括：连通、距离、时延、带宽等状态。<mark>Dijkstra 的 SPF 算法</mark>。触发更新、分层路由，<mark>支持大型网络</mark></p>
 <p><img data-src="https://s3.ax1x.com/2021/02/24/yO1KyR.png" alt="ospf"></p>
 </li>
 </ul>
-<h2 id="OSPF区域类型"><a href="#OSPF区域类型" class="headerlink" title="OSPF区域类型"></a>OSPF区域类型</h2><ul>
-<li>主干区域（32位）<ul>
-<li><code>Area 0.0.0.0</code>或<code>Area 0</code>表示</li>
+<h2 id="ospf区域类型"><a class="markdownIt-Anchor" href="#ospf区域类型">#</a> OSPF 区域类型</h2>
+<ul>
+<li>主干区域（32 位）
+<ul>
+<li><code>Area 0.0.0.0</code>  或 <code>Area 0</code>  表示</li>
 </ul>
 </li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -299,16 +327,15 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 </tr>
 <tr>
 <td style="text-align:center">不完全存根区域</td>
-<td style="text-align:center">除接受本区域的路由信息，还接受类型7的</td>
+<td style="text-align:center">除接受本区域的路由信息，还接受类型 7 的</td>
 </tr>
 </tbody>
 </table>
-</div>
-<h2 id="OSPF网络类型"><a href="#OSPF网络类型" class="headerlink" title="OSPF网络类型"></a>OSPF网络类型</h2><div class="table-container">
+<h2 id="ospf网络类型"><a class="markdownIt-Anchor" href="#ospf网络类型">#</a> OSPF 网络类型</h2>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">OSPF网络类型</th>
+<th style="text-align:center">OSPF 网络类型</th>
 <th style="text-align:center">特点</th>
 <th style="text-align:center">数据传输方式</th>
 </tr>
@@ -317,40 +344,47 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <tr>
 <td style="text-align:center">点到点网络<br>(Point-to-Point)</td>
 <td style="text-align:center">有效邻居走势可以形成邻居关系</td>
-<td style="text-align:center">组播地址为<code>224.0.0.5</code>，该地址称为AIISPFRouters</td>
+<td style="text-align:center">组播地址为 <code>224.0.0.5</code> ，该地址称为 AIISPFRouters</td>
 </tr>
 <tr>
 <td style="text-align:center">点到多点网络<br>(Point-to-Multicast)</td>
-<td style="text-align:center">不选举DR/BDR，可看作是多个Point-to-Point链路的集合</td>
+<td style="text-align:center">不选举 DR/BDR，可看作是多个 Point-to-Point 链路的集合</td>
 <td style="text-align:center">单播（Unicast）</td>
 </tr>
 <tr>
 <td style="text-align:center">广播型网络<br>(Broadcast)</td>
-<td style="text-align:center">选举DR/BDR，所有路由器和DR/BDR交换信息。DR/BDR不能被抢占。广播型网络有： <strong>以太网</strong>、 <strong>TokenRing</strong> 和 <strong>FDDI</strong></td>
-<td style="text-align:center">DR、BDR组播到<code>224.0.0.5</code>，DR、BDR侦听<code>224.0.0.6</code>，该地址称为AIIDRouters</td>
+<td style="text-align:center">选举 DR/BDR，所有路由器和 DR/BDR 交换信息。DR/BDR 不能被抢占。广播型网络有： <strong>以太网</strong>、 <strong>TokenRing</strong> 和 <strong>FDDI</strong></td>
+<td style="text-align:center">DR、BDR 组播到 <code>224.0.0.5</code> ，DR、BDR 侦听 <code>224.0.0.6</code> ，该地址称为 AIIDRouters</td>
 </tr>
 <tr>
 <td style="text-align:center">非广播型<br>(NBMA)</td>
-<td style="text-align:center">没有广播，需手动指定邻居，Hello消息单播，NBMA网络有 X.25、Frame Relay和ATM</td>
+<td style="text-align:center">没有广播，需手动指定邻居，Hello 消息单播，NBMA 网络有 X.25、Frame Relay 和 ATM</td>
 <td style="text-align:center">单播</td>
 </tr>
 <tr>
 <td style="text-align:center">虚拟连接<br>(Virtual Link)</td>
-<td style="text-align:center">虚链路一旦建立，就不在发送Hello消息，通过一个非Area0连接到Area0，一个非Area0连接Area0的两个分段骨干区域</td>
+<td style="text-align:center">虚链路一旦建立，就不在发送 Hello 消息，通过一个非 Area0 连接到 Area0，一个非 Area0 连接 Area0 的两个分段骨干区域</td>
 <td style="text-align:center">单播</td>
 </tr>
 </tbody>
 </table>
-</div>
-<h2 id="OSPF路由器分类"><a href="#OSPF路由器分类" class="headerlink" title="OSPF路由器分类"></a>OSPF路由器分类</h2><ul>
-<li>BR（骨干）</li>
-<li>IR</li>
-<li>ABR</li>
-<li><p>ASBR</p>
+<h2 id="ospf路由器分类"><a class="markdownIt-Anchor" href="#ospf路由器分类">#</a> OSPF 路由器分类</h2>
+<ul>
+<li>
+<p>BR（骨干）</p>
+</li>
+<li>
+<p>IR</p>
+</li>
+<li>
+<p>ABR</p>
+</li>
+<li>
+<p>ASBR</p>
 <p><img data-src="https://s3.ax1x.com/2021/02/24/yO11w6.png" alt="ospflyq"></p>
 </li>
 </ul>
-<h2 id="OSPF五种报文类型"><a href="#OSPF五种报文类型" class="headerlink" title="OSPF五种报文类型"></a>OSPF五种报文类型</h2><div class="table-container">
+<h2 id="ospf五种报文类型"><a class="markdownIt-Anchor" href="#ospf五种报文类型">#</a> OSPF 五种报文类型</h2>
 <table>
 <thead>
 <tr>
@@ -362,47 +396,49 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <tbody>
 <tr>
 <td style="text-align:center">1</td>
-<td style="text-align:center">Hello—建立外交关系</td>
+<td style="text-align:center">Hello–建立外交关系</td>
 <td style="text-align:center">用于发现相邻的路由器</td>
 </tr>
 <tr>
 <td style="text-align:center">2</td>
-<td style="text-align:center">数据库描述DBD—外交（数据）内容</td>
+<td style="text-align:center">数据库描述 DBD–外交（数据）内容</td>
 <td style="text-align:center">表示发送者的链路状态数据库内容</td>
 </tr>
 <tr>
 <td style="text-align:center">3</td>
-<td style="text-align:center">链路状态请求LSR—向对方请求消息</td>
+<td style="text-align:center">链路状态请求 LSR–向对方请求消息</td>
 <td style="text-align:center">向对方请求链路状态信息</td>
 </tr>
 <tr>
 <td style="text-align:center">4</td>
-<td style="text-align:center">链路状态更新LSU</td>
+<td style="text-align:center">链路状态更新 LSU</td>
 <td style="text-align:center">向邻居路由器发送链路状态通告</td>
 </tr>
 <tr>
 <td style="text-align:center">5</td>
-<td style="text-align:center">链路状态LSAck</td>
+<td style="text-align:center">链路状态 LSAck</td>
 <td style="text-align:center">对链路状态更新报文的应答</td>
 </tr>
 </tbody>
 </table>
-</div>
 <ul>
-<li><strong>Hello报文</strong><ul>
-<li>默认10s（30s）更新一次，40s失效，目的地址是<code>224.0.0.5</code>所有路由器。用于发现建立邻居、还用于选出区域内的指定路由器DR和备份指定路由器BDR</li>
-<li>10s是在点对点网络中</li>
-<li>30s是在广播网络中，更新太频繁容易导致网络抖动</li>
+<li><strong>Hello 报文</strong>
+<ul>
+<li>默认 10s（30s）更新一次，40s 失效，目的地址是 <code>224.0.0.5</code>  所有路由器。用于发现建立邻居、还用于选出区域内的指定路由器 DR 和备份指定路由器 BDR</li>
+<li>10s 是在点对点网络中</li>
+<li>30s 是在广播网络中，更新太频繁容易导致网络抖动</li>
 </ul>
 </li>
 </ul>
-<h1 id="外部网关协议BGP"><a href="#外部网关协议BGP" class="headerlink" title="外部网关协议BGP"></a>外部网关协议BGP</h1><h2 id="什么是BGP？"><a href="#什么是BGP？" class="headerlink" title="什么是BGP？"></a>什么是BGP？</h2><ul>
-<li>BGP，边界网关协议。是外部网关协议，存在于不同自治系统AS之间。寻找较好的路由策略</li>
-<li>通过TCP的179端口建立连接</li>
-<li>支持VLSM和CIDR，是一种路径矢量协议</li>
-<li>目前最新版本BGP4，BGP4+支持IPV6</li>
+<h1 id="外部网关协议bgp"><a class="markdownIt-Anchor" href="#外部网关协议bgp">#</a> 外部网关协议 BGP</h1>
+<h2 id="什么是bgp"><a class="markdownIt-Anchor" href="#什么是bgp">#</a> 什么是 BGP？</h2>
+<ul>
+<li>BGP，边界网关协议。是外部网关协议，存在于不同自治系统 AS 之间。寻找较好的路由策略</li>
+<li>通过 TCP 的 179 端口建立连接</li>
+<li>支持 VLSM 和 CIDR，是一种路径矢量协议</li>
+<li>目前最新版本 BGP4，BGP4 + 支持 IPV6</li>
 </ul>
-<h2 id="BGP的四种报文"><a href="#BGP的四种报文" class="headerlink" title="BGP的四种报文"></a>BGP的四种报文</h2><div class="table-container">
+<h2 id="bgp的四种报文"><a class="markdownIt-Anchor" href="#bgp的四种报文">#</a> BGP 的四种报文</h2>
 <table>
 <thead>
 <tr>
@@ -413,139 +449,155 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <tbody>
 <tr>
 <td style="text-align:center">打开（Open）</td>
-<td style="text-align:center">建立邻居关系—建立外交</td>
+<td style="text-align:center">建立邻居关系–建立外交</td>
 </tr>
 <tr>
 <td style="text-align:center">更新（Update）</td>
-<td style="text-align:center">发送新的路由信息—更新外交信息</td>
+<td style="text-align:center">发送新的路由信息–更新外交信息</td>
 </tr>
 <tr>
 <td style="text-align:center">保持活动状态（keepalive）</td>
-<td style="text-align:center">对Open的应答/周期性的确认邻居关系—保持外交活动</td>
+<td style="text-align:center">对 Open 的应答 / 周期性的确认邻居关系–保持外交活动</td>
 </tr>
 <tr>
 <td style="text-align:center">通告（Notification）</td>
-<td style="text-align:center">报告检测到的错误—发布外交通告</td>
+<td style="text-align:center">报告检测到的错误–发布外交通告</td>
 </tr>
 </tbody>
 </table>
-</div>
 <ul>
-<li>Open建立邻居，keepalive周期性探测邻居存活</li>
-<li>每个自治系统都要选择至少一个路由器作为该自治系统的“BGP发言人”。增量更新、支持认证。可靠传输、防止环路。自治通信、策略选路。支持无类、支持聚合</li>
+<li>Open 建立邻居，keepalive 周期性探测邻居存活</li>
+<li>每个自治系统都要选择至少一个路由器作为该自治系统的 “BGP 发言人”。增量更新、支持认证。可靠传输、防止环路。自治通信、策略选路。支持无类、支持聚合</li>
 </ul>
-<h1 id="域名与地址"><a href="#域名与地址" class="headerlink" title="域名与地址"></a>域名与地址</h1><h2 id="域名系统DNS"><a href="#域名系统DNS" class="headerlink" title="域名系统DNS"></a>域名系统DNS</h2><ul>
-<li><strong>域名系统DNS</strong> (DomainNameSystem）是Internet上解决网上机器命名的一种系统，==采用C/S模式服务==。它作为将域名和IP地址相互映射的一个分布式数据库，能够使人更方便地访问互联网。</li>
-<li>域名系统==使用TCP和UDP端口53==，==对于每一级域名长度的限制是63个字符，域名总长度则不能超过253个字符==。</li>
+<h1 id="域名与地址"><a class="markdownIt-Anchor" href="#域名与地址">#</a> 域名与地址</h1>
+<h2 id="域名系统dns"><a class="markdownIt-Anchor" href="#域名系统dns">#</a> 域名系统 DNS</h2>
+<ul>
+<li><strong>域名系统 DNS</strong> (DomainNameSystem）是 Internet 上解决网上机器命名的一种系统，<mark>采用 C/S 模式服务</mark>。它作为将域名和 IP 地址相互映射的一个分布式数据库，能够使人更方便地访问互联网。</li>
+<li>域名系统<mark>使用 TCP 和 UDP 端口 53</mark>，<mark>对于每一级域名长度的限制是 63 个字符，域名总长度则不能超过 253 个字符</mark>。</li>
 </ul>
-<h3 id="名称解析方法"><a href="#名称解析方法" class="headerlink" title="名称解析方法"></a>名称解析方法</h3><ul>
-<li><strong>Hosts表</strong> ：是一个没有扩展名的文本文件。其中存放一些常用的主机域名和其对应的IP地址映<br>射，文件中每一行对应一个条目。</li>
-<li><strong>NIS系统</strong> ：由sun公司开发的域名系统。用于中小型系统。</li>
-<li><strong>DNS系统</strong> ：规定域名中的标号由英文字母和数字组合而成，每个标号不能超过63个字符，为方便记忆一般不超过12个字符。</li>
+<h3 id="名称解析方法"><a class="markdownIt-Anchor" href="#名称解析方法">#</a> 名称解析方法</h3>
+<ul>
+<li><strong>Hosts 表</strong> ：是一个没有扩展名的文本文件。其中存放一些常用的主机域名和其对应的 IP 地址映<br>
+射，文件中每一行对应一个条目。</li>
+<li><strong>NIS 系统</strong> ：由 sun 公司开发的域名系统。用于中小型系统。</li>
+<li><strong>DNS 系统</strong> ：规定域名中的标号由英文字母和数字组合而成，每个标号不能超过 63 个字符，为方便记忆一般不超过 12 个字符。</li>
 </ul>
-<h3 id="DNS查询过程"><a href="#DNS查询过程" class="headerlink" title="DNS查询过程"></a>DNS查询过程</h3><ol>
-<li><strong>本地解析</strong> ：客户机平时查询得到的DNS记录均保存在本地DNS缓存中，当有进程提出DNS查询时，DNS客户端先使用本地缓存的信息来解析，如果可以解析则直接应答查询而不必向DNS服务器查询。==本地解析有两个来源：Hosts表和DNS缓存==。</li>
-<li><strong>直接解析</strong> ：如果本地解析不能找到DNS信息，则客户端向其所设定的DNS服务器发出查询请求，服务器收到请求后先检查本地配置区域中是否有所需查询信息，如果有则作出应答，如果没有，服务器则检能否通过其缓存的查询信息来解析，如果有则作出应答。</li>
-<li><strong>递归解析</strong> ：如果DNS服务器不能解析该查询信息，则服务器向上级DNS服务器查询，直到查询到该信息为止。（服务器默认配置）</li>
-<li><strong>迭代解析</strong> ：如果DNS服务器不能解析该查询信息，服务器不会向上级DNS服务器查询该信息，而是将上级DNS服务器地址告诉给客户端，有客户端向上级DNS服务器查询该信息</li>
+<h3 id="dns查询过程"><a class="markdownIt-Anchor" href="#dns查询过程">#</a> DNS 查询过程</h3>
+<ol>
+<li><strong>本地解析</strong> ：客户机平时查询得到的 DNS 记录均保存在本地 DNS 缓存中，当有进程提出 DNS 查询时，DNS 客户端先使用本地缓存的信息来解析，如果可以解析则直接应答查询而不必向 DNS 服务器查询。<mark>本地解析有两个来源：Hosts 表和 DNS 缓存</mark>。</li>
+<li><strong>直接解析</strong> ：如果本地解析不能找到 DNS 信息，则客户端向其所设定的 DNS 服务器发出查询请求，服务器收到请求后先检查本地配置区域中是否有所需查询信息，如果有则作出应答，如果没有，服务器则检能否通过其缓存的查询信息来解析，如果有则作出应答。</li>
+<li><strong>递归解析</strong> ：如果 DNS 服务器不能解析该查询信息，则服务器向上级 DNS 服务器查询，直到查询到该信息为止。（服务器默认配置）</li>
+<li><strong>迭代解析</strong> ：如果 DNS 服务器不能解析该查询信息，服务器不会向上级 DNS 服务器查询该信息，而是将上级 DNS 服务器地址告诉给客户端，有客户端向上级 DNS 服务器查询该信息</li>
 </ol>
-<h3 id="DNS对象类型与资源记录："><a href="#DNS对象类型与资源记录：" class="headerlink" title="DNS对象类型与资源记录："></a>DNS对象类型与资源记录：</h3><ul>
-<li><strong>A</strong> ：列出域名到IP地址的映射。</li>
+<h3 id="dns对象类型与资源记录"><a class="markdownIt-Anchor" href="#dns对象类型与资源记录">#</a> DNS 对象类型与资源记录：</h3>
+<ul>
+<li><strong>A</strong> ：列出域名到 IP 地址的映射。</li>
 <li><strong>PTR</strong> ：将地址转换为域名。</li>
-<li><strong>NS</strong> ：指明区域中的所有域名服务器(包括主域名服务器和辅助域名服务器)</li>
+<li><strong>NS</strong> ：指明区域中的所有域名服务器 (包括主域名服务器和辅助域名服务器)</li>
 <li><strong>MX</strong> ：邮件交换。</li>
 <li><strong>CNAME</strong> ：允许多个域名指向同一台服务器。</li>
-<li><strong>SOA</strong> ：指明区域中的主域名服务器。<h1 id="练习例题"><a href="#练习例题" class="headerlink" title="练习例题"></a>练习例题</h1></li>
+<li><strong>SOA</strong> ：指明区域中的主域名服务器。</li>
 </ul>
+<h1 id="练习例题"><a class="markdownIt-Anchor" href="#练习例题">#</a> 练习例题</h1>
 <ol>
-<li><p>ARP协议的作用是 []{.gap} {.quiz}</p>
-<ul>
-<li>由MAC地址求IP地址 {.options}</li>
-<li>由IP地址求MAC地址 {.correct}</li>
-<li>由IP地址查域名 {.options}</li>
-<li>由域名查IP地址 {.options}<br>{.options}</li>
+<li class="quiz">
+<p>ARP 协议的作用是 <span class="gap"></span></p>
+<ul class="options">
+<li class="options">由 MAC 地址求 IP 地址</li>
+<li class="correct">由 IP 地址求 MAC 地址</li>
+<li class="options">由 IP 地址查域名</li>
+<li class="options">由域名查 IP 地址</li>
 </ul>
 </li>
-<li><p>ARP协议数据单元封装在 []{.gap} 中传送 {.quiz}</p>
-<ul>
-<li>IP分组 {.options}</li>
-<li>以太帧 {.correct}</li>
-<li>TCP段 {.options}</li>
-<li>UDP报文 {.options}<br>{.options}</li>
+<li class="quiz">
+<p>ARP 协议数据单元封装在 <span class="gap"></span> 中传送</p>
+<ul class="options">
+<li class="options">IP 分组</li>
+<li class="correct">以太帧</li>
+<li class="options">TCP 段</li>
+<li class="options">UDP 报文</li>
 </ul>
 </li>
-<li><p>ARP请求是采用 []{.gap} 方式发送的 {.quiz}</p>
-<ul>
-<li>单播 {.options}</li>
-<li>组播 {.options}</li>
-<li>广播 {.correct}</li>
-<li>点播 {.options}<br>{.options}<blockquote>
+<li class="quiz">
+<p>ARP 请求是采用 <span class="gap"></span> 方式发送的</p>
+<ul class="options">
+<li class="options">单播</li>
+<li class="options">组播</li>
+<li class="correct">广播</li>
+<li class="options">点播</li>
+</ul>
+<blockquote>
 <ul>
 <li>广播发送，单播响应</li>
 </ul>
 </blockquote>
 </li>
+<li class="quiz">
+<p>为了解决 RIP 协议形成环路的问题，可以采用多种方法，下面列出的方法中效果最好的是 <span class="gap"></span></p>
+<ul class="options">
+<li class="options">不用把从一个邻居学习到的路由发送给那个邻居</li>
+<li class="options">经常检查邻居路由器状态，以便及时发现断开的链路</li>
+<li class="correct">把从邻居学习到的路由设置为无限大，然后发送给那个邻居</li>
+<li class="options">缩短路由更新周期，以便出现链路失效时尽快达到路由无限大</li>
 </ul>
 </li>
-<li><p>为了解决RIP协议形成环路的问题，可以采用多种方法，下面列出的方法中效果最好的是 []{.gap} {.quiz}</p>
-<ul>
-<li>不用把从一个邻居学习到的路由发送给那个邻居 {.options}</li>
-<li>经常检查邻居路由器状态，以便及时发现断开的链路 {.options}</li>
-<li>把从邻居学习到的路由设置为无限大，然后发送给那个邻居 {.correct}</li>
-<li>缩短路由更新周期，以便出现链路失效时尽快达到路由无限大 {.options}<br>{.options}</li>
+<li class="quiz">
+<p>OSPF 网络可以划分成多个区域，下面对区域描述错误的是 <span class="gap"></span></p>
+<ul class="options">
+<li class="options">区域可以被赋予 0-65535 中的任何编号</li>
+<li class="correct">单域 OSPF 网络必须配置为区域 1</li>
+<li class="options">区域 0 被称为主干网</li>
+<li class="options">分层的 OSPF 网络必须划分为多个区域</li>
 </ul>
-</li>
-<li><p>OSPF网络可以划分成多个区域，下面对区域描述错误的是 []{.gap} {.quiz}</p>
+<blockquote>
 <ul>
-<li>区域可以被赋予0-65535中的任何编号 {.options}</li>
-<li>单域OSPF网络必须配置为区域1 {.correct}</li>
-<li>区域0被称为主干网 {.options}</li>
-<li>分层的OSPF网络必须划分为多个区域 {.options}<br>{.options}<blockquote>
-<ul>
-<li>配置为区域0，必须的</li>
+<li>配置为区域 0，必须的</li>
 </ul>
 </blockquote>
 </li>
+<li class="quiz">
+<p>在 BGP4 协议中， <span class="gap"></span> 报文给出了新的路由信息 </p>
+<ul class="options">
+<li class="options">打开</li>
+<li class="correct">更新</li>
+<li class="options">保持活动</li>
+<li class="options">通告</li>
 </ul>
 </li>
-<li><p>在BGP4协议中， []{.gap} 报文给出了新的路由信息  {.quiz}</p>
-<ul>
-<li>打开 {.options}</li>
-<li>更新 {.correct}</li>
-<li>保持活动 {.options}</li>
-<li>通告 {.options}<br>{.options}</li>
+<li class="quiz">
+<p>边界网关协议 BGP4 被称为路径矢量协议，它传送的路由信息是由一个地址前缀后跟 <span class="gap"></span>  组成</p>
+<ul class="options">
+<li class="options">一串 IP 地址</li>
+<li class="correct">一串自治系统编号</li>
+<li class="options">一串路由器编号</li>
+<li class="options">一串子网地址</li>
 </ul>
 </li>
-<li><p>边界网关协议BGP4被称为路径矢量协议，它传送的路由信息是由一个地址前缀后跟 []{.gap}  组成 {.quiz}</p>
-<ul>
-<li>一串IP地址 {.options}</li>
-<li>一串自治系统编号 {.correct}</li>
-<li>一串路由器编号 {.options}</li>
-<li>一串子网地址 {.options}<br>{.options}</li>
+<li class="quiz">
+<p>BGP4 的优点是 <span class="gap"></span></p>
+<ul class="options">
+<li class="correct">防止域间路由循环</li>
+<li class="options">可以及时更新路由</li>
+<li class="options">便于发现最短通路</li>
+<li class="options">考虑了多种路由度量因素</li>
 </ul>
 </li>
-<li><p>BGP4的优点是 []{.gap} {.quiz}</p>
-<ul>
-<li>防止域间路由循环 {.correct}</li>
-<li>可以及时更新路由 {.options}</li>
-<li>便于发现最短通路 {.options}</li>
-<li>考虑了多种路由度量因素 {.options}<br>{.options}</li>
+<li class="quiz">
+<p>OSPF 协议将其管理的网络划分为不同类型的若干区域，其中标准区域的特点是 <span class="gap"></span></p>
+<ul class="options">
+<li class="options">不接受本地 AS 之外的路由信息，也不接受其他区域的路由汇总信息</li>
+<li class="options">不接受本地 AS 之外的路由信息，对本地 AS 之外的目标采用默认路由</li>
+<li class="correct">可以就接收任何链路更新信息和路由汇总信息</li>
+<li class="options">可以学习其他 AS 的利欲熏心，对本地 AS 中的其他区域采用默认路由</li>
 </ul>
 </li>
-<li><p>OSPF协议将其管理的网络划分为不同类型的若干区域，其中标准区域的特点是 []{.gap} {.quiz}</p>
-<ul>
-<li>不接受本地AS之外的路由信息，也不接受其他区域的路由汇总信息 {.options}</li>
-<li>不接受本地AS之外的路由信息，对本地AS之外的目标采用默认路由 {.options}</li>
-<li>可以就接收任何链路更新信息和路由汇总信息 {.correct}</li>
-<li>可以学习其他AS的利欲熏心，对本地AS中的其他区域采用默认路由 {.options}<br>{.options}</li>
-</ul>
-</li>
-<li><p>OSPF协议将其管理的网络划分为不同类型的若干区域，存根区域（stub）的特点是 []{.gap} {.quiz}</p>
-<ul>
-<li>不接受本地AS之外的路由信息，也不接受其他区域的路由汇总信息 {.correct}</li>
-<li>不接受本地AS之外的路由信息，对本地AS之外的目标采用默认路由 {.options}</li>
-<li>可以就接收任何链路更新信息和路由汇总信息 {.options}</li>
-<li>可以学习其他AS的利欲熏心，对本地AS中的其他区域采用默认路由 {.options}<br>{.options}</li>
+<li class="quiz">
+<p>OSPF 协议将其管理的网络划分为不同类型的若干区域，存根区域（stub）的特点是 <span class="gap"></span></p>
+<ul class="options">
+<li class="correct">不接受本地 AS 之外的路由信息，也不接受其他区域的路由汇总信息</li>
+<li class="options">不接受本地 AS 之外的路由信息，对本地 AS 之外的目标采用默认路由</li>
+<li class="options">可以就接收任何链路更新信息和路由汇总信息</li>
+<li class="options">可以学习其他 AS 的利欲熏心，对本地 AS 中的其他区域采用默认路由</li>
 </ul>
 </li>
 </ol>
@@ -638,7 +690,7 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#地址解析协议ARP"><span class="toc-number">1.</span> <span class="toc-text">地址解析协议ARP</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ARP工作原理"><span class="toc-number">1.1.</span> <span class="toc-text">ARP工作原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ARP缓存表"><span class="toc-number">1.2.</span> <span class="toc-text">ARP缓存表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代理ARP"><span class="toc-number">1.3.</span> <span class="toc-text">代理ARP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#反向地址解析协议RARP"><span class="toc-number">1.4.</span> <span class="toc-text">反向地址解析协议RARP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ARP欺骗与ARP病毒"><span class="toc-number">1.5.</span> <span class="toc-text">ARP欺骗与ARP病毒</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#内部路由协议RIP"><span class="toc-number">2.</span> <span class="toc-text">内部路由协议RIP</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#路由信息协议RIP"><span class="toc-number">2.1.</span> <span class="toc-text">路由信息协议RIP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#RIP的两个版本"><span class="toc-number">2.1.1.</span> <span class="toc-text">RIP的两个版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RIP防止环路的方法"><span class="toc-number">2.1.2.</span> <span class="toc-text">RIP防止环路的方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#内部路由协议OSPF"><span class="toc-number">3.</span> <span class="toc-text">内部路由协议OSPF</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是OSPF？"><span class="toc-number">3.1.</span> <span class="toc-text">什么是OSPF？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OSPF区域类型"><span class="toc-number">3.2.</span> <span class="toc-text">OSPF区域类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OSPF网络类型"><span class="toc-number">3.3.</span> <span class="toc-text">OSPF网络类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OSPF路由器分类"><span class="toc-number">3.4.</span> <span class="toc-text">OSPF路由器分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OSPF五种报文类型"><span class="toc-number">3.5.</span> <span class="toc-text">OSPF五种报文类型</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#外部网关协议BGP"><span class="toc-number">4.</span> <span class="toc-text">外部网关协议BGP</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是BGP？"><span class="toc-number">4.1.</span> <span class="toc-text">什么是BGP？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BGP的四种报文"><span class="toc-number">4.2.</span> <span class="toc-text">BGP的四种报文</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#域名与地址"><span class="toc-number">5.</span> <span class="toc-text">域名与地址</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#域名系统DNS"><span class="toc-number">5.1.</span> <span class="toc-text">域名系统DNS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#名称解析方法"><span class="toc-number">5.1.1.</span> <span class="toc-text">名称解析方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DNS查询过程"><span class="toc-number">5.1.2.</span> <span class="toc-text">DNS查询过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DNS对象类型与资源记录："><span class="toc-number">5.1.3.</span> <span class="toc-text">DNS对象类型与资源记录：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#练习例题"><span class="toc-number">6.</span> <span class="toc-text">练习例题</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#地址解析协议arp"><span class="toc-number">1.</span> <span class="toc-text"> 地址解析协议 ARP</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#arp工作原理"><span class="toc-number">1.1.</span> <span class="toc-text"> ARP 工作原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#arp缓存表"><span class="toc-number">1.2.</span> <span class="toc-text"> ARP 缓存表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代理arp"><span class="toc-number">1.3.</span> <span class="toc-text"> 代理 ARP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#反向地址解析协议rarp"><span class="toc-number">1.4.</span> <span class="toc-text"> 反向地址解析协议 RARP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#arp欺骗与arp病毒"><span class="toc-number">1.5.</span> <span class="toc-text"> ARP 欺骗与 ARP 病毒</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#内部路由协议rip"><span class="toc-number">2.</span> <span class="toc-text"> 内部路由协议 RIP</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#路由信息协议rip"><span class="toc-number">2.1.</span> <span class="toc-text"> 路由信息协议 RIP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#rip的两个版本"><span class="toc-number">2.1.1.</span> <span class="toc-text"> RIP 的两个版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rip防止环路的方法"><span class="toc-number">2.1.2.</span> <span class="toc-text"> RIP 防止环路的方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#内部路由协议ospf"><span class="toc-number">3.</span> <span class="toc-text"> 内部路由协议 OSPF</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是ospf"><span class="toc-number">3.1.</span> <span class="toc-text"> 什么是 OSPF？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ospf区域类型"><span class="toc-number">3.2.</span> <span class="toc-text"> OSPF 区域类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ospf网络类型"><span class="toc-number">3.3.</span> <span class="toc-text"> OSPF 网络类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ospf路由器分类"><span class="toc-number">3.4.</span> <span class="toc-text"> OSPF 路由器分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ospf五种报文类型"><span class="toc-number">3.5.</span> <span class="toc-text"> OSPF 五种报文类型</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#外部网关协议bgp"><span class="toc-number">4.</span> <span class="toc-text"> 外部网关协议 BGP</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是bgp"><span class="toc-number">4.1.</span> <span class="toc-text"> 什么是 BGP？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bgp的四种报文"><span class="toc-number">4.2.</span> <span class="toc-text"> BGP 的四种报文</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#域名与地址"><span class="toc-number">5.</span> <span class="toc-text"> 域名与地址</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#域名系统dns"><span class="toc-number">5.1.</span> <span class="toc-text"> 域名系统 DNS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#名称解析方法"><span class="toc-number">5.1.1.</span> <span class="toc-text"> 名称解析方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dns查询过程"><span class="toc-number">5.1.2.</span> <span class="toc-text"> DNS 查询过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dns对象类型与资源记录"><span class="toc-number">5.1.3.</span> <span class="toc-text"> DNS 对象类型与资源记录：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#练习例题"><span class="toc-number">6.</span> <span class="toc-text"> 练习例题</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -763,47 +815,37 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%884%EF%BC%89/" title="华为交换实验命令（4）">华为交换实验命令（4）</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9104/" title="网络互联与互联网04">网络互联与互联网04</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+<a href="/my-blog/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="分类于 算法与数据结构">算法与数据结构</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8F%E8%AE%AE%E5%90%8D%E7%A7%B0%E4%B8%8E%E7%AE%80%E4%BB%8B/" title="协议名称与简介">协议名称与简介</a></span>
+    <span><a href="/my-blog/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/" title="算法入门教程">算法入门教程</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8001/" title="数据通信基础01">数据通信基础01</a></span>
+    <span><a href="/my-blog/Java/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93/" title="多线程笔记总结">多线程笔记总结</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/" title="计算机硬件基础(部分组成原理)">计算机硬件基础(部分组成原理)</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
-</div>
-
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E6%A6%82%E8%AE%BA/" title="计算机基础概论">计算机基础概论</a></span>
+    <span><a href="/my-blog/Java/Java%E7%9A%84Stream%E6%B5%81/" title="Java的Stream流">Java的Stream流</a></span>
   </li>
 
       
@@ -820,29 +862,10 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+<a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%97%A0%E7%BA%BF%E9%80%9A%E4%BF%A1%E7%BD%91/" title="无线通信网">无线通信网</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/my-blog/%E7%BD%91%E7%BB%9C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86DNS%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="配置与管理DNS服务器">配置与管理DNS服务器</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="分类于 算法与数据结构">算法与数据结构</a>
-</div>
-
-    <span><a href="/my-blog/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E7%BB%AA%E8%AE%BA/" title="数据结构之绪论">数据结构之绪论</a></span>
+    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E8%AE%A1%E7%AE%97%E8%99%9A%E6%8B%9F%E5%8C%96/" title="计算虚拟化简介">计算虚拟化简介</a></span>
   </li>
 
       
@@ -852,7 +875,37 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%9F%8E%E5%9F%9F%E7%BD%9101/" title="局域网与城域网01">局域网与城域网01</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%884%EF%BC%89/" title="华为交换实验命令（4）">华为交换实验命令（4）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%8E%E5%BA%94%E7%94%A801/" title="网络安全与应用01">网络安全与应用01</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B9%BF%E5%9F%9F%E9%80%9A%E4%BF%A1%E7%BD%91/" title="广域通信网">广域通信网</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/" title="类与对象">类与对象</a></span>
   </li>
 
   </ul>

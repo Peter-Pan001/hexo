@@ -7,19 +7,19 @@
         <language>zh-CN</language>
         <pubDate>Tue, 27 Oct 2020 21:33:03 +0800</pubDate>
         <lastBuildDate>Tue, 27 Oct 2020 21:33:03 +0800</lastBuildDate>
-        <category>Java</category>
-        <category>linux</category>
-        <category>Linux</category>
-        <category>network</category>
         <category>MySQL</category>
-        <category>云计算</category>
-        <category>JavaScript</category>
         <category>git、github</category>
-        <category>html</category>
         <category>css</category>
+        <category>network</category>
+        <category>html</category>
+        <category>JavaScript</category>
+        <category>linux</category>
         <category>前端</category>
-        <category>数据分析</category>
+        <category>Linux</category>
         <category>算法与数据结构</category>
+        <category>云计算</category>
+        <category>数据分析</category>
+        <category>Java</category>
         <category>软考网络工程师</category>
         <item>
             <guid isPermalink="true">https://peter-pan001.github.io/my-blog/%E5%89%8D%E7%AB%AF/String%E5%92%8CObject%E8%A7%A3%E8%AF%BB/</guid>
@@ -27,31 +27,54 @@
             <link>https://peter-pan001.github.io/my-blog/%E5%89%8D%E7%AB%AF/String%E5%92%8CObject%E8%A7%A3%E8%AF%BB/</link>
             <category>JavaScript</category>
             <pubDate>Tue, 27 Oct 2020 21:33:03 +0800</pubDate>
-            <description><![CDATA[ &lt;h2 id=&#34;String和Object解读&#34;&gt;&lt;a href=&#34;#String和Object解读&#34; class=&#34;headerlink&#34; title=&#34;String和Object解读&#34;&gt;&lt;/a&gt;String和Object解读&lt;/h2&gt;&lt;h3 id=&#34;String-类型&#34;&gt;&lt;a href=&#34;#String-类型&#34; class=&#34;headerlink&#34; title=&#34;String 类型&#34;&gt;&lt;/a&gt;String 类型&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;字符串可用单引号或双引号表示，即&lt;br&gt;```javaScript&lt;br&gt;var fomeName = “Turing”;&lt;br&gt;var NuseName = ‘Kavane’;&lt;h4 id=&#34;字符字面量&#34;&gt;&lt;a href=&#34;#字符字面量&#34; class=&#34;headerlink&#34; title=&#34;字符字面量&#34;&gt;&lt;/a&gt;字符字面量&lt;/h4&gt;&lt;/li&gt;
-&lt;li&gt;一些特殊的字符字面量，可采用转义字符，表示非打印字符，此处规则与java的一致&lt;h4 id=&#34;字符串特点&#34;&gt;&lt;a href=&#34;#字符串特点&#34; class=&#34;headerlink&#34; title=&#34;字符串特点&#34;&gt;&lt;/a&gt;字符串特点&lt;/h4&gt;&lt;/li&gt;
-&lt;li&gt;在ECMAScript中字符串是&lt;strong&gt;不可变的&lt;/strong&gt;，要销毁掉原字符串，必须用另一个包含该原字符串的新字符串表示&lt;pre&gt;&lt;code class=&#34;lang-javaScript&#34;&gt;  var older =&amp;quot;Open&amp;quot;;
-  older = older+&amp;quot;Stack&amp;quot;;
+            <description><![CDATA[ &lt;h2 id=&#34;string和object解读&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#string和object解读&#34;&gt;#&lt;/a&gt; String 和 Object 解读&lt;/h2&gt;
+&lt;h3 id=&#34;string-类型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#string-类型&#34;&gt;#&lt;/a&gt; String 类型&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;字符串可用单引号或双引号表示，即&lt;pre&gt;&lt;code class=&#34;language-javaScript&#34;&gt;var fomeName = &amp;quot;Turing&amp;quot;;
+var NuseName = &#39;Kavane&#39;;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;转换为字符串&#34;&gt;&lt;a href=&#34;#转换为字符串&#34; class=&#34;headerlink&#34; title=&#34;转换为字符串&#34;&gt;&lt;/a&gt;转换为字符串&lt;/h4&gt;&lt;/li&gt;
-&lt;li&gt;方法一：使用&lt;code&gt;toString()&lt;/code&gt;方法&lt;pre&gt;&lt;code class=&#34;lang-javaScript&#34;&gt;  var age = 18;
-  var ageAsString = age.toString();//字符串：&amp;quot;18&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;方法二：使用&lt;code&gt;String()&lt;/code&gt;方法&lt;br&gt;  ```javaScript&lt;br&gt;  var info1 = true;&lt;br&gt;  var info2;&lt;br&gt;  var info3 = 10;&lt;/p&gt;
-&lt;p&gt;  alert(String(info1));//“true”&lt;br&gt;  alert(String(info2));//“undefined”&lt;br&gt;  alert(String(info3));//“10”&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;Object类型&#34;&gt;&lt;a href=&#34;#Object类型&#34; class=&#34;headerlink&#34; title=&#34;Object类型&#34;&gt;&lt;/a&gt;Object类型&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;ECMAScript中的对象其实就是一组数据和功能的集合。对象可以通过执行new操作符后跟要创建的对象类型的名称来创建&lt;/li&gt;
-&lt;li&gt;Object的每个实例都具有下列属性和方法。&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;constructor&lt;/code&gt;：保存着用于创建当前对象的函数。对于前面的例子而言，构造函数（constructor）就是Object()。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;hasOwnProperty(propertyName)&lt;/code&gt;：用于检查给定的属性在当前对象实例中（而不是在实例的原型中）是否存在。其中，作为参数的属性名（propertyName）必须以字符串形式指定（例如：o.hasOwnProperty(“name”)）。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;isPrototypeOf(object)&lt;/code&gt;：用于检查传入的对象是否是当前对象的原型（第5章将讨论原型）。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;propertyIsEnumerable(propertyName)&lt;/code&gt;：用于检查给定的属性是否能够使用for-in语句（本章后面将会讨论）来枚举。与hasOwnProperty()方法一样，作为参数的属性名必须以字符串形式指定。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;toLocaleString()&lt;/code&gt;：返回对象的字符串表示，该字符串与执行环境的地区对应。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;toString()&lt;/code&gt;：返回对象的字符串表示。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;valueOf()&lt;/code&gt;：返回对象的字符串、数值或布尔值表示。通常与toString()方法的返回值相同。&lt;/li&gt;
+&lt;h4 id=&#34;字符字面量&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#字符字面量&#34;&gt;#&lt;/a&gt; 字符字面量&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;一些特殊的字符字面量，可采用转义字符，表示非打印字符，此处规则与 java 的一致&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;字符串特点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#字符串特点&#34;&gt;#&lt;/a&gt; 字符串特点&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;在 ECMAScript 中字符串是&lt;strong&gt;不可变的&lt;/strong&gt;，要销毁掉原字符串，必须用另一个包含该原字符串的新字符串表示&lt;pre&gt;&lt;code class=&#34;language-javaScript&#34;&gt;var older =&amp;quot;Open&amp;quot;;
+older = older+&amp;quot;Stack&amp;quot;;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;转换为字符串&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#转换为字符串&#34;&gt;#&lt;/a&gt; 转换为字符串&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;方法一：使用 &lt;code&gt;toString()&lt;/code&gt;  方法&lt;pre&gt;&lt;code class=&#34;language-javaScript&#34;&gt;var age = 18;
+var ageAsString = age.toString();//字符串：&amp;quot;18&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;方法二：使用 &lt;code&gt;String()&lt;/code&gt;  方法&lt;pre&gt;&lt;code class=&#34;language-javaScript&#34;&gt;var info1 = true;
+var info2;
+var info3 = 10;
+ 
+alert(String(info1));//&amp;quot;true&amp;quot;
+alert(String(info2));//&amp;quot;undefined&amp;quot;
+alert(String(info3));//&amp;quot;10&amp;quot;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;object类型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#object类型&#34;&gt;#&lt;/a&gt; Object 类型&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;ECMAScript 中的对象其实就是一组数据和功能的集合。对象可以通过执行 new 操作符后跟要创建的对象类型的名称来创建&lt;/li&gt;
+&lt;li&gt;Object 的每个实例都具有下列属性和方法。
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;constructor&lt;/code&gt; ：保存着用于创建当前对象的函数。对于前面的例子而言，构造函数（constructor）就是 Object ()。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;hasOwnProperty(propertyName)&lt;/code&gt; ：用于检查给定的属性在当前对象实例中（而不是在实例的原型中）是否存在。其中，作为参数的属性名（propertyName）必须以字符串形式指定（例如：o.hasOwnProperty (“name”)）。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;isPrototypeOf(object)&lt;/code&gt; ：用于检查传入的对象是否是当前对象的原型（第 5 章将讨论原型）。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;propertyIsEnumerable(propertyName)&lt;/code&gt; ：用于检查给定的属性是否能够使用 for-in 语句（本章后面将会讨论）来枚举。与 hasOwnProperty () 方法一样，作为参数的属性名必须以字符串形式指定。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;toLocaleString()&lt;/code&gt; ：返回对象的字符串表示，该字符串与执行环境的地区对应。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;toString()&lt;/code&gt; ：返回对象的字符串表示。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;valueOf()&lt;/code&gt; ：返回对象的字符串、数值或布尔值表示。通常与 toString () 方法的返回值相同。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
