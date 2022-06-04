@@ -146,88 +146,75 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <div class="body md" itemprop="articleBody">
     
 
-    <h2 id="云计算能做什么"><a class="markdownIt-Anchor" href="#云计算能做什么">#</a> 云计算能做什么？</h2>
-<ol>
+    <h2 id="云计算能做什么？"><a href="#云计算能做什么？" class="headerlink" title="云计算能做什么？"></a>云计算能做什么？</h2><ol>
 <li>产生：通过云资源池，云服务器集群上获取云端资源</li>
-<li>传输：通过网络链接，如 DRS、ECS 服务等</li>
-<li>使用：网络前端页面、app 控制</li>
+<li>传输：通过网络链接，如DRS、ECS服务等</li>
+<li>使用：网络前端页面、app控制</li>
 </ol>
 <ul>
-<li>常见生活中的云计算：
-<ul>
+<li>常见生活中的云计算：<ul>
 <li>百度网盘</li>
 <li>网易云音乐</li>
 </ul>
 </li>
 </ul>
-<h2 id="云计算优势"><a class="markdownIt-Anchor" href="#云计算优势">#</a> 云计算优势</h2>
-<ol>
+<h2 id="云计算优势"><a href="#云计算优势" class="headerlink" title="云计算优势"></a>云计算优势</h2><ol>
 <li>按需自助服务</li>
 <li>广泛网络接入</li>
 <li>资源池化 （将同类的资源转化为资源池的形式，把所有资源分解到最小单位）</li>
-<li>快速弹性伸缩 （快速指带宽网速；弹性指计算弹性，即 CPU、内存资源的弹性分配；伸缩指初期服务与后期服务的伸缩，前期计算量少，后期逐步增大）</li>
+<li>快速弹性伸缩 （快速指带宽网速；弹性指计算弹性，即CPU、内存资源的弹性分配；伸缩指初期服务与后期服务的伸缩，前期计算量少，后期逐步增大）</li>
 <li>可计量服务（例如网盘内存扩容，除基础服务以外的服务额外收费）</li>
 </ol>
-<h2 id="云计算定义"><a class="markdownIt-Anchor" href="#云计算定义">#</a> 云计算定义</h2>
-<blockquote>
-<p>云计算是一种模型，它可以随时随地灵活地从可配置计算资源共享池中获取所需得到资源，资源能快速供应并释放，是管理资源的工作量与服务提供商的交互降低到最低限度<br>
-通俗来说，云计算是通过互联网可以使用足够强大的计算机为用户提供服务，这种服务的使用率可以使用统一的单位来描述</p>
+<h2 id="云计算定义"><a href="#云计算定义" class="headerlink" title="云计算定义"></a>云计算定义</h2><blockquote>
+<p>云计算是一种模型，它可以随时随地灵活地从可配置计算资源共享池中获取所需得到资源，资源能快速供应并释放，是管理资源的工作量与服务提供商的交互降低到最低限度<br>通俗来说，云计算是通过互联网可以使用足够强大的计算机为用户提供服务，这种服务的使用率可以使用统一的单位来描述</p>
 </blockquote>
-<h2 id="云计算的发展"><a class="markdownIt-Anchor" href="#云计算的发展">#</a> 云计算的发展</h2>
-<ul>
-<li>step1:<strong> 计算虚拟化</strong>
+<h2 id="云计算的发展"><a href="#云计算的发展" class="headerlink" title="云计算的发展"></a>云计算的发展</h2><ul>
+<li><p>step1:<strong>计算虚拟化</strong></p>
 <ul>
 <li>Hyper-v</li>
 <li>XEN 、   KVM</li>
-<li>VMware ESX</li>
-</ul>
-</li>
-</ul>
-<blockquote>
+<li>VMware ESX<blockquote>
 <p>虚拟化、更好的资源利用率</p>
 </blockquote>
-<ul>
-<li>step2：<strong>软件定义与整合</strong>
-<ul>
-<li>OpenStack</li>
-<li>VMware     AWS</li>
-</ul>
 </li>
 </ul>
-<blockquote>
+</li>
+<li><p>step2：<strong>软件定义与整合</strong></p>
+<ul>
+<li>OpenStack</li>
+<li>VMware     AWS<blockquote>
 <p>基础设施云化，资源服务标准化、自动化</p>
 </blockquote>
-<ul>
-<li>step3：<strong>云原生与重构业务</strong>
+</li>
+</ul>
+</li>
+<li><p>step3：<strong>云原生与重构业务</strong></p>
 <ul>
 <li>Docker</li>
 <li>CoreOS</li>
-<li>Cloud Foundry</li>
+<li>Cloud Foundry<blockquote>
+<p>应用云化，敏捷应用开发与生命周期管理</p>
+</blockquote>
+</li>
 </ul>
 </li>
 </ul>
-<blockquote>
-<p>应用云化，敏捷应用开发与生命周期管理</p>
-</blockquote>
-<h2 id="云计算部署模式"><a class="markdownIt-Anchor" href="#云计算部署模式">#</a> 云计算部署模式</h2>
-<ul>
-<li>大方向是 <mark>以企业防火墙为界限</mark> ，在企业内部的称私有云，在企业外部的称公有云，两者兼具的称混合云</li>
-<li>主要有建设者 C 和使用者 U 两个角色
-<ul>
-<li>私有云：C 等于 U</li>
-<li>公有云：C 不等于 U</li>
-<li>行业云：C 不完全等于 U</li>
-<li>混合云：私有 + 私有；私有 + 公有；公有 + 公有</li>
+<h2 id="云计算部署模式"><a href="#云计算部署模式" class="headerlink" title="云计算部署模式"></a>云计算部署模式</h2><ul>
+<li>大方向是 ==以企业防火墙为界限== ，在企业内部的称私有云，在企业外部的称公有云，两者兼具的称混合云</li>
+<li>主要有建设者C和使用者U两个角色<ul>
+<li>私有云：C等于U</li>
+<li>公有云：C不等于U</li>
+<li>行业云：C不完全等于U</li>
+<li>混合云：私有+私有；私有+公有；公有+公有</li>
 </ul>
 </li>
 </ul>
 <p><img data-src="https://s4.ax1x.com/2022/01/15/7YafJ0.png" alt="deploymode"></p>
-<h2 id="云计算的服务模式"><a class="markdownIt-Anchor" href="#云计算的服务模式">#</a> 云计算的服务模式</h2>
-<p><img data-src="https://s4.ax1x.com/2022/01/15/7YaXJx.png" alt="servicemode"></p>
+<h2 id="云计算的服务模式"><a href="#云计算的服务模式" class="headerlink" title="云计算的服务模式"></a>云计算的服务模式</h2><p><img data-src="https://s4.ax1x.com/2022/01/15/7YaXJx.png" alt="servicemode"></p>
 <ul>
-<li>IaaS：基础设施即服务，直接出租基础设施给用户来去使用，如 ECS、EVS、OBS</li>
-<li>PaaS：平台即服务，将 IaaS 打包出租给用户来去使用，比如数据库、中间件</li>
-<li>SaaS：软件即服务，直接呈现给用户所去使用的一个应用程序，如 OA 办公系统</li>
+<li>IaaS：基础设施即服务，直接出租基础设施给用户来去使用，如ECS、EVS、OBS</li>
+<li>PaaS：平台即服务，将IaaS打包出租给用户来去使用，比如数据库、中间件</li>
+<li>SaaS：软件即服务，直接呈现给用户所去使用的一个应用程序，如OA办公系统</li>
 </ul>
 
       <div class="tags">
@@ -318,7 +305,7 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#云计算能做什么"><span class="toc-number">1.</span> <span class="toc-text"> 云计算能做什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#云计算优势"><span class="toc-number">2.</span> <span class="toc-text"> 云计算优势</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#云计算定义"><span class="toc-number">3.</span> <span class="toc-text"> 云计算定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#云计算的发展"><span class="toc-number">4.</span> <span class="toc-text"> 云计算的发展</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#云计算部署模式"><span class="toc-number">5.</span> <span class="toc-text"> 云计算部署模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#云计算的服务模式"><span class="toc-number">6.</span> <span class="toc-text"> 云计算的服务模式</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#云计算能做什么？"><span class="toc-number">1.</span> <span class="toc-text">云计算能做什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#云计算优势"><span class="toc-number">2.</span> <span class="toc-text">云计算优势</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#云计算定义"><span class="toc-number">3.</span> <span class="toc-text">云计算定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#云计算的发展"><span class="toc-number">4.</span> <span class="toc-text">云计算的发展</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#云计算部署模式"><span class="toc-number">5.</span> <span class="toc-text">云计算部署模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#云计算的服务模式"><span class="toc-number">6.</span> <span class="toc-text">云计算的服务模式</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -440,30 +427,30 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%881%EF%BC%89/" title="华为路由交换实验命令（1）">华为路由交换实验命令（1）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/Java%E6%96%B9%E6%B3%95/" title="Java方法">Java方法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
 </div>
 
-    <span><a href="/my-blog/Linux/LINUX%E5%AD%A6%E6%A0%A1%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="LINUX课程笔记">LINUX课程笔记</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
-</div>
-
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%9F%8E%E5%9F%9F%E7%BD%9101/" title="局域网与城域网01">局域网与城域网01</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
-</div>
-
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F/" title="常用公式">常用公式</a></span>
+    <span><a href="/my-blog/Linux/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E5%8F%8Ayum%E6%BA%90%E9%97%AE%E9%A2%98/" title="网络配置及yum源问题">网络配置及yum源问题</a></span>
   </li>
 
       
@@ -473,17 +460,27 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
 </div>
 
-    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/Fusion%20Compute%E5%AE%89%E8%A3%85/" title="Fusion Compute安装">Fusion Compute安装</a></span>
+    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E4%BA%91%E8%AE%A1%E7%AE%97%E7%AE%80%E4%BB%8B/" title="云计算简介">云计算简介</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+<a href="/my-blog/categories/git/" title="分类于 git">git</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/IP%E5%AD%90%E7%BD%91%E5%88%92%E5%88%86%E4%B8%93%E9%A2%98/" title="IP子网划分专题">IP子网划分专题</a></span>
+    <span><a href="/my-blog/git/git%E4%B8%8Egithub%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BA%86%E8%A7%A3/" title="git与github的基本了解">git与github的基本了解</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/Java%E7%BB%A7%E6%89%BF/" title="Java继承">Java继承</a></span>
   </li>
 
       
@@ -500,20 +497,20 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8F%E8%AE%AE%E5%90%8D%E7%A7%B0%E4%B8%8E%E7%AE%80%E4%BB%8B/" title="协议名称与简介">协议名称与简介</a></span>
+    <span><a href="/my-blog/Java/Java%E5%A4%9A%E6%80%81/" title="Java多态">Java多态</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/Linux/Linux%E5%BC%80%E7%AF%87/" title="Linux开篇">Linux开篇</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%9F%8E%E5%9F%9F%E7%BD%9101/" title="局域网与城域网01">局域网与城域网01</a></span>
   </li>
 
       
@@ -523,17 +520,7 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
 </div>
 
-    <span><a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" title="Java网络编程">Java网络编程</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
-</div>
-
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%9F%8E%E5%9F%9F%E7%BD%9102/" title="局域网与城域网02">局域网与城域网02</a></span>
+    <span><a href="/my-blog/Java/Java%E6%95%B0%E7%BB%84/" title="Java数组">Java数组</a></span>
   </li>
 
   </ul>

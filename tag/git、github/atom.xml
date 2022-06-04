@@ -4,184 +4,126 @@
     <title>理 想 净 土 • Posts by &#34;git、github&#34; tag</title>
     <link href="https://peter-pan001.github.io/my-blog" />
     <updated>2020-10-25T12:32:42.000Z</updated>
-    <category term="MySQL" />
-    <category term="git、github" />
-    <category term="css" />
-    <category term="network" />
-    <category term="html" />
-    <category term="JavaScript" />
-    <category term="linux" />
-    <category term="前端" />
-    <category term="Linux" />
-    <category term="算法与数据结构" />
-    <category term="云计算" />
-    <category term="数据分析" />
     <category term="Java" />
+    <category term="linux" />
+    <category term="Linux" />
+    <category term="network" />
+    <category term="MySQL" />
+    <category term="云计算" />
+    <category term="git、github" />
+    <category term="前端" />
+    <category term="JavaScript" />
+    <category term="html" />
+    <category term="css" />
+    <category term="算法与数据结构" />
+    <category term="数据分析" />
     <category term="软考网络工程师" />
     <entry>
         <id>https://peter-pan001.github.io/my-blog/git/git%E4%B8%8Egithub%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BA%86%E8%A7%A3/</id>
         <title>git与github的基本了解</title>
         <link rel="alternate" href="https://peter-pan001.github.io/my-blog/git/git%E4%B8%8Egithub%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BA%86%E8%A7%A3/"/>
         <content type="html"> &lt;!-- 图片文件在博客目录 --&gt;
-&lt;h2 id=&#34;git的基本概述&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#git的基本概述&#34;&gt;#&lt;/a&gt; git 的基本概述&lt;/h2&gt;
-&lt;h3 id=&#34;简介&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#简介&#34;&gt;#&lt;/a&gt; 简介&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;git（分布式版本控制系统）&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;git的基本概述&#34;&gt;&lt;a href=&#34;#git的基本概述&#34; class=&#34;headerlink&#34; title=&#34;git的基本概述&#34;&gt;&lt;/a&gt;git的基本概述&lt;/h2&gt;&lt;h3 id=&#34;简介&#34;&gt;&lt;a href=&#34;#简介&#34; class=&#34;headerlink&#34; title=&#34;简介&#34;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;git（分布式版本控制系统）&lt;/strong&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;git&lt;/strong&gt;  是目前世界上最先进的分布式版本控制系统（没有之一）！&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;git&lt;/strong&gt; &amp;nbsp;是目前世界上最先进的分布式版本控制系统（没有之一）！&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Linus&lt;/strong&gt;  花了两周时间自己用 C 写了一个分布式版本控制系统，这就是 Git！一个月之内，Linux 系统的源码已经由 Git 管理了！牛是怎么定义的呢？大家可以体会一下。&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Linus&lt;/strong&gt; &amp;nbsp;花了两周时间自己用C写了一个分布式版本控制系统，这就是Git！一个月之内，Linux系统的源码已经由Git管理了！牛是怎么定义的呢？大家可以体会一下。&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Git&lt;/strong&gt;  迅速成为最流行的分布式版本控制系统，尤其是 2008 年，GitHub 网站上线了，它为开源项目免费提供 Git 存储，无数开源项目开始迁移至 GitHub，包括 jQuery，PHP，Ruby 等等。&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Git&lt;/strong&gt; &amp;nbsp;迅速成为最流行的分布式版本控制系统，尤其是2008年，GitHub网站上线了，它为开源项目免费提供Git存储，无数开源项目开始迁移至GitHub，包括jQuery，PHP，Ruby等等。&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;历史就是这么偶然，如果不是当年 BitMover 公司威胁 Linux 社区，可能现在我们就没有免费而超级好用的 Git 了。&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;历史就是这么偶然，如果不是当年BitMover公司威胁Linux社区，可能现在我们就没有免费而超级好用的Git了。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;集中式和分布式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#集中式和分布式&#34;&gt;#&lt;/a&gt; 集中式和分布式&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Linux 旗下的 CVS 和 SVN 都是集中式的版本控制系统，但 git 是分布式的版本控制系统&lt;/p&gt;
+&lt;h3 id=&#34;集中式和分布式&#34;&gt;&lt;a href=&#34;#集中式和分布式&#34; class=&#34;headerlink&#34; title=&#34;集中式和分布式&#34;&gt;&lt;/a&gt;集中式和分布式&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Linux旗下的CVS和SVN都是集中式的版本控制系统，但git是分布式的版本控制系统&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;何为集中式版本控制系统？&lt;/strong&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;何为集中式版本控制系统？&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;版本库是集中存放在中央服务器的，而干活的时候，用的都是自己的电脑，所以要先从中央服务器取得最新的版本，然后开始干活，干完活了，再把自己的活推送给中央服务器。中央服务器就好比是一个图书馆，你要改一本书，必须先从图书馆借出来，然后回到家自己改，改完了，再放回图书馆。&lt;/li&gt;
-&lt;/ul&gt;
- &lt;!-- ![image-20200619205612791.png](http://ww1.sinaimg.cn/large/007uxMgDgy1gizt4sfy8aj30lq0gk77a.jpg) --&gt;
+&lt;li&gt;&lt;p&gt;版本库是集中存放在中央服务器的，而干活的时候，用的都是自己的电脑，所以要先从中央服务器取得最新的版本，然后开始干活，干完活了，再把自己的活推送给中央服务器。中央服务器就好比是一个图书馆，你要改一本书，必须先从图书馆借出来，然后回到家自己改，改完了，再放回图书馆。&lt;/p&gt;
+&lt;!-- ![image-20200619205612791.png](http://ww1.sinaimg.cn/large/007uxMgDgy1gizt4sfy8aj30lq0gk77a.jpg) --&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://i.loli.net/2020/10/26/ZE9hXMW3YsPwJdL.jpg&#34; alt=&#34;gitfunbu.jpg&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;何为分布式版本控制系统&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#何为分布式版本控制系统&#34;&gt;#&lt;/a&gt; 何为分布式版本控制系统？&lt;/h3&gt;
+&lt;h3 id=&#34;何为分布式版本控制系统？&#34;&gt;&lt;a href=&#34;#何为分布式版本控制系统？&#34; class=&#34;headerlink&#34; title=&#34;何为分布式版本控制系统？&#34;&gt;&lt;/a&gt;何为分布式版本控制系统？&lt;/h3&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;ul&gt;
-&lt;li&gt;分布式版本控制系统根本没有 “中央服务器”，每个人的电脑上都是一个完整的版本库，这样，你工作的时候，就不需要联网了，因为版本库就在你自己的电脑上。既然每个人电脑上都有一个完整的版本库，那多个人如何协作呢？比方说你在自己电脑上改了文件 A，你的同事也在他的电脑上改了文件 A，这时，你们俩之间只需把各自的修改推送给对方，就可以互相看到对方的修改了。&lt;/li&gt;
+&lt;li&gt;分布式版本控制系统根本没有“中央服务器”，每个人的电脑上都是一个完整的版本库，这样，你工作的时候，就不需要联网了，因为版本库就在你自己的电脑上。既然每个人电脑上都有一个完整的版本库，那多个人如何协作呢？比方说你在自己电脑上改了文件A，你的同事也在他的电脑上改了文件A，这时，你们俩之间只需把各自的修改推送给对方，就可以互相看到对方的修改了。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;!-- ![image-20200619210019521.png](http://ww1.sinaimg.cn/large/007uxMgDgy1gizt5wmg7wj30m60gfdj7.jpg) --&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://i.loli.net/2020/10/26/CRZxh47WeIM9byv.jpg&#34; alt=&#34;gitfenbu2.jpg&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;集中式 VS 分布式&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;集中式（SVN）&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;分布式（Git）&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;是否有中央服务器&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;有。开发人员需要从中央服务器获得最新版本的项目然后在本地开发，开发完推送给中央服务器。因此脱离服务器开发者是几乎无法工作的&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;没有中央服务器，开发人员本地都有 Local Repository&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;网络依赖&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;必须要联网才能工作，而且对网络的依赖性较强，如果推送的文件比较大而且网络状况欠佳，则提交文件的速度会受到很大的限制&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;分布式在没有网络的情况下也可以执行 &lt;code&gt;commit&lt;/code&gt; 、查看版本提交记录、以及分支操作，在有网络的情况下执行 &lt;code&gt;push&lt;/code&gt;  到  &lt;code&gt;Remote Repository&lt;/code&gt; 。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;文件存储格式&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;按照原始文件存储，体积较大&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;按照元数据方式存储，体积很小&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;是否有版本号&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;有&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;没有&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;分支操作的影响&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;创建新的分支则所有的人都会拥有和你一样的分支&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;分支操作不会影响其他开发人员&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;提交&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;提交的文件会直接记录到中央版本库&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;提交是本地操作，需要执行 push 操作才会到主要版本库&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
+&lt;li&gt;&lt;p&gt;集中式VS分布式&lt;/p&gt;
+&lt;p&gt; |                  |                        集中式（SVN）                         |                        分布式（Git）                         |&lt;br&gt; | :———————: | :—————————————————————————————: | :—————————————————————————————: |&lt;br&gt; | 是否有中央服务器 | 有。开发人员需要从中央服务器获得最新版本的项目然后在本地开发，开发完推送给中央服务器。因此脱离服务器开发者是几乎无法工作的 |      没有中央服务器，开发人员本地都有 Local Repository       |&lt;br&gt; |     网络依赖     | 必须要联网才能工作，而且对网络的依赖性较强，如果推送的文件比较大而且网络状况欠佳，则提交文件的速度会受到很大的限制 | 分布式在没有网络的情况下也可以执行&lt;code&gt;commit&lt;/code&gt;、查看版本提交记录、以及分支操作，在有网络的情况下执行&lt;code&gt;push&lt;/code&gt; 到 &lt;code&gt;Remote Repository&lt;/code&gt;。 |&lt;br&gt; |   文件存储格式   |                  按照原始文件存储，体积较大                  |                 按照元数据方式存储，体积很小                 |&lt;br&gt; |   是否有版本号   |                              有                              |                             没有                             |&lt;br&gt; |  分支操作的影响  |         创建新的分支则所有的人都会拥有和你一样的分支         |   分支操作不会影响其他开发人员    |&lt;br&gt; |       提交       |   提交的文件会直接记录到中央版本库   |       提交是本地操作，需要执行push操作才会到主要版本库       |&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;git的三种数据状态&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#git的三种数据状态&#34;&gt;#&lt;/a&gt; git 的三种数据状态&lt;/h2&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;暂存态&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#暂存态&#34;&gt;#&lt;/a&gt; 暂存态&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;git 传输文件实际上是进行数据的传输，每个用户机都存在一个数据的暂存区（temp），当用户机没有网络时，可以在本地把要上传到本地数据库的文件数据先放到暂存区（temp），待网络通畅时 git 会自动提交数据到指定的本地数据库（仓库）。此状态为 ---- 已暂存（staged）状态&lt;/li&gt;
+&lt;h2 id=&#34;git的三种数据状态&#34;&gt;&lt;a href=&#34;#git的三种数据状态&#34; class=&#34;headerlink&#34; title=&#34;git的三种数据状态&#34;&gt;&lt;/a&gt;git的三种数据状态&lt;/h2&gt;&lt;hr&gt;
+&lt;h3 id=&#34;暂存态&#34;&gt;&lt;a href=&#34;#暂存态&#34; class=&#34;headerlink&#34; title=&#34;暂存态&#34;&gt;&lt;/a&gt;暂存态&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;git传输文件实际上是进行数据的传输，每个用户机都存在一个数据的暂存区（temp），当用户机没有网络时，可以在本地把要上传到本地数据库的文件数据先放到暂存区（temp），待网络通畅时git会自动提交数据到指定的本地数据库（仓库）。此状态为——已暂存（staged）状态&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;提交态&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#提交态&#34;&gt;#&lt;/a&gt; 提交态&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;当文件安全的保存到本地数据库时，此状态为 ---- 已提交（commit）状态&lt;/li&gt;
+&lt;h3 id=&#34;提交态&#34;&gt;&lt;a href=&#34;#提交态&#34; class=&#34;headerlink&#34; title=&#34;提交态&#34;&gt;&lt;/a&gt;提交态&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;当文件安全的保存到本地数据库时，此状态为——已提交（commit）状态&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;修改态&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#修改态&#34;&gt;#&lt;/a&gt; 修改态&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;若文件只是进行更改内容，但尚未保存到数据库中，那么此状态就为 ---- 已修改（modify）状态&lt;/li&gt;
+&lt;h3 id=&#34;修改态&#34;&gt;&lt;a href=&#34;#修改态&#34; class=&#34;headerlink&#34; title=&#34;修改态&#34;&gt;&lt;/a&gt;修改态&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;若文件只是进行更改内容，但尚未保存到数据库中，那么此状态就为——已修改（modify）状态&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;git的工作原理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#git的工作原理&#34;&gt;#&lt;/a&gt; git 的工作原理&lt;/h2&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;核心&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#核心&#34;&gt;#&lt;/a&gt; 核心&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;git&lt;/strong&gt;  的工作原理不同于集中式版本控制系统（CVCS），git 赋予每个用户机上一个本地数据库，此数据库可同步到服务器的数据库中，当用户对文件做每一次的修改时，会把该文件的所有版本文件保存到本地数据库（即克隆文件），这样做的好处是，当没有网络时，也可以对文件的版本进行控制，而且要修改时，把修改后的文件进行标记，待网络通畅后会把被标记的文件提交到数据库中，供其他开发者使用。&lt;/li&gt;
+&lt;h2 id=&#34;git的工作原理&#34;&gt;&lt;a href=&#34;#git的工作原理&#34; class=&#34;headerlink&#34; title=&#34;git的工作原理&#34;&gt;&lt;/a&gt;git的工作原理&lt;/h2&gt;&lt;hr&gt;
+&lt;h3 id=&#34;核心&#34;&gt;&lt;a href=&#34;#核心&#34; class=&#34;headerlink&#34; title=&#34;核心&#34;&gt;&lt;/a&gt;核心&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;git&lt;/strong&gt; &amp;nbsp;的工作原理不同于集中式版本控制系统（CVCS），git赋予每个用户机上一个本地数据库，此数据库可同步到服务器的数据库中，当用户对文件做每一次的修改时，会把该文件的所有版本文件保存到本地数据库（即克隆文件），这样做的好处是，当没有网络时，也可以对文件的版本进行控制，而且要修改时，把修改后的文件进行标记，待网络通畅后会把被标记的文件提交到数据库中，供其他开发者使用。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;获取git仓库&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#获取git仓库&#34;&gt;#&lt;/a&gt; 获取 Git 仓库&lt;/h2&gt;
-&lt;h3 id=&#34;获取方式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#获取方式&#34;&gt;#&lt;/a&gt; 获取方式&lt;/h3&gt;
-&lt;ol&gt;
+&lt;h2 id=&#34;获取Git仓库&#34;&gt;&lt;a href=&#34;#获取Git仓库&#34; class=&#34;headerlink&#34; title=&#34;获取Git仓库&#34;&gt;&lt;/a&gt;获取Git仓库&lt;/h2&gt;&lt;h3 id=&#34;获取方式&#34;&gt;&lt;a href=&#34;#获取方式&#34; class=&#34;headerlink&#34; title=&#34;获取方式&#34;&gt;&lt;/a&gt;获取方式&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;将尚未进行版本控制的本地目录转换为 Git 仓库&lt;/li&gt;
 &lt;li&gt;从其它服务器 &lt;strong&gt;克隆&lt;/strong&gt; 一个已存在的 Git 仓库&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;在已存在的目录中初始化仓库&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#在已存在的目录中初始化仓库&#34;&gt;#&lt;/a&gt; 在已存在的目录中初始化仓库&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;第一步：打开 &lt;code&gt;git bash&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;在已存在的目录中初始化仓库&#34;&gt;&lt;a href=&#34;#在已存在的目录中初始化仓库&#34; class=&#34;headerlink&#34; title=&#34;在已存在的目录中初始化仓库&#34;&gt;&lt;/a&gt;在已存在的目录中初始化仓库&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;第一步：打开&lt;code&gt;git bash&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;第二步：输入进入目录的命令&lt;/p&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token variable&#34;&gt;$cd&lt;/span&gt; /f/gitproject&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;第三步：初始化仓库&lt;/p&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token variable&#34;&gt;$git&lt;/span&gt; init&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;第二步：输入进入目录的命令&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;lang-bash&#34;&gt; $cd /f/gitproject
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;第三步：初始化仓库&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;lang-bash&#34;&gt; $git init
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;此步骤会在已创建的目录下生成一个.git 的子目录（该目录为隐藏文件）&lt;/p&gt;
-&lt;h3 id=&#34;添加文件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#添加文件&#34;&gt;#&lt;/a&gt; 添加文件&lt;/h3&gt;
-&lt;h4 id=&#34;创建文件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#创建文件&#34;&gt;#&lt;/a&gt; 创建文件&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;方法一：在创建的 &lt;code&gt;gitproject&lt;/code&gt;  目录下直接右键创建一个文件（例如：helloworld.java）&lt;/p&gt;
+&lt;p&gt;此步骤会在已创建的目录下生成一个.git的子目录（该目录为隐藏文件）&lt;/p&gt;
+&lt;h3 id=&#34;添加文件&#34;&gt;&lt;a href=&#34;#添加文件&#34; class=&#34;headerlink&#34; title=&#34;添加文件&#34;&gt;&lt;/a&gt;添加文件&lt;/h3&gt;&lt;h4 id=&#34;创建文件&#34;&gt;&lt;a href=&#34;#创建文件&#34; class=&#34;headerlink&#34; title=&#34;创建文件&#34;&gt;&lt;/a&gt;创建文件&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;方法一：在创建的&lt;code&gt;gitproject&lt;/code&gt;目录下直接右键创建一个文件（例如：helloworld.java）&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;方法二：在创建的 &lt;code&gt;gitproject&lt;/code&gt;  目录下右键 &lt;code&gt;git bash here&lt;/code&gt;  ，使用命令创建&lt;/p&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token variable&#34;&gt;$touch&lt;/span&gt; helloworld.java  //创建文件&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token variable&#34;&gt;$git&lt;/span&gt; status //查看文件状态&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;方法三：直接打开 &lt;code&gt;git bash&lt;/code&gt;  ，用 Linux 命令切换到 &lt;code&gt;gitproject&lt;/code&gt;  目录下，输入方法二的命令即可！&lt;/p&gt;
-&lt;h4 id=&#34;把文件放入暂存区&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#把文件放入暂存区&#34;&gt;#&lt;/a&gt; 把文件放入暂存区&lt;/h4&gt;
+&lt;li&gt;&lt;p&gt;方法二：在创建的&lt;code&gt;gitproject&lt;/code&gt;目录下右键&lt;code&gt;git bash here&lt;/code&gt; ，使用命令创建&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;lang-bash&#34;&gt; $touch helloworld.java  //创建文件
+ $git status //查看文件状态
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;通过 Linux 命令&lt;/p&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token variable&#34;&gt;$git&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;add&lt;/span&gt; helloworld.java&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;此时再输入 git status 查看状态&lt;/p&gt;
-&lt;h4 id=&#34;把文件提交到仓库&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#把文件提交到仓库&#34;&gt;#&lt;/a&gt; 把文件提交到仓库&lt;/h4&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token variable&#34;&gt;$git&lt;/span&gt; commit -m&lt;span class=&#34;token string&#34;&gt;&#34;new file helloworld.java&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;(-m 为 message)&lt;/p&gt;
-&lt;h4 id=&#34;查看是否已提交&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#查看是否已提交&#34;&gt;#&lt;/a&gt; 查看是否已提交&lt;/h4&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token variable&#34;&gt;$git&lt;/span&gt; status&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;如出现下图所示则提交成功&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;方法三：直接打开&lt;code&gt;git bash&lt;/code&gt; ，用Linux命令切换到&lt;code&gt;gitproject&lt;/code&gt;目录下，输入方法二的命令即可！&lt;/p&gt;
+&lt;h4 id=&#34;把文件放入暂存区&#34;&gt;&lt;a href=&#34;#把文件放入暂存区&#34; class=&#34;headerlink&#34; title=&#34;把文件放入暂存区&#34;&gt;&lt;/a&gt;把文件放入暂存区&lt;/h4&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;通过Linux命令&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;lang-bash&#34;&gt; $git add helloworld.java
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;此时再输入 git status 查看状态&lt;/p&gt;
+&lt;h4 id=&#34;把文件提交到仓库&#34;&gt;&lt;a href=&#34;#把文件提交到仓库&#34; class=&#34;headerlink&#34; title=&#34;把文件提交到仓库&#34;&gt;&lt;/a&gt;把文件提交到仓库&lt;/h4&gt;&lt;pre&gt;&lt;code class=&#34;lang-bash&#34;&gt; $git commit -m&amp;quot;new file helloworld.java&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt; (-m为message)&lt;/p&gt;
+&lt;h4 id=&#34;查看是否已提交&#34;&gt;&lt;a href=&#34;#查看是否已提交&#34; class=&#34;headerlink&#34; title=&#34;查看是否已提交&#34;&gt;&lt;/a&gt;查看是否已提交&lt;/h4&gt;&lt;pre&gt;&lt;code class=&#34;lang-bash&#34;&gt; $git status
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt; 如出现下图所示则提交成功&lt;/p&gt;
  &lt;!-- ![image-20200620142410488.png](http://ww1.sinaimg.cn/large/007uxMgDgy1giztadgl3fj30dq08lwew.jpg) --&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://i.loli.net/2020/10/26/Vhz9NZ3Tpyo8Onj.jpg&#34; alt=&#34;gitcmd.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt; &lt;img data-src=&#34;https://i.loli.net/2020/10/26/Vhz9NZ3Tpyo8Onj.jpg&#34; alt=&#34;gitcmd.jpg&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;克隆仓库&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#克隆仓库&#34;&gt;#&lt;/a&gt; 克隆仓库&lt;/h3&gt;
-&lt;ul&gt;
+&lt;h3 id=&#34;克隆仓库&#34;&gt;&lt;a href=&#34;#克隆仓库&#34; class=&#34;headerlink&#34; title=&#34;克隆仓库&#34;&gt;&lt;/a&gt;克隆仓库&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;命令&lt;/li&gt;
 &lt;/ul&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token variable&#34;&gt;$git&lt;/span&gt; clone &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;url&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;查看当前文件状态&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#查看当前文件状态&#34;&gt;#&lt;/a&gt; 查看当前文件状态&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;命令&lt;/li&gt;
+&lt;pre&gt;&lt;code class=&#34;lang-bash&#34;&gt;$git clone &amp;lt;url&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;查看当前文件状态&#34;&gt;&lt;a href=&#34;#查看当前文件状态&#34; class=&#34;headerlink&#34; title=&#34;查看当前文件状态&#34;&gt;&lt;/a&gt;查看当前文件状态&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;命令&lt;pre&gt;&lt;code class=&#34;lang-bash&#34;&gt;$git status
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token variable&#34;&gt;$git&lt;/span&gt; status&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
+</content>
         <category term="git、github" />
         <updated>2020-10-25T12:32:42.000Z</updated>
     </entry>

@@ -146,48 +146,37 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="01-vm10虚拟机安装配置"><a class="markdownIt-Anchor" href="#01-vm10虚拟机安装配置">#</a> 01 VM10 虚拟机安装配置</h1>
-<h2 id="11-虚拟机vm简介"><a class="markdownIt-Anchor" href="#11-虚拟机vm简介">#</a> 1.1 虚拟机 VM 简介</h2>
-<ul>
-<li>
-<p>VirtualMachineware，中文名 “威睿 &quot;，虚拟机软件，可以使你在一台机器上同时允许两个或更多 DOS、Windows、LINUX 系统，每个系统你都可以进行虚拟机的分区、配置而不影响真实硬盘的数据，比较适合学习和测试。</p>
+    <h1 id="01-nbsp-VM10虚拟机安装配置"><a href="#01-nbsp-VM10虚拟机安装配置" class="headerlink" title="01&nbsp;VM10虚拟机安装配置"></a>01&nbsp;VM10虚拟机安装配置</h1><h2 id="1-1-nbsp-虚拟机VM简介"><a href="#1-1-nbsp-虚拟机VM简介" class="headerlink" title="1.1&nbsp;虚拟机VM简介"></a>1.1&nbsp;虚拟机VM简介</h2><ul>
+<li>VirtualMachineware，中文名“威睿”，虚拟机软件，可以使你在一台机器上同时允许两个或更多DOS、Windows、LINUX系统，每个系统你都可以进行虚拟机的分区、配置而不影响真实硬盘的数据，比较适合学习和测试。</li>
+<li><p>在使用上，这台虚拟机和真正的物理主机没有太大的区别，都需要分区、格式化、安装操作系统、安装应用程序和软件，总之，一切操作都跟一台真正的计算机一样</p>
 </li>
-<li>
-<p>在使用上，这台虚拟机和真正的物理主机没有太大的区别，都需要分区、格式化、安装操作系统、安装应用程序和软件，总之，一切操作都跟一台真正的计算机一样</p>
-</li>
-<li>
-<p>虚拟机 VM 几个注意事项： <strong>CPU 要支持虚拟化。</strong></p>
+<li><p>虚拟机VM几个注意事项： <strong>CPU要支持虚拟化。</strong></p>
 <ul>
-<li>安装 VMWareTools 工具：可以实现虚拟机和真机之间的复制粘贴</li>
-<li>虚拟机 —— 管理 —— 克隆：可以快速复制一个系统。</li>
-<li>2008 登陆密码： <code>dtwlxy_VlP</code>  要符合复杂度。</li>
-<li>VMware10 永久许可密钥
-<ul>
+<li>安装VMWareTools工具：可以实现虚拟机和真机之间的复制粘贴</li>
+<li>虚拟机——管理——克隆：可以快速复制一个系统。</li>
+<li>2008登陆密码：<code>dtwlxy_VlP</code>要符合复杂度。</li>
+<li>VMware10永久许可密钥<ul>
 <li><code>5A6Z-20JD2-LZWZ9-H38N0-92L62</code></li>
 </ul>
 </li>
-<li>VMware14 永久许可密钥
-<ul>
+<li>VMware14永久许可密钥<ul>
 <li><code>FF31K-AHZD1-H8ETZ-8WWEZ-WUUVA</code></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>
-<p>Windows Server 2008 R2 只 <strong>支持 64 位主机</strong>，需要主机 BIOS 中 CPU 支持 64 位并开启虚拟化</p>
+<li><p>Windows Server 2008 R2只 <strong>支持64位主机</strong>，需要主机BIOS中CPU支持64位并开启虚拟化</p>
 </li>
 </ul>
-<h2 id="12-电脑主机bios屮的cpu开启虚拟化支持的方法"><a class="markdownIt-Anchor" href="#12-电脑主机bios屮的cpu开启虚拟化支持的方法">#</a> 1.2 电脑主机 BIOS 屮的 CPU 开启虚拟化支持的方法</h2>
-<ol>
-<li>进 BIOS，开机按 F2 或 F12 或 DEL 等键（Fn）。</li>
-<li><code>Configuration</code>  选项， <code>Intel Virtual Technology</code>  并回车，将光标移至 <code>Enabled</code> ，然后再回车，最后按 <code>F10</code>  保存并退出。</li>
+<h2 id="1-2-nbsp-电脑主机BIOS屮的CPU开启虚拟化支持的方法"><a href="#1-2-nbsp-电脑主机BIOS屮的CPU开启虚拟化支持的方法" class="headerlink" title="1.2&nbsp;电脑主机BIOS屮的CPU开启虚拟化支持的方法"></a>1.2&nbsp;电脑主机BIOS屮的CPU开启虚拟化支持的方法</h2><ol>
+<li>进BIOS，开机按F2或F12或DEL等键（Fn）。</li>
+<li><code>Configuration</code>选项，<code>Intel Virtual Technology</code>并回车，将光标移至<code>Enabled</code>，然后再回车，最后按<code>F10</code>保存并退出。</li>
 </ol>
 <ul>
-<li>如果找不到 Configuration 选项，尝试一下方法：</li>
+<li>如果找不到Configuration选项，尝试一下方法：</li>
 </ul>
 <ol>
-<li>某些 HP（惠普）电脑进入 BIOS 后，需要选择<br>
- <code>SystemConfiguration</code>  菜单，然后选择 <code>Device Configuration</code> , 找到 <code>Virtualization Technology</code> , 设置为 <code>Enabled</code></li>
+<li>某些HP（惠普）电脑进入BIOS后，需要选择<br><code>SystemConfiguration</code>菜单，然后选择<code>Device Configuration</code>,找到<code>Virtualization Technology</code>,设置为<code>Enabled</code></li>
 </ol>
 
       <div class="tags">
@@ -278,7 +267,7 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#01-vm10虚拟机安装配置"><span class="toc-number">1.</span> <span class="toc-text"> 01 VM10 虚拟机安装配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#11-虚拟机vm简介"><span class="toc-number">1.1.</span> <span class="toc-text"> 1.1 虚拟机 VM 简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-电脑主机bios屮的cpu开启虚拟化支持的方法"><span class="toc-number">1.2.</span> <span class="toc-text"> 1.2 电脑主机 BIOS 屮的 CPU 开启虚拟化支持的方法</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#01-nbsp-VM10虚拟机安装配置"><span class="toc-number">1.</span> <span class="toc-text">01&amp;nbsp;VM10虚拟机安装配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-nbsp-虚拟机VM简介"><span class="toc-number">1.1.</span> <span class="toc-text">1.1&amp;nbsp;虚拟机VM简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-nbsp-电脑主机BIOS屮的CPU开启虚拟化支持的方法"><span class="toc-number">1.2.</span> <span class="toc-text">1.2&amp;nbsp;电脑主机BIOS屮的CPU开启虚拟化支持的方法</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -400,10 +389,40 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/my-blog/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" title="分类于 数据分析">数据分析</a>
+</div>
+
+    <span><a href="/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/CDC%E6%8A%80%E6%9C%AF/" title="CDC技术">CDC技术</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+</div>
+
+    <span><a href="/my-blog/%E5%89%8D%E7%AB%AF/%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E5%89%8D%E7%AB%AF/" title="如何学习前端">如何学习前端</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/Java%E7%9A%84Stream%E6%B5%81/" title="Java的Stream流">Java的Stream流</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/" title="操作系统基础">操作系统基础</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8002/" title="数据通信基础02">数据通信基础02</a></span>
   </li>
 
       
@@ -413,67 +432,7 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
 </div>
 
-    <span><a href="/my-blog/Linux/%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/" title="目录与文件管理">目录与文件管理</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
-</div>
-
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E5%92%8C%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80/" title="系统开发和项目管理基础">系统开发和项目管理基础</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
-</div>
-
-    <span><a href="/my-blog/%E5%89%8D%E7%AB%AF/%E6%8E%A5%E7%BB%AD%E5%89%8D%E7%AB%AFH5+CSS3/" title="接续前端H5+CSS3">接续前端H5+CSS3</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
-</div>
-
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E4%B8%8B%E4%B8%80%E4%BB%A3%E4%BA%92%E8%81%94%E7%BD%91/" title="下一代互联网">下一代互联网</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
-</div>
-
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9103/" title="网络互联与互联网03">网络互联与互联网03</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
-</div>
-
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%884%EF%BC%89/" title="华为交换实验命令（4）">华为交换实验命令（4）</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
-</div>
-
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%881%EF%BC%89/" title="华为路由交换实验命令（1）">华为路由交换实验命令（1）</a></span>
+    <span><a href="/my-blog/Linux/%E6%9B%B4%E6%8D%A2%E6%B8%85%E5%8D%8E%E6%BA%90/" title="更换清华源">更换清华源</a></span>
   </li>
 
       
@@ -483,17 +442,47 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
 </div>
 
-    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/Fusion%20Compute%E5%AE%89%E8%A3%85/" title="Fusion Compute安装">Fusion Compute安装</a></span>
+    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/FusionSphere%E6%9E%B6%E6%9E%84/" title="FusionSphere架构">FusionSphere架构</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+<a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
 </div>
 
-    <span><a href="/my-blog/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AFHTML5+CSS3/" title="前端HTML5+CSS3">前端HTML5+CSS3</a></span>
+    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E8%AE%A1%E7%AE%97%E8%99%9A%E6%8B%9F%E5%8C%96/" title="计算虚拟化简介">计算虚拟化简介</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E6%A6%82%E8%AE%BA/" title="计算机基础概论">计算机基础概论</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
+</div>
+
+    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E5%AD%98%E5%82%A8%E8%99%9A%E6%8B%9F%E5%8C%96/" title="存储虚拟化">存储虚拟化</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A802/" title="网络应用服务器02">网络应用服务器02</a></span>
   </li>
 
   </ul>

@@ -91,12 +91,12 @@
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/008cglGdly1gjy11c4tqcj32yo1o0qv5.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/008cglGdly1gk2k8yyxzkj32yo1o0azt.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/008cglGdly1gk2k5lg18rj32yo1o07j6.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/008cglGdly1gjy118vq14j32yo1o0494.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/008cglGdly1gk2k5v0nbcj32yo1o016u.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/008cglGdgy1gk6l3cookwj31hc0zmqa8.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/008cglGdly1gk2k5wzc60j31hc0zk1io.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/008cglGdly1gjy0zcdqajj32yo1o04qp.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/008cglGdly1gk2k96dgskj32yo1o04jp.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/008cglGdly1gk2k5vchxdj31hc0zk4fc.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/008cglGdly1gjy11gi2qcj32yo1o0x2m.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/008cglGdly1gk2k9a9vsoj32yo1o01kx.jpg"></li>
         </ul>
       </div>
     </header>
@@ -137,24 +137,25 @@
 
     <h3><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/IP%E5%AD%90%E7%BD%91%E5%88%92%E5%88%86%E4%B8%93%E9%A2%98/" itemprop="url" title="IP子网划分专题">IP子网划分专题</a></h3>
     <div class="excerpt">
-        # 2-10 进制转换
-# 8421 法 ———— 二转十（连加）或十转二（连减）
-
+        2-10进制转换8421法————二转十（连加）或十转二（连减）
 增加时翻倍，减少时减半
 
 例子
 
-11001101 的十进制为多少？
+11001101的十进制为多少？
+$128+64+0+0+8+4+0+1=205$
 
-128+64+0+0+8+4+0+1=205128+64+0+0+8+4+0+1=205128+64+0+0+8+4+0+1=205
+11110001的十进制为多少？
+$128+64+32+16+0+0+0+1=241$
 
-11110001 的十进制为多少？
+127的二进制是多少？
+$128-1=127$,则第八位后面的全为1，即01111111
 
-128+64+32+16+0+0+0+1=241128+64+32+16+0+0+0+1=241128+64+32+16+0+0+0+1=241
+204的二进制是多少？
+$128+64+8+4=204$,则第8、7、4、3位为1，其他全为0，即11001100
 
-127 的二进制是多少？
-
-128−1=127128-1=127128−1=127, 则第八位后面的全为 1，即...
+IP地址转换
+IP地址有4个32位，每一个8位组用0-255表示。因此最小的IP地址值为0.0.0.0,最大为25...
     </div>
     <div class="meta footer">
       <span>
@@ -183,25 +184,27 @@
 
     <h3><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9101/" itemprop="url" title="网络互联与互联网01">网络互联与互联网01</a></h3>
     <div class="excerpt">
-        # 网络互联设备
-# 常用网络互联设备
+        网络互联设备常用网络互联设备
+1层物理层：中继器、集线器
+中继器（Repeater）、集线器（Hub），又叫多端口中继器，传输比特0&amp;nbsp;1，可放大信号，延长传输距离
 
-1 层物理层：中继器、集线器
+2层链路层：网桥、交换机
+网桥（Bridge）、交换机（Switch），又叫多端口网桥，用来传输MAC帧；有源地址、目的地址和自己的MAC地址
 
-中继器（Repeater）、集线器（Hub），又叫多端口中继器，传输比特 0 1，可放大信号，延长传输距离
+3层网络层：路由器、三层交换机
+路由器（Router），用于选择网络路径，传输分组，有自己的逻辑地址——IP地址
 
-2 层链路层：网桥、交换机
+4层以上：网关
 
-网桥（Bridge）、交换机（Switch），又叫多端口网桥，用来传输 MAC 帧；有源地址、目的地址和自己的 MAC 地址
+因特网协议IPTCP/IP协议簇
 
-3 层网络层：路由器、三层交换机
+OSITCP/IP
+7应用层4进程/应用层
+6表示层
+5会话层
 
-路由器（Router），用于选择网络路径，传输分组，有自己的逻辑地址 ——IP 地址
-
-4 层以上：网关
-
-# 因特网协议 IP
-# TCP/IP...
+4传输层3主机-主机层
+3网络层2...
     </div>
     <div class="meta footer">
       <span>
@@ -230,45 +233,37 @@
 
     <h3><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%97%A0%E7%BA%BF%E9%80%9A%E4%BF%A1%E7%BD%91/" itemprop="url" title="无线通信网">无线通信网</a></h3>
     <div class="excerpt">
-        # 无线移动通信
-# 各种移动通信标准
-
+        无线移动通信各种移动通信标准
 1G:
-
-第一代模拟蜂窝；频分双工 FDD
+第一代模拟蜂窝；频分双工FDD
 
 2G:
-
 第二代数字蜂窝
-
-GSM 全球移动通信，采用 TDMA
-CDMA 码分多址通信
+GSM全球移动通信，采用TDMA
+CDMA码分多址通信
 
 2.5G：
-
-第 2.5 代通用分组无线业务 GPRS
+第2.5代通用分组无线业务GPRS
 
 2.75G：
-
-第 2.75 代增强型 GPRS，称作 EDGE
+第2.75代增强型GPRS，称作EDGE
 
 3G:
-
 第三代，速率达到 2Mbps
 
 4G：
-
 第四代，速率达到 100Mbps
 
 4G+，4.5G，5G
 
-# 3G 和 4G 标准汇总
-
-3G（6 个）
-
-W-CDMA, 频分双工
-CDMA-2000, 频分双工
-TD-SCDMA, 时分双工，...
+3G和4G标准汇总
+3G（6个）
+W-CDMA,频分双工
+CDMA-2000,频分双工
+TD-SCDMA,时分双工， ==中国技术标准==
+EDGE
+DECT
+WiMAX IEEE 802.16d固定；无线城域网...
     </div>
     <div class="meta footer">
       <span>
@@ -297,20 +292,13 @@ TD-SCDMA, 时分双工，...
 
     <h3><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%9F%8E%E5%9F%9F%E7%BD%9102/" itemprop="url" title="局域网与城域网02">局域网与城域网02</a></h3>
     <div class="excerpt">
-        # 局域网互联
-# 局域网互联设备
-
+        局域网互联局域网互联设备
 两层网桥（生成树、源路由）、三层交换机、路由器。
-网桥要求 3 层以上的协议相同，1、2 层协议不同可互联
+网桥要求3层以上的协议相同，1、2层协议不同可互联
 
-# 生成树网桥
-
-又叫透明网桥，IEEE802.1d, 生成树算法
-基本思想是在网桥之间传递 BPDU，比较参数，根据 STP 打开好端口，阻塞差的端口，沿着好的端口建立路径， 边走边拐弯，应用于以太网
-
-生成树协议与算法参考文档：https://blog.csdn.net/weixin_43627022/article/details/105730616
-
-#...
+生成树网桥
+又叫透明网桥，IEEE802.1d,生成树算法
+基本思想是在网桥之间传递BPDU，比较参数，根据STP打开好端口，阻塞差的端口，沿着好的端口建立路径，...
     </div>
     <div class="meta footer">
       <span>
@@ -339,29 +327,16 @@ TD-SCDMA, 时分双工，...
 
     <h3><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%9F%8E%E5%9F%9F%E7%BD%9101/" itemprop="url" title="局域网与城域网01">局域网与城域网01</a></h3>
     <div class="excerpt">
-        # 局域网体系与标准
-# 什么是局域网？
-
-单一机构所拥有的专用计算机网络，中等规模地理范围，实现 多个设备互联、信息交换 和 资源共享
-
+        局域网体系与标准什么是局域网？
+单一机构所拥有的专用计算机网络，中等规模地理范围，实现 ==多个设备互联==、==信息交换== 和 ==资源共享==
 主要针对数据链路层和物理层而制定
 
-在数据链路层分为 LLC（逻辑链路控制子层） 和 MAC（介质访问控制子层）
+在==数据链路层分为LLC（逻辑链路控制子层）== 和 ==MAC（介质访问控制子层）==
 
-LLC 为上层通过服务，MAC 依托在物理层之上
+LLC为上层通过服务，MAC依托在物理层之上
 
-# LAN/MAN 的 IEEE802 标准
-
-802.3   CSMA/CD  
-
-以太网规范，定义 CSMA/CD
-还分为 IEEE 802.3ab 和 IEEE 802.3u
-
-802.6   城域网  
-
-定义城域网的每天访问控制子层和物理层规范
-
-802.11...
+LAN/MAN 的IEEE802标准
+802.3...
     </div>
     <div class="meta footer">
       <span>
@@ -390,9 +365,7 @@ LLC 为上层通过服务，MAC 依托在物理层之上
 
     <h3><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B9%BF%E5%9F%9F%E9%80%9A%E4%BF%A1%E7%BD%91/" itemprop="url" title="广域通信网">广域通信网</a></h3>
     <div class="excerpt">
-        # 广域网概念与分类
-# 什么是广域网？
-
+        广域网概念与分类什么是广域网？
 广域网是指长距离块地区的各种局域网、计算机、终端互联在一起，组成一个资源共享的通信网络
 
 传统广域网
@@ -403,19 +376,16 @@ LLC 为上层通过服务，MAC 依托在物理层之上
 数字数据网DDN同步数字传输网SDH多业务传送平台MSTP
 光纤接入FTTX无源光网络PON无线网WiMAX、4G、5G
 
-# 公共交换电话网 PSTN
-
-公共交换电话网 PSTN，利用电话线上网，早期是电话 +“猫” 拨号上网
+公共交换电话网PSTN
+公共交换电话网PSTN，利用电话线上网，早期是电话+“猫”拨号上网
 四大特性：
-
 机械特性
 电气特性
 功能特性
 过程特性
 
-# 调制解调器 Modem
-
-俗称...
+调制解调器Modem
+俗称“猫”，作用是把电话线里面的模拟信号和数字信...
     </div>
     <div class="meta footer">
       <span>
@@ -444,27 +414,22 @@ LLC 为上层通过服务，MAC 依托在物理层之上
 
     <h3><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8002/" itemprop="url" title="数据通信基础02">数据通信基础02</a></h3>
     <div class="excerpt">
-        # 数据通信方式
-# 通信方向
-
+        数据通信方式通信方向
 单工通信（电视）
-
 数据只能从一个方向向另一个方向传输
 
 半双工通信（对讲机）
-
 数据可以双向传输，但不可同步进行传输
 
 全双工（手机）
-
 数据可双向传输，并且可以同步传输
 
-# 传输方式
-# 按传输方式分
-
+传输方式按传输方式分
 串行传输
+串行传输是数据在传输中只有1个数据位在设备之间进行的传输，对任何一个由若干位二进制表示的字符,串行传输都是用一个传输信道，按位有序的对字符进行传输。==串行传输的速度比并行传输的速度要慢得多，但费用低。并行传输适用距离短，而串行传输适用远距离传输。==
 
-串行传输是数据在传输中只有 1...
+并行传输
+并行传输是在传输中有多个数据位同时在设备之间进行的传输。所有数据位能同时沿着各自的信道并排的传输并行传输时，一...
     </div>
     <div class="meta footer">
       <span>
@@ -493,33 +458,25 @@ LLC 为上层通过服务，MAC 依托在物理层之上
 
     <h3><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8001/" itemprop="url" title="数据通信基础01">数据通信基础01</a></h3>
     <div class="excerpt">
-        # 数据通信基本概念
-
-# 信源
-
+        数据通信基本概念
+信源
 信源，是产生各类信息的实体。信源给出的符号是不确定的，可用随机变量及其统计特性描述。
 
-# 信道
-
+信道
 通信的通道
 
-# 信宿
-
+信宿
 信息接收者指在信息传递过程中，发出信息一方称发信息者，接受信息的一方称信息接受者，又称受信息或信宿。
 
-# 数字信号
-
+数字信号
 数字信号是信息用于若干个明确定义的离散值表示的时间离散星火
 
-# 模拟信号
-
+模拟信号
 模拟信号是在一段连续的时间间隔内，其代表信息的特征量可以在任意瞬间程序为任意数值的信号
 
-# 模拟通信
-
-利用正弦波的幅度、频率或相位的变化，或利用脉冲的幅度、宽度或位置变化来模拟原始信号，以达到通信的目的
-
-#...
+模拟通信
+利用正弦波的幅度、频率或相位的变化，或利用脉冲的幅度、宽度或位置变化来模拟原始信号，以达到通信的目的数字通信
+用数值信号作为载体来传输消息，或用数字信号对载波就行数字调制后再传...
     </div>
     <div class="meta footer">
       <span>
@@ -548,37 +505,8 @@ LLC 为上层通过服务，MAC 依托在物理层之上
 
     <h3><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E6%A6%82%E8%AE%BA/" itemprop="url" title="计算机基础概论">计算机基础概论</a></h3>
     <div class="excerpt">
-        # 计算机网络概念
-# 计算机网络
-
-计算机网络时通过通信线路和通信设备连接的许多的 分散独立工作 的计算机系统，遵从一定的协议用 软件实现资源共享 的 系统
-
-# 计算机组成
-
-硬件
-
-电脑、路由器等
-
-软件
-
-聊天软件、通信软件等
-
-协议
-
-一类数据传输的标准
-
-# 协议分类
-
-协议分为国际标准 OSI/RM 和工人标准 TCP/IP
-
-# 计算机网络分类
-# 按分布范围
-
-局域网
-城域网
-广域网
-
-#...
+        计算机网络概念计算机网络
+计算机网络时通过通信线路和通信设备连接的许多的 ==分散独立工作== 的计算机系统，遵从一定的协议用 软件==实现资源共享== 的...
     </div>
     <div class="meta footer">
       <span>
@@ -607,20 +535,16 @@ LLC 为上层通过服务，MAC 依托在物理层之上
 
     <h3><a href="/my-blog/MySQL/MySQL%E8%BF%9B%E9%98%B6/" itemprop="url" title="MySQL进阶">MySQL进阶</a></h3>
     <div class="excerpt">
-        # 事务 (transaction)
-# 何为事务？
+        事务(transaction)何为事务？
+一般是指要做的或所做的事情。在计算机术语中是指访问并可能更新数据库中各种数据项的一个程序执行单元(unit)。在计算机术语中，事务通常就是指数据库事务。
 
-一般是指要做的或所做的事情。在计算机术语中是指访问并可能更新数据库中各种数据项的一个程序执行单元 (unit)。在计算机术语中，事务通常就是指数据库事务。
-
-# 事务在数据库的作用
-
+事务在数据库的作用
 一个数据库事务通常包含对数据库进行读或写的一个操作序列。它的存在包含有以下两个目的：
+==1、为数据库操作提供了一个从失败中恢复到正常状态的方法，同时提供了数据库即使在异常状态下仍能保持一致性的方法。==
+==2、当多个应用程序在并发访问数据库时，可以在这些应用程序之间提供一个隔离方法，以防止彼此的操作互相干扰。==
 
-1、为数据库操作提供了一个从失败中恢复到正常状态的方法，同时提供了数据库即使在异常状态下仍能保持一致性的方法。
-2、当多个应用程序在并发访问数据库时，可以在这些应用程序之间提供一个隔离方法，以防止彼此的操作互相干扰。
-
-# 事务的四大原则
-# 原子性...
+事务的四大原则原子性(Atomicity)
+原子性保证将每个...
     </div>
     <div class="meta footer">
       <span>
@@ -769,79 +693,50 @@ LLC 为上层通过服务，MAC 依托在物理层之上
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
-</div>
-
-    <span><a href="/my-blog/Linux/Linux%E5%BC%80%E7%AF%87/" title="Linux开篇">Linux开篇</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
-</div>
-
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/IP%E5%AD%90%E7%BD%91%E5%88%92%E5%88%86%E4%B8%93%E9%A2%98/" title="IP子网划分专题">IP子网划分专题</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/my-blog/%E7%BD%91%E7%BB%9C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86DNS%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="配置与管理DNS服务器">配置与管理DNS服务器</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
-</div>
-
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%8E%E5%BA%94%E7%94%A801/" title="网络安全与应用01">网络安全与应用01</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
-</div>
-
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8001/" title="数据通信基础01">数据通信基础01</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
-</div>
-
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%881%EF%BC%89/" title="华为路由交换实验命令（1）">华为路由交换实验命令（1）</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
 </div>
 
-    <span><a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" title="Java网络编程">Java网络编程</a></span>
+    <span><a href="/my-blog/Java/JavaSE%E5%B0%8F%E7%BB%93/" title="JavaSE小结">JavaSE小结</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/Linux/%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E4%B8%8E%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86/" title="文件权限与目录管理">文件权限与目录管理</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E5%92%8C%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80/" title="系统开发和项目管理基础">系统开发和项目管理基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B9%BF%E5%9F%9F%E9%80%9A%E4%BF%A1%E7%BD%91/" title="广域通信网">广域通信网</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" title="分类于 数据分析">数据分析</a>
+</div>
+
+    <span><a href="/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/CDC%E6%8A%80%E6%9C%AF/" title="CDC技术">CDC技术</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A801/" title="网络应用服务器01">网络应用服务器01</a></span>
   </li>
 
       
@@ -858,10 +753,40 @@ LLC 为上层通过服务，MAC 依托在物理层之上
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/git/" title="分类于 git">git</a>
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/git/git%E4%B8%8Egithub%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BA%86%E8%A7%A3/" title="git与github的基本了解">git与github的基本了解</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%90%84%E9%87%8D%E7%82%B9%E5%8D%8F%E8%AE%AE%E5%8F%8A%E5%B8%A7%E6%A0%BC%E5%BC%8F%E8%AF%A6%E8%A7%A3/" title="各重点协议及帧格式详解">各重点协议及帧格式详解</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%8E%E5%BA%94%E7%94%A802/" title="网络安全与应用02">网络安全与应用02</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
+</div>
+
+    <span><a href="/my-blog/Linux/%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/" title="目录与文件管理">目录与文件管理</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+</div>
+
+    <span><a href="/my-blog/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AFHTML5+CSS3/" title="前端HTML5+CSS3">前端HTML5+CSS3</a></span>
   </li>
 
   </ul>

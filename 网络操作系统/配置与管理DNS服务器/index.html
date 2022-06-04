@@ -144,275 +144,161 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="dns服务器的配置与管理"><a class="markdownIt-Anchor" href="#dns服务器的配置与管理">#</a> DNS 服务器的配置与管理</h1>
-<h2 id="1初识dns"><a class="markdownIt-Anchor" href="#1初识dns">#</a> 1. 初识 DNS</h2>
-<ul>
-<li>DNS (Domain Name System) 域名系统，DNS 服务器的作用就是 <strong>将域名转换成 IP 地址</strong></li>
-<li>为客户机对域名的查询提供该域名的 IP 地址，便于用户记住网站的地址（把难记的 IP 地址转换成容易记住的域名，比如： <code>www.google.com</code> ）</li>
+    <h1 id="DNS服务器的配置与管理"><a href="#DNS服务器的配置与管理" class="headerlink" title="DNS服务器的配置与管理"></a>DNS服务器的配置与管理</h1><h2 id="1-初识DNS"><a href="#1-初识DNS" class="headerlink" title="1.初识DNS"></a>1.初识DNS</h2><ul>
+<li>DNS(Domain Name System)域名系统，DNS服务器的作用就是 <strong>将域名转换成IP地址</strong></li>
+<li>为客户机对域名的查询提供该域名的IP地址，便于用户记住网站的地址（把难记的IP地址转换成容易记住的域名，比如：<code>www.google.com</code>）</li>
 </ul>
-<h2 id="2域名系统的结构"><a class="markdownIt-Anchor" href="#2域名系统的结构">#</a> 2. 域名系统的结构</h2>
-<h3 id="21域名命名规则"><a class="markdownIt-Anchor" href="#21域名命名规则">#</a> 2.1 域名命名规则</h3>
-<ul>
-<li>对于域名和主机名，只可以使用数字或字母以及 <code>-</code>  号组成，Windows 服务器不区分字母大小写，UNIX 服务器则相反</li>
+<h2 id="2-域名系统的结构"><a href="#2-域名系统的结构" class="headerlink" title="2.域名系统的结构"></a>2.域名系统的结构</h2><h3 id="2-1域名命名规则"><a href="#2-1域名命名规则" class="headerlink" title="2.1域名命名规则"></a>2.1域名命名规则</h3><ul>
+<li>对于域名和主机名，只可以使用数字或字母以及<code>-</code>号组成，Windows服务器不区分字母大小写，UNIX服务器则相反</li>
 </ul>
-<h3 id="22层次结构"><a class="markdownIt-Anchor" href="#22层次结构">#</a> 2.2 层次结构</h3>
-<p><img data-src="https://i.loli.net/2020/10/29/l417MRnUW8Kcbgq.png" alt="domainarch.png"></p>
-<h4 id="221-根域"><a class="markdownIt-Anchor" href="#221-根域">#</a> 2.2.1 根域</h4>
-<ul>
-<li>根域名服务器不保存任何网址，用 <code>.</code>  来表示</li>
+<h3 id="2-2层次结构"><a href="#2-2层次结构" class="headerlink" title="2.2层次结构"></a>2.2层次结构</h3><p><img data-src="https://i.loli.net/2020/10/29/l417MRnUW8Kcbgq.png" alt="domainarch.png"></p>
+<h4 id="2-2-1-根域"><a href="#2-2-1-根域" class="headerlink" title="2.2.1 根域"></a>2.2.1 根域</h4><ul>
+<li>根域名服务器不保存任何网址，用<code>.</code>来表示</li>
 </ul>
-<h4 id="222顶级域"><a class="markdownIt-Anchor" href="#222顶级域">#</a> 2.2.2 顶级域</h4>
-<ul>
-<li>“一域之下，万域之上”，顶级域存在于根域之下，顶级域的数量是确定的，一般分为机构域和地理域
-<table>
-<thead>
-<tr>
-<th>域名</th>
-<th>解释</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>com</td>
-<td>商业机构</td>
-</tr>
-<tr>
-<td>edu</td>
-<td>教育机构</td>
-</tr>
-<tr>
-<td>gov</td>
-<td>政府机构</td>
-</tr>
-<tr>
-<td>net</td>
-<td>网络服务机构</td>
-</tr>
-<tr>
-<td>org</td>
-<td>非盈利性组织</td>
-</tr>
-<tr>
-<td>mil</td>
-<td>军事部门</td>
-</tr>
-<tr>
-<td>cn、us、hk 等</td>
-<td>国家或地区</td>
-</tr>
-</tbody>
-</table>
-</li>
+<h4 id="2-2-2顶级域"><a href="#2-2-2顶级域" class="headerlink" title="2.2.2顶级域"></a>2.2.2顶级域</h4><ul>
+<li>“一域之下，万域之上”，顶级域存在于根域之下，顶级域的数量是确定的，一般分为机构域和地理域<br>|域名|解释|<br>|—-|——|<br>|com|商业机构|<br>|edu|教育机构|<br>|gov|政府机构|<br>|net|网络服务机构|<br>|org|非盈利性组织|<br>|mil|军事部门|<br>|cn、us、hk等|国家或地区|</li>
 </ul>
-<h4 id="223子域"><a class="markdownIt-Anchor" href="#223子域">#</a> 2.2.3 子域</h4>
-<ul>
+<h4 id="2-2-3子域"><a href="#2-2-3子域" class="headerlink" title="2.2.3子域"></a>2.2.3子域</h4><ul>
 <li>除了根域和顶级域以外，其他的域都称为子域</li>
 <li>一个与可以有许多子域</li>
-<li>例如: <code>www.xxx.edu.com</code>  edu 是 com 的子域，而 xxx 也可以称为 edu 的子域，所有说子域只是相对的</li>
+<li>例如:<code>www.xxx.edu.com</code> edu是com的子域，而xxx也可以称为edu的子域，所有说子域只是相对的</li>
 </ul>
-<h2 id="3根域名服务器的数量"><a class="markdownIt-Anchor" href="#3根域名服务器的数量">#</a> 3. 根域名服务器的数量</h2>
-<ul>
-<li>对于 IPv4 来说，全球一共有 13 台，一台主根服务器，位于美国，其他 12 台均为辅根服务器 (9 台在美国，1 台在日本，欧洲 2 台)</li>
-<li>所有根服务器有 ICANN (互联网名称与数字地址分配地址分配机构) 统一管理</li>
-<li>对于 IPv6，全球 25 台</li>
+<h2 id="3-根域名服务器的数量"><a href="#3-根域名服务器的数量" class="headerlink" title="3.根域名服务器的数量"></a>3.根域名服务器的数量</h2><ul>
+<li>对于IPv4来说，全球一共有13台，一台主根服务器，位于美国，其他12台均为辅根服务器(9台在美国，1台在日本，欧洲2台)</li>
+<li>所有根服务器有ICANN(互联网名称与数字地址分配地址分配机构)统一管理</li>
+<li>对于IPv6，全球25台</li>
 </ul>
-<h2 id="4dns实验"><a class="markdownIt-Anchor" href="#4dns实验">#</a> 4.DNS 实验</h2>
-<h3 id="41安装dns服务器"><a class="markdownIt-Anchor" href="#41安装dns服务器">#</a> 4.1 安装 DNS 服务器</h3>
-<ul>
-<li>
-<p>该实验基于 Windows Server2008 R2 版本的网络操作系统</p>
-</li>
-<li>
-<p>首先在 VMware 虚拟机上安装好 Windows Server2008 R2 系统</p>
-</li>
-<li>
-<p>为该系统配置 IP 及子网掩码</p>
+<h2 id="4-DNS实验"><a href="#4-DNS实验" class="headerlink" title="4.DNS实验"></a>4.DNS实验</h2><h3 id="4-1安装DNS服务器"><a href="#4-1安装DNS服务器" class="headerlink" title="4.1安装DNS服务器"></a>4.1安装DNS服务器</h3><ul>
+<li>该实验基于Windows Server2008 R2版本的网络操作系统</li>
+<li>首先在VMware虚拟机上安装好Windows Server2008 R2系统</li>
+<li><p>为该系统配置IP及子网掩码</p>
 <p><img data-src="https://i.loli.net/2020/10/29/DmdZLzkpTB24Pyb.png" alt="shiyan2.png"></p>
 <p><img data-src="https://i.loli.net/2020/10/29/Xi8SAZyjqB1peK3.png" alt="shiyan3.png"></p>
 <p><img data-src="https://i.loli.net/2020/10/29/IXpbYJmVO3N1W2j.png" alt="shiyan4.png"></p>
 </li>
-<li>
-<p>进入该系统后， <strong>选择服务器角色</strong>， <strong>勾选 DNS 服务器</strong></p>
+<li><p>进入该系统后， <strong>选择服务器角色</strong>， <strong>勾选DNS服务器</strong></p>
 </li>
-<li>
-<p>DNS 服务器安装完成！</p>
-<p><img data-src="https://i.loli.net/2020/10/29/3yMbtwPDK8SWdYC.png" alt="shiyan1.png"></p>
+<li><p>DNS服务器安装完成！</p>
+<p> <img data-src="https://i.loli.net/2020/10/29/3yMbtwPDK8SWdYC.png" alt="shiyan1.png"></p>
 </li>
 </ul>
-<h3 id="42创建正向主要区域"><a class="markdownIt-Anchor" href="#42创建正向主要区域">#</a> 4.2 创建正向主要区域</h3>
-<ul>
-<li>
-<p>首先打开 DNS 管理器，右键选中正向查找区域</p>
+<h3 id="4-2创建正向主要区域"><a href="#4-2创建正向主要区域" class="headerlink" title="4.2创建正向主要区域"></a>4.2创建正向主要区域</h3><ul>
+<li><p>首先打开DNS管理器，右键选中正向查找区域</p>
 <p><img data-src="https://i.loli.net/2020/10/29/IEFmRiCkc3vBZNg.png" alt="shiyan5.png"></p>
 </li>
-<li>
-<p>选择新建区域</p>
+<li><p>选择新建区域</p>
 <p><img data-src="https://i.loli.net/2020/10/29/Pk5no72i6hC4lA1.png" alt="shiyan6.png"></p>
 </li>
-<li>
-<p>选择主要区域</p>
+<li><p>选择主要区域</p>
 <p><img data-src="https://i.loli.net/2020/10/29/uqwFcBtsDX7VhNk.png" alt="shiyan7.png"></p>
 </li>
-<li>
-<p>输入区域名称</p>
+<li><p>输入区域名称</p>
 <p><img data-src="https://i.loli.net/2020/10/29/pBntJED63kTFilP.png" alt="shiyan8.png"></p>
 </li>
-<li>
-<p>创建完成</p>
+<li><p>创建完成</p>
 <p><img data-src="https://i.loli.net/2020/10/29/3sLBWSliApq5Pwg.png" alt="shiyan9.png"></p>
 </li>
 </ul>
-<h3 id="43基于ip地址发布ftp站点"><a class="markdownIt-Anchor" href="#43基于ip地址发布ftp站点">#</a> 4.3 基于 IP 地址，发布 FTP 站点</h3>
-<ul>
-<li>
-<p>进入我的电脑，在硬盘下新建文件夹 ftp</p>
+<h3 id="4-3基于IP地址，发布FTP站点"><a href="#4-3基于IP地址，发布FTP站点" class="headerlink" title="4.3基于IP地址，发布FTP站点"></a>4.3基于IP地址，发布FTP站点</h3><ul>
+<li><p>进入我的电脑，在硬盘下新建文件夹ftp</p>
 <p><img data-src="https://i.loli.net/2020/10/29/5fs6zkWBKOEAMP8.png" alt="shiyan10.png"></p>
 </li>
-<li>
-<p>在该文件夹下创建几个文档文件</p>
+<li><p>在该文件夹下创建几个文档文件</p>
 <p><img data-src="https://i.loli.net/2020/10/29/nDifdzgXUQCoLHS.png" alt="shiyan11.png"></p>
 </li>
-<li>
-<p>进入 DNS 管理器，在创建好的正向主要区域下右键选择新建主机，并输入本机的 IP 地址</p>
+<li><p>进入DNS管理器，在创建好的正向主要区域下右键选择新建主机,并输入本机的IP地址</p>
 <p><img data-src="https://i.loli.net/2020/10/29/EQNRm4SehZK2PnW.png" alt="shiyan12.png"></p>
 </li>
-<li>
-<p>然后进入 IIS 管理器</p>
+<li><p>然后进入IIS管理器</p>
 <p><img data-src="https://i.loli.net/2020/10/29/u5ab3x4iPDzEeOq.png" alt="shiyan13.png"></p>
 </li>
-<li>
-<p>在网络文件夹中点击右键新建 FTP 站点，名称为 ftp，路径即之前在硬盘下创建的 ftp 文件夹的绝对路径</p>
-<p><img data-src="https://i.loli.net/2020/10/29/yMfbtx9JLzXSEjW.png" alt="shiyan14.png"></p>
+<li><p>在网络文件夹中点击右键新建FTP站点,名称为ftp，路径即之前在硬盘下创建的ftp文件夹的绝对路径</p>
+<p>  <img data-src="https://i.loli.net/2020/10/29/yMfbtx9JLzXSEjW.png" alt="shiyan14.png"></p>
 </li>
-<li>
-<p>配置 FTP 站点</p>
-<p><img data-src="https://i.loli.net/2020/10/29/ILfi8VXmW1kw45o.png" alt="shiyan15.png"></p>
-<p><img data-src="https://i.loli.net/2020/10/29/taS4cHZ5RDJb3Lv.png" alt="shiyan16.png"></p>
+<li><p>配置FTP站点</p>
+<p>  <img data-src="https://i.loli.net/2020/10/29/ILfi8VXmW1kw45o.png" alt="shiyan15.png"></p>
+<p>  <img data-src="https://i.loli.net/2020/10/29/taS4cHZ5RDJb3Lv.png" alt="shiyan16.png"></p>
 </li>
-<li>
-<p>打开 IE 浏览器，输入网址 <code>ftp://192.168.200.107</code> , 访问成功，实验完成！</p>
-<p><img data-src="https://i.loli.net/2020/10/29/gKyWNBlEb1jC4eV.png" alt="shiyan17.png"></p>
+<li><p>打开IE浏览器，输入网址<code>ftp://192.168.200.107</code>,访问成功，实验完成！</p>
+<p>  <img data-src="https://i.loli.net/2020/10/29/gKyWNBlEb1jC4eV.png" alt="shiyan17.png"></p>
 </li>
 </ul>
-<h3 id="44基于域名发布ftp站点"><a class="markdownIt-Anchor" href="#44基于域名发布ftp站点">#</a> 4.4 基于域名发布 FTP 站点</h3>
-<ul>
-<li>
-<p>该实验可基于上面 4.3 的 ftp 文件夹来做</p>
+<h3 id="4-4基于域名发布FTP站点"><a href="#4-4基于域名发布FTP站点" class="headerlink" title="4.4基于域名发布FTP站点"></a>4.4基于域名发布FTP站点</h3><ul>
+<li>该实验可基于上面4.3的ftp文件夹来做</li>
+<li><p>一样的创建好FTP站点，不过此时要启用虚拟主机名<code>ftp.peterpan.com</code></p>
+<p> <img data-src="https://i.loli.net/2020/10/29/iaSMQvWNgo8t1yp.png" alt="shiyan18.png"></p>
 </li>
-<li>
-<p>一样的创建好 FTP 站点，不过此时要启用虚拟主机名 <code>ftp.peterpan.com</code></p>
-<p><img data-src="https://i.loli.net/2020/10/29/iaSMQvWNgo8t1yp.png" alt="shiyan18.png"></p>
+<li><p>直接在IE浏览器中输入<code>ftp://ftp.peterpan.com</code></p>
+<p>  <img data-src="https://i.loli.net/2020/10/29/EkNwFOvcPqCATVm.png" alt="shiyan19.png"></p>
 </li>
-<li>
-<p>直接在 IE 浏览器中输入 <code>ftp://ftp.peterpan.com</code></p>
-<p><img data-src="https://i.loli.net/2020/10/29/EkNwFOvcPqCATVm.png" alt="shiyan19.png"></p>
-</li>
-<li>
-<p>实验完成！</p>
-</li>
+<li>实验完成！</li>
 </ul>
-<h3 id="45多个ip地址发布多个ftp站点"><a class="markdownIt-Anchor" href="#45多个ip地址发布多个ftp站点">#</a> 4.5 多个 IP 地址发布多个 FTP 站点</h3>
+<h3 id="4-5多个IP地址发布多个FTP站点"><a href="#4-5多个IP地址发布多个FTP站点" class="headerlink" title="4.5多个IP地址发布多个FTP站点"></a>4.5多个IP地址发布多个FTP站点</h3><ul>
+<li><p>在硬盘下创建文件夹<code>myftp</code></p>
+<p>  <img data-src="https://i.loli.net/2020/10/29/VSLWq98XkxnhZJe.png" alt="shiyan20.png"></p>
+</li>
+<li><p>在<code>myftp</code>下创建三个文件夹</p>
+<p>  <img data-src="https://s3.ax1x.com/2021/01/09/sMKYuj.png" alt="shiyan21.png"></p>
+</li>
+<li><p>在每个子文件夹中新建三个文本文档文件</p>
+<p>  <img data-src="https://s3.ax1x.com/2021/01/09/sMKw5V.png" alt="shiyan22.png"></p>
+</li>
+<li><p>打开网络连接，在已有的IP地址中，点击高级，添加两个IP地址</p>
+<p>  <img data-src="https://s3.ax1x.com/2021/01/09/sMK4PK.png" alt="shiyan23.png"></p>
+</li>
+<li><p>添加IP地址<code>192.168.200.108</code></p>
+<p>  <img data-src="https://s3.ax1x.com/2021/01/09/sMKoxe.png" alt="shiyan24.png"></p>
+</li>
+<li><p>添加IP地址<code>192.168.200.109</code></p>
+<p>  <img data-src="https://s3.ax1x.com/2021/01/09/sMK7KH.png" alt="shiyan25.png"></p>
+</li>
+<li><p>参考实验4.3的实验步骤,添加三个ftp站点(ftp站点配置与4.3实验相同)</p>
 <ul>
-<li>
-<p>在硬盘下创建文件夹 <code>myftp</code></p>
-<p><img data-src="https://i.loli.net/2020/10/29/VSLWq98XkxnhZJe.png" alt="shiyan20.png"></p>
-</li>
-<li>
-<p>在 <code>myftp</code>  下创建三个文件夹</p>
-<p><img data-src="https://s3.ax1x.com/2021/01/09/sMKYuj.png" alt="shiyan21.png"></p>
-</li>
-<li>
-<p>在每个子文件夹中新建三个文本文档文件</p>
-<p><img data-src="https://s3.ax1x.com/2021/01/09/sMKw5V.png" alt="shiyan22.png"></p>
-</li>
-<li>
-<p>打开网络连接，在已有的 IP 地址中，点击高级，添加两个 IP 地址</p>
-<p><img data-src="https://s3.ax1x.com/2021/01/09/sMK4PK.png" alt="shiyan23.png"></p>
-</li>
-<li>
-<p>添加 IP 地址 <code>192.168.200.108</code></p>
-<p><img data-src="https://s3.ax1x.com/2021/01/09/sMKoxe.png" alt="shiyan24.png"></p>
-</li>
-<li>
-<p>添加 IP 地址 <code>192.168.200.109</code></p>
-<p><img data-src="https://s3.ax1x.com/2021/01/09/sMK7KH.png" alt="shiyan25.png"></p>
-</li>
-<li>
-<p>参考实验 4.3 的实验步骤，添加三个 ftp 站点 (ftp 站点配置与 4.3 实验相同)</p>
-<ul>
-<li>
-<p>其中 ftp1，对应 107 主机</p>
-</li>
-<li>
-<p>其中 ftp2，对应 108 主机</p>
-</li>
-<li>
-<p>其中 ftp3，对应 109 主机</p>
+<li>其中ftp1，对应107主机</li>
+<li>其中ftp2，对应108主机</li>
+<li><p>其中ftp3，对应109主机</p>
 <p><img data-src="https://s3.ax1x.com/2021/01/09/sMKLVI.png" alt="shiyan26.png"></p>
 </li>
 </ul>
 </li>
-<li>
-<p>在 IE 浏览器中分别输入</p>
+<li><p>在IE浏览器中分别输入</p>
 <ul>
-<li>
-<p><code>ftp://192.168.200.107</code></p>
-</li>
-<li>
-<p><code>ftp://192.168.200.108</code></p>
-</li>
-<li>
-<p><code>ftp://192.168.200.109</code></p>
+<li><code>ftp://192.168.200.107</code> </li>
+<li><code>ftp://192.168.200.108</code> </li>
+<li><p><code>ftp://192.168.200.109</code></p>
 <p><img data-src="https://s3.ax1x.com/2021/01/09/sMKvPf.png" alt="shiyan27.png"></p>
 <p><img data-src="https://s3.ax1x.com/2021/01/09/sMMCrj.png" alt="shiyan28.png"></p>
 <p><img data-src="https://s3.ax1x.com/2021/01/09/sMMkaq.png" alt="shiyan29.png"></p>
 </li>
 </ul>
 </li>
-<li>
-<p>实验完成！！！</p>
+<li><p>实验完成！！！</p>
 </li>
 </ul>
-<h3 id="46基于端口发布ftp站点"><a class="markdownIt-Anchor" href="#46基于端口发布ftp站点">#</a> 4.6 基于端口发布 FTP 站点</h3>
-<ul>
-<li>
-<p>在 4.5 的基础上，选择一个 ftp 站点</p>
-</li>
-<li>
-<p>点击绑定，修改端口号为 2222</p>
-<p><img data-src="https://s3.ax1x.com/2021/01/09/sMMAI0.png" alt="shiyan30.png"></p>
+<h3 id="4-6基于端口发布FTP站点"><a href="#4-6基于端口发布FTP站点" class="headerlink" title="4.6基于端口发布FTP站点"></a>4.6基于端口发布FTP站点</h3><ul>
+<li>在4.5的基础上，选择一个ftp站点</li>
+<li><p>点击绑定，修改端口号为2222</p>
+<p><img data-src="https://s3.ax1x.com/2021/01/09/sMMAI0.png" alt="shiyan30.png"> </p>
 <p><img data-src="https://s3.ax1x.com/2021/01/09/sMMZGT.png" alt="shiyan31.png"></p>
 </li>
-<li>
-<p>在 IE 浏览器中输入 <code>ftp://192.168.200.107:2222</code></p>
+<li><p>在IE浏览器中输入<code>ftp://192.168.200.107:2222</code></p>
 <p><img data-src="https://s3.ax1x.com/2021/01/09/sMMmzF.png" alt="shiyan32.png"></p>
 </li>
-<li>
-<p>访问成功，实验完成！！！</p>
+<li><p>访问成功，实验完成！！！</p>
 </li>
 </ul>
-<h3 id="47创建虚拟目录"><a class="markdownIt-Anchor" href="#47创建虚拟目录">#</a> 4.7 创建虚拟目录</h3>
-<ul>
-<li>
-<p>在 4.4 的基础上，选择创建好的 ftp 站点</p>
+<h3 id="4-7创建虚拟目录"><a href="#4-7创建虚拟目录" class="headerlink" title="4.7创建虚拟目录"></a>4.7创建虚拟目录</h3><ul>
+<li>在4.4的基础上，选择创建好的ftp站点</li>
+<li>找到该站点在本机的位置(绝对路径)</li>
+<li>在该路径下在新建一个名为<code>img</code>的文件夹</li>
+<li><p>回到IIS管理器，选中之前选择好的站点，点击右键添加虚拟目录,别名<code>img</code>，物理路径即img文件夹的绝对路径</p>
+<p>  <img data-src="https://s3.ax1x.com/2021/01/09/sMMML9.png" alt="shiyan33.png"></p>
+<p>  <img data-src="https://s3.ax1x.com/2021/01/09/sMMGi6.png" alt="shiyan34.png"></p>
 </li>
-<li>
-<p>找到该站点在本机的位置 (绝对路径)</p>
+<li><p>在IE浏览器中，输入<code>ftp://ftp.peterpan.com/img</code></p>
+<p>  <img data-src="https://i.loli.net/2020/10/29/wikF78Ls59A1Ucj.png" alt="shiyan35.png"></p>
 </li>
-<li>
-<p>在该路径下在新建一个名为 <code>img</code>  的文件夹</p>
-</li>
-<li>
-<p>回到 IIS 管理器，选中之前选择好的站点，点击右键添加虚拟目录，别名 <code>img</code> ，物理路径即 img 文件夹的绝对路径</p>
-<p><img data-src="https://s3.ax1x.com/2021/01/09/sMMML9.png" alt="shiyan33.png"></p>
-<p><img data-src="https://s3.ax1x.com/2021/01/09/sMMGi6.png" alt="shiyan34.png"></p>
-</li>
-<li>
-<p>在 IE 浏览器中，输入 <code>ftp://ftp.peterpan.com/img</code></p>
-<p><img data-src="https://i.loli.net/2020/10/29/wikF78Ls59A1Ucj.png" alt="shiyan35.png"></p>
-</li>
-<li>
-<p>访问成功，实验完成！！！</p>
+<li><p>访问成功，实验完成！！！</p>
 </li>
 </ul>
 
@@ -501,7 +387,7 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#dns服务器的配置与管理"><span class="toc-number">1.</span> <span class="toc-text"> DNS 服务器的配置与管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1初识dns"><span class="toc-number">1.1.</span> <span class="toc-text"> 1. 初识 DNS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2域名系统的结构"><span class="toc-number">1.2.</span> <span class="toc-text"> 2. 域名系统的结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21域名命名规则"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 2.1 域名命名规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22层次结构"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 2.2 层次结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#221-根域"><span class="toc-number">1.2.2.1.</span> <span class="toc-text"> 2.2.1 根域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#222顶级域"><span class="toc-number">1.2.2.2.</span> <span class="toc-text"> 2.2.2 顶级域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#223子域"><span class="toc-number">1.2.2.3.</span> <span class="toc-text"> 2.2.3 子域</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3根域名服务器的数量"><span class="toc-number">1.3.</span> <span class="toc-text"> 3. 根域名服务器的数量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4dns实验"><span class="toc-number">1.4.</span> <span class="toc-text"> 4.DNS 实验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#41安装dns服务器"><span class="toc-number">1.4.1.</span> <span class="toc-text"> 4.1 安装 DNS 服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#42创建正向主要区域"><span class="toc-number">1.4.2.</span> <span class="toc-text"> 4.2 创建正向主要区域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#43基于ip地址发布ftp站点"><span class="toc-number">1.4.3.</span> <span class="toc-text"> 4.3 基于 IP 地址，发布 FTP 站点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#44基于域名发布ftp站点"><span class="toc-number">1.4.4.</span> <span class="toc-text"> 4.4 基于域名发布 FTP 站点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#45多个ip地址发布多个ftp站点"><span class="toc-number">1.4.5.</span> <span class="toc-text"> 4.5 多个 IP 地址发布多个 FTP 站点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#46基于端口发布ftp站点"><span class="toc-number">1.4.6.</span> <span class="toc-text"> 4.6 基于端口发布 FTP 站点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#47创建虚拟目录"><span class="toc-number">1.4.7.</span> <span class="toc-text"> 4.7 创建虚拟目录</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#DNS服务器的配置与管理"><span class="toc-number">1.</span> <span class="toc-text">DNS服务器的配置与管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-初识DNS"><span class="toc-number">1.1.</span> <span class="toc-text">1.初识DNS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-域名系统的结构"><span class="toc-number">1.2.</span> <span class="toc-text">2.域名系统的结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1域名命名规则"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1域名命名规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2层次结构"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2层次结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-1-根域"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">2.2.1 根域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-2顶级域"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">2.2.2顶级域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-3子域"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">2.2.3子域</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-根域名服务器的数量"><span class="toc-number">1.3.</span> <span class="toc-text">3.根域名服务器的数量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-DNS实验"><span class="toc-number">1.4.</span> <span class="toc-text">4.DNS实验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1安装DNS服务器"><span class="toc-number">1.4.1.</span> <span class="toc-text">4.1安装DNS服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2创建正向主要区域"><span class="toc-number">1.4.2.</span> <span class="toc-text">4.2创建正向主要区域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3基于IP地址，发布FTP站点"><span class="toc-number">1.4.3.</span> <span class="toc-text">4.3基于IP地址，发布FTP站点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4基于域名发布FTP站点"><span class="toc-number">1.4.4.</span> <span class="toc-text">4.4基于域名发布FTP站点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5多个IP地址发布多个FTP站点"><span class="toc-number">1.4.5.</span> <span class="toc-text">4.5多个IP地址发布多个FTP站点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-6基于端口发布FTP站点"><span class="toc-number">1.4.6.</span> <span class="toc-text">4.6基于端口发布FTP站点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-7创建虚拟目录"><span class="toc-number">1.4.7.</span> <span class="toc-text">4.7创建虚拟目录</span></a></li></ol></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
       </div>
@@ -620,80 +506,20 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
-</div>
-
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9103/" title="网络互联与互联网03">网络互联与互联网03</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
-</div>
-
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F/" title="常用公式">常用公式</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
-</div>
-
-    <span><a href="/my-blog/Java/Java%E7%9A%84%E4%B8%80%E4%BA%9B%E7%B1%BB/" title="Java的一些类">Java的一些类</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
-</div>
-
-    <span><a href="/my-blog/Java/Java%E5%A4%9A%E6%80%81/" title="Java多态">Java多态</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
-</div>
-
-    <span><a href="/my-blog/Java/Java%E7%BB%A7%E6%89%BF/" title="Java继承">Java继承</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/MySQL/" title="分类于 MySQL">MySQL</a>
-</div>
-
-    <span><a href="/my-blog/MySQL/MySQL%E8%BF%9B%E9%98%B6/" title="MySQL进阶">MySQL进阶</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
 </div>
 
-    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/Fusion%20Compute%E7%AE%80%E4%BB%8B/" title="Fusion Compute简介">Fusion Compute简介</a></span>
+    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E8%AE%A1%E7%AE%97%E8%99%9A%E6%8B%9F%E5%8C%96/" title="计算虚拟化简介">计算虚拟化简介</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
 </div>
 
-    <span><a href="/my-blog/Java/Java%E8%AF%AD%E5%8F%A5/" title="Java语句">Java语句</a></span>
+    <span><a href="/my-blog/Linux/%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/" title="目录与文件管理">目录与文件管理</a></span>
   </li>
 
       
@@ -703,7 +529,27 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/" title="操作系统基础">操作系统基础</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A802/" title="网络应用服务器02">网络应用服务器02</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/" title="计算机硬件基础(部分组成原理)">计算机硬件基础(部分组成原理)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
+</div>
+
+    <span><a href="/my-blog/Linux/%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E4%B8%8E%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86/" title="文件权限与目录管理">文件权限与目录管理</a></span>
   </li>
 
       
@@ -714,6 +560,46 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 </div>
 
     <span><a href="/my-blog/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E7%BB%AA%E8%AE%BA/" title="数据结构之绪论">数据结构之绪论</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A801/" title="网络应用服务器01">网络应用服务器01</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
+</div>
+
+    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/FusionSphere%E6%9E%B6%E6%9E%84/" title="FusionSphere架构">FusionSphere架构</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%883%EF%BC%89/" title="华为路由实验命令（3）">华为路由实验命令（3）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
+</div>
+
+    <span><a href="/my-blog/Linux/LINUX%E5%AD%A6%E6%A0%A1%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="LINUX课程笔记">LINUX课程笔记</a></span>
   </li>
 
   </ul>

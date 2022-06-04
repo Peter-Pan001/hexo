@@ -146,54 +146,31 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <div class="body md" itemprop="articleBody">
     
 
-    <h2 id="string和object解读"><a class="markdownIt-Anchor" href="#string和object解读">#</a> String 和 Object 解读</h2>
-<h3 id="string-类型"><a class="markdownIt-Anchor" href="#string-类型">#</a> String 类型</h3>
-<ul>
-<li>字符串可用单引号或双引号表示，即<pre><code class="language-javaScript">var fomeName = &quot;Turing&quot;;
-var NuseName = 'Kavane';
+    <h2 id="String和Object解读"><a href="#String和Object解读" class="headerlink" title="String和Object解读"></a>String和Object解读</h2><h3 id="String-类型"><a href="#String-类型" class="headerlink" title="String 类型"></a>String 类型</h3><ul>
+<li>字符串可用单引号或双引号表示，即<br>```javaScript<br>var fomeName = “Turing”;<br>var NuseName = ‘Kavane’;<h4 id="字符字面量"><a href="#字符字面量" class="headerlink" title="字符字面量"></a>字符字面量</h4></li>
+<li>一些特殊的字符字面量，可采用转义字符，表示非打印字符，此处规则与java的一致<h4 id="字符串特点"><a href="#字符串特点" class="headerlink" title="字符串特点"></a>字符串特点</h4></li>
+<li>在ECMAScript中字符串是<strong>不可变的</strong>，要销毁掉原字符串，必须用另一个包含该原字符串的新字符串表示<pre><code class="lang-javaScript">  var older =&quot;Open&quot;;
+  older = older+&quot;Stack&quot;;
+</code></pre>
+<h4 id="转换为字符串"><a href="#转换为字符串" class="headerlink" title="转换为字符串"></a>转换为字符串</h4></li>
+<li>方法一：使用<code>toString()</code>方法<pre><code class="lang-javaScript">  var age = 18;
+  var ageAsString = age.toString();//字符串：&quot;18&quot;
 </code></pre>
 </li>
-</ul>
-<h4 id="字符字面量"><a class="markdownIt-Anchor" href="#字符字面量">#</a> 字符字面量</h4>
-<ul>
-<li>一些特殊的字符字面量，可采用转义字符，表示非打印字符，此处规则与 java 的一致</li>
-</ul>
-<h4 id="字符串特点"><a class="markdownIt-Anchor" href="#字符串特点">#</a> 字符串特点</h4>
-<ul>
-<li>在 ECMAScript 中字符串是<strong>不可变的</strong>，要销毁掉原字符串，必须用另一个包含该原字符串的新字符串表示<pre><code class="language-javaScript">var older =&quot;Open&quot;;
-older = older+&quot;Stack&quot;;
-</code></pre>
+<li><p>方法二：使用<code>String()</code>方法<br>  ```javaScript<br>  var info1 = true;<br>  var info2;<br>  var info3 = 10;</p>
+<p>  alert(String(info1));//“true”<br>  alert(String(info2));//“undefined”<br>  alert(String(info3));//“10”</p>
 </li>
 </ul>
-<h4 id="转换为字符串"><a class="markdownIt-Anchor" href="#转换为字符串">#</a> 转换为字符串</h4>
-<ul>
-<li>方法一：使用 <code>toString()</code>  方法<pre><code class="language-javaScript">var age = 18;
-var ageAsString = age.toString();//字符串：&quot;18&quot;
-</code></pre>
-</li>
-<li>方法二：使用 <code>String()</code>  方法<pre><code class="language-javaScript">var info1 = true;
-var info2;
-var info3 = 10;
- 
-alert(String(info1));//&quot;true&quot;
-alert(String(info2));//&quot;undefined&quot;
-alert(String(info3));//&quot;10&quot;
-
-</code></pre>
-</li>
-</ul>
-<h3 id="object类型"><a class="markdownIt-Anchor" href="#object类型">#</a> Object 类型</h3>
-<ul>
-<li>ECMAScript 中的对象其实就是一组数据和功能的集合。对象可以通过执行 new 操作符后跟要创建的对象类型的名称来创建</li>
-<li>Object 的每个实例都具有下列属性和方法。
-<ul>
-<li><code>constructor</code> ：保存着用于创建当前对象的函数。对于前面的例子而言，构造函数（constructor）就是 Object ()。</li>
-<li><code>hasOwnProperty(propertyName)</code> ：用于检查给定的属性在当前对象实例中（而不是在实例的原型中）是否存在。其中，作为参数的属性名（propertyName）必须以字符串形式指定（例如：o.hasOwnProperty (“name”)）。</li>
-<li><code>isPrototypeOf(object)</code> ：用于检查传入的对象是否是当前对象的原型（第 5 章将讨论原型）。</li>
-<li><code>propertyIsEnumerable(propertyName)</code> ：用于检查给定的属性是否能够使用 for-in 语句（本章后面将会讨论）来枚举。与 hasOwnProperty () 方法一样，作为参数的属性名必须以字符串形式指定。</li>
-<li><code>toLocaleString()</code> ：返回对象的字符串表示，该字符串与执行环境的地区对应。</li>
-<li><code>toString()</code> ：返回对象的字符串表示。</li>
-<li><code>valueOf()</code> ：返回对象的字符串、数值或布尔值表示。通常与 toString () 方法的返回值相同。</li>
+<h3 id="Object类型"><a href="#Object类型" class="headerlink" title="Object类型"></a>Object类型</h3><ul>
+<li>ECMAScript中的对象其实就是一组数据和功能的集合。对象可以通过执行new操作符后跟要创建的对象类型的名称来创建</li>
+<li>Object的每个实例都具有下列属性和方法。<ul>
+<li><code>constructor</code>：保存着用于创建当前对象的函数。对于前面的例子而言，构造函数（constructor）就是Object()。</li>
+<li><code>hasOwnProperty(propertyName)</code>：用于检查给定的属性在当前对象实例中（而不是在实例的原型中）是否存在。其中，作为参数的属性名（propertyName）必须以字符串形式指定（例如：o.hasOwnProperty(“name”)）。</li>
+<li><code>isPrototypeOf(object)</code>：用于检查传入的对象是否是当前对象的原型（第5章将讨论原型）。</li>
+<li><code>propertyIsEnumerable(propertyName)</code>：用于检查给定的属性是否能够使用for-in语句（本章后面将会讨论）来枚举。与hasOwnProperty()方法一样，作为参数的属性名必须以字符串形式指定。</li>
+<li><code>toLocaleString()</code>：返回对象的字符串表示，该字符串与执行环境的地区对应。</li>
+<li><code>toString()</code>：返回对象的字符串表示。</li>
+<li><code>valueOf()</code>：返回对象的字符串、数值或布尔值表示。通常与toString()方法的返回值相同。</li>
 </ul>
 </li>
 </ul>
@@ -286,7 +263,7 @@ alert(String(info3));//&quot;10&quot;
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#string和object解读"><span class="toc-number">1.</span> <span class="toc-text"> String 和 Object 解读</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#string-类型"><span class="toc-number">1.1.</span> <span class="toc-text"> String 类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#字符字面量"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 字符字面量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字符串特点"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 字符串特点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#转换为字符串"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 转换为字符串</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#object类型"><span class="toc-number">1.2.</span> <span class="toc-text"> Object 类型</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#String和Object解读"><span class="toc-number">1.</span> <span class="toc-text">String和Object解读</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#String-类型"><span class="toc-number">1.1.</span> <span class="toc-text">String 类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#字符字面量"><span class="toc-number">1.1.1.</span> <span class="toc-text">字符字面量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字符串特点"><span class="toc-number">1.1.2.</span> <span class="toc-text">字符串特点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#转换为字符串"><span class="toc-number">1.1.3.</span> <span class="toc-text">转换为字符串</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Object类型"><span class="toc-number">1.2.</span> <span class="toc-text">Object类型</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -408,20 +385,10 @@ alert(String(info3));//&quot;10&quot;
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
 </div>
 
-    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E7%BD%91%E7%BB%9C%E8%99%9A%E6%8B%9F%E5%8C%96/" title="网络虚拟化">网络虚拟化</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/MySQL/" title="分类于 MySQL">MySQL</a>
-</div>
-
-    <span><a href="/my-blog/MySQL/MySQL%E8%BF%9B%E9%98%B6/" title="MySQL进阶">MySQL进阶</a></span>
+    <span><a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" title="Java网络编程">Java网络编程</a></span>
   </li>
 
       
@@ -431,7 +398,7 @@ alert(String(info3));//&quot;10&quot;
 <a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B9%BF%E5%9F%9F%E9%80%9A%E4%BF%A1%E7%BD%91/" title="广域通信网">广域通信网</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E4%B8%8B%E4%B8%80%E4%BB%A3%E4%BA%92%E8%81%94%E7%BD%91/" title="下一代互联网">下一代互联网</a></span>
   </li>
 
       
@@ -448,10 +415,20 @@ alert(String(info3));//&quot;10&quot;
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/git/" title="分类于 git">git</a>
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/git/git%E4%B8%8Egithub%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BA%86%E8%A7%A3/" title="git与github的基本了解">git与github的基本了解</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8002/" title="数据通信基础02">数据通信基础02</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/" title="类与对象">类与对象</a></span>
   </li>
 
       
@@ -461,47 +438,47 @@ alert(String(info3));//&quot;10&quot;
 <a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E5%92%8C%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80/" title="系统开发和项目管理基础">系统开发和项目管理基础</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%90%84%E9%87%8D%E7%82%B9%E5%8D%8F%E8%AE%AE%E5%8F%8A%E5%B8%A7%E6%A0%BC%E5%BC%8F%E8%AF%A6%E8%A7%A3/" title="各重点协议及帧格式详解">各重点协议及帧格式详解</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/Fusion%20Compute%E5%AE%89%E8%A3%85/" title="Fusion Compute安装">Fusion Compute安装</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/" title="计算机硬件基础(部分组成原理)">计算机硬件基础(部分组成原理)</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/MySQL/" title="分类于 MySQL">MySQL</a>
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/MySQL/%E5%85%B3%E4%BA%8EMySQL%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" title="关于MySQL的一些基本使用">关于MySQL的一些基本使用</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A802/" title="网络应用服务器02">网络应用服务器02</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E5%89%8D%E7%AB%AF/%E6%8E%A5%E7%BB%AD%E5%89%8D%E7%AB%AFH5+CSS3/" title="接续前端H5+CSS3">接续前端H5+CSS3</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A801/" title="网络应用服务器01">网络应用服务器01</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
 </div>
 
-    <span><a href="/my-blog/%E5%89%8D%E7%AB%AF/%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E5%89%8D%E7%AB%AF/" title="如何学习前端">如何学习前端</a></span>
+    <span><a href="/my-blog/Java/Java%E6%96%B9%E6%B3%95/" title="Java方法">Java方法</a></span>
   </li>
 
   </ul>

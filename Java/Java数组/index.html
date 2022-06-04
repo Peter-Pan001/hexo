@@ -146,75 +146,102 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <div class="body md" itemprop="articleBody">
     
 
-    <h2 id="数组的基本使用"><a class="markdownIt-Anchor" href="#数组的基本使用">#</a> 数组的基本使用</h2>
-<ul>
-<li>什么是数组？形如 <code>int[]score ={79,9,2,45};</code>  称作数组</li>
+    <h2 id="数组的基本使用"><a href="#数组的基本使用" class="headerlink" title="数组的基本使用"></a>数组的基本使用</h2><ul>
+<li>什么是数组？形如<code>int[]score ={79,9,2,45};</code>称作数组</li>
 </ul>
-<h3 id="11-声明数组"><a class="markdownIt-Anchor" href="#11-声明数组">#</a> 1.1 声明数组</h3>
-<ul>
-<li>语法：
-<ul>
-<li>数据类型   <code>[]</code>  数组名</li>
-<li>或者：数据类型  数组名 []</li>
+<h3 id="1-1-声明数组"><a href="#1-1-声明数组" class="headerlink" title="1.1 声明数组"></a>1.1 声明数组</h3><ul>
+<li>语法：<ul>
+<li>数据类型 &nbsp;<code>[]</code>&nbsp;数组名 </li>
+<li>或者：数据类型 &nbsp;数组名[]</li>
 </ul>
 </li>
-<li>例如：<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> scores<span class="token punctuation">;</span><span class="token comment">// 最好采用这种写法</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">double</span> height<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 不推荐这种写法</span></pre></td></tr></table></figure></li>
-<li><strong>注意！</strong>
-<ul>
-<li><strong>在声明数组的同时不能指定数组长度，以下为错误写法</strong><figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token number">95</span><span class="token punctuation">,</span><span class="token number">16</span><span class="token punctuation">,</span><span class="token number">77</span><span class="token punctuation">,</span><span class="token number">25</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span></pre></td></tr></table></figure></li>
+<li>例如：<pre><code class="lang-java">int[] scores;//最好采用这种写法
+double height[]; //不推荐这种写法
+</code></pre>
+</li>
+<li><strong>注意！</strong><ul>
+<li><strong>在声明数组的同时不能指定数组长度,以下为错误写法</strong><pre><code class="lang-java">int[] arr = new int[4]{95,16,77,25};
+</code></pre>
+<h3 id="1-2-分配空间"><a href="#1-2-分配空间" class="headerlink" title="1.2 分配空间"></a>1.2 分配空间</h3></li>
 </ul>
 </li>
-</ul>
-<h3 id="12-分配空间"><a class="markdownIt-Anchor" href="#12-分配空间">#</a> 1.2 分配空间</h3>
-<ul>
-<li>语法：
-<ul>
-<li>数组名    <code>=</code>   数据类型 <code>[</code> 数组长度 <code>]</code></li>
+<li>语法：<ul>
+<li>数组名 &nbsp; <code>=</code> &nbsp;数据类型<code>[</code>数组长度<code>]</code></li>
 </ul>
 </li>
 </ul>
-<h3 id="13-赋值"><a class="markdownIt-Anchor" href="#13-赋值">#</a> 1.3 赋值</h3>
+<h3 id="1-3-赋值"><a href="#1-3-赋值" class="headerlink" title="1.3 赋值"></a>1.3 赋值</h3><ul>
+<li>数组从0开始计算（一位数组按顺序排列数字）<ul>
+<li>语法：<pre><code class="lang-java">score[0] = 92;//score数组的一号元素的数值为92
+score[1] = 98;
+</code></pre>
+<h2 id="使用循环操作打印Java数组"><a href="#使用循环操作打印Java数组" class="headerlink" title="使用循环操作打印Java数组"></a>使用循环操作打印Java数组</h2></li>
+</ul>
+</li>
+<li>代码演示：<pre><code class="lang-java">int[] scores ={88,82,99,86,95};
+for(int i =0;i&lt;score.length;i++){
+    System.out.println(scores[i]);
+}
+</code></pre>
 <ul>
-<li>数组从 0 开始计算（一位数组按顺序排列数字）
-<ul>
-<li>语法：<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre>score<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">92</span><span class="token punctuation">;</span><span class="token comment">//score 数组的一号元素的数值为 92</span></pre></td></tr><tr><td data-num="2"></td><td><pre>score<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">98</span><span class="token punctuation">;</span></pre></td></tr></table></figure></li>
+<li>数组名<code>.length</code>为获取数组的长度</li>
 </ul>
 </li>
 </ul>
-<h2 id="使用循环操作打印java数组"><a class="markdownIt-Anchor" href="#使用循环操作打印java数组">#</a> 使用循环操作打印 Java 数组</h2>
-<ul>
-<li>代码演示：<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> scores <span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token number">88</span><span class="token punctuation">,</span><span class="token number">82</span><span class="token punctuation">,</span><span class="token number">99</span><span class="token punctuation">,</span><span class="token number">86</span><span class="token punctuation">,</span><span class="token number">95</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>score<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>scores<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><ul>
-<li>数组名 <code>.length</code>  为获取数组的长度</li>
-</ul>
+<h2 id="使用Arrays类按顺序打印Java数组"><a href="#使用Arrays类按顺序打印Java数组" class="headerlink" title="使用Arrays类按顺序打印Java数组"></a>使用Arrays类按顺序打印Java数组</h2><ul>
+<li>首先导入<code>Arrays</code>类<pre><code class="lang-java">import java.utol.Arrays;
+</code></pre>
+</li>
+<li>然后排序<pre><code class="lang-java">Arrays.sort(数组名);
+</code></pre>
+</li>
+<li>整体演示<pre><code class="lang-java">//定义一个整型数组
+int[] score ={75,88,91,64,73};
+//使用Arrays类的sort()方法对数组进行排序
+Arrays.sort(score);
+</code></pre>
+<h2 id="将数组转换为字符串"><a href="#将数组转换为字符串" class="headerlink" title="将数组转换为字符串"></a>将数组转换为字符串</h2></li>
+<li>语法：<pre><code class="lang-java">Array.toString(数组名);
+</code></pre>
+</li>
+<li>例如：<pre><code class="lang-java">System.out.println(Array.toString(scores));
+</code></pre>
 </li>
 </ul>
-<h2 id="使用arrays类按顺序打印java数组"><a class="markdownIt-Anchor" href="#使用arrays类按顺序打印java数组">#</a> 使用 Arrays 类按顺序打印 Java 数组</h2>
-<ul>
-<li>首先导入 <code>Arrays</code>  类<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>utol<span class="token punctuation">.</span></span><span class="token class-name">Arrays</span><span class="token punctuation">;</span></pre></td></tr></table></figure></li>
-<li>然后排序<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>数组名<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure></li>
-<li>整体演示<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment">// 定义一个整型数组</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> score <span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token number">75</span><span class="token punctuation">,</span><span class="token number">88</span><span class="token punctuation">,</span><span class="token number">91</span><span class="token punctuation">,</span><span class="token number">64</span><span class="token punctuation">,</span><span class="token number">73</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token comment">// 使用 Arrays 类的 sort () 方法对数组进行排序</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>score<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure></li>
+<h2 id="使用for-each遍历数组"><a href="#使用for-each遍历数组" class="headerlink" title="使用for-each遍历数组"></a>使用for-each遍历数组</h2><ul>
+<li>语法：<pre><code class="lang-java">for(元素类型 元素变量  : 遍历对象){
+    执行的代码;
+}
+</code></pre>
+</li>
+<li>例如<pre><code class="lang-java">//对一维数组而言
+int arr[] = {2, 3, 1};
+for (int x : arr) { 
+System.out.println(x); //逐个输出数组元素的值 
+//对List数组来说
+//创建List并添加元素 
+List&lt;String&gt; list = new ArrayList&lt;String&gt;(); 
+list.add(&quot;1&quot;); 
+list.add(&quot;3&quot;); 
+list.add(&quot;4&quot;); 
+//利用froeach语句输出集合元素 
+System.out.println(&quot;----2----froeach语句输出集合元素&quot;); 
+for (String x : list) { 
+System.out.println(x); 
+}
+</code></pre>
+</li>
 </ul>
-<h2 id="将数组转换为字符串"><a class="markdownIt-Anchor" href="#将数组转换为字符串">#</a> 将数组转换为字符串</h2>
-<ul>
-<li>语法：<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token class-name">Array</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>数组名<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure></li>
-<li>例如：<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Array</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>scores<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="使用for-each遍历数组"><a class="markdownIt-Anchor" href="#使用for-each遍历数组">#</a> 使用 for-each 遍历数组</h2>
-<ul>
-<li>语法：<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">for</span><span class="token punctuation">(</span>元素类型 元素变量  <span class="token operator">:</span> 遍历对象<span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    执行的代码<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure></li>
-<li>例如<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment">// 对一维数组而言</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> x <span class="token operator">:</span> arr<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> </pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 逐个输出数组元素的值 </span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token comment">// 对 List 数组来说</span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token comment">// 创建 List 并添加元素 </span></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> </pre></td></tr><tr><td data-num="8"></td><td><pre>list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> </pre></td></tr><tr><td data-num="9"></td><td><pre>list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"3"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> </pre></td></tr><tr><td data-num="10"></td><td><pre>list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"4"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> </pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token comment">// 利用 froeach 语句输出集合元素 </span></pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"----2----froeach语句输出集合元素"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> </pre></td></tr><tr><td data-num="13"></td><td><pre><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">String</span> x <span class="token operator">:</span> list<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> </pre></td></tr><tr><td data-num="14"></td><td><pre><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> </pre></td></tr><tr><td data-num="15"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="java中使用二维数组"><a class="markdownIt-Anchor" href="#java中使用二维数组">#</a> Java 中使用二维数组</h2>
-<ol>
-<li>声明数组并分配空间
-<ul>
-<li>数据类型   <code>[][]</code>  数组名  <code>=</code>   <code>new</code>  数据类型  <code>[</code> 行的个数 <code>]``[</code> 列的个数 <code>]</code> ;</li>
-<li>例如：<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">int</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> nums <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">;</span></pre></td></tr></table></figure></li>
+<h2 id="Java中使用二维数组"><a href="#Java中使用二维数组" class="headerlink" title="Java中使用二维数组"></a>Java中使用二维数组</h2><ol>
+<li>声明数组并分配空间<ul>
+<li>数据类型 &nbsp;<code>[][]</code> 数组名 <code>=</code> <code>new</code> 数据类型 <code>[</code>行的个数<code>]``[</code>列的个数<code>]</code>;</li>
+<li>例如：<pre><code class="lang-java">int [][] nums = new int[5][6];
+</code></pre>
+</li>
 </ul>
 </li>
-<li>赋值
-<ul>
-<li>数组名 <code>[</code> 行索引 <code>]``[</code> 列索引 <code>]</code>  = 值；</li>
+<li>赋值<ul>
+<li>数组名<code>[</code>行索引<code>]``[</code>列索引<code>]</code> = 值;</li>
 </ul>
 </li>
 <li>处理数组</li>
@@ -276,20 +303,20 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
     <div class="item left">
       
 
-  <a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;s4.ax1x.com&#x2F;2022&#x2F;01&#x2F;09&#x2F;7Fya5t.jpg" title="Java网络编程">
+  <a href="/my-blog/Java/Java%E6%96%B9%E6%B3%95/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;s4.ax1x.com&#x2F;2022&#x2F;01&#x2F;09&#x2F;7Fya5t.jpg" title="Java方法">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> Java</span>
-  <h3>Java网络编程</h3>
+  <h3>Java方法</h3>
   </a>
 
     </div>
     <div class="item right">
       
 
-  <a href="/my-blog/Java/Java%E7%9A%84Stream%E6%B5%81/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;s4.ax1x.com&#x2F;2022&#x2F;01&#x2F;09&#x2F;7Fya5t.jpg" title="Java的Stream流">
+  <a href="/my-blog/Java/Java%E5%A4%9A%E6%80%81/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;s4.ax1x.com&#x2F;2022&#x2F;01&#x2F;09&#x2F;7Fya5t.jpg" title="Java多态">
   <span class="type">下一篇</span>
   <span class="category"><i class="ic i-flag"></i> Java</span>
-  <h3>Java的Stream流</h3>
+  <h3>Java多态</h3>
   </a>
 
     </div>
@@ -308,11 +335,11 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#数组的基本使用"><span class="toc-number">1.</span> <span class="toc-text"> 数组的基本使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-声明数组"><span class="toc-number">1.1.</span> <span class="toc-text"> 1.1 声明数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-分配空间"><span class="toc-number">1.2.</span> <span class="toc-text"> 1.2 分配空间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-赋值"><span class="toc-number">1.3.</span> <span class="toc-text"> 1.3 赋值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用循环操作打印java数组"><span class="toc-number">2.</span> <span class="toc-text"> 使用循环操作打印 Java 数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用arrays类按顺序打印java数组"><span class="toc-number">3.</span> <span class="toc-text"> 使用 Arrays 类按顺序打印 Java 数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将数组转换为字符串"><span class="toc-number">4.</span> <span class="toc-text"> 将数组转换为字符串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用for-each遍历数组"><span class="toc-number">5.</span> <span class="toc-text"> 使用 for-each 遍历数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#java中使用二维数组"><span class="toc-number">6.</span> <span class="toc-text"> Java 中使用二维数组</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#数组的基本使用"><span class="toc-number">1.</span> <span class="toc-text">数组的基本使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-声明数组"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 声明数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-分配空间"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 分配空间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-赋值"><span class="toc-number">1.3.</span> <span class="toc-text">1.3 赋值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用循环操作打印Java数组"><span class="toc-number">2.</span> <span class="toc-text">使用循环操作打印Java数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用Arrays类按顺序打印Java数组"><span class="toc-number">3.</span> <span class="toc-text">使用Arrays类按顺序打印Java数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将数组转换为字符串"><span class="toc-number">4.</span> <span class="toc-text">将数组转换为字符串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用for-each遍历数组"><span class="toc-number">5.</span> <span class="toc-text">使用for-each遍历数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java中使用二维数组"><span class="toc-number">6.</span> <span class="toc-text">Java中使用二维数组</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li><a href="/my-blog/Java/Java%E5%A4%9A%E6%80%81/" rel="bookmark" title="Java多态">Java多态</a></li><li><a href="/my-blog/Java/Java%E5%B0%81%E8%A3%85/" rel="bookmark" title="Java封装">Java封装</a></li><li><a href="/my-blog/Java/Java%E7%BB%A7%E6%89%BF/" rel="bookmark" title="Java继承">Java继承</a></li><li><a href="/my-blog/Java/Java%E7%9A%84Stream%E6%B5%81/" rel="bookmark" title="Java的Stream流">Java的Stream流</a></li><li class="active"><a href="/my-blog/Java/Java%E6%95%B0%E7%BB%84/" rel="bookmark" title="Java数组">Java数组</a></li><li><a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" rel="bookmark" title="Java网络编程">Java网络编程</a></li><li><a href="/my-blog/Java/Java%E6%96%B9%E6%B3%95/" rel="bookmark" title="Java方法">Java方法</a></li><li><a href="/my-blog/Java/Java%E7%9A%84%E4%B8%80%E4%BA%9B%E7%B1%BB/" rel="bookmark" title="Java的一些类">Java的一些类</a></li><li><a href="/my-blog/Java/Java%E8%AF%AD%E5%8F%A5/" rel="bookmark" title="Java语句">Java语句</a></li><li><a href="/my-blog/Java/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/" rel="bookmark" title="类与对象">类与对象</a></li><li><a href="/my-blog/Java/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93/" rel="bookmark" title="多线程笔记总结">多线程笔记总结</a></li><li><a href="/my-blog/Java/JavaSE%E5%B0%8F%E7%BB%93/" rel="bookmark" title="JavaSE小结">JavaSE小结</a></li><li><a href="/my-blog/Java/Java%E5%9F%BA%E7%A1%80%E6%B7%B7%E5%90%88/" rel="bookmark" title="Java基础混合">Java基础混合</a></li><li><a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8BOV/" rel="bookmark" title="Java网络编程OV">Java网络编程OV</a></li>
+          <li><a href="/my-blog/Java/Java%E5%B0%81%E8%A3%85/" rel="bookmark" title="Java封装">Java封装</a></li><li><a href="/my-blog/Java/Java%E5%A4%9A%E6%80%81/" rel="bookmark" title="Java多态">Java多态</a></li><li class="active"><a href="/my-blog/Java/Java%E6%95%B0%E7%BB%84/" rel="bookmark" title="Java数组">Java数组</a></li><li><a href="/my-blog/Java/Java%E6%96%B9%E6%B3%95/" rel="bookmark" title="Java方法">Java方法</a></li><li><a href="/my-blog/Java/Java%E7%9A%84Stream%E6%B5%81/" rel="bookmark" title="Java的Stream流">Java的Stream流</a></li><li><a href="/my-blog/Java/Java%E7%BB%A7%E6%89%BF/" rel="bookmark" title="Java继承">Java继承</a></li><li><a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" rel="bookmark" title="Java网络编程">Java网络编程</a></li><li><a href="/my-blog/Java/Java%E7%9A%84%E4%B8%80%E4%BA%9B%E7%B1%BB/" rel="bookmark" title="Java的一些类">Java的一些类</a></li><li><a href="/my-blog/Java/Java%E8%AF%AD%E5%8F%A5/" rel="bookmark" title="Java语句">Java语句</a></li><li><a href="/my-blog/Java/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/" rel="bookmark" title="类与对象">类与对象</a></li><li><a href="/my-blog/Java/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93/" rel="bookmark" title="多线程笔记总结">多线程笔记总结</a></li><li><a href="/my-blog/Java/JavaSE%E5%B0%8F%E7%BB%93/" rel="bookmark" title="JavaSE小结">JavaSE小结</a></li><li><a href="/my-blog/Java/Java%E5%9F%BA%E7%A1%80%E6%B7%B7%E5%90%88/" rel="bookmark" title="Java基础混合">Java基础混合</a></li><li><a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8BOV/" rel="bookmark" title="Java网络编程OV">Java网络编程OV</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -403,12 +430,12 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+        <a href="/my-blog/Java/Java%E6%96%B9%E6%B3%95/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/my-blog/Java/Java%E7%9A%84Stream%E6%B5%81/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+        <a href="/my-blog/Java/Java%E5%A4%9A%E6%80%81/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -430,6 +457,16 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/IP%E5%AD%90%E7%BD%91%E5%88%92%E5%88%86%E4%B8%93%E9%A2%98/" title="IP子网划分专题">IP子网划分专题</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
 </div>
 
@@ -440,20 +477,19 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/Linux/%E6%9B%B4%E6%8D%A2%E6%B8%85%E5%8D%8E%E6%BA%90/" title="更换清华源">更换清华源</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B9%BF%E5%9F%9F%E9%80%9A%E4%BF%A1%E7%BD%91/" title="广域通信网">广域通信网</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%9F%8E%E5%9F%9F%E7%BD%9102/" title="局域网与城域网02">局域网与城域网02</a></span>
+    <span><a href="/my-blog/%E7%BD%91%E7%BB%9C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86DNS%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="配置与管理DNS服务器">配置与管理DNS服务器</a></span>
   </li>
 
       
@@ -463,17 +499,7 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <a href="/my-blog/categories/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
 </div>
 
-    <span><a href="/my-blog/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AFHTML5+CSS3/" title="前端HTML5+CSS3">前端HTML5+CSS3</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
-</div>
-
-    <span><a href="/my-blog/Java/Java%E5%B0%81%E8%A3%85/" title="Java封装">Java封装</a></span>
+    <span><a href="/my-blog/%E5%89%8D%E7%AB%AF/%E6%8E%A5%E7%BB%AD%E5%89%8D%E7%AB%AFH5+CSS3/" title="接续前端H5+CSS3">接续前端H5+CSS3</a></span>
   </li>
 
       
@@ -483,17 +509,7 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E8%A7%84%E5%88%92%E4%B8%8E%E8%AE%BE%E8%AE%A1/" title="网络规划与设计">网络规划与设计</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
-</div>
-
-    <span><a href="/my-blog/Java/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/" title="类与对象">类与对象</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%884%EF%BC%89/" title="华为交换实验命令（4）">华为交换实验命令（4）</a></span>
   </li>
 
       
@@ -503,7 +519,17 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/Linux%E9%85%8D%E7%BD%AE/" title="Linux配置">Linux配置</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A801/" title="网络应用服务器01">网络应用服务器01</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
+</div>
+
+    <span><a href="/my-blog/Linux/Linux%E5%BC%80%E7%AF%87/" title="Linux开篇">Linux开篇</a></span>
   </li>
 
       
@@ -513,17 +539,17 @@ Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之�
 <a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%8E%E5%BA%94%E7%94%A801/" title="网络安全与应用01">网络安全与应用01</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9101/" title="网络互联与互联网01">网络互联与互联网01</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/my-blog/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" title="分类于 数据分析">数据分析</a>
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
 </div>
 
-    <span><a href="/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/CDC%E6%8A%80%E6%9C%AF/" title="CDC技术">CDC技术</a></span>
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8002/" title="数据通信基础02">数据通信基础02</a></span>
   </li>
 
   </ul>
