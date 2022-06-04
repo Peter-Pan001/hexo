@@ -1,0 +1,608 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/my-blog/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/my-blog/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="理 想 净 土" href="https://peter-pan001.github.io/my-blog/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="理 想 净 土" href="https://peter-pan001.github.io/my-blog/atom.xml" />
+<link rel="alternate" type="application/json" title="理 想 净 土" href="https://peter-pan001.github.io/my-blog/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/my-blog/css/app.css?v=0.2.4">
+
+  
+  <meta name="keywords" content="云计算" />
+
+
+<link rel="canonical" href="https://peter-pan001.github.io/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/FusionSphere%E6%9E%B6%E6%9E%84/">
+
+
+
+  <title>
+FusionSphere架构 - 云计算 |
+Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之作证 </title>
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">FusionSphere架构
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2022-01-25 23:08:15">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-01-25T23:08:15+08:00">2022-01-25</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/my-blog/" rel="start">Peter Pan</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="https://s4.ax1x.com/2022/01/15/7YwsEj.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/my-blog/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" itemprop="item" rel="index" title="分类于 云计算"><span itemprop="name">云计算</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://peter-pan001.github.io/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/FusionSphere%E6%9E%B6%E6%9E%84/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/my-blog/images/avatar.jpg">
+    <meta itemprop="name" content="Peter Pan">
+    <meta itemprop="description" content=" 凭时间赢来的东西，时间肯定会为之作证 , 不必匆忙，不必火花四溅，不必成为别人，只需成为自己">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="理 想 净 土">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h2 id="fusionsphere虚拟化套件"><a class="markdownIt-Anchor" href="#fusionsphere虚拟化套件">#</a> FusionSphere 虚拟化套件</h2>
+<blockquote>
+<p>前面讲到，虚拟化是云计算的基础，但虚拟化不等于云计算，所有的云软件都要借助虚拟化才能实现</p>
+</blockquote>
+<ul>
+<li>关于 FusionSphere：
+<ul>
+<li>华为 FusionSphere 虚拟化套件是业界领先的虚拟化解决方案，能够帮助客户带来如下的价值，从而大幅提升数据中心基础设施的效率。</li>
+<li>定位特点：简化管理，优质性能</li>
+<li>管理方面，支持多站点统一管理；支持跨地域容灾，保障业务连续性；支持物理机、第三方平台迁移</li>
+<li>性能方面，包含大规格虚拟机；采用 KVM 引擎；支持多款显卡直通和虚拟化（GPU 增强）；支持 OVS+DPDK 网络调优</li>
+</ul>
+</li>
+</ul>
+<h2 id="fusionsphere虚拟化组件构成"><a class="markdownIt-Anchor" href="#fusionsphere虚拟化组件构成">#</a> FusionSphere 虚拟化组件构成</h2>
+<p><img data-src="https://s4.ax1x.com/2022/01/25/7bs2yq.png" alt="fspherecombat"></p>
+<h2 id="fusionsphere服务器虚拟化架构"><a class="markdownIt-Anchor" href="#fusionsphere服务器虚拟化架构">#</a> FusionSphere 服务器虚拟化架构</h2>
+<p><img data-src="https://s4.ax1x.com/2022/01/25/7bsoY4.png" alt="fsphereserve"></p>
+<blockquote>
+<p>服务器虚拟化产品（FusionCompute）、虚拟化管理软件（FusionManager）、备份软件（eBackup ）和容灾软件（UltraVR）组成。主要实现硬件资源的虚拟化，以及对虚拟资源集中管理，提供基础备份、容灾，轻量级运营，云基础服务，性能管理等能力。</p>
+</blockquote>
+<ul>
+<li>
+<p>FusionCompute：提供对 x86 物理服务器，SAN 设备的虚拟化能力，并提供软件定义网络基础能力。</p>
+</li>
+<li>
+<p>FusionManager：使用 FusionCompute 能力，并集成防火墙，负载均衡器等的自动化管理能力，提供企业级和运营级的虚拟数据中心管理方案。</p>
+</li>
+<li>
+<p>UltraVR： 提供跨站点容灾能力。</p>
+</li>
+<li>
+<p>eBackup： 提供虚拟机的备份能力。</p>
+</li>
+<li>
+<p><strong>组件说明：</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">组件</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Fusion Compute</td>
+<td style="text-align:center">必选组件 </br> Fusion Compute 是 <mark>云操作系统软件</mark> ，主要负责硬件资源的虚拟化，以及对虚拟资源、业务资源、用户资源的集中管理。通过统一的接囗，对这些虚拟资源进行集中调度和管理，从而降低业务的运行成本，保证系统的安全性和可靠性，协助运营商和企业构筑安全、绿色、节能的云数据中心能力。</td>
+</tr>
+<tr>
+<td style="text-align:center">Fusion Manager</td>
+<td style="text-align:center">可选组件 </br> Fusion Manager 主要 <mark>对云计算的软件和硬件进行全面的监控和管理</mark> ，实现同构，异构 VMware 虚拟化多资源池管理，软硬件统一告警监控，并向内部运维管理人员提供管理门户</td>
+</tr>
+<tr>
+<td style="text-align:center">eBackup</td>
+<td style="text-align:center">可选组件 </br> eBackup 是虚拟化备份软件，配合 Fusion Compute 快照功能和 CBT (Changed Block Tracking) 备份功能实现 Fusion Sphere 的虚拟机数据备份方案。</td>
+</tr>
+<tr>
+<td style="text-align:center">UltraVR</td>
+<td style="text-align:center">可选组件 </br> UltraVR 是容灾业务管理软件，利用底层 SAN 存储系统提供的异步远程复制特性，提供虚拟机关腱数据的数据保护和容灾恢复。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="fusionsphere应用场景"><a class="markdownIt-Anchor" href="#fusionsphere应用场景">#</a> FusionSphere 应用场景</h2>
+<ul>
+<li>单虚拟化场景
+<ul>
+<li>只采用 FusionCompute 作为统一的操作维护管理平台对整个系统进行操作与维护的应用场景</li>
+</ul>
+</li>
+<li>多虚拟化场景
+<ul>
+<li>多套虚拟化环境需要进行统一管理
+<ul>
+<li>统一管理和维护：支持同时接入 FusionCompute 和 VMware 虚拟化环境，对多虚拟化环境的资源和业务进行统一的管理和维护。</li>
+<li>统一监控告警：支持对多个虚拟化环境、多种物理设备的告警进行统一接入、监控和管理。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>私有云场景
+<ul>
+<li>多租户共享 VPC 场景</li>
+<li>多租户私有 VPC 场景</li>
+</ul>
+</li>
+</ul>
+<h2 id="fusionsphere在整个华为云计算体系的定位"><a class="markdownIt-Anchor" href="#fusionsphere在整个华为云计算体系的定位">#</a> FusionSphere 在整个华为云计算体系的定位</h2>
+<p><img data-src="https://s4.ax1x.com/2022/01/25/7byM1s.png" alt="fspherestand"></p>
+<h2 id="fusioncompute架构"><a class="markdownIt-Anchor" href="#fusioncompute架构">#</a> FusionCompute 架构</h2>
+<p><img data-src="https://s4.ax1x.com/2022/01/25/7by8BV.png" alt="fcomputeking"></p>
+
+      <div class="tags">
+          <a href="/my-blog/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/" rel="tag"><i class="ic i-tag"></i> 云计算</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/my-blog/images/wechatpay.png" alt="Peter Pan 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/my-blog/images/alipay.png" alt="Peter Pan 支付宝">
+        <p>支付宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Peter Pan <i class="ic i-at"><em>@</em></i>理 想 净 土
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://peter-pan001.github.io/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/FusionSphere%E6%9E%B6%E6%9E%84/" title="FusionSphere架构">https://peter-pan001.github.io/my-blog/云计算/FusionSphere架构/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/Fusion%20Compute%E5%AE%89%E8%A3%85/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;s4.ax1x.com&#x2F;2022&#x2F;01&#x2F;15&#x2F;7YwsEj.jpg" title="Fusion Compute安装">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 云计算</span>
+  <h3>Fusion Compute安装</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E5%AD%98%E5%82%A8%E8%99%9A%E6%8B%9F%E5%8C%96/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;s4.ax1x.com&#x2F;2022&#x2F;01&#x2F;15&#x2F;7YwsEj.jpg" title="存储虚拟化">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 云计算</span>
+  <h3>存储虚拟化</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#fusionsphere虚拟化套件"><span class="toc-number">1.</span> <span class="toc-text"> FusionSphere 虚拟化套件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fusionsphere虚拟化组件构成"><span class="toc-number">2.</span> <span class="toc-text"> FusionSphere 虚拟化组件构成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fusionsphere服务器虚拟化架构"><span class="toc-number">3.</span> <span class="toc-text"> FusionSphere 服务器虚拟化架构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fusionsphere应用场景"><span class="toc-number">4.</span> <span class="toc-text"> FusionSphere 应用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fusionsphere在整个华为云计算体系的定位"><span class="toc-number">5.</span> <span class="toc-text"> FusionSphere 在整个华为云计算体系的定位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fusioncompute架构"><span class="toc-number">6.</span> <span class="toc-text"> FusionCompute 架构</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E4%BA%91%E8%AE%A1%E7%AE%97%E7%AE%80%E4%BB%8B/" rel="bookmark" title="云计算简介">云计算简介</a></li><li><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/Fusion%20Compute%E7%AE%80%E4%BB%8B/" rel="bookmark" title="Fusion Compute简介">Fusion Compute简介</a></li><li><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E8%AE%A1%E7%AE%97%E8%99%9A%E6%8B%9F%E5%8C%96/" rel="bookmark" title="计算虚拟化简介">计算虚拟化简介</a></li><li><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/Fusion%20Compute%E5%AE%89%E8%A3%85/" rel="bookmark" title="Fusion Compute安装">Fusion Compute安装</a></li><li class="active"><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/FusionSphere%E6%9E%B6%E6%9E%84/" rel="bookmark" title="FusionSphere架构">FusionSphere架构</a></li><li><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E5%AD%98%E5%82%A8%E8%99%9A%E6%8B%9F%E5%8C%96/" rel="bookmark" title="存储虚拟化">存储虚拟化</a></li><li><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E7%BD%91%E7%BB%9C%E8%99%9A%E6%8B%9F%E5%8C%96/" rel="bookmark" title="网络虚拟化">网络虚拟化</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Peter Pan"
+      data-src="/my-blog/images/avatar.jpg">
+  <p class="name" itemprop="name">Peter Pan</p>
+  <div class="description" itemprop="description">不必匆忙，不必火花四溅，不必成为别人，只需成为自己</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/my-blog/archives/">
+        <span class="count">69</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/my-blog/categories/">
+        <span class="count">10</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/my-blog/tags/">
+        <span class="count">14</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL1BldGVyLVBhbjAwMS9CYXNpYw==" title="https:&#x2F;&#x2F;github.com&#x2F;Peter-Pan001&#x2F;Basic"><i class="ic i-github"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS9ndWFuZy1tYW5nLWxpZ2h0bmluZw==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;guang-mang-lightning"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTE5MjY4NTE4NDA=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;1926851840"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS9QZXRlclBhbjA4MjQ=" title="https:&#x2F;&#x2F;about.me&#x2F;PeterPan0824"><i class="ic i-address-card"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/my-blog/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/my-blog/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+    <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/my-blog/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/my-blog/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/my-blog/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/my-blog/friends/" rel="section"><i class="ic i-heart"></i>friends</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/my-blog/links/" rel="section"><i class="ic i-magic"></i>links</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/Fusion%20Compute%E5%AE%89%E8%A3%85/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E5%AD%98%E5%82%A8%E8%99%9A%E6%8B%9F%E5%8C%96/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/Java%E6%96%B9%E6%B3%95/" title="Java方法">Java方法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%8E%E5%BA%94%E7%94%A801/" title="网络安全与应用01">网络安全与应用01</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A802/" title="网络应用服务器02">网络应用服务器02</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E8%A7%84%E5%88%92%E4%B8%8E%E8%AE%BE%E8%AE%A1/" title="网络规划与设计">网络规划与设计</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/Java%E5%B0%81%E8%A3%85/" title="Java封装">Java封装</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8001/" title="数据通信基础01">数据通信基础01</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
+</div>
+
+    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E5%AD%98%E5%82%A8%E8%99%9A%E6%8B%9F%E5%8C%96/" title="存储虚拟化">存储虚拟化</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/network/" title="分类于 网络">网络</a>
+</div>
+
+    <span><a href="/my-blog/network/Servlet%E5%92%8CTomcat/" title="Servlet和Tomcat">Servlet和Tomcat</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B9%BF%E5%9F%9F%E9%80%9A%E4%BF%A1%E7%BD%91/" title="广域通信网">广域通信网</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
+</div>
+
+    <span><a href="/my-blog/Linux/Linux%E5%BC%80%E7%AF%87/" title="Linux开篇">Linux开篇</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Peter Pan @ Peter Pan</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '云计算/FusionSphere架构/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/my-blog/js/app.js?v=0.2.4"></script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,624 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/my-blog/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/my-blog/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="理 想 净 土" href="https://peter-pan001.github.io/my-blog/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="理 想 净 土" href="https://peter-pan001.github.io/my-blog/atom.xml" />
+<link rel="alternate" type="application/json" title="理 想 净 土" href="https://peter-pan001.github.io/my-blog/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/my-blog/css/app.css?v=0.2.4">
+
+  
+  <meta name="keywords" content="云计算" />
+
+
+<link rel="canonical" href="https://peter-pan001.github.io/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E5%AD%98%E5%82%A8%E8%99%9A%E6%8B%9F%E5%8C%96/">
+
+
+
+  <title>
+存储虚拟化 - 云计算 |
+Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之作证 </title>
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">存储虚拟化
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2022-01-25 23:13:39">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-01-25T23:13:39+08:00">2022-01-25</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/my-blog/" rel="start">Peter Pan</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="https://s4.ax1x.com/2022/01/15/7YwsEj.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/my-blog/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" itemprop="item" rel="index" title="分类于 云计算"><span itemprop="name">云计算</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://peter-pan001.github.io/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E5%AD%98%E5%82%A8%E8%99%9A%E6%8B%9F%E5%8C%96/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/my-blog/images/avatar.jpg">
+    <meta itemprop="name" content="Peter Pan">
+    <meta itemprop="description" content=" 凭时间赢来的东西，时间肯定会为之作证 , 不必匆忙，不必火花四溅，不必成为别人，只需成为自己">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="理 想 净 土">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h2 id="存储虚拟化架构"><a class="markdownIt-Anchor" href="#存储虚拟化架构">#</a> 存储虚拟化架构</h2>
+<p><img data-src="https://s4.ax1x.com/2022/01/25/7byHUS.png" alt="cunchujiagou"></p>
+<blockquote>
+<p>SAN : 存储区域网络（Storage Area Network，简称 SAN）采用网状通道（Fibre Channel ，简称 FC，区别与 Fiber Channel 光纤通道）技术，通过 FC 交换机连接存储阵列和服务器主机，建立专用于数据存储的区域网络。适用对网络性能没有太大要求、但安全要求高的场景<br>
+ NAS：NAS（Network Attached Storage：网络附属存储）按字面简单说就是连接在网络上，具备资料存储功能的装置，因此也称为 “网络存储器”。它是一种专用数据存储服务器。它以数据为中心，将存储设备与服务器彻底分离，集中管理数据，从而释放带宽、提高性能、降低总拥有成本、保护投资。主打高性能，但数据安全较为欠缺</p>
+</blockquote>
+<p><img data-src="https://s4.ax1x.com/2022/01/25/7b6FC4.png" alt="cunchujiagou02"></p>
+<ul>
+<li>FusionSphere 存储虚拟化平台主要由文件系统、磁盘驱动和磁盘工具组成。SAN 设备和本地磁盘等块设备连接到服务器上后，经过设备驱动层和通用块层后，对主机呈现一个磁盘设备。</li>
+<li>文件系统建立在主机能够访问的存储设备上，创建文件系统的过程就是主机对存储设备执行格式化，在存储设备上写入文件系统的元数据和 inode 信息，建立文件到裸设备块的映射，并负责裸设备块的管理，包括空间分配和释放。 <mark>对于虚拟化来说，文件系统屏蔽了块层的操作，提供了文件级的抽象操作。虚拟机磁盘就是放在文件系统中的文件。</mark></li>
+<li>虚拟机磁盘在使用时，需要由磁盘驱动挂载给虚拟机，并通过 QEMU 管理起来，用户虚拟机的所有读写 IO 都会由前端驱动截获，转发给 QEMU 进程，并转换为用户态驱动的读写操作，最终写入磁盘文件中。</li>
+<li>虚拟机磁盘中包含了属性信息和数据区域，磁盘工具提供了一系列对虚拟机磁盘的操作，可以解析磁盘文件的文件头，读取或修改磁盘的属性信息，创建磁盘的数据区等操作。</li>
+</ul>
+<h2 id="vims虚拟集群存储文件系统"><a class="markdownIt-Anchor" href="#vims虚拟集群存储文件系统">#</a> VIMS 虚拟集群存储文件系统</h2>
+<blockquote>
+<p>VIMS 是一种高性能的集群文件系统，使虚拟化技术的应用超出了单个存储系统的限制，可让多个虚拟机共同访问一个整合的集群式存储池，从而显著提高了资源利用率。VIMS 是跨越多个存储服务器实现虚拟化的基础，它可启用存储热迁移、DRS（Storage Dynamic Resource Scheduler） 和 High Availability 等各种服务。</p>
+</blockquote>
+<p><img data-src="https://s4.ax1x.com/2022/01/25/7b6EvR.png" alt="vircoutfile"></p>
+<h3 id="vims分布式锁"><a class="markdownIt-Anchor" href="#vims分布式锁">#</a> VIMS 分布式锁</h3>
+<ul>
+<li>一个 VIMS 卷同时被多个 CNA 节点挂载，因此每个 CNA 节点都可以访问 VIMS 卷上的文件。为保证多节点读写同一文件的数据一致性，VIMS 需要实现分布式文件锁。VIMS 的 DLM（Distribute lock manager）模块负责实现分布式文件锁，它提供集群概念上的锁服务，调用者通过 DLM 保证集群间的同步要求。</li>
+</ul>
+<h3 id="vims心跳"><a class="markdownIt-Anchor" href="#vims心跳">#</a> VIMS 心跳</h3>
+<ul>
+<li>VIMS 存在两种心跳，磁盘心跳用于检测主机是否可以正常读写共享存储，网络心跳用于检测主机间网络通信是否正常。作为集群文件系统，挂载了 VIMS 卷的 CNA 节点从来都不是单独的个体，作为集群节点成员之一，通过网络心跳确保与其它节点进行正常的网络通信。</li>
+</ul>
+<h2 id="fc磁盘技术"><a class="markdownIt-Anchor" href="#fc磁盘技术">#</a> FC 磁盘技术</h2>
+<h3 id="普通磁盘"><a class="markdownIt-Anchor" href="#普通磁盘">#</a> 普通磁盘</h3>
+<blockquote>
+<p>普通磁盘创建时大小与虚拟磁盘大小相同，并将文件所有位置填 0，占用空间较大，置备时间较长<br>
+该磁盘创建所需时间会比创建其他类型的磁盘长，能够提供最好的性能体验和数据安全性</p>
+</blockquote>
+<ul>
+<li>即写多少，分配多少</li>
+</ul>
+<p><img data-src="https://s4.ax1x.com/2022/01/25/7b6ZK1.png" alt="ptcp"></p>
+<h3 id="普通延时置零磁盘"><a class="markdownIt-Anchor" href="#普通延时置零磁盘">#</a> 普通延时置零磁盘</h3>
+<blockquote>
+<p>普通延迟置零卷创建时大小与虚拟磁盘大小相同，但不会进行填 0 操作，占用空间较大，置备时间较普通卷短<br>
+普通延迟置零磁盘创建很快，创建时进行全空间分配，但未进行全置零动作，性能较普通磁盘有所下降。适用于对发放速度要求高的场景</p>
+</blockquote>
+<ul>
+<li>比普通磁盘多了置零动作</li>
+</ul>
+<p><img data-src="https://s4.ax1x.com/2022/01/25/7b6uVK.png" alt="ptyszlcp"></p>
+<h3 id="精简磁盘"><a class="markdownIt-Anchor" href="#精简磁盘">#</a> 精简磁盘</h3>
+<blockquote>
+<p>精简磁盘创建时大小为 0，精简磁盘创建时含少量元数据信息，大小一般为几十 K，创建时间均非常短。随着用户写入数据，精简磁盘的大小与实际占用空间将逐步增加<br>
+该磁盘用于 FusionSphere 系统中的精简磁盘，可以提高存储设备的利用率。精简磁盘使用动态磁盘技术，可以节省存储空间。该磁盘在创建时不进行空间分配，而是在用户 IO 写入磁盘文件时才进行空间动态分配，性能较普通磁盘有所下降。适用于用户对存储需求不明确，或是规划的容量比实际使用的容量多的场景</p>
+</blockquote>
+<ul>
+<li>按需分配，要多少拿多少</li>
+</ul>
+<p><img data-src="https://s4.ax1x.com/2022/01/25/7b6M5D.png" alt="jjcp"></p>
+<h3 id="差分磁盘"><a class="markdownIt-Anchor" href="#差分磁盘">#</a> 差分磁盘</h3>
+<blockquote>
+<p>差分磁盘必须基于一个已有的父磁盘来创建，它只记录相对于父磁盘的差异数据，包括数据的增改，差分磁盘不能脱离父磁盘而存在，如果父磁盘进行了修改，则差分磁盘的数据将不再可用。<br>
+对差分磁盘进行读操作，会首先读取差分磁盘中的数据区域，如果不存在，则表示该数据区域未被修改，则通过文件头的索引找到父磁盘，在对该区域进行读取。对差分磁盘进行写操作时，则直接写在差分磁盘上。<br>
+差分磁盘的结构和动态磁盘完全一致，文件头中会记录父磁盘的路径，数据区只记录和父磁盘差异数据，大小也会随着数据的写入而自动增长。</p>
+</blockquote>
+<p><img data-src="https://s4.ax1x.com/2022/01/25/7b632d.png" alt="cfcp"></p>
+<h2 id="快照"><a class="markdownIt-Anchor" href="#快照">#</a> 快照</h2>
+<blockquote>
+<p>虚拟机可以将当前状态保存在快照文件中，包括磁盘内容、内存和寄存器数据。用户可以通过恢复快照多次回到这一状态，虚拟机用户在执行一些重大、高危操作前，例如系统补丁，升级，破坏性测试前执行快照，可以用于故障时的快速还原。<br>
+FusionCompute 支持普通快照、一致性快照以及内存快照。</p>
+</blockquote>
+<h3 id="创建快照"><a class="markdownIt-Anchor" href="#创建快照">#</a> 创建快照</h3>
+<p><img data-src="https://s4.ax1x.com/2022/01/25/7b68xA.png" alt="cjkz"></p>
+<h3 id="回滚快照"><a class="markdownIt-Anchor" href="#回滚快照">#</a> 回滚快照</h3>
+<p><img data-src="https://s4.ax1x.com/2022/01/25/7b6JKI.png" alt="hgkz"></p>
+<h3 id="删除快照"><a class="markdownIt-Anchor" href="#删除快照">#</a> 删除快照</h3>
+<p><img data-src="https://s4.ax1x.com/2022/01/25/7b6UVf.png" alt="sckz"></p>
+<h2 id="链接克隆"><a class="markdownIt-Anchor" href="#链接克隆">#</a> 链接克隆</h2>
+<blockquote>
+<p>链接克隆虚拟机可以基于同一个虚拟机模板，快速发放多个类似的虚拟机。通过对虚拟机模板的系统卷创建多个差分磁盘，将每个差分磁盘挂载给独立的虚拟机。应用于需要大量发放拥有相同或类似数据的虚拟机，且对性能要求不高。<br>
+在链接克隆场景下，将若干链接克隆虚拟机的共同模板中的热点数据放在主机内存中，达到快速读取的目的，能够极大提升虚拟机的启动和运行速度。</p>
+</blockquote>
+<h3 id="实现原理"><a class="markdownIt-Anchor" href="#实现原理">#</a> 实现原理</h3>
+<p><img data-src="https://s4.ax1x.com/2022/01/25/7b60Pg.png" alt="sxyl"></p>
+<h2 id="存储热迁移"><a class="markdownIt-Anchor" href="#存储热迁移">#</a> 存储热迁移</h2>
+<blockquote>
+<p>FusionSphere 提供了虚拟机磁盘的冷迁移和热迁移，冷迁移是在虚拟机关机时候，将其磁盘文件从一个存储移动到另一个存储，热迁移可以在不中断业务的前提下，将虚拟机磁盘从一个存储迁移至另一个存储。</p>
+</blockquote>
+<ul>
+<li>热迁移首先使用写时重定向，将虚拟机数据写入目的存储的一个差异磁盘，这样，原磁盘文件就变成只读的。</li>
+<li>将源卷的所有的数据块依次读取出来并合并到目标端的差异磁盘中，等数据合并完成后，目的端的差分磁盘就拥有虚拟磁盘的所有最新数据。</li>
+<li>去除目的端快照对源卷的依赖，将差分磁盘修改为动态磁盘，这样，目的端磁盘文件可以独立运行。</li>
+</ul>
+<p><img data-src="https://s4.ax1x.com/2022/01/25/7b6rxs.png" alt="ccrqy"></p>
+<h2 id="存储资源裸设备映射-rdm"><a class="markdownIt-Anchor" href="#存储资源裸设备映射-rdm">#</a> 存储资源裸设备映射 (RDM)</h2>
+<blockquote>
+<p>Raw Device Mapping 绕过 hvpervisor，物理裸设备映射 (RDM) 能够将虚拟机下发的 SCSI 命令直接透传，使得虚拟机中的业务能够直接操作物理 SCSI 设备，避免由于虚拟化层的模拟导致功能丢失。<br>
+不支持链接克隆、存储瘦分配、磁盘在线 / 离线扩容 、存储增量快照 、iCache 、存储热迁移、存储 QoS、磁盘备份、虚拟机转为模板等</p>
+</blockquote>
+<ul>
+<li>技术特点
+<ul>
+<li>虚拟机直接通过 SCSI 命令操作裸存储设备</li>
+<li>兼容 FC 光纤存储和 IP SAN 存储</li>
+<li>适用于需要高性能存储的应用，比如 Oracle RAC</li>
+</ul>
+</li>
+</ul>
+<h2 id="存储扩容原理"><a class="markdownIt-Anchor" href="#存储扩容原理">#</a> 存储扩容原理</h2>
+<blockquote>
+<p>当需要扩容时，先在主节点上将新增的存储空间以线性映射的方式追加至虚拟块设备末尾，完成虚拟块设备的扩容后，再将新增的存储空间分成数段逐渐增加至文件系统 (更新文件系统中的元数据)，主节点完成数据存储的扩容。由于虚拟块设备的信息都是保存在节点内存中，则当其它节点发现数据存储空间有变化时，则需要更新虚拟块设备信息，完成扩容虚拟块设备。</p>
+</blockquote>
+<p><img data-src="https://s4.ax1x.com/2022/01/25/7b66rq.png" alt="cckr"></p>
+
+      <div class="tags">
+          <a href="/my-blog/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/" rel="tag"><i class="ic i-tag"></i> 云计算</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/my-blog/images/wechatpay.png" alt="Peter Pan 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/my-blog/images/alipay.png" alt="Peter Pan 支付宝">
+        <p>支付宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Peter Pan <i class="ic i-at"><em>@</em></i>理 想 净 土
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://peter-pan001.github.io/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E5%AD%98%E5%82%A8%E8%99%9A%E6%8B%9F%E5%8C%96/" title="存储虚拟化">https://peter-pan001.github.io/my-blog/云计算/存储虚拟化/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/FusionSphere%E6%9E%B6%E6%9E%84/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;s4.ax1x.com&#x2F;2022&#x2F;01&#x2F;15&#x2F;7YwsEj.jpg" title="FusionSphere架构">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 云计算</span>
+  <h3>FusionSphere架构</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E7%BD%91%E7%BB%9C%E8%99%9A%E6%8B%9F%E5%8C%96/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;s4.ax1x.com&#x2F;2022&#x2F;01&#x2F;15&#x2F;7YwsEj.jpg" title="网络虚拟化">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 云计算</span>
+  <h3>网络虚拟化</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#存储虚拟化架构"><span class="toc-number">1.</span> <span class="toc-text"> 存储虚拟化架构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vims虚拟集群存储文件系统"><span class="toc-number">2.</span> <span class="toc-text"> VIMS 虚拟集群存储文件系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#vims分布式锁"><span class="toc-number">2.1.</span> <span class="toc-text"> VIMS 分布式锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vims心跳"><span class="toc-number">2.2.</span> <span class="toc-text"> VIMS 心跳</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fc磁盘技术"><span class="toc-number">3.</span> <span class="toc-text"> FC 磁盘技术</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#普通磁盘"><span class="toc-number">3.1.</span> <span class="toc-text"> 普通磁盘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#普通延时置零磁盘"><span class="toc-number">3.2.</span> <span class="toc-text"> 普通延时置零磁盘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#精简磁盘"><span class="toc-number">3.3.</span> <span class="toc-text"> 精简磁盘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#差分磁盘"><span class="toc-number">3.4.</span> <span class="toc-text"> 差分磁盘</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#快照"><span class="toc-number">4.</span> <span class="toc-text"> 快照</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建快照"><span class="toc-number">4.1.</span> <span class="toc-text"> 创建快照</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#回滚快照"><span class="toc-number">4.2.</span> <span class="toc-text"> 回滚快照</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除快照"><span class="toc-number">4.3.</span> <span class="toc-text"> 删除快照</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#链接克隆"><span class="toc-number">5.</span> <span class="toc-text"> 链接克隆</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#实现原理"><span class="toc-number">5.1.</span> <span class="toc-text"> 实现原理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#存储热迁移"><span class="toc-number">6.</span> <span class="toc-text"> 存储热迁移</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#存储资源裸设备映射-rdm"><span class="toc-number">7.</span> <span class="toc-text"> 存储资源裸设备映射 (RDM)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#存储扩容原理"><span class="toc-number">8.</span> <span class="toc-text"> 存储扩容原理</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E4%BA%91%E8%AE%A1%E7%AE%97%E7%AE%80%E4%BB%8B/" rel="bookmark" title="云计算简介">云计算简介</a></li><li><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/Fusion%20Compute%E7%AE%80%E4%BB%8B/" rel="bookmark" title="Fusion Compute简介">Fusion Compute简介</a></li><li><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E8%AE%A1%E7%AE%97%E8%99%9A%E6%8B%9F%E5%8C%96/" rel="bookmark" title="计算虚拟化简介">计算虚拟化简介</a></li><li><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/Fusion%20Compute%E5%AE%89%E8%A3%85/" rel="bookmark" title="Fusion Compute安装">Fusion Compute安装</a></li><li><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/FusionSphere%E6%9E%B6%E6%9E%84/" rel="bookmark" title="FusionSphere架构">FusionSphere架构</a></li><li class="active"><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E5%AD%98%E5%82%A8%E8%99%9A%E6%8B%9F%E5%8C%96/" rel="bookmark" title="存储虚拟化">存储虚拟化</a></li><li><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E7%BD%91%E7%BB%9C%E8%99%9A%E6%8B%9F%E5%8C%96/" rel="bookmark" title="网络虚拟化">网络虚拟化</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Peter Pan"
+      data-src="/my-blog/images/avatar.jpg">
+  <p class="name" itemprop="name">Peter Pan</p>
+  <div class="description" itemprop="description">不必匆忙，不必火花四溅，不必成为别人，只需成为自己</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/my-blog/archives/">
+        <span class="count">69</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/my-blog/categories/">
+        <span class="count">10</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/my-blog/tags/">
+        <span class="count">14</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL1BldGVyLVBhbjAwMS9CYXNpYw==" title="https:&#x2F;&#x2F;github.com&#x2F;Peter-Pan001&#x2F;Basic"><i class="ic i-github"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS9ndWFuZy1tYW5nLWxpZ2h0bmluZw==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;guang-mang-lightning"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTE5MjY4NTE4NDA=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;1926851840"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS9QZXRlclBhbjA4MjQ=" title="https:&#x2F;&#x2F;about.me&#x2F;PeterPan0824"><i class="ic i-address-card"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/my-blog/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/my-blog/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+    <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/my-blog/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/my-blog/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/my-blog/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/my-blog/friends/" rel="section"><i class="ic i-heart"></i>friends</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/my-blog/links/" rel="section"><i class="ic i-magic"></i>links</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/FusionSphere%E6%9E%B6%E6%9E%84/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E7%BD%91%E7%BB%9C%E8%99%9A%E6%8B%9F%E5%8C%96/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/" title="计算机硬件基础(部分组成原理)">计算机硬件基础(部分组成原理)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%9F%8E%E5%9F%9F%E7%BD%9102/" title="局域网与城域网02">局域网与城域网02</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
+</div>
+
+    <span><a href="/my-blog/Linux/%E6%9B%B4%E6%8D%A2%E6%B8%85%E5%8D%8E%E6%BA%90/" title="更换清华源">更换清华源</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%882%EF%BC%89/" title="华为路由交换实验命令（2）">华为路由交换实验命令（2）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/JavaSE%E5%B0%8F%E7%BB%93/" title="JavaSE小结">JavaSE小结</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E4%B8%8B%E4%B8%80%E4%BB%A3%E4%BA%92%E8%81%94%E7%BD%91/" title="下一代互联网">下一代互联网</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/MySQL/" title="分类于 MySQL">MySQL</a>
+</div>
+
+    <span><a href="/my-blog/MySQL/MySQL%E8%BF%9B%E9%98%B6/" title="MySQL进阶">MySQL进阶</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8001/" title="数据通信基础01">数据通信基础01</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
+</div>
+
+    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E4%BA%91%E8%AE%A1%E7%AE%97%E7%AE%80%E4%BB%8B/" title="云计算简介">云计算简介</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" title="分类于 数据分析">数据分析</a>
+</div>
+
+    <span><a href="/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/CDC%E6%8A%80%E6%9C%AF/" title="CDC技术">CDC技术</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Peter Pan @ Peter Pan</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '云计算/存储虚拟化/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/my-blog/js/app.js?v=0.2.4"></script>
+
+
+
+
+</body>
+</html>

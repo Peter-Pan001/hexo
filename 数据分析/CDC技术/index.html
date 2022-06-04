@@ -1,0 +1,617 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/my-blog/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/my-blog/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="理 想 净 土" href="https://peter-pan001.github.io/my-blog/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="理 想 净 土" href="https://peter-pan001.github.io/my-blog/atom.xml" />
+<link rel="alternate" type="application/json" title="理 想 净 土" href="https://peter-pan001.github.io/my-blog/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/my-blog/css/app.css?v=0.2.4">
+
+  
+  <meta name="keywords" content="数据分析" />
+
+
+<link rel="canonical" href="https://peter-pan001.github.io/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/CDC%E6%8A%80%E6%9C%AF/">
+
+
+
+  <title>
+CDC技术 - 数据分析 |
+Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之作证 </title>
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">CDC技术
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2022-06-03 21:59:07">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-06-03T21:59:07+08:00">2022-06-03</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/my-blog/" rel="start">Peter Pan</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="https://s1.ax1x.com/2022/06/03/XaCXZj.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/my-blog/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/my-blog/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" itemprop="item" rel="index" title="分类于 数据分析"><span itemprop="name">数据分析</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://peter-pan001.github.io/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/CDC%E6%8A%80%E6%9C%AF/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/my-blog/images/avatar.jpg">
+    <meta itemprop="name" content="Peter Pan">
+    <meta itemprop="description" content=" 凭时间赢来的东西，时间肯定会为之作证 , 不必匆忙，不必火花四溅，不必成为别人，只需成为自己">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="理 想 净 土">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <ul>
+<li>CDC (全称 change data capture)- 变化数据捕获，是识别源系统中数据何时发生更改的过程，以便下游流程或系统可以对该更改执行操作。一个常见的用例是 <mark>反映不同目标系统中的更改，以便系统中的数据保持同步。</mark></li>
+<li>对于数据库而言，CDC 更像是一种软件的设计模式，用来确定与跟踪以及更改了的数据</li>
+<li>CDC 作为一种数据集成方法，常发生在数据仓库环境中，因为捕获和保留数据状态是数据仓库的核心功能之一。</li>
+</ul>
+<p><img data-src="https://s1.ax1x.com/2022/06/03/XaS7zF.png" alt="CDC/01.png"></p>
+<blockquote>
+<p>以银行常见的数据库事件为例：存款与取款的操作通过对变更数据进行捕获与实时数据传输保证数据的时效性</p>
+</blockquote>
+<p><img data-src="https://s1.ax1x.com/2022/06/03/XaSvIx.png" alt="sd"></p>
+<h2 id="etl中的cdc"><a class="markdownIt-Anchor" href="#etl中的cdc">#</a> ETL 中的 CDC</h2>
+<ul>
+<li>先讲一下 ETL 的概念，所谓 ETL，实际上就是对数据进行提取 Extract、转换 Translate、加载 Load，是一个数据集成过程。数据从各个源中提取并传递到数据仓库中，数据的抽取可通过数据库的批处理查询或 CDC 来获得数据。</li>
+</ul>
+<h2 id="cdc实现方法"><a class="markdownIt-Anchor" href="#cdc实现方法">#</a> CDC 实现方法</h2>
+<h3 id="audit-columns-审核列"><a class="markdownIt-Anchor" href="#audit-columns-审核列">#</a> Audit Columns 审核列</h3>
+<ul>
+<li>常见的方式是在当前的数据库表中添加如： <code>Last_Update</code>  或  <code>Date_Modified</code>  列来检索从上次提取数据以来所变更的行情况。</li>
+<li>主要逻辑：
+<ol>
+<li>获取 target 表的 <code>Created_Time</code>  和  <code>Updated_Time</code>  最大值</li>
+<li>从 source 表中选择 <code>Created_Time</code>  大于 target 表中最大的 <code>Created_Time</code>  所在行，此行为上次执行 CDC 后新建的行</li>
+</ol>
+</li>
+</ul>
+<p><img data-src="https://s1.ax1x.com/2022/06/03/XapmJf.png" alt="sc"></p>
+<ol>
+<li>从 source 表中选择  <code>Created_Time</code>  大于 target 表中  <code>Updated_Time</code>  最大值但小于 target 表  <code>Created_Time</code>  最大值</li>
+</ol>
+<p><img data-src="https://s1.ax1x.com/2022/06/03/XapMQg.png" alt="sw"></p>
+<ol>
+<li>插入 2 中的新行后修改 target 表中 3 的现有行</li>
+</ol>
+<blockquote>
+<p>优势：</p>
+</blockquote>
+<blockquote>
+<p>借由本机应用逻辑构建 ，无需借助第三方工具</p>
+</blockquote>
+<blockquote>
+<p>缺点：</p>
+</blockquote>
+<blockquote>
+<p>增加数据库开销、易出错并出现数据一致性问题、无脚本进行删除跟踪会导致删除语句不会传递到 target 上</p>
+</blockquote>
+<h3 id="table-deltas-表-增量"><a class="markdownIt-Anchor" href="#table-deltas-表-增量">#</a> Table Deltas 表 增量</h3>
+<ul>
+<li>通过数据库快照对比数据库表修改前后的差异，有的也称时间戳查询</li>
+</ul>
+<p><img data-src="https://s1.ax1x.com/2022/06/03/Xap8wn.png" alt="ie"></p>
+<blockquote>
+<p>优势：</p>
+</blockquote>
+<blockquote>
+<p>提供已更改数据的准确视图。仅使用本机 SQL Script</p>
+</blockquote>
+<blockquote>
+<p>缺点：</p>
+</blockquote>
+<blockquote>
+<p>对存储需求增加，需要使用数据源的三个副本： 源数据，修改前快照，修改后快照</p>
+</blockquote>
+<blockquote>
+<p>扩展性较差</p>
+</blockquote>
+<h3 id="trigger-based-cdc-基于触发器的cdc"><a class="markdownIt-Anchor" href="#trigger-based-cdc-基于触发器的cdc">#</a> Trigger-based CDC 基于触发器的 CDC</h3>
+<ul>
+<li>通过定义数据库触发器并在影子表中创建自己的变更日志（change log），触发器在增删改查命令执行前或后进行触发，用于创建更改日志。（SQL Level 执行）</li>
+<li>该方法会导致各个表都需要 Trigger，在进行数据修改时，运行 Trigger 会造成额外性能开销与维护上的管理负担。</li>
+</ul>
+<blockquote>
+<p>优势：</p>
+</blockquote>
+<blockquote>
+<p>shadow table 可提供所有事务的不可变详细日志 ，某些数据库在 SQL API 可提供支持</p>
+</blockquote>
+<blockquote>
+<p>缺点：</p>
+</blockquote>
+<blockquote>
+<p>每次进行数据操作会要求数据库进行多次写入，间接降低数据库性能</p>
+</blockquote>
+<h3 id="log-based-change-data-capture-基于日志的cdc"><a class="markdownIt-Anchor" href="#log-based-change-data-capture-基于日志的cdc">#</a> Log-Based Change Data Capture 基于日志的 CDC</h3>
+<ul>
+<li>数据库包含事务日志（也称为重做日志 transaction log），这些日志存储所有数据库事件，允许在发生崩溃时恢复数据库。</li>
+</ul>
+<p><img data-src="https://s1.ax1x.com/2022/06/03/XapaSU.png" alt="ix"></p>
+<blockquote>
+<p>数据捕获是无需进行应用级更改，无需扫描操作表，会显著降低系统性能</p>
+</blockquote>
+<blockquote>
+<p>优势：</p>
+</blockquote>
+<blockquote>
+<p>对 production 数据库系统的影响最新，各事务无需额外查询 ； 可在多个系统保持 ACID 的可靠性 ；无需修改 production 数据库系统模式</p>
+</blockquote>
+<blockquote>
+<p>弊端：</p>
+</blockquote>
+<blockquote>
+<p>日志记录格式随数据库版本更新而需要修改数据库日志逻辑 ；需要系统管理源数据库更改事件元数据</p>
+</blockquote>
+<h3 id="data-integration-platforms-for-change-data-capture-数据集成平台的cdc"><a class="markdownIt-Anchor" href="#data-integration-platforms-for-change-data-capture-数据集成平台的cdc">#</a> Data Integration Platforms for Change Data Capture 数据集成平台的 CDC</h3>
+<ul>
+<li>数据集成平台可自动挖掘数据库 <code>change log</code>  处理并管理其他元数据</li>
+</ul>
+<h2 id="cdc应用实例"><a class="markdownIt-Anchor" href="#cdc应用实例">#</a> CDC 应用实例</h2>
+<ul>
+<li><strong>将数据流式传输到数据仓库</strong>  – 当今数据管道的核心功能之一是将数据从源数据库移动到数据仓库。这是因为大多数操作数据库并非旨在支持密集的分析处理，而数据仓库非常适合这些类型的操作。在这里，CDC 是数据管道体系结构中的关键步骤，可促进从源数据仓库到目标数据仓库的数据迁移。</li>
+<li><strong>将本地数据迁移到云</strong>  – 当组织希望执行资源密集型操作（如人工智能、机器学习或深度学习）时，他们通常会寻求基于云的数据仓库来促进高度资源密集型的数据处理过程。这样做的原因是，与本地部署相比，在云中运行这些操作的运营成本要低得多，这使得云的即用即付模型成为一个不错的选择。在这里，CDC 可以在促进从本地到云的数据迁移方面发挥重要作用。</li>
+</ul>
+
+      <div class="tags">
+          <a href="/my-blog/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" rel="tag"><i class="ic i-tag"></i> 数据分析</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/my-blog/images/wechatpay.png" alt="Peter Pan 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/my-blog/images/alipay.png" alt="Peter Pan 支付宝">
+        <p>支付宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Peter Pan <i class="ic i-at"><em>@</em></i>理 想 净 土
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://peter-pan001.github.io/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/CDC%E6%8A%80%E6%9C%AF/" title="CDC技术">https://peter-pan001.github.io/my-blog/数据分析/CDC技术/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E7%BD%91%E7%BB%9C%E8%99%9A%E6%8B%9F%E5%8C%96/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;s4.ax1x.com&#x2F;2022&#x2F;01&#x2F;15&#x2F;7YwsEj.jpg" title="网络虚拟化">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 云计算</span>
+  <h3>网络虚拟化</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#etl中的cdc"><span class="toc-number">1.</span> <span class="toc-text"> ETL 中的 CDC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cdc实现方法"><span class="toc-number">2.</span> <span class="toc-text"> CDC 实现方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#audit-columns-审核列"><span class="toc-number">2.1.</span> <span class="toc-text"> Audit Columns 审核列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#table-deltas-表-增量"><span class="toc-number">2.2.</span> <span class="toc-text"> Table Deltas 表 增量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#trigger-based-cdc-基于触发器的cdc"><span class="toc-number">2.3.</span> <span class="toc-text"> Trigger-based CDC 基于触发器的 CDC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#log-based-change-data-capture-基于日志的cdc"><span class="toc-number">2.4.</span> <span class="toc-text"> Log-Based Change Data Capture 基于日志的 CDC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#data-integration-platforms-for-change-data-capture-数据集成平台的cdc"><span class="toc-number">2.5.</span> <span class="toc-text"> Data Integration Platforms for Change Data Capture 数据集成平台的 CDC</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cdc应用实例"><span class="toc-number">3.</span> <span class="toc-text"> CDC 应用实例</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li class="active"><a href="/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/CDC%E6%8A%80%E6%9C%AF/" rel="bookmark" title="CDC技术">CDC技术</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Peter Pan"
+      data-src="/my-blog/images/avatar.jpg">
+  <p class="name" itemprop="name">Peter Pan</p>
+  <div class="description" itemprop="description">不必匆忙，不必火花四溅，不必成为别人，只需成为自己</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/my-blog/archives/">
+        <span class="count">69</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/my-blog/categories/">
+        <span class="count">10</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/my-blog/tags/">
+        <span class="count">14</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL1BldGVyLVBhbjAwMS9CYXNpYw==" title="https:&#x2F;&#x2F;github.com&#x2F;Peter-Pan001&#x2F;Basic"><i class="ic i-github"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS9ndWFuZy1tYW5nLWxpZ2h0bmluZw==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;guang-mang-lightning"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTE5MjY4NTE4NDA=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;1926851840"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS9QZXRlclBhbjA4MjQ=" title="https:&#x2F;&#x2F;about.me&#x2F;PeterPan0824"><i class="ic i-address-card"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/my-blog/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/my-blog/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+    <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/my-blog/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/my-blog/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/my-blog/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/my-blog/friends/" rel="section"><i class="ic i-heart"></i>friends</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/my-blog/links/" rel="section"><i class="ic i-magic"></i>links</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E8%A7%84%E5%88%92%E4%B8%8E%E8%AE%BE%E8%AE%A1/" title="网络规划与设计">网络规划与设计</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="分类于 算法与数据结构">算法与数据结构</a>
+</div>
+
+    <span><a href="/my-blog/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/" title="算法入门教程">算法入门教程</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
+</div>
+
+    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/Fusion%20Compute%E5%AE%89%E8%A3%85/" title="Fusion Compute安装">Fusion Compute安装</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/" title="操作系统基础">操作系统基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%883%EF%BC%89/" title="华为路由实验命令（3）">华为路由实验命令（3）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8002/" title="数据通信基础02">数据通信基础02</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
+</div>
+
+    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E4%BA%91%E8%AE%A1%E7%AE%97%E7%AE%80%E4%BB%8B/" title="云计算简介">云计算简介</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/MySQL/" title="分类于 MySQL">MySQL</a>
+</div>
+
+    <span><a href="/my-blog/MySQL/%E5%85%B3%E4%BA%8EMySQL%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" title="关于MySQL的一些基本使用">关于MySQL的一些基本使用</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/Java%E5%B0%81%E8%A3%85/" title="Java封装">Java封装</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A801/" title="网络应用服务器01">网络应用服务器01</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Peter Pan @ Peter Pan</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '数据分析/CDC技术/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/my-blog/js/app.js?v=0.2.4"></script>
+
+
+
+
+</body>
+</html>

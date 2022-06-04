@@ -1,0 +1,933 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/my-blog/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/my-blog/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="理 想 净 土" href="https://peter-pan001.github.io/my-blog/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="理 想 净 土" href="https://peter-pan001.github.io/my-blog/atom.xml" />
+<link rel="alternate" type="application/json" title="理 想 净 土" href="https://peter-pan001.github.io/my-blog/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/my-blog/css/app.css?v=0.2.4">
+
+  
+  <meta name="keywords" content="软考网络工程师" />
+
+
+<link rel="canonical" href="https://peter-pan001.github.io/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A801/">
+
+
+
+  <title>
+网络应用服务器01 - 软考网络工程师 |
+Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之作证 </title>
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">网络应用服务器01
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2021-02-27 08:35:07">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-02-27T08:35:07+08:00">2021-02-27</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/my-blog/" rel="start">Peter Pan</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="https://s3.ax1x.com/2021/02/17/y253bn.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/my-blog/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" itemprop="item" rel="index" title="分类于 软考网络工程师"><span itemprop="name">软考网络工程师</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://peter-pan001.github.io/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A801/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/my-blog/images/avatar.jpg">
+    <meta itemprop="name" content="Peter Pan">
+    <meta itemprop="description" content=" 凭时间赢来的东西，时间肯定会为之作证 , 不必匆忙，不必火花四溅，不必成为别人，只需成为自己">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="理 想 净 土">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="01-win2008基础"><a class="markdownIt-Anchor" href="#01-win2008基础">#</a> 01 Win2008 基础</h1>
+<h2 id="11-网络操作系统"><a class="markdownIt-Anchor" href="#11-网络操作系统">#</a> 1.1 网络操作系统</h2>
+<ul>
+<li><strong>定义</strong> ：
+<ul>
+<li>用统一的方法管理各主机之间的通信和资源的共享</li>
+</ul>
+</li>
+<li><strong>主要功能</strong>：
+<ul>
+<li>网络通信、共享资源、网络管理、网络服务、互操作、网络接口</li>
+</ul>
+</li>
+<li><strong>四大特征</strong>：
+<ul>
+<li>并发、资源共享、虚拟、异步性</li>
+</ul>
+</li>
+<li><strong>安全性</strong>：
+<ul>
+<li>用户账号、时间限制、地点限制、磁盘空间限制、传输介质、加密审计</li>
+</ul>
+</li>
+</ul>
+<h2 id="12-网络服务器windows-server-2008"><a class="markdownIt-Anchor" href="#12-网络服务器windows-server-2008">#</a> 1.2 网络服务器 Windows Server 2008</h2>
+<ul>
+<li>微软基于 WindowsXP/NT5.1 开发的服务器操作系统，于 2008 年发布，原定 2018 结束支持，后延期至 2026 年。<mark>企业版、标准版、web 版数据中心版等 8 个版本</mark>。</li>
+<li>专为下一代网络、应用程序和 Web 服务设计，R2 升级版提升了虚拟机、系统管理、信息安全，仅支持 64 位，服务于大、中、小企业。</li>
+<li><strong>新增功能</strong> ：1、网站 IIS7，2、虚拟机化 Hyper-V；3、可靠可扩展。4、管理中心增强。</li>
+</ul>
+<h2 id="13-网络服务器red-hat-enterprise-linux70"><a class="markdownIt-Anchor" href="#13-网络服务器red-hat-enterprise-linux70">#</a> 1.3 网络服务器 Red Hat Enterprise Linux7.0</h2>
+<ul>
+<li>简称红帽子，是开放源代码的产品，是 Linux 操作系统的一种。因为它具备最好的图形界面，无论是安装、配置还是使用都十分方便，而且运行稳定，适合做服务器。</li>
+<li>在第 9 个版本之后，RedHat 公司不再发行 RedHatLinux，而开始发行 Fedorao。同时将其商业化的努力全部转向了 RedHatEnterprise<br>
+Linux 系列，目前最新版是 RHEL7.0</li>
+</ul>
+<h1 id="02-win2008基础"><a class="markdownIt-Anchor" href="#02-win2008基础">#</a> 02 Win2008 基础</h1>
+<h2 id="21-winserver2008本地用户与组"><a class="markdownIt-Anchor" href="#21-winserver2008本地用户与组">#</a> 2.1 winserver2008 本地用户与组</h2>
+<ul>
+<li><strong>用户</strong>：
+<ul>
+<li>就是包含用户名、密码、权限以及说明</li>
+</ul>
+</li>
+<li><strong>用户组</strong>：
+<ul>
+<li>就是具有相同性质的用户归结在一起，统一授权，组成用户组</li>
+</ul>
+</li>
+<li><strong>用户组分类</strong>：
+<ul>
+<li>全局组、本地组、特殊组</li>
+</ul>
+</li>
+<li><strong>创建用户和组</strong>：
+<ul>
+<li>计算机 —— 右键 —— 管理 —— 配置 —— 本地用户和组</li>
+</ul>
+</li>
+</ul>
+<h2 id="22-常见用户和组的权限"><a class="markdownIt-Anchor" href="#22-常见用户和组的权限">#</a> 2.2 常见用户和组的权限</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">组名</th>
+<th style="text-align:center">描述信息</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Administrators</td>
+<td style="text-align:center">具有完全控制权限，并且可以向其他用户分配用户权利和访问控制权限</td>
+</tr>
+<tr>
+<td style="text-align:center">Backup Operators</td>
+<td style="text-align:center">加入该组的成员可以备份和还原服务器上所有文件</td>
+</tr>
+<tr>
+<td style="text-align:center">Guests</td>
+<td style="text-align:center">拥有一个在登录时创建的临时配置文件，在注销时该配置文件将被删除</td>
+</tr>
+<tr>
+<td style="text-align:center">Network<br>Configuration<br>Operators</td>
+<td style="text-align:center">该组具有创建用户账户和组账户的权利，可以在 PowerUsers 组、Users 组和 Guests 组中添加或删除用户，但是不能管理 Administrators 组成员，可以创建和管理共享资源</td>
+</tr>
+<tr>
+<td style="text-align:center">Print Operators</td>
+<td style="text-align:center">可以管理打印机</td>
+</tr>
+<tr>
+<td style="text-align:center">Users</td>
+<td style="text-align:center">可以执行一些常见任务，但不能共享目录和创建本地打印机</td>
+</tr>
+</tbody>
+</table>
+<h2 id="23-winserver2008活动目录"><a class="markdownIt-Anchor" href="#23-winserver2008活动目录">#</a> 2.3 winserver2008 活动目录</h2>
+<ul>
+<li>
+<p>是指网络资源信息的目录，<mark>是一个数据库</mark>，如用户、计算机、进程、服务、应用程序等，有了活动目录，才能登陆域，才能访问网络资源</p>
+</li>
+<li>
+<p><strong>活动目录</strong>（Active Directory），是一个<mark>动态的分布式文件系统</mark>，包含网络信息的目录结构和相关的目录服务，<mark>自动维护信息的一致性</mark>。</p>
+</li>
+<li>
+<p><strong>AD</strong> <mark>存储着计算机网络的配置信息和安全信息</mark>，这些信息分散地存储在网络的多个域控制器中，由多个网络管理员进行管理和维护。</p>
+<p><img data-src="https://s3.ax1x.com/2021/02/27/6S0nBt.png" alt="hdml"></p>
+</li>
+</ul>
+<h2 id="24-活动目录结构"><a class="markdownIt-Anchor" href="#24-活动目录结构">#</a> 2.4 活动目录结构</h2>
+<ul>
+<li><strong>组织单元 OU</strong>
+<ul>
+<li>共享同一活动目录的一组计算机 <strong>组合</strong></li>
+</ul>
+</li>
+<li><strong>域 Domain</strong>
+<ul>
+<li>活动目录的核心单元</li>
+</ul>
+</li>
+<li><strong>域树 Tree</strong>
+<ul>
+<li>域的集合</li>
+</ul>
+</li>
+<li><strong>域林 Forest</strong>
+<ul>
+<li>域树的集合</li>
+</ul>
+</li>
+</ul>
+<h2 id="25-活动目录的工作组"><a class="markdownIt-Anchor" href="#25-活动目录的工作组">#</a> 2.5 活动目录的工作组</h2>
+<ul>
+<li>
+<p>活动目录中的工作组</p>
+<ul>
+<li>全局组：来自本域用于全林。</li>
+<li>通用组：来自全林用于全林。</li>
+<li>域本地组：来自全林用于本域</li>
+</ul>
+</li>
+<li>
+<p>活动目录的安装和配置：1、需要 NTFS 分区。2、需要安装 DNS 服务器。开始 ——&gt; 运行 ——&gt; 执行 <code>dcpromo.exe</code> ，启动域控服务器安装向导。</p>
+<p><img data-src="https://s3.ax1x.com/2021/02/27/6S0uHP.png" alt="hdmlgzz"></p>
+</li>
+</ul>
+<h2 id="26-windows2008r2远程桌面服务"><a class="markdownIt-Anchor" href="#26-windows2008r2远程桌面服务">#</a> 2.6 Windows2008R2 远程桌面服务</h2>
+<ul>
+<li>
+<p>Windows2008R2 远程桌面服务：了满足同时允许多个用户同时远程一台服务器，就需要开启多个 Windows 远程桌面连接才能满足自己的要求。</p>
+</li>
+<li>
+<p>有 6 个组件：1、远程桌面会话主机，RD 的服务端。2、远程桌面 Web 访问，提供通过 Web 浏览器或者 APP 访问。3、远程桌面授权，给 RD 客户端颁发许可证。4、远程桌面网关，可以给 RD 客户机通过外网连接网。5、远程桌面连接代理，支持连接 APP 程序或虚拟机。6、远程桌面虚拟化主机，集成了 Hyper-v</p>
+</li>
+</ul>
+<h2 id="27-rd服务器安装步骤"><a class="markdownIt-Anchor" href="#27-rd服务器安装步骤">#</a> 2.7 RD 服务器安装步骤</h2>
+<ol>
+<li>开始</li>
+<li>管理工具</li>
+<li>服务器管理器</li>
+<li>角色</li>
+<li>添加角色</li>
+<li>服务器角色</li>
+<li>远程桌面服务</li>
+</ol>
+<h2 id="28-rd服务器配置方法"><a class="markdownIt-Anchor" href="#28-rd服务器配置方法">#</a> 2.8 RD 服务器配置方法</h2>
+<ul>
+<li>开始</li>
+<li>管理工具</li>
+<li>远程桌面服务</li>
+<li>远程桌面会话主机配置</li>
+<li>右键 RDP</li>
+<li>TCP</li>
+<li>属性</li>
+</ul>
+<h2 id="29-远程桌面连接"><a class="markdownIt-Anchor" href="#29-远程桌面连接">#</a> 2.9 远程桌面连接</h2>
+<ul>
+<li>提供一种连接远程工作站桌面的一种远程管理工具
+<ol>
+<li>计算机 — 右键 — 属性 — 远程设置 — 远程 — 勾选运行 — 进行远程桌面连接</li>
+<li>防火墙放行</li>
+<li>设置系统密码</li>
+</ol>
+</li>
+</ul>
+<h2 id="210-使用客户端进行远程桌面连接"><a class="markdownIt-Anchor" href="#210-使用客户端进行远程桌面连接">#</a> 2.10 使用客户端进行远程桌面连接</h2>
+<ul>
+<li><strong>方法一</strong>
+<ul>
+<li>开始</li>
+<li>所有程序</li>
+<li>附件</li>
+<li>远程桌面连接</li>
+</ul>
+</li>
+<li><strong>方法二</strong>
+<ul>
+<li>开始</li>
+<li>运行</li>
+<li>输入  <code>mstsc.exe</code></li>
+<li>输入 IP 地址</li>
+</ul>
+</li>
+</ul>
+<h2 id="211-微软管理控制台mmc"><a class="markdownIt-Anchor" href="#211-微软管理控制台mmc">#</a> 2.11 微软管理控制台 MMC</h2>
+<ul>
+<li>Microsoft 管理控制台（MMC）集成了用来管理网络、计算机、服务及其他系统组件的管理工具。<mark>可以使用 MMC 创建、保存并打开管理工具单元</mark>，这些管理工具用来管理硬件、软件和 Windows 的网络组件。</li>
+<li>它<mark>本身不执行管理功能</mark>，但可以集成许多管理工具以方便管理。可以添加到控制台的主要工具类型称为管理单元</li>
+<li><strong>具体步骤</strong>
+<ul>
+<li>开始</li>
+<li>运行</li>
+<li>MMC</li>
+<li>打开控制台</li>
+<li>文件</li>
+<li>添加删除</li>
+</ul>
+</li>
+</ul>
+<h1 id="03-linux70基础"><a class="markdownIt-Anchor" href="#03-linux70基础">#</a> 03 Linux7.0 基础</h1>
+<h2 id="31-linux用户和组"><a class="markdownIt-Anchor" href="#31-linux用户和组">#</a> 3.1 Linux 用户和组</h2>
+<ul>
+<li>Linux 用户和组：Linux 是一个多用户、多任务的<mark>分时操作系统</mark>。每个文件和程序必须属于某一个用户，每个用户对应一个账号。其中最重要的一个<mark>超级用户 root</mark>。</li>
+<li>超级用户 root 承担了系统管理的一切任务，可以控制所有的程序，访问所有文件，使用系统中的所有功能和资源。</li>
+<li>其他用户和组都是由 root 来创建的。</li>
+</ul>
+<h2 id="32-linux用户和组3个重要配置文件"><a class="markdownIt-Anchor" href="#32-linux用户和组3个重要配置文件">#</a> 3.2 Linux 用户和组 3 个重要配置文件</h2>
+<ul>
+<li><code>/etc/passwd</code> ：用户文件，存储用户和密码的信息，对所有用户可读。</li>
+<li><code>/etc/shadow</code> ：用户文件，也是存储用户和密码等信息，只有超级用户 root 可以读，目前一般采用这个，保密性好。（相当于 passwd 的影子文件）</li>
+<li><code>/etc/group</code> : 用户组文件。使用组同时赋予多个用户相同的文件访问权限。一个用户可以同时属于多个组。</li>
+</ul>
+<h2 id="33-linux用户和组的4个重要管理命令"><a class="markdownIt-Anchor" href="#33-linux用户和组的4个重要管理命令">#</a> 3.3 Linux 用户和组的 4 个重要管理命令</h2>
+<ul>
+<li><code>useradd</code> ：新增用户，暂时锁定，是因为，没有初始密码。</li>
+<li><code>passwd</code> : 配置密码，包括设置、修改、锁定密码等。</li>
+<li><code>userdel</code> ：删除用户，必要时删除用户的主目录。</li>
+<li><code>su</code> ：切换用户，比如由普通用户切换到 root 用户。（增、删、改、换）</li>
+</ul>
+<h2 id="34-linux文件目录管理"><a class="markdownIt-Anchor" href="#34-linux文件目录管理">#</a> 3.4 Linux 文件目录管理</h2>
+<ul>
+<li>
+<p>文件格式有：EXT2、EXT3、EXT5 等。采用树形根目录结构，用 / 表示。其他所有发生目录都是从根目录出发生成的。将所有的硬件、软件都作为文件来<br>
+管理。</p>
+</li>
+<li>
+<p><code>/bin</code>  存放系统命令。</p>
+</li>
+<li>
+<p><code>/dev</code>  所支持全部的设备文<br>
+件。</p>
+</li>
+<li>
+<p><code>/etc</code>  系统管理配置文件。</p>
+</li>
+<li>
+<p><code>/lib</code>  函数库数据库<br>
+命令。</p>
+</li>
+<li>
+<p><code>/mnt</code>  空目录，安装拆卸文件硬件等。</p>
+</li>
+<li>
+<p><code>/tmp</code>  存放临时文件。</p>
+</li>
+<li>
+<p><code>/usr</code>  程序存放主目录。</p>
+</li>
+<li>
+<p><code>/home</code>  默认用户主目录。</p>
+</li>
+<li>
+<p><code>/proc</code>  内存虚拟目录。</p>
+</li>
+</ul>
+<h2 id="35-linux文件权限"><a class="markdownIt-Anchor" href="#35-linux文件权限">#</a> 3.5 Linux 文件权限</h2>
+<ul>
+<li>
+<p><strong>五种类型、四种权限、三个分组，口诀 543</strong></p>
+</li>
+<li>
+<p>普通文件，用户权限可读可写，用户组权限可读，其他用户可读</p>
+</li>
+<li>
+<p><strong>五种类型：</strong></p>
+<ul>
+<li>普通文件</li>
+<li>目录文件</li>
+<li>链接文件</li>
+<li>设备文件</li>
+<li>管道文件</li>
+</ul>
+</li>
+<li>
+<p><strong>四种权限：</strong></p>
+<ul>
+<li>可读的</li>
+<li>可写的</li>
+<li>可执行的</li>
+<li>无访问权限</li>
+</ul>
+</li>
+<li>
+<p><strong>三个分组：</strong></p>
+<ul>
+<li>用户</li>
+<li>用户组</li>
+<li>其他用户</li>
+</ul>
+</li>
+</ul>
+<h2 id="36-linux文件和目录操作命令"><a class="markdownIt-Anchor" href="#36-linux文件和目录操作命令">#</a> 3.6 Linux 文件和目录操作命令</h2>
+<ul>
+<li><code>cat</code>  滚动显示</li>
+<li><code>more</code>  分屏显示</li>
+<li><code>less</code>  按页显示</li>
+<li><code>cp</code>  文件复制</li>
+<li><code>mv</code>  文件移动</li>
+<li><code>rm</code>  文件删除</li>
+<li><code>mkdir</code>  创建目录</li>
+<li><code>rmdir</code>  删除目录</li>
+<li><code>cd</code>  改变目录</li>
+<li><code>pwd</code>  当前目录</li>
+<li><code>ls</code>  列出目录</li>
+<li><code>chmod</code>  改变权限</li>
+<li><code>In</code>  文件链接</li>
+<li><code>touch</code>  改变文件时间</li>
+<li><code>find</code>  查找文件</li>
+<li><code>grep</code>  表达式查找</li>
+</ul>
+<h2 id="37-linux网络配置文件"><a class="markdownIt-Anchor" href="#37-linux网络配置文件">#</a> 3.7 Linux 网络配置文件</h2>
+<ul>
+<li><code>/etc/sysconfig/network</code> ，服务器上网络置。</li>
+<li><code>/etc/hostname</code> ，主机名和完整域名</li>
+<li><code>/etc/hosts</code> ，IP 和主机名映射．别名</li>
+<li><code>/etc/host.conf</code> ，和主机名解析顺序</li>
+<li><code>/etc/resolv.conf</code> ，DNS 客户机配置</li>
+<li><code>/etc/services</code> ，服务名和端口号之间的映射。</li>
+<li><code>/etc/rc.d/init.d/network</code> ，网络配置脚本，开机通过脚本文件来读取相应的初始配置。</li>
+</ul>
+<h2 id="38-linux网络配置命令"><a class="markdownIt-Anchor" href="#38-linux网络配置命令">#</a> 3.8 Linux 网络配置命令</h2>
+<ul>
+<li><code>ifconfig</code> ，网络接口（网卡）命令 <code>ifconfig up</code> 、 <code>ifconfig down</code> 、 <code>ifconfig ethO</code></li>
+<li><code>route</code> ，配置路由命令 <code>route add</code> 、 <code>route del</code> 、 <code>route gw</code></li>
+<li><code>ping</code> , 网络测试命令 <code>ping -a</code> 、 <code>ping -t</code> 、 <code>ping -n</code> 、 <code>ping -I</code></li>
+<li><code>netstat</code> ，网络查询命令 <code>netstat -r</code> 、 <code>netstat -a</code> 、 <code>netstat -n</code></li>
+</ul>
+<h1 id="练习例题"><a class="markdownIt-Anchor" href="#练习例题">#</a> 练习例题</h1>
+<ol>
+<li class="quiz">
+<p>在 Windows 系统中，默认用户权限最低的是 <span class="gap"></span></p>
+<ul class="options">
+<li class="correct">everyone </li>
+<li class="options">administrator</li>
+<li class="options">power users</li>
+<li class="options">users</li>
+</ul>
+</li>
+<li class="quiz">
+<p>在 Windows 系统中，通过运行 <span class="gap"></span> 命令可以打开 Windows 管理控制台</p>
+<ul class="options">
+<li class="options">regedit</li>
+<li class="options">cmd</li>
+<li class="correct">mmc</li>
+<li class="options">mfc</li>
+</ul>
+</li>
+<li class="quiz">
+<p>在 Linux 系统中把外部设备当做文件统一管理，外部设备文件通常放在 <span class="gap"></span> 目录中</p>
+<ul class="options">
+<li class="correct">/dev</li>
+<li class="options">/lib</li>
+<li class="options">/etc</li>
+<li class="options">/bin</li>
+</ul>
+<blockquote>
+<ul>
+<li>dev: 设备、lib: 库、etc 配置、bin 系统</li>
+</ul>
+</blockquote>
+</li>
+<li class="quiz">
+<p>Linux 系统中的文件操作命令 grep 用于 <span class="gap"></span></p>
+<ul class="options">
+<li class="options">列出文件的属性信息</li>
+<li class="options">在指定路径查找文件</li>
+<li class="options">复制文件</li>
+<li class="correct">在指定文件中查找指定的字符串</li>
+</ul>
+</li>
+<li class="quiz">
+<p>在 Linux 中，更改用户口令的命令是 <span class="gap"></span></p>
+<ul class="options">
+<li class="options">pwd</li>
+<li class="correct">passwd</li>
+<li class="options">kouling</li>
+<li class="options">password</li>
+</ul>
+</li>
+<li class="quiz">
+<p>默认情况下，Linux 系统中用户登录密码信息存放在 <span class="gap"></span>  文件中</p>
+<ul class="options">
+<li class="options">/etc/group</li>
+<li class="options">/etc/userinfo</li>
+<li class="correct">/etc/shadow</li>
+<li class="options">/etc/profile</li>
+</ul>
+</li>
+</ol>
+
+      <div class="tags">
+          <a href="/my-blog/tags/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" rel="tag"><i class="ic i-tag"></i> 软考网络工程师</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/my-blog/images/wechatpay.png" alt="Peter Pan 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/my-blog/images/alipay.png" alt="Peter Pan 支付宝">
+        <p>支付宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Peter Pan <i class="ic i-at"><em>@</em></i>理 想 净 土
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://peter-pan001.github.io/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A801/" title="网络应用服务器01">https://peter-pan001.github.io/my-blog/软考网络工程师/网络应用服务器01/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%8E%E5%BA%94%E7%94%A802/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;s3.ax1x.com&#x2F;2021&#x2F;02&#x2F;17&#x2F;y253bn.jpg" title="网络安全与应用02">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 软考网络工程师</span>
+  <h3>网络安全与应用02</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A802/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;s3.ax1x.com&#x2F;2021&#x2F;02&#x2F;17&#x2F;y253bn.jpg" title="网络应用服务器02">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 软考网络工程师</span>
+  <h3>网络应用服务器02</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#01-win2008基础"><span class="toc-number">1.</span> <span class="toc-text"> 01 Win2008 基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#11-网络操作系统"><span class="toc-number">1.1.</span> <span class="toc-text"> 1.1 网络操作系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-网络服务器windows-server-2008"><span class="toc-number">1.2.</span> <span class="toc-text"> 1.2 网络服务器 Windows Server 2008</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-网络服务器red-hat-enterprise-linux70"><span class="toc-number">1.3.</span> <span class="toc-text"> 1.3 网络服务器 Red Hat Enterprise Linux7.0</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#02-win2008基础"><span class="toc-number">2.</span> <span class="toc-text"> 02 Win2008 基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#21-winserver2008本地用户与组"><span class="toc-number">2.1.</span> <span class="toc-text"> 2.1 winserver2008 本地用户与组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-常见用户和组的权限"><span class="toc-number">2.2.</span> <span class="toc-text"> 2.2 常见用户和组的权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#23-winserver2008活动目录"><span class="toc-number">2.3.</span> <span class="toc-text"> 2.3 winserver2008 活动目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#24-活动目录结构"><span class="toc-number">2.4.</span> <span class="toc-text"> 2.4 活动目录结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#25-活动目录的工作组"><span class="toc-number">2.5.</span> <span class="toc-text"> 2.5 活动目录的工作组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#26-windows2008r2远程桌面服务"><span class="toc-number">2.6.</span> <span class="toc-text"> 2.6 Windows2008R2 远程桌面服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#27-rd服务器安装步骤"><span class="toc-number">2.7.</span> <span class="toc-text"> 2.7 RD 服务器安装步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#28-rd服务器配置方法"><span class="toc-number">2.8.</span> <span class="toc-text"> 2.8 RD 服务器配置方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#29-远程桌面连接"><span class="toc-number">2.9.</span> <span class="toc-text"> 2.9 远程桌面连接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#210-使用客户端进行远程桌面连接"><span class="toc-number">2.10.</span> <span class="toc-text"> 2.10 使用客户端进行远程桌面连接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#211-微软管理控制台mmc"><span class="toc-number">2.11.</span> <span class="toc-text"> 2.11 微软管理控制台 MMC</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#03-linux70基础"><span class="toc-number">3.</span> <span class="toc-text"> 03 Linux7.0 基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#31-linux用户和组"><span class="toc-number">3.1.</span> <span class="toc-text"> 3.1 Linux 用户和组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#32-linux用户和组3个重要配置文件"><span class="toc-number">3.2.</span> <span class="toc-text"> 3.2 Linux 用户和组 3 个重要配置文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#33-linux用户和组的4个重要管理命令"><span class="toc-number">3.3.</span> <span class="toc-text"> 3.3 Linux 用户和组的 4 个重要管理命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#34-linux文件目录管理"><span class="toc-number">3.4.</span> <span class="toc-text"> 3.4 Linux 文件目录管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#35-linux文件权限"><span class="toc-number">3.5.</span> <span class="toc-text"> 3.5 Linux 文件权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#36-linux文件和目录操作命令"><span class="toc-number">3.6.</span> <span class="toc-text"> 3.6 Linux 文件和目录操作命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#37-linux网络配置文件"><span class="toc-number">3.7.</span> <span class="toc-text"> 3.7 Linux 网络配置文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#38-linux网络配置命令"><span class="toc-number">3.8.</span> <span class="toc-text"> 3.8 Linux 网络配置命令</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#练习例题"><span class="toc-number">4.</span> <span class="toc-text"> 练习例题</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E6%A6%82%E8%AE%BA/" rel="bookmark" title="计算机基础概论">计算机基础概论</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8001/" rel="bookmark" title="数据通信基础01">数据通信基础01</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8002/" rel="bookmark" title="数据通信基础02">数据通信基础02</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B9%BF%E5%9F%9F%E9%80%9A%E4%BF%A1%E7%BD%91/" rel="bookmark" title="广域通信网">广域通信网</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%9F%8E%E5%9F%9F%E7%BD%9101/" rel="bookmark" title="局域网与城域网01">局域网与城域网01</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%9F%8E%E5%9F%9F%E7%BD%9102/" rel="bookmark" title="局域网与城域网02">局域网与城域网02</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%97%A0%E7%BA%BF%E9%80%9A%E4%BF%A1%E7%BD%91/" rel="bookmark" title="无线通信网">无线通信网</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9101/" rel="bookmark" title="网络互联与互联网01">网络互联与互联网01</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/IP%E5%AD%90%E7%BD%91%E5%88%92%E5%88%86%E4%B8%93%E9%A2%98/" rel="bookmark" title="IP子网划分专题">IP子网划分专题</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9102/" rel="bookmark" title="网络互联与互联网02">网络互联与互联网02</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9103/" rel="bookmark" title="网络互联与互联网03">网络互联与互联网03</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9104/" rel="bookmark" title="网络互联与互联网04">网络互联与互联网04</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E4%B8%8B%E4%B8%80%E4%BB%A3%E4%BA%92%E8%81%94%E7%BD%91/" rel="bookmark" title="下一代互联网">下一代互联网</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%8E%E5%BA%94%E7%94%A801/" rel="bookmark" title="网络安全与应用01">网络安全与应用01</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%8E%E5%BA%94%E7%94%A802/" rel="bookmark" title="网络安全与应用02">网络安全与应用02</a></li><li class="active"><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A801/" rel="bookmark" title="网络应用服务器01">网络应用服务器01</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A802/" rel="bookmark" title="网络应用服务器02">网络应用服务器02</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F/" rel="bookmark" title="常用公式">常用公式</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8F%E8%AE%AE%E5%90%8D%E7%A7%B0%E4%B8%8E%E7%AE%80%E4%BB%8B/" rel="bookmark" title="协议名称与简介">协议名称与简介</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E5%92%8C%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80/" rel="bookmark" title="系统开发和项目管理基础">系统开发和项目管理基础</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/" rel="bookmark" title="计算机硬件基础(部分组成原理)">计算机硬件基础(部分组成原理)</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/" rel="bookmark" title="操作系统基础">操作系统基础</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%90%84%E9%87%8D%E7%82%B9%E5%8D%8F%E8%AE%AE%E5%8F%8A%E5%B8%A7%E6%A0%BC%E5%BC%8F%E8%AF%A6%E8%A7%A3/" rel="bookmark" title="各重点协议及帧格式详解">各重点协议及帧格式详解</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E8%A7%84%E5%88%92%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="bookmark" title="网络规划与设计">网络规划与设计</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/Linux%E9%85%8D%E7%BD%AE/" rel="bookmark" title="Linux配置">Linux配置</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%881%EF%BC%89/" rel="bookmark" title="华为路由交换实验命令（1）">华为路由交换实验命令（1）</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%882%EF%BC%89/" rel="bookmark" title="华为路由交换实验命令（2）">华为路由交换实验命令（2）</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%883%EF%BC%89/" rel="bookmark" title="华为路由实验命令（3）">华为路由实验命令（3）</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%884%EF%BC%89/" rel="bookmark" title="华为交换实验命令（4）">华为交换实验命令（4）</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Peter Pan"
+      data-src="/my-blog/images/avatar.jpg">
+  <p class="name" itemprop="name">Peter Pan</p>
+  <div class="description" itemprop="description">不必匆忙，不必火花四溅，不必成为别人，只需成为自己</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/my-blog/archives/">
+        <span class="count">69</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/my-blog/categories/">
+        <span class="count">10</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/my-blog/tags/">
+        <span class="count">14</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL1BldGVyLVBhbjAwMS9CYXNpYw==" title="https:&#x2F;&#x2F;github.com&#x2F;Peter-Pan001&#x2F;Basic"><i class="ic i-github"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS9ndWFuZy1tYW5nLWxpZ2h0bmluZw==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;guang-mang-lightning"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTE5MjY4NTE4NDA=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;1926851840"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS9QZXRlclBhbjA4MjQ=" title="https:&#x2F;&#x2F;about.me&#x2F;PeterPan0824"><i class="ic i-address-card"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/my-blog/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/my-blog/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+    <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/my-blog/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/my-blog/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/my-blog/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/my-blog/friends/" rel="section"><i class="ic i-heart"></i>friends</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/my-blog/links/" rel="section"><i class="ic i-magic"></i>links</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%8E%E5%BA%94%E7%94%A802/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A802/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+</div>
+
+    <span><a href="/my-blog/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AFHTML5+CSS3/" title="前端HTML5+CSS3">前端HTML5+CSS3</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" title="Java网络编程">Java网络编程</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F/" title="常用公式">常用公式</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%90%84%E9%87%8D%E7%82%B9%E5%8D%8F%E8%AE%AE%E5%8F%8A%E5%B8%A7%E6%A0%BC%E5%BC%8F%E8%AF%A6%E8%A7%A3/" title="各重点协议及帧格式详解">各重点协议及帧格式详解</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93/" title="多线程笔记总结">多线程笔记总结</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A802/" title="网络应用服务器02">网络应用服务器02</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/Java%E6%96%B9%E6%B3%95/" title="Java方法">Java方法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/Java%E5%B0%81%E8%A3%85/" title="Java封装">Java封装</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8002/" title="数据通信基础02">数据通信基础02</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/MySQL/" title="分类于 MySQL">MySQL</a>
+</div>
+
+    <span><a href="/my-blog/MySQL/MySQL%E8%BF%9B%E9%98%B6/" title="MySQL进阶">MySQL进阶</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Peter Pan @ Peter Pan</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '软考网络工程师/网络应用服务器01/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,copy_tex: true,
+    katex: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',quiz: {
+      choice: "单选题",
+      multiple: "多选题",
+      true_false: "判断题",
+      essay: "问答题",
+      gap_fill: "填空题",
+      mistake: "错题备注"
+    },
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/my-blog/js/app.js?v=0.2.4"></script>
+
+
+
+
+</body>
+</html>

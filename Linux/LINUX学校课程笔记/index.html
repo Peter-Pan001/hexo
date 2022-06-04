@@ -1,0 +1,709 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/my-blog/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/my-blog/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="理 想 净 土" href="https://peter-pan001.github.io/my-blog/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="理 想 净 土" href="https://peter-pan001.github.io/my-blog/atom.xml" />
+<link rel="alternate" type="application/json" title="理 想 净 土" href="https://peter-pan001.github.io/my-blog/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/my-blog/css/app.css?v=0.2.4">
+
+  
+  <meta name="keywords" content="linux" />
+
+
+<link rel="canonical" href="https://peter-pan001.github.io/my-blog/Linux/LINUX%E5%AD%A6%E6%A0%A1%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">
+
+
+
+  <title>
+LINUX课程笔记 - Linux |
+Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之作证 </title>
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">LINUX课程笔记
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2021-06-18 22:01:07">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-06-18T22:01:07+08:00">2021-06-18</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/my-blog/" rel="start">Peter Pan</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="https://s4.ax1x.com/2022/01/09/7FYwC9.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/my-blog/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/my-blog/categories/Linux/" itemprop="item" rel="index" title="分类于 Linux"><span itemprop="name">Linux</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://peter-pan001.github.io/my-blog/Linux/LINUX%E5%AD%A6%E6%A0%A1%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/my-blog/images/avatar.jpg">
+    <meta itemprop="name" content="Peter Pan">
+    <meta itemprop="description" content=" 凭时间赢来的东西，时间肯定会为之作证 , 不必匆忙，不必火花四溅，不必成为别人，只需成为自己">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="理 想 净 土">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="linux课程"><a class="markdownIt-Anchor" href="#linux课程">#</a> Linux 课程</h1>
+<blockquote>
+<p>本篇文章基于《linux 就该这么学》编写，仅包含学校课程学习内容，并未包括该书本的完整知识！</p>
+</blockquote>
+<h2 id="重置root管理员密码"><a class="markdownIt-Anchor" href="#重置root管理员密码">#</a> 重置 ROOT 管理员密码</h2>
+<ol>
+<li>重启 Linux 系统主机并出现引导界面时，按下键盘上的 <code> e 键</code> 进入内核编辑界面，如图所示</li>
+</ol>
+<p><img data-src="https://s4.ax1x.com/2022/01/09/7FJ3wD.png" alt="yindao"></p>
+<ol start="2">
+<li>在 linux16 参数这行的最后面追加 <code>rd.break</code>  参数，然后按下  <code>Ctrl + X</code>  组合键来运行修改过的内核程序，如图所示</li>
+</ol>
+<p><img data-src="https://s4.ax1x.com/2022/01/09/7FJwOf.png" alt="neihe"></p>
+<ol start="3">
+<li>大约 30 秒过后，进入到系统的紧急求援模式</li>
+</ol>
+<p><img data-src="https://s4.ax1x.com/2022/01/09/7FJ6Yj.png" alt="jjqy"></p>
+<ol start="4">
+<li>依次输入以下命令，等待系统重启操作完毕，然后就可以使用新密码 linuxprobe 来登录 Linux 系统了</li>
+</ol>
+<figure class="highlight bash"><figcaption data-lang="bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">mount</span> -o remount,rw /sysroot </pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token function">chroot</span> /sysroot </pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token function">passwd</span> </pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token function">touch</span> /.autorelabel </pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token builtin class-name">exit</span> </pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token function">reboot</span></pre></td></tr></table></figure><h2 id="查看帮助命令"><a class="markdownIt-Anchor" href="#查看帮助命令">#</a> 查看帮助命令</h2>
+<ol>
+<li>长格式</li>
+</ol>
+<pre><code class="language-s">man --help
+</code></pre>
+<ol start="2">
+<li>短格式</li>
+</ol>
+<pre><code class="language-s">man -h
+</code></pre>
+<h2 id="常用的系统工作命令"><a class="markdownIt-Anchor" href="#常用的系统工作命令">#</a> 常用的系统工作命令</h2>
+<h3 id="echo"><a class="markdownIt-Anchor" href="#echo">#</a> echo</h3>
+<ul>
+<li><code>echo</code>  命令用于在终端输出字符串或变量提取后的值，格式为 <code>echo [字符串 | $变量]</code></li>
+<li>例如我们使用 $ 变量的方式提取变量 SHELL 的值，并将其输出到屏幕上：</li>
+</ul>
+<pre><code class="language-s">[root@linuxprobe ~]# echo $SHELL 
+/bin/bash
+</code></pre>
+<ul>
+<li>或者直接在  <code>echo</code>  后面加上要在命令行显示的字符信息:</li>
+</ul>
+<pre><code class="language-s"># echo welcome
+welcome
+</code></pre>
+<h3 id="date"><a class="markdownIt-Anchor" href="#date">#</a> date</h3>
+<ul>
+<li><code>date</code>  命令用于显示及设置系统的时间或日期，格式为  <code>date [选项] [+指定的格式]</code></li>
+</ul>
+<ol>
+<li>按照默认格式查看当前系统时间的 date 命令</li>
+</ol>
+<pre><code class="language-s">[root@linuxprobe ~]# date 
+Mon Aug 24 16:11:23 CST 2017
+</code></pre>
+<ol start="2">
+<li>按照 “年 - 月 - 日 小时：分钟：秒” 的格式查看当前系统时间的  <code>date</code>  命令</li>
+</ol>
+<pre><code class="language-s">[root@linuxprobe ~]# date &quot;+%Y-%m-%d %H:%M:%S&quot; 
+2017-08-24 16:29:12
+</code></pre>
+<h3 id="reboot"><a class="markdownIt-Anchor" href="#reboot">#</a> reboot</h3>
+<ul>
+<li><code>reboot</code>  命令用于重启系统，默认只能使用 root 管理员来重启</li>
+</ul>
+<pre><code class="language-s">[root@linuxprobe ~]# reboot
+</code></pre>
+<h3 id="poweroff"><a class="markdownIt-Anchor" href="#poweroff">#</a> poweroff</h3>
+<ul>
+<li><code>poweroff</code>  命令用于关闭系统，此默认只有 root 管理员才可以关闭电脑</li>
+</ul>
+<pre><code class="language-s">[root@linuxprobe ~]# poweroff 
+</code></pre>
+<h3 id="wget"><a class="markdownIt-Anchor" href="#wget">#</a> wget</h3>
+<ul>
+<li>
+<p><code>wget</code>  命令用于在终端中下载网络文件，格式为  <code>wget [参数] 下载地址</code></p>
+</li>
+<li>
+<p><strong>命令参数</strong></p>
+<ul>
+<li><code>wget -b</code>  后台下载模式</li>
+<li><code>wget -P</code>  下载到指定目录</li>
+<li><code>wget -t</code>  最大尝试次数</li>
+<li><code>wget -c</code>  断点续传</li>
+<li><code>wget -p</code>  下载页面内所有资源，包括图片、视频等</li>
+<li><code>wget -r</code>  递归下载</li>
+</ul>
+</li>
+</ul>
+<h3 id="ps"><a class="markdownIt-Anchor" href="#ps">#</a> ps</h3>
+<ul>
+<li><code>ps</code>  命令用于查看系统中的进程状态，格式为 <code>ps [参数]</code> (process status)</li>
+<li><strong>命令参数</strong>
+<ul>
+<li><code>wget -a</code>  显示所有进程（包括其他用户的进程）</li>
+<li><code>wget -u</code>  用户以及其他详细信息</li>
+<li><code>wget -x</code>  显示没有控制终端的进程</li>
+</ul>
+</li>
+</ul>
+<h3 id="top"><a class="markdownIt-Anchor" href="#top">#</a> top</h3>
+<ul>
+<li><code>top</code>  命令用于动态地监视进程活动与系统负载等信息，其格式为  <code>top</code></li>
+</ul>
+<h3 id="pidof"><a class="markdownIt-Anchor" href="#pidof">#</a> pidof</h3>
+<ul>
+<li><code>pidof</code>  命令用于查询某个指定服务进程的 PID 值，格式为  <code>pidof [参数] [服务名称]</code></li>
+</ul>
+<pre><code class="language-s">[root@linuxprobe ~]# pidof sshd 
+2156
+</code></pre>
+<h3 id="kill"><a class="markdownIt-Anchor" href="#kill">#</a> kill</h3>
+<ul>
+<li><code>kill</code>  命令用于终止某个指定 PID 的服务进程，格式为 <code>kill [参数] [进程 PID]</code></li>
+</ul>
+<h3 id="killall"><a class="markdownIt-Anchor" href="#killall">#</a> killall</h3>
+<ul>
+<li><code>killall</code>  命令用于终止某个指定名称的服务所对应的全部进程，格式为： <code>killall [参数] [进程名称]</code></li>
+</ul>
+<hr>
+<h2 id="系统状态检测命令"><a class="markdownIt-Anchor" href="#系统状态检测命令">#</a> 系统状态检测命令</h2>
+<h3 id="ifconfig"><a class="markdownIt-Anchor" href="#ifconfig">#</a> ifconfig</h3>
+<ul>
+<li><code>ifconfig</code>  命令用于获取网卡配置与网络状态等信息，格式为  <code>ifconfig [网络设备] [参数]</code></li>
+<li>使用  <code>ifconfig</code>  命令来查看本机当前的网卡配置与网络状态等信息时，其实主要查看的就是网卡名称、inet 参数后面的 IP 地址、ether 参数后面的网卡物理地址（又称为 MAC 地址），以及 RX、TX 的接收数据包与发送数据包的个数及累计流量</li>
+</ul>
+<h3 id="uname"><a class="markdownIt-Anchor" href="#uname">#</a> uname</h3>
+<ul>
+<li><code>uname</code>  命令用于查看系统内核与系统版本等信息，格式为 <code>uname [-a]</code></li>
+<li>在使用  <code>uname</code>  命令时，一般会固定搭配上 <code>-a</code>  参数来完整地查看当前系统的内核名称、主机名、内核发行版本、节点名、系统时间、硬件名称、硬件平台、处理器类型以及操作系统名称等信息</li>
+</ul>
+<pre><code class="language-s">[root@linuxprobe ~]# uname -a 
+Linux linuxprobe.com 3.10.0-123.el7.x86_64 #1 SMP Mon May 5 11:16:57 EDT 2017 
+x86_64 x86_64 x86_64 GNU/Linux 
+</code></pre>
+<h3 id="uptime"><a class="markdownIt-Anchor" href="#uptime">#</a> uptime</h3>
+<ul>
+<li><code>uptime</code>  用于查看系统的负载信息，格式为  <code>uptime</code></li>
+</ul>
+<pre><code class="language-s">[root@linuxprobe ~]# uptime 
+22:49:55 up 10 min, 2 users, load average: 0.01, 0.19, 0.18
+</code></pre>
+<h3 id="free"><a class="markdownIt-Anchor" href="#free">#</a> free</h3>
+<ul>
+<li><code>free</code>  用于显示当前系统中内存的使用量信息，格式为 <code>free [-h]</code></li>
+</ul>
+<pre><code class="language-s">[root@linuxprobe ~]# free -h 
+</code></pre>
+<h3 id="who"><a class="markdownIt-Anchor" href="#who">#</a> who</h3>
+<ul>
+<li><code>who</code>  用于查看当前登入主机的用户终端信息，格式为 <code>who [参数]</code></li>
+</ul>
+<h3 id="last"><a class="markdownIt-Anchor" href="#last">#</a> last</h3>
+<ul>
+<li><code>last</code>  命令用于查看所有系统的登录记录，格式为 <code>last [参数]</code></li>
+</ul>
+<h3 id="history"><a class="markdownIt-Anchor" href="#history">#</a> history</h3>
+<ul>
+<li><code>history</code>  命令用于显示历史执行过的命令，格式为 <code>history [-c]</code></li>
+</ul>
+<h2 id="工作目录切换命令"><a class="markdownIt-Anchor" href="#工作目录切换命令">#</a> 工作目录切换命令</h2>
+<h3 id="pwd"><a class="markdownIt-Anchor" href="#pwd">#</a> pwd</h3>
+<ul>
+<li><code>pwd</code>  命令用于显示用户当前所处的目录。如果用户不知道自己当前所处的目录，就必须使用它。例如：</li>
+</ul>
+<pre><code class="language-s">[webber@localhost ~]$ pwd
+/home/webber                  //webber用户当前所在的目录
+[webber@localhost ~]$ su -        //从Webber用户切换到root用户
+</code></pre>
+<h3 id="cd"><a class="markdownIt-Anchor" href="#cd">#</a> cd</h3>
+<ul>
+<li><code>cd</code>  命令用于切换工作路径，格式为 <code>cd [目录名称]</code></li>
+<li>除了常见的切换目录方式，还可以使用 <code>cd -</code>  命令返回到上一次所处的目录，使用 <code>cd..</code>  命令进入上级目录，以及使用 <code>cd ~</code>  命令切换到当前用户的家目录，亦或使用 <code>cd ~username</code>  切换到其他用户的家目录</li>
+</ul>
+<ol>
+<li>返回到上一次的目录</li>
+</ol>
+<pre><code class="language-s">[root@linuxprobe bin]# cd - 
+/etc 
+[root@linuxprobe etc]# 
+</code></pre>
+<ol start="2">
+<li>快速切换到用户的家目录</li>
+</ol>
+<pre><code class="language-s">[root@linuxprobe etc]# cd ~ 
+[root@linuxprobe ~]# 
+</code></pre>
+<h3 id="ls"><a class="markdownIt-Anchor" href="#ls">#</a> ls</h3>
+<ul>
+<li><code>ls</code>  命令用于显示目录中的文件信息，格式为 <code>ls [选项] [文件] </code></li>
+</ul>
+
+      <div class="tags">
+          <a href="/my-blog/tags/linux/" rel="tag"><i class="ic i-tag"></i> linux</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/my-blog/images/wechatpay.png" alt="Peter Pan 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/my-blog/images/alipay.png" alt="Peter Pan 支付宝">
+        <p>支付宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Peter Pan <i class="ic i-at"><em>@</em></i>理 想 净 土
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://peter-pan001.github.io/my-blog/Linux/LINUX%E5%AD%A6%E6%A0%A1%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="LINUX课程笔记">https://peter-pan001.github.io/my-blog/Linux/LINUX学校课程笔记/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%884%EF%BC%89/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;s3.ax1x.com&#x2F;2021&#x2F;02&#x2F;17&#x2F;y253bn.jpg" title="华为交换实验命令（4）">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 软考网络工程师</span>
+  <h3>华为交换实验命令（4）</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/my-blog/Linux/Linux%E5%BC%80%E7%AF%87/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;s4.ax1x.com&#x2F;2022&#x2F;01&#x2F;09&#x2F;7FYwC9.jpg" title="Linux开篇">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> Linux</span>
+  <h3>Linux开篇</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#linux课程"><span class="toc-number">1.</span> <span class="toc-text"> Linux 课程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#重置root管理员密码"><span class="toc-number">1.1.</span> <span class="toc-text"> 重置 ROOT 管理员密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看帮助命令"><span class="toc-number">1.2.</span> <span class="toc-text"> 查看帮助命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用的系统工作命令"><span class="toc-number">1.3.</span> <span class="toc-text"> 常用的系统工作命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#echo"><span class="toc-number">1.3.1.</span> <span class="toc-text"> echo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#date"><span class="toc-number">1.3.2.</span> <span class="toc-text"> date</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reboot"><span class="toc-number">1.3.3.</span> <span class="toc-text"> reboot</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#poweroff"><span class="toc-number">1.3.4.</span> <span class="toc-text"> poweroff</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wget"><span class="toc-number">1.3.5.</span> <span class="toc-text"> wget</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ps"><span class="toc-number">1.3.6.</span> <span class="toc-text"> ps</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#top"><span class="toc-number">1.3.7.</span> <span class="toc-text"> top</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pidof"><span class="toc-number">1.3.8.</span> <span class="toc-text"> pidof</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#kill"><span class="toc-number">1.3.9.</span> <span class="toc-text"> kill</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#killall"><span class="toc-number">1.3.10.</span> <span class="toc-text"> killall</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统状态检测命令"><span class="toc-number">1.4.</span> <span class="toc-text"> 系统状态检测命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ifconfig"><span class="toc-number">1.4.1.</span> <span class="toc-text"> ifconfig</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#uname"><span class="toc-number">1.4.2.</span> <span class="toc-text"> uname</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#uptime"><span class="toc-number">1.4.3.</span> <span class="toc-text"> uptime</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#free"><span class="toc-number">1.4.4.</span> <span class="toc-text"> free</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#who"><span class="toc-number">1.4.5.</span> <span class="toc-text"> who</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#last"><span class="toc-number">1.4.6.</span> <span class="toc-text"> last</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#history"><span class="toc-number">1.4.7.</span> <span class="toc-text"> history</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#工作目录切换命令"><span class="toc-number">1.5.</span> <span class="toc-text"> 工作目录切换命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#pwd"><span class="toc-number">1.5.1.</span> <span class="toc-text"> pwd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cd"><span class="toc-number">1.5.2.</span> <span class="toc-text"> cd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ls"><span class="toc-number">1.5.3.</span> <span class="toc-text"> ls</span></a></li></ol></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li class="active"><a href="/my-blog/Linux/LINUX%E5%AD%A6%E6%A0%A1%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" rel="bookmark" title="LINUX课程笔记">LINUX课程笔记</a></li><li><a href="/my-blog/Linux/Linux%E5%BC%80%E7%AF%87/" rel="bookmark" title="Linux开篇">Linux开篇</a></li><li><a href="/my-blog/Linux/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E5%8F%8Ayum%E6%BA%90%E9%97%AE%E9%A2%98/" rel="bookmark" title="网络配置及yum源问题">网络配置及yum源问题</a></li><li><a href="/my-blog/Linux/%E6%9B%B4%E6%8D%A2%E6%B8%85%E5%8D%8E%E6%BA%90/" rel="bookmark" title="更换清华源">更换清华源</a></li><li><a href="/my-blog/Linux/%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E4%B8%8E%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86/" rel="bookmark" title="文件权限与目录管理">文件权限与目录管理</a></li><li><a href="/my-blog/Linux/%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/" rel="bookmark" title="目录与文件管理">目录与文件管理</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Peter Pan"
+      data-src="/my-blog/images/avatar.jpg">
+  <p class="name" itemprop="name">Peter Pan</p>
+  <div class="description" itemprop="description">不必匆忙，不必火花四溅，不必成为别人，只需成为自己</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/my-blog/archives/">
+        <span class="count">69</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/my-blog/categories/">
+        <span class="count">10</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/my-blog/tags/">
+        <span class="count">14</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL1BldGVyLVBhbjAwMS9CYXNpYw==" title="https:&#x2F;&#x2F;github.com&#x2F;Peter-Pan001&#x2F;Basic"><i class="ic i-github"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS9ndWFuZy1tYW5nLWxpZ2h0bmluZw==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;guang-mang-lightning"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTE5MjY4NTE4NDA=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;1926851840"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS9QZXRlclBhbjA4MjQ=" title="https:&#x2F;&#x2F;about.me&#x2F;PeterPan0824"><i class="ic i-address-card"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/my-blog/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/my-blog/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+    <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/my-blog/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/my-blog/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/my-blog/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/my-blog/friends/" rel="section"><i class="ic i-heart"></i>friends</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/my-blog/links/" rel="section"><i class="ic i-magic"></i>links</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%884%EF%BC%89/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/my-blog/Linux/Linux%E5%BC%80%E7%AF%87/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/network/" title="分类于 网络">网络</a>
+</div>
+
+    <span><a href="/my-blog/network/Servlet%E5%92%8CTomcat/" title="Servlet和Tomcat">Servlet和Tomcat</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+</div>
+
+    <span><a href="/my-blog/%E5%89%8D%E7%AB%AF/String%E5%92%8CObject%E8%A7%A3%E8%AF%BB/" title="String和Object解读">String和Object解读</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B9%BF%E5%9F%9F%E9%80%9A%E4%BF%A1%E7%BD%91/" title="广域通信网">广域通信网</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/Java%E8%AF%AD%E5%8F%A5/" title="Java语句">Java语句</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E5%92%8C%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80/" title="系统开发和项目管理基础">系统开发和项目管理基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/Java%E7%BB%A7%E6%89%BF/" title="Java继承">Java继承</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%8E%E5%BA%94%E7%94%A802/" title="网络安全与应用02">网络安全与应用02</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9103/" title="网络互联与互联网03">网络互联与互联网03</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/MySQL/" title="分类于 MySQL">MySQL</a>
+</div>
+
+    <span><a href="/my-blog/MySQL/%E5%85%B3%E4%BA%8EMySQL%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" title="关于MySQL的一些基本使用">关于MySQL的一些基本使用</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
+</div>
+
+    <span><a href="/my-blog/Linux/%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E4%B8%8E%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86/" title="文件权限与目录管理">文件权限与目录管理</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Peter Pan @ Peter Pan</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: 'Linux/LINUX学校课程笔记/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/my-blog/js/app.js?v=0.2.4"></script>
+
+
+
+
+</body>
+</html>

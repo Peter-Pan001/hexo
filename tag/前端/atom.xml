@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://peter-pan001.github.io/my-blog</id>
+    <title>理 想 净 土 • Posts by &#34;前端&#34; tag</title>
+    <link href="https://peter-pan001.github.io/my-blog" />
+    <updated>2020-10-25T13:11:28.000Z</updated>
+    <category term="Java" />
+    <category term="MySQL" />
+    <category term="Linux" />
+    <category term="linux" />
+    <category term="云计算" />
+    <category term="network" />
+    <category term="git、github" />
+    <category term="JavaScript" />
+    <category term="css" />
+    <category term="前端" />
+    <category term="数据分析" />
+    <category term="html" />
+    <category term="算法与数据结构" />
+    <category term="软考网络工程师" />
+    <entry>
+        <id>https://peter-pan001.github.io/my-blog/%E5%89%8D%E7%AB%AF/%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E5%89%8D%E7%AB%AF/</id>
+        <title>如何学习前端</title>
+        <link rel="alternate" href="https://peter-pan001.github.io/my-blog/%E5%89%8D%E7%AB%AF/%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E5%89%8D%E7%AB%AF/"/>
+        <content type="html">&lt;h2 id=&#34;阶段一&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#阶段一&#34;&gt;#&lt;/a&gt; 阶段一&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;学习 HTML5 和 CSS
+&lt;ul&gt;
+&lt;li&gt;菜鸟网站（H5 学习基本的标签，CSS 掌握基本属性，灵活布局节点）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;学习 Javascript
+&lt;ul&gt;
+&lt;li&gt;基本语法
+&lt;ul&gt;
+&lt;li&gt;数据类型、操作符、变量、函数声明、DOM 编程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;推荐书籍
+&lt;ul&gt;
+&lt;li&gt;Javascript 高级程序设计、JavaScript DOM 编程艺术&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;学习三大件时，切记不要跳步，学好 DOM 编程、CSS、JS 基础，再学习使用框架（如 jQuery、Vue、React、Bootstrap、Typescript）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;阶段二&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#阶段二&#34;&gt;#&lt;/a&gt; 阶段二&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;提升开发环境
+&lt;ul&gt;
+&lt;li&gt;本地安装 npm 、node.js (了解 package.json)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;初学者先用 node.js 作为辅助工具，然后学习 Webpack 打包工具
+&lt;ul&gt;
+&lt;li&gt;Webpack 使用官方文档（初学学到开发就可以了，后面的可以粗略浏览一下，需要使用到再回过头来看，因为后边相对比较困难，而且不一定用到），并配合阮一峰 es6 教程学习&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;学习框架
+&lt;ul&gt;
+&lt;li&gt;工具包
+&lt;ul&gt;
+&lt;li&gt;Vue
+&lt;ul&gt;
+&lt;li&gt;建议学习官方中文文档&lt;/li&gt;
+&lt;li&gt;Vue + Vue-router-Vuex&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;React
+&lt;ul&gt;
+&lt;li&gt;官方文档&lt;/li&gt;
+&lt;li&gt;React + React-dom + React-router + Redux&lt;/li&gt;
+&lt;li&gt;Ant Design 、 Element&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Angular&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;阶段三&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#阶段三&#34;&gt;#&lt;/a&gt; 阶段三&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;回归之前所学的知识&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;通过写博客&lt;/li&gt;
+&lt;li&gt;回看官方文档&lt;/li&gt;
+&lt;li&gt;Webpack  与   Rollup.js&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;新知识&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;redux&lt;/li&gt;
+&lt;li&gt;mobx&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;阶段四&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#阶段四&#34;&gt;#&lt;/a&gt; 阶段四&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;抽象思维&lt;/li&gt;
+&lt;li&gt;视野&lt;/li&gt;
+&lt;li&gt;影响力人脉&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="前端" />
+        <updated>2020-10-25T13:11:28.000Z</updated>
+    </entry>
+</feed>

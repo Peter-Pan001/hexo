@@ -1,0 +1,854 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/my-blog/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/my-blog/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="理 想 净 土" href="https://peter-pan001.github.io/my-blog/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="理 想 净 土" href="https://peter-pan001.github.io/my-blog/atom.xml" />
+<link rel="alternate" type="application/json" title="理 想 净 土" href="https://peter-pan001.github.io/my-blog/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/my-blog/css/app.css?v=0.2.4">
+
+  
+  <meta name="keywords" content="软考网络工程师" />
+
+
+<link rel="canonical" href="https://peter-pan001.github.io/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%9F%8E%E5%9F%9F%E7%BD%9101/">
+
+
+
+  <title>
+局域网与城域网01 - 软考网络工程师 |
+Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之作证 </title>
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">局域网与城域网01
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2021-02-21 08:56:40">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-02-21T08:56:40+08:00">2021-02-21</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/my-blog/" rel="start">Peter Pan</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="https://s3.ax1x.com/2021/02/17/y253bn.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/my-blog/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" itemprop="item" rel="index" title="分类于 软考网络工程师"><span itemprop="name">软考网络工程师</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://peter-pan001.github.io/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%9F%8E%E5%9F%9F%E7%BD%9101/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/my-blog/images/avatar.jpg">
+    <meta itemprop="name" content="Peter Pan">
+    <meta itemprop="description" content=" 凭时间赢来的东西，时间肯定会为之作证 , 不必匆忙，不必火花四溅，不必成为别人，只需成为自己">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="理 想 净 土">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="局域网体系与标准"><a class="markdownIt-Anchor" href="#局域网体系与标准">#</a> 局域网体系与标准</h1>
+<h2 id="什么是局域网"><a class="markdownIt-Anchor" href="#什么是局域网">#</a> 什么是局域网？</h2>
+<ul>
+<li>
+<p>单一机构所拥有的专用计算机网络，中等规模地理范围，实现 <mark>多个设备互联</mark>、<mark>信息交换</mark> 和 <mark>资源共享</mark></p>
+</li>
+<li>
+<p>主要针对数据链路层和物理层而制定</p>
+<p><img data-src="https://s3.ax1x.com/2021/02/21/yTWOSI.png" alt="jywtxjg"></p>
+</li>
+<li>
+<p>在<mark>数据链路层分为 LLC（逻辑链路控制子层）</mark> 和 <mark>MAC（介质访问控制子层）</mark></p>
+</li>
+<li>
+<p>LLC 为上层通过服务，MAC 依托在物理层之上</p>
+</li>
+</ul>
+<h2 id="lanman-的ieee802标准"><a class="markdownIt-Anchor" href="#lanman-的ieee802标准">#</a> LAN/MAN 的 IEEE802 标准</h2>
+<ul>
+<li>802.3   CSMA/CD  
+<ul>
+<li><strong>以太网规范，定义 CSMA/CD</strong></li>
+<li>还分为 IEEE 802.3ab 和 IEEE 802.3u</li>
+</ul>
+</li>
+<li>802.6   城域网  
+<ul>
+<li><strong>定义城域网的每天访问控制子层和物理层规范</strong></li>
+</ul>
+</li>
+<li>802.11   无线局域网  
+<ul>
+<li><strong>定义自由空间媒体的媒体访问控制子层和物理层规范</strong></li>
+</ul>
+</li>
+<li>802.16    宽带无线接入标准 BWA  </li>
+</ul>
+<h1 id="数据链路llc和mac"><a class="markdownIt-Anchor" href="#数据链路llc和mac">#</a> 数据链路 LLC 和 MAC</h1>
+<h2 id="逻辑链路控制llc"><a class="markdownIt-Anchor" href="#逻辑链路控制llc">#</a> 逻辑链路控制 LLC</h2>
+<ul>
+<li>目的是 <strong>屏蔽不同介质访问</strong> 控制方法，以向高层（网络层）提供统一的服务和接口，<mark>LLC 地址是 SAP</mark></li>
+<li>这个标准和 HDLC 是 <strong>兼容的</strong>，无帧校验字段，放到了 MAC 层，同时提供目标地址和源地址字段</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">8 位</th>
+<th style="text-align:center">8 位</th>
+<th style="text-align:center">8 位或 16 位</th>
+<th style="text-align:center">M*8 位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">DSAP</td>
+<td style="text-align:center">SSAP</td>
+<td style="text-align:center">控制</td>
+<td style="text-align:center">信息</td>
+</tr>
+</tbody>
+</table>
+<h2 id="介质访问控制mac"><a class="markdownIt-Anchor" href="#介质访问控制mac">#</a> 介质访问控制 MAC</h2>
+<ul>
+<li>长度字段表示数据实际长度，<mark>最大 1500</mark>。同时还可以表示上层协议类型，1501 以上的值</li>
+<li>6+6+2+0-1500+0-46+4</li>
+<li>最小 64，最大 1518</li>
+<li><strong>MAC 地址</strong>：采用 16 进制数表示，共 6B（48 位），有 IEEE 和厂家烧制到网卡</li>
+</ul>
+<h2 id="csmacd协议"><a class="markdownIt-Anchor" href="#csmacd协议">#</a> CSMA/CD 协议</h2>
+<ul>
+<li>载波监听多路访问 / 冲突检测。是分布式介质访问控制方法
+<ul>
+<li>非坚持型：有礼貌的，等一会下楼</li>
+<li>1 坚持型：霸道点的，一直要下楼</li>
+<li>P 坚持型：和事佬，有概率等下楼</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">监听算法</th>
+<th style="text-align:center">信道空闲时</th>
+<th style="text-align:center">信道忙时</th>
+<th style="text-align:center">特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">非坚持型监听算法</td>
+<td style="text-align:center">立即发送</td>
+<td style="text-align:center">等待 N，再监听</td>
+<td style="text-align:center">减少冲突，信道利用率降低</td>
+</tr>
+<tr>
+<td style="text-align:center">1 - 坚持型监听算法</td>
+<td style="text-align:center">立即发送</td>
+<td style="text-align:center">继续监听</td>
+<td style="text-align:center">提高信道利用率，增大了冲突</td>
+</tr>
+<tr>
+<td style="text-align:center">P - 坚持型监听算法</td>
+<td style="text-align:center">以概率 P 发送</td>
+<td style="text-align:center">继续监听</td>
+<td style="text-align:center">有效平衡，但是复杂</td>
+</tr>
+</tbody>
+</table>
+<h2 id="最小帧长计算"><a class="markdownIt-Anchor" href="#最小帧长计算">#</a> 最小帧长计算</h2>
+<ul>
+<li>为检测到冲突，<br><br>
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mn>2</mn><mi>R</mi><mo>∗</mo><mi>d</mi><mi mathvariant="normal">/</mi><mi>v</mi></mrow><annotation encoding="application/x-tex">L=2R*d/v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal">L</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">d</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span></span></span></span> <br>
+<ul>
+<li>其中，R 为网络数据速率，d 为最大段长，v 为信号传播速度</li>
+</ul>
+</li>
+<li><strong>二进制后退指数算法：</strong>
+<ol>
+<li>考虑网络负载编号</li>
+<li>后退次数与负载大小有关</li>
+<li>重发词素最大为 16，然后报给上层协议</li>
+</ol>
+</li>
+</ul>
+<h2 id="以太网"><a class="markdownIt-Anchor" href="#以太网">#</a> 以太网</h2>
+<ul>
+<li>早期的 802.3 局域网，10Mbps，来源于光在空气中传播的介质 “以太（ether）”，由此得名 “以太网（Ethernet）”</li>
+<li>交换式以太网核心部件是交换机，有一个高速底板，插上一些插槽，插槽上有一些链接器，用于连接 10M 网卡的主机。如：e0/0,f0/1 (插槽 / 接口),g0/0/0 (插槽 / 模块 / 接口)
+<ul>
+<li><mark>e: 以太网 10Mbps，f：快速以太网 100Mbps，g：吉比特以太网 1000Mbps</mark></li>
+</ul>
+</li>
+</ul>
+<h2 id="快速以太网"><a class="markdownIt-Anchor" href="#快速以太网">#</a> 快速以太网</h2>
+<ul>
+<li>802.3u 标准，速率 <mark>可达 100M</mark>，采用 100Base-T/F 规范</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">标准</th>
+<th style="text-align:center">传输介质</th>
+<th style="text-align:center">线对数</th>
+<th style="text-align:center">传输距离</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">100Base-T2</td>
+<td style="text-align:center">3 类 UTP</td>
+<td style="text-align:center">2 对</td>
+<td style="text-align:center">100m</td>
+</tr>
+<tr>
+<td style="text-align:center">100Base-T4</td>
+<td style="text-align:center">3 类 UTP</td>
+<td style="text-align:center">4 对</td>
+<td style="text-align:center">100m</td>
+</tr>
+<tr>
+<td style="text-align:center">100Base-TX</td>
+<td style="text-align:center">5 类 UTP</td>
+<td style="text-align:center">2 对</td>
+<td style="text-align:center">100m</td>
+</tr>
+<tr>
+<td style="text-align:center">100Base-TXSTP</td>
+<td style="text-align:center">2 对</td>
+<td style="text-align:center">100m</td>
+</tr>
+<tr>
+<td style="text-align:center">100Base-FX</td>
+<td style="text-align:center">多模光纤</td>
+<td style="text-align:center">1 对</td>
+<td style="text-align:center">2Km（全双工）</td>
+</tr>
+<tr>
+<td style="text-align:center">100Base-FX</td>
+<td style="text-align:center">单模光纤</td>
+<td style="text-align:center">1 对</td>
+<td style="text-align:center">40Km（全双工）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="千兆以太网吉比特以太网"><a class="markdownIt-Anchor" href="#千兆以太网吉比特以太网">#</a> 千兆以太网（吉比特以太网）</h2>
+<ul>
+<li>802.3z 标准，速率可达 <mark>1000M</mark>，兼容 10M/100M 以太网</li>
+</ul>
+
+<table style="width: 100%;">    
+  
+  <tr><th>标准</th><th>名称</th><th>传输介质</th><th>传输距离</th></tr>   
+  <tr><td rowspan="6">IEEE802.3z</td><td rowspan="3">1000Base-LX</td><td>62.5μm多模光纤</td><td>550m</td></tr>   
+  <td>50μm多模光纤</td><td>550m</td></tr>
+  <td>10μm单模光纤</td><td>5Km</td></tr>
+  <tr><td rowspan="2">1000Base-SX</td ><td>62.5μm多模光纤</td><td>275m</td></tr>
+  <tr><td>50μm多模光纤</td><td>550m</td></tr>
+  <tr><td rowspan="1">1000Base-CX</td><td>2对STP</td><td>25m</td></tr>
+  <tr><td>IEEE802.3ab</td><td>1000Base-T</td><td>4对5类UTP</td><td>100m</td></tr>
+</table>  
+
+<h2 id="万兆以太网"><a class="markdownIt-Anchor" href="#万兆以太网">#</a> 万兆以太网</h2>
+<ul>
+<li>802.3ae 标准，速率可达 <mark>万兆（10Gbps）</mark>， <strong>只支持光纤</strong>， <strong>只支持全双工</strong>，不再采用 CSMA/CD，可用于城域网</li>
+</ul>
+
+<table style="width: 100%;" >    
+  
+  <tr><th>名称</th><th>传输介质</th><th>传输距离</th><th>特点</th></tr>   
+  <tr><td rowspan="2">10GBase-S（Short）</td><td>50μm的多模光纤</td><td>300m</td><td rowspan="2">850nm串行</td></tr> 
+  <tr><td>62.5μm多模光纤</td><td>65m</td></tr>  
+
+  <tr><td>10GBase-L（Long）</td ><td>单模光纤</td><td>10km</td><td>1310nm串行</td></tr>
+  <tr><td>10GBase-E（Extended）</td ><td>单模光纤</td><td>40km</td><td>1550nm串行</td></tr>
+  <tr><td rowspan="3">10GBase-LX4</td><td>单模光纤</td><td>10km</td><td rowspan="3">1310nm<br>4x2.5Gbps<br>波分多路复用（WDM）</td></tr>
+  <tr><td>50μm的多模光纤</td><td>300m</td></tr>
+  <tr><td>62.5μm的多模光纤</td><td>300m</td></tr>
+</table>  
+
+<h2 id="虚拟局域网vlan"><a class="markdownIt-Anchor" href="#虚拟局域网vlan">#</a> 虚拟局域网 VLAN</h2>
+<ul>
+<li>根据管理功能、组织机构或应用类型，对物理网络进行分段而形成的逻辑网络，与用户的物理位置无关</li>
+</ul>
+<h3 id="vlan划分方式"><a class="markdownIt-Anchor" href="#vlan划分方式">#</a> VLAN 划分方式</h3>
+<ol>
+<li>静态分配 VLAN：基于端口</li>
+<li>动态分配 VLAN：基于 MAC 地址、网络层 IP 地址、规则策略等</li>
+</ol>
+<h3 id="划分vlan的好处"><a class="markdownIt-Anchor" href="#划分vlan的好处">#</a> 划分 VLAN 的好处</h3>
+<ol>
+<li>控制网络流量，抑制广播风暴</li>
+<li>提高网络安全性，不同 VLAN 之间可以做控制</li>
+<li>网络管理灵活，用户可以随地接入网络</li>
+</ol>
+<ul>
+<li><mark>不同 VLAN 之间通信，需要路由器或三层交换机</mark></li>
+</ul>
+<h3 id="vlan8021q标准dot1q"><a class="markdownIt-Anchor" href="#vlan8021q标准dot1q">#</a> VLAN802.1q 标准（dot1q）</h3>
+<ul>
+<li>
+<p>在原来的以太帧增加了 <strong>4B</strong> 的控制信息，其中包含 <mark>12 位 VLAN 标识符 VID</mark> ，可用 <strong>4096 个 VLAN</strong></p>
+<p><img data-src="https://s3.ax1x.com/2021/02/21/yTWzm8.png" alt="802.1q"></p>
+</li>
+</ul>
+<h3 id="两种端口"><a class="markdownIt-Anchor" href="#两种端口">#</a> 两种端口</h3>
+<ul>
+<li>
+<p><strong>接入端口 Access</strong></p>
+<ul>
+<li>可通过单个 VLAN</li>
+</ul>
+</li>
+<li>
+<p><strong>中继端口 Trunk</strong></p>
+<ul>
+<li>可通过多个 VLAN</li>
+</ul>
+<p><img data-src="https://s3.ax1x.com/2021/02/21/yTfifs.png" alt="vlandk"></p>
+</li>
+</ul>
+<h2 id="练习例题"><a class="markdownIt-Anchor" href="#练习例题">#</a> 练习例题</h2>
+<hr>
+<ol>
+<li class="quiz">
+<p>IEEE802.3 规定的最小帧长为 64B，这个帧长是指 <span class="gap"></span> 。</p>
+<ul class="options">
+<li class="options">从前导字段到校验和的字段</li>
+<li class="correct">从目标地址到校验和的长度</li>
+<li class="options">从帧起始符到校验和的长度</li>
+<li class="options">数据字段的长度</li>
+</ul>
+</li>
+<li class="quiz">
+<p>在以太网的帧结构中 “填充” 字段的作用是<span class="gap"></span> 。</p>
+<ul class="options">
+<li class="options">承载任选的路由信息</li>
+<li class="options">用于捎带应答</li>
+<li class="options">发送紧急数据</li>
+<li class="correct">保持最小帧长</li>
+</ul>
+<blockquote>
+<p>为了保证 64B 的最小帧长让以太网识别</p>
+</blockquote>
+</li>
+<li class="quiz">
+<p>下面的光纤以太网标准中，支持 1000m 以上创术距离的是<span class="gap"></span> 。</p>
+<ul class="options">
+<li class="options">1000Base-Fx</li>
+<li class="options">1000Base-Cx</li>
+<li class="options">1000Base-Sx</li>
+<li class="correct">1000Base-Lx</li>
+</ul>
+</li>
+<li class="quiz">
+<p>一个 CSMA/CD 协议的以太网，数据速率为 1Gb/s，网段长 1km，信号速率为 200000km/s，则最小帧长为<span class="gap"></span> bit。</p>
+<ul class="options">
+<li class="options">1000</li>
+<li class="options">2000</li>
+<li class="correct">10000</li>
+<li class="options">2000000</li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>1</mn><mi>G</mi><mi>b</mi><mi>p</mi><mi>s</mi><mo>=</mo><mn>1</mn><msup><mn>0</mn><mn>9</mn></msup><mi>b</mi><mi>p</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">R=1Gbps=10^9bps</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mord mathnormal">G</span><span class="mord mathnormal">b</span><span class="mord mathnormal">p</span><span class="mord mathnormal">s</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.008548em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span><span class="mord mathnormal">b</span><span class="mord mathnormal">p</span><span class="mord mathnormal">s</span></span></span></span> <br> <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>=</mo><mn>1</mn><mi>k</mi><mi>m</mi><mo>=</mo><mn>1000</mn><mi>m</mi></mrow><annotation encoding="application/x-tex">S=1km=1000m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mord mathnormal">m</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord mathnormal">m</span></span></span></span><br><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>=</mo><mn>2000000</mn><mi>m</mi><mi mathvariant="normal">/</mi><mi>s</mi><mo>=</mo><mn>2</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>8</mn></msup><mi>m</mi><mi mathvariant="normal">/</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">v=2000000m/s=2\times10^8m/s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord mathnormal">m</span><span class="mord">/</span><span class="mord mathnormal">s</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span></span></span></span></span><span class="mord mathnormal">m</span><span class="mord">/</span><span class="mord mathnormal">s</span></span></span></span><br><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mn>2</mn><mi>R</mi><mo>×</mo><mo stretchy="false">(</mo><mi>S</mi><mi mathvariant="normal">/</mi><mi>v</mi><mo stretchy="false">)</mo><mo>=</mo><mn>2</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>9</mn></msup><mo>×</mo><mo stretchy="false">(</mo><mn>1000</mn><mi mathvariant="normal">/</mi><mn>2</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>8</mn></msup><mo stretchy="false">)</mo><mo>=</mo><mn>10000</mn><mi>b</mi><mi>i</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">L=2R\times(S/v)=2\times10^9\times(1000/2\times10^8)=10000bit</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal">L</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">/</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord mathnormal">b</span><span class="mord mathnormal">i</span><span class="mord mathnormal">t</span></span></span></span></li>
+</ul>
+</blockquote>
+</li>
+<li class="quiz">
+<p>以太网采用的 CSMA/CD 协议，当冲突发送时，要跳过二进制指数后退算法计算后退时延，关于这个算法，描述错误的是<span class="gap"></span> 。</p>
+<ul class="options">
+<li class="correct">冲突次数越多，后退的时间越短 </li>
+<li class="options">平均后退次数的多少与负载有关</li>
+<li class="options">后退时延的平均值与负载大小有关</li>
+<li class="options">重发次数达到一定极限后放弃发送</li>
+</ul>
+</li>
+<li multi.quiz="">
+<p>在以太网中，载波监听是网络协议设计中很重要的一个方面。在下列载波监听算法中，信道利用率最高的是（B）监听算法，其存在的最大不足是（H）</p>
+<ul class="options">
+<li class="options">非坚持型</li>
+<li class="correct">1 - 坚持型</li>
+<li class="options">p - 坚持型</li>
+<li class="options">N - 坚持型</li>
+<li class="options">算法的效率不够高，会降低网络速率</li>
+<li class="options">算法的硬件实现太复杂，会等待提高成本</li>
+<li class="options">对冲突的检测会有影响，实现起来不太容易</li>
+<li class="correct">它会增大冲突出现的概率</li>
+</ul>
+</li>
+</ol>
+
+      <div class="tags">
+          <a href="/my-blog/tags/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" rel="tag"><i class="ic i-tag"></i> 软考网络工程师</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/my-blog/images/wechatpay.png" alt="Peter Pan 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/my-blog/images/alipay.png" alt="Peter Pan 支付宝">
+        <p>支付宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Peter Pan <i class="ic i-at"><em>@</em></i>理 想 净 土
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://peter-pan001.github.io/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%9F%8E%E5%9F%9F%E7%BD%9101/" title="局域网与城域网01">https://peter-pan001.github.io/my-blog/软考网络工程师/局域网与城域网01/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B9%BF%E5%9F%9F%E9%80%9A%E4%BF%A1%E7%BD%91/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;s3.ax1x.com&#x2F;2021&#x2F;02&#x2F;17&#x2F;y253bn.jpg" title="广域通信网">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 软考网络工程师</span>
+  <h3>广域通信网</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%9F%8E%E5%9F%9F%E7%BD%9102/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;s3.ax1x.com&#x2F;2021&#x2F;02&#x2F;17&#x2F;y253bn.jpg" title="局域网与城域网02">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 软考网络工程师</span>
+  <h3>局域网与城域网02</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#局域网体系与标准"><span class="toc-number">1.</span> <span class="toc-text"> 局域网体系与标准</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是局域网"><span class="toc-number">1.1.</span> <span class="toc-text"> 什么是局域网？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lanman-的ieee802标准"><span class="toc-number">1.2.</span> <span class="toc-text"> LAN&#x2F;MAN 的 IEEE802 标准</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据链路llc和mac"><span class="toc-number">2.</span> <span class="toc-text"> 数据链路 LLC 和 MAC</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#逻辑链路控制llc"><span class="toc-number">2.1.</span> <span class="toc-text"> 逻辑链路控制 LLC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#介质访问控制mac"><span class="toc-number">2.2.</span> <span class="toc-text"> 介质访问控制 MAC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#csmacd协议"><span class="toc-number">2.3.</span> <span class="toc-text"> CSMA&#x2F;CD 协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最小帧长计算"><span class="toc-number">2.4.</span> <span class="toc-text"> 最小帧长计算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#以太网"><span class="toc-number">2.5.</span> <span class="toc-text"> 以太网</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#快速以太网"><span class="toc-number">2.6.</span> <span class="toc-text"> 快速以太网</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#千兆以太网吉比特以太网"><span class="toc-number">2.7.</span> <span class="toc-text"> 千兆以太网（吉比特以太网）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#万兆以太网"><span class="toc-number">2.8.</span> <span class="toc-text"> 万兆以太网</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#虚拟局域网vlan"><span class="toc-number">2.9.</span> <span class="toc-text"> 虚拟局域网 VLAN</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#vlan划分方式"><span class="toc-number">2.9.1.</span> <span class="toc-text"> VLAN 划分方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#划分vlan的好处"><span class="toc-number">2.9.2.</span> <span class="toc-text"> 划分 VLAN 的好处</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vlan8021q标准dot1q"><span class="toc-number">2.9.3.</span> <span class="toc-text"> VLAN802.1q 标准（dot1q）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#两种端口"><span class="toc-number">2.9.4.</span> <span class="toc-text"> 两种端口</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#练习例题"><span class="toc-number">2.10.</span> <span class="toc-text"> 练习例题</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E6%A6%82%E8%AE%BA/" rel="bookmark" title="计算机基础概论">计算机基础概论</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8001/" rel="bookmark" title="数据通信基础01">数据通信基础01</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8002/" rel="bookmark" title="数据通信基础02">数据通信基础02</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B9%BF%E5%9F%9F%E9%80%9A%E4%BF%A1%E7%BD%91/" rel="bookmark" title="广域通信网">广域通信网</a></li><li class="active"><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%9F%8E%E5%9F%9F%E7%BD%9101/" rel="bookmark" title="局域网与城域网01">局域网与城域网01</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%9F%8E%E5%9F%9F%E7%BD%9102/" rel="bookmark" title="局域网与城域网02">局域网与城域网02</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%97%A0%E7%BA%BF%E9%80%9A%E4%BF%A1%E7%BD%91/" rel="bookmark" title="无线通信网">无线通信网</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9101/" rel="bookmark" title="网络互联与互联网01">网络互联与互联网01</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/IP%E5%AD%90%E7%BD%91%E5%88%92%E5%88%86%E4%B8%93%E9%A2%98/" rel="bookmark" title="IP子网划分专题">IP子网划分专题</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9102/" rel="bookmark" title="网络互联与互联网02">网络互联与互联网02</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9103/" rel="bookmark" title="网络互联与互联网03">网络互联与互联网03</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9104/" rel="bookmark" title="网络互联与互联网04">网络互联与互联网04</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E4%B8%8B%E4%B8%80%E4%BB%A3%E4%BA%92%E8%81%94%E7%BD%91/" rel="bookmark" title="下一代互联网">下一代互联网</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%8E%E5%BA%94%E7%94%A801/" rel="bookmark" title="网络安全与应用01">网络安全与应用01</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%8E%E5%BA%94%E7%94%A802/" rel="bookmark" title="网络安全与应用02">网络安全与应用02</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A801/" rel="bookmark" title="网络应用服务器01">网络应用服务器01</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A802/" rel="bookmark" title="网络应用服务器02">网络应用服务器02</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F/" rel="bookmark" title="常用公式">常用公式</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8F%E8%AE%AE%E5%90%8D%E7%A7%B0%E4%B8%8E%E7%AE%80%E4%BB%8B/" rel="bookmark" title="协议名称与简介">协议名称与简介</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E5%92%8C%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80/" rel="bookmark" title="系统开发和项目管理基础">系统开发和项目管理基础</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/" rel="bookmark" title="计算机硬件基础(部分组成原理)">计算机硬件基础(部分组成原理)</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/" rel="bookmark" title="操作系统基础">操作系统基础</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%90%84%E9%87%8D%E7%82%B9%E5%8D%8F%E8%AE%AE%E5%8F%8A%E5%B8%A7%E6%A0%BC%E5%BC%8F%E8%AF%A6%E8%A7%A3/" rel="bookmark" title="各重点协议及帧格式详解">各重点协议及帧格式详解</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E8%A7%84%E5%88%92%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="bookmark" title="网络规划与设计">网络规划与设计</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/Linux%E9%85%8D%E7%BD%AE/" rel="bookmark" title="Linux配置">Linux配置</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%881%EF%BC%89/" rel="bookmark" title="华为路由交换实验命令（1）">华为路由交换实验命令（1）</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%882%EF%BC%89/" rel="bookmark" title="华为路由交换实验命令（2）">华为路由交换实验命令（2）</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%883%EF%BC%89/" rel="bookmark" title="华为路由实验命令（3）">华为路由实验命令（3）</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%884%EF%BC%89/" rel="bookmark" title="华为交换实验命令（4）">华为交换实验命令（4）</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Peter Pan"
+      data-src="/my-blog/images/avatar.jpg">
+  <p class="name" itemprop="name">Peter Pan</p>
+  <div class="description" itemprop="description">不必匆忙，不必火花四溅，不必成为别人，只需成为自己</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/my-blog/archives/">
+        <span class="count">69</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/my-blog/categories/">
+        <span class="count">10</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/my-blog/tags/">
+        <span class="count">14</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL1BldGVyLVBhbjAwMS9CYXNpYw==" title="https:&#x2F;&#x2F;github.com&#x2F;Peter-Pan001&#x2F;Basic"><i class="ic i-github"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS9ndWFuZy1tYW5nLWxpZ2h0bmluZw==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;guang-mang-lightning"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTE5MjY4NTE4NDA=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;1926851840"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS9QZXRlclBhbjA4MjQ=" title="https:&#x2F;&#x2F;about.me&#x2F;PeterPan0824"><i class="ic i-address-card"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/my-blog/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/my-blog/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+    <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/my-blog/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/my-blog/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/my-blog/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/my-blog/friends/" rel="section"><i class="ic i-heart"></i>friends</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/my-blog/links/" rel="section"><i class="ic i-magic"></i>links</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B9%BF%E5%9F%9F%E9%80%9A%E4%BF%A1%E7%BD%91/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%9F%8E%E5%9F%9F%E7%BD%9102/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+</div>
+
+    <span><a href="/my-blog/%E5%89%8D%E7%AB%AF/%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E5%89%8D%E7%AB%AF/" title="如何学习前端">如何学习前端</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%882%EF%BC%89/" title="华为路由交换实验命令（2）">华为路由交换实验命令（2）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93/" title="多线程笔记总结">多线程笔记总结</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
+</div>
+
+    <span><a href="/my-blog/Linux/Linux%E5%BC%80%E7%AF%87/" title="Linux开篇">Linux开篇</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/Java%E6%95%B0%E7%BB%84/" title="Java数组">Java数组</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/Java%E8%AF%AD%E5%8F%A5/" title="Java语句">Java语句</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/git/" title="分类于 git">git</a>
+</div>
+
+    <span><a href="/my-blog/git/git%E4%B8%8Egithub%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BA%86%E8%A7%A3/" title="git与github的基本了解">git与github的基本了解</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E5%92%8C%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80/" title="系统开发和项目管理基础">系统开发和项目管理基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8001/" title="数据通信基础01">数据通信基础01</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9103/" title="网络互联与互联网03">网络互联与互联网03</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Peter Pan @ Peter Pan</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '软考网络工程师/局域网与城域网01/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,copy_tex: true,
+    katex: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',quiz: {
+      choice: "单选题",
+      multiple: "多选题",
+      true_false: "判断题",
+      essay: "问答题",
+      gap_fill: "填空题",
+      mistake: "错题备注"
+    },
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/my-blog/js/app.js?v=0.2.4"></script>
+
+
+
+
+</body>
+</html>

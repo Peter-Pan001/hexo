@@ -1,0 +1,1062 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/my-blog/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/my-blog/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="理 想 净 土" href="https://peter-pan001.github.io/my-blog/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="理 想 净 土" href="https://peter-pan001.github.io/my-blog/atom.xml" />
+<link rel="alternate" type="application/json" title="理 想 净 土" href="https://peter-pan001.github.io/my-blog/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/my-blog/css/app.css?v=0.2.4">
+
+  
+  <meta name="keywords" content="软考网络工程师" />
+
+
+<link rel="canonical" href="https://peter-pan001.github.io/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%90%84%E9%87%8D%E7%82%B9%E5%8D%8F%E8%AE%AE%E5%8F%8A%E5%B8%A7%E6%A0%BC%E5%BC%8F%E8%AF%A6%E8%A7%A3/">
+
+
+
+  <title>
+各重点协议及帧格式详解 - 软考网络工程师 |
+Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之作证 </title>
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">各重点协议及帧格式详解
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2021-03-17 22:05:55">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-03-17T22:05:55+08:00">2021-03-17</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/my-blog/" rel="start">Peter Pan</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="https://s3.ax1x.com/2021/02/17/y253bn.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/my-blog/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" itemprop="item" rel="index" title="分类于 软考网络工程师"><span itemprop="name">软考网络工程师</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://peter-pan001.github.io/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%90%84%E9%87%8D%E7%82%B9%E5%8D%8F%E8%AE%AE%E5%8F%8A%E5%B8%A7%E6%A0%BC%E5%BC%8F%E8%AF%A6%E8%A7%A3/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/my-blog/images/avatar.jpg">
+    <meta itemprop="name" content="Peter Pan">
+    <meta itemprop="description" content=" 凭时间赢来的东西，时间肯定会为之作证 , 不必匆忙，不必火花四溅，不必成为别人，只需成为自己">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="理 想 净 土">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="常见重点协议及帧格式"><a class="markdownIt-Anchor" href="#常见重点协议及帧格式">#</a> 常见重点协议及帧格式</h1>
+<h2 id="01-hdlc协议"><a class="markdownIt-Anchor" href="#01-hdlc协议">#</a> 01 HDLC 协议</h2>
+<h3 id="hdlc定义"><a class="markdownIt-Anchor" href="#hdlc定义">#</a> HDLC 定义</h3>
+<ul>
+<li>HDLC 协议的全称是<mark>高级链路控制协议（High Level Data Link Control）</mark>，是一种在网上同步传输数据，<font color=blue>面向比特的数据链路层协议</font>，广泛用于公用数据网， <strong>支持全双工或半双工传输</strong> ，使用后退 N 帧 ARQ 流控方案。</li>
+<li>HDLC 定义了 3 种类型的站（主站、从站、复合站），两种链路配置（不平衡配置、平衡配置），3 种数据传输方式（NRM (正常响应模式)、ABM (异步平衡模式)、ARM (异步响应模式)）。</li>
+</ul>
+<h3 id="主要功能"><a class="markdownIt-Anchor" href="#主要功能">#</a> 主要功能</h3>
+<ul>
+<li><font color=red>流量控制</font></li>
+</ul>
+<h3 id="限制条件"><a class="markdownIt-Anchor" href="#限制条件">#</a> 限制条件</h3>
+<ol>
+<li>只支持点对点连接</li>
+<li>只可工作与同步方式</li>
+<li>不支持验证</li>
+<li>不支持 IP 地址协商</li>
+</ol>
+<h3 id="帧格式"><a class="markdownIt-Anchor" href="#帧格式">#</a> 帧格式</h3>
+<p><img data-src="https://s3.ax1x.com/2021/03/18/6g7Rfg.png" alt="hdlcxy"></p>
+<ul>
+<li>
+<p><strong>帧标志 F</strong> ：</p>
+<ul>
+<li>HDLC 用一种特殊的位模式  <code>01111110</code>  作为标志以确定帧的边界，采用位填充技术来区分是标志字段还是数据字段，发送站的数据比特序列一旦发现 0 后有 5 个 1，则在第 7 位插入 0。</li>
+</ul>
+</li>
+<li>
+<p><strong>地址字段 A</strong> :</p>
+<ul>
+<li>地址字段用于标识从站的地址，用在点对多点的链路中，地址通常是 8 位长。</li>
+</ul>
+</li>
+<li>
+<p><strong>控制字段 C</strong> ：</p>
+<ul>
+<li>帧编号 N (S), 捎带的肯定应答序号 N®,PF 位，P 询问、F 终止</li>
+</ul>
+<p><img data-src="https://s3.ax1x.com/2021/03/18/6g7hlj.png" alt="czzd"></p>
+</li>
+<li>
+<p><strong>帧校验序列 FCS</strong> ：</p>
+<ul>
+<li>含有除标志字段之外的所有其他字段的校验和。通常使用 16 比特的 CRC-CCITT<br></li>
+</ul>
+G(x)=X^{16}+X^{12}+X^5+1$$标准产生校验序列，有时也采用 CRC-32 产生 32 位的校序列。
+
+
+
+</li>
+</ul>
+<h3 id="定义"><a class="markdownIt-Anchor" href="#定义">#</a> 定义</h3>
+<ul>
+<li>X.25 是 CCITT 公布的<font color=blue>用于连接数据终端至分组交换数据网络</font>的推荐标准，<mark>X.25 是一个面向连接的接口</mark>，采用虚电路传递数据分组至网络上的适当终点处。</li>
+<li>在 X.25 的网络中，用户的计算机终端设备将与分组 / 拆装设备（PAD）连接，负责完成分割分组、寻址、重组装分组的工作，而不同的 X.25 网络之间则要使用 X.75 协议互联。</li>
+<li>X.25 是一个基于分组交换技术构建的网络，分组交换本身是适于无连接业务的，要为用户提供面向连接的接口服务，则必须借助虚拟电路技术（VC），虚电路服务具有两种形式，一种是交换虚电路 SVC 一种是永久虚电路 PVC。</li>
+<li><mark>最常见的 X.25 协议支持的最大传输速率为 64Kb/s。</mark></li>
+</ul>
+<h3 id="服务的层级"><a class="markdownIt-Anchor" href="#服务的层级">#</a> 服务的层级</h3>
+<ul>
+<li>OSI 底 3 层：<font color=red>物理层、数据链路层、网络层（分层体系结构）</font></li>
+</ul>
+<h3 id="x25三层结构"><a class="markdownIt-Anchor" href="#x25三层结构">#</a> x.25 三层结构</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">X.25 层次结构</th>
+<th style="text-align:center">对应 OSI 层</th>
+<th style="text-align:center">相应标准</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">分组层</td>
+<td style="text-align:center">网络层</td>
+<td style="text-align:center">X.25 PLP 通过建立虚拟连接，提供 <strong>点对点、面向连接服务</strong> 。X.25 PLP 层采用后退 N 帧 ARQ 流控协议。<br>PLP 协议把用户数据分成一定大小的块 ，一般为 128 字节，再加上 24 位或 32 位的分组头组成数据分组</td>
+</tr>
+<tr>
+<td style="text-align:center">链路访问层</td>
+<td style="text-align:center">数据链路层</td>
+<td style="text-align:center">使用平衡式链路访问规程 LAPB，LAPB 是源于 HDLC 的一种面向位的协议，实际上是平衡的异步方式类别下的 HDLC。LAPB 是 HDLC 的一个子集</td>
+</tr>
+<tr>
+<td style="text-align:center">物理层</td>
+<td style="text-align:center">物理层</td>
+<td style="text-align:center">X.21，但可以使用 RS-232C 和 V.35 代替</td>
+</tr>
+</tbody>
+</table>
+<h3 id="补充"><a class="markdownIt-Anchor" href="#补充">#</a> 补充</h3>
+<ul>
+<li><strong>选择重发 ARQ 协议（有噪声环境双工）</strong> ：
+<ul>
+<li>滑动窗口协议与自动请求重发技术的结合，当收到否定应答（NAK）时，只重发出错的帧。
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>W</mi><mtext>发</mtext></msub><mo>=</mo><msub><mi>W</mi><mtext>收</mtext></msub><mo>≤</mo><msup><mn>2</mn><mi>K</mi></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">W_发=W_收\leq2^K-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord cjk_fallback mtight">发</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord cjk_fallback mtight">收</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.924661em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8413309999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.07153em;">K</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>后退 N 帧 ARQ 协议（有噪声环境双工）</strong> ：
+<ul>
+<li>滑动窗口协议与自动请求重发技术的结合，当收到否定应答（NAK）时，将从出错处重发已发出过的 N 个帧。<mark>接收窗口 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>W</mi><mtext>收</mtext></msub></mrow><annotation encoding="application/x-tex">W_收</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord cjk_fallback mtight">收</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">=1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 同时，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>W</mi><mtext>收</mtext></msub><mo>≤</mo><msup><mn>2</mn><mi>K</mi></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">W_收\leq2^K-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord cjk_fallback mtight">收</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.924661em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8413309999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.07153em;">K</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>（K 为帧编号的位数）</mark></li>
+</ul>
+</li>
+</ul>
+<h2 id="03-帧中继的帧格式"><a class="markdownIt-Anchor" href="#03-帧中继的帧格式">#</a> 03 帧中继的帧格式</h2>
+<h3 id="定义-2"><a class="markdownIt-Anchor" href="#定义-2">#</a> 定义</h3>
+<ul>
+<li>帧中继是综合业务数字网络（ISDN）的一个产物，没有专门定义物理层接口（可以使用 X.21，V.35 等接口协议），</li>
+<li><strong>帧中继在第二层建立虚电路</strong> ，因而第三层被简化掉了，FR 的帧层也比 HDLC 操作简单， <mark>只做检错，不再重传，没有滑动窗口式的流控，只有拥塞控制</mark> ，把复杂的检错丢给高层去处理。</li>
+<li>帧中继使用的核心协议是 LAPD，它比 LAPB 简单，省去了控制字段。帧中继是基于分组（帧）交换的透明传输，可以承载 IP 数据报；可提供面向连接的服务，支持交换虚电路（SVC）和永久虚电路（PVC）；帧长可变，长度可达 1600～4096 字节，可以承载各种局域网的数据帧；可以应付突发的数据传输，可以提供 2～45Mb/s 的数据率；<font color=red>帧中继不适于延迟较敏感的应用（音频和视频），无法保证可靠提交</font>。</li>
+</ul>
+<h3 id="帧中继格式"><a class="markdownIt-Anchor" href="#帧中继格式">#</a> 帧中继格式</h3>
+<p><img data-src="https://s3.ax1x.com/2021/03/18/6g746s.png" alt="zzj"></p>
+<ul>
+<li><strong>标志字段</strong> ：LAPD 的帧头和帧尾都是一个字节的帧标志字段，编码为 01111110，与 HDLC 一样。</li>
+<li><strong>地址字段</strong> ：
+<ul>
+<li><mark>EA</mark> ：地址扩展比特。该比特为 0 时表示地址向后扩展一个字节，为 1 时表示最后一个字节。</li>
+<li><mark>C/R</mark>：命令 / 响应比特。协议本身不使用这个比特，用户可以用这个比特区分不同的帧。</li>
+<li><mark>FECN</mark>：向前拥塞比特。若网络置该位为 1，则表示在帧的传送方向上出现了拥塞，该帧到达接收端后，接收方可根据此调整发送方的数据率。</li>
+<li><mark>BECN</mark>：向后拥塞比特。若网络置该位为 1，则表示在帧传送相反的方向上出现了拥塞，该帧到达发送端后，发送方可据此调整发送数据速率。</li>
+<li><mark>DE</mark>：优先丢弃比特。当网络发生拥塞时，DE 位置 1 的帧会优先丢弃。</li>
+<li><mark>DLCI</mark>：数据链路连接标识符。帧中继使用虚拟电路的方式提供面向连接的服务，在帧头中包括 DLCI 字段，每个 DLCI 都标识一个虚电路，其中 DLCI0 用于信令传输。信息字段：信息字段长度可变，1600 是默认最大长度。帧校验序列：与 HDLC 相同。</li>
+</ul>
+</li>
+</ul>
+<h3 id="帧中继的拥塞控制"><a class="markdownIt-Anchor" href="#帧中继的拥塞控制">#</a> 帧中继的拥塞控制</h3>
+<ul>
+<li>在帧中继承载业务中，使用显式信令和隐式信令来避免拥塞的发生。显示信令利用 FECN 和 BECN 比特位置 1 来向端用户发出拥塞警告，以避免拥塞的发生。隐式信令是指上层协议对网络拥塞的监控，当网络开始丢帧时，上层协议就自动降低发送速率，以便网络从拥塞中恢复正常运行。帧中继还可以利用 CLLM（强化链路层管理）的方法，缓解拥塞。</li>
+</ul>
+<h2 id="04-atm问题"><a class="markdownIt-Anchor" href="#04-atm问题">#</a> 04 ATM 问题</h2>
+<h3 id="定义-3"><a class="markdownIt-Anchor" href="#定义-3">#</a> 定义</h3>
+<ul>
+<li>ATM 是一种可以将局域网功能、广域网功能、语音、视频和数据，集成进一个统一的协议设计。</li>
+<li>在 ATM 传输中，ATM 把用户数据组成 53B 的信元作为分组交换的信息单位，采用统计时分复用模式，提供面向连接的虚电路服务。ATM 连接可以是点到点的连接，也可以是点到多点的连接，分为 PVC 和 SVC 两种虚电路。</li>
+<li>ATM 通常是<font color=red>在光纤的基础上建立的</font>，<mark>典型的数据速率为 155.5Mb/s</mark>，因此它是不提供应答的，将少量的错误交给高层处理。</li>
+<li>ATM 的<mark>目的是实现实时通信，对于偶然的信元错误是不重传的，对于要重传的信息由高层处理</mark></li>
+</ul>
+<h3 id="atm分层结构"><a class="markdownIt-Anchor" href="#atm分层结构">#</a> ATM 分层结构</h3>
+<p><img data-src="https://s3.ax1x.com/2021/03/18/6g7vc9.png" alt="atmfc"></p>
+<p><img data-src="https://s3.ax1x.com/2021/03/18/6gHp0x.png" alt="atmbg"></p>
+<h3 id="atm信元头结构"><a class="markdownIt-Anchor" href="#atm信元头结构">#</a> ATM 信元头结构</h3>
+<p><img data-src="https://s3.ax1x.com/2021/03/18/6gHPAK.png" alt="atmxyt"></p>
+<ul>
+<li><strong>流控标志（GFC）</strong> ：用于主机和网络之间的流控或优先级控制。</li>
+<li><strong>虚通路标识符（VPI）</strong> ：8 位（UNI）或 12 位（NNI），常用是 8 位，因此一个主机上的虚通路数 256 个。</li>
+<li><strong>虚信道标识符（VCI）</strong> ：16 位，理论上每个主机上的虚通路可以包含 65536 个虚信道，不过部分信道是用于控制的，并不传送用户数据。</li>
+</ul>
+<blockquote>
+<p>在 ATM 中，虚电路有两级：虚通路（VP）和虚信道（VC），虚通路是由多条虚信道捆绑在一起形成的。在 ATM 逻辑通道中，是使用 VPI+VCI 的组合来标识连接的，在做 VP 交换或交叉连接时，只需交换 VP，无需改变 VCI 的值。</p>
+</blockquote>
+<ul>
+<li><strong>负载类型（PTI）</strong> ：区分不同的拥塞信息。</li>
+<li><strong>信元丢失优先级（CLP）</strong> ：这一位用于区分信息的优先级，如果出现拥塞，交换机优先丢弃 CLP 被置 1 的信元。</li>
+<li><strong>头校验和（HEC）</strong> ：它支队信元头进行校验，采用的是 $$X<sup>8+X</sup>2+X+1$$ 的 8 位 CRC 校验。</li>
+</ul>
+<h2 id="05-ppp帧格式"><a class="markdownIt-Anchor" href="#05-ppp帧格式">#</a> 05 PPP 帧格式</h2>
+<p><img data-src="https://s3.ax1x.com/2021/03/18/6gHE1H.png" alt="ppp"></p>
+<h2 id="06-局域网帧格式"><a class="markdownIt-Anchor" href="#06-局域网帧格式">#</a> 06 局域网帧格式</h2>
+<p><img data-src="https://s3.ax1x.com/2021/03/18/6gHZjA.png" alt="jywzgs"></p>
+<h2 id="07-ipv4协议"><a class="markdownIt-Anchor" href="#07-ipv4协议">#</a> 07 IPv4 协议</h2>
+<h3 id="ipv4数据报格式"><a class="markdownIt-Anchor" href="#ipv4数据报格式">#</a> IPv4 数据报格式</h3>
+<p><img data-src="https://s3.ax1x.com/2021/03/18/6gHMAf.png" alt="ipv4sjb"></p>
+<ul>
+<li><strong>版本号</strong> ：占 4 比特，指 IP 协议的版本，目前广泛使用 IPv4。</li>
+<li><strong>首部长度（IHL）</strong> ：IP 头长度，占 4 比特，最大值 15 个单位（1 个单位 4 字节）。</li>
+<li><strong>服务类型</strong> ：该字段包括一个 3 比特的优先级子字段（现在已废弃不用），还包括一个 4 比特的 ToS 子字段，最后 1 比特必须置 0。ToS 中的 4 比特分别代表：最小时延（D）、最大吞吐率（T）、最高可靠性（R）和最小费用（C）, 只能有 1 比特置 1。如果所有 4 比特均为 0，那就是一般服务。</li>
+<li><strong>标识符</strong> ：由主机指定同样的标识符。当原主机对数据分段时，对同一上层协议数据单元划分出的各个数据报指定同样的标识符，目标主机上层协议用这个字段进行重装配。</li>
+<li><strong>标志</strong> ：包括三个标志位。一个标志位没有使用；M 标志用于分段和重装配；D 标志为禁止分段标志。</li>
+<li><strong>段偏置值</strong> ：指明该段处于原来数据报中的位置，已 8 字节为单位。</li>
+<li><strong>生存期（TTL）</strong> ：用经过的路由器个数表示，源站设置一个数（32 或 64），每经过一个路由器减 1。如果某个路由器发现 TTL 字段为 0，则丢弃该数据报，不再转发。</li>
+<li><strong>协议</strong> ：上层协议（TCP 或 UDP）。</li>
+<li><strong>头检验和</strong> ：对 IP 头的检验序列。</li>
+<li><strong>任选数据</strong> ：可变长，包含发送者想要发送的控制数据。</li>
+</ul>
+<hr>
+<h3 id="ip协议簇"><a class="markdownIt-Anchor" href="#ip协议簇">#</a> IP 协议簇</h3>
+<p><img data-src="https://s3.ax1x.com/2021/03/18/6gHl4S.png" alt="ipxyz"></p>
+<h2 id="08-icmp协议"><a class="markdownIt-Anchor" href="#08-icmp协议">#</a> 08 ICMP 协议</h2>
+<h3 id="icmp定义"><a class="markdownIt-Anchor" href="#icmp定义">#</a> ICMP 定义</h3>
+<ul>
+<li>ICMP（Internet Control Message Protocol）与 IP 协议同<mark>属于网络层</mark>，封装在 IP 数据报中传输，传送有关网络层通信问题的信息。</li>
+<li>ICMP 常见应用有：
+<ul>
+<li>报告访问失效（报告源主机网络不可达）；</li>
+<li>报告网络拥塞（发送源抑制报文给源主机，降低发送速率）；</li>
+<li>帮助排错（利用 ICMP 回声功能，ping 工具）；</li>
+<li>声明报文超时（TraceRoute 工具，利用较小的 TTL 值发现中间设备）。</li>
+</ul>
+</li>
+</ul>
+<h3 id="icmp报文格式"><a class="markdownIt-Anchor" href="#icmp报文格式">#</a> ICMP 报文格式</h3>
+<p><img data-src="https://s3.ax1x.com/2021/03/18/6gHJjs.png" alt="icmpbw"></p>
+<h2 id="09-tcp格式"><a class="markdownIt-Anchor" href="#09-tcp格式">#</a> 09 TCP 格式</h2>
+<p><img data-src="https://s3.ax1x.com/2021/03/18/6gHtun.png" alt="tcpgs"></p>
+<h3 id="tcp报文格式"><a class="markdownIt-Anchor" href="#tcp报文格式">#</a> TCP 报文格式</h3>
+<ul>
+<li>
+<p><strong>源端口和目的端口</strong> ：</p>
+<ul>
+<li>都是  <code>16</code>  个比特，分别表示发送方和接收方的端口号。<mark>端口号和 IP 地址构成套接字 (socket) 地址的主要内容</mark>。源端和目的端的套接字合起来唯一地表示一条连接。网络应用程序在通信时直接向套接字发送和接收数据。</li>
+</ul>
+</li>
+<li>
+<p><strong>序列号和确认号</strong> ：</p>
+<ul>
+<li>都是  <code>32</code>  位的无符号整数，可以表示 0-4G (232) 字节的范围。其中，序列号表示数据部分第一个字节的序列号，而确认号表示该数据报的接收者希望对方发送的下一个字节的序号 (即序号小于确认号的数据都已正确地被接收)。</li>
+</ul>
+</li>
+<li>
+<p><strong>头长度 (HLEN)</strong> ：</p>
+<ul>
+<li>表示 TCP 报文头的长度。长度以  <code>32-bit</code>  为单位来计算。所以如果选项部分的长度不是 4 个字节的整数倍，则要加上填充 (padding)。</li>
+</ul>
+</li>
+<li>
+<p><strong>保留域</strong> ：</p>
+<ul>
+<li>紧接在头长度字段后有 6 个比特，应该把它设置为 0。</li>
+</ul>
+<hr>
+</li>
+</ul>
+<p><strong>再后则是 6 个标志位。标志位特定的含义：</strong> <br></p>
+<ul>
+<li>
+<p><strong>URG(urgent)</strong> 为<mark>紧急数据标志</mark>。如果它为 1，则表示本数据报中包含紧急数据。此时紧急数据指针表示的值有效。它表示在紧急数据之后的第一个字节的偏侈值 (即紧急数据的总长度)。</p>
+</li>
+<li>
+<p><strong>ACK(acknowledge)</strong> 为<mark>确认标志位</mark>。如果 ACK 为 1，则表示报文中的确认号是有效的。否则，报文中的确认号无效，接收端可以忽略它。</p>
+</li>
+<li>
+<p><strong>PSH(push)</strong> 标志位。被置位后，要求发送方的 TCP 协议软件马上发送该数据报，接收方在收到数据后也应该立即上交给应用程序，即使其接收缓冲区尚未填满。</p>
+</li>
+<li>
+<p><strong>RST(reset)</strong> 标志位。用来复位一条连接。RST 标志置位的报文称为复位报文。一般情况下，如果 TCP 收到的一个报文明显不是属于该主机上的任何个连接，则向远端发送一个复位报文。</p>
+</li>
+<li>
+<p><strong>SYN(synchronous)</strong> 标志位。用来建立连接，让连接双方同步序列号。如果 SYN=1 而 ACK=0，则表示该数据报为连接请求，如 SYN=1 而 ACK=1 则表示是接受连接。</p>
+</li>
+<li>
+<p><strong>FIN(finish)</strong> 标志位。表示发送方已经没有数据要传输了，希望释放连接。</p>
+<hr>
+</li>
+<li>
+<p><strong>窗口 (window) 字段</strong></p>
+<ul>
+<li>窗口表示的是从被确认的字节开始，<mark>发送方最多可以连续发送的字节的个数</mark>。接收方通过设置该窗口值的大小，可以调节源端发送数据的速度，从而实现流控。</li>
+</ul>
+</li>
+<li>
+<p><strong>校验和 (checksum) 域</strong></p>
+<ul>
+<li>是 TCP 协议提供的一种检错机制。与我们在前面的章节中学过的 UDP 协议类似，在计算校验和时不仅要计算 TCP 报文自身 (报文头和数据)，还要增加一些额外的信息内容 – 12 个字节的 “伪包头”。</li>
+</ul>
+</li>
+</ul>
+<h3 id="tcp三次握手过程"><a class="markdownIt-Anchor" href="#tcp三次握手过程">#</a> TCP 三次握手过程</h3>
+<ul>
+<li>
+<p>TCP 采用三次握手过程建立连接，首先是发起方发送一个 SYN 标志置位的段，其中的发送顺序号为某个值 X，称为初始顺序号 ISN（Initial Sequence Number），接收方以 SYN 和 ACK 标志置位的段响应，其中的应答顺序号应为 X+1（表示期望从第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">X+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 个字节处开始接收数据），发送顺序号为某个值 Y（接收端指定的 ISN）。这个段到达发起端后，发起端以 ACK 标志置位，应答顺序号为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">Y+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 的段回答，连接就正式建立了，连接建立的同时发起方还可以发送数据。</p>
+</li>
+<li>
+<p>TCP 采用的流控方式与数据链路层的流控方式不同，属于可变大小的滑动窗口协议，也叫信贷（Credit）滑窗协议，它更适合于两个相距遥远的主机在无连接的网络上实现流量控制。</p>
+<p><img data-src="https://s3.ax1x.com/2021/03/18/6gH2Hx.png" alt="scwsgc"></p>
+</li>
+</ul>
+<h2 id="10-udp格式"><a class="markdownIt-Anchor" href="#10-udp格式">#</a> 10 UDP 格式</h2>
+<p><img data-src="https://s3.ax1x.com/2021/03/18/6gHfUK.png" alt="udpbwgs"></p>
+<h3 id="udp报文格式"><a class="markdownIt-Anchor" href="#udp报文格式">#</a> UDP 报文格式</h3>
+<p><strong>源端口 (Source Port) 和目的端口 (Destination Port) 字段</strong></p>
+<ul>
+<li>包含了 16 比特的 UDP 协议端口号，它使得多个应用程序可以多路复用同一个传输层协议 – UDP 协议，仅通过不同的端口号来区分不同的应用程序。</li>
+</ul>
+<p><strong>长度 (Length) 字段</strong></p>
+<ul>
+<li>
+<p>记录了该 UDP 数据包的总长度 (以字节为单位)，包括 8 字节的 UDP 头和其后的数据部分。最小值是 8 (即报文头的长度)，<mark>最大值为 65,535 字节</mark>。<br>
+UDP 检验和 (Checksum) 的内容超出了 UDP 数据报文本身的范围，实际上，它的值是通过计算 UDP 数据报及一个伪包头而得到的。但校验和的计算方法与通用的一样，都是累加求和。</p>
+</li>
+<li>
+<p>所谓 “伪首部” 是因为这种伪首部并不是 UDP 用户数据报的真正首部。只是在计算检验和时，临时和 UDP 用户数据报连接在一起，得到一个过渡的 UDP 用户数据报。检验和就是按照这个过渡的 UDP 用户数据报来计算的。伪首部既不向下传送也不向上递交，而仅仅是为了计算检验和。</p>
+</li>
+</ul>
+<h2 id="11-ipv6报文格式"><a class="markdownIt-Anchor" href="#11-ipv6报文格式">#</a> 11 IPv6 报文格式</h2>
+<p><img data-src="https://s3.ax1x.com/2021/03/18/6gHI8e.png" alt="ipv6bwgs"></p>
+<h3 id="ipv6数据报格式"><a class="markdownIt-Anchor" href="#ipv6数据报格式">#</a> IPv6 数据报格式</h3>
+<ul>
+<li>IPv6 包头<mark>长度固定为 40 字节</mark>，去掉了 IPv4 中一切可选项，只包括 8 个必要的字段，因此尽管 <font color=red>IPv6 地址长度为 IPv4 的四倍，IPv6 包头长度仅为 IPv4 包头长度的两倍</font>。</li>
+</ul>
+<p><strong>其中的各个字段分别为：</strong></p>
+<ul>
+<li>
+<p><strong>Version（版本号）</strong> ：</p>
+<ul>
+<li><mark>4 位</mark>，IP 协议版本号，值 = 6。</li>
+</ul>
+</li>
+<li>
+<p><strong>Traffice Class（通信类别）</strong> ：</p>
+<ul>
+<li><mark>8 位</mark>，指示 IPv6 数据流通信类别或优先级。功能类似于 IPv4 的服务类型（TOS）字段。</li>
+</ul>
+</li>
+<li>
+<p><strong>Flow Label（流标记）</strong> ：</p>
+<ul>
+<li><mark>20 位</mark>，IPv6 新增字段，标记需要 IPv6 路由器特殊处理的数据流。该字段用于某些对连接的服务质量有特殊要求的通信，诸如音频或视频等实时数据传输。在 IPv6 中，同一信源和信宿之间可以有多种不同的数据流，彼此之间以非 “0” 流标记区分。如果不要求路由器做特殊处理，则该字段值置为 “0”。</li>
+</ul>
+</li>
+<li>
+<p><strong>Payload Length（负载长度）</strong> ：</p>
+<ul>
+<li><mark>16 位负载长度</mark>。负载长度包括扩展头和上层 PDU，16 位最多可表示 65535 字节负载长度。超过这一字节数的负载，该字段值置为 “0”，使用扩展头逐个跳段（Hop-by-Hop）选项中的巨量负载（Jumbo Payload）选项。</li>
+</ul>
+</li>
+<li>
+<p><strong>Next Header（下一包头）</strong> ：</p>
+<ul>
+<li><mark>8 位</mark>，识别紧跟 IPv6 头后的包头类型，如扩展头（有的话）或某个传输层协议头（诸如 TCP，UDP 或着 ICMPv6）。</li>
+</ul>
+</li>
+<li>
+<p><strong>Hop Limit（跳段数限制）</strong> ：</p>
+<ul>
+<li><mark>8 位</mark>，类似于 IPv4 的 TTL（生命期）字段。与 IPv4 用时间来限定包的生命期不同，IPv6 用包在路由器之间的转发次数来限定包的生命期。包每经过一次转发，该字段减 1，减到 0 时就把这个包丢弃。</li>
+</ul>
+</li>
+<li>
+<p><strong>Source Address（源地址）</strong> ：</p>
+<ul>
+<li><mark>128 位</mark>，发送方主机地址。</li>
+</ul>
+</li>
+<li>
+<p><strong>Destination Address（目的地址）</strong> ：</p>
+<ul>
+<li><mark>128 位</mark>，在大多数情况下，目的地址即信宿地址。但如果存在路由扩展头的话，目的地址可能是发送方路由表中下一个路由器接口。</li>
+</ul>
+</li>
+<li>
+<p><strong>扩展首部</strong> ：</p>
+<ul>
+<li>IPv6 包头设计中对原 IPv4 包头所做的一项重要改进就是将所有可选字段移出 IPv6 包头，置于扩展头中。由于除 Hop-by-Hop 选项扩展头外，其他扩展头不受中转路由器检查或处理，这样就能提高路由器处理包含选项的 IPv6 分组的性能。</li>
+</ul>
+<hr>
+</li>
+</ul>
+<blockquote>
+<p>通常，一个典型的 IPv6 包，没有扩展头。仅当需要路由器或目的节点做某些特殊处理时，才由发送方添加一个或多个扩展头。与 IPv4 不同，IPv6 扩展头长度任意，不受 40 字节限制，以便于日后扩充新增选项，这一特征加上选项的处理方式使得 IPv6 选项能得以真正的利用。 但是为了提高处理选项头和传输层协议的性能，扩展头总是 8 字节长度的整数倍。</p>
+</blockquote>
+<blockquote>
+<p>目前，RFC 2460 中定义了以下 6 个 IPv6 扩展头：Hop-by-Hop（逐个跳段）选项包头、目的地选项包头、路由包头、分段包头、认证包头和 ESP 协议包头。</p>
+</blockquote>
+<hr>
+<h3 id="从-ipv4-向-ipv6-过渡的策略"><a class="markdownIt-Anchor" href="#从-ipv4-向-ipv6-过渡的策略">#</a> 从 IPv4 向 IPv6 过渡的策略</h3>
+<p><strong>两种向 IPv6 过渡的策略，即使用双协议栈和隧道技术</strong></p>
+<ul>
+<li><mark>双协议栈 (dual stack)</mark> 是指在完全过渡到 IPv6 之前，使一部分主机（或路由器）装有两个协议栈，一个 IPv4 和一个 IPv6。因此双协议栈主机（或路由器）既能够和 IPv6 的系统通信，又能够和 IPv4 的系统进行通信。双协议栈的主机（或路由器）记为 IPv6/ IPv4，表明它具有两种 IP 地址：一个 IPv6 地址和一个 IPv4 地址。</li>
+<li><mark>隧道技术（tunneling）</mark>。这种方法的要点就是在 IPv6 数据报要进入 IPv4 网络时，将 IPv6 数据报封装成 IPv4 数据报（整个的 IPv6 数据变成了 IPv4 数据报的数据部分）。然后 IPv6 数据报就在 IPv4 网络的隧道中传输。当 IPv4 的数据报离开 IPv4 网络中的隧道时再将其数据部分（即原来的 IPv6 数据报）交给主机的 IPv6 协议栈。</li>
+</ul>
+<h1 id="网络新技术总结"><a class="markdownIt-Anchor" href="#网络新技术总结">#</a> 网络新技术总结</h1>
+<h2 id="01-ip交换技术"><a class="markdownIt-Anchor" href="#01-ip交换技术">#</a> 01 IP 交换技术</h2>
+<ul>
+<li>
+<p>所谓 IP 交换技术是指<mark>利用第二层交换技术传送 IP 分组的一组协议和机制</mark>，它<font color=blue>利用交换机的高带宽和低延迟优势</font>尽可能快地传送分组通过网络。由于 IP 是无连接的协议，对每个分组都必须单独选择路由，因此路由器的转发速度是比较慢的。IP 交换的目的是在快速交换硬件上获得最有效的 IP 实现，并非连接的 IP 和面向连接的 ATM 的优点互补。Ipsilon 公司开发的 IP 交换机提供了快捷通道（ <code>Cut Through</code> ），使得 IP 路由器的转发能力提高了 5 倍。IP 交换机之间的信令使用流管协议 IFMP（ <code>Ipsilon Flow Management Protocol</code> ）和通用交换机管理协议 GSMP（ <code>General Switch Management Protocol</code> ）。</p>
+<ul>
+<li>IFMP（RFC1953）的功能是建立结点间之间的邻接关系，并把一个第二层标记绑定到一个特殊的 IP 数据流上。<mark>所谓 “流”，是指具有相同源地址和目标地址、共同的上层协议（UDP、TCP）和服务类型的一个分组序列</mark> 。利用标记可以实现对 IP 流进行分类，并更有效地访问有关数据流的路由信息，带有标记的分组无需经过后继结点的第三层转发，而是通过第二层交换快速传输。IFMP 报文包装在 IPv4 分组中广播出去。</li>
+<li>GSMP（RFC1987）是一个通用的 ATM 交换机控制协议。GSMP 的功能是建立和释放连接，在组播通信中增加和删除叶子节点，管理交换机的端口，获取配置信息和统计数据等。可变长度的 GSMP 报文封装在 AAL5 协议数据单元中。<br>
+<br></li>
+</ul>
+</li>
+<li>
+<p>IP 交换的转发过程：一个流一旦被识别出来，IP 交换机就通知上游的结点使用新的虚电路（VC）传送这个流，同样的信令也会从下游结点传送过来。当 IP 流通过指定的 VC 传送时，就不再通过路由表转发，而是直接使用 ATM 交换硬件进行处理，同时把第二层标记附加在每个分组的头部，以便加快路由缓冲区的查找。</p>
+</li>
+<li>
+<p><strong>一台 IP 交换机主要由三个模块组成：ATM 交换模块、IP 交换控制器和专用的管理协议组成。</strong></p>
+</li>
+</ul>
+<h2 id="02-mplsmulti-protocol-label-switching"><a class="markdownIt-Anchor" href="#02-mplsmulti-protocol-label-switching">#</a> 02 MPLS：Multi-Protocol Label Switching</h2>
+<h3 id="mpls定义"><a class="markdownIt-Anchor" href="#mpls定义">#</a> MPLS 定义</h3>
+<ul>
+<li>
+<p><strong>MPLS（多协议标签转换技术）</strong> 是一种可以在多种第二层媒质上进行标记交换的网络技术。这一技术结合了第二层的交换和第三层路由的特点，将第二层的基础设施和第三层的路由有机地结合起来。第三层的路由在网络的边缘实施，而在 MPLS 的网络核心采用第二层交换，<mark>可见 MPLS 相当于 2.5 层协议</mark>。</p>
+</li>
+<li>
+<p>MPLS 通过在每一个节点的标签交换来实现包的转发。它不改变现有的路由协议，并可以在多种第二层的物理媒质上实施，目前有 ATM、FR (帧中继)、Ethernet 以及 PPP 等媒质。</p>
+<hr>
+</li>
+<li>
+<p>通过 MPLS，第三层的路由可以得到第二层技术的很好补充，充分发挥第二层良好的流量设计管理以及第三层  <code>“Hop-By-Hop（逐跳寻径）”</code>  路由的灵活性，以实现端到端的 QoS 保证。</p>
+</li>
+<li>
+<p>MPLS 作为 <strong>一种分类转发技术</strong> ，将具有相同转发处理方式的分组归为一类，称为转发等价类 FEC（ <code>Forwarding Equivalence Class</code> ）。相同转发等价类的分组在 MPLS 网络中将获得完全相同的处理。转发等价类的划分方式非常灵活，可以是源地址、目的地址、源端口、目的端口、协议类型、VPN 等的任意组合。例如，在传统的采用最长匹配算法的 IP 转发中，到同一个目的地址的所有报文就是一个转发等价类。</p>
+</li>
+<li>
+<p><strong>标签</strong> 是一个长度固定、只具有本地意义的短标识符，用于唯一标识一个分组所属的转发等价类 FEC。在某些情况下，例如要进行负载分担，对应一个 FEC 可能会有多个标签，但是一个标签只能代表一个 FEC。标签由报文的头部所携带，不包含拓扑信息，只具有局部意义。标签的长度为 4 个字节。</p>
+<hr>
+</li>
+<li>
+<p>MPLS 是一种特殊的转发机制，它为进入网络中的 IP 数据包分配标记，并通过对标记的交换来实现 IP 数据包的转发。标记作为 IP 包头在网络中的替代品而存在，在网络内部 MPLS 在数据包所经过的路径沿途通过交换标记 (而不是看 IP 包头) 来实现转发；当数据包要退出 MPLS 网络时，数据包被解开封装，继续按照 IP 包的路由方式到达目的地。</p>
+</li>
+</ul>
+<p><img data-src="https://s3.ax1x.com/2021/03/18/6gHbDI.png" alt="pct"></p>
+<blockquote>
+<p>如图所示，MPLS 网络包含一些基本的元素。在网络边缘的节点就称做标记边缘路由器 (LER)，而网络的核心节点就称做为标记交换路由器 (LSR)。LER 节点在 MPLS 网络中完成的是 IP 包的进入和退出过程；LSR 节点在网络中提供高速交换功能。在 MPLS 节点之间的路径就叫做标记交换路径。一条 LSP 可以看做是一条贯穿网络的单向隧道。</p>
+</blockquote>
+<h3 id="mlps相关术语"><a class="markdownIt-Anchor" href="#mlps相关术语">#</a> MLPS 相关术语</h3>
+<ul>
+<li><strong>LDP</strong> （ <code>Label Distribution Protocol</code> ），标记分配协议</li>
+<li><strong>LSP</strong> （ <code>Label Switched Path</code> ），标记交换路径</li>
+<li><strong>FEC</strong> （ <code>Forwarding Equivalence Class</code> ），转发等价类</li>
+<li><strong>LSR</strong> （ <code>Label Switching Router</code> ），标记交换路由器</li>
+<li><strong>LER</strong> （ <code>Label Edge Router</code> ），标记边缘路由器</li>
+<li><strong>CR-LDP</strong> （ <code>Constraint Route Label Distribution Protocol</code> ），限制路由的标记分配协议</li>
+</ul>
+<h2 id="03-dqdb-网分布式队列双总线协议"><a class="markdownIt-Anchor" href="#03-dqdb-网分布式队列双总线协议">#</a> 03 DQDB 网分布式队列双总线协议</h2>
+<ul>
+<li>
+<p>IEEE802.6 城域网采用了分布式队列双总线（ <code>Distributed Queue Dual Bus, DQDB</code> ）协议。这种双总线一般采用光纤介质，如图所示，在这种配置中，每个站同时连接到两根总线上。一个站要发送数据时必须选择一根总线，使接收站成为它的下游站。</p>
+<p><img data-src="https://s3.ax1x.com/2021/03/18/6gHXUf.png" alt="dbqb"></p>
+</li>
+</ul>
+<blockquote>
+<p>图中的黑圆点表示 A 总线和 B 总线的端头，它们不停地产生固定长度为 53 字节的时槽。当时槽沿沿着总线流动到达末端时由终端匹配器（黑方块）吸收。结点可以从忙时槽中读数据，也可以向空时槽中写数据。总线的运行由周期为 125μs 的时钟控制，一个时钟周期内端头可以产生多个时槽，时槽数量决定了总线的实际速率。</p>
+</blockquote>
+<ul>
+<li>
+<p>时槽分为两类，一类叫作排队仲裁（Queue-Arbitrated）时槽，用 QA 表示，用于分组交换业务；另一类叫作预仲裁（Pre-Arbitrated）时槽，用 PA 表示，由电路交换业务使用，可提供等时服务。时槽由 1 个控制字节和 52 字节长的段组成，段头 4 字节，信息实际占 48 字节。</p>
+</li>
+<li>
+<p>DQDB 是一个很有效的协议，可与 802.3 和 802.5 媲美。在重负载下，CD 的值很小，甚至为 0，空时槽是很富裕的。这样就像 CSMA/CD 协议一样，可以很快的访问信道，几乎没有延迟。在重负载下，实际上每个时槽都被等待发送的站利用，信道利用率达到 100％，性能 一点不比令牌环网差。轻负载下的快速访问和重负载下可预见的排队系统的奇妙结合使得 DQDB 成为最适合 MAN 的协议。</p>
+</li>
+</ul>
+<h2 id="03-lanelan-emulated"><a class="markdownIt-Anchor" href="#03-lanelan-emulated">#</a> 03 LANE：LAN Emulated</h2>
+<ul>
+<li>ATM 论坛开发了 ATM LAN 仿真标准（LAN Emulated, LANE），用以解决不同局域网上的端系统相互作用问题，使得现有的共享介质网络上的主机也可以通过 ATM 网络进行通信。ATM-LAN 转换器对 ATM 信源流和 MAC 帧进行转换。ATM 论坛提议使用 AAL5 对 MAC 帧进行分段和重装配。<br>
+<br></li>
+</ul>
+<p><strong>在概念上 LANE 结构包括客户机和服务器两种成分</strong> ：</p>
+<ul>
+<li>LAN 仿真客户机（LEC）: 是指传统的网络设备，它按照原有的 MAC 协议进行操作，并具有唯一的 ATM 地址。例如 LAN 交换机就可以被看成 LEC，它有一个 ATM 地址，同时又通过各个端口访问对应的 MAC 网卡。</li>
+<li>LAN 仿真服务器（LES）: 具有唯一的 ATM 地址，它提供控制功能，处理 LEC 的连接请求，并为它管理的一组 LEC 建立 MAC 地址与 ATM 地址的映像表。</li>
+<li>LAN 仿真配置服务器（LECS）: 其作用是根据配置数据库的信息和 LEC 的请求把 LEC 分配个特定的 LES，每个管理域中只有一个 LECS。</li>
+<li>广播和未知服务器（BUS）：第一个作用是实现广播和组播的传输，所有目标地址为广播地址（全 1）的数据帧都被发送给 BUS 传送。它的另外一个作用是利用广播功能实现未知地址的解析，即建立 ATM 地址与 MAC 地址的映像。</li>
+</ul>
+<h1 id="几个重要的认证方式"><a class="markdownIt-Anchor" href="#几个重要的认证方式">#</a> 几个重要的认证方式</h1>
+<h2 id="01-ssl认证过程"><a class="markdownIt-Anchor" href="#01-ssl认证过程">#</a> 01 SSL 认证过程</h2>
+<p><img data-src="https://s3.ax1x.com/2021/03/18/6gbibq.png" alt="sslrz"></p>
+<ul>
+<li><strong>安全套接字协议</strong> SSL（ <code>Secure Socket Layer</code> ）<mark>工作在应用层和传输层之间</mark>，<mark>提供身份认证和保密通信功能</mark>。
+<ul>
+<li>SSL 所包含的协议有 SSL 握手协议、SSL 修改密文协议、SSL 警告协议和 SSL 记录协议。
+<ul>
+<li>SSL 握手协议负责身份认证和密钥生成。</li>
+<li>SSL 记录协议负责接收应用层报文，并将数据划分成可管理的块（214 个字节），选择性地压缩数据，应用报文认证码（MAC）对数据进行加密，并增加首部，通过 TCP 报文段传输数据；接收者将数据进行解密、验证、解压，重装配成应用报文，然后交付更高级的用户。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<br>
+<ul>
+<li>在客户端与服务器间传输的数据是通过使用对称算法（如 DES 或 RC4）进行加密的。公用密钥算法（通常为 RSA）是用来获得加密密钥交换和数字签名的，此算法使用服务器的 SSL 数字证书中的公用密钥。有了服务器的 SSL 数字证书，客户端也可以验证服务器的身份。SSL 协议的版本 1 和 2 只提供服务器认证。版本 3 添加了客户端认证，此认证同时需要客户端和服务器的数字证书。</li>
+</ul>
+<br>
+<ul>
+<li>SSL 安全连接 <mark>建立在 TCP443 端口</mark> ，统一资源定位器使用  <code>HTTPS://开头</code> 。</li>
+</ul>
+<h2 id="02-kerberos-认证"><a class="markdownIt-Anchor" href="#02-kerberos-认证">#</a> 02 Kerberos 认证</h2>
+<p><img data-src="https://s3.ax1x.com/2021/03/18/6gbkV0.png" alt="kdc"></p>
+<p><strong>整个流程大体上包含以下 3 个子过程</strong> ：</p>
+<ol>
+<li>Client 向 KDC 申请 TGT（ <code>Ticket Granting Ticket</code> ）。</li>
+<li>Client 通过获得 TGT 向 KDC 申请用于访问 Server 的 Ticket。</li>
+<li>Client 最终向为了 Server 对自己的认证向其提交 Ticket。</li>
+</ol>
+<h2 id="03-wlan接入认证方式"><a class="markdownIt-Anchor" href="#03-wlan接入认证方式">#</a> 03 WLAN 接入认证方式</h2>
+<ul>
+<li>WLAN 开放的传输介质使得只要符合协议要求的无线系统均可能在信号覆盖范围内收到所有信息，为达到和有线网络同等的安全性能，IEEE802.11 采取了认证和加密措施。</li>
+<li>认证程序控制 WLAN 接入的能力，这一过程被所有无线终端用来建立自己的合法接入到 AP 的身份标志，如果 AP 和工作站之间无法完成相互间的认证，那么它们之间就不能建立有效的连接。<mark>IEEE802.11 协议支持多个不同的认证过程，并且允许认证方案扩充</mark>。</li>
+<li><mark>IEEE802.11 提供的加密方式采用 WEP 机制</mark> ，WEP 对数据的加密和解密使用同样的算法和密钥。它包括 “共享密钥” 认证和数据加密两个过程。“共享密钥” 认证使得那些没有正确 WEP 密钥的用户无法访问网络，而加密则要求网络中所有数据的发送和接收都必须使用密钥加密。</li>
+<li>认证采用了一个标准的询问和响应帧格式。执行过程中，AP 根据 RC4 算法运用共享密钥对 128 字节的随机序列进行加密后作为询问帧发给用户，用户将收到的询问帧进行解密后以正文形式响应 AP,AP 将正文与原始序列进行比较，如果两者一致，则通过认证。</li>
+</ul>
+<h1 id="路由协议总结"><a class="markdownIt-Anchor" href="#路由协议总结">#</a> 路由协议总结</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">协议名称</th>
+<th style="text-align:center">协议概述</th>
+<th style="text-align:center">报文类型</th>
+<th style="text-align:center">传输协议</th>
+<th style="text-align:center">维护与更新</th>
+<th style="text-align:center">路由配置要点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>BGP-4</strong></td>
+<td style="text-align:center">BGP 是一种不同自治系统的路由器之间进行通信的<mark>外部网关协议</mark>。BGP 的<mark>主要功能是控制路由策略</mark>，BGP 系统与其他 BGP 系统之间交换网络可到达信息。这些信息包括数据到达这些网络所必须经过的自治系统 AS 中的所有路径。这些信息足以构造一幅自治系统连接图。然后，可以根据连接图删除选路环，制订选路策略。<mark>BGP 是一个距离向量协议。支持无类别的域间路由（CIDR）</mark></td>
+<td style="text-align:center">1. 建立（open）：建立邻居关系 <br>2. 保持活动状态（ keepalive ）： 对 open 报文的应答 / 周期的确认邻居关系<br>3. 更新：发送新的路由信息<br>4. 通告：报告检测到的错误</td>
+<td style="text-align:center">BGP 邻居之间通过 TCP 连接交换路由信息， <strong>使用端口号为 179</strong></td>
+<td style="text-align:center" colspan="2">BGP 通过定期发送 <code>keepalive</code>  报文给其邻站来检测 TCP 连接对端的链路或主机失败。初始连接建立时要发送全部路由信息，以后只发送改变了的路由信息。BGP 路由器不需要进行周期性路由更新。</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>RIP</strong></td>
+<td style="text-align:center" colspan="2">RIP 协议的全称是 <mark>路由信息协议</mark>，它是<mark>一种内部网关协议（IGP）</mark>，用于一个自治系统（AS）内的路由信息的传递。<mark>RIP 协议是基于距离矢量算法（Bellman-ford）的</mark>，它使用 “跳数”，衡量到达目标地址的路由距离。RIP 使用非常广泛，简单可靠便于配置。<mark>RIPv2 支持 CIDR、VLSM 和不连续子网</mark>，使用组播地址（224.0.0.9）而不是广播传播路由更新报文，并且采用了触发更新机制来加速路由收敛。<mark>RIPv2 支持认证</mark>，使用经过散的口令字来限制更新信息的传播。<mark>RIP 只适用小型同构网络，允许的最大跳数为 15，任何超过 15 个站点的目的地均被标记为不可达</mark>。</td>
+<td style="text-align:center">RIP 使用 UDP 作为其传输层协议， <strong>端口为 520</strong></td>
+<td style="text-align:center"><mark>RIP 的更新是经过定时广播实现的</mark> ，在默认情况下，<mark>路由器每隔 30 秒向相联的网络广播自己的路由表</mark>，收到广播的路由器将收到的信息添加到自身的路由表，每个路由器都如此广播，最终网络上的路由器将得知全网的路由信息。<br>正常情况下，<mark>路由器每 50 秒就可以得到一条路由的信息确认</mark>，<mark>经过 180 秒 6 个更新周期一个路由项没有被确认，路由器就认为该路由器失效，若经过 240 秒路由项没有得到确认，就将该由器从路由表中删除</mark>。</td>
+<td style="text-align:center"><code>router rip network network</code>  (相连网络，即相连的网段号) <br>  <code>version 1/2</code> <br>  <code>show ip route rip</code>  <br>  <code>no logging console</code>  (防止大量端口状态变化和报警信息对配置过程的影响)</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>IGRP</strong></td>
+<td style="text-align:center" colspan="2"><mark>内部网关路由协议（IGRP）</mark> 是 Cisco 公司 20 世纪 80 年代开发的，是<mark>一种动态的、长跨度（最大可支持 255 跳）的路由协议</mark>，使用度量（向量）来确定到达一个网络的最佳路由，由延时、带宽、可靠性和负载等来计算最优路由，它在同个自治系统内具有高跨度，适合复杂的网络，<mark>但本质上讲，IGRP 还是一种距离矢量路由协议。</mark> Cisco IOS 允许路由器管理员对 IGRP 的网络带宽、延时、可靠性和负载进行权重设置，以影响度量的计算。<mark>IGRP 不支持 VLSM 和不连续子网</mark>。</td>
+<td style="text-align:center">IGRP 使用 UDP 发送路由表项</td>
+<td style="text-align:center">默认情况下，<mark>IGRP 路由器每隔 90s 更新一次路由信息，如果 270s 内没有收到某路由器的回应，则认为该路由器不可到达；如果 630s 内仍未收到应答，则 IGRP 进程将从路由表中删除该路由</mark>。</td>
+<td style="text-align:center"><code>router igrp AS number</code>  (创建 IGRP 路由进程)<br>  <code>network network</code>  (相连网络)<br>  <code>clockrate</code>  (DCE 端串口配置时钟信号，用于同步) <br>  <code>bandwidth</code>   (指定相应端口带宽) <br>  <code>bandwidth</code>  (指定相应端口带宽) <br> <code>show ip route igrp</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>OSPF</strong></td>
+<td style="text-align:center"><mark>开放式最短路径优先（OSPF）是一种链路状态选择协议</mark> ，是由 IETF 开发的内部网关路由协议，<mark>基于 Dijkstra 算法</mark> 。OSPF 的链路状态信息通过链路状态公告（LSA）发布到网上的每台路由器，每台路由器通过 LSA 建立一个关于网络的拓扑数据库。在一个区域（Area）中的路由器（区域边界路由器除外），都应具有相同的链路状态数据库。<mark>OSPF 是一种层次化的路由选择协议</mark> ，区域 0（也称主干区域）是 OSPF 网络中必须具有的区域，其他所有区域要求与区域 0 互连到一起。 <mark>OSPF 采用触发更新，支持 VLSM 及 CIDR，对跳数没有限制</mark></td>
+<td style="text-align:center">1.Hello 数据包：用于建立和维护邻居关系，在广播网络中 Hello 分组还用于动态发现邻居路由器。<br>2. 链路状态更新数据包：向邻居路由器发送链路状态公告（LSA）<br>3. 链路状态应答数据包：对链路状态更新数据包的应答<br>4. 数据库描述数据包：描述一个路由器 OSPF 链路状态数据库的内容<br>5. 链路状态请求数据包：请求相邻路由器发送其链路数据库中的具体条目</td>
+<td style="text-align:center">OSPF 路由信息利用 IP 数据报直接传送，IP 数据报的报头中 “协议” 字段的值为 89 （即 <strong>协议号为 89</strong> ）</td>
+<td style="text-align:center">OSPF 路由器以 <mark>固定的时间间隔</mark> ，通常为 10 秒，发送 Hello 数据包建立和维护邻居路由器间的关系。如果 40 秒没有从特定邻居收到 Hello 分组，路由器就认为那个邻居不存在了，并且产生声明该邻居丢失的 LSA。Hello 定时器的值可以改变，但是在一个网段中所有路由器的定时器必须保持一致，在稳定状态下，大的链路状态更新分组 30 分钟才传送一次。每一个区域都具有该区域专用的链路状态数据库。一个区域的网络拓扑结构在区域外是不可见的。同样，每一个区域内路由器对区域外的网络结构也不了解，也就是说，区域内的 LSA 广播被区域边界挡住了，这样就减少了网络中的广播数据包，也减少了链路状态数据库的大小。随着区域概念的引入，AS 内的所有路由器不再具有相同的链路状态数据库，而是只具有所在区域的链路状态数据库。区域边界路由器则具有与其相连的所有区域的链路状态数据库。</td>
+<td style="text-align:center"><code>router ospf process-id</code>  (指定使用 OSPF 协议，进程号只在路由器内部起作用，不同路由器的进程号可以不同) <br> <code>network address wildcard-mask</code>  <br>  <code>area area-id</code>  (指定与该路由器相连的网络，区域号为十进制数，0 为主干区域) <br>  <code>show ip route </code> <br> <code>show ip route ospf</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>EIGRP</strong></td>
+<td style="text-align:center">EIGRP 是 <mark>增强型的 IGRP 协议</mark> ，是典型的平衡混合路由选择协议，融合了距离矢量和链路状态两种路由选择协议的优点， <mark>使用弥散修正算法（DUAL）快速收敛</mark> ，采用不定期更新（触发更新）以减少带宽消耗。<mark>EIGRP 支持 VLSM 及不连续子网。EIGRP 最大的跳数限制为 224</mark> 。支持对自动路由汇总功能的设定，支持多种网络层协议，支持 IP、IPX、AppleTalk、Novell 等。</td>
+<td style="text-align:center">1.hello 包：用于邻居发现与恢复，组播方式发送（224.0.0.10）<br>2. 更新包：当路由器发现新邻居时使用更新包（单播）<br>3. 确认包：对更新包的确认 <br>4. 查询包：当 EIGRP 路由器想从特定邻居或所有邻居那里获得特定的信息，EIGRP 路由器使用查询包（单播或多播）<br>5. 响应包：对查询包的响应</td>
+<td style="text-align:center">EIGRP 使用 RTP（可靠的传输层协议）传输数据包， <mark>不依赖 TCP/IP 协议。RTP 支持多播、组播和单播</mark></td>
+<td style="text-align:center">EIGRP 通过使用 hello 数据包与邻居路由器建立联系，缺省情况下，hello 数据包每间隔 5 秒发送一次。</td>
+<td style="text-align:center"><code>router eigrp AS number</code>  (创 建 EIGRP 路由进程)<br>  <code>network address wildcard-mask</code>  (EIGRP 的网段声明中，如果是没有划分子网的 A、B、C 类主网地址，只需输入此网络地址；如果网络划分了子网，则必须在网络地址后面写入反掩码) <br>  <code>no auto-summary</code>  (关闭 EIGRP 协议的路由汇总功能，默认配置是自动汇总生效。在处理 VLSM 时，通常需要关闭该功能)</td>
+</tr>
+</tbody>
+</table>
+
+      <div class="tags">
+          <a href="/my-blog/tags/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" rel="tag"><i class="ic i-tag"></i> 软考网络工程师</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/my-blog/images/wechatpay.png" alt="Peter Pan 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/my-blog/images/alipay.png" alt="Peter Pan 支付宝">
+        <p>支付宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Peter Pan <i class="ic i-at"><em>@</em></i>理 想 净 土
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://peter-pan001.github.io/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%90%84%E9%87%8D%E7%82%B9%E5%8D%8F%E8%AE%AE%E5%8F%8A%E5%B8%A7%E6%A0%BC%E5%BC%8F%E8%AF%A6%E8%A7%A3/" title="各重点协议及帧格式详解">https://peter-pan001.github.io/my-blog/软考网络工程师/各重点协议及帧格式详解/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;s3.ax1x.com&#x2F;2021&#x2F;02&#x2F;17&#x2F;y253bn.jpg" title="操作系统基础">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 软考网络工程师</span>
+  <h3>操作系统基础</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/my-blog/Java/Java%E5%9F%BA%E7%A1%80%E6%B7%B7%E5%90%88/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;s4.ax1x.com&#x2F;2022&#x2F;01&#x2F;09&#x2F;7Fya5t.jpg" title="Java基础混合">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> Java</span>
+  <h3>Java基础混合</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#常见重点协议及帧格式"><span class="toc-number">1.</span> <span class="toc-text"> 常见重点协议及帧格式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#01-hdlc协议"><span class="toc-number">1.1.</span> <span class="toc-text"> 01 HDLC 协议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#hdlc定义"><span class="toc-number">1.1.1.</span> <span class="toc-text"> HDLC 定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主要功能"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 主要功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#限制条件"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 限制条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#帧格式"><span class="toc-number">1.1.4.</span> <span class="toc-text"> 帧格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#定义"><span class="toc-number">1.1.5.</span> <span class="toc-text"> 定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#服务的层级"><span class="toc-number">1.1.6.</span> <span class="toc-text"> 服务的层级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#x25三层结构"><span class="toc-number">1.1.7.</span> <span class="toc-text"> x.25 三层结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#补充"><span class="toc-number">1.1.8.</span> <span class="toc-text"> 补充</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#03-帧中继的帧格式"><span class="toc-number">1.2.</span> <span class="toc-text"> 03 帧中继的帧格式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#定义-2"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#帧中继格式"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 帧中继格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#帧中继的拥塞控制"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 帧中继的拥塞控制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#04-atm问题"><span class="toc-number">1.3.</span> <span class="toc-text"> 04 ATM 问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#定义-3"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#atm分层结构"><span class="toc-number">1.3.2.</span> <span class="toc-text"> ATM 分层结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#atm信元头结构"><span class="toc-number">1.3.3.</span> <span class="toc-text"> ATM 信元头结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#05-ppp帧格式"><span class="toc-number">1.4.</span> <span class="toc-text"> 05 PPP 帧格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#06-局域网帧格式"><span class="toc-number">1.5.</span> <span class="toc-text"> 06 局域网帧格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#07-ipv4协议"><span class="toc-number">1.6.</span> <span class="toc-text"> 07 IPv4 协议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ipv4数据报格式"><span class="toc-number">1.6.1.</span> <span class="toc-text"> IPv4 数据报格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ip协议簇"><span class="toc-number">1.6.2.</span> <span class="toc-text"> IP 协议簇</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#08-icmp协议"><span class="toc-number">1.7.</span> <span class="toc-text"> 08 ICMP 协议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#icmp定义"><span class="toc-number">1.7.1.</span> <span class="toc-text"> ICMP 定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#icmp报文格式"><span class="toc-number">1.7.2.</span> <span class="toc-text"> ICMP 报文格式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#09-tcp格式"><span class="toc-number">1.8.</span> <span class="toc-text"> 09 TCP 格式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#tcp报文格式"><span class="toc-number">1.8.1.</span> <span class="toc-text"> TCP 报文格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tcp三次握手过程"><span class="toc-number">1.8.2.</span> <span class="toc-text"> TCP 三次握手过程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-udp格式"><span class="toc-number">1.9.</span> <span class="toc-text"> 10 UDP 格式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#udp报文格式"><span class="toc-number">1.9.1.</span> <span class="toc-text"> UDP 报文格式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-ipv6报文格式"><span class="toc-number">1.10.</span> <span class="toc-text"> 11 IPv6 报文格式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ipv6数据报格式"><span class="toc-number">1.10.1.</span> <span class="toc-text"> IPv6 数据报格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#从-ipv4-向-ipv6-过渡的策略"><span class="toc-number">1.10.2.</span> <span class="toc-text"> 从 IPv4 向 IPv6 过渡的策略</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#网络新技术总结"><span class="toc-number">2.</span> <span class="toc-text"> 网络新技术总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#01-ip交换技术"><span class="toc-number">2.1.</span> <span class="toc-text"> 01 IP 交换技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#02-mplsmulti-protocol-label-switching"><span class="toc-number">2.2.</span> <span class="toc-text"> 02 MPLS：Multi-Protocol Label Switching</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#mpls定义"><span class="toc-number">2.2.1.</span> <span class="toc-text"> MPLS 定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mlps相关术语"><span class="toc-number">2.2.2.</span> <span class="toc-text"> MLPS 相关术语</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#03-dqdb-网分布式队列双总线协议"><span class="toc-number">2.3.</span> <span class="toc-text"> 03 DQDB 网分布式队列双总线协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#03-lanelan-emulated"><span class="toc-number">2.4.</span> <span class="toc-text"> 03 LANE：LAN Emulated</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#几个重要的认证方式"><span class="toc-number">3.</span> <span class="toc-text"> 几个重要的认证方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#01-ssl认证过程"><span class="toc-number">3.1.</span> <span class="toc-text"> 01 SSL 认证过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#02-kerberos-认证"><span class="toc-number">3.2.</span> <span class="toc-text"> 02 Kerberos 认证</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#03-wlan接入认证方式"><span class="toc-number">3.3.</span> <span class="toc-text"> 03 WLAN 接入认证方式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#路由协议总结"><span class="toc-number">4.</span> <span class="toc-text"> 路由协议总结</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E6%A6%82%E8%AE%BA/" rel="bookmark" title="计算机基础概论">计算机基础概论</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8001/" rel="bookmark" title="数据通信基础01">数据通信基础01</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8002/" rel="bookmark" title="数据通信基础02">数据通信基础02</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B9%BF%E5%9F%9F%E9%80%9A%E4%BF%A1%E7%BD%91/" rel="bookmark" title="广域通信网">广域通信网</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%9F%8E%E5%9F%9F%E7%BD%9101/" rel="bookmark" title="局域网与城域网01">局域网与城域网01</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%9F%8E%E5%9F%9F%E7%BD%9102/" rel="bookmark" title="局域网与城域网02">局域网与城域网02</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%97%A0%E7%BA%BF%E9%80%9A%E4%BF%A1%E7%BD%91/" rel="bookmark" title="无线通信网">无线通信网</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9101/" rel="bookmark" title="网络互联与互联网01">网络互联与互联网01</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/IP%E5%AD%90%E7%BD%91%E5%88%92%E5%88%86%E4%B8%93%E9%A2%98/" rel="bookmark" title="IP子网划分专题">IP子网划分专题</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9102/" rel="bookmark" title="网络互联与互联网02">网络互联与互联网02</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9103/" rel="bookmark" title="网络互联与互联网03">网络互联与互联网03</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9104/" rel="bookmark" title="网络互联与互联网04">网络互联与互联网04</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E4%B8%8B%E4%B8%80%E4%BB%A3%E4%BA%92%E8%81%94%E7%BD%91/" rel="bookmark" title="下一代互联网">下一代互联网</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%8E%E5%BA%94%E7%94%A801/" rel="bookmark" title="网络安全与应用01">网络安全与应用01</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%8E%E5%BA%94%E7%94%A802/" rel="bookmark" title="网络安全与应用02">网络安全与应用02</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A801/" rel="bookmark" title="网络应用服务器01">网络应用服务器01</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A802/" rel="bookmark" title="网络应用服务器02">网络应用服务器02</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F/" rel="bookmark" title="常用公式">常用公式</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8F%E8%AE%AE%E5%90%8D%E7%A7%B0%E4%B8%8E%E7%AE%80%E4%BB%8B/" rel="bookmark" title="协议名称与简介">协议名称与简介</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E5%92%8C%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80/" rel="bookmark" title="系统开发和项目管理基础">系统开发和项目管理基础</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/" rel="bookmark" title="计算机硬件基础(部分组成原理)">计算机硬件基础(部分组成原理)</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/" rel="bookmark" title="操作系统基础">操作系统基础</a></li><li class="active"><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%90%84%E9%87%8D%E7%82%B9%E5%8D%8F%E8%AE%AE%E5%8F%8A%E5%B8%A7%E6%A0%BC%E5%BC%8F%E8%AF%A6%E8%A7%A3/" rel="bookmark" title="各重点协议及帧格式详解">各重点协议及帧格式详解</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E8%A7%84%E5%88%92%E4%B8%8E%E8%AE%BE%E8%AE%A1/" rel="bookmark" title="网络规划与设计">网络规划与设计</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/Linux%E9%85%8D%E7%BD%AE/" rel="bookmark" title="Linux配置">Linux配置</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%881%EF%BC%89/" rel="bookmark" title="华为路由交换实验命令（1）">华为路由交换实验命令（1）</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%882%EF%BC%89/" rel="bookmark" title="华为路由交换实验命令（2）">华为路由交换实验命令（2）</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%883%EF%BC%89/" rel="bookmark" title="华为路由实验命令（3）">华为路由实验命令（3）</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%884%EF%BC%89/" rel="bookmark" title="华为交换实验命令（4）">华为交换实验命令（4）</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Peter Pan"
+      data-src="/my-blog/images/avatar.jpg">
+  <p class="name" itemprop="name">Peter Pan</p>
+  <div class="description" itemprop="description">不必匆忙，不必火花四溅，不必成为别人，只需成为自己</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/my-blog/archives/">
+        <span class="count">69</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/my-blog/categories/">
+        <span class="count">10</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/my-blog/tags/">
+        <span class="count">14</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL1BldGVyLVBhbjAwMS9CYXNpYw==" title="https:&#x2F;&#x2F;github.com&#x2F;Peter-Pan001&#x2F;Basic"><i class="ic i-github"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS9ndWFuZy1tYW5nLWxpZ2h0bmluZw==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;guang-mang-lightning"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTE5MjY4NTE4NDA=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;1926851840"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS9QZXRlclBhbjA4MjQ=" title="https:&#x2F;&#x2F;about.me&#x2F;PeterPan0824"><i class="ic i-address-card"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/my-blog/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/my-blog/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+    <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/my-blog/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/my-blog/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/my-blog/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/my-blog/friends/" rel="section"><i class="ic i-heart"></i>friends</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/my-blog/links/" rel="section"><i class="ic i-magic"></i>links</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/my-blog/Java/Java%E5%9F%BA%E7%A1%80%E6%B7%B7%E5%90%88/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/MySQL/" title="分类于 MySQL">MySQL</a>
+</div>
+
+    <span><a href="/my-blog/MySQL/MySQL%E8%BF%9B%E9%98%B6/" title="MySQL进阶">MySQL进阶</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+</div>
+
+    <span><a href="/my-blog/%E5%89%8D%E7%AB%AF/%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E5%89%8D%E7%AB%AF/" title="如何学习前端">如何学习前端</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+</div>
+
+    <span><a href="/my-blog/%E5%89%8D%E7%AB%AF/%E6%8E%A5%E7%BB%AD%E5%89%8D%E7%AB%AFH5+CSS3/" title="接续前端H5+CSS3">接续前端H5+CSS3</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B9%BF%E5%9F%9F%E9%80%9A%E4%BF%A1%E7%BD%91/" title="广域通信网">广域通信网</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/IP%E5%AD%90%E7%BD%91%E5%88%92%E5%88%86%E4%B8%93%E9%A2%98/" title="IP子网划分专题">IP子网划分专题</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
+</div>
+
+    <span><a href="/my-blog/Linux/%E6%9B%B4%E6%8D%A2%E6%B8%85%E5%8D%8E%E6%BA%90/" title="更换清华源">更换清华源</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9102/" title="网络互联与互联网02">网络互联与互联网02</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%882%EF%BC%89/" title="华为路由交换实验命令（2）">华为路由交换实验命令（2）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8002/" title="数据通信基础02">数据通信基础02</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%97%A0%E7%BA%BF%E9%80%9A%E4%BF%A1%E7%BD%91/" title="无线通信网">无线通信网</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Peter Pan @ Peter Pan</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '软考网络工程师/各重点协议及帧格式详解/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,copy_tex: true,
+    katex: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',quiz: {
+      choice: "单选题",
+      multiple: "多选题",
+      true_false: "判断题",
+      essay: "问答题",
+      gap_fill: "填空题",
+      mistake: "错题备注"
+    },
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/my-blog/js/app.js?v=0.2.4"></script>
+
+
+
+
+</body>
+</html>

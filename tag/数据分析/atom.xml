@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://peter-pan001.github.io/my-blog</id>
+    <title>理 想 净 土 • Posts by &#34;数据分析&#34; tag</title>
+    <link href="https://peter-pan001.github.io/my-blog" />
+    <updated>2022-06-03T13:59:07.000Z</updated>
+    <category term="Java" />
+    <category term="MySQL" />
+    <category term="Linux" />
+    <category term="linux" />
+    <category term="云计算" />
+    <category term="network" />
+    <category term="git、github" />
+    <category term="JavaScript" />
+    <category term="css" />
+    <category term="前端" />
+    <category term="数据分析" />
+    <category term="html" />
+    <category term="算法与数据结构" />
+    <category term="软考网络工程师" />
+    <entry>
+        <id>https://peter-pan001.github.io/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/CDC%E6%8A%80%E6%9C%AF/</id>
+        <title>CDC技术</title>
+        <link rel="alternate" href="https://peter-pan001.github.io/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/CDC%E6%8A%80%E6%9C%AF/"/>
+        <content type="html">&lt;ul&gt;
+&lt;li&gt;CDC (全称 change data capture)- 变化数据捕获，是识别源系统中数据何时发生更改的过程，以便下游流程或系统可以对该更改执行操作。一个常见的用例是 &lt;mark&gt;反映不同目标系统中的更改，以便系统中的数据保持同步。&lt;/mark&gt;&lt;/li&gt;
+&lt;li&gt;对于数据库而言，CDC 更像是一种软件的设计模式，用来确定与跟踪以及更改了的数据&lt;/li&gt;
+&lt;li&gt;CDC 作为一种数据集成方法，常发生在数据仓库环境中，因为捕获和保留数据状态是数据仓库的核心功能之一。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s1.ax1x.com/2022/06/03/XaS7zF.png&#34; alt=&#34;CDC/01.png&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;以银行常见的数据库事件为例：存款与取款的操作通过对变更数据进行捕获与实时数据传输保证数据的时效性&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s1.ax1x.com/2022/06/03/XaSvIx.png&#34; alt=&#34;sd&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;etl中的cdc&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#etl中的cdc&#34;&gt;#&lt;/a&gt; ETL 中的 CDC&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;先讲一下 ETL 的概念，所谓 ETL，实际上就是对数据进行提取 Extract、转换 Translate、加载 Load，是一个数据集成过程。数据从各个源中提取并传递到数据仓库中，数据的抽取可通过数据库的批处理查询或 CDC 来获得数据。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;cdc实现方法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#cdc实现方法&#34;&gt;#&lt;/a&gt; CDC 实现方法&lt;/h2&gt;
+&lt;h3 id=&#34;audit-columns-审核列&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#audit-columns-审核列&#34;&gt;#&lt;/a&gt; Audit Columns 审核列&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;常见的方式是在当前的数据库表中添加如： &lt;code&gt;Last_Update&lt;/code&gt;  或  &lt;code&gt;Date_Modified&lt;/code&gt;  列来检索从上次提取数据以来所变更的行情况。&lt;/li&gt;
+&lt;li&gt;主要逻辑：
+&lt;ol&gt;
+&lt;li&gt;获取 target 表的 &lt;code&gt;Created_Time&lt;/code&gt;  和  &lt;code&gt;Updated_Time&lt;/code&gt;  最大值&lt;/li&gt;
+&lt;li&gt;从 source 表中选择 &lt;code&gt;Created_Time&lt;/code&gt;  大于 target 表中最大的 &lt;code&gt;Created_Time&lt;/code&gt;  所在行，此行为上次执行 CDC 后新建的行&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s1.ax1x.com/2022/06/03/XapmJf.png&#34; alt=&#34;sc&#34;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;从 source 表中选择  &lt;code&gt;Created_Time&lt;/code&gt;  大于 target 表中  &lt;code&gt;Updated_Time&lt;/code&gt;  最大值但小于 target 表  &lt;code&gt;Created_Time&lt;/code&gt;  最大值&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s1.ax1x.com/2022/06/03/XapMQg.png&#34; alt=&#34;sw&#34;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;插入 2 中的新行后修改 target 表中 3 的现有行&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;优势：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;借由本机应用逻辑构建 ，无需借助第三方工具&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;缺点：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;增加数据库开销、易出错并出现数据一致性问题、无脚本进行删除跟踪会导致删除语句不会传递到 target 上&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;table-deltas-表-增量&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#table-deltas-表-增量&#34;&gt;#&lt;/a&gt; Table Deltas 表 增量&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;通过数据库快照对比数据库表修改前后的差异，有的也称时间戳查询&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s1.ax1x.com/2022/06/03/Xap8wn.png&#34; alt=&#34;ie&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;优势：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;提供已更改数据的准确视图。仅使用本机 SQL Script&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;缺点：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;对存储需求增加，需要使用数据源的三个副本： 源数据，修改前快照，修改后快照&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;扩展性较差&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;trigger-based-cdc-基于触发器的cdc&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#trigger-based-cdc-基于触发器的cdc&#34;&gt;#&lt;/a&gt; Trigger-based CDC 基于触发器的 CDC&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;通过定义数据库触发器并在影子表中创建自己的变更日志（change log），触发器在增删改查命令执行前或后进行触发，用于创建更改日志。（SQL Level 执行）&lt;/li&gt;
+&lt;li&gt;该方法会导致各个表都需要 Trigger，在进行数据修改时，运行 Trigger 会造成额外性能开销与维护上的管理负担。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;优势：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;shadow table 可提供所有事务的不可变详细日志 ，某些数据库在 SQL API 可提供支持&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;缺点：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;每次进行数据操作会要求数据库进行多次写入，间接降低数据库性能&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;log-based-change-data-capture-基于日志的cdc&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#log-based-change-data-capture-基于日志的cdc&#34;&gt;#&lt;/a&gt; Log-Based Change Data Capture 基于日志的 CDC&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;数据库包含事务日志（也称为重做日志 transaction log），这些日志存储所有数据库事件，允许在发生崩溃时恢复数据库。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://s1.ax1x.com/2022/06/03/XapaSU.png&#34; alt=&#34;ix&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;数据捕获是无需进行应用级更改，无需扫描操作表，会显著降低系统性能&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;优势：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;对 production 数据库系统的影响最新，各事务无需额外查询 ； 可在多个系统保持 ACID 的可靠性 ；无需修改 production 数据库系统模式&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;弊端：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;日志记录格式随数据库版本更新而需要修改数据库日志逻辑 ；需要系统管理源数据库更改事件元数据&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;data-integration-platforms-for-change-data-capture-数据集成平台的cdc&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#data-integration-platforms-for-change-data-capture-数据集成平台的cdc&#34;&gt;#&lt;/a&gt; Data Integration Platforms for Change Data Capture 数据集成平台的 CDC&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;数据集成平台可自动挖掘数据库 &lt;code&gt;change log&lt;/code&gt;  处理并管理其他元数据&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;cdc应用实例&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#cdc应用实例&#34;&gt;#&lt;/a&gt; CDC 应用实例&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;将数据流式传输到数据仓库&lt;/strong&gt;  – 当今数据管道的核心功能之一是将数据从源数据库移动到数据仓库。这是因为大多数操作数据库并非旨在支持密集的分析处理，而数据仓库非常适合这些类型的操作。在这里，CDC 是数据管道体系结构中的关键步骤，可促进从源数据仓库到目标数据仓库的数据迁移。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;将本地数据迁移到云&lt;/strong&gt;  – 当组织希望执行资源密集型操作（如人工智能、机器学习或深度学习）时，他们通常会寻求基于云的数据仓库来促进高度资源密集型的数据处理过程。这样做的原因是，与本地部署相比，在云中运行这些操作的运营成本要低得多，这使得云的即用即付模型成为一个不错的选择。在这里，CDC 可以在促进从本地到云的数据迁移方面发挥重要作用。&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="数据分析" />
+        <updated>2022-06-03T13:59:07.000Z</updated>
+    </entry>
+</feed>
