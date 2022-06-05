@@ -1,0 +1,779 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/my-blog/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/my-blog/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="理 想 净 土" href="https://github.com/Peter-Pan001/my-blog/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="理 想 净 土" href="https://github.com/Peter-Pan001/my-blog/atom.xml" />
+<link rel="alternate" type="application/json" title="理 想 净 土" href="https://github.com/Peter-Pan001/my-blog/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/my-blog/css/app.css?v=0.2.4">
+
+  
+  <meta name="keywords" content="never give up" />
+
+
+<link rel="canonical" href="https://github.com/Peter-Pan001/my-blog/%E7%BD%91%E7%BB%9C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86DNS%E6%9C%8D%E5%8A%A1%E5%99%A8">
+
+
+
+  <title>
+配置与管理DNS服务器 |
+Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之作证 </title>
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">配置与管理DNS服务器
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2021-01-09 10:45:22">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-01-09T10:45:22+08:00">2021-01-09</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/my-blog/" rel="start">Peter Pan</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="https://s3.ax1x.com/2021/01/09/sMnAIK.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/my-blog/">首页</a></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://github.com/Peter-Pan001/my-blog/%E7%BD%91%E7%BB%9C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86DNS%E6%9C%8D%E5%8A%A1%E5%99%A8">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/my-blog/images/avatar.jpg">
+    <meta itemprop="name" content="Peter Pan">
+    <meta itemprop="description" content=" 凭时间赢来的东西，时间肯定会为之作证 , 不必匆忙，不必火花四溅，不必成为别人，只需成为自己">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="理 想 净 土">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="dns服务器的配置与管理"><a class="markdownIt-Anchor" href="#dns服务器的配置与管理">#</a> DNS 服务器的配置与管理</h1>
+<h2 id="1初识dns"><a class="markdownIt-Anchor" href="#1初识dns">#</a> 1. 初识 DNS</h2>
+<ul>
+<li>DNS (Domain Name System) 域名系统，DNS 服务器的作用就是 <strong>将域名转换成 IP 地址</strong></li>
+<li>为客户机对域名的查询提供该域名的 IP 地址，便于用户记住网站的地址（把难记的 IP 地址转换成容易记住的域名，比如： <code>www.google.com</code> ）</li>
+</ul>
+<h2 id="2域名系统的结构"><a class="markdownIt-Anchor" href="#2域名系统的结构">#</a> 2. 域名系统的结构</h2>
+<h3 id="21域名命名规则"><a class="markdownIt-Anchor" href="#21域名命名规则">#</a> 2.1 域名命名规则</h3>
+<ul>
+<li>对于域名和主机名，只可以使用数字或字母以及 <code>-</code>  号组成，Windows 服务器不区分字母大小写，UNIX 服务器则相反</li>
+</ul>
+<h3 id="22层次结构"><a class="markdownIt-Anchor" href="#22层次结构">#</a> 2.2 层次结构</h3>
+<p><img data-src="https://i.loli.net/2020/10/29/l417MRnUW8Kcbgq.png" alt="domainarch.png"></p>
+<h4 id="221-根域"><a class="markdownIt-Anchor" href="#221-根域">#</a> 2.2.1 根域</h4>
+<ul>
+<li>根域名服务器不保存任何网址，用 <code>.</code>  来表示</li>
+</ul>
+<h4 id="222顶级域"><a class="markdownIt-Anchor" href="#222顶级域">#</a> 2.2.2 顶级域</h4>
+<ul>
+<li>“一域之下，万域之上”，顶级域存在于根域之下，顶级域的数量是确定的，一般分为机构域和地理域
+<table>
+<thead>
+<tr>
+<th>域名</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>com</td>
+<td>商业机构</td>
+</tr>
+<tr>
+<td>edu</td>
+<td>教育机构</td>
+</tr>
+<tr>
+<td>gov</td>
+<td>政府机构</td>
+</tr>
+<tr>
+<td>net</td>
+<td>网络服务机构</td>
+</tr>
+<tr>
+<td>org</td>
+<td>非盈利性组织</td>
+</tr>
+<tr>
+<td>mil</td>
+<td>军事部门</td>
+</tr>
+<tr>
+<td>cn、us、hk 等</td>
+<td>国家或地区</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h4 id="223子域"><a class="markdownIt-Anchor" href="#223子域">#</a> 2.2.3 子域</h4>
+<ul>
+<li>除了根域和顶级域以外，其他的域都称为子域</li>
+<li>一个与可以有许多子域</li>
+<li>例如: <code>www.xxx.edu.com</code>  edu 是 com 的子域，而 xxx 也可以称为 edu 的子域，所有说子域只是相对的</li>
+</ul>
+<h2 id="3根域名服务器的数量"><a class="markdownIt-Anchor" href="#3根域名服务器的数量">#</a> 3. 根域名服务器的数量</h2>
+<ul>
+<li>对于 IPv4 来说，全球一共有 13 台，一台主根服务器，位于美国，其他 12 台均为辅根服务器 (9 台在美国，1 台在日本，欧洲 2 台)</li>
+<li>所有根服务器有 ICANN (互联网名称与数字地址分配地址分配机构) 统一管理</li>
+<li>对于 IPv6，全球 25 台</li>
+</ul>
+<h2 id="4dns实验"><a class="markdownIt-Anchor" href="#4dns实验">#</a> 4.DNS 实验</h2>
+<h3 id="41安装dns服务器"><a class="markdownIt-Anchor" href="#41安装dns服务器">#</a> 4.1 安装 DNS 服务器</h3>
+<ul>
+<li>
+<p>该实验基于 Windows Server2008 R2 版本的网络操作系统</p>
+</li>
+<li>
+<p>首先在 VMware 虚拟机上安装好 Windows Server2008 R2 系统</p>
+</li>
+<li>
+<p>为该系统配置 IP 及子网掩码</p>
+<p><img data-src="https://i.loli.net/2020/10/29/DmdZLzkpTB24Pyb.png" alt="shiyan2.png"></p>
+<p><img data-src="https://i.loli.net/2020/10/29/Xi8SAZyjqB1peK3.png" alt="shiyan3.png"></p>
+<p><img data-src="https://i.loli.net/2020/10/29/IXpbYJmVO3N1W2j.png" alt="shiyan4.png"></p>
+</li>
+<li>
+<p>进入该系统后， <strong>选择服务器角色</strong>， <strong>勾选 DNS 服务器</strong></p>
+</li>
+<li>
+<p>DNS 服务器安装完成！</p>
+<p><img data-src="https://i.loli.net/2020/10/29/3yMbtwPDK8SWdYC.png" alt="shiyan1.png"></p>
+</li>
+</ul>
+<h3 id="42创建正向主要区域"><a class="markdownIt-Anchor" href="#42创建正向主要区域">#</a> 4.2 创建正向主要区域</h3>
+<ul>
+<li>
+<p>首先打开 DNS 管理器，右键选中正向查找区域</p>
+<p><img data-src="https://i.loli.net/2020/10/29/IEFmRiCkc3vBZNg.png" alt="shiyan5.png"></p>
+</li>
+<li>
+<p>选择新建区域</p>
+<p><img data-src="https://i.loli.net/2020/10/29/Pk5no72i6hC4lA1.png" alt="shiyan6.png"></p>
+</li>
+<li>
+<p>选择主要区域</p>
+<p><img data-src="https://i.loli.net/2020/10/29/uqwFcBtsDX7VhNk.png" alt="shiyan7.png"></p>
+</li>
+<li>
+<p>输入区域名称</p>
+<p><img data-src="https://i.loli.net/2020/10/29/pBntJED63kTFilP.png" alt="shiyan8.png"></p>
+</li>
+<li>
+<p>创建完成</p>
+<p><img data-src="https://i.loli.net/2020/10/29/3sLBWSliApq5Pwg.png" alt="shiyan9.png"></p>
+</li>
+</ul>
+<h3 id="43基于ip地址发布ftp站点"><a class="markdownIt-Anchor" href="#43基于ip地址发布ftp站点">#</a> 4.3 基于 IP 地址，发布 FTP 站点</h3>
+<ul>
+<li>
+<p>进入我的电脑，在硬盘下新建文件夹 ftp</p>
+<p><img data-src="https://i.loli.net/2020/10/29/5fs6zkWBKOEAMP8.png" alt="shiyan10.png"></p>
+</li>
+<li>
+<p>在该文件夹下创建几个文档文件</p>
+<p><img data-src="https://i.loli.net/2020/10/29/nDifdzgXUQCoLHS.png" alt="shiyan11.png"></p>
+</li>
+<li>
+<p>进入 DNS 管理器，在创建好的正向主要区域下右键选择新建主机，并输入本机的 IP 地址</p>
+<p><img data-src="https://i.loli.net/2020/10/29/EQNRm4SehZK2PnW.png" alt="shiyan12.png"></p>
+</li>
+<li>
+<p>然后进入 IIS 管理器</p>
+<p><img data-src="https://i.loli.net/2020/10/29/u5ab3x4iPDzEeOq.png" alt="shiyan13.png"></p>
+</li>
+<li>
+<p>在网络文件夹中点击右键新建 FTP 站点，名称为 ftp，路径即之前在硬盘下创建的 ftp 文件夹的绝对路径</p>
+<p><img data-src="https://i.loli.net/2020/10/29/yMfbtx9JLzXSEjW.png" alt="shiyan14.png"></p>
+</li>
+<li>
+<p>配置 FTP 站点</p>
+<p><img data-src="https://i.loli.net/2020/10/29/ILfi8VXmW1kw45o.png" alt="shiyan15.png"></p>
+<p><img data-src="https://i.loli.net/2020/10/29/taS4cHZ5RDJb3Lv.png" alt="shiyan16.png"></p>
+</li>
+<li>
+<p>打开 IE 浏览器，输入网址 <code>ftp://192.168.200.107</code> , 访问成功，实验完成！</p>
+<p><img data-src="https://i.loli.net/2020/10/29/gKyWNBlEb1jC4eV.png" alt="shiyan17.png"></p>
+</li>
+</ul>
+<h3 id="44基于域名发布ftp站点"><a class="markdownIt-Anchor" href="#44基于域名发布ftp站点">#</a> 4.4 基于域名发布 FTP 站点</h3>
+<ul>
+<li>
+<p>该实验可基于上面 4.3 的 ftp 文件夹来做</p>
+</li>
+<li>
+<p>一样的创建好 FTP 站点，不过此时要启用虚拟主机名 <code>ftp.peterpan.com</code></p>
+<p><img data-src="https://i.loli.net/2020/10/29/iaSMQvWNgo8t1yp.png" alt="shiyan18.png"></p>
+</li>
+<li>
+<p>直接在 IE 浏览器中输入 <code>ftp://ftp.peterpan.com</code></p>
+<p><img data-src="https://i.loli.net/2020/10/29/EkNwFOvcPqCATVm.png" alt="shiyan19.png"></p>
+</li>
+<li>
+<p>实验完成！</p>
+</li>
+</ul>
+<h3 id="45多个ip地址发布多个ftp站点"><a class="markdownIt-Anchor" href="#45多个ip地址发布多个ftp站点">#</a> 4.5 多个 IP 地址发布多个 FTP 站点</h3>
+<ul>
+<li>
+<p>在硬盘下创建文件夹 <code>myftp</code></p>
+<p><img data-src="https://i.loli.net/2020/10/29/VSLWq98XkxnhZJe.png" alt="shiyan20.png"></p>
+</li>
+<li>
+<p>在 <code>myftp</code>  下创建三个文件夹</p>
+<p><img data-src="https://s3.ax1x.com/2021/01/09/sMKYuj.png" alt="shiyan21.png"></p>
+</li>
+<li>
+<p>在每个子文件夹中新建三个文本文档文件</p>
+<p><img data-src="https://s3.ax1x.com/2021/01/09/sMKw5V.png" alt="shiyan22.png"></p>
+</li>
+<li>
+<p>打开网络连接，在已有的 IP 地址中，点击高级，添加两个 IP 地址</p>
+<p><img data-src="https://s3.ax1x.com/2021/01/09/sMK4PK.png" alt="shiyan23.png"></p>
+</li>
+<li>
+<p>添加 IP 地址 <code>192.168.200.108</code></p>
+<p><img data-src="https://s3.ax1x.com/2021/01/09/sMKoxe.png" alt="shiyan24.png"></p>
+</li>
+<li>
+<p>添加 IP 地址 <code>192.168.200.109</code></p>
+<p><img data-src="https://s3.ax1x.com/2021/01/09/sMK7KH.png" alt="shiyan25.png"></p>
+</li>
+<li>
+<p>参考实验 4.3 的实验步骤，添加三个 ftp 站点 (ftp 站点配置与 4.3 实验相同)</p>
+<ul>
+<li>
+<p>其中 ftp1，对应 107 主机</p>
+</li>
+<li>
+<p>其中 ftp2，对应 108 主机</p>
+</li>
+<li>
+<p>其中 ftp3，对应 109 主机</p>
+<p><img data-src="https://s3.ax1x.com/2021/01/09/sMKLVI.png" alt="shiyan26.png"></p>
+</li>
+</ul>
+</li>
+<li>
+<p>在 IE 浏览器中分别输入</p>
+<ul>
+<li>
+<p><code>ftp://192.168.200.107</code></p>
+</li>
+<li>
+<p><code>ftp://192.168.200.108</code></p>
+</li>
+<li>
+<p><code>ftp://192.168.200.109</code></p>
+<p><img data-src="https://s3.ax1x.com/2021/01/09/sMKvPf.png" alt="shiyan27.png"></p>
+<p><img data-src="https://s3.ax1x.com/2021/01/09/sMMCrj.png" alt="shiyan28.png"></p>
+<p><img data-src="https://s3.ax1x.com/2021/01/09/sMMkaq.png" alt="shiyan29.png"></p>
+</li>
+</ul>
+</li>
+<li>
+<p>实验完成！！！</p>
+</li>
+</ul>
+<h3 id="46基于端口发布ftp站点"><a class="markdownIt-Anchor" href="#46基于端口发布ftp站点">#</a> 4.6 基于端口发布 FTP 站点</h3>
+<ul>
+<li>
+<p>在 4.5 的基础上，选择一个 ftp 站点</p>
+</li>
+<li>
+<p>点击绑定，修改端口号为 2222</p>
+<p><img data-src="https://s3.ax1x.com/2021/01/09/sMMAI0.png" alt="shiyan30.png"></p>
+<p><img data-src="https://s3.ax1x.com/2021/01/09/sMMZGT.png" alt="shiyan31.png"></p>
+</li>
+<li>
+<p>在 IE 浏览器中输入 <code>ftp://192.168.200.107:2222</code></p>
+<p><img data-src="https://s3.ax1x.com/2021/01/09/sMMmzF.png" alt="shiyan32.png"></p>
+</li>
+<li>
+<p>访问成功，实验完成！！！</p>
+</li>
+</ul>
+<h3 id="47创建虚拟目录"><a class="markdownIt-Anchor" href="#47创建虚拟目录">#</a> 4.7 创建虚拟目录</h3>
+<ul>
+<li>
+<p>在 4.4 的基础上，选择创建好的 ftp 站点</p>
+</li>
+<li>
+<p>找到该站点在本机的位置 (绝对路径)</p>
+</li>
+<li>
+<p>在该路径下在新建一个名为 <code>img</code>  的文件夹</p>
+</li>
+<li>
+<p>回到 IIS 管理器，选中之前选择好的站点，点击右键添加虚拟目录，别名 <code>img</code> ，物理路径即 img 文件夹的绝对路径</p>
+<p><img data-src="https://s3.ax1x.com/2021/01/09/sMMML9.png" alt="shiyan33.png"></p>
+<p><img data-src="https://s3.ax1x.com/2021/01/09/sMMGi6.png" alt="shiyan34.png"></p>
+</li>
+<li>
+<p>在 IE 浏览器中，输入 <code>ftp://ftp.peterpan.com/img</code></p>
+<p><img data-src="https://i.loli.net/2020/10/29/wikF78Ls59A1Ucj.png" alt="shiyan35.png"></p>
+</li>
+<li>
+<p>访问成功，实验完成！！！</p>
+</li>
+</ul>
+
+  </div>
+
+   <footer>
+
+    <div class="meta">
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/my-blog/images/wechatpay.png" alt="Peter Pan 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/my-blog/images/alipay.png" alt="Peter Pan 支付宝">
+        <p>支付宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Peter Pan <i class="ic i-at"><em>@</em></i>理 想 净 土
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://github.com/Peter-Pan001/my-blog/%E7%BD%91%E7%BB%9C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86DNS%E6%9C%8D%E5%8A%A1%E5%99%A8" title="配置与管理DNS服务器">https://github.com/Peter-Pan001/my-blog/网络操作系统/配置与管理DNS服务器</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/my-blog/Java/JavaSE%E5%B0%8F%E7%BB%93" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;s4.ax1x.com&#x2F;2022&#x2F;01&#x2F;09&#x2F;7Fya5t.jpg" title="JavaSE小结">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> Java</span>
+  <h3>JavaSE小结</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/my-blog/MySQL/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;10&#x2F;25&#x2F;ZJQ7FTnBvsdoprL.jpg" title="MySQL数据库">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> MySQL</span>
+  <h3>MySQL数据库</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#dns服务器的配置与管理"><span class="toc-number">1.</span> <span class="toc-text"> DNS 服务器的配置与管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1初识dns"><span class="toc-number">1.1.</span> <span class="toc-text"> 1. 初识 DNS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2域名系统的结构"><span class="toc-number">1.2.</span> <span class="toc-text"> 2. 域名系统的结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21域名命名规则"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 2.1 域名命名规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22层次结构"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 2.2 层次结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#221-根域"><span class="toc-number">1.2.2.1.</span> <span class="toc-text"> 2.2.1 根域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#222顶级域"><span class="toc-number">1.2.2.2.</span> <span class="toc-text"> 2.2.2 顶级域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#223子域"><span class="toc-number">1.2.2.3.</span> <span class="toc-text"> 2.2.3 子域</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3根域名服务器的数量"><span class="toc-number">1.3.</span> <span class="toc-text"> 3. 根域名服务器的数量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4dns实验"><span class="toc-number">1.4.</span> <span class="toc-text"> 4.DNS 实验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#41安装dns服务器"><span class="toc-number">1.4.1.</span> <span class="toc-text"> 4.1 安装 DNS 服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#42创建正向主要区域"><span class="toc-number">1.4.2.</span> <span class="toc-text"> 4.2 创建正向主要区域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#43基于ip地址发布ftp站点"><span class="toc-number">1.4.3.</span> <span class="toc-text"> 4.3 基于 IP 地址，发布 FTP 站点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#44基于域名发布ftp站点"><span class="toc-number">1.4.4.</span> <span class="toc-text"> 4.4 基于域名发布 FTP 站点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#45多个ip地址发布多个ftp站点"><span class="toc-number">1.4.5.</span> <span class="toc-text"> 4.5 多个 IP 地址发布多个 FTP 站点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#46基于端口发布ftp站点"><span class="toc-number">1.4.6.</span> <span class="toc-text"> 4.6 基于端口发布 FTP 站点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#47创建虚拟目录"><span class="toc-number">1.4.7.</span> <span class="toc-text"> 4.7 创建虚拟目录</span></a></li></ol></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Peter Pan"
+      data-src="/my-blog/images/avatar.jpg">
+  <p class="name" itemprop="name">Peter Pan</p>
+  <div class="description" itemprop="description">不必匆忙，不必火花四溅，不必成为别人，只需成为自己</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/my-blog/archives/">
+        <span class="count">73</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/my-blog/categories/">
+        <span class="count">10</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/my-blog/tags/">
+        <span class="count">14</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <a href="https://github.com/Peter-Pan001/Basic" title="https:&#x2F;&#x2F;github.com&#x2F;Peter-Pan001&#x2F;Basic" class="item github"><i class="ic i-github"></i></a>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS9ndWFuZy1tYW5nLWxpZ2h0bmluZw==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;guang-mang-lightning"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTE5MjY4NTE4NDA=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;1926851840"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS9QZXRlclBhbjA4MjQ=" title="https:&#x2F;&#x2F;about.me&#x2F;PeterPan0824"><i class="ic i-address-card"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/my-blog/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/my-blog/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+    <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/my-blog/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/my-blog/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/my-blog/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/my-blog/friends/" rel="section"><i class="ic i-heart"></i>friends</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/my-blog/links/" rel="section"><i class="ic i-magic"></i>links</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/my-blog/Java/JavaSE%E5%B0%8F%E7%BB%93" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/my-blog/MySQL/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+</div>
+
+    <span><a href="/my-blog/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AFHTML5+CSS3" title="前端HTML5+CSS3">前端HTML5+CSS3</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9104" title="网络互联与互联网04">网络互联与互联网04</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/MySQL/" title="分类于 MySQL">MySQL</a>
+</div>
+
+    <span><a href="/my-blog/MySQL/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80" title="MySQL数据库">MySQL数据库</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/Linux%E9%85%8D%E7%BD%AE" title="Linux配置">Linux配置</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%90%84%E9%87%8D%E7%82%B9%E5%8D%8F%E8%AE%AE%E5%8F%8A%E5%B8%A7%E6%A0%BC%E5%BC%8F%E8%AF%A6%E8%A7%A3" title="各重点协议及帧格式详解">各重点协议及帧格式详解</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%8E%E5%BA%94%E7%94%A801" title="网络安全与应用01">网络安全与应用01</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/Java%E8%AF%AD%E5%8F%A5" title="Java语句">Java语句</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1" title="类与对象">类与对象</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9103" title="网络互联与互联网03">网络互联与互联网03</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="分类于 算法与数据结构">算法与数据结构</a>
+</div>
+
+    <span><a href="/my-blog/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E7%BB%AA%E8%AE%BA" title="数据结构之绪论">数据结构之绪论</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Peter Pan @ Peter Pan</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<a href="https://github.com/amehime/hexo-theme-shoka">Shoka</a>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '/网络操作系统/配置与管理DNS服务器',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/my-blog/js/app.js?v=0.2.4"></script>
+
+
+
+
+</body>
+</html>

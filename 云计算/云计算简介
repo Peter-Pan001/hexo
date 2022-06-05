@@ -1,0 +1,598 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/my-blog/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/my-blog/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="理 想 净 土" href="https://github.com/Peter-Pan001/my-blog/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="理 想 净 土" href="https://github.com/Peter-Pan001/my-blog/atom.xml" />
+<link rel="alternate" type="application/json" title="理 想 净 土" href="https://github.com/Peter-Pan001/my-blog/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/my-blog/css/app.css?v=0.2.4">
+
+  
+  <meta name="keywords" content="云计算" />
+
+
+<link rel="canonical" href="https://github.com/Peter-Pan001/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E4%BA%91%E8%AE%A1%E7%AE%97%E7%AE%80%E4%BB%8B">
+
+
+
+  <title>
+云计算简介 - 云计算 |
+Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之作证 </title>
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">云计算简介
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2022-01-15 22:25:37">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-01-15T22:25:37+08:00">2022-01-15</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/my-blog/" rel="start">Peter Pan</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="https://s4.ax1x.com/2022/01/15/7YwsEj.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/my-blog/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" itemprop="item" rel="index" title="分类于 云计算"><span itemprop="name">云计算</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://github.com/Peter-Pan001/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E4%BA%91%E8%AE%A1%E7%AE%97%E7%AE%80%E4%BB%8B">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/my-blog/images/avatar.jpg">
+    <meta itemprop="name" content="Peter Pan">
+    <meta itemprop="description" content=" 凭时间赢来的东西，时间肯定会为之作证 , 不必匆忙，不必火花四溅，不必成为别人，只需成为自己">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="理 想 净 土">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h2 id="云计算能做什么"><a class="markdownIt-Anchor" href="#云计算能做什么">#</a> 云计算能做什么？</h2>
+<ol>
+<li>产生：通过云资源池，云服务器集群上获取云端资源</li>
+<li>传输：通过网络链接，如 DRS、ECS 服务等</li>
+<li>使用：网络前端页面、app 控制</li>
+</ol>
+<ul>
+<li>常见生活中的云计算：
+<ul>
+<li>百度网盘</li>
+<li>网易云音乐</li>
+</ul>
+</li>
+</ul>
+<h2 id="云计算优势"><a class="markdownIt-Anchor" href="#云计算优势">#</a> 云计算优势</h2>
+<ol>
+<li>按需自助服务</li>
+<li>广泛网络接入</li>
+<li>资源池化 （将同类的资源转化为资源池的形式，把所有资源分解到最小单位）</li>
+<li>快速弹性伸缩 （快速指带宽网速；弹性指计算弹性，即 CPU、内存资源的弹性分配；伸缩指初期服务与后期服务的伸缩，前期计算量少，后期逐步增大）</li>
+<li>可计量服务（例如网盘内存扩容，除基础服务以外的服务额外收费）</li>
+</ol>
+<h2 id="云计算定义"><a class="markdownIt-Anchor" href="#云计算定义">#</a> 云计算定义</h2>
+<blockquote>
+<p>云计算是一种模型，它可以随时随地灵活地从可配置计算资源共享池中获取所需得到资源，资源能快速供应并释放，是管理资源的工作量与服务提供商的交互降低到最低限度<br>
+通俗来说，云计算是通过互联网可以使用足够强大的计算机为用户提供服务，这种服务的使用率可以使用统一的单位来描述</p>
+</blockquote>
+<h2 id="云计算的发展"><a class="markdownIt-Anchor" href="#云计算的发展">#</a> 云计算的发展</h2>
+<ul>
+<li>step1:<strong> 计算虚拟化</strong>
+<ul>
+<li>Hyper-v</li>
+<li>XEN 、   KVM</li>
+<li>VMware ESX</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>虚拟化、更好的资源利用率</p>
+</blockquote>
+<ul>
+<li>step2：<strong>软件定义与整合</strong>
+<ul>
+<li>OpenStack</li>
+<li>VMware     AWS</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>基础设施云化，资源服务标准化、自动化</p>
+</blockquote>
+<ul>
+<li>step3：<strong>云原生与重构业务</strong>
+<ul>
+<li>Docker</li>
+<li>CoreOS</li>
+<li>Cloud Foundry</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>应用云化，敏捷应用开发与生命周期管理</p>
+</blockquote>
+<h2 id="云计算部署模式"><a class="markdownIt-Anchor" href="#云计算部署模式">#</a> 云计算部署模式</h2>
+<ul>
+<li>大方向是 <mark>以企业防火墙为界限</mark> ，在企业内部的称私有云，在企业外部的称公有云，两者兼具的称混合云</li>
+<li>主要有建设者 C 和使用者 U 两个角色
+<ul>
+<li>私有云：C 等于 U</li>
+<li>公有云：C 不等于 U</li>
+<li>行业云：C 不完全等于 U</li>
+<li>混合云：私有 + 私有；私有 + 公有；公有 + 公有</li>
+</ul>
+</li>
+</ul>
+<p><img data-src="https://s4.ax1x.com/2022/01/15/7YafJ0.png" alt="deploymode"></p>
+<h2 id="云计算的服务模式"><a class="markdownIt-Anchor" href="#云计算的服务模式">#</a> 云计算的服务模式</h2>
+<p><img data-src="https://s4.ax1x.com/2022/01/15/7YaXJx.png" alt="servicemode"></p>
+<ul>
+<li>IaaS：基础设施即服务，直接出租基础设施给用户来去使用，如 ECS、EVS、OBS</li>
+<li>PaaS：平台即服务，将 IaaS 打包出租给用户来去使用，比如数据库、中间件</li>
+<li>SaaS：软件即服务，直接呈现给用户所去使用的一个应用程序，如 OA 办公系统</li>
+</ul>
+
+      <div class="tags">
+          <a href="/my-blog/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/" rel="tag"><i class="ic i-tag"></i> 云计算</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/my-blog/images/wechatpay.png" alt="Peter Pan 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/my-blog/images/alipay.png" alt="Peter Pan 支付宝">
+        <p>支付宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Peter Pan <i class="ic i-at"><em>@</em></i>理 想 净 土
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://github.com/Peter-Pan001/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E4%BA%91%E8%AE%A1%E7%AE%97%E7%AE%80%E4%BB%8B" title="云计算简介">https://github.com/Peter-Pan001/my-blog/云计算/云计算简介</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/my-blog/Linux/%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;s4.ax1x.com&#x2F;2022&#x2F;01&#x2F;09&#x2F;7FYwC9.jpg" title="目录与文件管理">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> Linux</span>
+  <h3>目录与文件管理</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/Fusion%20Compute%E7%AE%80%E4%BB%8B" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;s4.ax1x.com&#x2F;2022&#x2F;01&#x2F;15&#x2F;7YwsEj.jpg" title="Fusion Compute简介">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 云计算</span>
+  <h3>Fusion Compute简介</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#云计算能做什么"><span class="toc-number">1.</span> <span class="toc-text"> 云计算能做什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#云计算优势"><span class="toc-number">2.</span> <span class="toc-text"> 云计算优势</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#云计算定义"><span class="toc-number">3.</span> <span class="toc-text"> 云计算定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#云计算的发展"><span class="toc-number">4.</span> <span class="toc-text"> 云计算的发展</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#云计算部署模式"><span class="toc-number">5.</span> <span class="toc-text"> 云计算部署模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#云计算的服务模式"><span class="toc-number">6.</span> <span class="toc-text"> 云计算的服务模式</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li class="active"><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E4%BA%91%E8%AE%A1%E7%AE%97%E7%AE%80%E4%BB%8B" rel="bookmark" title="云计算简介">云计算简介</a></li><li><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/Fusion%20Compute%E7%AE%80%E4%BB%8B" rel="bookmark" title="Fusion Compute简介">Fusion Compute简介</a></li><li><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E8%AE%A1%E7%AE%97%E8%99%9A%E6%8B%9F%E5%8C%96" rel="bookmark" title="计算虚拟化简介">计算虚拟化简介</a></li><li><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/Fusion%20Compute%E5%AE%89%E8%A3%85" rel="bookmark" title="Fusion Compute安装">Fusion Compute安装</a></li><li><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/FusionSphere%E6%9E%B6%E6%9E%84" rel="bookmark" title="FusionSphere架构">FusionSphere架构</a></li><li><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E5%AD%98%E5%82%A8%E8%99%9A%E6%8B%9F%E5%8C%96" rel="bookmark" title="存储虚拟化">存储虚拟化</a></li><li><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E7%BD%91%E7%BB%9C%E8%99%9A%E6%8B%9F%E5%8C%96" rel="bookmark" title="网络虚拟化">网络虚拟化</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Peter Pan"
+      data-src="/my-blog/images/avatar.jpg">
+  <p class="name" itemprop="name">Peter Pan</p>
+  <div class="description" itemprop="description">不必匆忙，不必火花四溅，不必成为别人，只需成为自己</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/my-blog/archives/">
+        <span class="count">73</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/my-blog/categories/">
+        <span class="count">10</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/my-blog/tags/">
+        <span class="count">14</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <a href="https://github.com/Peter-Pan001/Basic" title="https:&#x2F;&#x2F;github.com&#x2F;Peter-Pan001&#x2F;Basic" class="item github"><i class="ic i-github"></i></a>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS9ndWFuZy1tYW5nLWxpZ2h0bmluZw==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;guang-mang-lightning"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTE5MjY4NTE4NDA=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;1926851840"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS9QZXRlclBhbjA4MjQ=" title="https:&#x2F;&#x2F;about.me&#x2F;PeterPan0824"><i class="ic i-address-card"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/my-blog/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/my-blog/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+    <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/my-blog/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/my-blog/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/my-blog/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/my-blog/friends/" rel="section"><i class="ic i-heart"></i>friends</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/my-blog/links/" rel="section"><i class="ic i-magic"></i>links</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/my-blog/Linux/%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/Fusion%20Compute%E7%AE%80%E4%BB%8B" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B" title="Java网络编程">Java网络编程</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/git/" title="分类于 git">git</a>
+</div>
+
+    <span><a href="/my-blog/git/git%E4%B8%8Egithub%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BA%86%E8%A7%A3" title="git与github的基本了解">git与github的基本了解</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/my-blog/%E7%BD%91%E7%BB%9C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86DNS%E6%9C%8D%E5%8A%A1%E5%99%A8" title="配置与管理DNS服务器">配置与管理DNS服务器</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
+</div>
+
+    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E5%AD%98%E5%82%A8%E8%99%9A%E6%8B%9F%E5%8C%96" title="存储虚拟化">存储虚拟化</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E5%92%8C%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80" title="系统开发和项目管理基础">系统开发和项目管理基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/MySQL/" title="分类于 MySQL">MySQL</a>
+</div>
+
+    <span><a href="/my-blog/MySQL/%E5%85%B3%E4%BA%8EMySQL%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8" title="关于MySQL的一些基本使用">关于MySQL的一些基本使用</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B9%BF%E5%9F%9F%E9%80%9A%E4%BF%A1%E7%BD%91" title="广域通信网">广域通信网</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%884%EF%BC%89" title="华为交换实验命令（4）">华为交换实验命令（4）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/MySQL/" title="分类于 MySQL">MySQL</a>
+</div>
+
+    <span><a href="/my-blog/MySQL/MySQL%E8%BF%9B%E9%98%B6" title="MySQL进阶">MySQL进阶</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8BOV" title="Java网络编程OV">Java网络编程OV</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Peter Pan @ Peter Pan</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<a href="https://github.com/amehime/hexo-theme-shoka">Shoka</a>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '/云计算/云计算简介',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/my-blog/js/app.js?v=0.2.4"></script>
+
+
+
+
+</body>
+</html>

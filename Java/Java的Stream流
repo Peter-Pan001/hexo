@@ -1,0 +1,634 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/my-blog/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/my-blog/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="理 想 净 土" href="https://github.com/Peter-Pan001/my-blog/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="理 想 净 土" href="https://github.com/Peter-Pan001/my-blog/atom.xml" />
+<link rel="alternate" type="application/json" title="理 想 净 土" href="https://github.com/Peter-Pan001/my-blog/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/my-blog/css/app.css?v=0.2.4">
+
+  
+  <meta name="keywords" content="Java" />
+
+
+<link rel="canonical" href="https://github.com/Peter-Pan001/my-blog/Java/Java%E7%9A%84Stream%E6%B5%81">
+
+
+
+  <title>
+Java的Stream流 - Java |
+Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之作证 </title>
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">Java的Stream流
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2020-10-22 22:53:14">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2020-10-22T22:53:14+08:00">2020-10-22</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/my-blog/" rel="start">Peter Pan</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="https://s4.ax1x.com/2022/01/09/7Fya5t.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/my-blog/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/my-blog/categories/java/" itemprop="item" rel="index" title="分类于 Java"><span itemprop="name">Java</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://github.com/Peter-Pan001/my-blog/Java/Java%E7%9A%84Stream%E6%B5%81">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/my-blog/images/avatar.jpg">
+    <meta itemprop="name" content="Peter Pan">
+    <meta itemprop="description" content=" 凭时间赢来的东西，时间肯定会为之作证 , 不必匆忙，不必火花四溅，不必成为别人，只需成为自己">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="理 想 净 土">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h2 id="第一章-简单体验一下stream流"><a class="markdownIt-Anchor" href="#第一章-简单体验一下stream流">#</a> 第一章 简单体验一下 Stream 流</h2>
+<ul>
+<li>我们使用 Stream 流的方式，可以用来遍历集合，对集合中的数据进行过滤等，Stream 流是在 jdk1.8 之后出现</li>
+<li>代码示例</li>
+</ul>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DemoTextStream</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>        <span class="token comment">// 创建一个 list 集合，用来存储姓名</span></pre></td></tr><tr><td data-num="4"></td><td><pre>        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"李冰冰"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"彭于晏"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"李易峰"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"李沁"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"王思聪"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>        <span class="token comment">// 对 List 集合的元素进行过滤，只要以张开头的元素，存储到一个新的集合中</span></pre></td></tr><tr><td data-num="11"></td><td><pre>        <span class="token comment">// 对 listA 集合进行过滤，只要姓名长度为三的人</span></pre></td></tr><tr><td data-num="12"></td><td><pre>        <span class="token comment">// 遍历集合</span></pre></td></tr><tr><td data-num="13"></td><td><pre>        <span class="token class-name"><span class="token namespace">list<span class="token punctuation">.</span></span>Stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="14"></td><td><pre>                <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>name<span class="token operator">-></span>name<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">"李"</span><span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="15"></td><td><pre>                <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>name<span class="token operator">-></span>name<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">3</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="16"></td><td><pre>                <span class="token punctuation">.</span><span class="token function">foreach</span><span class="token punctuation">(</span>name<span class="token operator">-></span><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="17"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="18"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><h3 id="流式思想的概述"><a class="markdownIt-Anchor" href="#流式思想的概述">#</a> 流式思想的概述</h3>
+<blockquote>
+<p>对于流式思想，可以<strong>把它想象成工厂的 “流水线”</strong>。通过一系列的加工、过滤得到最后的产品</p>
+</blockquote>
+<hr>
+<h3 id="何为stream"><a class="markdownIt-Anchor" href="#何为stream">#</a> 何为 Stream</h3>
+<ul>
+<li><strong>Stream 流实际上是一个来自数据源的元素队列</strong></li>
+<li><strong>Java 中的 Stream 并不会存储元素，而是按需计算</strong></li>
+<li><strong>Stream 使用一种类似用 SQL 语句从数据库查询数据的直观方式来提供一种对 Java 集合运算和表达的高阶抽象。</strong></li>
+</ul>
+<hr>
+<h2 id="第二章-获取stream流的方式"><a class="markdownIt-Anchor" href="#第二章-获取stream流的方式">#</a> 第二章 获取 Stream 流的方式</h2>
+<ul>
+<li><code>java.util.stream.Stream&lt;T&gt;</code>  是 java 中新加入的<strong>最常用的流接口</strong></li>
+</ul>
+<hr>
+<ul>
+<li><strong>获取流的两种方式</strong>
+<ul>
+<li><strong>所有的 collection 集合都可以通过 stream 默认方法获取流</strong></li>
+<li><strong>Stream 接口的静态方法 of 可以获取数组对应的流</strong> <code>static&lt;T&gt; Stream&lt;T&gt; of(T...values)</code>  参数是一个<strong>可变参数</strong>，可以通过这个方法传递一个数组
+<ul>
+<li>代码演示：</li>
+</ul>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DemoMethodAcq</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>        <span class="token comment">// 把集合转换为 Stream 流</span></pre></td></tr><tr><td data-num="4"></td><td><pre>        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Arraylist</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>        <span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> str <span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre>        <span class="token class-name">Set</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> set <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>        <span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> stream2 <span class="token operator">=</span> set<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="9"></td><td><pre></pre></td></tr><tr><td data-num="10"></td><td><pre>        <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span><span class="token class-name">String</span><span class="token punctuation">></span></span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>        <span class="token comment">// 获取键，存储到一个 Set 集合中</span></pre></td></tr><tr><td data-num="12"></td><td><pre>        <span class="token class-name">Set</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> keyset <span class="token operator">=</span>map<span class="token punctuation">.</span><span class="token function">keyset</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="13"></td><td><pre>        <span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> <span class="token class-name">Stream3</span> <span class="token operator">=</span> keyset<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="14"></td><td><pre></pre></td></tr><tr><td data-num="15"></td><td><pre>        <span class="token comment">// 获取值，存储到一个 Collection 集合中</span></pre></td></tr><tr><td data-num="16"></td><td><pre>        <span class="token class-name">Collection</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> values <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="17"></td><td><pre>        <span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> stream4 <span class="token operator">=</span> values<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="18"></td><td><pre>        </pre></td></tr><tr><td data-num="19"></td><td><pre>        <span class="token comment">// 获取键值对</span></pre></td></tr><tr><td data-num="20"></td><td><pre>        <span class="token class-name">Set</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Map<span class="token punctuation">.</span>Entry</span><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span><span class="token class-name">String</span><span class="token punctuation">></span><span class="token punctuation">></span></span> entries <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">entries</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="21"></td><td><pre>        <span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Map<span class="token punctuation">.</span>Entry</span><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span><span class="token class-name">String</span><span class="token punctuation">></span><span class="token punctuation">></span></span> stream5 <span class="token operator">=</span> entries<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="22"></td><td><pre></pre></td></tr><tr><td data-num="23"></td><td><pre>        <span class="token comment">// 把数组转换为 Stream 流</span></pre></td></tr><tr><td data-num="24"></td><td><pre>        <span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">></span></span> stream6 <span class="token operator">=</span> <span class="token class-name">Stream</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="25"></td><td><pre>        <span class="token comment">// 可变参数可以传递数组</span></pre></td></tr><tr><td data-num="26"></td><td><pre>        <span class="token class-name">Integer</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="27"></td><td><pre>        <span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">></span></span> stream7 <span class="token operator">=</span> <span class="token class-name">Stream</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="28"></td><td><pre>        <span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr2 <span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token string">"a"</span><span class="token punctuation">,</span><span class="token string">"bb"</span><span class="token punctuation">,</span><span class="token string">"ccc"</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="29"></td><td><pre>        <span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> stream8 <span class="token operator">=</span> <span class="token class-name">Stream</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span>arr2<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="30"></td><td><pre></pre></td></tr><tr><td data-num="31"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="32"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="第三章-stream流的常用方法"><a class="markdownIt-Anchor" href="#第三章-stream流的常用方法">#</a> 第三章 Stream 流的常用方法</h2>
+<blockquote>
+<p>流模型的操作被分为两种方法：<br>
+     1.<strong> 延迟方法</strong>:   返回值类型仍然是 <code>Stream</code>  接口自身类型的方法，因此支持链式调用（除了延时方法其他均为终结方法）<br>
+     2.<strong> 终结方法</strong>:   返回值类型不在是 <code>Stream</code>  接口自身类型的方法，因此不在支持类似 <code>StringBuilder</code>  那样的链式调用（终结方法包括 <code>count</code>  和 <code>forEach</code>  方法）</p>
+</blockquote>
+<h3 id="1-foreach方法逐一处理"><a class="markdownIt-Anchor" href="#1-foreach方法逐一处理">#</a> 1、forEach 方法（逐一处理）</h3>
+<ul>
+<li>首先，此方法<strong>非 for 循环的 for-each 循环方法</strong></li>
+<li>其标准格式为：<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">void</span> <span class="token function">forEach</span><span class="token punctuation">(</span><span class="token class-name">Consumer</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span> suoer <span class="token class-name">T</span><span class="token punctuation">></span></span> action<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<ul>
+<li><strong>forEach 方法是通过接收一个 Consumer 接口函数，会使每一个流元素交给该函数处理</strong></li>
+<li>可以简记为：
+<ul>
+<li>forEach 是用来遍历流数据的</li>
+<li>它是一个终结方法，遍历之后就不能继续调用 Stream 流中的其他方法</li>
+</ul>
+</li>
+<li>代码演示：<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo_forEach</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>        <span class="token comment">// 获取一个 Stream 流</span></pre></td></tr><tr><td data-num="4"></td><td><pre>        <span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> stream <span class="token operator">=</span> <span class="token class-name">Stream</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token string">"张三"</span>，<span class="token string">"李四"</span>，<span class="token string">"w王五"</span>，<span class="token string">"赵六"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>        <span class="token comment">// 使用 Stream 流中的方法 forEach 对 Stream 流中的数据进行遍历</span></pre></td></tr><tr><td data-num="6"></td><td><pre>        stream<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span><span class="token operator">-></span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>        <span class="token comment">/* 简写可以这样：</pre></td></tr><tr><td data-num="10"></td><td><pre>         stream.forEach (name-> </pre></td></tr><tr><td data-num="11"></td><td><pre>            System.out.println (name)</pre></td></tr><tr><td data-num="12"></td><td><pre>        );</pre></td></tr><tr><td data-num="13"></td><td><pre>        */</span></pre></td></tr><tr><td data-num="14"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="15"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="2-filter方法过滤"><a class="markdownIt-Anchor" href="#2-filter方法过滤">#</a> 2、filter 方法（过滤）</h3>
+<ul>
+<li><strong>使用 <code>filter</code>  方法可以将一个流转换成另一个字节流</strong><figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">></span></span> <span class="token function">filter</span><span class="token punctuation">(</span><span class="token class-name">Predicate</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span> <span class="token keyword">super</span> <span class="token class-name">T</span><span class="token punctuation">></span></span> predicate<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><ul>
+<li>此接口接收一个 <code>Predicate</code>  函数式接口参数作为筛选条件，即：<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">boolean</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token class-name">T</span> t<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><ul>
+<li>该方法是 Predicate 接口中的一个抽象方法</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo_filter</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>        <span class="token comment">// 创建一个 Stream 流</span></pre></td></tr><tr><td data-num="4"></td><td><pre>        <span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> stream <span class="token operator">=</span> <span class="token class-name">Stream</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token string">"李冰冰"</span><span class="token punctuation">,</span><span class="token string">"李易峰"</span><span class="token punctuation">,</span><span class="token string">"彭于晏"</span><span class="token punctuation">,</span><span class="token string">"李沁"</span><span class="token punctuation">,</span><span class="token string">"王思聪"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>        <span class="token comment">// 对 Stream 流中的元素进行过滤，筛选出姓 “李” 的人</span></pre></td></tr><tr><td data-num="6"></td><td><pre>        <span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> stream2 <span class="token operator">=</span> stream<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span><span class="token operator">-></span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>            <span class="token keyword">return</span> name<span class="token punctuation">.</span><span class="token function">startWith</span><span class="token punctuation">(</span><span class="token string">"李"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>        <span class="token comment">// 遍历 stream2</span></pre></td></tr><tr><td data-num="10"></td><td><pre>        stream<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>name<span class="token operator">-></span> <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><ul>
+<li><strong>Stream 流属于管道流，只能被消费一次</strong></li>
+<li><strong>第一次 Stream 流调用完毕后，数据会流到下一个 Stream 上</strong></li>
+<li><strong>此时第一个 Stream 流消费完毕，就会关闭</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="3-map方法映射"><a class="markdownIt-Anchor" href="#3-map方法映射">#</a> 3、map 方法（映射）</h3>
+<ul>
+<li><strong>map 方法</strong>是将流中的元素映射到另一个流中，可以使用 map 方法<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">R</span><span class="token punctuation">></span></span> <span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">R</span><span class="token punctuation">></span></span> map<span class="token punctuation">&#123;</span><span class="token class-name">Function</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span> <span class="token keyword">super</span> <span class="token class-name">T</span><span class="token punctuation">,</span><span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">R</span><span class="token punctuation">></span></span> mapper<span class="token punctuation">&#125;</span><span class="token punctuation">;</span></pre></td></tr></table></figure><ul>
+<li>该接口需要一个 <code>Function</code>  的函数式接口参数</li>
+<li>使用的是 Function 接口的抽象方法：<br>
+ <code>R apply(T t); </code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>代码演示：<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo_map</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>        <span class="token comment">// 获取一个 String 类型的 Stream 流</span></pre></td></tr><tr><td data-num="4"></td><td><pre>        <span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> stream <span class="token operator">=</span> <span class="token class-name">Stream</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token string">"1"</span><span class="token punctuation">,</span><span class="token string">"2"</span><span class="token punctuation">,</span><span class="token string">"3"</span><span class="token punctuation">,</span><span class="token string">"4"</span><span class="token punctuation">,</span><span class="token string">"5"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>        <span class="token comment">// 使用 map 方法，把字符串类型的整数，转换（映射）到 Integer 类型的整数</span></pre></td></tr><tr><td data-num="6"></td><td><pre>        <span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">></span></span> stream2 <span class="token operator">=</span> stream<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">String</span> s<span class="token punctuation">)</span><span class="token operator">-></span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>            <span class="token keyword">return</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>        <span class="token comment">// 遍历 stream2</span></pre></td></tr><tr><td data-num="10"></td><td><pre>        stream2<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>i<span class="token operator">-></span> <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="4-count方法统计个数"><a class="markdownIt-Anchor" href="#4-count方法统计个数">#</a> 4、count 方法（统计个数）</h3>
+<ul>
+<li>Stream 流通过 <code>count</code>  方法来对流中的元素进行统计，即：<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">long</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure></li>
+<li><strong>count 方法是一个终结方法，返回值是一个 Long 类型的整数，不能再继续调用 Stream 流中的其他方法</strong></li>
+<li>代码示例：<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>stream<span class="token punctuation">.</span></span><span class="token class-name">Stream</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo_count</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>        <span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> stream <span class="token operator">=</span> <span class="token class-name">Stream</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token string">"李冰冰"</span><span class="token punctuation">,</span><span class="token string">"李易峰"</span><span class="token punctuation">,</span><span class="token string">"王思聪"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>        <span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> result <span class="token operator">=</span> stream<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>s<span class="token operator">-></span> s<span class="token punctuation">.</span><span class="token function">startWith</span><span class="token punctuation">(</span><span class="token string">"李"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 输出为 2</span></pre></td></tr><tr><td data-num="8"></td><td><pre></pre></td></tr><tr><td data-num="9"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="5-limit方法截取使用前几个"><a class="markdownIt-Anchor" href="#5-limit方法截取使用前几个">#</a> 5、limit 方法（截取使用前几个）</h3>
+<ul>
+<li><code>limit</code>  方法可以对流进行截取，只取用前 n 个，即：<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">></span></span> <span class="token function">limit</span><span class="token punctuation">(</span><span class="token keyword">long</span> maxSize<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><ul>
+<li>参数是一个 Long 类型，如果集合当前长度大于参数则进行截取，否则不操作</li>
+<li><strong>limit 方法是一个延迟方法，返回的是一个新的流，可以调用 Stream 流的其他方法</strong></li>
+<li>代码展示：</li>
+</ul>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo_limit</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>        <span class="token comment">// 获取一个 Stream 流</span></pre></td></tr><tr><td data-num="4"></td><td><pre>        <span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">"李冰冰"</span><span class="token punctuation">,</span><span class="token string">"李易峰"</span><span class="token punctuation">,</span><span class="token string">"王思聪"</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>        <span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> stream <span class="token operator">=</span> <span class="token class-name">Stream</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>        <span class="token comment">// 使用 Limit 对 Stream 流中的元素进行截取，只要前 2 个元素</span></pre></td></tr><tr><td data-num="7"></td><td><pre>        <span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> stream2 <span class="token operator">=</span>stream<span class="token punctuation">.</span><span class="token function">limit</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>        <span class="token comment">// 遍历 stream2</span></pre></td></tr><tr><td data-num="9"></td><td><pre>        stream2<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>name<span class="token operator">-></span> <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="6-skip方法跳过前几个"><a class="markdownIt-Anchor" href="#6-skip方法跳过前几个">#</a> 6、skip 方法（跳过前几个）</h3>
+<ul>
+<li>如果需要跳过前几个元素，可以使用 <code>skip</code>  方法进行截取流，即：<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">></span></span> <span class="token function">skip</span><span class="token punctuation">(</span><span class="token keyword">long</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><ul>
+<li>若要跳过的元素个数 n 大于流中元素的个数，则会截取流，得到一个长度为 0 的空流（新流）</li>
+<li>代码展示：<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo_limit</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>        <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>        <span class="token comment">// 获取一个 Stream 流</span></pre></td></tr><tr><td data-num="4"></td><td><pre>        <span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">"李冰冰"</span><span class="token punctuation">,</span><span class="token string">"李易峰"</span><span class="token punctuation">,</span><span class="token string">"王思聪"</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>        <span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> stream <span class="token operator">=</span> <span class="token class-name">Stream</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>        <span class="token comment">// 使用 skip 跳过前 2 个元素</span></pre></td></tr><tr><td data-num="7"></td><td><pre>        <span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> stream2 <span class="token operator">=</span>stream<span class="token punctuation">.</span><span class="token function">skip</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>        <span class="token comment">// 遍历 stream2</span></pre></td></tr><tr><td data-num="9"></td><td><pre>        stream2<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>name<span class="token operator">-></span> <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h3 id="7-concat方法组合"><a class="markdownIt-Anchor" href="#7-concat方法组合">#</a> 7、concat 方法（组合）</h3>
+<ul>
+<li>如果有两个流，需要合并为一个流，则需要使用 <code>concat</code>  静态方法，即：<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">static</span> <span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">></span></span> <span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">></span></span> <span class="token function">concat</span><span class="token punctuation">(</span><span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">T</span><span class="token punctuation">></span></span> a<span class="token punctuation">,</span> <span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">T</span><span class="token punctuation">></span></span> b<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><blockquote>
+<p>备注：这是一个静态方法，与 <code>java.lang.String</code>  当中的 <code>concat</code>  方法不同</p>
+</blockquote>
+<ul>
+<li>代码展示：</li>
+</ul>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>stream<span class="token punctuation">.</span></span><span class="token class-name">Stream</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Demo_concat</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>        <span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> streamA <span class="token operator">=</span> <span class="token class-name">Stream</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token string">"李冰冰"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>        <span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> streamB <span class="token operator">=</span> <span class="token class-name">Stream</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token string">"李易峰"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>        <span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> result <span class="token operator">=</span> <span class="token class-name">Stream</span><span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>streamA<span class="token punctuation">,</span>streamB<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure></li>
+</ul>
+
+      <div class="tags">
+          <a href="/my-blog/tags/java/" rel="tag"><i class="ic i-tag"></i> Java</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/my-blog/images/wechatpay.png" alt="Peter Pan 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/my-blog/images/alipay.png" alt="Peter Pan 支付宝">
+        <p>支付宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Peter Pan <i class="ic i-at"><em>@</em></i>理 想 净 土
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://github.com/Peter-Pan001/my-blog/Java/Java%E7%9A%84Stream%E6%B5%81" title="Java的Stream流">https://github.com/Peter-Pan001/my-blog/Java/Java的Stream流</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;s4.ax1x.com&#x2F;2022&#x2F;01&#x2F;09&#x2F;7Fya5t.jpg" title="Java网络编程">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> Java</span>
+  <h3>Java网络编程</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/my-blog/Java/Java%E6%96%B9%E6%B3%95" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;s4.ax1x.com&#x2F;2022&#x2F;01&#x2F;09&#x2F;7Fya5t.jpg" title="Java方法">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> Java</span>
+  <h3>Java方法</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一章-简单体验一下stream流"><span class="toc-number">1.</span> <span class="toc-text"> 第一章 简单体验一下 Stream 流</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#流式思想的概述"><span class="toc-number">1.1.</span> <span class="toc-text"> 流式思想的概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#何为stream"><span class="toc-number">1.2.</span> <span class="toc-text"> 何为 Stream</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二章-获取stream流的方式"><span class="toc-number">2.</span> <span class="toc-text"> 第二章 获取 Stream 流的方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第三章-stream流的常用方法"><span class="toc-number">3.</span> <span class="toc-text"> 第三章 Stream 流的常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-foreach方法逐一处理"><span class="toc-number">3.1.</span> <span class="toc-text"> 1、forEach 方法（逐一处理）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-filter方法过滤"><span class="toc-number">3.2.</span> <span class="toc-text"> 2、filter 方法（过滤）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-map方法映射"><span class="toc-number">3.3.</span> <span class="toc-text"> 3、map 方法（映射）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-count方法统计个数"><span class="toc-number">3.4.</span> <span class="toc-text"> 4、count 方法（统计个数）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-limit方法截取使用前几个"><span class="toc-number">3.5.</span> <span class="toc-text"> 5、limit 方法（截取使用前几个）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-skip方法跳过前几个"><span class="toc-number">3.6.</span> <span class="toc-text"> 6、skip 方法（跳过前几个）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-concat方法组合"><span class="toc-number">3.7.</span> <span class="toc-text"> 7、concat 方法（组合）</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/my-blog/Java/Java%E5%A4%9A%E6%80%81" rel="bookmark" title="Java多态">Java多态</a></li><li><a href="/my-blog/Java/Java%E5%B0%81%E8%A3%85" rel="bookmark" title="Java封装">Java封装</a></li><li><a href="/my-blog/Java/Java%E6%95%B0%E7%BB%84" rel="bookmark" title="Java数组">Java数组</a></li><li><a href="/my-blog/Java/Java%E7%BB%A7%E6%89%BF" rel="bookmark" title="Java继承">Java继承</a></li><li><a href="/my-blog/Java/Java%E6%96%B9%E6%B3%95" rel="bookmark" title="Java方法">Java方法</a></li><li class="active"><a href="/my-blog/Java/Java%E7%9A%84Stream%E6%B5%81" rel="bookmark" title="Java的Stream流">Java的Stream流</a></li><li><a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B" rel="bookmark" title="Java网络编程">Java网络编程</a></li><li><a href="/my-blog/Java/Java%E7%9A%84%E4%B8%80%E4%BA%9B%E7%B1%BB" rel="bookmark" title="Java的一些类">Java的一些类</a></li><li><a href="/my-blog/Java/Java%E8%AF%AD%E5%8F%A5" rel="bookmark" title="Java语句">Java语句</a></li><li><a href="/my-blog/Java/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1" rel="bookmark" title="类与对象">类与对象</a></li><li><a href="/my-blog/Java/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93" rel="bookmark" title="多线程笔记总结">多线程笔记总结</a></li><li><a href="/my-blog/Java/JavaSE%E5%B0%8F%E7%BB%93" rel="bookmark" title="JavaSE小结">JavaSE小结</a></li><li><a href="/my-blog/Java/Java%E5%9F%BA%E7%A1%80%E6%B7%B7%E5%90%88" rel="bookmark" title="Java基础混合">Java基础混合</a></li><li><a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8BOV" rel="bookmark" title="Java网络编程OV">Java网络编程OV</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Peter Pan"
+      data-src="/my-blog/images/avatar.jpg">
+  <p class="name" itemprop="name">Peter Pan</p>
+  <div class="description" itemprop="description">不必匆忙，不必火花四溅，不必成为别人，只需成为自己</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/my-blog/archives/">
+        <span class="count">73</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/my-blog/categories/">
+        <span class="count">10</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/my-blog/tags/">
+        <span class="count">14</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <a href="https://github.com/Peter-Pan001/Basic" title="https:&#x2F;&#x2F;github.com&#x2F;Peter-Pan001&#x2F;Basic" class="item github"><i class="ic i-github"></i></a>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS9ndWFuZy1tYW5nLWxpZ2h0bmluZw==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;guang-mang-lightning"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTE5MjY4NTE4NDA=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;1926851840"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS9QZXRlclBhbjA4MjQ=" title="https:&#x2F;&#x2F;about.me&#x2F;PeterPan0824"><i class="ic i-address-card"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/my-blog/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/my-blog/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+    <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/my-blog/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/my-blog/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/my-blog/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/my-blog/friends/" rel="section"><i class="ic i-heart"></i>friends</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/my-blog/links/" rel="section"><i class="ic i-magic"></i>links</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/my-blog/Java/Java%E6%96%B9%E6%B3%95" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E8%A7%84%E5%88%92%E4%B8%8E%E8%AE%BE%E8%AE%A1" title="网络规划与设计">网络规划与设计</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" title="分类于 数据分析">数据分析</a>
+</div>
+
+    <span><a href="/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/informatica%E4%B9%8BWorkflow%E7%9B%91%E6%8E%A7" title="informatica之Workflow监控">informatica之Workflow监控</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/IP%E5%AD%90%E7%BD%91%E5%88%92%E5%88%86%E4%B8%93%E9%A2%98" title="IP子网划分专题">IP子网划分专题</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="分类于 算法与数据结构">算法与数据结构</a>
+</div>
+
+    <span><a href="/my-blog/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E7%BB%AA%E8%AE%BA" title="数据结构之绪论">数据结构之绪论</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80" title="计算机硬件基础(部分组成原理)">计算机硬件基础(部分组成原理)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%97%A0%E7%BA%BF%E9%80%9A%E4%BF%A1%E7%BD%91" title="无线通信网">无线通信网</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93" title="多线程笔记总结">多线程笔记总结</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
+</div>
+
+    <span><a href="/my-blog/Linux/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E5%8F%8Ayum%E6%BA%90%E9%97%AE%E9%A2%98" title="网络配置及yum源问题">网络配置及yum源问题</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E6%A6%82%E8%AE%BA" title="计算机基础概论">计算机基础概论</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
+</div>
+
+    <span><a href="/my-blog/Linux/%E6%9B%B4%E6%8D%A2%E6%B8%85%E5%8D%8E%E6%BA%90" title="更换清华源">更换清华源</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Peter Pan @ Peter Pan</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<a href="https://github.com/amehime/hexo-theme-shoka">Shoka</a>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '/Java/Java的Stream流',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/my-blog/js/app.js?v=0.2.4"></script>
+
+
+
+
+</body>
+</html>

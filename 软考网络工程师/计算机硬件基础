@@ -1,0 +1,985 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/my-blog/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/my-blog/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="理 想 净 土" href="https://github.com/Peter-Pan001/my-blog/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="理 想 净 土" href="https://github.com/Peter-Pan001/my-blog/atom.xml" />
+<link rel="alternate" type="application/json" title="理 想 净 土" href="https://github.com/Peter-Pan001/my-blog/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/my-blog/css/app.css?v=0.2.4">
+
+  
+  <meta name="keywords" content="软考网络工程师" />
+
+
+<link rel="canonical" href="https://github.com/Peter-Pan001/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80">
+
+
+
+  <title>
+计算机硬件基础(部分组成原理) - 软考网络工程师 |
+Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之作证 </title>
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">计算机硬件基础(部分组成原理)
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2021-03-08 21:59:16">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-03-08T21:59:16+08:00">2021-03-08</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/my-blog/" rel="start">Peter Pan</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="https://s3.ax1x.com/2021/02/17/y253bn.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/my-blog/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" itemprop="item" rel="index" title="分类于 软考网络工程师"><span itemprop="name">软考网络工程师</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://github.com/Peter-Pan001/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/my-blog/images/avatar.jpg">
+    <meta itemprop="name" content="Peter Pan">
+    <meta itemprop="description" content=" 凭时间赢来的东西，时间肯定会为之作证 , 不必匆忙，不必火花四溅，不必成为别人，只需成为自己">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="理 想 净 土">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="计算机体系结构"><a class="markdownIt-Anchor" href="#计算机体系结构">#</a> 计算机体系结构</h1>
+<h2 id="数据的表示"><a class="markdownIt-Anchor" href="#数据的表示">#</a> 数据的表示</h2>
+<hr>
+<h3 id="进制转换"><a class="markdownIt-Anchor" href="#进制转换">#</a> 进制转换</h3>
+<ul>
+<li>n 进制，逢 n 进一</li>
+<li>基数：
+<ul>
+<li>进制中允许使用的数码的个数</li>
+</ul>
+</li>
+<li>位权：
+<ul>
+<li>不同位置数码代表的数值</li>
+</ul>
+</li>
+<li><strong>十进制</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">位权</th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">10^3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span></th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">10^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>1</mn></msup></mrow><annotation encoding="application/x-tex">10^1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span></th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>0</mn></msup></mrow><annotation encoding="application/x-tex">10^0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span></span></span></span></span></span></span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">位数</td>
+<td style="text-align:center">4（千位）</td>
+<td style="text-align:center">3（百位）</td>
+<td style="text-align:center">2（十位）</td>
+<td style="text-align:center">1（个位）</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>123</mn><msub><mo stretchy="false">)</mo><mn>10</mn></msub></mrow><annotation encoding="application/x-tex">(123)_{10}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mord">2</span><span class="mord">3</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>= 3<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">×</span></span></span></span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>0</mn></msup></mrow><annotation encoding="application/x-tex">10^0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span></span></span></span></span></span></span></span>+2<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">×</span></span></span></span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>1</mn></msup></mrow><annotation encoding="application/x-tex">10^1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span>+1<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">×</span></span></span></span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">10^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>=3+20+100=123</p>
+</li>
+<li>
+<p>十转二：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>24</mn><msub><mo stretchy="false">)</mo><mn>10</mn></msub></mrow><annotation encoding="application/x-tex">(24)_{10}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">2</span><span class="mord">4</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>= <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">2^4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span></span></span></span>+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">2^3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span>=<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>11000</mn><msub><mo stretchy="false">)</mo><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">(11000)_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
+</li>
+<li>
+<p><strong>二进制</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">位权</th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">2^3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span></th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">2^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>1</mn></msup></mrow><annotation encoding="application/x-tex">2^1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span></th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>0</mn></msup></mrow><annotation encoding="application/x-tex">2^0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span></span></span></span></span></span></span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">位数</td>
+<td style="text-align:center">4（八）</td>
+<td style="text-align:center">3（四）</td>
+<td style="text-align:center">2（二）</td>
+<td style="text-align:center">1（个）</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>二转十：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>110</mn><msub><mo stretchy="false">)</mo><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">(110)_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mord">1</span><span class="mord">0</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>=0<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">×</span></span></span></span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>0</mn></msup></mrow><annotation encoding="application/x-tex">2^0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span></span></span></span></span></span></span></span>+1<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">×</span></span></span></span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>1</mn></msup></mrow><annotation encoding="application/x-tex">2^1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span>+1<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">×</span></span></span></span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">2^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>=0+2+4=<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>6</mn></mrow><annotation encoding="application/x-tex">6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span></span></span></span></p>
+</li>
+<li>
+<p><strong>八进制</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">位权</th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>8</mn><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">8^3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">8</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span></th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>8</mn><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">8^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">8</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>8</mn><mn>1</mn></msup></mrow><annotation encoding="application/x-tex">8^1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">8</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span></th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>8</mn><mn>0</mn></msup></mrow><annotation encoding="application/x-tex">8^0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">8</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span></span></span></span></span></span></span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">位数</td>
+<td style="text-align:center">4（五百一十二）</td>
+<td style="text-align:center">3（六十四）</td>
+<td style="text-align:center">2（八）</td>
+<td style="text-align:center">1（个）</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>八转十：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>127</mn><msub><mo stretchy="false">)</mo><mn>8</mn></msub></mrow><annotation encoding="application/x-tex">(127)_8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mord">2</span><span class="mord">7</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>=7<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">×</span></span></span></span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>8</mn><mn>0</mn></msup></mrow><annotation encoding="application/x-tex">8^0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">8</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span></span></span></span></span></span></span></span>+2<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">×</span></span></span></span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>8</mn><mn>1</mn></msup></mrow><annotation encoding="application/x-tex">8^1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">8</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span>+1<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">×</span></span></span></span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>8</mn><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">8^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">8</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>=7+16+64=<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>87</mn></mrow><annotation encoding="application/x-tex">87</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">8</span><span class="mord">7</span></span></span></span></p>
+</li>
+<li>
+<p><strong>十六进制</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">位权</th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>6</mn><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">16^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">6</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>6</mn><mn>1</mn></msup></mrow><annotation encoding="application/x-tex">16^1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">6</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span></th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>6</mn><mn>0</mn></msup></mrow><annotation encoding="application/x-tex">16^0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">6</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span></span></span></span></span></span></span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">位数</td>
+<td style="text-align:center">3（二百五十六）</td>
+<td style="text-align:center">2（十六）</td>
+<td style="text-align:center">1（个）</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>十六进制表示，逢十六进一；1-9,10A,11B,12C,13D,14E,15F</li>
+<li>十六进制的 10-15 与二进制转换
+<table>
+<thead>
+<tr>
+<th style="text-align:center">十六进制</th>
+<th style="text-align:center">二进制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">1010</td>
+</tr>
+<tr>
+<td style="text-align:center">B</td>
+<td style="text-align:center">1011</td>
+</tr>
+<tr>
+<td style="text-align:center">C</td>
+<td style="text-align:center">1100</td>
+</tr>
+<tr>
+<td style="text-align:center">D</td>
+<td style="text-align:center">1101</td>
+</tr>
+<tr>
+<td style="text-align:center">E</td>
+<td style="text-align:center">1110</td>
+</tr>
+<tr>
+<td style="text-align:center">F</td>
+<td style="text-align:center">1111</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<blockquote>
+<p>详细视频讲解：<span class="exturl" data-url="aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMU54NDExWTdBRD9mcm9tPXNlYXJjaCZhbXA7c2VpZD0zMjY1NjI5MjkxNTkyNjIwODU4">https://www.bilibili.com/video/BV1Nx411Y7AD?from=search&amp;seid=3265629291592620858</span></p>
+</blockquote>
+<h3 id="原码-反码-补码和移码"><a class="markdownIt-Anchor" href="#原码-反码-补码和移码">#</a> 原码、反码、补码和移码</h3>
+<ul>
+<li><strong>原码</strong>
+<ul>
+<li>原码就是符号位加上真值的绝对值，即用第一位表示符号，其余位表示值。例如：假设用 8 位表示一个数值，则  <code>+11</code>  的原码是  <code>00001011</code> ， <code>-11</code>  的原码是  <code>10001011</code></li>
+</ul>
+</li>
+<li><strong>反码</strong>
+<ul>
+<li>反码通常是用来由原码求补码或者由补码求原码的过渡码。反码表示法和原码表示法一样是在数值前面增加了一位符号位（即最高位为符号位），<font color=red>正数的反码与原码相同</font> ，<font color=red>负数的反码符号位为 1 ，其余各位为该数绝对值的原码按位取反</font>。例如： <code>+11</code>  的反码是  <code>00001011</code> ， <code>-11</code>  的反码为  <code>11110100</code> 。</li>
+</ul>
+</li>
+<li><strong>补码</strong>
+<ul>
+<li>补码表示法和原码表示法一样是在数值前面增加了一位符号位（即最高位为符号位），<font color=red>正数的补码与原码相同</font> ，<font color=red>负数的补码是该数的反码末尾加 1</font> ，这个加 1 就是 “补”。例如： <code>+11</code>  的补码是  <code>00001011</code> ， <code>-11</code>  的补码为  <code>11110101</code> 。</li>
+<li><strong>注意：其中负数补码转原码，符号位保留，其余各位取反 + 1。</strong></li>
+</ul>
+</li>
+<li><strong>移码</strong>
+<ul>
+<li>移码（又叫增码）是<font color=red>符号位取反的补码</font>，一般用指数的移码减去 1 来做浮点数的阶码，引入的目的是为了保证浮点数的机器零为全 0。</li>
+</ul>
+</li>
+</ul>
+<h3 id="校验码"><a class="markdownIt-Anchor" href="#校验码">#</a> 校验码</h3>
+<ul>
+<li><strong>码距</strong> ：
+<ul>
+<li>在一个编码系统中，任意两个合法编码之间至少有多少个二进制位不同</li>
+</ul>
+</li>
+<li><strong>奇偶效验码</strong> ：
+<ul>
+<li>通过在编码中增加 1 的个数为奇数或者偶数从而使码距为 2。</li>
+</ul>
+</li>
+<li><strong>海明码</strong> ：
+<ul>
+<li>利用奇偶性来检错和校验的方法。假设有 m 位信息码，加入 k 位校验码，则<mark> m+k+1<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≤</mo></mrow><annotation encoding="application/x-tex">\leq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≤</span></span></span></span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">2^k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.849108em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span></span></span></span></mark></li>
+</ul>
+</li>
+</ul>
+<h2 id="处理器组成"><a class="markdownIt-Anchor" href="#处理器组成">#</a> 处理器组成</h2>
+<hr>
+<h3 id="运算器"><a class="markdownIt-Anchor" href="#运算器">#</a> 运算器</h3>
+<ul>
+<li>
+<p>运算器通常是由 ALU（算术 / 逻辑单元，包括累加器、加法器等）、通用寄存器（不包含地址寄存器）等组成。</p>
+</li>
+<li>
+<p><strong>ALU</strong> ：<mark>进行算数运算和逻辑运算。</mark></p>
+<ul>
+<li>支持基本的<mark>算术运算、按位逻辑运算、移位操作、多倍精度运算、复杂运算</mark></li>
+<li>其中复杂运算包括： <font color=red>单周期运算、流水线运算、迭代运算</font></li>
+</ul>
+<p><img data-src="https://s3.ax1x.com/2021/03/09/68gjdx.png" alt="alu"></p>
+</li>
+<li>
+<p><strong>累加器 AC</strong> ：<mark>暂时存放 ALU 运算的结果信息</mark>。</p>
+</li>
+<li>
+<p><strong>数据缓冲寄存器</strong> ：用来暂时存放由内存储器读出的一条指令或一个数据字。反之，当向内存存入一条指令或一个数据字时，也暂时将它们存放在数据缓冲寄存器中。状态条件寄存器（PSW）保存由算术指令和逻辑指令运算的状态和程序的工作方式。</p>
+</li>
+</ul>
+<h3 id="控制器"><a class="markdownIt-Anchor" href="#控制器">#</a> 控制器</h3>
+<ul>
+<li>控制器的组成包含程序计数器（PC）、指令寄存器（IR）、指令译码器、时序部件等。</li>
+<li><strong>程序计数器（PC）</strong> ：存放的是下一条指令的地址。</li>
+<li><strong>指令寄存器（IR）</strong> ：用来保存当前正在执行的一条指令。</li>
+<li><strong>指令译码器</strong> ：指令中的操作码经过指令译码器译码后，即可向操作控制器发出具体操作的特定信号。</li>
+<li><strong>时序部件</strong> ：为指令的执行产生时序信号。</li>
+</ul>
+<h3 id="总线"><a class="markdownIt-Anchor" href="#总线">#</a> 总线</h3>
+<ul>
+<li>微型计算机通过系统总线将各部件连接到一起，实现了微型计算机内部各部件间的信息交换。</li>
+<li><strong>数据总线 DB</strong> 用于传送数据信息。</li>
+<li><strong>地址总线 AB</strong> 是专门用来传送地址的，地址总线的位数决定了 CPU 可直接寻址的内存空间大小。一般来说，若地址总线为 n 位，则可寻址空间为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">2^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.664392em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span></span></span></span> 字节。</li>
+<li><strong>控制总线 CB</strong> 用来传送控制信号和时序信号。</li>
+</ul>
+<h4 id="地址总线总结"><a class="markdownIt-Anchor" href="#地址总线总结">#</a> 地址总线总结</h4>
+<ul>
+<li>地址总线的 <strong>位数</strong> 决定了 <mark>CPU 可直接寻址的内存空间大小</mark>，如 8 位微机的地址总线为 <strong>16 位</strong> ，则其最大可寻址空间为： $$2^<ruby>16}=64KB$$ 16 位微机的地址总线为 **20 位 **，其可寻址空间为 $$2<rp>【</rp><rt>{20</rt><rp>】</rp></ruby> =1MB$$</li>
+<li><strong>一般来说，若地址总线为 n 位，则可寻址空间为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">2^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.664392em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span></span></span></span> 字节</strong></li>
+</ul>
+<h2 id="指令系统"><a class="markdownIt-Anchor" href="#指令系统">#</a> 指令系统</h2>
+<hr>
+<ul>
+<li>指令系统是中央处理器<mark>所有指令的集合</mark>，通常一条指令可分解为<font color=red>操作码和地址码两部分</font>，操作码确定指令的操作类型，地址码确定指令所要处理操作数的位置。</li>
+</ul>
+<h3 id="寻址方式"><a class="markdownIt-Anchor" href="#寻址方式">#</a> 寻址方式</h3>
+<ul>
+<li>
+<p>指令系统中采用不同寻址方式的目的是扩大寻址空间并提高编程灵活性。常见的寻址方式如图所示：</p>
+<p><img data-src="https://s3.ax1x.com/2021/03/09/68R13D.png" alt="xzfs"></p>
+</li>
+</ul>
+<ol>
+<li><strong>立即寻址方式</strong> ：通常直接在指令的地址码部分给出操作数。</li>
+<li><strong>内存寻址</strong>
+<ul>
+<li>直接寻址方式：在指令中直接给出参加运算的操作数或运算结果所存放的主存地址。</li>
+<li>间接寻址方式：在指令中给出操作数地址的地址。</li>
+<li>变址寻址方式：变址寻址就是变址寄存器中的内容加地址码中的内容即可完成寻址。</li>
+</ul>
+</li>
+<li><strong>寄存器寻址</strong>
+<ul>
+<li>寄存器直接寻址：指令在执行过程中所需要的操作数来源于寄存器。</li>
+<li>寄存器间接寻址：寄存器存放的是操作数在主存的地址。</li>
+</ul>
+</li>
+</ol>
+<h3 id="risc和cisc"><a class="markdownIt-Anchor" href="#risc和cisc">#</a> RISC 和 CISC</h3>
+<ul>
+<li>
+<p><strong>RISC 和 CISC 都是当今 CPU 的两大开发技术</strong></p>
+</li>
+<li>
+<p><strong>RISC</strong> ，即精简指令集计算机，属于 CPU 的一种<mark>设计模式</mark>，对指令数目和寻址方式做了精简</p>
+<ul>
+<li>采用 <strong>定长指令格式</strong></li>
+<li>需要较大的存储空间</li>
+<li>常见的精简指令集微处理器有 ARC、ARM、AVR 等</li>
+</ul>
+</li>
+<li>
+<p><strong>CISC</strong> ，即复杂指令集计算机，<font color=red>特点是指令数目多而复杂，每条指令字长不等</font></p>
+<ul>
+<li><strong>CISC 指令系统丰富，使用频率差别大，处理特殊任务效率高</strong></li>
+<li><mark>高级语言实现简单，效率高</mark></li>
+<li>常见的复杂指令集有 VAX、PDP-11、x86 等</li>
+</ul>
+<p><img data-src="https://s3.ax1x.com/2021/03/09/68Rzxe.png" alt="zljs"></p>
+</li>
+</ul>
+<h3 id="流水线"><a class="markdownIt-Anchor" href="#流水线">#</a> 流水线</h3>
+<ul>
+<li>流水线是指在程序执行时多条指令重叠进行操作的一种准并行处理实现技术。即可以同时为多条指令的不同部分进行工作，以提高各部件的利用率和指令的平均执行速度。</li>
+</ul>
+<h4 id="执行指令的三大阶段"><a class="markdownIt-Anchor" href="#执行指令的三大阶段">#</a> 执行指令的三大阶段</h4>
+<ol>
+<li>取指</li>
+<li>分析</li>
+<li>执行</li>
+<li><strong>流水线指令执行时间</strong>
+<ul>
+<li><strong>标准算法</strong> ：<mark>T＝第一条指令执行所需时间 +（指令条数－1）× 流水线周期</mark></li>
+<li>关于流水线的周期，我们需要知道的是，流水线周期为指令执行阶段中执行时间最长的一段。例如指令流水线把一条指令分为取指令、分析和执行 3 个部分，且 3 个部分的时间分别是取指令 2ns、分析 2ns 及执行 1ns。那么最长的是 2ns，因此 100 条指令全部执行完毕所需要的时间就是（2ns+2ns+1ns）+（100－1）<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">×</span></span></span></span> 2ns=203ns。</li>
+</ul>
+</li>
+<li><strong>流水线的技术指标</strong>
+<ul>
+<li><strong>吞吐率</strong> ：指的是计算机中的流水线在特定的时间内可以处理的任务数量。<br>               <font color=red><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mi>P</mi><mo>=</mo><mi>n</mi><mi mathvariant="normal">/</mi><mi>T</mi><mi>k</mi></mrow><annotation encoding="application/x-tex">TP=n/Tk</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">n</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span></font> <br>（n 为指令条数，TK 为流水线方式时间），其中理论上的最大吞吐率是：1 / 流水线周期。</li>
+<li><strong>加速比</strong> ：完成一批任务，不使用流水线所用的时间与使用流水线所用的时间之比称为流水线的加速比。<br>               <font color=red><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>=</mo><mi>T</mi><mi>S</mi><mi mathvariant="normal">/</mi><mi>T</mi><mi>k</mi></mrow><annotation encoding="application/x-tex">S=TS/Tk</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span></font> <br>（TS 为顺序执行时间，TK 为流水线方式时间）。流水线的效率指的是流水线的设备利用率。</li>
+</ul>
+</li>
+<li><strong>流水线周期等于执行时间最长给的那个指令周期</strong></li>
+<li><font color=red><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>未采用流水线执行时间</mtext><mo>=</mo><mo stretchy="false">(</mo><msub><mi>t</mi><mtext>取指</mtext></msub><mo>+</mo><msub><mi>t</mi><mtext>分析</mtext></msub><mo>+</mo><msub><mi>t</mi><mtext>执行</mtext></msub><mo>×</mo><mtext>总指令数</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">未采用流水线执行时间=(t_{取指}+t_{分析}+t_{执行}\times总指令数)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">未</span><span class="mord cjk_fallback">采</span><span class="mord cjk_fallback">用</span><span class="mord cjk_fallback">流</span><span class="mord cjk_fallback">水</span><span class="mord cjk_fallback">线</span><span class="mord cjk_fallback">执</span><span class="mord cjk_fallback">行</span><span class="mord cjk_fallback">时</span><span class="mord cjk_fallback">间</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cjk_fallback mtight">取</span><span class="mord cjk_fallback mtight">指</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.76508em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cjk_fallback mtight">分</span><span class="mord cjk_fallback mtight">析</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.76508em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cjk_fallback mtight">执</span><span class="mord cjk_fallback mtight">行</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord cjk_fallback">总</span><span class="mord cjk_fallback">指</span><span class="mord cjk_fallback">令</span><span class="mord cjk_fallback">数</span><span class="mclose">)</span></span></span></span></font></li>
+</ol>
+<h2 id="存储系统"><a class="markdownIt-Anchor" href="#存储系统">#</a> 存储系统</h2>
+<hr>
+<h3 id="存储方式"><a class="markdownIt-Anchor" href="#存储方式">#</a> 存储方式</h3>
+<ul>
+<li>存储器中数据常用的存取方式有<mark>顺序存取、直接存取、随机存取和相联存取</mark>等四种。</li>
+<li><strong>顺序存取</strong> ：
+<ul>
+<li>存储器的数据是以记录的形式进行组织，对数据的访问必须按特定的线性顺序进行。磁带存储器的存取方式就是顺序存取。</li>
+</ul>
+</li>
+<li><strong>直接存取</strong> ：
+<ul>
+<li>共享读写装置，但是每个记录都有一个唯一的地址标识，共享的读写装置可以直接移动到目的数据块所在位置进行访问。访问时间与数据位置有关。磁盘存储器采用的这种方式。</li>
+</ul>
+</li>
+<li><strong>随机存取</strong> ：
+<ul>
+<li>存储器的每一个可寻址单元都具有唯一地址和读写装置，系统可以在相同的时间内对任意一个存储单元的数据进行访问，而与先前的访问序列无关。主存储器采用的是这种方式。</li>
+</ul>
+</li>
+<li><strong>相联存取</strong> ：
+<ul>
+<li>也是一种随机存取的形式，但是选择某一单元进行读写是取决于其内容而不是其地址。 <code>Cache</code>  采用该方法进行访问。相联存储器是  <code>Cache</code>  一部分， <code>Cache</code>  中有按内容寻址的相联存储器，用于存放与  <code>Cache</code>  中数据相对应的主存地址，可以快速检索、判断 CPU 读取的某个字当前是否存在于  <code>Cache</code>  中。</li>
+</ul>
+</li>
+</ul>
+<h3 id="相关术语"><a class="markdownIt-Anchor" href="#相关术语">#</a> 相关术语</h3>
+<ul>
+<li><strong>位 (bit)：</strong> 一个二进制表示 1 个 bit</li>
+<li><strong>字节 (B,Byte)：</strong> <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>B</mi><mo>=</mo><mn>8</mn><mi>b</mi><mi>i</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">1B=8bit</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">8</span><span class="mord mathnormal">b</span><span class="mord mathnormal">i</span><span class="mord mathnormal">t</span></span></span></span></li>
+<li><strong>字：</strong> 表示 CPU 一次处理的二进制位数，通常为字节的整数倍</li>
+<li><strong>存储容量：</strong> 存储器可容纳的二进制信息的大小</li>
+</ul>
+<h3 id="43-存储设备"><a class="markdownIt-Anchor" href="#43-存储设备">#</a> 4.3 存储设备</h3>
+<ul>
+<li>传统意义上存储器分为 RAM 和 ROM。
+<ol>
+<li><strong>RAM 和 ROM</strong>
+<ul>
+<li>RAM 是随机存储器，数据可读可写，一旦掉电，数据将消失。ROM 是只读存储器，掉电后数据依然保存。</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>RAM 有静态和动态两种：
+<ul>
+<li>静态 RAM 只要上电后信息不丢失，无须刷新电路过程，消耗较多功率，价格也较高。常作为芯片中的 <code>Cache</code>  使用。</li>
+<li>最常用的动态 RAM 需要上电后，再定时刷新电路才能保持数据，而动态 RAM 集成度高、存储密度高、成本低，功耗低，适于作大容量存储器。常用在内存中。</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li><strong>Cache</strong>
+<ul>
+<li>在计算机执行时，需要从主存中读取指令和数据，需要将外存的数据读入内存中，这些读取的过程都是造成计算机性能下降的瓶颈，为了尽可能减少速度慢的设备对速度快的设备的约束，可以利用高速缓存 <code>Cache</code>  技术。</li>
+</ul>
+</li>
+<li><strong>磁盘</strong>
+<ul>
+<li>与计算机技术一样，存储技术也在不断发展，在现代计算机中，最常见的存储介质包括机械硬盘、光盘、磁带，固态硬盘 SSD 等。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="存储计算"><a class="markdownIt-Anchor" href="#存储计算">#</a> 存储计算</h3>
+<ul>
+<li>实际的存储器总是由一片或多片存储芯片 + 控制电路构成的。<br><font color=red><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>芯片数量</mtext><mo>≥</mo><mtext>存储器容量</mtext><mi mathvariant="normal">/</mi><mtext>存储芯片容量</mtext></mrow><annotation encoding="application/x-tex">芯片数量≥存储器容量/存储芯片容量</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.13597em;"></span><span class="mord cjk_fallback">芯</span><span class="mord cjk_fallback">片</span><span class="mord cjk_fallback">数</span><span class="mord cjk_fallback">量</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord cjk_fallback">存</span><span class="mord cjk_fallback">储</span><span class="mord cjk_fallback">器</span><span class="mord cjk_fallback">容</span><span class="mord cjk_fallback">量</span><span class="mord">/</span><span class="mord cjk_fallback">存</span><span class="mord cjk_fallback">储</span><span class="mord cjk_fallback">芯</span><span class="mord cjk_fallback">片</span><span class="mord cjk_fallback">容</span><span class="mord cjk_fallback">量</span></span></span></span></font></li>
+<li>如果存储器 <strong>有 256 个存储单元</strong> ，那么它的地址编码为  <code>0～255</code> ，对应的二进制数是 <code>00000000～11111111</code> ，需要用 8 位二进制来表示，也就是地址宽度为 8 位，需要 8 根地址线。存储器中所有存储单元的总和称为这个存储器的存储容量，存储容量的单位是 B、KB、MB、GB 和 TB 等。
+<ul>
+<li>例如：按某存储器字节编址，地址从 A4000H 到 CBFFFH，则表示有 <code>（A4000－CBFFF）＋1</code>  个字节，即 28000H 个字节，转换为十进制是 160KB。若用 16K×4bit 的存储器芯片构成该内存，共需 160K <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">×</span></span></span></span> 8/16K <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">×</span></span></span></span> 4=20 片。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>存储器地址编码</mtext><mo>=</mo><mo stretchy="false">(</mo><mtext>最大地址</mtext><mo>−</mo><mtext>最小地址</mtext><mo stretchy="false">)</mo><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">存储器地址编码=(最大地址-最小地址)+1
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">存</span><span class="mord cjk_fallback">储</span><span class="mord cjk_fallback">器</span><span class="mord cjk_fallback">地</span><span class="mord cjk_fallback">址</span><span class="mord cjk_fallback">编</span><span class="mord cjk_fallback">码</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord cjk_fallback">最</span><span class="mord cjk_fallback">大</span><span class="mord cjk_fallback">地</span><span class="mord cjk_fallback">址</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord cjk_fallback">最</span><span class="mord cjk_fallback">小</span><span class="mord cjk_fallback">地</span><span class="mord cjk_fallback">址</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>随机存储传输率</mtext><mo>=</mo><mn>1</mn><mi mathvariant="normal">/</mi><mtext>存储器周期</mtext></mrow><annotation encoding="application/x-tex">随机存储传输率=1/存储器周期
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">随</span><span class="mord cjk_fallback">机</span><span class="mord cjk_fallback">存</span><span class="mord cjk_fallback">储</span><span class="mord cjk_fallback">传</span><span class="mord cjk_fallback">输</span><span class="mord cjk_fallback">率</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mord">/</span><span class="mord cjk_fallback">存</span><span class="mord cjk_fallback">储</span><span class="mord cjk_fallback">器</span><span class="mord cjk_fallback">周</span><span class="mord cjk_fallback">期</span></span></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>非随机存储读写</mtext><mi>N</mi><mtext>位所需要的平均时间</mtext><mo>=</mo><mtext>平均存取时间</mtext><mo>+</mo><mi>N</mi><mtext>为</mtext><mi mathvariant="normal">/</mi><mtext>数据传输率</mtext></mrow><annotation encoding="application/x-tex">非随机存储读写N位所需要的平均时间=平均存取时间+N为/数据传输率
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">非</span><span class="mord cjk_fallback">随</span><span class="mord cjk_fallback">机</span><span class="mord cjk_fallback">存</span><span class="mord cjk_fallback">储</span><span class="mord cjk_fallback">读</span><span class="mord cjk_fallback">写</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord cjk_fallback">位</span><span class="mord cjk_fallback">所</span><span class="mord cjk_fallback">需</span><span class="mord cjk_fallback">要</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">平</span><span class="mord cjk_fallback">均</span><span class="mord cjk_fallback">时</span><span class="mord cjk_fallback">间</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord cjk_fallback">平</span><span class="mord cjk_fallback">均</span><span class="mord cjk_fallback">存</span><span class="mord cjk_fallback">取</span><span class="mord cjk_fallback">时</span><span class="mord cjk_fallback">间</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord cjk_fallback">为</span><span class="mord">/</span><span class="mord cjk_fallback">数</span><span class="mord cjk_fallback">据</span><span class="mord cjk_fallback">传</span><span class="mord cjk_fallback">输</span><span class="mord cjk_fallback">率</span></span></span></span></span></p>
+<ul>
+<li>
+<p><strong>平均存取时间</strong>：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>T</mi><mo>=</mo><mi>H</mi><mo>×</mo><msub><mi>T</mi><mn>1</mn></msub><mo>+</mo><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>H</mi><mo stretchy="false">)</mo><msub><mi>T</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">T=H\times T_1+(1-H)T_2
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="mclose">)</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+<p>其中 Cache 的命中率为 H，Cache 的访问周期为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">T_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>  , 主存的访问周期为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">T_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
+</li>
+<li>
+<p><strong>命中率</strong>：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>H</mi><mo>=</mo><msub><mi>N</mi><mn>1</mn></msub><mi mathvariant="normal">/</mi><mo stretchy="false">(</mo><msub><mi>N</mi><mn>1</mn></msub><mo>+</mo><mi>N</mi><mn>2</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">H=N_1/(N_1+N2)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">/</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord">2</span><span class="mclose">)</span></span></span></span></span></p>
+<p>其中 Cache 的访问次数为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">N_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> , 主存的访问次数为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">N_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> ,H 为命中率</p>
+</li>
+</ul>
+<h3 id="系统可靠性"><a class="markdownIt-Anchor" href="#系统可靠性">#</a> 系统可靠性</h3>
+<ul>
+<li>计算机系统是一个复杂的系统，而且影响其可靠性的因素也非常繁复，很难直接对其进行可靠性分析。但通过建立适当的数学模型，把大系统分割成若干子系统，可以简化其分析过程。</li>
+</ul>
+<ol>
+<li><strong>串联系统</strong>
+<ul>
+<li>
+<p>假设一个系统由 n 个子系统组成，<font color=red>当且仅当</font> 所有的子系统都能正常工作时，系统才能正常工作，这种系统称为串联系统，如图所示:</p>
+<p><img data-src="https://s3.ax1x.com/2021/03/09/68WFat.png" alt="clxt"></p>
+</li>
+<li>
+<p>设系统各个子系统的可靠性分别用 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">R_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> ，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">R_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> ，…，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">R_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 表示，则系统的可靠性:</p>
+<ul>
+<li><mark>R = <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">R_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">×</span></span></span></span> <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">R_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">×</span></span></span></span>  …<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">×</span></span></span></span>  <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">R_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></mark></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>并联系统</strong>
+<ul>
+<li>
+<p>假如一个系统由 n 个子系统组成，<font color=red>只要</font> 有一个子系统能够正常工作，系统就能正常工作，如图所示:</p>
+<p><img data-src="https://s3.ax1x.com/2021/03/09/68WEPf.png" alt="blxt"></p>
+</li>
+<li>
+<p>设系统各个子系统的可靠性分别用 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">R_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> ，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">R_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> ，…，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">R_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 表示，则系统的可靠性：</p>
+<ul>
+<li><mark>R = 1-（1-<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">R_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> ）<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">×</span></span></span></span> （1- <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">R_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> ）<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">×</span></span></span></span> … <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">×</span></span></span></span> （1 - <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">R_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> ）</mark></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="磁盘阵列raid"><a class="markdownIt-Anchor" href="#磁盘阵列raid">#</a> 磁盘阵列 RAID</h3>
+<ul>
+<li><strong>RAID 0</strong> ：<mark>需要两块以上磁盘</mark>，每个磁盘划分不同的区块，数据采用交叉存取和并行传输这种 <mark>磁盘利用率高（100％）</mark>， <strong>读写速度最快</strong> ，但由于没有数据差错控制，因此<mark>很容易发生数据错误</mark></li>
+<li><strong>RAID 1</strong> ：磁盘成对组成，每个工作磁盘均有对应的映射，上面保存着与工作盘完全相同的数据， <strong>具有最高的安全性</strong> 但 <mark>磁盘利用率为 50‰</mark></li>
+<li><strong>RAID 3</strong> ：把奇偶校验码（只能查不能纠错）存在一个独立的磁盘，如果一个磁盘失效，其上的数据可以通过其亻也盘上数据进行异或运算得到，读盘涑度快，但写入速度慢。适用于图像处理等要求高吞吐率的场合，<mark>磁盘利用率：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn><mi mathvariant="normal">/</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">n-1/n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mord">/</span><span class="mord mathnormal">n</span></span></span></span></mark>.</li>
+<li><strong>RAID 5</strong> ：各块磁盘进行条带化分割，相同的条带进行分布式奇偶校验，检验数据平均分配在每一块硬盘上。<mark>磁盘利用率：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn><mi mathvariant="normal">/</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">n-1/n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mord">/</span><span class="mord mathnormal">n</span></span></span></span></mark></li>
+<li><strong>组合 RAID 技术</strong> ：RAID1+0 以及 RAID0+1，是 RAID0 与 RAID1 组合形式，它提供 RAID1 的安全保障同时提供 RAID0 近似的访问速度。RAID1+0 拥有更高的数据安全性在企业中更常使用。</li>
+</ul>
+
+      <div class="tags">
+          <a href="/my-blog/tags/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" rel="tag"><i class="ic i-tag"></i> 软考网络工程师</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/my-blog/images/wechatpay.png" alt="Peter Pan 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/my-blog/images/alipay.png" alt="Peter Pan 支付宝">
+        <p>支付宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Peter Pan <i class="ic i-at"><em>@</em></i>理 想 净 土
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://github.com/Peter-Pan001/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80" title="计算机硬件基础(部分组成原理)">https://github.com/Peter-Pan001/my-blog/软考网络工程师/计算机硬件基础</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E5%92%8C%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;s3.ax1x.com&#x2F;2021&#x2F;02&#x2F;17&#x2F;y253bn.jpg" title="系统开发和项目管理基础">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 软考网络工程师</span>
+  <h3>系统开发和项目管理基础</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;s3.ax1x.com&#x2F;2021&#x2F;02&#x2F;17&#x2F;y253bn.jpg" title="操作系统基础">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 软考网络工程师</span>
+  <h3>操作系统基础</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#计算机体系结构"><span class="toc-number">1.</span> <span class="toc-text"> 计算机体系结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据的表示"><span class="toc-number">1.1.</span> <span class="toc-text"> 数据的表示</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#进制转换"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 进制转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#原码-反码-补码和移码"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 原码、反码、补码和移码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#校验码"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 校验码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#处理器组成"><span class="toc-number">1.2.</span> <span class="toc-text"> 处理器组成</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#运算器"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 运算器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#控制器"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 控制器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总线"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 总线</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#地址总线总结"><span class="toc-number">1.2.3.1.</span> <span class="toc-text"> 地址总线总结</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#指令系统"><span class="toc-number">1.3.</span> <span class="toc-text"> 指令系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#寻址方式"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 寻址方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#risc和cisc"><span class="toc-number">1.3.2.</span> <span class="toc-text"> RISC 和 CISC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#流水线"><span class="toc-number">1.3.3.</span> <span class="toc-text"> 流水线</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#执行指令的三大阶段"><span class="toc-number">1.3.3.1.</span> <span class="toc-text"> 执行指令的三大阶段</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#存储系统"><span class="toc-number">1.4.</span> <span class="toc-text"> 存储系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#存储方式"><span class="toc-number">1.4.1.</span> <span class="toc-text"> 存储方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相关术语"><span class="toc-number">1.4.2.</span> <span class="toc-text"> 相关术语</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#43-存储设备"><span class="toc-number">1.4.3.</span> <span class="toc-text"> 4.3 存储设备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#存储计算"><span class="toc-number">1.4.4.</span> <span class="toc-text"> 存储计算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#系统可靠性"><span class="toc-number">1.4.5.</span> <span class="toc-text"> 系统可靠性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#磁盘阵列raid"><span class="toc-number">1.4.6.</span> <span class="toc-text"> 磁盘阵列 RAID</span></a></li></ol></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E6%A6%82%E8%AE%BA" rel="bookmark" title="计算机基础概论">计算机基础概论</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8001" rel="bookmark" title="数据通信基础01">数据通信基础01</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8002" rel="bookmark" title="数据通信基础02">数据通信基础02</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B9%BF%E5%9F%9F%E9%80%9A%E4%BF%A1%E7%BD%91" rel="bookmark" title="广域通信网">广域通信网</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%9F%8E%E5%9F%9F%E7%BD%9101" rel="bookmark" title="局域网与城域网01">局域网与城域网01</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%9F%8E%E5%9F%9F%E7%BD%9102" rel="bookmark" title="局域网与城域网02">局域网与城域网02</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%97%A0%E7%BA%BF%E9%80%9A%E4%BF%A1%E7%BD%91" rel="bookmark" title="无线通信网">无线通信网</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9101" rel="bookmark" title="网络互联与互联网01">网络互联与互联网01</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/IP%E5%AD%90%E7%BD%91%E5%88%92%E5%88%86%E4%B8%93%E9%A2%98" rel="bookmark" title="IP子网划分专题">IP子网划分专题</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9102" rel="bookmark" title="网络互联与互联网02">网络互联与互联网02</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9103" rel="bookmark" title="网络互联与互联网03">网络互联与互联网03</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9104" rel="bookmark" title="网络互联与互联网04">网络互联与互联网04</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E4%B8%8B%E4%B8%80%E4%BB%A3%E4%BA%92%E8%81%94%E7%BD%91" rel="bookmark" title="下一代互联网">下一代互联网</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%8E%E5%BA%94%E7%94%A801" rel="bookmark" title="网络安全与应用01">网络安全与应用01</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%8E%E5%BA%94%E7%94%A802" rel="bookmark" title="网络安全与应用02">网络安全与应用02</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A801" rel="bookmark" title="网络应用服务器01">网络应用服务器01</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A802" rel="bookmark" title="网络应用服务器02">网络应用服务器02</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F" rel="bookmark" title="常用公式">常用公式</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8F%E8%AE%AE%E5%90%8D%E7%A7%B0%E4%B8%8E%E7%AE%80%E4%BB%8B" rel="bookmark" title="协议名称与简介">协议名称与简介</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E5%92%8C%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80" rel="bookmark" title="系统开发和项目管理基础">系统开发和项目管理基础</a></li><li class="active"><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80" rel="bookmark" title="计算机硬件基础(部分组成原理)">计算机硬件基础(部分组成原理)</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80" rel="bookmark" title="操作系统基础">操作系统基础</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%90%84%E9%87%8D%E7%82%B9%E5%8D%8F%E8%AE%AE%E5%8F%8A%E5%B8%A7%E6%A0%BC%E5%BC%8F%E8%AF%A6%E8%A7%A3" rel="bookmark" title="各重点协议及帧格式详解">各重点协议及帧格式详解</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E8%A7%84%E5%88%92%E4%B8%8E%E8%AE%BE%E8%AE%A1" rel="bookmark" title="网络规划与设计">网络规划与设计</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/Linux%E9%85%8D%E7%BD%AE" rel="bookmark" title="Linux配置">Linux配置</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%881%EF%BC%89" rel="bookmark" title="华为路由交换实验命令（1）">华为路由交换实验命令（1）</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%882%EF%BC%89" rel="bookmark" title="华为路由交换实验命令（2）">华为路由交换实验命令（2）</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%883%EF%BC%89" rel="bookmark" title="华为路由实验命令（3）">华为路由实验命令（3）</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%884%EF%BC%89" rel="bookmark" title="华为交换实验命令（4）">华为交换实验命令（4）</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Peter Pan"
+      data-src="/my-blog/images/avatar.jpg">
+  <p class="name" itemprop="name">Peter Pan</p>
+  <div class="description" itemprop="description">不必匆忙，不必火花四溅，不必成为别人，只需成为自己</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/my-blog/archives/">
+        <span class="count">73</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/my-blog/categories/">
+        <span class="count">10</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/my-blog/tags/">
+        <span class="count">14</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <a href="https://github.com/Peter-Pan001/Basic" title="https:&#x2F;&#x2F;github.com&#x2F;Peter-Pan001&#x2F;Basic" class="item github"><i class="ic i-github"></i></a>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS9ndWFuZy1tYW5nLWxpZ2h0bmluZw==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;guang-mang-lightning"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTE5MjY4NTE4NDA=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;1926851840"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS9QZXRlclBhbjA4MjQ=" title="https:&#x2F;&#x2F;about.me&#x2F;PeterPan0824"><i class="ic i-address-card"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/my-blog/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/my-blog/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+    <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/my-blog/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/my-blog/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/my-blog/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/my-blog/friends/" rel="section"><i class="ic i-heart"></i>friends</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/my-blog/links/" rel="section"><i class="ic i-magic"></i>links</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E5%92%8C%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%8E%E5%BA%94%E7%94%A802" title="网络安全与应用02">网络安全与应用02</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/Java%E5%A4%9A%E6%80%81" title="Java多态">Java多态</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1" title="类与对象">类与对象</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9101" title="网络互联与互联网01">网络互联与互联网01</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E5%92%8C%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80" title="系统开发和项目管理基础">系统开发和项目管理基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
+</div>
+
+    <span><a href="/my-blog/Linux/%E6%9B%B4%E6%8D%A2%E6%B8%85%E5%8D%8E%E6%BA%90" title="更换清华源">更换清华源</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9103" title="网络互联与互联网03">网络互联与互联网03</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/Java%E7%BB%A7%E6%89%BF" title="Java继承">Java继承</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%884%EF%BC%89" title="华为交换实验命令（4）">华为交换实验命令（4）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
+</div>
+
+    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/Fusion%20Compute%E5%AE%89%E8%A3%85" title="Fusion Compute安装">Fusion Compute安装</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Peter Pan @ Peter Pan</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<a href="https://github.com/amehime/hexo-theme-shoka">Shoka</a>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '/软考网络工程师/计算机硬件基础',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,copy_tex: true,
+    katex: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',quiz: {
+      choice: "单选题",
+      multiple: "多选题",
+      true_false: "判断题",
+      essay: "问答题",
+      gap_fill: "填空题",
+      mistake: "错题备注"
+    },
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/my-blog/js/app.js?v=0.2.4"></script>
+
+
+
+
+</body>
+</html>

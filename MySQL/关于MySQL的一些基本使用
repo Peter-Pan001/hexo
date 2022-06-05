@@ -1,0 +1,572 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/my-blog/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/my-blog/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="理 想 净 土" href="https://github.com/Peter-Pan001/my-blog/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="理 想 净 土" href="https://github.com/Peter-Pan001/my-blog/atom.xml" />
+<link rel="alternate" type="application/json" title="理 想 净 土" href="https://github.com/Peter-Pan001/my-blog/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/my-blog/css/app.css?v=0.2.4">
+
+  
+  <meta name="keywords" content="MySQL" />
+
+
+<link rel="canonical" href="https://github.com/Peter-Pan001/my-blog/MySQL/%E5%85%B3%E4%BA%8EMySQL%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8">
+
+
+
+  <title>
+关于MySQL的一些基本使用 - MySQL |
+Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之作证 </title>
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">关于MySQL的一些基本使用
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2020-10-25 21:09:50">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2020-10-25T21:09:50+08:00">2020-10-25</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/my-blog/" rel="start">Peter Pan</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="https://i.loli.net/2020/10/25/ZJQ7FTnBvsdoprL.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/my-blog/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/my-blog/categories/MySQL/" itemprop="item" rel="index" title="分类于 MySQL"><span itemprop="name">MySQL</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://github.com/Peter-Pan001/my-blog/MySQL/%E5%85%B3%E4%BA%8EMySQL%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/my-blog/images/avatar.jpg">
+    <meta itemprop="name" content="Peter Pan">
+    <meta itemprop="description" content=" 凭时间赢来的东西，时间肯定会为之作证 , 不必匆忙，不必火花四溅，不必成为别人，只需成为自己">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="理 想 净 土">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h2 id="mysql数据库软件"><a class="markdownIt-Anchor" href="#mysql数据库软件">#</a> MySQL 数据库软件</h2>
+<h3 id="关于配置conf"><a class="markdownIt-Anchor" href="#关于配置conf">#</a> 关于配置（conf）</h3>
+<ul>
+<li>MySQL 服务的启动与停止
+<ul>
+<li>手动通过应用程序启动</li>
+<li>或者通过 cmd 配置命令启动
+<ul>
+<li>cmd  -&gt; services.msc -&gt;MySQL</li>
+</ul>
+</li>
+<li>或者 cmd 管理员模式启动
+<ul>
+<li>net stop MySQL</li>
+<li>net start MySQL</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="关于登录与退出"><a class="markdownIt-Anchor" href="#关于登录与退出">#</a> 关于登录与退出</h3>
+<ul>
+<li>
+<p>一般的 MySQL 版本：</p>
+<ul>
+<li>登录命令
+<ul>
+<li>cmd 中，在 mysql 安装目录下输入： <code>mysql -uroot -p密码</code></li>
+<li>然后根据提示输入密码（为此前安装时设置的密码）</li>
+</ul>
+</li>
+<li>退出：
+<ul>
+<li>直接输入 <code>exit</code>  或者 <code>quit</code>  即可</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>如果是 MySQL8.0 版本的：</p>
+<ul>
+<li>在特定的 SQL Commands line client 窗口中直接输入密码登录</li>
+</ul>
+</li>
+</ul>
+<h3 id="关于目录结构"><a class="markdownIt-Anchor" href="#关于目录结构">#</a> 关于目录结构</h3>
+<ul>
+<li>MySQL 安装目录<!-- ![Mysql_dir.png](http://ww1.sinaimg.cn/large/007uxMgDgy1gizq3tu941j30pl0h4jrp.jpg) -->
+</li>
+</ul>
+<p><img data-src="https://i.loli.net/2020/10/26/cB35g8iFSYVZ2zw.png" alt="Mysql_dir.png"></p>
+<ul>
+<li><strong>bin</strong>：存放一些二进制文件以及一些 exe 文件，服务类和基础类的</li>
+<li><strong>data</strong>：存放日志文件、数据文件的</li>
+<li><strong>share</strong>：存放 MySQL 一些错误数据</li>
+</ul>
+
+      <div class="tags">
+          <a href="/my-blog/tags/MySQL/" rel="tag"><i class="ic i-tag"></i> MySQL</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/my-blog/images/wechatpay.png" alt="Peter Pan 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/my-blog/images/alipay.png" alt="Peter Pan 支付宝">
+        <p>支付宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Peter Pan <i class="ic i-at"><em>@</em></i>理 想 净 土
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://github.com/Peter-Pan001/my-blog/MySQL/%E5%85%B3%E4%BA%8EMySQL%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8" title="关于MySQL的一些基本使用">https://github.com/Peter-Pan001/my-blog/MySQL/关于MySQL的一些基本使用</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/my-blog/Java/Java%E8%AF%AD%E5%8F%A5" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;s4.ax1x.com&#x2F;2022&#x2F;01&#x2F;09&#x2F;7Fya5t.jpg" title="Java语句">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> Java</span>
+  <h3>Java语句</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/my-blog/%E5%89%8D%E7%AB%AF/%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E5%89%8D%E7%AB%AF" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;10&#x2F;25&#x2F;UN5uPakSWhGrEFj.jpg" title="如何学习前端">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 前端</span>
+  <h3>如何学习前端</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#mysql数据库软件"><span class="toc-number">1.</span> <span class="toc-text"> MySQL 数据库软件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#关于配置conf"><span class="toc-number">1.1.</span> <span class="toc-text"> 关于配置（conf）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于登录与退出"><span class="toc-number">1.2.</span> <span class="toc-text"> 关于登录与退出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于目录结构"><span class="toc-number">1.3.</span> <span class="toc-text"> 关于目录结构</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li class="active"><a href="/my-blog/MySQL/%E5%85%B3%E4%BA%8EMySQL%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8" rel="bookmark" title="关于MySQL的一些基本使用">关于MySQL的一些基本使用</a></li><li><a href="/my-blog/MySQL/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80" rel="bookmark" title="MySQL数据库">MySQL数据库</a></li><li><a href="/my-blog/MySQL/MySQL%E8%BF%9B%E9%98%B6" rel="bookmark" title="MySQL进阶">MySQL进阶</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Peter Pan"
+      data-src="/my-blog/images/avatar.jpg">
+  <p class="name" itemprop="name">Peter Pan</p>
+  <div class="description" itemprop="description">不必匆忙，不必火花四溅，不必成为别人，只需成为自己</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/my-blog/archives/">
+        <span class="count">73</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/my-blog/categories/">
+        <span class="count">10</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/my-blog/tags/">
+        <span class="count">14</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <a href="https://github.com/Peter-Pan001/Basic" title="https:&#x2F;&#x2F;github.com&#x2F;Peter-Pan001&#x2F;Basic" class="item github"><i class="ic i-github"></i></a>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS9ndWFuZy1tYW5nLWxpZ2h0bmluZw==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;guang-mang-lightning"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTE5MjY4NTE4NDA=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;1926851840"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS9QZXRlclBhbjA4MjQ=" title="https:&#x2F;&#x2F;about.me&#x2F;PeterPan0824"><i class="ic i-address-card"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/my-blog/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/my-blog/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+    <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/my-blog/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/my-blog/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/my-blog/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/my-blog/friends/" rel="section"><i class="ic i-heart"></i>friends</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/my-blog/links/" rel="section"><i class="ic i-magic"></i>links</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/my-blog/Java/Java%E8%AF%AD%E5%8F%A5" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/my-blog/%E5%89%8D%E7%AB%AF/%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E5%89%8D%E7%AB%AF" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%883%EF%BC%89" title="华为路由实验命令（3）">华为路由实验命令（3）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93" title="多线程笔记总结">多线程笔记总结</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A802" title="网络应用服务器02">网络应用服务器02</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
+</div>
+
+    <span><a href="/my-blog/Linux/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E5%8F%8Ayum%E6%BA%90%E9%97%AE%E9%A2%98" title="网络配置及yum源问题">网络配置及yum源问题</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/Java%E5%B0%81%E8%A3%85" title="Java封装">Java封装</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
+</div>
+
+    <span><a href="/my-blog/Linux/%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86" title="目录与文件管理">目录与文件管理</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
+</div>
+
+    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/Fusion%20Compute%E7%AE%80%E4%BB%8B" title="Fusion Compute简介">Fusion Compute简介</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/git/" title="分类于 git">git</a>
+</div>
+
+    <span><a href="/my-blog/git/git%E4%B8%8Egithub%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BA%86%E8%A7%A3" title="git与github的基本了解">git与github的基本了解</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" title="分类于 数据分析">数据分析</a>
+</div>
+
+    <span><a href="/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/informatica%E6%89%A9%E5%B1%95" title="informatica扩展">informatica扩展</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="分类于 算法与数据结构">算法与数据结构</a>
+</div>
+
+    <span><a href="/my-blog/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B" title="算法入门教程">算法入门教程</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Peter Pan @ Peter Pan</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<a href="https://github.com/amehime/hexo-theme-shoka">Shoka</a>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '/MySQL/关于MySQL的一些基本使用',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/my-blog/js/app.js?v=0.2.4"></script>
+
+
+
+
+</body>
+</html>

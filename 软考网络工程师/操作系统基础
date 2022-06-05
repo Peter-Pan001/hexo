@@ -1,0 +1,732 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/my-blog/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/my-blog/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="理 想 净 土" href="https://github.com/Peter-Pan001/my-blog/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="理 想 净 土" href="https://github.com/Peter-Pan001/my-blog/atom.xml" />
+<link rel="alternate" type="application/json" title="理 想 净 土" href="https://github.com/Peter-Pan001/my-blog/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/my-blog/css/app.css?v=0.2.4">
+
+  
+  <meta name="keywords" content="软考网络工程师" />
+
+
+<link rel="canonical" href="https://github.com/Peter-Pan001/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80">
+
+
+
+  <title>
+操作系统基础 - 软考网络工程师 |
+Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之作证 </title>
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">操作系统基础
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2021-03-11 10:45:47">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-03-11T10:45:47+08:00">2021-03-11</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/my-blog/" rel="start">Peter Pan</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="https://s3.ax1x.com/2021/02/17/y253bn.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/my-blog/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" itemprop="item" rel="index" title="分类于 软考网络工程师"><span itemprop="name">软考网络工程师</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://github.com/Peter-Pan001/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/my-blog/images/avatar.jpg">
+    <meta itemprop="name" content="Peter Pan">
+    <meta itemprop="description" content=" 凭时间赢来的东西，时间肯定会为之作证 , 不必匆忙，不必火花四溅，不必成为别人，只需成为自己">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="理 想 净 土">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="进程管理"><a class="markdownIt-Anchor" href="#进程管理">#</a> 进程管理</h1>
+<hr>
+<h2 id="11-进程状态"><a class="markdownIt-Anchor" href="#11-进程状态">#</a> 1.1 进程状态</h2>
+<ul>
+<li>
+<p><strong>运行态</strong> ：</p>
+<ul>
+<li>占有处理器正在运行。</li>
+</ul>
+</li>
+<li>
+<p><strong>就绪态</strong> ：</p>
+<ul>
+<li>具备运行条件，等待系统分配处理器以便运行。</li>
+</ul>
+</li>
+<li>
+<p><strong>等待态（阻塞态）</strong> ：</p>
+<ul>
+<li>不具备运行条件，正在等待某个事件的完成。</li>
+</ul>
+</li>
+<li>
+<p>一个进程在创建后将处于就绪状态。在执行过程中，每个进程任一时刻只会处于这 3 种状态之一。</p>
+<p><img data-src="https://s3.ax1x.com/2021/03/11/6Nm6wq.png" alt="jczt"></p>
+</li>
+<li>
+<p>运行态→等待态：处于运行状态的进程在运行的过程中需要等待某一事件发生后，才能继续运行，于是该进程由运行状态变成等待状态。例如等待 I/O 完成。</p>
+</li>
+<li>
+<p>等待态→就绪态：处于等待状态的进程，假如其等待的事件已经发生结束。于是进程由等待状态变成就绪状态。</p>
+</li>
+<li>
+<p>就绪态→运行态：当处于就绪状态的进程被进程调度程序选中后，就分配到处理器来运行，进程由就绪状态变成运行状态。</p>
+</li>
+<li>
+<p>运行态→就绪态：处于运行状态的进程在运行的过程中，因分给它的处理器时间片已用完而不得不让出处理器，于是进程由运行状态变成就绪状态。</p>
+</li>
+</ul>
+<h2 id="进程死锁"><a class="markdownIt-Anchor" href="#进程死锁">#</a> 进程死锁</h2>
+<ul>
+<li>一个进程在等待的是一个不可能发生的事件，系统会将该进程死锁，若多个进程产生死锁，则系统自身会死锁</li>
+</ul>
+<h3 id="死锁的四个必要因素"><a class="markdownIt-Anchor" href="#死锁的四个必要因素">#</a> 死锁的四个必要因素</h3>
+<ul>
+<li><strong>互斥</strong> ：至少有一个资源必须处于非共享模式，即一次只有一个进程可使用。如果另一进程申请该资源，那么申请进程应等到该资源释放为止。</li>
+<li><strong>占有并等待</strong> ：一个进程应占有至少一个资源，并等待另一个资源，而该资源为其他进程所占有。</li>
+<li><strong>非抢占</strong> ：资源不能被抢占，即资源只能被进程在完成任务后自愿释放。</li>
+<li><strong>循环等待</strong> ：有一组等待进程 {<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">P_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> ，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">P_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> ，…，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">P_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> }，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">P_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 等待的资源为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">P_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 占有，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">P_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 等待的资源为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">P_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 占有，……，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">P_{n-1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.891661em;vertical-align:-0.208331em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.301108em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span></span></span></span> 等待的资源为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">P_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 占有，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">P_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 等待的资源为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">P_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 占有。</li>
+</ul>
+<h3 id="解决死锁的策略"><a class="markdownIt-Anchor" href="#解决死锁的策略">#</a> 解决死锁的策略</h3>
+<ol>
+<li><strong>死锁预防</strong> ：
+<ul>
+<li>例如，要求用户申请资源时一次性申请所需要的全部资源，这样就破坏了保持和等待条件；将资源分层，得到上一层资源后，才能够申请下一层资源，它破坏了环路等待条件。预防通常会降低系统的效率。</li>
+</ul>
+</li>
+<li><strong>死锁避免</strong> ：
+<ul>
+<li>避免是指进程在每次申请资源时判断这些操作是否安全，典型算法是银行家算法。但这种算法会增加系统的开销。</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><strong>所谓银行家算法</strong> ，是指在分配资源之前，先看清楚，如果资源分配下去后，是否会导致系统死锁。如果会死锁，则不分配，否则就分配。具体来说，银行家算法分配资源的原则总结如下：
+<ol>
+<li>当一个进程对资源的最大需求量不超过系统中的资源数时可以接纳该进程。</li>
+<li>进程可以分期请求资源，但请求的总数不能超过最大需求量。</li>
+<li>当系统现有的资源不能满足进程尚需资源数时，对进程的请求可以推迟分配，但总能使进程在有限的时间里得到资源。</li>
+</ol>
+</li>
+<li>注意：
+<ul>
+<li>如果系统中有 N 个并发进程，若规定每个进程需要申请 R 个某类资源，则当系统提供 <mark><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>=</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">K=N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">×</span></span></span></span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>（</mtext><mi>R</mi><mo>−</mo><mn>1</mn><mtext>）</mtext><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">（R-1）+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord cjk_fallback">（</span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mord cjk_fallback">）</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></mark> 个同类资源时，无论采用何种方式申请使用，一定不会发生死锁。</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li><strong>死锁检测</strong> ：
+<ul>
+<li>前两者是事前措施，而死锁的检测则是判断系统是否处于死锁状态，如果是，则执行死锁解除策略。</li>
+</ul>
+</li>
+<li><strong>死锁解除</strong> ：
+<ul>
+<li>这是与死锁检测结合使用的，它使用的方式就是剥夺。即将某进程所拥有的资源强行收回，分配给其他的进程。</li>
+</ul>
+</li>
+</ol>
+<h2 id="进程的同步与互斥"><a class="markdownIt-Anchor" href="#进程的同步与互斥">#</a> 进程的同步与互斥</h2>
+<ol>
+<li><strong>同步</strong>
+<ul>
+<li>进程同步也是进程之间直接的制约关系，是为完成某种任务而建立的两个或多个线程，这个线程需要在某些位置上协调他们的工作次序而等待、传递信息所产生的制约关系。进程间的直接制约关系来源于他们之间的合作。</li>
+<li>比如说进程 A 需要从缓冲区读取进程 B 产生的信息，当缓冲区为空时，进程 B 因为读取不到信息而被阻塞。而当进程 A 产生信息放入缓冲区时，进程 B 才会被唤醒。</li>
+</ul>
+</li>
+<li><strong>互斥</strong>
+<ul>
+<li>进程互斥是进程之间的间接制约关系。当一个进程进入临界区使用临界资源时，另一个进程必须等待。只有当使用临界资源的进程退出临界区后，这个进程才会解除阻塞状态。</li>
+<li>比如进程 B 需要访问打印机，但此时进程 A 占有了打印机，进程 B 会被阻塞，直到进程 A 释放了打印机资源，进程 B 才可以继续执行。</li>
+</ul>
+</li>
+</ol>
+<h2 id="信号量与pv操作"><a class="markdownIt-Anchor" href="#信号量与pv操作">#</a> 信号量与 PV 操作</h2>
+<ul>
+<li><strong>信号量</strong>
+<ul>
+<li>信号量 S 可以直接理解成计数器，是一个整数。信号量的值仅能由 PV 操作来改变。通过 PV 操作控制信号量来实现进程的同步和互斥。</li>
+</ul>
+</li>
+<li><strong>PV 操作</strong>
+<ul>
+<li>PV 操作：解决互斥和同步的问题。</li>
+<li>PV 操作是分开来看的：</li>
+<li>P 操作：使 S=S-1，若 S <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≥</mo></mrow><annotation encoding="application/x-tex">\geq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≥</span></span></span></span> 0，则该进程继续执行，否则该进程排入等待队列。</li>
+<li>V 操作：使 S=S+1，若 S <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≤</mo></mrow><annotation encoding="application/x-tex">\leq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≤</span></span></span></span> 0，唤醒等待队列中的一个进程。</li>
+<li>在资源使用之前将会执行 P 操作，之后将会执行 V 操作。在互斥关系中 PV 操作在一个进程中成对出现，而在同步关系中则一定在两个或多个进程中成对出现。</li>
+</ul>
+</li>
+</ul>
+<h1 id="存储管理"><a class="markdownIt-Anchor" href="#存储管理">#</a> 存储管理</h1>
+<hr>
+<h2 id="页式存储管理"><a class="markdownIt-Anchor" href="#页式存储管理">#</a> 页式存储管理</h2>
+<ul>
+<li>
+<p>页式存储管理是通过引入<mark>进程的逻辑地址</mark>，把进程地址空间与实际物理存储位置分离，从而增加存储管理的灵活性。我们把逻辑地址空间划分为一些相等的片，这些片称为页或页面。同样，物理地址空间也被划分为同样大小的片，称为块。这样用户程序进入内存时，通过页表就可以将一页对应存入到一个块中。这些物理块不必连续。所以内存利用率可以大大提高。</p>
+</li>
+<li>
+<p>在页式系统中，指令所给出的逻辑地址分为两部分：逻辑页号和页内地址。其中页号与页内地址所占多少位，与主存的最大容量、页面的大小有关。</p>
+</li>
+<li>
+<p>CPU 中的内存管理单元按逻辑页号查找页表（操作系统为每一个进程维护了一个从虚拟地址到物理地址的映射关系的数据结构，页表的内容就是该进程的虚拟地址到物理地址的一个映射）得到物理页号，将物理页号与页内地址相加形成物理地址。</p>
+</li>
+</ul>
+<h2 id="页面置换算法"><a class="markdownIt-Anchor" href="#页面置换算法">#</a> 页面置换算法</h2>
+<blockquote>
+<p>当程序的存储空间要求大于实际的内存空间时，就使得程序难以运行了。虚拟存储技术就是利用实际内存空间和相对大得多的外部储存器存储空间相结合构成一个远远大于实际内存空间的虚拟存储空间，程序就运行在这个虚拟存储空间中，能够实现虚拟存储的依据是程序的局部性原理，即程序在运行过程中经常体现出运行在某个局部范围之内的特点。即在一段时间内，整个程序的执行仅限于程序中的某一部分。虚拟存储是把一个程序所需要的存储空间分成若干页，程序运行用到的页就放在内存里，暂时不用就放在外存中，当用到外存中的页时，就把它们调到内存，反之就把它们送到外存中。由于所有的进程页面不是一次性地全部调入内存，而是部分页面装入。</p>
+</blockquote>
+<hr>
+<ul>
+<li>这就有可能出现下面的情况：要访问的页面不在内存，这时系统产生缺页中断。操作系统在处理缺页中断时，要把所需页面从外存调入到内存中。如果这时内存中有空闲块，就可以直接调入该页面；如果这时内存中没有空闲块，就必须先淘汰一个已经在内存中的页面，腾出空间，再把所需的页面装入，即进行页面置换。</li>
+</ul>
+<h3 id="先进先出法fifo"><a class="markdownIt-Anchor" href="#先进先出法fifo">#</a> 先进先出法（FIFO）</h3>
+<ul>
+<li>FIFO 算法认为最早调入内存的页不再被使用的可能性要大于刚调入内存的页，因此，先进先出法总是淘汰在内存中停留时间最长的一页，即先进入内存的页，先被换出。</li>
+<li>该算法会出现在内存块增加的情况下，缺页率不减反增
+<ul>
+<li>这种现象称为 <strong>贝拉迪 Belady 异常</strong> ———— 当为进程分配的物理块数增大时，缺页次数不减反增的异常现象。</li>
+<li>只有 FIFO 算法会产生 Belady 异常。另外，FIFO 算法<mark>虽然实现简单，但是该算法与进程实际运行时的规律不适应</mark>，因为先进入的页面也有可能最经常被访问。因此，算法性能差</li>
+</ul>
+</li>
+</ul>
+<h3 id="最佳置换法opt"><a class="markdownIt-Anchor" href="#最佳置换法opt">#</a> 最佳置换法（OPT）</h3>
+<ul>
+<li>最佳置换算法（OPT）在为调入新页面而必须预先淘汰某个老页面时，所选择的老页面应该以后不被使用，或者是在最远的以后时间才被访问。采用这种算法，能保证有最小缺页率。（缺页率 = 缺页次数 / 总共访问页面的次数）</li>
+<li><mark>缺页时未必发生页面置换，有可能还有空闲的内存块等待使用</mark></li>
+<li><strong>是一种理想化算法，在实际应用中无法实现</strong></li>
+</ul>
+<h3 id="最近最少使用置换法lru"><a class="markdownIt-Anchor" href="#最近最少使用置换法lru">#</a> 最近最少使用置换法（LRU）</h3>
+<ul>
+<li>最近最少使用置换法（LRU）是选择在最近一段时间里最久没有使用过的页面予以淘汰。</li>
+</ul>
+<h1 id="文件管理"><a class="markdownIt-Anchor" href="#文件管理">#</a> 文件管理</h1>
+<h2 id="文件管理概念"><a class="markdownIt-Anchor" href="#文件管理概念">#</a> 文件管理概念</h2>
+<p><img data-src="https://s3.ax1x.com/2021/03/11/6Nm701.png" alt="wjgl"></p>
+<ul>
+<li>在树型目录结构中，树的根结点为根目录，数据文件作为树叶，其他所有目录均作为树的结点。系统在建立每一个目录时，都会自动为它设定两个目录文件，一个是 “.”，代表该目录自己；另一个是 “…”，代表该目录的父目录，也就是上级目录。</li>
+<li>从逻辑上讲，用户在登录到系统中之后，每时每刻都处在某个目录之中，此目录被称作工作目录或当前目录。工作目录是可以随时改变的。</li>
+<li>对文件进行访问时，需要用到路径的概念。路径是指从树型目录中的某个目录层次到某个文件的一条道路。在树型目录结构中，从根目录到任何数据文件之间，只有一条唯一的通路，从树根开始，把全部目录文件名与数据文件名依次用 “/” 连接起来，构成该数据文件的路径名，且每个数据文件的路径名是唯一的。这样，可以解决文件重名问题，不同路径下的同名文件不一定是相同的文件。例如，在图 2-5 中，根目录下的文件 f1 和 / D1/W1 目录下的文件 f1 可能是相同的文件，也可能是不相同的文件。</li>
+</ul>
+<h1 id="设备管理"><a class="markdownIt-Anchor" href="#设备管理">#</a> 设备管理</h1>
+<ol>
+<li><strong>程序查询方式</strong><br>
+最简单的 I/O 控制方式是程序查询方式，要求 CPU 不断使用指令检测方法来获取外设工作状态。由于 CPU 的速度远远高于 I/O 设备，导致 CPU 的绝大部分时间都处于等待 I/O 设备过程中，造成 CPU 的运行效率极低。CPU 和外围设备只能串行工作。但是它<mark>管理简单，在要求不高的场合可以被采用</mark>。</li>
+<li><strong>程序中断方式</strong></li>
+</ol>
+<ul>
+<li>某一外设的数据准备就绪后，它 “主动” 向 CPU 发出中断请求信号，请求 CPU 暂时中断目前正在执行的程序转而进行数据交换；当 CPU 响应这个中断时，便暂停运行主程序，自动转去执行该设备的中断服务程序；当中断服务程序执行完毕（数据交换结束）后，CPU 又回到原来的主程序继续执行。</li>
+<li>程序中断方式虽然大大提高了主机的利用率，但是它以字（节）为单位进行数据传送，每完成一个字（节）的传送，控制器便要向 CPU 请求一次中断（做保存现场信息，恢复现场等工作），仍然占用了 CPU 的许多时间。这种方式<mark>对于高速的块设备的 I/O 控制显然不适合</mark>。</li>
+</ul>
+<ol start="3">
+<li><strong>DMA 方式</strong></li>
+</ol>
+<ul>
+<li>
+<p>DMA 存取方式，是一种完全由硬件执行 I/O 数据交换的工作方式。它既考虑到中断的响应，同时又要节约中断开销。此时，DMA 控制器代替 CPU 完全接管对总线的控制，数据交换不经过 CPU，直接在内存和外围设备之间成批进行。</p>
+</li>
+<li>
+<p>优点：<mark>速度快</mark>，CPU 不参加传送操作，省去了 CPU 取指令、取数、送数等操作，也没有保存现场、恢复现场之类的工作。</p>
+</li>
+<li>
+<p>缺点：批量数据传送前的准备工作，以及传送结束后的处理工作，仍由 CPU 通过执行管理程序来承担，DMA 控制器只负责具体的数据传送工作。<mark>CPU 仍然摆脱不了管理和控制外设的沉重负担，难以充分发挥高速运算的能力</mark>。</p>
+</li>
+</ul>
+<ol start="4">
+<li><strong>I/O 通道控制方式</strong></li>
+</ol>
+<ul>
+<li>通道是<mark>一个特殊功能的处理器</mark>，代替 CPU 管理控制外设的独立部件。有自己的指令和程序，专门负责数据输入输出的传输控制，而 CPU 在将 “传输控制” 功能下放给通道后，只负责 “数据处理” 功能。通道与 CPU 分时使用主存，实现了 CPU 内部运算与 I/O 设备的并行工作。</li>
+</ul>
+<ol start="5">
+<li><strong>输入输出处理机方式</strong></li>
+</ol>
+<ul>
+<li>采用专用的小型通用计算机，可完成 I/O 通道所完成的 I/O 控制，还可完成码制转换、格式处理、检错纠错等操作，具有相应的运算处理部件、缓冲部件，还可形成 I/O 程序锁必需的程序转移手段。输入输出处理机基本独立于主机工作。在多数系统中，设置多台外围处理机，分别承担 I/O 控制、通信、维护等任务。</li>
+<li>目前单片机、微型机多采用程序查询、程序中断和 DMA 方式。通道方式和输入输出处理机方式一般用在大中型计算机中。</li>
+</ul>
+
+      <div class="tags">
+          <a href="/my-blog/tags/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" rel="tag"><i class="ic i-tag"></i> 软考网络工程师</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/my-blog/images/wechatpay.png" alt="Peter Pan 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/my-blog/images/alipay.png" alt="Peter Pan 支付宝">
+        <p>支付宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Peter Pan <i class="ic i-at"><em>@</em></i>理 想 净 土
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://github.com/Peter-Pan001/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80" title="操作系统基础">https://github.com/Peter-Pan001/my-blog/软考网络工程师/操作系统基础</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;s3.ax1x.com&#x2F;2021&#x2F;02&#x2F;17&#x2F;y253bn.jpg" title="计算机硬件基础(部分组成原理)">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 软考网络工程师</span>
+  <h3>计算机硬件基础(部分组成原理)</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%90%84%E9%87%8D%E7%82%B9%E5%8D%8F%E8%AE%AE%E5%8F%8A%E5%B8%A7%E6%A0%BC%E5%BC%8F%E8%AF%A6%E8%A7%A3" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;s3.ax1x.com&#x2F;2021&#x2F;02&#x2F;17&#x2F;y253bn.jpg" title="各重点协议及帧格式详解">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 软考网络工程师</span>
+  <h3>各重点协议及帧格式详解</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#进程管理"><span class="toc-number">1.</span> <span class="toc-text"> 进程管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#11-进程状态"><span class="toc-number">1.1.</span> <span class="toc-text"> 1.1 进程状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程死锁"><span class="toc-number">1.2.</span> <span class="toc-text"> 进程死锁</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#死锁的四个必要因素"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 死锁的四个必要因素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决死锁的策略"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 解决死锁的策略</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程的同步与互斥"><span class="toc-number">1.3.</span> <span class="toc-text"> 进程的同步与互斥</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#信号量与pv操作"><span class="toc-number">1.4.</span> <span class="toc-text"> 信号量与 PV 操作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#存储管理"><span class="toc-number">2.</span> <span class="toc-text"> 存储管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#页式存储管理"><span class="toc-number">2.1.</span> <span class="toc-text"> 页式存储管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#页面置换算法"><span class="toc-number">2.2.</span> <span class="toc-text"> 页面置换算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#先进先出法fifo"><span class="toc-number">2.2.1.</span> <span class="toc-text"> 先进先出法（FIFO）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最佳置换法opt"><span class="toc-number">2.2.2.</span> <span class="toc-text"> 最佳置换法（OPT）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最近最少使用置换法lru"><span class="toc-number">2.2.3.</span> <span class="toc-text"> 最近最少使用置换法（LRU）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#文件管理"><span class="toc-number">3.</span> <span class="toc-text"> 文件管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#文件管理概念"><span class="toc-number">3.1.</span> <span class="toc-text"> 文件管理概念</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#设备管理"><span class="toc-number">4.</span> <span class="toc-text"> 设备管理</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E6%A6%82%E8%AE%BA" rel="bookmark" title="计算机基础概论">计算机基础概论</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8001" rel="bookmark" title="数据通信基础01">数据通信基础01</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8002" rel="bookmark" title="数据通信基础02">数据通信基础02</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B9%BF%E5%9F%9F%E9%80%9A%E4%BF%A1%E7%BD%91" rel="bookmark" title="广域通信网">广域通信网</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%9F%8E%E5%9F%9F%E7%BD%9101" rel="bookmark" title="局域网与城域网01">局域网与城域网01</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%9F%8E%E5%9F%9F%E7%BD%9102" rel="bookmark" title="局域网与城域网02">局域网与城域网02</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%97%A0%E7%BA%BF%E9%80%9A%E4%BF%A1%E7%BD%91" rel="bookmark" title="无线通信网">无线通信网</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9101" rel="bookmark" title="网络互联与互联网01">网络互联与互联网01</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/IP%E5%AD%90%E7%BD%91%E5%88%92%E5%88%86%E4%B8%93%E9%A2%98" rel="bookmark" title="IP子网划分专题">IP子网划分专题</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9102" rel="bookmark" title="网络互联与互联网02">网络互联与互联网02</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9103" rel="bookmark" title="网络互联与互联网03">网络互联与互联网03</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9104" rel="bookmark" title="网络互联与互联网04">网络互联与互联网04</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E4%B8%8B%E4%B8%80%E4%BB%A3%E4%BA%92%E8%81%94%E7%BD%91" rel="bookmark" title="下一代互联网">下一代互联网</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%8E%E5%BA%94%E7%94%A801" rel="bookmark" title="网络安全与应用01">网络安全与应用01</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%8E%E5%BA%94%E7%94%A802" rel="bookmark" title="网络安全与应用02">网络安全与应用02</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A801" rel="bookmark" title="网络应用服务器01">网络应用服务器01</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A802" rel="bookmark" title="网络应用服务器02">网络应用服务器02</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F" rel="bookmark" title="常用公式">常用公式</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8F%E8%AE%AE%E5%90%8D%E7%A7%B0%E4%B8%8E%E7%AE%80%E4%BB%8B" rel="bookmark" title="协议名称与简介">协议名称与简介</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E5%92%8C%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80" rel="bookmark" title="系统开发和项目管理基础">系统开发和项目管理基础</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80" rel="bookmark" title="计算机硬件基础(部分组成原理)">计算机硬件基础(部分组成原理)</a></li><li class="active"><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80" rel="bookmark" title="操作系统基础">操作系统基础</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%90%84%E9%87%8D%E7%82%B9%E5%8D%8F%E8%AE%AE%E5%8F%8A%E5%B8%A7%E6%A0%BC%E5%BC%8F%E8%AF%A6%E8%A7%A3" rel="bookmark" title="各重点协议及帧格式详解">各重点协议及帧格式详解</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E8%A7%84%E5%88%92%E4%B8%8E%E8%AE%BE%E8%AE%A1" rel="bookmark" title="网络规划与设计">网络规划与设计</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/Linux%E9%85%8D%E7%BD%AE" rel="bookmark" title="Linux配置">Linux配置</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%881%EF%BC%89" rel="bookmark" title="华为路由交换实验命令（1）">华为路由交换实验命令（1）</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%882%EF%BC%89" rel="bookmark" title="华为路由交换实验命令（2）">华为路由交换实验命令（2）</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%883%EF%BC%89" rel="bookmark" title="华为路由实验命令（3）">华为路由实验命令（3）</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%884%EF%BC%89" rel="bookmark" title="华为交换实验命令（4）">华为交换实验命令（4）</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Peter Pan"
+      data-src="/my-blog/images/avatar.jpg">
+  <p class="name" itemprop="name">Peter Pan</p>
+  <div class="description" itemprop="description">不必匆忙，不必火花四溅，不必成为别人，只需成为自己</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/my-blog/archives/">
+        <span class="count">73</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/my-blog/categories/">
+        <span class="count">10</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/my-blog/tags/">
+        <span class="count">14</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <a href="https://github.com/Peter-Pan001/Basic" title="https:&#x2F;&#x2F;github.com&#x2F;Peter-Pan001&#x2F;Basic" class="item github"><i class="ic i-github"></i></a>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS9ndWFuZy1tYW5nLWxpZ2h0bmluZw==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;guang-mang-lightning"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTE5MjY4NTE4NDA=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;1926851840"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS9QZXRlclBhbjA4MjQ=" title="https:&#x2F;&#x2F;about.me&#x2F;PeterPan0824"><i class="ic i-address-card"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/my-blog/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/my-blog/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+    <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/my-blog/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/my-blog/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/my-blog/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/my-blog/friends/" rel="section"><i class="ic i-heart"></i>friends</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/my-blog/links/" rel="section"><i class="ic i-magic"></i>links</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%90%84%E9%87%8D%E7%82%B9%E5%8D%8F%E8%AE%AE%E5%8F%8A%E5%B8%A7%E6%A0%BC%E5%BC%8F%E8%AF%A6%E8%A7%A3" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
+</div>
+
+    <span><a href="/my-blog/Linux/%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86" title="目录与文件管理">目录与文件管理</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B" title="Java网络编程">Java网络编程</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E6%A6%82%E8%AE%BA" title="计算机基础概论">计算机基础概论</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%8E%E5%BA%94%E7%94%A801" title="网络安全与应用01">网络安全与应用01</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
+</div>
+
+    <span><a href="/my-blog/Linux/Linux%E5%BC%80%E7%AF%87" title="Linux开篇">Linux开篇</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/Java%E8%AF%AD%E5%8F%A5" title="Java语句">Java语句</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8F%E8%AE%AE%E5%90%8D%E7%A7%B0%E4%B8%8E%E7%AE%80%E4%BB%8B" title="协议名称与简介">协议名称与简介</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E4%B8%8B%E4%B8%80%E4%BB%A3%E4%BA%92%E8%81%94%E7%BD%91" title="下一代互联网">下一代互联网</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9101" title="网络互联与互联网01">网络互联与互联网01</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
+</div>
+
+    <span><a href="/my-blog/Linux/LINUX%E5%AD%A6%E6%A0%A1%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0" title="LINUX课程笔记">LINUX课程笔记</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Peter Pan @ Peter Pan</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<a href="https://github.com/amehime/hexo-theme-shoka">Shoka</a>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '/软考网络工程师/操作系统基础',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,copy_tex: true,
+    katex: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',quiz: {
+      choice: "单选题",
+      multiple: "多选题",
+      true_false: "判断题",
+      essay: "问答题",
+      gap_fill: "填空题",
+      mistake: "错题备注"
+    },
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/my-blog/js/app.js?v=0.2.4"></script>
+
+
+
+
+</body>
+</html>

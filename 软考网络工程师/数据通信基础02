@@ -1,0 +1,865 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/my-blog/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/my-blog/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="理 想 净 土" href="https://github.com/Peter-Pan001/my-blog/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="理 想 净 土" href="https://github.com/Peter-Pan001/my-blog/atom.xml" />
+<link rel="alternate" type="application/json" title="理 想 净 土" href="https://github.com/Peter-Pan001/my-blog/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/my-blog/css/app.css?v=0.2.4">
+
+  
+  <meta name="keywords" content="软考网络工程师" />
+
+
+<link rel="canonical" href="https://github.com/Peter-Pan001/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8002">
+
+
+
+  <title>
+数据通信基础02 - 软考网络工程师 |
+Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之作证 </title>
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">数据通信基础02
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2021-02-19 11:15:50">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-02-19T11:15:50+08:00">2021-02-19</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/my-blog/" rel="start">Peter Pan</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="https://s3.ax1x.com/2021/02/17/y253bn.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/my-blog/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" itemprop="item" rel="index" title="分类于 软考网络工程师"><span itemprop="name">软考网络工程师</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://github.com/Peter-Pan001/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8002">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/my-blog/images/avatar.jpg">
+    <meta itemprop="name" content="Peter Pan">
+    <meta itemprop="description" content=" 凭时间赢来的东西，时间肯定会为之作证 , 不必匆忙，不必火花四溅，不必成为别人，只需成为自己">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="理 想 净 土">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="数据通信方式"><a class="markdownIt-Anchor" href="#数据通信方式">#</a> 数据通信方式</h1>
+<h2 id="通信方向"><a class="markdownIt-Anchor" href="#通信方向">#</a> 通信方向</h2>
+<ul>
+<li><strong>单工通信（电视）</strong>
+<ul>
+<li>数据只能从一个方向向另一个方向传输</li>
+</ul>
+</li>
+<li><strong>半双工通信（对讲机）</strong>
+<ul>
+<li>数据可以双向传输，但不可同步进行传输</li>
+</ul>
+</li>
+<li><strong>全双工（手机）</strong>
+<ul>
+<li>数据可双向传输，并且可以同步传输</li>
+</ul>
+</li>
+</ul>
+<h2 id="传输方式"><a class="markdownIt-Anchor" href="#传输方式">#</a> 传输方式</h2>
+<h3 id="按传输方式分"><a class="markdownIt-Anchor" href="#按传输方式分">#</a> 按传输方式分</h3>
+<ul>
+<li><strong>串行传输</strong>
+<ul>
+<li>串行传输是数据在传输中只有 1 个数据位在设备之间进行的传输，对任何一个由若干位二进制表示的字符，串行传输都是用一个传输信道，按位有序的对字符进行传输。<mark>串行传输的速度比并行传输的速度要慢得多，但费用低。并行传输适用距离短，而串行传输适用远距离传输。</mark></li>
+</ul>
+</li>
+<li><strong>并行传输</strong>
+<ul>
+<li>并行传输是在传输中有多个数据位同时在设备之间进行的传输。所有数据位能同时沿着各自的信道并排的传输并行传输时，一次可以传一个字符，收发双方不存在同步的问题。<mark>而且速度快、控制方式简单。但是并行传输需要多个物理通道。所以并行传输只适合于短距离、要求传输速度快的场合使用。</mark></li>
+</ul>
+</li>
+</ul>
+<h3 id="按同步方式分"><a class="markdownIt-Anchor" href="#按同步方式分">#</a> 按同步方式分</h3>
+<ul>
+<li>
+<p><strong>异步传输</strong></p>
+<ul>
+<li>异步传输将比特分成小组进行传送，小组可以是 8 位的 1 个字符或更长。发送方可以在任何时刻发送这些比特组，而接收方从不知道它们会在什么时候到达。<mark>（适用于远距离，数据量小的场景）</mark></li>
+</ul>
+</li>
+<li>
+<p><strong>同步传输</strong></p>
+<ul>
+<li>同步传输的比特分组要大得多。它不是独立地发送每个字符，每个字符都有自己的开始位和停止位，而是把它们组合起来一起发送。我们将这些组合称为数据帧，或简称为帧。<mark>（适用于近距离，数据量大的场景）</mark></li>
+</ul>
+</li>
+<li>
+<p><strong>两者区别</strong></p>
+<ol>
+<li>
+<p>异步传输是面向字符的传输，而同步传输是面向比特的传输。</p>
+</li>
+<li>
+<p>异步传输的单位是字符而同步传输的单位是桢。</p>
+</li>
+<li>
+<p>异步传输通过字符起止的开始和停止码抓住再同步的机会，而同步传输则是以数据中抽取同步信息。</p>
+</li>
+<li>
+<p>异步传输对时序的要求较低，同步传输往往通过特定的时钟线路协调时序。</p>
+</li>
+<li>
+<p>异步传输相对于同步传输效率较低。</p>
+</li>
+</ol>
+<p><img data-src="https://s3.ax1x.com/2021/02/19/yhwYm8.jpg" alt="sjcs"></p>
+</li>
+</ul>
+<h1 id="数据交换方式"><a class="markdownIt-Anchor" href="#数据交换方式">#</a> 数据交换方式</h1>
+<h2 id="电路交换"><a class="markdownIt-Anchor" href="#电路交换">#</a> 电路交换</h2>
+<ul>
+<li>通信双方通过建立一条物理链路，当双方需要通信时，全权占用该链路，直到通信结束，才释放链路，<mark>电话就是使用电路交换的方式</mark></li>
+<li><strong>优点：</strong>
+<ul>
+<li>实时性强、适合传输大量数据、有序传输、无冲突</li>
+</ul>
+</li>
+<li><strong>缺点：</strong>
+<ul>
+<li>高独占性、需要建立一条物理链路，利用率低，无差错控制能力</li>
+</ul>
+</li>
+</ul>
+<h2 id="报文交换"><a class="markdownIt-Anchor" href="#报文交换">#</a> 报文交换</h2>
+<ul>
+<li><strong>优点：</strong>
+<ul>
+<li>不需要专用通道，线路利用率高，存储转发节点可校验纠错</li>
+</ul>
+</li>
+<li><strong>缺点：</strong>
+<ul>
+<li>有通信延迟</li>
+</ul>
+</li>
+</ul>
+<h2 id="分组交换"><a class="markdownIt-Anchor" href="#分组交换">#</a> 分组交换</h2>
+<ul>
+<li><strong>优点：</strong>
+<ul>
+<li>利用率更高，可选路径，数据率转换，支持优先级</li>
+</ul>
+</li>
+<li><strong>缺点：</strong>
+<ul>
+<li>时延、开销大</li>
+</ul>
+</li>
+</ul>
+<h3 id="分组交换的三种方式"><a class="markdownIt-Anchor" href="#分组交换的三种方式">#</a> 分组交换的三种方式</h3>
+<ul>
+<li><strong>数据报</strong>
+<ul>
+<li>无连接、无序的，单向传输</li>
+</ul>
+</li>
+<li><strong>虚电路</strong>
+<ul>
+<li>交互式、逻辑连接、可靠性高</li>
+</ul>
+</li>
+<li><strong>信元交换</strong>
+<ul>
+<li>升级版虚电路，固定分组长度</li>
+</ul>
+</li>
+</ul>
+<h2 id="分组数据报"><a class="markdownIt-Anchor" href="#分组数据报">#</a> 分组数据报</h2>
+<ul>
+<li>是单线传输、无连接的</li>
+</ul>
+<h1 id="多路复用技术"><a class="markdownIt-Anchor" href="#多路复用技术">#</a> 多路复用技术</h1>
+<h2 id="频分复用fdm"><a class="markdownIt-Anchor" href="#频分复用fdm">#</a> 频分复用 FDM</h2>
+<ul>
+<li>
+<p>不同的频率，子信道隔离频带方串扰，如 CATV、WIFI</p>
+<p><img data-src="https://s3.ax1x.com/2021/02/19/yhwWtJ.png" alt="pffy"></p>
+</li>
+</ul>
+<h2 id="时分复用tdm"><a class="markdownIt-Anchor" href="#时分复用tdm">#</a> 时分复用 TDM</h2>
+<ul>
+<li>
+<p>不同的时间，轮流占用</p>
+<p><img data-src="https://s3.ax1x.com/2021/02/19/yhwLAe.png" alt="sffy"></p>
+</li>
+</ul>
+<h2 id="波分复用wdm"><a class="markdownIt-Anchor" href="#波分复用wdm">#</a> 波分复用 WDM</h2>
+<ul>
+<li>
+<p>不同的波长</p>
+<p><img data-src="https://s3.ax1x.com/2021/02/19/yhwXhd.jpg" alt="bffy"></p>
+</li>
+</ul>
+<h1 id="数字传输标准"><a class="markdownIt-Anchor" href="#数字传输标准">#</a> 数字传输标准</h1>
+<h2 id="t1标准北美和日本使用"><a class="markdownIt-Anchor" href="#t1标准北美和日本使用">#</a> T1 标准（北美和日本使用）</h2>
+<ul>
+<li>T1 标准，即北美的 24 路 PCM 国际标准</li>
+<li>速率： <mark>1.544Mbps</mark></li>
+<li>次数：125us=8000 次</li>
+<li><mark>1.544Mbps=(24*(7+1)+1)*8000</mark>
+<ul>
+<li>其中，北美使用的 T1 系统共有 24 个话路，每个话路采样脉冲用 7bit 编码，然后再加上 1 位信令码元，因此一个话路占用 8bit。帧同步码是在 24 路的编码之后加上 1bit，这样每帧共有 193bit，因此 T1 一次群的数据率为 1.544Mbit/s。</li>
+</ul>
+</li>
+</ul>
+<h3 id="t2-t3-t4标准"><a class="markdownIt-Anchor" href="#t2-t3-t4标准">#</a> T2、T3、T4 标准</h3>
+<ul>
+<li>T2=4T1</li>
+<li>T3=7T1</li>
+<li>T4=6T1</li>
+<li>巧记 T2、T3、T4： <strong>T476 = 踢屎去喽</strong></li>
+</ul>
+<h2 id="e1标准中国和欧洲使用"><a class="markdownIt-Anchor" href="#e1标准中国和欧洲使用">#</a> E1 标准（中国和欧洲使用）</h2>
+<ul>
+<li>E1 标准，即欧洲 30 路 PCM 国家标准</li>
+<li>速率：<mark>2.048Mbps</mark></li>
+<li>次数：125us=8000 次</li>
+<li><mark>2.048Mbps=(32*(7+1))*8000</mark>
+<ul>
+<li>其中，E1 的一个时分复用帧（其长度 T=125us）共划 分为 32 相等的时隙，时隙的编号为 CH0<sub>CH31。其中时隙 CH0 用作帧同步用，时隙 CH16 用来传送信令，剩下 CH1</sub>CH15 和 CH17~CH31 共 30 个时隙用作 30 个话路。每个时隙传送 8bit，因此共用 256bit。</li>
+<li>每秒传送 8 个帧，因此 PCM 一次群 E1 的数据率就是 2.048Mbit/s。</li>
+</ul>
+</li>
+<li>CH0 和 CH16 为控制信令，30 个话音数据</li>
+</ul>
+<h3 id="e2-e3-e4标准"><a class="markdownIt-Anchor" href="#e2-e3-e4标准">#</a> E2、E3、E4 标准</h3>
+<ul>
+<li>E2=4E1</li>
+<li>E3=4E2</li>
+<li>E4=4E3</li>
+<li>巧记： <strong>E444</strong></li>
+</ul>
+<h2 id="sonet标准美国和sdh标准国际用于光纤网络"><a class="markdownIt-Anchor" href="#sonet标准美国和sdh标准国际用于光纤网络">#</a> SONET 标准（美国）和 SDH 标准（国际）— 用于光纤网络</h2>
+<ul>
+<li>SONET 标准是同步光纤网</li>
+<li>在 SONET 中，OC-1 为 <strong>最小单位</strong> ， <strong>值为 51.84Mb/s</strong> ，OC-N 表示 N 倍的 OC-1</li>
+<li><strong>OC-3=OC-1*3=155.520Mb/s</strong><font color=red>(重点！！！)</font></li>
+<li><strong>OC-1=57384Mb/s</strong><font color=red>(重点！！！)</font></li>
+</ul>
+<h1 id="数据检错纠错"><a class="markdownIt-Anchor" href="#数据检错纠错">#</a> 数据检错纠错</h1>
+<h2 id="检错码"><a class="markdownIt-Anchor" href="#检错码">#</a> 检错码</h2>
+<ul>
+<li><mark>奇偶校验</mark> 看 1 的个数是奇数还是偶数， <strong>只能检错不能纠错</strong> ，广泛应用与移动通信</li>
+</ul>
+<h2 id="海明码"><a class="markdownIt-Anchor" href="#海明码">#</a> 海明码</h2>
+<ul>
+<li>在数据位 m 后面增加冗余检验位 k，组成信息 m+k，则满足 m+k <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo></mrow><annotation encoding="application/x-tex">\lt</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&lt;</span></span></span></span> <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">2^k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.849108em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span></span></span></span> -1 可纠正一位错误， <strong>即可检错也可纠错</strong></li>
+<li><strong>码距 d</strong>：两个码字之间不同的最小的位数（比特数）</li>
+<li>可以查出多少位错误： <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≤</mo></mrow><annotation encoding="application/x-tex">\leq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≤</span></span></span></span> d-1</li>
+<li>可以纠正多少位错误： <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo></mrow><annotation encoding="application/x-tex">\lt</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&lt;</span></span></span></span> d/2</li>
+</ul>
+<h2 id="crc码"><a class="markdownIt-Anchor" href="#crc码">#</a> CRC 码</h2>
+<ul>
+<li>
+<p>即冗余循环校验码，是一种循环码，通过循环移位，实现检错，硬件容易实现，广泛用于局域网， <strong>只能检错不能纠错</strong></p>
+</li>
+<li>
+<p>计算 CRC 校验码：多项式除法，不进位加法，如生产多项式 G (x)= <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">x^4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span></span></span></span> +x+1，信息码字为 10111，求 CRC 校验码。</p>
+<blockquote>
+<p>计算步骤： 把原式变形为： 1<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">x^4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span></span></span></span>+0<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">x^3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span>+0<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">x^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>+1<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>1</mn></msup></mrow><annotation encoding="application/x-tex">x^1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span>+1<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>0</mn></msup></mrow><annotation encoding="application/x-tex">x^0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span></span></span></span></span></span></span></span><br>
+ 看每个指数的系数，把系数连起来作为除数 10011<br>
+ 由于多项式中最高项系数为 4，则在信息码字后面加 4 个 0，即 101110000 为被除数<br>
+再进行模 2 计算，得到的余数即为 CRC 校验码 1100</p>
+</blockquote>
+<p><img data-src="https://s3.ax1x.com/2021/02/19/yhwv9A.png" alt="crc"></p>
+</li>
+</ul>
+<h2 id="dhcp的功能"><a class="markdownIt-Anchor" href="#dhcp的功能">#</a> DHCP 的功能</h2>
+<ol>
+<li>保证任何 IP 地址在<mark>同一时刻只能由一台 DHCP 客户机所使用</mark>。</li>
+<li>DHCP 应当可以给用户分配永久固定的 IP 地址。</li>
+<li>DHCP 应当可以同用其他方法获得 IP 地址的主机共存（如手工配置 IP 地址的主机）</li>
+<li>DHCP 服务器应当向现有的 BOOTP 客户端提供服务。</li>
+</ol>
+<h2 id="dhcp三种分配ip地址的机制"><a class="markdownIt-Anchor" href="#dhcp三种分配ip地址的机制">#</a> DHCP 三种分配 IP 地址的机制</h2>
+<ol>
+<li><mark>自动分配方式</mark> ( <code>AutomaticAllocation</code> ),DHCP 服务器为主机指定一个永久性的 IP 地址，一旦 DHCP 客户端第一次成功从 DHCP 服务器端租用到 IP 地址后，就可以永久性的使用该地址。</li>
+<li><mark>动态分配方式</mark> ( <code>DynamicAllocation</code> ),DHCP 服务器给主机指定一个具有时间限制的 IP 地址，时间到期或主机明确表示放弃该地址时，该地址可以被其他主机使用。</li>
+<li><mark>手工分配方式</mark> ( <code>ManualAllocation</code> ), 客户端的 IP 地址是由网络管理员指定的，DHCP 服务器只是将指定的 IP 地址告诉客户端主机。</li>
+</ol>
+<blockquote>
+<p>三种地址分配方式中，只有动态分配可以重复使用客户端不再需要的地址。</p>
+</blockquote>
+<h1 id="练习例题"><a class="markdownIt-Anchor" href="#练习例题">#</a> 练习例题</h1>
+<ol>
+<li class="quiz">
+<p>采用海明码进行差错校验，信息码字为 1001011，为纠正一位错，则需要 <span class="gap"></span> 位冗余位。</p>
+<ul class="options">
+<li class="options">2</li>
+<li class="options">3</li>
+<li class="correct">4</li>
+<li class="options">8</li>
+</ul>
+<blockquote>
+<ul>
+<li>❌</li>
+<li>❌</li>
+<li>✔️ m=k=1&lt;2^k,m=7 ,k=4</li>
+<li>❌</li>
+</ul>
+</blockquote>
+</li>
+<li class="quiz">
+<p>按照美国制定的光纤通行标准 SONET，OC-48 的线路速率是 <span class="gap"></span> Mb/s。</p>
+<ul class="options">
+<li class="options">51.84</li>
+<li class="options">622.05</li>
+<li class="correct">2488.32</li>
+<li class="options">9953.28</li>
+</ul>
+<blockquote>
+<ul>
+<li>❌</li>
+<li>❌</li>
+<li>✔️ OC-3=155.520，OC-3 的 16 倍约为 2488</li>
+<li>❌</li>
+</ul>
+</blockquote>
+</li>
+<li class="quiz">
+<p>E1 载波把 32 个信道按 <span class="gap"></span> 方式复用在一条 2.048Mb/s 的高速信道上。</p>
+<ul class="options">
+<li class="correct">TDM</li>
+<li class="options">CDMA</li>
+<li class="options">WDM</li>
+<li class="options">FDM</li>
+</ul>
+<blockquote>
+<ul>
+<li>✔️ 8b*8000=64kb/s</li>
+<li>❌</li>
+<li>❌</li>
+<li>❌</li>
+</ul>
+</blockquote>
+</li>
+<li class="quiz">
+<p>E1 载波的数据速率是 <span class="gap">B</span> Mb/s，T1 载波的数据速率是 <span class="gap">A</span> Mb/s。</p>
+<ul class="options">
+<li class="correct">1.544</li>
+<li class="correct">2.048</li>
+<li class="options">6.312</li>
+<li class="options">8.448</li>
+</ul>
+</li>
+<li class="quiz">
+<p>E1 信道的数据速率是 2.048Mb/s，其中每个话音信道的数据速率是 <span class="gap"></span> Kb/s。</p>
+<ul class="options">
+<li class="options">56</li>
+<li class="correct">64</li>
+<li class="options">128</li>
+<li class="options">2048</li>
+</ul>
+<blockquote>
+<ul>
+<li>❌</li>
+<li>✔️ 8/125us=64kbps 或者 8*8000</li>
+<li>❌</li>
+<li>❌</li>
+</ul>
+</blockquote>
+</li>
+<li class="quiz">
+<p>E1 线路是一种以时分多路复用技术为基础的传输技术，其有效数据率（扣除开销）约为 <span class="gap"></span> Mb/s。</p>
+<ul class="options">
+<li class="options">1.34</li>
+<li class="options">1.544</li>
+<li class="correct">1.92</li>
+<li class="options">2.048</li>
+</ul>
+<blockquote>
+<ul>
+<li>❌</li>
+<li>❌</li>
+<li>✔️ 2.048*（30/32）=1.92, 其中 E1 线路的速率为 2.048Mb/s</li>
+<li>❌</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+
+      <div class="tags">
+          <a href="/my-blog/tags/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" rel="tag"><i class="ic i-tag"></i> 软考网络工程师</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/my-blog/images/wechatpay.png" alt="Peter Pan 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/my-blog/images/alipay.png" alt="Peter Pan 支付宝">
+        <p>支付宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Peter Pan <i class="ic i-at"><em>@</em></i>理 想 净 土
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://github.com/Peter-Pan001/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8002" title="数据通信基础02">https://github.com/Peter-Pan001/my-blog/软考网络工程师/数据通信基础02</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8001" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;s3.ax1x.com&#x2F;2021&#x2F;02&#x2F;17&#x2F;y253bn.jpg" title="数据通信基础01">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 软考网络工程师</span>
+  <h3>数据通信基础01</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B9%BF%E5%9F%9F%E9%80%9A%E4%BF%A1%E7%BD%91" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;s3.ax1x.com&#x2F;2021&#x2F;02&#x2F;17&#x2F;y253bn.jpg" title="广域通信网">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 软考网络工程师</span>
+  <h3>广域通信网</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#数据通信方式"><span class="toc-number">1.</span> <span class="toc-text"> 数据通信方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#通信方向"><span class="toc-number">1.1.</span> <span class="toc-text"> 通信方向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#传输方式"><span class="toc-number">1.2.</span> <span class="toc-text"> 传输方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#按传输方式分"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 按传输方式分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#按同步方式分"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 按同步方式分</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据交换方式"><span class="toc-number">2.</span> <span class="toc-text"> 数据交换方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#电路交换"><span class="toc-number">2.1.</span> <span class="toc-text"> 电路交换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#报文交换"><span class="toc-number">2.2.</span> <span class="toc-text"> 报文交换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分组交换"><span class="toc-number">2.3.</span> <span class="toc-text"> 分组交换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#分组交换的三种方式"><span class="toc-number">2.3.1.</span> <span class="toc-text"> 分组交换的三种方式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分组数据报"><span class="toc-number">2.4.</span> <span class="toc-text"> 分组数据报</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#多路复用技术"><span class="toc-number">3.</span> <span class="toc-text"> 多路复用技术</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#频分复用fdm"><span class="toc-number">3.1.</span> <span class="toc-text"> 频分复用 FDM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#时分复用tdm"><span class="toc-number">3.2.</span> <span class="toc-text"> 时分复用 TDM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#波分复用wdm"><span class="toc-number">3.3.</span> <span class="toc-text"> 波分复用 WDM</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数字传输标准"><span class="toc-number">4.</span> <span class="toc-text"> 数字传输标准</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#t1标准北美和日本使用"><span class="toc-number">4.1.</span> <span class="toc-text"> T1 标准（北美和日本使用）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#t2-t3-t4标准"><span class="toc-number">4.1.1.</span> <span class="toc-text"> T2、T3、T4 标准</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#e1标准中国和欧洲使用"><span class="toc-number">4.2.</span> <span class="toc-text"> E1 标准（中国和欧洲使用）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#e2-e3-e4标准"><span class="toc-number">4.2.1.</span> <span class="toc-text"> E2、E3、E4 标准</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sonet标准美国和sdh标准国际用于光纤网络"><span class="toc-number">4.3.</span> <span class="toc-text"> SONET 标准（美国）和 SDH 标准（国际）— 用于光纤网络</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据检错纠错"><span class="toc-number">5.</span> <span class="toc-text"> 数据检错纠错</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#检错码"><span class="toc-number">5.1.</span> <span class="toc-text"> 检错码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#海明码"><span class="toc-number">5.2.</span> <span class="toc-text"> 海明码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#crc码"><span class="toc-number">5.3.</span> <span class="toc-text"> CRC 码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dhcp的功能"><span class="toc-number">5.4.</span> <span class="toc-text"> DHCP 的功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dhcp三种分配ip地址的机制"><span class="toc-number">5.5.</span> <span class="toc-text"> DHCP 三种分配 IP 地址的机制</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#练习例题"><span class="toc-number">6.</span> <span class="toc-text"> 练习例题</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E6%A6%82%E8%AE%BA" rel="bookmark" title="计算机基础概论">计算机基础概论</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8001" rel="bookmark" title="数据通信基础01">数据通信基础01</a></li><li class="active"><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8002" rel="bookmark" title="数据通信基础02">数据通信基础02</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B9%BF%E5%9F%9F%E9%80%9A%E4%BF%A1%E7%BD%91" rel="bookmark" title="广域通信网">广域通信网</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%9F%8E%E5%9F%9F%E7%BD%9101" rel="bookmark" title="局域网与城域网01">局域网与城域网01</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%9F%8E%E5%9F%9F%E7%BD%9102" rel="bookmark" title="局域网与城域网02">局域网与城域网02</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%97%A0%E7%BA%BF%E9%80%9A%E4%BF%A1%E7%BD%91" rel="bookmark" title="无线通信网">无线通信网</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9101" rel="bookmark" title="网络互联与互联网01">网络互联与互联网01</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/IP%E5%AD%90%E7%BD%91%E5%88%92%E5%88%86%E4%B8%93%E9%A2%98" rel="bookmark" title="IP子网划分专题">IP子网划分专题</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9102" rel="bookmark" title="网络互联与互联网02">网络互联与互联网02</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9103" rel="bookmark" title="网络互联与互联网03">网络互联与互联网03</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9104" rel="bookmark" title="网络互联与互联网04">网络互联与互联网04</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E4%B8%8B%E4%B8%80%E4%BB%A3%E4%BA%92%E8%81%94%E7%BD%91" rel="bookmark" title="下一代互联网">下一代互联网</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%8E%E5%BA%94%E7%94%A801" rel="bookmark" title="网络安全与应用01">网络安全与应用01</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%8E%E5%BA%94%E7%94%A802" rel="bookmark" title="网络安全与应用02">网络安全与应用02</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A801" rel="bookmark" title="网络应用服务器01">网络应用服务器01</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A802" rel="bookmark" title="网络应用服务器02">网络应用服务器02</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F" rel="bookmark" title="常用公式">常用公式</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8F%E8%AE%AE%E5%90%8D%E7%A7%B0%E4%B8%8E%E7%AE%80%E4%BB%8B" rel="bookmark" title="协议名称与简介">协议名称与简介</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E5%92%8C%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80" rel="bookmark" title="系统开发和项目管理基础">系统开发和项目管理基础</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80" rel="bookmark" title="计算机硬件基础(部分组成原理)">计算机硬件基础(部分组成原理)</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80" rel="bookmark" title="操作系统基础">操作系统基础</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%90%84%E9%87%8D%E7%82%B9%E5%8D%8F%E8%AE%AE%E5%8F%8A%E5%B8%A7%E6%A0%BC%E5%BC%8F%E8%AF%A6%E8%A7%A3" rel="bookmark" title="各重点协议及帧格式详解">各重点协议及帧格式详解</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E8%A7%84%E5%88%92%E4%B8%8E%E8%AE%BE%E8%AE%A1" rel="bookmark" title="网络规划与设计">网络规划与设计</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/Linux%E9%85%8D%E7%BD%AE" rel="bookmark" title="Linux配置">Linux配置</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%881%EF%BC%89" rel="bookmark" title="华为路由交换实验命令（1）">华为路由交换实验命令（1）</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%882%EF%BC%89" rel="bookmark" title="华为路由交换实验命令（2）">华为路由交换实验命令（2）</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E8%B7%AF%E7%94%B1%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%883%EF%BC%89" rel="bookmark" title="华为路由实验命令（3）">华为路由实验命令（3）</a></li><li><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E5%AE%9E%E9%AA%8C%E5%91%BD%E4%BB%A4%EF%BC%884%EF%BC%89" rel="bookmark" title="华为交换实验命令（4）">华为交换实验命令（4）</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Peter Pan"
+      data-src="/my-blog/images/avatar.jpg">
+  <p class="name" itemprop="name">Peter Pan</p>
+  <div class="description" itemprop="description">不必匆忙，不必火花四溅，不必成为别人，只需成为自己</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/my-blog/archives/">
+        <span class="count">73</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/my-blog/categories/">
+        <span class="count">10</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/my-blog/tags/">
+        <span class="count">14</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <a href="https://github.com/Peter-Pan001/Basic" title="https:&#x2F;&#x2F;github.com&#x2F;Peter-Pan001&#x2F;Basic" class="item github"><i class="ic i-github"></i></a>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS9ndWFuZy1tYW5nLWxpZ2h0bmluZw==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;guang-mang-lightning"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTE5MjY4NTE4NDA=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;1926851840"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS9QZXRlclBhbjA4MjQ=" title="https:&#x2F;&#x2F;about.me&#x2F;PeterPan0824"><i class="ic i-address-card"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/my-blog/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/my-blog/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+    <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/my-blog/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/my-blog/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/my-blog/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/my-blog/friends/" rel="section"><i class="ic i-heart"></i>friends</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/my-blog/links/" rel="section"><i class="ic i-magic"></i>links</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%8001" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E5%B9%BF%E5%9F%9F%E9%80%9A%E4%BF%A1%E7%BD%91" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B" title="Java网络编程">Java网络编程</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80" title="操作系统基础">操作系统基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" title="分类于 数据分析">数据分析</a>
+</div>
+
+    <span><a href="/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/%E5%88%9D%E8%AF%86informatica" title="初识informatica">初识informatica</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E5%89%8D%E7%AB%AF/" title="分类于 前端">前端</a>
+</div>
+
+    <span><a href="/my-blog/%E5%89%8D%E7%AB%AF/%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E5%89%8D%E7%AB%AF" title="如何学习前端">如何学习前端</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/JavaSE%E5%B0%8F%E7%BB%93" title="JavaSE小结">JavaSE小结</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E4%B8%8E%E4%BA%92%E8%81%94%E7%BD%9103" title="网络互联与互联网03">网络互联与互联网03</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/MySQL/" title="分类于 MySQL">MySQL</a>
+</div>
+
+    <span><a href="/my-blog/MySQL/MySQL%E8%BF%9B%E9%98%B6" title="MySQL进阶">MySQL进阶</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80" title="计算机硬件基础(部分组成原理)">计算机硬件基础(部分组成原理)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
+</div>
+
+    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/Fusion%20Compute%E5%AE%89%E8%A3%85" title="Fusion Compute安装">Fusion Compute安装</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
+</div>
+
+    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/FusionSphere%E6%9E%B6%E6%9E%84" title="FusionSphere架构">FusionSphere架构</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Peter Pan @ Peter Pan</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<a href="https://github.com/amehime/hexo-theme-shoka">Shoka</a>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '/软考网络工程师/数据通信基础02',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,copy_tex: true,
+    katex: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',quiz: {
+      choice: "单选题",
+      multiple: "多选题",
+      true_false: "判断题",
+      essay: "问答题",
+      gap_fill: "填空题",
+      mistake: "错题备注"
+    },
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/my-blog/js/app.js?v=0.2.4"></script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,837 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/my-blog/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/my-blog/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="理 想 净 土" href="https://github.com/Peter-Pan001/my-blog/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="理 想 净 土" href="https://github.com/Peter-Pan001/my-blog/atom.xml" />
+<link rel="alternate" type="application/json" title="理 想 净 土" href="https://github.com/Peter-Pan001/my-blog/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/my-blog/css/app.css?v=0.2.4">
+
+  
+  <meta name="keywords" content="数据分析" />
+
+
+<link rel="canonical" href="https://github.com/Peter-Pan001/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/Informatica%E4%B9%8BPC%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6">
+
+
+
+  <title>
+Informatica之PC基础组件 - 数据分析 |
+Peter Pan = 理 想 净 土 =  凭时间赢来的东西，时间肯定会为之作证 </title>
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">Informatica之PC基础组件
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2022-06-04 17:54:40">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-06-04T17:54:40+08:00">2022-06-04</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/my-blog/" rel="start">Peter Pan</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="https://s1.ax1x.com/2022/06/03/XaCXZj.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/my-blog/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/my-blog/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" itemprop="item" rel="index" title="分类于 数据分析"><span itemprop="name">数据分析</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://github.com/Peter-Pan001/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/Informatica%E4%B9%8BPC%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/my-blog/images/avatar.jpg">
+    <meta itemprop="name" content="Peter Pan">
+    <meta itemprop="description" content=" 凭时间赢来的东西，时间肯定会为之作证 , 不必匆忙，不必火花四溅，不必成为别人，只需成为自己">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="理 想 净 土">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h2 id="source组件"><a class="markdownIt-Anchor" href="#source组件">#</a> Source 组件</h2>
+<ul>
+<li>
+<p>在 PowerCenter 中，数据可以是数据库表 Table、文本文件 File、XML 文件、SAP 等应用系统、Hadoop、MQ 等</p>
+</li>
+<li>
+<p>数据源定义的方式</p>
+<ul>
+<li>手工创建（极少使用，过于繁杂）
+<ul>
+<li>数据 DB 名后，对各个 table 的各个 field、Data Type、PK 和 FK 进行配置，当表有很多是，配置相当复杂</li>
+</ul>
+</li>
+<li>通过数据库导入（常用！）
+<ul>
+<li>先建立数据库的 ODBC 链接（仅导入库表结构），然后导入源的结构</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="数据库源"><a class="markdownIt-Anchor" href="#数据库源">#</a> 数据库源</h3>
+<blockquote>
+<p>下面将 PowerCenter Designer 简称 PCD ，将 WorkFlow Manager 简称 WFM</p>
+</blockquote>
+<ul>
+<li>
+<p>在 PCD 层面：</p>
+<ul>
+<li>数据库源的定义按照 Owner Name 进行分组</li>
+<li>源表结构定义虽然继承了数据库中的表定义。但数据类型会发生变化进而导致 Session 执行异常</li>
+<li>PowerCenter 的 PK、FK 是逻辑层面定义的，能与数据库不同</li>
+</ul>
+</li>
+<li>
+<p>在 WFM 层面：</p>
+<ul>
+<li>可在 WFM 指定表名和 Schema（用户名），来对数据库进行连接</li>
+</ul>
+</li>
+</ul>
+<h3 id="文本文件源"><a class="markdownIt-Anchor" href="#文本文件源">#</a> 文本文件源</h3>
+<ul>
+<li>在 PCD 和 WFM 层面，有些文本文件源的属性都可以在这两个层面配置，但 WFM 的优先级更高</li>
+<li>在 PCD：
+<ul>
+<li>Flat File 源在 PowerCenter 中添加一列 <code>CurrentlyyProcessedFileName</code>  对数据进行时间戳修改</li>
+</ul>
+</li>
+<li>在 WFM：
+<ul>
+<li>两个属性：
+<ul>
+<li>Input Type ： 默认文本文件输入 ；若选择 Command ，则将命令的输出作为输入（当文件名不固定时使用更高效）</li>
+<li>Source File Type ：可为 Direct ，指定一个含实际数据的文件名；或为 Indirect，指定一个文件列表（如 txt 文件），里面的.dat 文件才是真正的含数据文件</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="target组件"><a class="markdownIt-Anchor" href="#target组件">#</a> Target 组件</h2>
+<blockquote>
+<p>Target 的定义创建于 Source 一致，即可手动创建也可通过数据库连接导入</p>
+</blockquote>
+<h3 id="数据库目标"><a class="markdownIt-Anchor" href="#数据库目标">#</a> 数据库目标</h3>
+<ul>
+<li>与 Source 的定义类似，在 WFM 中可以使用 Target 表名和 Schema 名定义</li>
+<li>三大在 WFM 使用的选项：
+<ul>
+<li><code>Truncate Target table option</code>  ： 将数据导入 target 前将 target 清空</li>
+<li><code>Target Load Type</code>  :
+<ul>
+<li>Normal: 默认使用</li>
+<li>Bulk：仅支持部分 DB，当可用时，提升写入性能</li>
+</ul>
+</li>
+<li><code>Reject File</code>  ：
+<ul>
+<li>控制异常数据的机制，当发生 PK 冲突导致数据无法插入数据库时，PC 会吧其数据写入 RejectFile，并反馈到开发者解决</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="文本文件目标"><a class="markdownIt-Anchor" href="#文本文件目标">#</a> 文本文件目标</h3>
+<ul>
+<li>在 PCD 层面
+<ul>
+<li>通过定义文件名端口，可将不同数据写入不同的文件</li>
+</ul>
+</li>
+</ul>
+<p><img data-src="https://s1.ax1x.com/2022/06/05/XwFOwF.png" alt="saw"></p>
+<ul>
+<li>在 WFM 层面
+<ul>
+<li>Flat File 作为目标可直接写入本地，或远程 FTP 、Queue，或使用 Loader 工具将 Flat File 加载到 DB</li>
+</ul>
+</li>
+</ul>
+<h2 id="expression表达式组件"><a class="markdownIt-Anchor" href="#expression表达式组件">#</a> Expression 表达式组件</h2>
+<blockquote>
+<p>该组件主要有做行级表达式计算，如多某个 field 进行四则运算等</p>
+</blockquote>
+<ul>
+<li>
+<p>在 Expression 组件中，每个字段都有基本的数据类型以及字段长度的设置，但与其他组件不同的是多出了 I、O、V 三个选项：</p>
+<ul>
+<li>I 即 Input</li>
+<li>O 即 Output</li>
+<li>V 即 Variable</li>
+</ul>
+</li>
+<li>
+<p>关于 Expression 选项，则是对字段的运算表达式填写</p>
+</li>
+</ul>
+<p><img data-src="https://s1.ax1x.com/2022/06/05/XwFzWR.png" alt="qwr"></p>
+<h2 id="filter组件"><a class="markdownIt-Anchor" href="#filter组件">#</a> Filter 组件</h2>
+<blockquote>
+<p>该组件将不满足条件的数据过滤掉</p>
+</blockquote>
+<blockquote>
+<p>下图是将 SAL 字段过滤，筛选出 SAL 低于 5000 的数据</p>
+</blockquote>
+<p><img data-src="https://s1.ax1x.com/2022/06/05/Xwk9Qx.png" alt="qix"></p>
+<h2 id="source-qualifier"><a class="markdownIt-Anchor" href="#source-qualifier">#</a> Source Qualifier</h2>
+<blockquote>
+<p>主要用于连接数据源，将数据源中的数据类型转换为 PowerCenter 的数据类型，相当于一个万能插头，兼容各大数据库厂商</p>
+</blockquote>
+<h3 id="使用场景"><a class="markdownIt-Anchor" href="#使用场景">#</a> 使用场景</h3>
+<ol>
+<li>异构的数据库源表需要进行 Join 计算
+<ul>
+<li>如两张表分别来自 Oracle 和 DB2 ，Oracle 的关联字段类型为 <code>varchar2</code>  ,DB2 的关联字段类型为 <code>varchar</code>  , 为保证关联后字段的数据类型一致，Source Qualifier 作为 “万金油” 实现数据类型的自动映射</li>
+</ul>
+</li>
+<li>异构的数据库源表与目标表进行数据传输
+<ul>
+<li>即 Source 来自 Sql Server ，Target 来自 MySQL ，Source Quailfier 同样起到兼容作用</li>
+</ul>
+</li>
+</ol>
+<h3 id="选项卡奥秘"><a class="markdownIt-Anchor" href="#选项卡奥秘">#</a> 选项卡奥秘</h3>
+<p><img data-src="https://s1.ax1x.com/2022/06/05/XwkVFH.png" alt="qo"></p>
+<blockquote>
+<p>在 SQ 选项卡中，主要几个常用的选项实际上是 SQL 语句的可视化操作</p>
+</blockquote>
+<ul>
+<li><code>SQL query</code>  —— 查询语句的编写</li>
+<li><code>Source Filter</code>  —— 过滤源表数据</li>
+<li><code>Number of Sorted Port</code>  —— 对所选列进行排序，数字大小即为字段排序数量</li>
+<li><code>Select Distinct</code>  —— 数据去重</li>
+</ul>
+<h2 id="sorter组件"><a class="markdownIt-Anchor" href="#sorter组件">#</a> Sorter 组件</h2>
+<blockquote>
+<p>主要对字段进行升序或降序排列</p>
+</blockquote>
+<h3 id="选项卡奥秘-2"><a class="markdownIt-Anchor" href="#选项卡奥秘-2">#</a> 选项卡奥秘</h3>
+<p><img data-src="https://s1.ax1x.com/2022/06/05/XwkefA.png" alt="ucs"></p>
+<ul>
+<li><code>Case Sensitive</code>  ：是否对大小写敏感</li>
+<li><code>Distinct</code>  ： 数据去重</li>
+<li><code>Null Treated Low</code>  ：是否将空值作为小数</li>
+</ul>
+<h2 id="joiner组件"><a class="markdownIt-Anchor" href="#joiner组件">#</a> Joiner 组件</h2>
+<blockquote>
+<p>主要用于联表操作</p>
+</blockquote>
+<ul>
+<li>两表进行关联操作时，有一方在 PowerCenter 中会被当做是 Master，另一方为 Detail。一般来讲，数据量小的表作为 Master 表。</li>
+</ul>
+<h3 id="关联类型"><a class="markdownIt-Anchor" href="#关联类型">#</a> 关联类型</h3>
+<ul>
+<li>内连接 —— 对应为 Normal Join</li>
+<li>左连接 —— 对应为 Master Outer Join</li>
+<li>右连接 —— 对应为 Detail Outer Join</li>
+<li>全连接 —— 对应为 Full Outer Join</li>
+</ul>
+<blockquote>
+<p>下面举个例子来简述一下各个关联类型</p>
+</blockquote>
+<p><img data-src="https://s1.ax1x.com/2022/06/05/Xwkult.png" alt="hvio"></p>
+<p><img data-src="https://s1.ax1x.com/2022/06/05/XwkK6P.png" alt="oia"></p>
+<h3 id="sorted-joiner"><a class="markdownIt-Anchor" href="#sorted-joiner">#</a> Sorted Joiner</h3>
+<blockquote>
+<p>该方法用于将进入 joiner 的数据有序，进而提升 joiner 性能</p>
+</blockquote>
+<ul>
+<li><code>Sorted Joiner</code>  采用  <code>Sorted-Merge</code>  算法</li>
+<li>非  <code>Sorted Joiner</code>  采用  <code>Nested-Loop</code>  算法</li>
+</ul>
+<h3 id="joiner作用"><a class="markdownIt-Anchor" href="#joiner作用">#</a> Joiner 作用</h3>
+<ol>
+<li>异构数据库表关联</li>
+<li>数据库表与文本文件关联</li>
+<li>文件之间关联</li>
+<li>同构表关联</li>
+</ol>
+<blockquote>
+<p>注意： 一个 Joiner 只能同时对两张表关联，三张表需要两个 joiner</p>
+</blockquote>
+<h3 id="self-join-自关联"><a class="markdownIt-Anchor" href="#self-join-自关联">#</a> Self-Join 自关联</h3>
+<blockquote>
+<p>即同一张表扮演 Master 和 Detail 角色</p>
+</blockquote>
+<ul>
+<li>使用条件：
+<ul>
+<li>在从 Source Qualifier 到 Joiner 的两个分支上，至少一个分支必须在 Source Qualifier 和 Joiner 之间增加一个其他组件。</li>
+<li>Joiner Key 必须是经过排序的。</li>
+<li>Joiner 需要使用 Sorted Input。</li>
+</ul>
+</li>
+</ul>
+<h2 id="lookup组件"><a class="markdownIt-Anchor" href="#lookup组件">#</a> Lookup 组件</h2>
+<blockquote>
+<p>最复杂的一个组件 ，主要对查询的字段返回多个值</p>
+</blockquote>
+<h3 id="lookup-caching-enabled"><a class="markdownIt-Anchor" href="#lookup-caching-enabled">#</a> Lookup Caching enabled</h3>
+<ul>
+<li>一个提升性能的选项
+<ul>
+<li>启用后：首先被查表的所有数据被读入 PC ，对 Lookup Condition 中涉及的 Key 与其他字段形成一个索引。 然后 Lookup 表会一条条读取数据，与前面索引进行匹配，发现目标 Key ，将 Key 关联的值往下游传递，没匹配到则将空值传递到下游</li>
+</ul>
+</li>
+</ul>
+<h3 id="lookup-sql-override"><a class="markdownIt-Anchor" href="#lookup-sql-override">#</a> Lookup SQL Override</h3>
+<ul>
+<li>一个提升性能选项
+<ul>
+<li>默认提交到数据库的 SQL 会进行 Order by 排序，会消耗数据库资源</li>
+<li>通过这个选项 实际将后面的排序语句进行注释</li>
+</ul>
+</li>
+</ul>
+<h2 id="lookup-source-qualifier-和joiner对比"><a class="markdownIt-Anchor" href="#lookup-source-qualifier-和joiner对比">#</a> Lookup 、Source Qualifier 和 Joiner 对比</h2>
+<blockquote>
+<p>以下将 Lookup 简写为 LKP ，Source Qualifier 简写为 SQ ，Joiner 简写为 JN</p>
+</blockquote>
+<ul>
+<li>
+<p>功能上：</p>
+<ul>
+<li>SQ 可执行任何 SQL 语句</li>
+<li>JN 可实现四种关联类型 ，但仅能用 <code>=</code>  进行比较</li>
+<li>LKP 不能实现四种关联，但可以用  <code>=</code>  、 <code>&gt;</code>  、 <code>&lt;</code>  比较</li>
+</ul>
+</li>
+<li>
+<p>Active 与 Passive</p>
+<ul>
+<li>SQ 和 JN 是 Active 组件</li>
+<li>LKP 是 Passive 组件</li>
+</ul>
+</li>
+<li>
+<p>执行引擎</p>
+<ul>
+<li>LKP 和 JN 是 PowerCenter</li>
+<li>SQ 是数据库</li>
+</ul>
+</li>
+</ul>
+<h2 id="stored-procedure组件"><a class="markdownIt-Anchor" href="#stored-procedure组件">#</a> Stored Procedure 组件</h2>
+<blockquote>
+<p>在 PowerCenter 可调用数据库的存储过程</p>
+</blockquote>
+<h2 id="union组件"><a class="markdownIt-Anchor" href="#union组件">#</a> Union 组件</h2>
+<blockquote>
+<p>应用于将多张表联合在一起</p>
+</blockquote>
+<h2 id="transaction-control组件"><a class="markdownIt-Anchor" href="#transaction-control组件">#</a> Transaction Control 组件</h2>
+<blockquote>
+<p>一个事务产生器，控制事务的提交与回滚</p>
+</blockquote>
+<h2 id="sequence组件"><a class="markdownIt-Anchor" href="#sequence组件">#</a> Sequence 组件</h2>
+<blockquote>
+<p>类似于数据库的 Sequence ， 每次取值自动增加</p>
+</blockquote>
+<h2 id="aggregator组件"><a class="markdownIt-Anchor" href="#aggregator组件">#</a> Aggregator 组件</h2>
+<blockquote>
+<p>用于数据聚合 ，如求和、求均值、求最值等运算</p>
+</blockquote>
+<h2 id="rank组件"><a class="markdownIt-Anchor" href="#rank组件">#</a> Rank 组件</h2>
+<blockquote>
+<p>用于获取 Top 和 Bottom 的数据</p>
+</blockquote>
+<h2 id="update-strategy组件"><a class="markdownIt-Anchor" href="#update-strategy组件">#</a> Update Strategy 组件</h2>
+<blockquote>
+<p>该组件类似于 SQL 的 Insert、Update 与 Delete 语句</p>
+</blockquote>
+<ul>
+<li>可在 WFM 中配置 Workflow 的 session，对 task 进行配置实现<br>
+<img data-src="https://s1.ax1x.com/2022/06/05/XwkMOf.png" alt="asd"></li>
+</ul>
+<h2 id="sql-transformation组件"><a class="markdownIt-Anchor" href="#sql-transformation组件">#</a> SQL Transformation 组件</h2>
+<blockquote>
+<p>需求： 输入一个表名，开发者通过开发一个 Mapping 返回全表数据</p>
+</blockquote>
+<h3 id="script-mode"><a class="markdownIt-Anchor" href="#script-mode">#</a> Script Mode</h3>
+<ul>
+<li>开发者给该组件发送一个 SQL 语句，让 PowerCenter 执行该语句，并返回该语句执行成功情况</li>
+</ul>
+<h2 id="java-transformation组件"><a class="markdownIt-Anchor" href="#java-transformation组件">#</a> Java Transformation 组件</h2>
+<blockquote>
+<p>借助 Java 代码处理一些特定业务：如判断字段是否含有中文，汉字转拼音，加解密，行列转换等</p>
+</blockquote>
+<h3 id="组件简介"><a class="markdownIt-Anchor" href="#组件简介">#</a> 组件简介</h3>
+<ul>
+<li><strong>Passive 与 Active</strong>
+<ul>
+<li>Passive 的 Java 组件每个输入对应一个输出</li>
+<li>Active 则一个输入对应多个输出</li>
+</ul>
+</li>
+</ul>
+<h2 id="router"><a class="markdownIt-Anchor" href="#router">#</a> Router</h2>
+<blockquote>
+<p>数据分发组件，将总部信息分发到各地的接口机和数据库</p>
+</blockquote>
+
+      <div class="tags">
+          <a href="/my-blog/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" rel="tag"><i class="ic i-tag"></i> 数据分析</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/my-blog/images/wechatpay.png" alt="Peter Pan 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/my-blog/images/alipay.png" alt="Peter Pan 支付宝">
+        <p>支付宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Peter Pan <i class="ic i-at"><em>@</em></i>理 想 净 土
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://github.com/Peter-Pan001/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/Informatica%E4%B9%8BPC%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6" title="Informatica之PC基础组件">https://github.com/Peter-Pan001/my-blog/数据分析/Informatica之PC基础组件</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/%E5%88%9D%E8%AF%86informatica" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;s1.ax1x.com&#x2F;2022&#x2F;06&#x2F;03&#x2F;XaCXZj.jpg" title="初识informatica">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 数据分析</span>
+  <h3>初识informatica</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/informatica%E4%B9%8BWorkflow%E7%9B%91%E6%8E%A7" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;s1.ax1x.com&#x2F;2022&#x2F;06&#x2F;03&#x2F;XaCXZj.jpg" title="informatica之Workflow监控">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 数据分析</span>
+  <h3>informatica之Workflow监控</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#source组件"><span class="toc-number">1.</span> <span class="toc-text"> Source 组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据库源"><span class="toc-number">1.1.</span> <span class="toc-text"> 数据库源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文本文件源"><span class="toc-number">1.2.</span> <span class="toc-text"> 文本文件源</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#target组件"><span class="toc-number">2.</span> <span class="toc-text"> Target 组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据库目标"><span class="toc-number">2.1.</span> <span class="toc-text"> 数据库目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文本文件目标"><span class="toc-number">2.2.</span> <span class="toc-text"> 文本文件目标</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#expression表达式组件"><span class="toc-number">3.</span> <span class="toc-text"> Expression 表达式组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#filter组件"><span class="toc-number">4.</span> <span class="toc-text"> Filter 组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#source-qualifier"><span class="toc-number">5.</span> <span class="toc-text"> Source Qualifier</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用场景"><span class="toc-number">5.1.</span> <span class="toc-text"> 使用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#选项卡奥秘"><span class="toc-number">5.2.</span> <span class="toc-text"> 选项卡奥秘</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sorter组件"><span class="toc-number">6.</span> <span class="toc-text"> Sorter 组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#选项卡奥秘-2"><span class="toc-number">6.1.</span> <span class="toc-text"> 选项卡奥秘</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#joiner组件"><span class="toc-number">7.</span> <span class="toc-text"> Joiner 组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#关联类型"><span class="toc-number">7.1.</span> <span class="toc-text"> 关联类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sorted-joiner"><span class="toc-number">7.2.</span> <span class="toc-text"> Sorted Joiner</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#joiner作用"><span class="toc-number">7.3.</span> <span class="toc-text"> Joiner 作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#self-join-自关联"><span class="toc-number">7.4.</span> <span class="toc-text"> Self-Join 自关联</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lookup组件"><span class="toc-number">8.</span> <span class="toc-text"> Lookup 组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#lookup-caching-enabled"><span class="toc-number">8.1.</span> <span class="toc-text"> Lookup Caching enabled</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lookup-sql-override"><span class="toc-number">8.2.</span> <span class="toc-text"> Lookup SQL Override</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lookup-source-qualifier-和joiner对比"><span class="toc-number">9.</span> <span class="toc-text"> Lookup 、Source Qualifier 和 Joiner 对比</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stored-procedure组件"><span class="toc-number">10.</span> <span class="toc-text"> Stored Procedure 组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#union组件"><span class="toc-number">11.</span> <span class="toc-text"> Union 组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#transaction-control组件"><span class="toc-number">12.</span> <span class="toc-text"> Transaction Control 组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sequence组件"><span class="toc-number">13.</span> <span class="toc-text"> Sequence 组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#aggregator组件"><span class="toc-number">14.</span> <span class="toc-text"> Aggregator 组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rank组件"><span class="toc-number">15.</span> <span class="toc-text"> Rank 组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#update-strategy组件"><span class="toc-number">16.</span> <span class="toc-text"> Update Strategy 组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sql-transformation组件"><span class="toc-number">17.</span> <span class="toc-text"> SQL Transformation 组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#script-mode"><span class="toc-number">17.1.</span> <span class="toc-text"> Script Mode</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#java-transformation组件"><span class="toc-number">18.</span> <span class="toc-text"> Java Transformation 组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#组件简介"><span class="toc-number">18.1.</span> <span class="toc-text"> 组件简介</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#router"><span class="toc-number">19.</span> <span class="toc-text"> Router</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/CDC%E6%8A%80%E6%9C%AF" rel="bookmark" title="CDC技术">CDC技术</a></li><li><a href="/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/%E5%88%9D%E8%AF%86informatica" rel="bookmark" title="初识informatica">初识informatica</a></li><li class="active"><a href="/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/Informatica%E4%B9%8BPC%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6" rel="bookmark" title="Informatica之PC基础组件">Informatica之PC基础组件</a></li><li><a href="/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/informatica%E4%B9%8BWorkflow%E7%9B%91%E6%8E%A7" rel="bookmark" title="informatica之Workflow监控">informatica之Workflow监控</a></li><li><a href="/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/informatica%E6%89%A9%E5%B1%95" rel="bookmark" title="informatica扩展">informatica扩展</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Peter Pan"
+      data-src="/my-blog/images/avatar.jpg">
+  <p class="name" itemprop="name">Peter Pan</p>
+  <div class="description" itemprop="description">不必匆忙，不必火花四溅，不必成为别人，只需成为自己</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/my-blog/archives/">
+        <span class="count">73</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/my-blog/categories/">
+        <span class="count">10</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/my-blog/tags/">
+        <span class="count">14</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <a href="https://github.com/Peter-Pan001/Basic" title="https:&#x2F;&#x2F;github.com&#x2F;Peter-Pan001&#x2F;Basic" class="item github"><i class="ic i-github"></i></a>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS9ndWFuZy1tYW5nLWxpZ2h0bmluZw==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;guang-mang-lightning"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTE5MjY4NTE4NDA=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;1926851840"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS9QZXRlclBhbjA4MjQ=" title="https:&#x2F;&#x2F;about.me&#x2F;PeterPan0824"><i class="ic i-address-card"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/my-blog/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/my-blog/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+    <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/my-blog/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/my-blog/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/my-blog/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/my-blog/friends/" rel="section"><i class="ic i-heart"></i>friends</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/my-blog/links/" rel="section"><i class="ic i-magic"></i>links</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/%E5%88%9D%E8%AF%86informatica" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/informatica%E4%B9%8BWorkflow%E7%9B%91%E6%8E%A7" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/java/" title="分类于 Java">Java</a>
+</div>
+
+    <span><a href="/my-blog/Java/Java%E6%95%B0%E7%BB%84" title="Java数组">Java数组</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
+</div>
+
+    <span><a href="/my-blog/Linux/Linux%E5%BC%80%E7%AF%87" title="Linux开篇">Linux开篇</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80" title="计算机硬件基础(部分组成原理)">计算机硬件基础(部分组成原理)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/Linux/" title="分类于 Linux">Linux</a>
+</div>
+
+    <span><a href="/my-blog/Linux/%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E4%B8%8E%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86" title="文件权限与目录管理">文件权限与目录管理</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/Linux%E9%85%8D%E7%BD%AE" title="Linux配置">Linux配置</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
+</div>
+
+    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E4%BA%91%E8%AE%A1%E7%AE%97%E7%AE%80%E4%BB%8B" title="云计算简介">云计算简介</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" title="分类于 云计算">云计算</a>
+</div>
+
+    <span><a href="/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/FusionSphere%E6%9E%B6%E6%9E%84" title="FusionSphere架构">FusionSphere架构</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/IP%E5%AD%90%E7%BD%91%E5%88%92%E5%88%86%E4%B8%93%E9%A2%98" title="IP子网划分专题">IP子网划分专题</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/" title="分类于 软考网络工程师">软考网络工程师</a>
+</div>
+
+    <span><a href="/my-blog/%E8%BD%AF%E8%80%83%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80" title="操作系统基础">操作系统基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/my-blog/categories/MySQL/" title="分类于 MySQL">MySQL</a>
+</div>
+
+    <span><a href="/my-blog/MySQL/%E5%85%B3%E4%BA%8EMySQL%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8" title="关于MySQL的一些基本使用">关于MySQL的一些基本使用</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Peter Pan @ Peter Pan</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<a href="https://github.com/amehime/hexo-theme-shoka">Shoka</a>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '/数据分析/Informatica之PC基础组件',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/my-blog/js/app.js?v=0.2.4"></script>
+
+
+
+
+</body>
+</html>
