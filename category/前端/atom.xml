@@ -1,27 +1,27 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://github.com/Peter-Pan001/my-blog</id>
+    <id>https://peter-pan001.github.io/my-blog</id>
     <title>理 想 净 土 • Posts by &#34;前端&#34; category</title>
-    <link href="https://github.com/Peter-Pan001/my-blog" />
+    <link href="https://peter-pan001.github.io/my-blog" />
     <updated>2021-03-25T02:42:56.000Z</updated>
     <category term="Java" />
-    <category term="Linux" />
     <category term="linux" />
+    <category term="Linux" />
     <category term="MySQL" />
-    <category term="git、github" />
     <category term="network" />
+    <category term="git、github" />
     <category term="云计算" />
     <category term="JavaScript" />
-    <category term="html" />
     <category term="前端" />
-    <category term="数据分析" />
+    <category term="html" />
     <category term="css" />
+    <category term="数据分析" />
     <category term="算法与数据结构" />
     <category term="软考网络工程师" />
     <entry>
-        <id>https://github.com/Peter-Pan001/my-blog/%E5%89%8D%E7%AB%AF/%E6%8E%A5%E7%BB%AD%E5%89%8D%E7%AB%AFH5+CSS3</id>
+        <id>https://peter-pan001.github.io/my-blog/%E5%89%8D%E7%AB%AF/%E6%8E%A5%E7%BB%AD%E5%89%8D%E7%AB%AFH5+CSS3</id>
         <title>接续前端H5+CSS3</title>
-        <link rel="alternate" href="https://github.com/Peter-Pan001/my-blog/%E5%89%8D%E7%AB%AF/%E6%8E%A5%E7%BB%AD%E5%89%8D%E7%AB%AFH5+CSS3"/>
+        <link rel="alternate" href="https://peter-pan001.github.io/my-blog/%E5%89%8D%E7%AB%AF/%E6%8E%A5%E7%BB%AD%E5%89%8D%E7%AB%AFH5+CSS3"/>
         <content type="html">&lt;h2 id=&#34;css定位position&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#css定位position&#34;&gt;#&lt;/a&gt; CSS 定位（position）&lt;/h2&gt;
 &lt;h3 id=&#34;定位概述&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#定位概述&#34;&gt;#&lt;/a&gt; 定位概述&lt;/h3&gt;
 &lt;ul&gt;
@@ -509,9 +509,9 @@
         <updated>2021-03-25T02:42:56.000Z</updated>
     </entry>
     <entry>
-        <id>https://github.com/Peter-Pan001/my-blog/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AFHTML5+CSS3</id>
+        <id>https://peter-pan001.github.io/my-blog/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AFHTML5+CSS3</id>
         <title>前端HTML5+CSS3</title>
-        <link rel="alternate" href="https://github.com/Peter-Pan001/my-blog/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AFHTML5+CSS3"/>
+        <link rel="alternate" href="https://peter-pan001.github.io/my-blog/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AFHTML5+CSS3"/>
         <content type="html">&lt;h2 id=&#34;网页简史&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#网页简史&#34;&gt;#&lt;/a&gt; 网页简史&lt;/h2&gt;
 &lt;h3 id=&#34;诞生&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#诞生&#34;&gt;#&lt;/a&gt; 诞生&lt;/h3&gt;
 &lt;ul&gt;
@@ -1887,9 +1887,9 @@
         <updated>2021-03-25T02:42:18.000Z</updated>
     </entry>
     <entry>
-        <id>https://github.com/Peter-Pan001/my-blog/%E5%89%8D%E7%AB%AF/String%E5%92%8CObject%E8%A7%A3%E8%AF%BB</id>
+        <id>https://peter-pan001.github.io/my-blog/%E5%89%8D%E7%AB%AF/String%E5%92%8CObject%E8%A7%A3%E8%AF%BB</id>
         <title>String和Object解读</title>
-        <link rel="alternate" href="https://github.com/Peter-Pan001/my-blog/%E5%89%8D%E7%AB%AF/String%E5%92%8CObject%E8%A7%A3%E8%AF%BB"/>
+        <link rel="alternate" href="https://peter-pan001.github.io/my-blog/%E5%89%8D%E7%AB%AF/String%E5%92%8CObject%E8%A7%A3%E8%AF%BB"/>
         <content type="html">&lt;h2 id=&#34;string和object解读&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#string和object解读&#34;&gt;#&lt;/a&gt; String 和 Object 解读&lt;/h2&gt;
 &lt;h3 id=&#34;string-类型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#string-类型&#34;&gt;#&lt;/a&gt; String 类型&lt;/h3&gt;
 &lt;ul&gt;
@@ -1946,9 +1946,9 @@ alert(String(info3));//&amp;quot;10&amp;quot;
         <updated>2020-10-27T13:33:03.000Z</updated>
     </entry>
     <entry>
-        <id>https://github.com/Peter-Pan001/my-blog/%E5%89%8D%E7%AB%AF/%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E5%89%8D%E7%AB%AF</id>
+        <id>https://peter-pan001.github.io/my-blog/%E5%89%8D%E7%AB%AF/%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E5%89%8D%E7%AB%AF</id>
         <title>如何学习前端</title>
-        <link rel="alternate" href="https://github.com/Peter-Pan001/my-blog/%E5%89%8D%E7%AB%AF/%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E5%89%8D%E7%AB%AF"/>
+        <link rel="alternate" href="https://peter-pan001.github.io/my-blog/%E5%89%8D%E7%AB%AF/%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E5%89%8D%E7%AB%AF"/>
         <content type="html">&lt;h2 id=&#34;阶段一&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#阶段一&#34;&gt;#&lt;/a&gt; 阶段一&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;学习 HTML5 和 CSS

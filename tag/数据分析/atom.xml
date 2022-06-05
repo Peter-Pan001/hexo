@@ -1,27 +1,27 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://github.com/Peter-Pan001/my-blog</id>
+    <id>https://peter-pan001.github.io/my-blog</id>
     <title>理 想 净 土 • Posts by &#34;数据分析&#34; tag</title>
-    <link href="https://github.com/Peter-Pan001/my-blog" />
+    <link href="https://peter-pan001.github.io/my-blog" />
     <updated>2022-06-05T08:09:22.000Z</updated>
     <category term="Java" />
-    <category term="Linux" />
     <category term="linux" />
+    <category term="Linux" />
     <category term="MySQL" />
-    <category term="git、github" />
     <category term="network" />
+    <category term="git、github" />
     <category term="云计算" />
     <category term="JavaScript" />
-    <category term="html" />
     <category term="前端" />
-    <category term="数据分析" />
+    <category term="html" />
     <category term="css" />
+    <category term="数据分析" />
     <category term="算法与数据结构" />
     <category term="软考网络工程师" />
     <entry>
-        <id>https://github.com/Peter-Pan001/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/informatica%E6%89%A9%E5%B1%95</id>
+        <id>https://peter-pan001.github.io/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/informatica%E6%89%A9%E5%B1%95</id>
         <title>informatica扩展</title>
-        <link rel="alternate" href="https://github.com/Peter-Pan001/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/informatica%E6%89%A9%E5%B1%95"/>
+        <link rel="alternate" href="https://peter-pan001.github.io/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/informatica%E6%89%A9%E5%B1%95"/>
         <content type="html">&lt;h2 id=&#34;powercenter-cdc&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#powercenter-cdc&#34;&gt;#&lt;/a&gt; PowerCenter CDC&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;CDC 全称 Change Data Capture ，即变化数据捕获 。CDC 的执行原理是通过读取&lt;mark&gt;数据库日志&lt;/mark&gt; 获得数据库表的增量数据。&lt;/li&gt;
@@ -55,9 +55,9 @@
         <updated>2022-06-05T08:09:22.000Z</updated>
     </entry>
     <entry>
-        <id>https://github.com/Peter-Pan001/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/informatica%E4%B9%8BWorkflow%E7%9B%91%E6%8E%A7</id>
+        <id>https://peter-pan001.github.io/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/informatica%E4%B9%8BWorkflow%E7%9B%91%E6%8E%A7</id>
         <title>informatica之Workflow监控</title>
-        <link rel="alternate" href="https://github.com/Peter-Pan001/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/informatica%E4%B9%8BWorkflow%E7%9B%91%E6%8E%A7"/>
+        <link rel="alternate" href="https://peter-pan001.github.io/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/informatica%E4%B9%8BWorkflow%E7%9B%91%E6%8E%A7"/>
         <content type="html">&lt;h2 id=&#34;session&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#session&#34;&gt;#&lt;/a&gt; Session&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Session 是 Workflow 最基础的组成单元，即一个 Mapping 的实例化&lt;/li&gt;
@@ -94,9 +94,9 @@
         <updated>2022-06-05T07:32:56.000Z</updated>
     </entry>
     <entry>
-        <id>https://github.com/Peter-Pan001/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/Informatica%E4%B9%8BPC%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6</id>
+        <id>https://peter-pan001.github.io/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/Informatica%E4%B9%8BPC%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6</id>
         <title>Informatica之PC基础组件</title>
-        <link rel="alternate" href="https://github.com/Peter-Pan001/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/Informatica%E4%B9%8BPC%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6"/>
+        <link rel="alternate" href="https://peter-pan001.github.io/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/Informatica%E4%B9%8BPC%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6"/>
         <content type="html">&lt;h2 id=&#34;source组件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#source组件&#34;&gt;#&lt;/a&gt; Source 组件&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -423,9 +423,9 @@
         <updated>2022-06-04T09:54:40.000Z</updated>
     </entry>
     <entry>
-        <id>https://github.com/Peter-Pan001/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/%E5%88%9D%E8%AF%86informatica</id>
+        <id>https://peter-pan001.github.io/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/%E5%88%9D%E8%AF%86informatica</id>
         <title>初识informatica</title>
-        <link rel="alternate" href="https://github.com/Peter-Pan001/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/%E5%88%9D%E8%AF%86informatica"/>
+        <link rel="alternate" href="https://peter-pan001.github.io/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/%E5%88%9D%E8%AF%86informatica"/>
         <content type="html">&lt;h2 id=&#34;informatica&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#informatica&#34;&gt;#&lt;/a&gt; Informatica&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Informatica 是一个 ETL 工具的供应商公司，旗下的 PowerCenter 产品专门为企业做数据集成服务&lt;/li&gt;
@@ -507,9 +507,9 @@
         <updated>2022-06-04T09:19:58.000Z</updated>
     </entry>
     <entry>
-        <id>https://github.com/Peter-Pan001/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/CDC%E6%8A%80%E6%9C%AF</id>
+        <id>https://peter-pan001.github.io/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/CDC%E6%8A%80%E6%9C%AF</id>
         <title>CDC技术</title>
-        <link rel="alternate" href="https://github.com/Peter-Pan001/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/CDC%E6%8A%80%E6%9C%AF"/>
+        <link rel="alternate" href="https://peter-pan001.github.io/my-blog/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/CDC%E6%8A%80%E6%9C%AF"/>
         <content type="html">&lt;ul&gt;
 &lt;li&gt;CDC (全称 change data capture)- 变化数据捕获，是识别源系统中数据何时发生更改的过程，以便下游流程或系统可以对该更改执行操作。一个常见的用例是 &lt;mark&gt;反映不同目标系统中的更改，以便系统中的数据保持同步。&lt;/mark&gt;&lt;/li&gt;
 &lt;li&gt;对于数据库而言，CDC 更像是一种软件的设计模式，用来确定与跟踪以及更改了的数据&lt;/li&gt;

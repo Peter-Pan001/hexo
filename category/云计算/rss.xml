@@ -2,29 +2,29 @@
 <rss version="2.0">
     <channel>
         <title>理 想 净 土 • Posts by &#34;云计算&#34; category</title>
-        <link>https://github.com/Peter-Pan001/my-blog</link>
+        <link>https://peter-pan001.github.io/my-blog</link>
         <description>不必匆忙，不必火花四溅，不必成为别人，只需成为自己</description>
         <language>zh-CN</language>
         <pubDate>Wed, 26 Jan 2022 12:28:00 +0800</pubDate>
         <lastBuildDate>Wed, 26 Jan 2022 12:28:00 +0800</lastBuildDate>
         <category>Java</category>
-        <category>Linux</category>
         <category>linux</category>
+        <category>Linux</category>
         <category>MySQL</category>
-        <category>git、github</category>
         <category>network</category>
+        <category>git、github</category>
         <category>云计算</category>
         <category>JavaScript</category>
-        <category>html</category>
         <category>前端</category>
-        <category>数据分析</category>
+        <category>html</category>
         <category>css</category>
+        <category>数据分析</category>
         <category>算法与数据结构</category>
         <category>软考网络工程师</category>
         <item>
-            <guid isPermalink="true">https://github.com/Peter-Pan001/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E7%BD%91%E7%BB%9C%E8%99%9A%E6%8B%9F%E5%8C%96</guid>
+            <guid isPermalink="true">https://peter-pan001.github.io/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E7%BD%91%E7%BB%9C%E8%99%9A%E6%8B%9F%E5%8C%96</guid>
             <title>网络虚拟化</title>
-            <link>https://github.com/Peter-Pan001/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E7%BD%91%E7%BB%9C%E8%99%9A%E6%8B%9F%E5%8C%96</link>
+            <link>https://peter-pan001.github.io/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E7%BD%91%E7%BB%9C%E8%99%9A%E6%8B%9F%E5%8C%96</link>
             <category>云计算</category>
             <pubDate>Wed, 26 Jan 2022 12:28:00 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;linux-bridge&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#linux-bridge&#34;&gt;#&lt;/a&gt; Linux Bridge&lt;/h2&gt;
@@ -177,9 +177,9 @@ OpenFlow 交换机由流表、安全通道和 OpenFlow 协议三部分组成。&
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://github.com/Peter-Pan001/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E5%AD%98%E5%82%A8%E8%99%9A%E6%8B%9F%E5%8C%96</guid>
+            <guid isPermalink="true">https://peter-pan001.github.io/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E5%AD%98%E5%82%A8%E8%99%9A%E6%8B%9F%E5%8C%96</guid>
             <title>存储虚拟化</title>
-            <link>https://github.com/Peter-Pan001/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E5%AD%98%E5%82%A8%E8%99%9A%E6%8B%9F%E5%8C%96</link>
+            <link>https://peter-pan001.github.io/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E5%AD%98%E5%82%A8%E8%99%9A%E6%8B%9F%E5%8C%96</link>
             <category>云计算</category>
             <pubDate>Tue, 25 Jan 2022 23:13:39 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;存储虚拟化架构&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#存储虚拟化架构&#34;&gt;#&lt;/a&gt; 存储虚拟化架构&lt;/h2&gt;
@@ -293,9 +293,9 @@ FusionCompute 支持普通快照、一致性快照以及内存快照。&lt;/p&gt
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://github.com/Peter-Pan001/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/FusionSphere%E6%9E%B6%E6%9E%84</guid>
+            <guid isPermalink="true">https://peter-pan001.github.io/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/FusionSphere%E6%9E%B6%E6%9E%84</guid>
             <title>FusionSphere架构</title>
-            <link>https://github.com/Peter-Pan001/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/FusionSphere%E6%9E%B6%E6%9E%84</link>
+            <link>https://peter-pan001.github.io/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/FusionSphere%E6%9E%B6%E6%9E%84</link>
             <category>云计算</category>
             <pubDate>Tue, 25 Jan 2022 23:08:15 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;fusionsphere虚拟化套件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#fusionsphere虚拟化套件&#34;&gt;#&lt;/a&gt; FusionSphere 虚拟化套件&lt;/h2&gt;
@@ -393,9 +393,9 @@ FusionCompute 支持普通快照、一致性快照以及内存快照。&lt;/p&gt
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://github.com/Peter-Pan001/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/Fusion%20Compute%E5%AE%89%E8%A3%85</guid>
+            <guid isPermalink="true">https://peter-pan001.github.io/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/Fusion%20Compute%E5%AE%89%E8%A3%85</guid>
             <title>Fusion Compute安装</title>
-            <link>https://github.com/Peter-Pan001/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/Fusion%20Compute%E5%AE%89%E8%A3%85</link>
+            <link>https://peter-pan001.github.io/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/Fusion%20Compute%E5%AE%89%E8%A3%85</link>
             <category>云计算</category>
             <pubDate>Thu, 20 Jan 2022 18:42:15 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;前期准备&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前期准备&#34;&gt;#&lt;/a&gt; 前期准备&lt;/h2&gt;
@@ -427,9 +427,9 @@ FusionCompute 支持普通快照、一致性快照以及内存快照。&lt;/p&gt
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://github.com/Peter-Pan001/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E8%AE%A1%E7%AE%97%E8%99%9A%E6%8B%9F%E5%8C%96</guid>
+            <guid isPermalink="true">https://peter-pan001.github.io/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E8%AE%A1%E7%AE%97%E8%99%9A%E6%8B%9F%E5%8C%96</guid>
             <title>计算虚拟化简介</title>
-            <link>https://github.com/Peter-Pan001/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E8%AE%A1%E7%AE%97%E8%99%9A%E6%8B%9F%E5%8C%96</link>
+            <link>https://peter-pan001.github.io/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E8%AE%A1%E7%AE%97%E8%99%9A%E6%8B%9F%E5%8C%96</link>
             <category>云计算</category>
             <pubDate>Wed, 19 Jan 2022 19:55:37 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;何为虚拟化&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#何为虚拟化&#34;&gt;#&lt;/a&gt; 何为虚拟化？&lt;/h2&gt;
@@ -738,9 +738,9 @@ DRS: Dynamic Resource Schedule，又称为计算资源调度自动化。FusionCo
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://github.com/Peter-Pan001/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/Fusion%20Compute%E7%AE%80%E4%BB%8B</guid>
+            <guid isPermalink="true">https://peter-pan001.github.io/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/Fusion%20Compute%E7%AE%80%E4%BB%8B</guid>
             <title>Fusion Compute简介</title>
-            <link>https://github.com/Peter-Pan001/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/Fusion%20Compute%E7%AE%80%E4%BB%8B</link>
+            <link>https://peter-pan001.github.io/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/Fusion%20Compute%E7%AE%80%E4%BB%8B</link>
             <category>云计算</category>
             <pubDate>Sun, 16 Jan 2022 13:42:42 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;什么是fusion-compute&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#什么是fusion-compute&#34;&gt;#&lt;/a&gt; 什么是 Fusion Compute？&lt;/h2&gt;
@@ -789,9 +789,9 @@ DRS: Dynamic Resource Schedule，又称为计算资源调度自动化。FusionCo
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://github.com/Peter-Pan001/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E4%BA%91%E8%AE%A1%E7%AE%97%E7%AE%80%E4%BB%8B</guid>
+            <guid isPermalink="true">https://peter-pan001.github.io/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E4%BA%91%E8%AE%A1%E7%AE%97%E7%AE%80%E4%BB%8B</guid>
             <title>云计算简介</title>
-            <link>https://github.com/Peter-Pan001/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E4%BA%91%E8%AE%A1%E7%AE%97%E7%AE%80%E4%BB%8B</link>
+            <link>https://peter-pan001.github.io/my-blog/%E4%BA%91%E8%AE%A1%E7%AE%97/%E4%BA%91%E8%AE%A1%E7%AE%97%E7%AE%80%E4%BB%8B</link>
             <category>云计算</category>
             <pubDate>Sat, 15 Jan 2022 22:25:37 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;云计算能做什么&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#云计算能做什么&#34;&gt;#&lt;/a&gt; 云计算能做什么？&lt;/h2&gt;

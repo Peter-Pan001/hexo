@@ -1,27 +1,27 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://github.com/Peter-Pan001/my-blog</id>
+    <id>https://peter-pan001.github.io/my-blog</id>
     <title>理 想 净 土 • Posts by &#34;linux&#34; category</title>
-    <link href="https://github.com/Peter-Pan001/my-blog" />
+    <link href="https://peter-pan001.github.io/my-blog" />
     <updated>2022-01-09T12:36:45.000Z</updated>
     <category term="Java" />
-    <category term="Linux" />
     <category term="linux" />
+    <category term="Linux" />
     <category term="MySQL" />
-    <category term="git、github" />
     <category term="network" />
+    <category term="git、github" />
     <category term="云计算" />
     <category term="JavaScript" />
-    <category term="html" />
     <category term="前端" />
-    <category term="数据分析" />
+    <category term="html" />
     <category term="css" />
+    <category term="数据分析" />
     <category term="算法与数据结构" />
     <category term="软考网络工程师" />
     <entry>
-        <id>https://github.com/Peter-Pan001/my-blog/Linux/%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86</id>
+        <id>https://peter-pan001.github.io/my-blog/Linux/%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86</id>
         <title>目录与文件管理</title>
-        <link rel="alternate" href="https://github.com/Peter-Pan001/my-blog/Linux/%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86"/>
+        <link rel="alternate" href="https://peter-pan001.github.io/my-blog/Linux/%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86"/>
         <content type="html">&lt;h1 id=&#34;目录与路径&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#目录与路径&#34;&gt;#&lt;/a&gt; 目录与路径&lt;/h1&gt;
 &lt;h2 id=&#34;相对路径-绝对路径&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#相对路径-绝对路径&#34;&gt;#&lt;/a&gt; 相对路径、绝对路径&lt;/h2&gt;
 &lt;ul&gt;
@@ -230,9 +230,9 @@ c: 代表 Byte， k: 代表 1024Bytes。所以，要找比 50KB&lt;br&gt;
         <updated>2022-01-09T12:36:45.000Z</updated>
     </entry>
     <entry>
-        <id>https://github.com/Peter-Pan001/my-blog/Linux/%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E4%B8%8E%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86</id>
+        <id>https://peter-pan001.github.io/my-blog/Linux/%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E4%B8%8E%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86</id>
         <title>文件权限与目录管理</title>
-        <link rel="alternate" href="https://github.com/Peter-Pan001/my-blog/Linux/%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E4%B8%8E%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86"/>
+        <link rel="alternate" href="https://peter-pan001.github.io/my-blog/Linux/%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E4%B8%8E%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86"/>
         <content type="html">&lt;h1 id=&#34;使用者和群组&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#使用者和群组&#34;&gt;#&lt;/a&gt; 使用者和群组&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;使用者&lt;/strong&gt;。就是文件的拥有者，通过对文件权限的授予来划分使用者的类别，一些使用者对文件只有读或写的权限，而对于管理员则对文件既有只读和只写还有读写的权限，通过权限划分使用者，能让系统运行更为安全高效，对于某些用户起到隐私隔离的效果&lt;/li&gt;
@@ -465,9 +465,9 @@ c: 代表 Byte， k: 代表 1024Bytes。所以，要找比 50KB&lt;br&gt;
         <updated>2022-01-09T06:09:06.000Z</updated>
     </entry>
     <entry>
-        <id>https://github.com/Peter-Pan001/my-blog/Linux/%E6%9B%B4%E6%8D%A2%E6%B8%85%E5%8D%8E%E6%BA%90</id>
+        <id>https://peter-pan001.github.io/my-blog/Linux/%E6%9B%B4%E6%8D%A2%E6%B8%85%E5%8D%8E%E6%BA%90</id>
         <title>更换清华源</title>
-        <link rel="alternate" href="https://github.com/Peter-Pan001/my-blog/Linux/%E6%9B%B4%E6%8D%A2%E6%B8%85%E5%8D%8E%E6%BA%90"/>
+        <link rel="alternate" href="https://peter-pan001.github.io/my-blog/Linux/%E6%9B%B4%E6%8D%A2%E6%B8%85%E5%8D%8E%E6%BA%90"/>
         <content type="html">&lt;h2 id=&#34;具体步骤&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#具体步骤&#34;&gt;#&lt;/a&gt; 具体步骤&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;rm -rf /etc/yum.repos.d/*&lt;/code&gt; ，删除 /etc/yum.repos.d/ 的所有文件&lt;/li&gt;
@@ -525,9 +525,9 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
         <updated>2022-01-09T06:08:20.000Z</updated>
     </entry>
     <entry>
-        <id>https://github.com/Peter-Pan001/my-blog/Linux/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E5%8F%8Ayum%E6%BA%90%E9%97%AE%E9%A2%98</id>
+        <id>https://peter-pan001.github.io/my-blog/Linux/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E5%8F%8Ayum%E6%BA%90%E9%97%AE%E9%A2%98</id>
         <title>网络配置及yum源问题</title>
-        <link rel="alternate" href="https://github.com/Peter-Pan001/my-blog/Linux/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E5%8F%8Ayum%E6%BA%90%E9%97%AE%E9%A2%98"/>
+        <link rel="alternate" href="https://peter-pan001.github.io/my-blog/Linux/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E5%8F%8Ayum%E6%BA%90%E9%97%AE%E9%A2%98"/>
         <content type="html">&lt;h1 id=&#34;centos7最小化安装后的网络配置&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#centos7最小化安装后的网络配置&#34;&gt;#&lt;/a&gt; centOS7 最小化安装后的网络配置&lt;/h1&gt;
 &lt;h2 id=&#34;配置基本的网络信息&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#配置基本的网络信息&#34;&gt;#&lt;/a&gt; 配置基本的网络信息&lt;/h2&gt;
 &lt;ul&gt;
@@ -597,9 +597,9 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
         <updated>2022-01-09T06:06:31.000Z</updated>
     </entry>
     <entry>
-        <id>https://github.com/Peter-Pan001/my-blog/Linux/Linux%E5%BC%80%E7%AF%87</id>
+        <id>https://peter-pan001.github.io/my-blog/Linux/Linux%E5%BC%80%E7%AF%87</id>
         <title>Linux开篇</title>
-        <link rel="alternate" href="https://github.com/Peter-Pan001/my-blog/Linux/Linux%E5%BC%80%E7%AF%87"/>
+        <link rel="alternate" href="https://peter-pan001.github.io/my-blog/Linux/Linux%E5%BC%80%E7%AF%87"/>
         <content type="html">&lt;h1 id=&#34;linux是什么&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#linux是什么&#34;&gt;#&lt;/a&gt; Linux 是什么？&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;一套操作系统 OS&lt;/li&gt;
@@ -650,9 +650,9 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
         <updated>2022-01-09T06:01:50.000Z</updated>
     </entry>
     <entry>
-        <id>https://github.com/Peter-Pan001/my-blog/Linux/LINUX%E5%AD%A6%E6%A0%A1%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0</id>
+        <id>https://peter-pan001.github.io/my-blog/Linux/LINUX%E5%AD%A6%E6%A0%A1%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0</id>
         <title>LINUX课程笔记</title>
-        <link rel="alternate" href="https://github.com/Peter-Pan001/my-blog/Linux/LINUX%E5%AD%A6%E6%A0%A1%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0"/>
+        <link rel="alternate" href="https://peter-pan001.github.io/my-blog/Linux/LINUX%E5%AD%A6%E6%A0%A1%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0"/>
         <content type="html">&lt;h1 id=&#34;linux课程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#linux课程&#34;&gt;#&lt;/a&gt; Linux 课程&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;本篇文章基于《linux 就该这么学》编写，仅包含学校课程学习内容，并未包括该书本的完整知识！&lt;/p&gt;

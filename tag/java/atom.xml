@@ -1,27 +1,27 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://github.com/Peter-Pan001/my-blog</id>
+    <id>https://peter-pan001.github.io/my-blog</id>
     <title>理 想 净 土 • Posts by &#34;java&#34; tag</title>
-    <link href="https://github.com/Peter-Pan001/my-blog" />
+    <link href="https://peter-pan001.github.io/my-blog" />
     <updated>2021-03-25T02:39:52.000Z</updated>
     <category term="Java" />
-    <category term="Linux" />
     <category term="linux" />
+    <category term="Linux" />
     <category term="MySQL" />
-    <category term="git、github" />
     <category term="network" />
+    <category term="git、github" />
     <category term="云计算" />
     <category term="JavaScript" />
-    <category term="html" />
     <category term="前端" />
-    <category term="数据分析" />
+    <category term="html" />
     <category term="css" />
+    <category term="数据分析" />
     <category term="算法与数据结构" />
     <category term="软考网络工程师" />
     <entry>
-        <id>https://github.com/Peter-Pan001/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8BOV</id>
+        <id>https://peter-pan001.github.io/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8BOV</id>
         <title>Java网络编程OV</title>
-        <link rel="alternate" href="https://github.com/Peter-Pan001/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8BOV"/>
+        <link rel="alternate" href="https://peter-pan001.github.io/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8BOV"/>
         <content type="html">&lt;h1 id=&#34;java网络编程ov&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#java网络编程ov&#34;&gt;#&lt;/a&gt; Java 网络编程 OV&lt;/h1&gt;
 &lt;h2 id=&#34;一-入门&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一-入门&#34;&gt;#&lt;/a&gt; 一、入门&lt;/h2&gt;
 &lt;h3 id=&#34;11-软件结构&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#11-软件结构&#34;&gt;#&lt;/a&gt; 1.1 软件结构&lt;/h3&gt;
@@ -247,9 +247,9 @@
         <updated>2021-03-25T02:39:52.000Z</updated>
     </entry>
     <entry>
-        <id>https://github.com/Peter-Pan001/my-blog/Java/Java%E5%9F%BA%E7%A1%80%E6%B7%B7%E5%90%88</id>
+        <id>https://peter-pan001.github.io/my-blog/Java/Java%E5%9F%BA%E7%A1%80%E6%B7%B7%E5%90%88</id>
         <title>Java基础混合</title>
-        <link rel="alternate" href="https://github.com/Peter-Pan001/my-blog/Java/Java%E5%9F%BA%E7%A1%80%E6%B7%B7%E5%90%88"/>
+        <link rel="alternate" href="https://peter-pan001.github.io/my-blog/Java/Java%E5%9F%BA%E7%A1%80%E6%B7%B7%E5%90%88"/>
         <content type="html">&lt;h1 id=&#34;java基础混合&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#java基础混合&#34;&gt;#&lt;/a&gt; java 基础混合&lt;/h1&gt;
 &lt;h2 id=&#34;01-成员变量与局部变量的区别&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#01-成员变量与局部变量的区别&#34;&gt;#&lt;/a&gt; 01 成员变量与局部变量的区别&lt;/h2&gt;
 &lt;table&gt;
@@ -644,9 +644,9 @@ public abstract 返回值类型 方法名（参数列表）;&lt;/p&gt;
         <updated>2021-03-25T02:38:36.000Z</updated>
     </entry>
     <entry>
-        <id>https://github.com/Peter-Pan001/my-blog/Java/JavaSE%E5%B0%8F%E7%BB%93</id>
+        <id>https://peter-pan001.github.io/my-blog/Java/JavaSE%E5%B0%8F%E7%BB%93</id>
         <title>JavaSE小结</title>
-        <link rel="alternate" href="https://github.com/Peter-Pan001/my-blog/Java/JavaSE%E5%B0%8F%E7%BB%93"/>
+        <link rel="alternate" href="https://peter-pan001.github.io/my-blog/Java/JavaSE%E5%B0%8F%E7%BB%93"/>
         <content type="html">&lt;h2 id=&#34;语言背景&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#语言背景&#34;&gt;#&lt;/a&gt; 语言背景&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Java 于 1995 年诞生，拥有跨平台、面向对象、泛型编程的特性，广泛应用于企业级 Web 引用开发和移动应用开发&lt;/li&gt;
@@ -1404,9 +1404,9 @@ public abstract 返回值类型 方法名（参数列表）;&lt;/p&gt;
         <updated>2021-01-05T02:53:33.000Z</updated>
     </entry>
     <entry>
-        <id>https://github.com/Peter-Pan001/my-blog/Java/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93</id>
+        <id>https://peter-pan001.github.io/my-blog/Java/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93</id>
         <title>多线程笔记总结</title>
-        <link rel="alternate" href="https://github.com/Peter-Pan001/my-blog/Java/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93"/>
+        <link rel="alternate" href="https://peter-pan001.github.io/my-blog/Java/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%AC%94%E8%AE%B0%E6%80%BB%E7%BB%93"/>
         <content type="html">&lt;h1 id=&#34;java多线程笔记总结&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#java多线程笔记总结&#34;&gt;#&lt;/a&gt; JAVA 多线程笔记总结&lt;/h1&gt;
 &lt;h2 id=&#34;线程简介&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#线程简介&#34;&gt;#&lt;/a&gt; 线程简介&lt;/h2&gt;
 &lt;ol&gt;
@@ -1642,9 +1642,9 @@ Future&amp;lt;Boolean&amp;gt; r3 = ser.submit(t3);
         <updated>2020-10-27T14:03:52.000Z</updated>
     </entry>
     <entry>
-        <id>https://github.com/Peter-Pan001/my-blog/Java/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1</id>
+        <id>https://peter-pan001.github.io/my-blog/Java/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1</id>
         <title>类与对象</title>
-        <link rel="alternate" href="https://github.com/Peter-Pan001/my-blog/Java/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1"/>
+        <link rel="alternate" href="https://peter-pan001.github.io/my-blog/Java/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1"/>
         <content type="html">&lt;h2 id=&#34;什么是类&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#什么是类&#34;&gt;#&lt;/a&gt; 什么是类？&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;类&lt;/strong&gt;在面向对象编程中是一种面向对象计算机编程语言的构造，是创建对象的蓝图，描述了所创建的对象共同的属性和方法。&lt;/li&gt;
@@ -1797,9 +1797,9 @@ Future&amp;lt;Boolean&amp;gt; r3 = ser.submit(t3);
         <updated>2020-10-25T14:01:29.000Z</updated>
     </entry>
     <entry>
-        <id>https://github.com/Peter-Pan001/my-blog/Java/Java%E8%AF%AD%E5%8F%A5</id>
+        <id>https://peter-pan001.github.io/my-blog/Java/Java%E8%AF%AD%E5%8F%A5</id>
         <title>Java语句</title>
-        <link rel="alternate" href="https://github.com/Peter-Pan001/my-blog/Java/Java%E8%AF%AD%E5%8F%A5"/>
+        <link rel="alternate" href="https://peter-pan001.github.io/my-blog/Java/Java%E8%AF%AD%E5%8F%A5"/>
         <content type="html">&lt;h2 id=&#34;java-输入语句&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#java-输入语句&#34;&gt;#&lt;/a&gt; Java 输入语句&lt;/h2&gt;
 &lt;h3 id=&#34;11-使用scanner类&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#11-使用scanner类&#34;&gt;#&lt;/a&gt; 1.1 使用 Scanner 类&lt;/h3&gt;
 &lt;ul&gt;
@@ -1907,9 +1907,9 @@ do{
         <updated>2020-10-25T12:51:19.000Z</updated>
     </entry>
     <entry>
-        <id>https://github.com/Peter-Pan001/my-blog/Java/Java%E7%9A%84%E4%B8%80%E4%BA%9B%E7%B1%BB</id>
+        <id>https://peter-pan001.github.io/my-blog/Java/Java%E7%9A%84%E4%B8%80%E4%BA%9B%E7%B1%BB</id>
         <title>Java的一些类</title>
-        <link rel="alternate" href="https://github.com/Peter-Pan001/my-blog/Java/Java%E7%9A%84%E4%B8%80%E4%BA%9B%E7%B1%BB"/>
+        <link rel="alternate" href="https://peter-pan001.github.io/my-blog/Java/Java%E7%9A%84%E4%B8%80%E4%BA%9B%E7%B1%BB"/>
         <content type="html">&lt;h2 id=&#34;java的一些类&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#java的一些类&#34;&gt;#&lt;/a&gt; Java 的一些类&lt;/h2&gt;
 &lt;h3 id=&#34;stringbuilder和stringbuffer的使用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#stringbuilder和stringbuffer的使用&#34;&gt;#&lt;/a&gt; StringBuilder 和 StringBuffer 的使用&lt;/h3&gt;
 &lt;ul&gt;
@@ -2064,9 +2064,9 @@ do{
         <updated>2020-10-25T12:50:18.000Z</updated>
     </entry>
     <entry>
-        <id>https://github.com/Peter-Pan001/my-blog/Java/Java%E5%A4%9A%E6%80%81</id>
+        <id>https://peter-pan001.github.io/my-blog/Java/Java%E5%A4%9A%E6%80%81</id>
         <title>Java多态</title>
-        <link rel="alternate" href="https://github.com/Peter-Pan001/my-blog/Java/Java%E5%A4%9A%E6%80%81"/>
+        <link rel="alternate" href="https://peter-pan001.github.io/my-blog/Java/Java%E5%A4%9A%E6%80%81"/>
         <content type="html">&lt;h2 id=&#34;概念&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#概念&#34;&gt;#&lt;/a&gt; 概念&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;多态，是面向对象的程序设计语言最核心的特征。多态，意味着一个对象有着多重特征，可以在特定的情况下，表现不同的状态，从而对应着不同的属性和方法。&lt;/li&gt;
@@ -2237,9 +2237,9 @@ do{
         <updated>2020-10-22T14:53:14.000Z</updated>
     </entry>
     <entry>
-        <id>https://github.com/Peter-Pan001/my-blog/Java/Java%E5%B0%81%E8%A3%85</id>
+        <id>https://peter-pan001.github.io/my-blog/Java/Java%E5%B0%81%E8%A3%85</id>
         <title>Java封装</title>
-        <link rel="alternate" href="https://github.com/Peter-Pan001/my-blog/Java/Java%E5%B0%81%E8%A3%85"/>
+        <link rel="alternate" href="https://peter-pan001.github.io/my-blog/Java/Java%E5%B0%81%E8%A3%85"/>
         <content type="html">&lt;h2 id=&#34;封装的需求&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#封装的需求&#34;&gt;#&lt;/a&gt; 封装的需求&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;程序设计在追求 “高内聚，低耦合” 的特点
@@ -2320,9 +2320,9 @@ do{
         <updated>2020-10-22T14:53:14.000Z</updated>
     </entry>
     <entry>
-        <id>https://github.com/Peter-Pan001/my-blog/Java/Java%E6%95%B0%E7%BB%84</id>
+        <id>https://peter-pan001.github.io/my-blog/Java/Java%E6%95%B0%E7%BB%84</id>
         <title>Java数组</title>
-        <link rel="alternate" href="https://github.com/Peter-Pan001/my-blog/Java/Java%E6%95%B0%E7%BB%84"/>
+        <link rel="alternate" href="https://peter-pan001.github.io/my-blog/Java/Java%E6%95%B0%E7%BB%84"/>
         <content type="html">&lt;h2 id=&#34;数组的基本使用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#数组的基本使用&#34;&gt;#&lt;/a&gt; 数组的基本使用&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;什么是数组？形如 &lt;code&gt;int[]score ={79,9,2,45};&lt;/code&gt;  称作数组&lt;/li&gt;
@@ -2401,123 +2401,9 @@ do{
         <updated>2020-10-22T14:53:14.000Z</updated>
     </entry>
     <entry>
-        <id>https://github.com/Peter-Pan001/my-blog/Java/Java%E7%BB%A7%E6%89%BF</id>
-        <title>Java继承</title>
-        <link rel="alternate" href="https://github.com/Peter-Pan001/my-blog/Java/Java%E7%BB%A7%E6%89%BF"/>
-        <content type="html">&lt;h2 id=&#34;关于继承&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#关于继承&#34;&gt;#&lt;/a&gt; 关于继承&lt;/h2&gt;
-&lt;h3 id=&#34;概念&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#概念&#34;&gt;#&lt;/a&gt; 概念&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;继承是类与类的一种关系，是一种 “is a” 的关系&lt;/li&gt;
-&lt;li&gt;继承可以使得子类具有父类别的各种属性和方法，而&lt;strong&gt;不需要再次编写相同的代码&lt;/strong&gt;。在令子类别继承父类别的同时，可以重新定义某些属性，并重写某些方法，即覆盖父类别的原有属性和方法，使其获得与父类别不同的功能。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;继承的特性&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#继承的特性&#34;&gt;#&lt;/a&gt; 继承的特性&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Java 只有单继承，即只有一个父类&lt;/li&gt;
-&lt;li&gt;没有调用 &lt;code&gt;extend&lt;/code&gt; ，则父类为 &lt;code&gt;java.lang&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;使用 &lt;code&gt;instance of&lt;/code&gt;  判断对象类型&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;超类-子类&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#超类-子类&#34;&gt;#&lt;/a&gt; 超类、子类&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;对于 java 中继承的某些知识，在这里需要给读者插补一点类的基本知识，让文章更具有可读性&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;超类&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#超类&#34;&gt;#&lt;/a&gt; 超类&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;超类，也称父类，Java 只允许一个 class 继承自一个类，因此，一个类有且仅有一个父类。只有 &lt;code&gt;Object&lt;/code&gt;  类特殊，它没有父类，所有它是所有类的父类。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;子类&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#子类&#34;&gt;#&lt;/a&gt; 子类&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;子类就是继承父类的所有方法，在此基础上在实现子类自己的一些方法&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;继承的优点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#继承的优点&#34;&gt;#&lt;/a&gt; 继承的优点&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;子类拥有父类的属性和方法&lt;/li&gt;
-&lt;li&gt;实现代码复用&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;使用语法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#使用语法&#34;&gt;#&lt;/a&gt; 使用语法&lt;/h3&gt;
-&lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption data-lang=&#34;java&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token class-name&#34;&gt;Class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Student&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;extends&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Person&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;//student 就是子类，Person 就是父类&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;继承的初始化顺序&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#继承的初始化顺序&#34;&gt;#&lt;/a&gt; 继承的初始化顺序&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;初始化父类在初始化子类&lt;/li&gt;
-&lt;li&gt;先执行初始化对象中的属性，再执行构造方法中的初始化&lt;/li&gt;
-&lt;li&gt;&lt;img data-src=&#34;https://i.loli.net/2020/10/22/DFxfgikLnOCmu2E.png&#34; alt=&#34;initialstep.png&#34;&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;方法的重写override&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#方法的重写override&#34;&gt;#&lt;/a&gt; 方法的重写 (override)&lt;/h2&gt;
-&lt;h3 id=&#34;概念-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#概念-2&#34;&gt;#&lt;/a&gt; 概念&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;如果子类对继承父类的方法不满意，是可以重写父类继承的方法的，当调用方法时会优先调用子类的方法&lt;/li&gt;
-&lt;li&gt;使用规则：
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;@override&lt;/code&gt;  的注释下的方法即为重写的方法，其本质是覆盖父类的方法&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;语法规则&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#语法规则&#34;&gt;#&lt;/a&gt; 语法规则&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;返回值类型、方法名、参数类型与个数这三者必须与父类继承的方法相同，这样才叫做方法的重写&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;子类访问权限大于父类访问权限&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;final关键字&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#final关键字&#34;&gt;#&lt;/a&gt; final 关键字&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;final&lt;/code&gt; , 即 “最终的”&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;final&lt;/code&gt;  可以修饰类、方法、属性和变量
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;final&lt;/code&gt;  修饰类，则该类&lt;strong&gt;不允许被继承&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;final&lt;/code&gt;  修饰方法，则该方法&lt;strong&gt;不允许被覆盖（重写）&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;final&lt;/code&gt;  修饰属性，则该类的属性不会进行隐式的初始化（类的初始化属性必须有值）或在构造方法中赋值&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;final&lt;/code&gt;  修饰变量，则该变量的值&lt;strong&gt;只能赋一次值&lt;/strong&gt;，即为常量&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;super关键字&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#super关键字&#34;&gt;#&lt;/a&gt; Super 关键字&lt;/h2&gt;
-&lt;h3 id=&#34;概念-3&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#概念-3&#34;&gt;#&lt;/a&gt; 概念&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;super&lt;/code&gt;  关键字是指示编译器调用超类方法的特殊关键字&lt;/li&gt;
-&lt;li&gt;直接父类对象的引用，通过 &lt;code&gt;super&lt;/code&gt;  来访问父类中被子类覆盖的方法或属性&lt;/li&gt;
-&lt;li&gt;在对象内部使用，可以代表父类对象&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;使用语法-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#使用语法-2&#34;&gt;#&lt;/a&gt; 使用语法&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;对父类属性的访问&lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption data-lang=&#34;java&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;super&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;age&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;//age 是父类的一个属性&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
-&lt;li&gt;对父类方法的访问&lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption data-lang=&#34;java&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;super&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;eat&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
-&lt;li&gt;调用父类 &lt;code&gt;toString&lt;/code&gt;  方法&lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption data-lang=&#34;java&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;super&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;toString&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;// 默认父类为 object 类&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;// 输出格式为：全路径 @全限定名 Hashcode&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;特殊使用法！！！&lt;/strong&gt;&lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption data-lang=&#34;java&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;super&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;变量&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;，变量&lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;ul&gt;
-&lt;li&gt;这样使用会使父类的私有域进行初始化，也称调用超类的构造器&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;super应用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#super应用&#34;&gt;#&lt;/a&gt; super 应用&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;子类在构造过程中必须调用其父类的构造方法&lt;/li&gt;
-&lt;li&gt;如果子类的构造方法中没有显示调用父类的构造方法，则系统默认调用父类无参的构造方法&lt;/li&gt;
-&lt;li&gt;如果显示的调用构造方法，必须在子类的构造方法的&lt;strong&gt;第一行&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;如果子类构造方法中既没有显式调用父类的构造方法，二父类又没有无参的构造方法，则编译出错&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;object类&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#object类&#34;&gt;#&lt;/a&gt; Object 类&lt;/h2&gt;
-&lt;h3 id=&#34;概念-4&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#概念-4&#34;&gt;#&lt;/a&gt; 概念&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Object&lt;/code&gt;  类是所有类的父类，如果一个类没有使用 &lt;code&gt;extends&lt;/code&gt;  关键字来明确标识继承另一个类，那么这个类默认继承 &lt;code&gt;object&lt;/code&gt;  类&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;方法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#方法&#34;&gt;#&lt;/a&gt; 方法&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;toString()&lt;/code&gt;  方法
-&lt;ul&gt;
-&lt;li&gt;在 &lt;code&gt;Object&lt;/code&gt;  类中定义 &lt;code&gt;toString()&lt;/code&gt;  方法的时候放的对象时哈希码（即对象地址字符串）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;equals()&lt;/code&gt;  方法
-&lt;ul&gt;
-&lt;li&gt;比较的是对象的引用是否执行同一块内存地址&lt;/li&gt;
-&lt;li&gt;一般情况下比较两个对象时比较它的值是否一致，所有要进行重写 &lt;code&gt;@Override&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-</content>
-        <category term="Java" />
-        <updated>2020-10-22T14:53:14.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://github.com/Peter-Pan001/my-blog/Java/Java%E6%96%B9%E6%B3%95</id>
+        <id>https://peter-pan001.github.io/my-blog/Java/Java%E6%96%B9%E6%B3%95</id>
         <title>Java方法</title>
-        <link rel="alternate" href="https://github.com/Peter-Pan001/my-blog/Java/Java%E6%96%B9%E6%B3%95"/>
+        <link rel="alternate" href="https://peter-pan001.github.io/my-blog/Java/Java%E6%96%B9%E6%B3%95"/>
         <content type="html">&lt;h2 id=&#34;概述&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#概述&#34;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;语法：&lt;br&gt;
@@ -2611,9 +2497,9 @@ do{
         <updated>2020-10-22T14:53:14.000Z</updated>
     </entry>
     <entry>
-        <id>https://github.com/Peter-Pan001/my-blog/Java/Java%E7%9A%84Stream%E6%B5%81</id>
+        <id>https://peter-pan001.github.io/my-blog/Java/Java%E7%9A%84Stream%E6%B5%81</id>
         <title>Java的Stream流</title>
-        <link rel="alternate" href="https://github.com/Peter-Pan001/my-blog/Java/Java%E7%9A%84Stream%E6%B5%81"/>
+        <link rel="alternate" href="https://peter-pan001.github.io/my-blog/Java/Java%E7%9A%84Stream%E6%B5%81"/>
         <content type="html">&lt;h2 id=&#34;第一章-简单体验一下stream流&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第一章-简单体验一下stream流&#34;&gt;#&lt;/a&gt; 第一章 简单体验一下 Stream 流&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;我们使用 Stream 流的方式，可以用来遍历集合，对集合中的数据进行过滤等，Stream 流是在 jdk1.8 之后出现&lt;/li&gt;
@@ -2737,9 +2623,9 @@ do{
         <updated>2020-10-22T14:53:14.000Z</updated>
     </entry>
     <entry>
-        <id>https://github.com/Peter-Pan001/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B</id>
+        <id>https://peter-pan001.github.io/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B</id>
         <title>Java网络编程</title>
-        <link rel="alternate" href="https://github.com/Peter-Pan001/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B"/>
+        <link rel="alternate" href="https://peter-pan001.github.io/my-blog/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B"/>
         <content type="html">&lt;h2 id=&#34;1-概述&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1-概述&#34;&gt;#&lt;/a&gt; 1、概述&lt;/h2&gt;
 &lt;hr&gt;
 &lt;ul&gt;
@@ -2906,6 +2792,120 @@ do{
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+</content>
+        <category term="Java" />
+        <updated>2020-10-22T14:53:14.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://peter-pan001.github.io/my-blog/Java/Java%E7%BB%A7%E6%89%BF</id>
+        <title>Java继承</title>
+        <link rel="alternate" href="https://peter-pan001.github.io/my-blog/Java/Java%E7%BB%A7%E6%89%BF"/>
+        <content type="html">&lt;h2 id=&#34;关于继承&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#关于继承&#34;&gt;#&lt;/a&gt; 关于继承&lt;/h2&gt;
+&lt;h3 id=&#34;概念&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#概念&#34;&gt;#&lt;/a&gt; 概念&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;继承是类与类的一种关系，是一种 “is a” 的关系&lt;/li&gt;
+&lt;li&gt;继承可以使得子类具有父类别的各种属性和方法，而&lt;strong&gt;不需要再次编写相同的代码&lt;/strong&gt;。在令子类别继承父类别的同时，可以重新定义某些属性，并重写某些方法，即覆盖父类别的原有属性和方法，使其获得与父类别不同的功能。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;继承的特性&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#继承的特性&#34;&gt;#&lt;/a&gt; 继承的特性&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Java 只有单继承，即只有一个父类&lt;/li&gt;
+&lt;li&gt;没有调用 &lt;code&gt;extend&lt;/code&gt; ，则父类为 &lt;code&gt;java.lang&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;使用 &lt;code&gt;instance of&lt;/code&gt;  判断对象类型&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;超类-子类&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#超类-子类&#34;&gt;#&lt;/a&gt; 超类、子类&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;对于 java 中继承的某些知识，在这里需要给读者插补一点类的基本知识，让文章更具有可读性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;超类&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#超类&#34;&gt;#&lt;/a&gt; 超类&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;超类，也称父类，Java 只允许一个 class 继承自一个类，因此，一个类有且仅有一个父类。只有 &lt;code&gt;Object&lt;/code&gt;  类特殊，它没有父类，所有它是所有类的父类。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;子类&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#子类&#34;&gt;#&lt;/a&gt; 子类&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;子类就是继承父类的所有方法，在此基础上在实现子类自己的一些方法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;继承的优点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#继承的优点&#34;&gt;#&lt;/a&gt; 继承的优点&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;子类拥有父类的属性和方法&lt;/li&gt;
+&lt;li&gt;实现代码复用&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;使用语法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#使用语法&#34;&gt;#&lt;/a&gt; 使用语法&lt;/h3&gt;
+&lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption data-lang=&#34;java&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token class-name&#34;&gt;Class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Student&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;extends&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Person&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;//student 就是子类，Person 就是父类&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;继承的初始化顺序&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#继承的初始化顺序&#34;&gt;#&lt;/a&gt; 继承的初始化顺序&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;初始化父类在初始化子类&lt;/li&gt;
+&lt;li&gt;先执行初始化对象中的属性，再执行构造方法中的初始化&lt;/li&gt;
+&lt;li&gt;&lt;img data-src=&#34;https://i.loli.net/2020/10/22/DFxfgikLnOCmu2E.png&#34; alt=&#34;initialstep.png&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;方法的重写override&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#方法的重写override&#34;&gt;#&lt;/a&gt; 方法的重写 (override)&lt;/h2&gt;
+&lt;h3 id=&#34;概念-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#概念-2&#34;&gt;#&lt;/a&gt; 概念&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;如果子类对继承父类的方法不满意，是可以重写父类继承的方法的，当调用方法时会优先调用子类的方法&lt;/li&gt;
+&lt;li&gt;使用规则：
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;@override&lt;/code&gt;  的注释下的方法即为重写的方法，其本质是覆盖父类的方法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;语法规则&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#语法规则&#34;&gt;#&lt;/a&gt; 语法规则&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;返回值类型、方法名、参数类型与个数这三者必须与父类继承的方法相同，这样才叫做方法的重写&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;子类访问权限大于父类访问权限&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;final关键字&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#final关键字&#34;&gt;#&lt;/a&gt; final 关键字&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;final&lt;/code&gt; , 即 “最终的”&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;final&lt;/code&gt;  可以修饰类、方法、属性和变量
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;final&lt;/code&gt;  修饰类，则该类&lt;strong&gt;不允许被继承&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;final&lt;/code&gt;  修饰方法，则该方法&lt;strong&gt;不允许被覆盖（重写）&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;final&lt;/code&gt;  修饰属性，则该类的属性不会进行隐式的初始化（类的初始化属性必须有值）或在构造方法中赋值&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;final&lt;/code&gt;  修饰变量，则该变量的值&lt;strong&gt;只能赋一次值&lt;/strong&gt;，即为常量&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;super关键字&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#super关键字&#34;&gt;#&lt;/a&gt; Super 关键字&lt;/h2&gt;
+&lt;h3 id=&#34;概念-3&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#概念-3&#34;&gt;#&lt;/a&gt; 概念&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;super&lt;/code&gt;  关键字是指示编译器调用超类方法的特殊关键字&lt;/li&gt;
+&lt;li&gt;直接父类对象的引用，通过 &lt;code&gt;super&lt;/code&gt;  来访问父类中被子类覆盖的方法或属性&lt;/li&gt;
+&lt;li&gt;在对象内部使用，可以代表父类对象&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;使用语法-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#使用语法-2&#34;&gt;#&lt;/a&gt; 使用语法&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;对父类属性的访问&lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption data-lang=&#34;java&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;super&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;age&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;//age 是父类的一个属性&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;对父类方法的访问&lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption data-lang=&#34;java&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;super&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;eat&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;调用父类 &lt;code&gt;toString&lt;/code&gt;  方法&lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption data-lang=&#34;java&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;super&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;toString&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;// 默认父类为 object 类&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;// 输出格式为：全路径 @全限定名 Hashcode&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;特殊使用法！！！&lt;/strong&gt;&lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption data-lang=&#34;java&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;super&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;变量&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;，变量&lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;ul&gt;
+&lt;li&gt;这样使用会使父类的私有域进行初始化，也称调用超类的构造器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;super应用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#super应用&#34;&gt;#&lt;/a&gt; super 应用&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;子类在构造过程中必须调用其父类的构造方法&lt;/li&gt;
+&lt;li&gt;如果子类的构造方法中没有显示调用父类的构造方法，则系统默认调用父类无参的构造方法&lt;/li&gt;
+&lt;li&gt;如果显示的调用构造方法，必须在子类的构造方法的&lt;strong&gt;第一行&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;如果子类构造方法中既没有显式调用父类的构造方法，二父类又没有无参的构造方法，则编译出错&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;object类&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#object类&#34;&gt;#&lt;/a&gt; Object 类&lt;/h2&gt;
+&lt;h3 id=&#34;概念-4&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#概念-4&#34;&gt;#&lt;/a&gt; 概念&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Object&lt;/code&gt;  类是所有类的父类，如果一个类没有使用 &lt;code&gt;extends&lt;/code&gt;  关键字来明确标识继承另一个类，那么这个类默认继承 &lt;code&gt;object&lt;/code&gt;  类&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;方法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#方法&#34;&gt;#&lt;/a&gt; 方法&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;toString()&lt;/code&gt;  方法
+&lt;ul&gt;
+&lt;li&gt;在 &lt;code&gt;Object&lt;/code&gt;  类中定义 &lt;code&gt;toString()&lt;/code&gt;  方法的时候放的对象时哈希码（即对象地址字符串）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;equals()&lt;/code&gt;  方法
+&lt;ul&gt;
+&lt;li&gt;比较的是对象的引用是否执行同一块内存地址&lt;/li&gt;
+&lt;li&gt;一般情况下比较两个对象时比较它的值是否一致，所有要进行重写 &lt;code&gt;@Override&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 </content>
         <category term="Java" />
         <updated>2020-10-22T14:53:14.000Z</updated>

@@ -2,29 +2,29 @@
 <rss version="2.0">
     <channel>
         <title>理 想 净 土 • Posts by &#34;linux&#34; category</title>
-        <link>https://github.com/Peter-Pan001/my-blog</link>
+        <link>https://peter-pan001.github.io/my-blog</link>
         <description>不必匆忙，不必火花四溅，不必成为别人，只需成为自己</description>
         <language>zh-CN</language>
         <pubDate>Sun, 09 Jan 2022 20:36:45 +0800</pubDate>
         <lastBuildDate>Sun, 09 Jan 2022 20:36:45 +0800</lastBuildDate>
         <category>Java</category>
-        <category>Linux</category>
         <category>linux</category>
+        <category>Linux</category>
         <category>MySQL</category>
-        <category>git、github</category>
         <category>network</category>
+        <category>git、github</category>
         <category>云计算</category>
         <category>JavaScript</category>
-        <category>html</category>
         <category>前端</category>
-        <category>数据分析</category>
+        <category>html</category>
         <category>css</category>
+        <category>数据分析</category>
         <category>算法与数据结构</category>
         <category>软考网络工程师</category>
         <item>
-            <guid isPermalink="true">https://github.com/Peter-Pan001/my-blog/Linux/%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86</guid>
+            <guid isPermalink="true">https://peter-pan001.github.io/my-blog/Linux/%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86</guid>
             <title>目录与文件管理</title>
-            <link>https://github.com/Peter-Pan001/my-blog/Linux/%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86</link>
+            <link>https://peter-pan001.github.io/my-blog/Linux/%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86</link>
             <category>Linux</category>
             <pubDate>Sun, 09 Jan 2022 20:36:45 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;目录与路径&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#目录与路径&#34;&gt;#&lt;/a&gt; 目录与路径&lt;/h1&gt;
@@ -233,9 +233,9 @@ c: 代表 Byte， k: 代表 1024Bytes。所以，要找比 50KB&lt;br&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://github.com/Peter-Pan001/my-blog/Linux/%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E4%B8%8E%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86</guid>
+            <guid isPermalink="true">https://peter-pan001.github.io/my-blog/Linux/%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E4%B8%8E%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86</guid>
             <title>文件权限与目录管理</title>
-            <link>https://github.com/Peter-Pan001/my-blog/Linux/%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E4%B8%8E%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86</link>
+            <link>https://peter-pan001.github.io/my-blog/Linux/%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E4%B8%8E%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86</link>
             <category>Linux</category>
             <pubDate>Sun, 09 Jan 2022 14:09:06 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;使用者和群组&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#使用者和群组&#34;&gt;#&lt;/a&gt; 使用者和群组&lt;/h1&gt;
@@ -468,9 +468,9 @@ c: 代表 Byte， k: 代表 1024Bytes。所以，要找比 50KB&lt;br&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://github.com/Peter-Pan001/my-blog/Linux/%E6%9B%B4%E6%8D%A2%E6%B8%85%E5%8D%8E%E6%BA%90</guid>
+            <guid isPermalink="true">https://peter-pan001.github.io/my-blog/Linux/%E6%9B%B4%E6%8D%A2%E6%B8%85%E5%8D%8E%E6%BA%90</guid>
             <title>更换清华源</title>
-            <link>https://github.com/Peter-Pan001/my-blog/Linux/%E6%9B%B4%E6%8D%A2%E6%B8%85%E5%8D%8E%E6%BA%90</link>
+            <link>https://peter-pan001.github.io/my-blog/Linux/%E6%9B%B4%E6%8D%A2%E6%B8%85%E5%8D%8E%E6%BA%90</link>
             <category>Linux</category>
             <pubDate>Sun, 09 Jan 2022 14:08:20 +0800</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;具体步骤&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#具体步骤&#34;&gt;#&lt;/a&gt; 具体步骤&lt;/h2&gt;
@@ -528,9 +528,9 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://github.com/Peter-Pan001/my-blog/Linux/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E5%8F%8Ayum%E6%BA%90%E9%97%AE%E9%A2%98</guid>
+            <guid isPermalink="true">https://peter-pan001.github.io/my-blog/Linux/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E5%8F%8Ayum%E6%BA%90%E9%97%AE%E9%A2%98</guid>
             <title>网络配置及yum源问题</title>
-            <link>https://github.com/Peter-Pan001/my-blog/Linux/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E5%8F%8Ayum%E6%BA%90%E9%97%AE%E9%A2%98</link>
+            <link>https://peter-pan001.github.io/my-blog/Linux/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E5%8F%8Ayum%E6%BA%90%E9%97%AE%E9%A2%98</link>
             <category>Linux</category>
             <pubDate>Sun, 09 Jan 2022 14:06:31 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;centos7最小化安装后的网络配置&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#centos7最小化安装后的网络配置&#34;&gt;#&lt;/a&gt; centOS7 最小化安装后的网络配置&lt;/h1&gt;
@@ -600,9 +600,9 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://github.com/Peter-Pan001/my-blog/Linux/Linux%E5%BC%80%E7%AF%87</guid>
+            <guid isPermalink="true">https://peter-pan001.github.io/my-blog/Linux/Linux%E5%BC%80%E7%AF%87</guid>
             <title>Linux开篇</title>
-            <link>https://github.com/Peter-Pan001/my-blog/Linux/Linux%E5%BC%80%E7%AF%87</link>
+            <link>https://peter-pan001.github.io/my-blog/Linux/Linux%E5%BC%80%E7%AF%87</link>
             <category>Linux</category>
             <pubDate>Sun, 09 Jan 2022 14:01:50 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;linux是什么&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#linux是什么&#34;&gt;#&lt;/a&gt; Linux 是什么？&lt;/h1&gt;
@@ -653,9 +653,9 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://github.com/Peter-Pan001/my-blog/Linux/LINUX%E5%AD%A6%E6%A0%A1%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0</guid>
+            <guid isPermalink="true">https://peter-pan001.github.io/my-blog/Linux/LINUX%E5%AD%A6%E6%A0%A1%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0</guid>
             <title>LINUX课程笔记</title>
-            <link>https://github.com/Peter-Pan001/my-blog/Linux/LINUX%E5%AD%A6%E6%A0%A1%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0</link>
+            <link>https://peter-pan001.github.io/my-blog/Linux/LINUX%E5%AD%A6%E6%A0%A1%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0</link>
             <category>linux</category>
             <pubDate>Fri, 18 Jun 2021 22:01:07 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;linux课程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#linux课程&#34;&gt;#&lt;/a&gt; Linux 课程&lt;/h1&gt;
